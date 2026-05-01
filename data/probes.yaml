@@ -1,0 +1,77 @@
+- id: tap
+  name: Voron TAP
+  type: Contact/Kinematic
+  accuracy: 0.005
+  repeatability: 0.0008
+  z_offset_typical: 0.0
+  speed: 10
+  samples: 3
+  sample_retract_dist: 3.0
+  notes: |-
+    Nozzle-based probing, excellent accuracy. Repeatability 0.0008mm (0.0-0.0008mm std dev for well-built machines). Accuracy ~estimated. Ref: github.com/VoronDesign/Voron-Tap
+- id: klicky
+  name: Klicky Probe
+  type: Dock-mounted Contact
+  accuracy: 0.01
+  repeatability: 0.01
+  z_offset_typical: -0.5
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Magnetically docked microswitch probe. Accuracy <0.025mm, repeatability 0.010mm std dev verified. Z-offset ~estimated (varies by mount). Speed 2-10mm/s. Ref: github.com/jlas1/Klicky-Probe
+- id: bltouch
+  name: BLTouch
+  type: Contact Deploy
+  accuracy: 0.02
+  repeatability: 0.005
+  z_offset_typical: -2.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 8.0
+  notes: |-
+    Deployable pin probe (hall effect + solenoid). Repeatability 0.005mm verified from Antclabs. Accuracy ~0.020mm mid-range (0.001-0.05mm depending on printer). Retract 8.0mm Klipper default. Ref: antclabs.com/bltouch
+- id: beacon
+  name: Beacon
+  type: Inductive/Eddy Current
+  accuracy: 0.0005
+  repeatability: 0.0004
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 5
+  sample_retract_dist: 1.0
+  notes: |-
+    Eddy current surface scanner. Accuracy 0.5µm (0.0005mm) resolution, repeatability 0.35µm (0.0004mm) typical std dev verified. Auto-calibrates via touch mode. Probe speed 5mm/s (meshes up to 500mm/s). Ref: beacon3d.com
+- id: cartographer
+  name: Cartographer
+  type: Inductive Scanning
+  accuracy: 0.003
+  repeatability: 0.001
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Eddy current scanning probe. Test data: 0.0004mm std dev verified. Auto-calibrates via touch mode. Dive speed 40mm/s, lift speed 5mm/s. Samples 3 standard. Retract 2.0mm. Ref: cartographer3d.com
+- id: btt_eddy
+  name: BTT Eddy
+  type: Eddy Current
+  accuracy: 0.001
+  repeatability: 0.001
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Budget eddy current probe from BigTreeTech. USB and coil variants. Klipper/Kalico native support. No mechanical contact with bed. Ref: bigtreetech.com, github.com/bigtreetech/Eddy
+- id: euclid
+  name: Euclid Probe
+  type: Inductive (dock-mount)
+  accuracy: 0.005
+  repeatability: 0.003
+  z_offset_typical: -1.5
+  speed: 10
+  samples: 5
+  sample_retract_dist: 2.0
+  notes: |-
+    Open-source dock-mounted inductive probe. Magnetically attaches/detaches via dock. No wires to toolhead — PCB-based contact. Popular on Voron builds before TAP/eddy probes. Ref: euclidprobe.github.io

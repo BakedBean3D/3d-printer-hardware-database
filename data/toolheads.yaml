@@ -1,0 +1,646 @@
+- id: stealthburner
+  name: Stealthburner
+  manufacturer: Voron Design
+  compatible_extruders:
+  - clockwork2
+  compatible_hotends:
+  - dragon_hf
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  - e3d_revo
+  - revo_voron
+  - dragon_ace
+  - chube_compact
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 433
+  fan_config: 1x 5015 blower part cooling, 1x 4010 hotend
+  part_cooling_cfm: 5.5
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    Current Voron standard (MGN12/MGN9). Weight 433g complete with CW2. Modular with extensive community mounts. Ref: github.com/VoronDesign/Voron-Stealthburner
+- id: mini_stealthburner
+  name: Mini Stealthburner
+  manufacturer: Voron Design
+  compatible_extruders:
+  - sherpa_mini
+  - orbiter_v2
+  compatible_hotends:
+  - dragon_st
+  - dragon_hf
+  - rapido_hf
+  - revo_voron
+  - dragonfly_bms
+  compatible_printer_types:
+  - Voron 0.2
+  weight: 190
+  fan_config: Dual 3010 blower part cooling, 1x 2510 hotend
+  part_cooling_cfm: 4.5
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Voron 0.2 toolhead (MGN9C/MGN7H). Weight 190-210g depending on extruder. Compact and lightweight. Ref: github.com/VoronDesign/Voron-0
+- id: dragon_burner
+  name: Dragon Burner
+  manufacturer: Chirpy (Minsekt)
+  compatible_extruders:
+  - lgx_lite
+  - orbiter_v2
+  - sherpa_mini
+  - sherpa_micro
+  - vz_hextrudort
+  - sailfin
+  compatible_hotends:
+  - dragon_st
+  - dragon_hf
+  - rapido_hf
+  - e3d_revo
+  - revo_voron
+  - dragon_ace
+  - chube_air
+  - chube_compact
+  - dragonfly_bms
+  compatible_printer_types:
+  - Voron 0.2
+  - Voron 2.4
+  - Voron Trident
+  weight: 320
+  fan_config: Dual 4010 blower part cooling, 1x 3010 hotend
+  part_cooling_cfm: 7.2
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: universal
+  notes: |-
+    Highly modular design. Works on V0.2, Trident, V2.4, Switchwire, Printers for Ants. Extensive extruder/hotend support. Ref: github.com/chirpy2605/voron
+- id: rapid_burner
+  name: Rapid Burner
+  manufacturer: Chirpy
+  compatible_extruders:
+  - lgx_lite
+  - orbiter_v2
+  - sherpa_mini
+  - galileo_2
+  compatible_hotends:
+  - rapido_hf
+  - rapido_uhf
+  - dragon_uhf
+  compatible_printer_types:
+  - Voron 0.2
+  - Voron 2.4
+  - Voron Trident
+  weight: 280
+  fan_config: Dual 4010 blower part cooling, 1x 3010 hotend
+  part_cooling_cfm: 7.2
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: universal
+  notes: |-
+    Designed for Rapido/Dragon UHF hotends. V0.2 primary, works on Trident/V2.4 via mounts. Replaced volcano-height support. Ref: github.com/chirpy2605/voron
+- id: wishbone
+  name: Wishbone
+  manufacturer: BakedBean3D
+  compatible_extruders:
+  - lgx
+  compatible_hotends:
+  - chube_conduction
+  compatible_printer_types:
+  - VCore 3.1
+  weight: 580
+  fan_config: CPAP cooling system with 3628 fans
+  part_cooling_cfm: 20.9
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: top_rail
+  notes: |-
+    VCore 3.1 exclusive (MGN12 top rail). SLM aluminum. Water-cooled Chube. 800mm/s @ 50k accel capable. Requires AWD. Ref: github.com/BakedBean3D/Wishbone-Toolhead
+- id: calamity
+  name: Calamity
+  manufacturer: Luke's Laboratory
+  compatible_extruders:
+  - sherpa_mini
+  - lgx
+  - vz_hextrudort
+  - orbiter_v2
+  compatible_hotends:
+  - chube_air
+  - chube_conduction
+  - chube_compact
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 500
+  fan_config: Dual 3628 axial fans for part cooling
+  part_cooling_cfm: 41.9
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    Metal construction (MGN12, up to 10mm belts). <500g with Chube Air. Extreme cooling. Voron compatible. CPAP mod available. Ref: github.com/lukeslaboratory/Calamity-Toolhead
+- id: takeoff
+  name: Takeoff
+  manufacturer: Kizime123
+  compatible_extruders:
+  - lgx_lite
+  - vz_hextrudort
+  - sherpa_mini
+  - sherpa_micro
+  - orbiter_v2
+  compatible_hotends:
+  - chube_air
+  - chube_conduction
+  - chube_compact
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 450
+  fan_config: Dual 3628 axial fans
+  part_cooling_cfm: 41.9
+  supports_neopixels: false
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Voron 2.4/Trident (front rail). SLM construction. 10x cooling vs standard Voron. No X loss, 17mm Y loss. Beacon probe support. Ref: github.com/Kizime123/Takeoff-Toolhead
+- id: a4t
+  name: A4T (Another 4010 Toolhead)
+  manufacturer: Armchair Heavy Industries
+  compatible_extruders:
+  - wwbmg
+  - sherpa_mini
+  - lgx_lite
+  - orbiter_v2
+  - escapement
+  - galileo_2_sa
+  - vz_hextrudort
+  compatible_hotends:
+  - dragon_hf
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  - e3d_revo
+  - dragon_ace
+  - chube_air
+  - chube_compact
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 350
+  fan_config: Dual 4010 blower (12k RPM), 1x 2510 hotend
+  part_cooling_cfm: 7.2
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    Voron front rail (MGN12/MGN9). Designed for Xol-Carriage. 3x Neopixel LEDs. Wide hotend support. Can collide with stock front idlers. Ref: github.com/Armchair-Heavy-Industries/A4T
+- id: xol
+  name: XOL Toolhead
+  manufacturer: Armchair Heavy Industries
+  compatible_extruders:
+  - sherpa_mini
+  - galileo_2
+  - vz_hextrudort
+  - lgx_lite
+  - orbiter_v2
+  - escapement
+  - galileo_2_sa
+  - sharkfin
+  compatible_hotends:
+  - chube_air
+  - chube_compact
+  - rapido_hf
+  - rapido_uhf
+  - dragon_hf
+  - dragon_uhf
+  - dragon_ace
+  - revo_voron
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 340
+  fan_config: Dual 4010 blower, 1x 2510 hotend
+  part_cooling_cfm: 7.2
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    MGN12H/MGN9H front rail. Modular design, evolution of Mantis. No M2/M2.5 heatsets. Archetype belt clips. 6mm/9mm belts. Beacon/Euclid/BTT Eddy support. Ref: github.com/Armchair-Heavy-Industries/Xol-Toolhead
+- id: archetype
+  name: Archetype
+  manufacturer: Armchair Heavy Industries
+  compatible_extruders:
+  - vz_hextrudort
+  - orbiter_v2
+  - sherpa_mini
+  - lgx_lite
+  - galileo_2
+  - dfa
+  - escapement
+  - galileo_2_sa
+  - sharkfin
+  compatible_hotends:
+  - dragon_hf
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  - dragon_ace
+  - chube_air
+  - chube_compact
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 400
+  fan_config: 'Modular: Mjolnir (2x 5015), Blackbird (4010), Zephyr (CPAP 7040)'
+  part_cooling_cfm: 10.0
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    Most modular toolhead ecosystem. Multiple duct variants (Mjolnir, Blackbird, Zephyr CPAP). Supports StealthChanger tool-changing. Luke's Lab sells hardware kit. CFM varies by duct (est 10+). Weight ~400g (estimated, varies by config). Ref: github.com/Armchair-Heavy-Industries/Archetype, docs.armchairheavyindustries.com
+- id: anthead
+  name: AntHead
+  manufacturer: PrintersForAnts
+  compatible_extruders:
+  - sherpa_mini
+  - galileo_2
+  - orbiter_v2
+  - bmg
+  - escapement
+  - wristwatch_g2
+  compatible_hotends:
+  - dragon_hf
+  - revo_voron
+  - rapido_hf
+  - dragon_ace
+  - chube_compact
+  compatible_printer_types:
+  - Voron 0.2
+  weight: 250
+  fan_config: 2x 4010 blower + 1x 2510 hotend
+  part_cooling_cfm: 5.0
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Official toolhead for Micron and PrintersForAnts ecosystem. MGN9H/MGN9C/MGN12H carriage options. LED support, LeafCutter filament cutting arm, filament sensor mounts. Weight ~250g (estimated). CFM ~5.0 (estimated). Ref: github.com/PrintersForAnts/AntHead
+- id: yavoth
+  name: Yavoth
+  manufacturer: Chirpy
+  compatible_extruders:
+  - sherpa_mini
+  - orbiter_v2
+  compatible_hotends:
+  - dragon_hf
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  compatible_printer_types:
+  - Voron 0.2
+  weight: 220
+  fan_config: 2x 4010 blower + 1x 2510 hotend
+  part_cooling_cfm: 5.0
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    V0 toolhead by chirpy (Dragon Burner designer). Designed for longer hotends that Mini SB can't fit. UHF cowls available. Front and rear offset variants. MGN9. Weight ~220g (estimated). Ref: github.com/chirpy2605/voron/tree/main/V0/Yavoth
+- id: stovepipe
+  name: StovePipe
+  manufacturer: Chirpy
+  compatible_extruders:
+  - lgx_lite
+  - orbiter_v1_5
+  - sherpa_mini
+  - sailfin
+  - roundabout
+  compatible_hotends:
+  - revo_voron
+  - dragon_st
+  - dragon_hf
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  - dragonfly_bms
+  compatible_printer_types:
+  - Voron 0.2
+  weight: 200
+  fan_config: 1x WS7040 CPAP + optional 5015 backup (Mailbox duct)
+  part_cooling_cfm: 15.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    CPAP toolhead for V0 by chirpy (Dragon Burner designer). Uses WS7040-24-V200 Wonsmart CPAP fan with WS2403 driver board and Klipper Expander for PWM. Switchable internal/external air intake. Standard V0 X carriage, no travel loss. Also supports RoundHouse extruder (not in DB). ~200g weight estimated (not published). ~15 CFM (WS7040 CPAP estimated). Ref: github.com/chirpy2605/voron/blob/main/V0/StovePipe
+- id: dirtybird
+  name: DirtyBird
+  manufacturer: MakerBogans
+  compatible_extruders:
+  - lgx_lite
+  - sherpa_mini
+  - sherpa_micro
+  compatible_hotends:
+  - dragon_hf
+  - dragon_st
+  - rapido_hf
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 320
+  fan_config: 2x Delta 4510 blower + 1x 3010 hotend
+  part_cooling_cfm: 5.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Successor to Frankensherpa. MGN12 only (MGN9 planned). 2x Delta BFB04512HHA-C 4510 blowers verified from BOM. Integrated Klicky magprobe. Also supports NF Crazy hotend (not in DB). ~320g estimated (not published). ~5.0 CFM estimated from fan specs. Neopixels planned but not released. Ref: github.com/MakerBogans/dirtybird
+- id: yokai
+  name: Yokai
+  manufacturer: R3tr0_D
+  compatible_extruders:
+  - sherpa_mini
+  compatible_hotends:
+  - dragon_hf
+  - rapido_hf
+  - rapido_uhf
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 280
+  fan_config: CPAP primary (WS7040) or dual 4010 blower alternate
+  part_cooling_cfm: 12.0
+  supports_neopixels: false
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Lightweight MGN12H toolhead for Voron 2.4/Trident. CPAP-primary cooling; dual 4010 blower alternate config. Built-in filament cutter. Multiple extruder and hotend configs available. Also supports CNC HGX-Lite extruder (not in DB). ~280g weight estimated (not published). ~12 CFM estimated (CPAP config). Hotend list partial — designer confirms multiple configs. Ref: printables.com/model/1462701-yokai-v35-toolhead
+- id: jabberwocky
+  name: Jabberwocky
+  manufacturer: kinematicdigit / LDO Motors
+  compatible_extruders:
+  - orbiter_v2
+  compatible_hotends:
+  - dragon_hf
+  - rapido_hf
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 350
+  fan_config: 2x 3010 part cooling + 1x 2510 hotend
+  part_cooling_cfm: 3.5
+  supports_neopixels: true
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Purpose-built filament-changer toolhead (ERCF, Tradrack). Integrated proprietary extruder: Bondtech compound gear + dual LDO Orbiter gears, NEMA14 36mm 8T stepper — not swappable with standard extruders (Orbiter v2 listed for DB compatibility only). Ships with Phaetus Conch hotend (35mm³/s, not in DB). Built-in filament cutter. Tool-free hinged extruder. Status LED + dual nozzle LEDs. Nitehawk 36 toolboard in kit. ~350g estimated (community-reported). ~3.5 CFM estimated (2x 3010 fans). Ref: github.com/kinematicdigit/Jabberwocky
+- id: mailbox
+  name: Mailbox
+  manufacturer: Chirpy
+  compatible_extruders:
+  - lgx_lite
+  - orbiter_v1_5
+  - sherpa_mini
+  - sailfin
+  - roundabout
+  compatible_hotends:
+  - dragon_hf
+  - rapido_hf
+  - revo_voron
+  - dragonfly_bms
+  compatible_printer_types:
+  - Voron 0.2
+  weight: 180
+  fan_config: 1x 5015 blower (fan guts)
+  part_cooling_cfm: 5.5
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    V0 toolhead by chirpy (Dragon Burner designer). Uses 5015 fan guts for part cooling. Standard V0 X carriage mount. Also supports RoundHouse extruder and Revo Micro hotend (not in DB). ~180g weight estimated (not published). ~5.5 CFM estimated (5015 blower). Ref: github.com/chirpy2605/voron/tree/main/V0/Mailbox
+- id: ratrig_vcore3_toolhead
+  name: RatRig V-Core 3.1 Toolhead
+  manufacturer: RatRig
+  compatible_extruders:
+  - orbiter_v2
+  compatible_hotends:
+  - rapido_hf
+  - rapido_uhf
+  - rapido_2_uhf
+  compatible_printer_types:
+  - VCore 3.1
+  weight: 425
+  fan_config: 1x 4028 axial part cooling, 1x 4010 axial hotend
+  part_cooling_cfm: 16.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: top_rail
+  notes: |-
+    RatRig official VCore 3.1 toolhead. Steel cage skeleton, aluminum top plate, minimal printed parts. 425g all hardware. Short filament path. Probe: RatRig SuperPinda. CFM ~16 estimated (4028 fan class). Ref: ratrig.com/products/rat-rig-v-core-3-1-toolhead-upgrade-kit, docs.ratrig.com
+- id: ratrig_vcore4_toolhead
+  name: RatRig V-Core 4 Toolhead
+  manufacturer: RatRig
+  compatible_extruders:
+  - orbiter_v2
+  compatible_hotends:
+  - rapido_2_uhf
+  compatible_printer_types:
+  - VCore 4
+  weight: 425
+  fan_config: 1x 4028 Nidec axial part cooling, 1x 4010 axial hotend
+  part_cooling_cfm: 20.0
+  supports_neopixels: false
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: top_rail
+  notes: |-
+    RatRig official VCore 4 toolhead. Rapido V2 UHF + Orbiter V2. Nidec W40S12BS2E5 4028 fan at 25000 RPM. Beacon Rev H probe. BTT EBB42 USB/CAN toolboard. Weight ~425g estimated (similar to V3.1). CFM ~20 estimated (Nidec 4028). Ref: ratrig.dozuki.com/Guide/08.+RatRig+V-Core+4+Toolhead/246, docs.ratrig.com
+- id: eva
+  name: EVA 3
+  manufacturer: Community (EVA-3D / pkucmus)
+  compatible_extruders:
+  - bmg
+  - lgx
+  - lgx_lite
+  - orbiter_v2
+  compatible_hotends:
+  - rapido_hf
+  - rapido_uhf
+  - revo_voron
+  compatible_printer_types:
+  - VCore 3.1
+  - VCore 4
+  weight: 380
+  fan_config: 1x 4028 axial part cooling, 1x 4010 axial hotend
+  part_cooling_cfm: 16.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: top_rail
+  notes: |-
+    Open-source modular toolhead for MGN12/MGN15 CoreXY printers. Fully modular: hotend, extruder, and cooling modules interchangeable. Primary platform for RatRig VCore family. Heat-insert and hex-nut variants. Weight ~380g estimated (config-dependent). CFM ~16 estimated (4028 fan class). Ref: main.eva-3d.page, ratrig.dozuki.com
+- id: mantis
+  name: Mantis
+  manufacturer: Long / Mandryd
+  compatible_extruders:
+  - sherpa_mini
+  - lgx_lite
+  - sailfin
+  compatible_hotends:
+  - dragon_hf
+  - dragon_st
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 290
+  fan_config: 2x 5015 radial blower part cooling, 1x 3010 hotend
+  part_cooling_cfm: 10.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    Predecessor to XOL Toolhead. Lightweight dual 5015 design. Archived — evolved into Mantis-Xol then Xol-Toolhead by Armchair Heavy Industries. Still widely used. Requires Rama low-profile front idlers. Weight 290g (from README). CFM ~10 estimated (dual 5015). Ref: github.com/Armchair-Heavy-Industries/Mantis-Xol
+- id: crown_cooler
+  name: Crown Cooler
+  manufacturer: sneakytreesnake
+  compatible_extruders:
+  - lgx_lite
+  - orbiter_v2
+  - galileo_2_sa
+  compatible_hotends:
+  - dragon_hf
+  - dragon_st
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 175
+  fan_config: CPAP ring duct (remote 7040 blower), 1x 2510 hotend
+  part_cooling_cfm: 30.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    CPAP-fed ring 'crown' duct creates vortex at nozzle tip. Uses standard Stealthburner X carriage. Fan mounted on frame via CPAP tube — very light toolhead. Beta status. Klicky and Euclid probe mounts documented. Weight ~175g estimated (duct only, fan on frame). CFM ~30 estimated (7040 blower). Ref: github.com/sneakytreesnake/CrownCooler
+- id: hypernova
+  name: Hypernova
+  manufacturer: Hyperdrive Design
+  compatible_extruders:
+  - sherpa_mini
+  - orbiter_v2
+  - orbiter_v2_5
+  - galileo_2_sa
+  - lgx_lite
+  compatible_hotends:
+  - rapido_hf
+  - rapido_uhf
+  - dragon_ace
+  - chube_air
+  compatible_printer_types:
+  - Voron Switchwire
+  weight: 350
+  fan_config: Configurable duct adapters (UHF and HF variants)
+  part_cooling_cfm: 10.0
+  supports_neopixels: false
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: universal
+  notes: |-
+    CNC metal plate base for rigidity. Designed for bed-slingers: Switchwire, Enderwire. Requires MGN12 X-rail. Probes: Beacon, Cartographer V4 AIO. Weight ~350g estimated (CNC plate + printed duct). CFM unverified. Ref: hyperdrivedesign.com/products/Hypernova/
+- id: stormbreaker
+  name: Stormbreaker
+  manufacturer: Gr33n5murf
+  compatible_extruders:
+  - sherpa_mini
+  - lgx_lite
+  compatible_hotends:
+  - rapido_hf
+  - rapido_uhf
+  - dragon_hf
+  - dragon_st
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 300
+  fan_config: CPAP tube-fed (remote fan on frame)
+  part_cooling_cfm: 20.0
+  supports_neopixels: false
+  supports_klicky: false
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    CPAP toolhead for Voron with Monolith gantry. 6mm and 9mm GT2 belts (GT3 not supported). Beacon probe mount. Filament cutter support. Weight ~300g estimated. CFM ~20 estimated (CPAP). Ref: github.com/Gr33n5murf/Stormbreaker-Toolhead
+- id: reaper
+  name: Reaper
+  manufacturer: APDMachine
+  compatible_extruders:
+  - sherpa_mini
+  - orbiter_v2
+  - vz_hextrudort
+  - lgx_lite
+  - galileo_2_sa
+  compatible_hotends:
+  - dragon_hf
+  - dragon_st
+  - dragon_uhf
+  - rapido_hf
+  - rapido_uhf
+  - rapido_2_uhf
+  - revo_voron
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 310
+  fan_config: 2x 5015 radial blower part cooling, 1x 3010 hotend
+  part_cooling_cfm: 8.0
+  supports_neopixels: true
+  supports_klicky: true
+  supports_tap: true
+  mounting_method: front_rail
+  notes: |-
+    Mantis variant with ~100g lighter than Stealthburner. Integrated nozzle + logo LED lighting. Beacon/Cartographer/Klicky/TAP probe support. Quick-swap part exchange. ~32,944 configurations via online configurator. Project completed, no longer actively developed. Weight ~310g estimated. Ref: github.com/APDMachine/Reaper, reapertoolhead.com
+- id: trinity
+  name: Trinity
+  manufacturer: WV-design
+  compatible_extruders:
+  - sherpa_mini
+  compatible_hotends:
+  - dragon_ace
+  compatible_printer_types:
+  - Voron 2.4
+  - Voron Trident
+  weight: 240
+  fan_config: 2x Delta 3628 axial part cooling, 1x 2510 hotend
+  part_cooling_cfm: 19.0
+  supports_neopixels: false
+  supports_klicky: true
+  supports_tap: false
+  mounting_method: front_rail
+  notes: |-
+    High-performance single-piece unibody construction. Monolith gantry (6mm/9mm GT2). Delta FFB03612EHN 3628 fans. Beacon/Klicky-00 probe support. Requires fiber-filled filaments. 9mm belt support. In active testing — assembly docs pending. Weight ~240g estimated. CFM ~19 estimated (dual Delta 3628). Ref: github.com/WV-design/Trinity-toolhead

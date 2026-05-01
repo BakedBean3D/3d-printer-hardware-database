@@ -1,0 +1,459 @@
+- id: clockwork2
+  name: Clockwork 2
+  manufacturer: Voron Design
+  type: Dual Gear BMG Style
+  gear_ratio: '50:10'
+  steps_per_mm: 22.67
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHG (NEMA14 Pancake 20mm)
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.5
+  max_speed: 300
+  max_accel: 5000
+  weight: 145
+  filament_path_length: 55
+  recommended_pressure_advance: 0.05
+  notes: |-
+    Standard Voron extruder. Rotation distance 22.6789511 verified from official Voron config. Motor current 0.5A for TMC2209. Ref: github.com/VoronDesign/Voron-Stealthburner
+- id: lgx_lite
+  name: LGX Lite
+  manufacturer: Bondtech
+  type: Dual Gear
+  gear_ratio: '44:10'
+  steps_per_mm: 20.0
+  rotation_distance: 5.7
+  uses_gear_ratio_in_config: false
+  motor: Integrated NEMA14 Round (36mm dia, 20mm height, 10T)
+  motor_current: 0.65
+  max_speed: 300
+  max_accel: 5000
+  weight: 150
+  filament_path_length: 50
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Lightweight high performance. Rotation distance 5.7 (or 55 with gear_ratio). E-steps 562@16µsteps. Current: 0.6-0.7A recommended (1.0A max). Weight 150g (V2). Ref: bondtech.se/lgx-lite
+- id: lgx
+  name: LGX
+  manufacturer: Bondtech
+  type: Dual Gear
+  gear_ratio: '44:10'
+  steps_per_mm: 20.0
+  rotation_distance: 5.7
+  uses_gear_ratio_in_config: false
+  motor: NEMA14 or NEMA17 compatible
+  motor_current: 1.2
+  max_speed: 300
+  max_accel: 5000
+  weight: 180
+  filament_path_length: 52
+  recommended_pressure_advance: 0.035
+  notes: |-
+    More torque than Lite variant. Two-stage gear ratio 44:10, 37:17. Rotation distance 5.7 (or 55 with gear_ratio). Most specs estimated - limited official data. Ref: bondtech.se/lgx
+- id: lgx_ace
+  name: LGX Ace
+  manufacturer: Bondtech
+  type: Dual Gear
+  gear_ratio: '44:10'
+  steps_per_mm: 561.4
+  rotation_distance: 5.7
+  uses_gear_ratio_in_config: false
+  motor: Integrated NEMA14 Round (compatible with standard 36mm round motors)
+  motor_current: 0.65
+  max_speed: 300
+  max_accel: 5000
+  weight: 135
+  filament_path_length: 50
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Redesigned LGX with improved gears and reduced weight (~135g vs LGX 180g). Drop-in replacement for LGX in most toolhead designs. Rotation distance 5.7 verified from Bondtech documentation (same gear ratio as LGX Lite). Motor current 0.6-0.8A recommended. Ref: bondtech.se/products/lgx-ace
+- id: orbiter_v2
+  name: Orbiter v2
+  manufacturer: Orbiter
+  type: Planetary Gear
+  gear_ratio: 7.5:1
+  steps_per_mm: 34.0
+  rotation_distance: 4.637
+  uses_gear_ratio_in_config: false
+  motor: LDO-36STH20-1004AHG (NEMA14 Pancake 20mm)
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.85
+  max_speed: 300
+  max_accel: 10000
+  weight: 140
+  filament_path_length: 48
+  recommended_pressure_advance: 0.03
+  notes: |-
+    Very compact, excellent precision. Rotation distance 4.637 (690 steps/mm @16µsteps). Current: 0.85A RMS / 1.2A peak. PA 0.025-0.03 recommended. Ref: orbiterprojects.com/orbiter-v2-0
+- id: orbiter_v1_5
+  name: Orbiter v1.5
+  manufacturer: Orbiter
+  type: Planetary Gear
+  gear_ratio: 7.5:1
+  steps_per_mm: 34.0
+  rotation_distance: 4.637
+  uses_gear_ratio_in_config: false
+  motor: LDO-36STH17-1004AHG (NEMA14 17.5mm)
+  motor_id: ldo_36sth17_1004ahg
+  motor_current: 0.35
+  max_speed: 250
+  max_accel: 8000
+  weight: 140
+  filament_path_length: 50
+  recommended_pressure_advance: 0.035
+  notes: |-
+    Previous generation, still widely used. Rotation distance 4.637. Current: 0.35A RMS rated, max 0.5A (not 0.85A). Weight 140g. Pushing force 7.7kg @7.5:1. Ref: thingiverse.com/thing:4725897
+- id: bmg
+  name: BMG
+  manufacturer: Bondtech
+  type: Dual Gear
+  gear_ratio: '50:17'
+  steps_per_mm: 13.6
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: NEMA17 (user-supplied)
+  motor_current: 0.8
+  max_speed: 200
+  max_accel: 3000
+  weight: 75
+  filament_path_length: 60
+  recommended_pressure_advance: 0.05
+  notes: |-
+    Classic design, widely cloned. Gear ratio 50:17 (3:1 internal). E-steps 415 steps/mm @16µsteps. Weight 75g (body only), 260g complete with motor. Current is motor-dependent. Ref: bondtech.se/bmg
+- id: sherpa_mini
+  name: Sherpa Mini
+  manufacturer: Annex Engineering
+  type: Dual Gear
+  gear_ratio: '50:10'
+  steps_per_mm: 22.67
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHIG(6T) NEMA14 Pancake 20mm
+  motor_id: ldo_36sth20_1004ahig_6t
+  motor_current: 0.65
+  max_speed: 250
+  max_accel: 8000
+  weight: 90
+  filament_path_length: 45
+  recommended_pressure_advance: 0.035
+  notes: |-
+    Ultra lightweight for flying extruders. Motor: NEMA14 Pancake 20mm (not 8mm), 70g motor weight. Gear ratio 50:10 (or 50:8 for 8T variant). Rotation distance 22.67895 (Bondtech gears). Current 0.6-0.7A recommended (1.0A max). Ref: github.com/Annex-Engineering/Sherpa_Mini-Extruder
+- id: hemera
+  name: Hemera
+  manufacturer: E3D
+  type: Integrated Direct Drive
+  gear_ratio: '3:1'
+  steps_per_mm: 13.6
+  rotation_distance: 7.82
+  uses_gear_ratio_in_config: false
+  motor: NEMA17 Integrated
+  motor_current: 1.3
+  max_speed: 200
+  max_accel: 3000
+  weight: 400
+  filament_path_length: 55
+  recommended_pressure_advance: 0.045
+  notes: |-
+    All-in-one hotend and extruder. Gear ratio 3:1 (more precisely 3.32:1, NOT 50:17). Rotation distance 7.82-7.824. E-steps ~397.5 steps/mm (user-tuned). Weight 400-492g (Classic Hemera). Ref: e3d-online.com/hemera
+- id: vz_hextrudort
+  name: VZ-Hextrudort
+  manufacturer: VzBoT
+  type: Dual Gear High Performance
+  gear_ratio: '50:8'
+  steps_per_mm: 17.9
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Round (8T or 10T)
+  motor_current: 0.8
+  max_speed: 350
+  max_accel: 12000
+  weight: 120
+  filament_path_length: 45
+  recommended_pressure_advance: 0.025
+  notes: |-
+    6.25:1 reduction (50:8), CNC machined by MirageC for VzBoT. Rotation distance 22.6 or 23.24. E-steps 895-905 (8T motor) or 685-695 (10T motor) @16µsteps. Current 0.6-1.0A (8T: 0.6-1A, 10T: 0.5-1A). Ref: github.com/VzBoT3D/Vz-HextrudORT
+- id: galileo_2
+  name: Galileo 2
+  manufacturer: JaredC01
+  type: Planetary Gear
+  gear_ratio: '9:1'
+  steps_per_mm: 6.8
+  rotation_distance: 47.088
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHG(9T) custom 9-tooth stepper
+  motor_id: ldo_36sth20_1004ahg_9t
+  motor_current: 0.6
+  max_speed: 300
+  max_accel: 10000
+  weight: 100
+  filament_path_length: 42
+  recommended_pressure_advance: 0.02
+  notes: |-
+    Rotation distance 47.088 verified. 16mm drive gear, 20% higher contact area. Motor weight 85g, ~100g complete. Current 0.6A run_current. PA 0.02-0.08 (direct drive range). Ref: github.com/JaredC01/Galileo2
+- id: sherpa_micro
+  name: Sherpa Micro
+  manufacturer: Annex Engineering
+  type: Dual Gear Micro
+  gear_ratio: 50:10 or 50:8
+  steps_per_mm: 22.0
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: Pinion Pancake
+  motor_current: 0.6
+  max_speed: 250
+  max_accel: 8000
+  weight: 60
+  filament_path_length: 38
+  recommended_pressure_advance: 0.02
+  notes: |-
+    5:1 or 6.25:1 ratio options, dual geared hobbed design, ultra-compact. Ref: github.com/Annex-Engineering/Sherpa_Micro-Extruder
+- id: sherpa_heavy
+  name: Sherpa Heavy
+  manufacturer: Annex Engineering
+  type: High Performance Dual Gear
+  gear_ratio: '50:8'
+  steps_per_mm: 17.9
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: LDO-42STH20-1004ASH(IG7T) NEMA17 Super Slim 20mm
+  motor_id: ldo_42sth20_1004ash_ig7t
+  motor_current: 1.0
+  max_speed: 400
+  max_accel: 15000
+  weight: 160
+  filament_path_length: 42
+  recommended_pressure_advance: 0.018
+  notes: |-
+    100mm³/s capable, >160N push force, 6.25:1 reduction (50:8). Motor weight 127g. Current 1.0A RMS (not 1.2A). 50:10 variant also available. Ref: github.com/Annex-Engineering/Sherpa_Heavy-Extruder
+- id: orbiter_v3
+  name: Smart Orbiter v3.0
+  manufacturer: Orbiter / LDO
+  type: Integrated Electronics
+  gear_ratio: 7.5:1
+  steps_per_mm: 34.0
+  rotation_distance: 4.637
+  uses_gear_ratio_in_config: false
+  motor: Integrated Frameless Motor
+  motor_current: 0.6
+  max_speed: 350
+  max_accel: 12000
+  weight: 135
+  filament_path_length: 17.7
+  recommended_pressure_advance: 0.015
+  notes: |-
+    First extruder with integrated electronics. Rotation distance 4.637 (estimated, similar to v2.0). Weight 135g (genuine Bondtech gears), 175g assembled with heater. 72W ceramic heater. Path 17.7mm (drive gears to hotend). Klipper-optimized. Ref: orbiterprojects.com/so3
+- id: orbiter_v2_5
+  name: Orbiter v2.5
+  manufacturer: Orbiter / LDO
+  type: Planetary Dual Gear
+  gear_ratio: 7.5:1
+  steps_per_mm: 690.0
+  rotation_distance: 4.69
+  uses_gear_ratio_in_config: false
+  motor: LDO-36STH20-1004AHG NEMA14 Pancake 20mm
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.85
+  max_speed: 350
+  max_accel: 10000
+  weight: 135
+  filament_path_length: 18.0
+  recommended_pressure_advance: 0.015
+  notes: |-
+    Upgraded v2.0 with flat-bottom-cut RNC coated gear (HRC60+), shorter 11mm drive gear, MF679ZZ bearing. Eccentricity 20-30µm (vs 50-140µm on v2.0). Same body, available as upgrade kit. Ref: orbiterprojects.com/orbiter-v2-5
+- id: tbg_lite
+  name: TBG-Lite
+  manufacturer: Trianglelab
+  type: Triple Gear Dual Drive
+  gear_ratio: 11.53:1
+  steps_per_mm: 615.0
+  rotation_distance: 5.2
+  uses_gear_ratio_in_config: false
+  motor: NEMA14 Moons or LDO (user-sourced)
+  motor_current: 0.5
+  max_speed: 300
+  max_accel: 8000
+  weight: 142
+  filament_path_length: 30.0
+  recommended_pressure_advance: 0.02
+  notes: |-
+    Budget LGX Lite alternative with larger three-gear design. 8.2kg pushing force (PETG). Nylon PA12 shell, CNC POM internals. LGX Lite mounting pattern (19mm holes). Max 80°C ambient. Ref: trianglelab.net/products/tbg-lite-extruder
+- id: dfa
+  name: Double Folded Ascender
+  manufacturer: Annex Engineering
+  type: Worm Drive
+  gear_ratio: '20:1'
+  steps_per_mm: 20.0
+  rotation_distance: 16.0
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AH NEMA14 Pancake
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.35
+  max_speed: 300
+  max_accel: 10000
+  weight: 120
+  filament_path_length: 35.0
+  recommended_pressure_advance: 0.01
+  notes: |-
+    Worm-gear design eliminates gear meshing artifacts. Very low PA values (~0.01). 20:1 ratio (reduced from original 40:1 Folded Ascender). ~40mm³/s capable (community tested). Ref: github.com/Annex-Engineering/Folded_Ascender-Extruder, dfh.fm/products/double-folded-ascender-extruder-kit
+- id: sailfin
+  name: Sailfin
+  manufacturer: CroXY3D / nemgrea
+  type: Dual Gear BMG
+  gear_ratio: '50:10'
+  steps_per_mm: 28.29
+  rotation_distance: 22.68
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Pancake (LDO-36STH17/20)
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.5
+  max_speed: 150
+  max_accel: 5000
+  weight: 107
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Compact BMG-based extruder, popular for V0 and Printers for Ants. Inspired by Sherpa Mini. Weight 107g (from README). Sherpa Mini mounting pattern. Ref: github.com/CroXY3D/Sailfin-Extruder
+- id: roundabout
+  name: RoundAbout
+  manufacturer: chirpy2605
+  type: Planetary (Orbiter v2 internals)
+  gear_ratio: 7.5:1
+  steps_per_mm: 43.16
+  rotation_distance: 4.637
+  uses_gear_ratio_in_config: false
+  motor: NEMA14 Pancake (LDO-36STH20-1004AHG)
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.85
+  max_speed: 250
+  max_accel: 8000
+  weight: 140
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.03
+  notes: |-
+    Uses Orbiter v2.0 guts in redesigned housing. Compact planetary gearbox. Mini-AfterSherpa mounting pattern. Weight ~140g estimated. Ref: github.com/chirpy2605/voron/tree/main/general/RoundAbout
+- id: galileo_2_sa
+  name: Galileo 2 Standalone
+  manufacturer: JaredC01
+  type: Planetary
+  gear_ratio: '9:1'
+  steps_per_mm: 38.24
+  rotation_distance: 47.088
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHG(9T) NEMA14
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.6
+  max_speed: 300
+  max_accel: 10000
+  weight: 100
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.02
+  notes: |-
+    Standalone-mount version of Galileo 2. Same planetary gears and custom 9T motor. Orbiter 2.0 or Sherpa Mini mounting. Weight ~100g estimated. Ref: github.com/JaredC01/Galileo2/tree/main/galileo2_standalone
+- id: escapement
+  name: Escapement
+  manufacturer: Armchair Heavy Industries
+  type: Planetary (Galileo 2 internals)
+  gear_ratio: '9:1'
+  steps_per_mm: 38.24
+  rotation_distance: 47.088
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHG(9T) NEMA14
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.6
+  max_speed: 300
+  max_accel: 10000
+  weight: 100
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.02
+  notes: |-
+    Compact G2-based extruder, native-fit for Archetype/Xol/AHI toolheads. Uses full G2 kit. Weight ~100g estimated. Ref: github.com/Armchair-Heavy-Industries/Escapement
+- id: papilio_lite
+  name: Papilio Lite
+  manufacturer: kevinakasam
+  type: Dual-drive GT2 Belt (HGX-Lite gears)
+  gear_ratio: 44:10, 37:17
+  steps_per_mm: 28.47
+  rotation_distance: 56.2
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Pancake
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.6
+  max_speed: 150
+  max_accel: 5000
+  weight: 130
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Belt-driven design prevents metal gear marks on filament — great for flexibles. Uses HGX-Lite gear kit. Sherpa Mini or LGX Lite mounting. Weight 130g (from README). Ref: github.com/kevinakasam/Papilio-Belt-Extruder
+- id: protoxtruder
+  name: ProtoXtruder
+  manufacturer: nhchiu
+  type: Dual Gear (HGX-Lite)
+  gear_ratio: 44:10, 37:17
+  steps_per_mm: 29.89
+  rotation_distance: 53.494
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Pancake
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.6
+  max_speed: 180
+  max_accel: 6000
+  weight: 120
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Popular HGX-Lite community extruder. Sherpa Mini mounting pattern. Requires inverting dir_pin vs BMG setups. Weight ~120g estimated. Ref: github.com/nhchiu/VoronMods/tree/main/Extruders/ProtoXtruder
+- id: wristwatch_g2
+  name: Wristwatch G2
+  manufacturer: tetsu97 / bythorsthunder
+  type: Planetary (Galileo 2 internals)
+  gear_ratio: '9:1'
+  steps_per_mm: 38.24
+  rotation_distance: 47.088
+  uses_gear_ratio_in_config: true
+  motor: LDO-36STH20-1004AHG(9T) NEMA14
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.6
+  max_speed: 300
+  max_accel: 10000
+  weight: 100
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.02
+  notes: |-
+    G2 gears in compact Wristwatch body. Orbiter 2.0 mounting pattern. Popular for V0/small printers. Weight ~100g estimated. Ref: github.com/tetsu97/WristWatch-G2-Extruder
+- id: sharkfin
+  name: Sharkfin
+  manufacturer: KayosMaker
+  type: Dual Gear BMG
+  gear_ratio: '50:10'
+  steps_per_mm: 28.29
+  rotation_distance: 22.68
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Pancake
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.5
+  max_speed: 150
+  max_accel: 5000
+  weight: 100
+  filament_path_length: 25.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    BMG-based compact extruder derived from Sailfin. RIDGA one-piece gear supported. Sherpa Mini mounting. Weight ~100g estimated. Ref: github.com/KayosMaker/Sharkfin_Extruder
+- id: wwbmg
+  name: WristWatch BMG (WWBMG)
+  manufacturer: bythorsthunder
+  type: Dual Gear BMG Style
+  gear_ratio: '50:10'
+  steps_per_mm: 705.7
+  rotation_distance: 22.6789511
+  uses_gear_ratio_in_config: true
+  motor: NEMA14 Pancake 10T (6T/8T supported)
+  motor_id: ldo_36sth20_1004ahg
+  motor_current: 0.5
+  max_speed: 250
+  max_accel: 5000
+  weight: 100
+  filament_path_length: 45.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Compact BMG extruder with Sherpa Mini / Orbiter 2 mounting. Uses BMG or RIDGA v2 gears. 10T default, 6T/8T pinion supported. Recommended extruder for A4T toolhead. Weight ~100g estimated. Ref: github.com/bythorsthunder/Voron_Mods/tree/main/Wristwatch_Extruder_BMG
