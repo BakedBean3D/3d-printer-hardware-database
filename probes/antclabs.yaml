@@ -1,0 +1,12 @@
+- id: bltouch
+  name: BLTouch
+  type: Contact Deploy
+  accuracy: 0.02
+  repeatability: 0.005
+  z_offset_typical: -2.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 8.0
+  notes: |-
+    Deployable pin probe (hall effect + solenoid). Repeatability 0.005mm verified from Antclabs. Accuracy ~0.020mm mid-range (0.001-0.05mm depending on printer). Retract 8.0mm Klipper default. Ref: antclabs.com/bltouch
+  manufacturer: Antclabs

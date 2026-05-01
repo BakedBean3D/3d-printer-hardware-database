@@ -1,0 +1,42 @@
+- id: chube_air
+  name: Chube Air
+  manufacturer: Luke's Laboratory
+  meltzone_length: 42.0
+  max_volumetric_flow: 45.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6 (RepRap compatible)
+  weight: 69.0
+  recommended_max_speed: 180
+  notes: |-
+    Air-cooled, 42mm meltzone, compact high-flow, USA made. Max flow ~45mm³/s (estimated). Ref: chubehotend.com
+- id: chube_conduction
+  name: Chube Conduction
+  manufacturer: Luke's Laboratory
+  meltzone_length: 52.0
+  max_volumetric_flow: 60.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6 (RepRap compatible)
+  weight: 74.0
+  recommended_max_speed: 200
+  notes: |-
+    Conduction-cooled, 52mm meltzone, higher flow variant. Max flow ~60mm³/s (estimated). Ref: chubehotend.com
+- id: chube_compact
+  name: Chube Compact
+  manufacturer: Luke's Laboratory
+  meltzone_length: 33.0
+  max_volumetric_flow: 35.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6 (RepRap compatible)
+  weight: 50.0
+  recommended_max_speed: 150
+  notes: |-
+    Compact variant, 33mm meltzone, Dragon pattern mounting (4x M3, 16mm bolt circle). ~50g. Chalice titanium heatbreak. 6x16mm 80W heater. Max flow ~35mm³/s (estimated based on 33mm meltzone, shorter than Air 42mm). Manufacturer does not publish flow specs. Ref: chubehotend.com, fabreeko.com, west3d.com

@@ -1,0 +1,12 @@
+- id: beacon
+  name: Beacon
+  type: Inductive/Eddy Current
+  accuracy: 0.0005
+  repeatability: 0.0004
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 5
+  sample_retract_dist: 1.0
+  notes: |-
+    Eddy current surface scanner. Accuracy 0.5µm (0.0005mm) resolution, repeatability 0.35µm (0.0004mm) typical std dev verified. Auto-calibrates via touch mode. Probe speed 5mm/s (meshes up to 500mm/s). Ref: beacon3d.com
+  manufacturer: Beacon3D

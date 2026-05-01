@@ -4,18 +4,32 @@ Community-maintained database of 3D printer hardware specifications for Klipper-
 
 Covers stepper motors, hotends, extruders, toolheads, probes, and printer performance profiles — focused on the Voron, RatRig, Annex, and RepRap ecosystem.
 
-## Data Format
+## Directory Structure
 
-All data lives in `data/` as YAML files:
+```
+motors/                  # Split by manufacturer
+  ldo.yaml
+  moons.yaml
+  omc.yaml
+  ...
+hotends/                 # Split by manufacturer
+  phaetus.yaml
+  e3d.yaml
+  slice_engineering.yaml
+  ...
+probes/                  # Split by manufacturer
+  beacon3d.yaml
+  antclabs.yaml
+  ...
+extruders/               # Single file (community designs)
+  extruders.yaml
+toolheads/               # Single file (community designs)
+  toolheads.yaml
+performance_profiles/    # Single file (per-printer configs)
+  performance_profiles.yaml
+```
 
-| File | Description |
-|------|-------------|
-| `hotends.yaml` | Meltzone lengths, max volumetric flow, temperature ranges |
-| `extruders.yaml` | Gear ratios, rotation distances, motor current, compatible motors |
-| `toolheads.yaml` | Compatible extruders/hotends, fan configs, probe support |
-| `motors.yaml` | Stepper specs: torque, current, inductance, resistance, step angle |
-| `probes.yaml` | Accuracy, repeatability, probe speed, sample config |
-| `performance_profiles.yaml` | Per-printer speed/accel/input shaper/belt tension configs |
+Hardware with clear brand ownership (motors, hotends, probes) is split by manufacturer — one file per brand. Community/open-source designs (extruders, toolheads) stay in a single file since "manufacturer" is often just a GitHub username.
 
 ## Schema
 

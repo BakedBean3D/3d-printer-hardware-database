@@ -1,0 +1,15 @@
+- id: moons_ms17ha2p4200
+  name: Moons MS17HA2P4200
+  manufacturer: Moons
+  frame_size: NEMA17
+  body_length_mm: 39.0
+  rated_current_amps: 1.68
+  recommended_run_current: 1.2
+  holding_torque_ncm: 45.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.05
+  step_angle: 0.9
+  weight: 310
+  tooth_count: 0
+  notes: |-
+    0.9°/step motor (400 steps/rev vs 200). Most popular axis upgrade for Voron 2.4/Trident. Higher resolution reduces visible layer lines at moderate speeds. Rated 1.68A from Moons datasheet. Run current 1.1-1.3A for XY; lower for Z. Holding torque ~45 N·cm from Moons datasheet. Weight ~310g measured. NOTE: full_steps_per_rotation must be set to 400 in printer.cfg. Ref: moons-industries.com, west3d.com/products/moons-ms17ha2p4200

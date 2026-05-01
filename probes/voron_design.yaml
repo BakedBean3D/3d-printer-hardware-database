@@ -1,0 +1,12 @@
+- id: tap
+  name: Voron TAP
+  type: Contact/Kinematic
+  accuracy: 0.005
+  repeatability: 0.0008
+  z_offset_typical: 0.0
+  speed: 10
+  samples: 3
+  sample_retract_dist: 3.0
+  notes: |-
+    Nozzle-based probing, excellent accuracy. Repeatability 0.0008mm (0.0-0.0008mm std dev for well-built machines). Accuracy ~estimated. Ref: github.com/VoronDesign/Voron-Tap
+  manufacturer: Voron Design

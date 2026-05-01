@@ -1,0 +1,70 @@
+- id: e3d_v6
+  name: E3D V6
+  manufacturer: E3D
+  meltzone_length: 22.0
+  max_volumetric_flow: 11.0
+  max_temp: 285
+  recommended_temp_pla: 205
+  recommended_temp_abs: 240
+  recommended_temp_petg: 235
+  nozzle_thread: M6
+  weight: 14.0
+  recommended_max_speed: 80
+  notes: |-
+    Industry standard all-metal hotend. Max flow ~11mm³/s verified from manufacturer specs. 22mm melt zone, 285°C max with standard thermistor. Ref: e3d-online.com/products/v6-all-metal-hotend
+- id: e3d_revo
+  name: E3D Revo
+  manufacturer: E3D
+  meltzone_length: 25.0
+  max_volumetric_flow: 10.5
+  max_temp: 300
+  recommended_temp_pla: 205
+  recommended_temp_abs: 240
+  recommended_temp_petg: 235
+  nozzle_thread: Revo Nozzle System
+  weight: 18.0
+  recommended_max_speed: 90
+  notes: |-
+    Rapid nozzle changing system. Max flow 10.5mm³/s from official E3D testing. 60W heater. Ref: e3d-online.com/revo-support-volumetric-flow-rates
+- id: e3d_revo_hf
+  name: E3D Revo High Flow
+  manufacturer: E3D
+  meltzone_length: 25.0
+  max_volumetric_flow: 18.0
+  max_temp: 300
+  recommended_temp_pla: 220
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: Revo HF Nozzle System
+  weight: 18.0
+  recommended_max_speed: 150
+  notes: |-
+    High flow nozzle system. Max flow 18mm³/s (0.4mm nozzle, PLA@220°C) from official E3D specs. Up to 37mm³/s with larger nozzles. Ref: e3d-online.com
+- id: e3d_volcano
+  name: E3D Volcano
+  manufacturer: E3D
+  meltzone_length: 28.0
+  max_volumetric_flow: 25.0
+  max_temp: 300
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: Volcano (M6, extended nozzle geometry — NOT V6 compatible)
+  weight: 25.0
+  recommended_max_speed: 120
+  notes: |-
+    Extended melt zone E3D hotend for large-nozzle/high-flow printing. Flow listed is 0.4mm nozzle baseline (~25mm³/s, community tested). Scales strongly with nozzle size: 0.6mm ~35mm³/s, 0.8mm ~50mm³/s (PLA@210°C). Meltzone ~28mm (estimated from Volcano block geometry vs V6). Requires Volcano nozzles — standard V6/RepRap nozzles will not fit. Ref: e3d-online.com/products/volcano
+- id: revo_voron
+  name: Revo Voron
+  manufacturer: E3D
+  meltzone_length: 12.0
+  max_volumetric_flow: 10.5
+  max_temp: 300
+  recommended_temp_pla: 205
+  recommended_temp_abs: 240
+  recommended_temp_petg: 235
+  nozzle_thread: Revo (proprietary, tool-free swap)
+  weight: 25.0
+  recommended_max_speed: 90
+  notes: |-
+    Designed with Voron Design for Stealthburner. Tool-free nozzle swaps at room temp. 40W or 60W HeaterCore. WARNING: Proprietary nozzle thread — NOT compatible with M6 nozzles. Max flow 10.5mm³/s from official E3D testing. Ref: e3d-online.com/products/revo-voron

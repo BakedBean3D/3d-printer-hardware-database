@@ -2,9 +2,10 @@
 """Validate all YAML data files against expected schemas."""
 import sys
 import os
+import glob
 import yaml
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+ROOT = os.path.join(os.path.dirname(__file__), "..")
 
 MOTOR_REQUIRED = [
     "id", "name", "manufacturer", "frame_size", "body_length_mm",
@@ -36,27 +37,22 @@ TOOLHEAD_REQUIRED = [
     "supports_neopixels", "supports_klicky", "supports_tap", "mounting_method", "notes",
 ]
 
-SCHEMAS = {
-    "motors.yaml": MOTOR_REQUIRED,
-    "hotends.yaml": HOTEND_REQUIRED,
-    "extruders.yaml": EXTRUDER_REQUIRED,
-    "probes.yaml": PROBE_REQUIRED,
-    "toolheads.yaml": TOOLHEAD_REQUIRED,
+CATEGORIES = {
+    "motors": MOTOR_REQUIRED,
+    "hotends": HOTEND_REQUIRED,
+    "extruders": EXTRUDER_REQUIRED,
+    "probes": PROBE_REQUIRED,
+    "toolheads": TOOLHEAD_REQUIRED,
 }
 
 
-def validate_file(filename, required_fields):
-    filepath = os.path.join(DATA_DIR, filename)
-    if not os.path.exists(filepath):
-        print(f"  MISSING: {filename}")
-        return 1
-
+def validate_file(filepath, required_fields):
     with open(filepath) as f:
         data = yaml.safe_load(f)
 
     if not isinstance(data, list):
-        print(f"  ERROR: {filename} root must be a list")
-        return 1
+        print(f"  ERROR: {filepath} root must be a list")
+        return 1, 0
 
     errors = 0
     ids_seen = set()
@@ -65,44 +61,71 @@ def validate_file(filename, required_fields):
         entry_id = entry.get("id", f"<index {i}>")
 
         if entry_id in ids_seen:
-            print(f"  DUPLICATE ID: {entry_id} in {filename}")
+            print(f"  DUPLICATE ID: {entry_id} in {filepath}")
             errors += 1
         ids_seen.add(entry_id)
 
         for field in required_fields:
             if field not in entry:
-                print(f"  MISSING FIELD: {filename}[{entry_id}].{field}")
+                print(f"  MISSING FIELD: {filepath}[{entry_id}].{field}")
                 errors += 1
 
-        if "id" in entry and not entry["id"].replace("_", "").replace("0123456789", "").isascii():
-            pass  # basic check
         if "id" in entry and " " in entry["id"]:
-            print(f"  BAD ID (spaces): {entry_id} in {filename}")
+            print(f"  BAD ID (spaces): {entry_id} in {filepath}")
             errors += 1
 
-    if errors == 0:
-        print(f"  OK: {filename} ({len(data)} entries)")
-    return errors
+    return errors, len(data)
 
 
 def main():
-    print("Validating hardware database...")
+    print("Validating hardware database...\n")
     total_errors = 0
+    total_entries = 0
 
-    for filename, fields in SCHEMAS.items():
-        total_errors += validate_file(filename, fields)
+    for category, fields in CATEGORIES.items():
+        cat_dir = os.path.join(ROOT, category)
+        if not os.path.isdir(cat_dir):
+            print(f"  MISSING DIR: {category}/")
+            total_errors += 1
+            continue
 
-    # Check performance_profiles exists (looser schema)
-    pp_path = os.path.join(DATA_DIR, "performance_profiles.yaml")
-    if os.path.exists(pp_path):
-        with open(pp_path) as f:
+        yaml_files = sorted(glob.glob(os.path.join(cat_dir, "*.yaml")))
+        if not yaml_files:
+            print(f"  EMPTY: {category}/ (no YAML files)")
+            total_errors += 1
+            continue
+
+        cat_ids = set()
+        cat_entries = 0
+        for filepath in yaml_files:
+            errors, count = validate_file(filepath, fields)
+            total_errors += errors
+            cat_entries += count
+
+            with open(filepath) as f:
+                data = yaml.safe_load(f)
+            for entry in data:
+                eid = entry.get("id")
+                if eid in cat_ids:
+                    print(f"  CROSS-FILE DUPLICATE: {eid} in {category}/")
+                    total_errors += 1
+                cat_ids.add(eid)
+
+        total_entries += cat_entries
+        print(f"  {category}/: {cat_entries} entries across {len(yaml_files)} files")
+
+    pp_dir = os.path.join(ROOT, "performance_profiles")
+    pp_files = glob.glob(os.path.join(pp_dir, "*.yaml"))
+    if pp_files:
+        with open(pp_files[0]) as f:
             data = yaml.safe_load(f)
-        print(f"  OK: performance_profiles.yaml ({len(data)} entries)")
+        total_entries += len(data)
+        print(f"  performance_profiles/: {len(data)} entries")
     else:
-        print("  MISSING: performance_profiles.yaml")
+        print("  MISSING: performance_profiles/")
         total_errors += 1
 
-    print(f"\n{'PASSED' if total_errors == 0 else 'FAILED'} ({total_errors} errors)")
+    print(f"\n{'PASSED' if total_errors == 0 else 'FAILED'} — {total_entries} total entries, {total_errors} errors")
     return 0 if total_errors == 0 else 1
 
 

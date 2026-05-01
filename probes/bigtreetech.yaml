@@ -1,0 +1,12 @@
+- id: btt_eddy
+  name: BTT Eddy
+  type: Eddy Current
+  accuracy: 0.001
+  repeatability: 0.001
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Budget eddy current probe from BigTreeTech. USB and coil variants. Klipper/Kalico native support. No mechanical contact with bed. Ref: bigtreetech.com, github.com/bigtreetech/Eddy
+  manufacturer: BigTreeTech

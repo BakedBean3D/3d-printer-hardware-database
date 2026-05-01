@@ -1,0 +1,12 @@
+- id: cartographer
+  name: Cartographer
+  type: Inductive Scanning
+  accuracy: 0.003
+  repeatability: 0.001
+  z_offset_typical: 0.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Eddy current scanning probe. Test data: 0.0004mm std dev verified. Auto-calibrates via touch mode. Dive speed 40mm/s, lift speed 5mm/s. Samples 3 standard. Retract 2.0mm. Ref: cartographer3d.com
+  manufacturer: Cartographer3D

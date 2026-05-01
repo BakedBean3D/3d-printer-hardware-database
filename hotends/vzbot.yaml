@@ -1,0 +1,14 @@
+- id: goliath
+  name: Goliath
+  manufacturer: VzBoT
+  meltzone_length: 35.0
+  max_volumetric_flow: 115.0
+  max_temp: 500
+  recommended_temp_pla: 220
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: M6
+  weight: 22.0
+  recommended_max_speed: 300
+  notes: |-
+    Extreme high flow (100-130mm³/s+) verified from VzBoT official docs. Purpose-built for speed benchies. Ref: docs.vzbot.org/goliath

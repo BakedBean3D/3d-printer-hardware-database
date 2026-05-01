@@ -1,0 +1,126 @@
+- id: dragon_hf
+  name: Dragon High Flow
+  manufacturer: Phaetus
+  meltzone_length: 25.0
+  max_volumetric_flow: 26.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 16.5
+  recommended_max_speed: 150
+  notes: |-
+    Popular for Voron builds. Max flow 26mm³/s from manufacturer specs (PLA@215°C). V6 compatible. Ref: phaetus.com/en-us/products/dragon-hotend-hf
+- id: dragon_uhf
+  name: Dragon Ultra High Flow
+  manufacturer: Phaetus
+  meltzone_length: 28.0
+  max_volumetric_flow: 45.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 17.0
+  recommended_max_speed: 200
+  notes: |-
+    Ultra high flow variant. Max flow 45mm³/s from Phaetus product page. Ideal for speed printing. Ref: phaetus.com/en-us/products/dragon-hotend-uhf
+- id: rapido_hf
+  name: Rapido High Flow
+  manufacturer: Phaetus
+  meltzone_length: 30.0
+  max_volumetric_flow: 45.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 15.0
+  recommended_max_speed: 200
+  notes: |-
+    Rapid heat-up time. Max flow 45mm³/s from retailer specs. Excellent for speed printing. Ref: 3djake.com
+- id: rapido_uhf
+  name: Rapido Ultra High Flow
+  manufacturer: Phaetus
+  meltzone_length: 32.0
+  max_volumetric_flow: 46.0
+  max_temp: 500
+  recommended_temp_pla: 215
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: M6
+  weight: 16.0
+  recommended_max_speed: 250
+  notes: |-
+    Ultra high flow hotend. Max flow 46mm³/s (2749mm³/min from retailer specs). Volcano nozzle compatible. Ref: 3djake.com
+- id: rapido_2_uhf
+  name: Rapido 2 Ultra High Flow
+  manufacturer: Phaetus
+  meltzone_length: 32.0
+  max_volumetric_flow: 75.0
+  max_temp: 500
+  recommended_temp_pla: 215
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: M6
+  weight: 16.0
+  recommended_max_speed: 300
+  notes: |-
+    Extreme high flow (Gen 2). Max flow 75mm³/s from official retailer specs. Titanium heatbreak, planar ceramic heater. Ref: 3djake.com/rapido-hotend-2-uhf
+- id: dragon_st
+  name: Dragon Standard Flow
+  manufacturer: Phaetus
+  meltzone_length: 20.0
+  max_volumetric_flow: 15.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 16.0
+  recommended_max_speed: 100
+  notes: |-
+    Workhorse for Voron V0 and budget builds. Max flow ~15mm³/s (community tested). Bimetal heatbreak, V6 compatible. Ref: phaetus.com/en-us/products/dragon-hotend-hf, hotend.eu/p/phaetus-dragon-hotend-sf-standard-flow
+- id: rapido_plus_2_hf
+  name: Rapido Plus 2 High Flow
+  manufacturer: Phaetus
+  meltzone_length: 30.0
+  max_volumetric_flow: 36.0
+  max_temp: 350
+  recommended_temp_pla: 215
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: M6
+  weight: 16.0
+  recommended_max_speed: 200
+  notes: |-
+    High-temp variant with PT1000 thermistor for accurate readings to 350°C. 88W planar ceramic heater, titanium heatbreak. Max flow ~36mm³/s from retailer specs. Ref: phaetus.com/en-us/products/rapido-plus-hotend-2, 3djake.com
+- id: dragonfly_bms
+  name: Dragonfly BMS
+  manufacturer: Phaetus
+  meltzone_length: 22.0
+  max_volumetric_flow: 15.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 45.0
+  recommended_max_speed: 100
+  notes: |-
+    Standard flow hotend. Creality/Ender-style heatsink mount (NOT V6 groovemount). All-metal bi-metal heatbreak. Popular Ender upgrade and V0 community use via adapters. Max temp 500°C from Phaetus. Weight 45g from MatterHackers. Meltzone ~22mm estimated. Flow ~15mm³/s (estimated from SF class). Ref: phaetus.com, matterhackers.com
+- id: dragonfly_hic
+  name: Dragonfly HIC HF
+  manufacturer: Phaetus
+  meltzone_length: 32.0
+  max_volumetric_flow: 36.5
+  max_temp: 500
+  recommended_temp_pla: 215
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: Proprietary HIC (integrated nozzle+heatbreak)
+  weight: 70.0
+  recommended_max_speed: 180
+  notes: |-
+    Creality/Ender-style heatsink mount. PROPRIETARY integrated nozzle+heatbreak — standard Volcano nozzles DO NOT fit. Weight 70g (3dprint.me). Flow 36.5mm³/s from retailer specs. Meltzone ~32mm estimated. Ref: amazon.com/dp/B0FJGF7Q8M, 3dprint.me

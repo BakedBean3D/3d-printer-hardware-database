@@ -1,0 +1,42 @@
+- id: mosquito
+  name: Mosquito
+  manufacturer: Slice Engineering
+  meltzone_length: 20.0
+  max_volumetric_flow: 20.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 12.0
+  recommended_max_speed: 120
+  notes: |-
+    Compact and lightweight. Max flow 20mm³/s verified from Slice Engineering support. Excellent thermal isolation. Ref: sliceengineering.com
+- id: mosquito_magnum_plus
+  name: Mosquito Magnum+
+  manufacturer: Slice Engineering
+  meltzone_length: 40.0
+  max_volumetric_flow: 88.0
+  max_temp: 500
+  recommended_temp_pla: 215
+  recommended_temp_abs: 250
+  recommended_temp_petg: 245
+  nozzle_thread: M6 (RepRap, 7mm thread, 12.5mm overall)
+  weight: 55.0
+  recommended_max_speed: 300
+  notes: |-
+    Ultra high flow. Filament contacts hot block directly. Max flow 88mm³/s (PLA), 91mm³/s (ABS) from manufacturer. Air, Liquid, and Conduction cooling variants. Ref: sliceengineering.com/products/mosquito-magnum-plus
+- id: mosquito_magnum
+  name: Mosquito Magnum
+  manufacturer: Slice Engineering
+  meltzone_length: 30.0
+  max_volumetric_flow: 40.0
+  max_temp: 450
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6 (RepRap, 7mm thread, 12.5mm overall)
+  weight: 45.0
+  recommended_max_speed: 200
+  notes: |-
+    Extended melt zone Mosquito. Max flow ~40mm³/s from Slice Engineering support page. Predecessor to Magnum+. Ref: sliceengineering.com/products/mosquito-magnum-hotend, filastruder.com

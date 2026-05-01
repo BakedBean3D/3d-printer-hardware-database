@@ -1,0 +1,14 @@
+- id: red_lizard
+  name: Red Lizard
+  manufacturer: Mellow
+  meltzone_length: 28.0
+  max_volumetric_flow: 28.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 15.5
+  recommended_max_speed: 150
+  notes: |-
+    Budget Dragon HF clone by Mellow/Trianglelab. Max flow ~28mm³/s estimated (Dragon HF class). Bi-metal heatbreak, Dragon mounting. Ref: trianglelab.net

@@ -1,0 +1,14 @@
+- id: spider
+  name: Spider
+  manufacturer: Creality
+  meltzone_length: 27.8
+  max_volumetric_flow: 40.0
+  max_temp: 300
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 14.5
+  recommended_max_speed: 200
+  notes: |-
+    Water-cooled ceramic hotend. Max flow 40mm³/s from retailer specs. 30% increased melt zone, 40s to 200°C. Ref: 3djake.com/creality/spider

@@ -1,0 +1,14 @@
+- id: red_lizard_k1_hf
+  name: Red Lizard K1 HF
+  manufacturer: Haldis
+  meltzone_length: 30.0
+  max_volumetric_flow: 32.0
+  max_temp: 500
+  recommended_temp_pla: 210
+  recommended_temp_abs: 245
+  recommended_temp_petg: 240
+  nozzle_thread: M6
+  weight: 50.0
+  recommended_max_speed: 150
+  notes: |-
+    V6 groovemount. One-piece integrated nozzle+heatbreak. Two variants: standard (320°C) and high-temp (500°C, plated copper). 115W heater. Flow ~32mm³/s estimated. Weight ~50g estimated. Ref: 3dgadgets.my, forum.duet3d.com
