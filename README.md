@@ -25,8 +25,6 @@ extruders/               # Single file (community designs)
   extruders.yaml
 toolheads/               # Single file (community designs)
   toolheads.yaml
-performance_profiles/    # Single file (per-printer configs)
-  performance_profiles.yaml
 ```
 
 Hardware with clear brand ownership (motors, hotends, probes) is split by manufacturer — one file per brand. Community/open-source designs (extruders, toolheads) stay in a single file since "manufacturer" is often just a GitHub username.
