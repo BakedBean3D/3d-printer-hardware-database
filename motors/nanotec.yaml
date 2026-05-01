@@ -1,0 +1,17 @@
+- id: nanotec_st4209l1704_a
+  name: Nanotec-ST4209L1704-A
+  manufacturer: Nanotec
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 44.0
+  inductance_mh: 5.0
+  resistance_ohms: 1.8
+  step_angle: 0.9
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://en.nanotec.com/fileadmin/files/Datenblaetter/Schrittmotoren/ST4209/L/ST4209L1704-A.pdf
+  datasheet_url: |-
+    https://en.nanotec.com/fileadmin/files/Datenblaetter/Schrittmotoren/ST4209/L/ST4209L1704-A.pdf

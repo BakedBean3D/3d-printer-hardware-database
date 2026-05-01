@@ -13,3 +13,86 @@
   tooth_count: 0
   notes: |-
     0.9°/step motor (400 steps/rev vs 200). Most popular axis upgrade for Voron 2.4/Trident. Higher resolution reduces visible layer lines at moderate speeds. Rated 1.68A from Moons datasheet. Run current 1.1-1.3A for XY; lower for Z. Holding torque ~45 N·cm from Moons datasheet. Weight ~310g measured. NOTE: full_steps_per_rotation must be set to 400 in printer.cfg. Ref: moons-industries.com, west3d.com/products/moons-ms17ha2p4200
+- id: moons_ms14ha1p4150
+  name: Moons-MS14HA1P4150
+  manufacturer: Moons
+  frame_size: NEMA14
+  body_length_mm: 27.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 11.0
+  inductance_mh: 1.8
+  resistance_ohms: 1.55
+  step_angle: 0.9
+  weight: 12
+  tooth_count: 0
+  notes: |-
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha1p4150-000004611110015347
+  datasheet_url: |-
+    https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha1p4150-000004611110015347
+- id: moons_ms14ha3p4150
+  name: Moons-MS14HA3P4150
+  manufacturer: Moons
+  frame_size: NEMA14
+  body_length_mm: 36.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 18.0
+  inductance_mh: 2.2
+  resistance_ohms: 1.61
+  step_angle: 0.9
+  weight: 20
+  tooth_count: 0
+  notes: |-
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha3p4150-000004611110015351
+  datasheet_url: |-
+    https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha3p4150-000004611110015351
+- id: moons_ms17ha2p4150
+  name: Moons-MS17HA2P4150
+  manufacturer: Moons
+  frame_size: NEMA17
+  body_length_mm: 39.8
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 40.0
+  inductance_mh: 5.4
+  resistance_ohms: 1.98
+  step_angle: 0.9
+  weight: 57
+  tooth_count: 0
+  notes: |-
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-high-precision-hybrid-stepper-motors/ms17ha2p4150-000004611110015918
+  datasheet_url: |-
+    https://www.moonsindustries.com/p/nema-17-high-precision-hybrid-stepper-motors/ms17ha2p4150-000004611110015918
+- id: moons_ms17hdbp4100
+  name: Moons-MS17HDBP4100
+  manufacturer: Moons
+  frame_size: NEMA17
+  body_length_mm: 63.0
+  rated_current_amps: 1.0
+  recommended_run_current: 0.5
+  holding_torque_ncm: 82.0
+  inductance_mh: 14.6
+  resistance_ohms: 5.6
+  step_angle: 1.8
+  weight: 123
+  tooth_count: 0
+  notes: |-
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hdbp4100-000004611110008906
+  datasheet_url: |-
+    https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hdbp4100-000004611110008906
+- id: moons_ms14hs5p4150_11
+  name: Moons-MS14HS5P4150-11
+  manufacturer: Moons
+  frame_size: NEMA14
+  body_length_mm: 35.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 40.0
+  inductance_mh: 3.6
+  resistance_ohms: 2.2
+  step_angle: 1.8
+  weight: 35
+  tooth_count: 0
+  notes: |-
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: community spreadsheet, unverified

@@ -1,0 +1,17 @@
+- id: motech_mt_1704hsm168re
+  name: Motech-MT-1704HSM168RE
+  manufacturer: Motech
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 43.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.65
+  step_angle: 0.9
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://e3d-online.dozuki.com/Document/osnGcCIVUaHhhmwr/High_Torque_Axes_Datasheet.pdf
+  datasheet_url: |-
+    https://e3d-online.dozuki.com/Document/osnGcCIVUaHhhmwr/High_Torque_Axes_Datasheet.pdf

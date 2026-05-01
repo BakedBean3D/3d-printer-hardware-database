@@ -1,0 +1,15 @@
+- id: hanpose_23hs4128
+  name: Hanpose-23HS4128
+  manufacturer: Hanpose
+  frame_size: NEMA23
+  body_length_mm: 41.0
+  rated_current_amps: 2.8
+  recommended_run_current: 1.4
+  holding_torque_ncm: 55.0
+  inductance_mh: 1.4
+  resistance_ohms: 0.7
+  step_angle: 1.8
+  weight: 120
+  tooth_count: 0
+  notes: |-
+    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: community spreadsheet, unverified

@@ -163,3 +163,389 @@
   tooth_count: 0
   notes: |-
     Annex K-series motor. L = long cable variant. Rated 1.68A from part number. Run current 0.9-1.2A (application-dependent). Holding torque ~45 N·cm (estimated). Weight ~300g (estimated). Ref: Annex Engineering BOM
+- id: ldo_35sth48_1504ahvrn
+  name: LDO-35STH48-1504AH(VRN)
+  manufacturer: LDO
+  frame_size: NEMA14
+  body_length_mm: 52.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 37.0
+  inductance_mh: 3.8
+  resistance_ohms: 2.8
+  step_angle: 1.8
+  weight: 51
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 AB LDO. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_35sth48_1684ahvrn
+  name: LDO-35STH48-1684AHVRN
+  manufacturer: LDO
+  frame_size: NEMA14
+  body_length_mm: 48.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 40.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.65
+  step_angle: 1.8
+  weight: 49
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 AB. Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_36sth20_1004ahgxh
+  name: LDO-36STH20-1004AHG(XH)
+  manufacturer: LDO
+  frame_size: NEMA14
+  body_length_mm: 20.0
+  rated_current_amps: 1.0
+  recommended_run_current: 0.5
+  holding_torque_ncm: 10.0
+  inductance_mh: 1.6
+  resistance_ohms: 2.1
+  step_angle: 1.8
+  weight: 16
+  tooth_count: 0
+  notes: |-
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth20_1004ash
+  name: LDO-42STH20-1004ASH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 20.0
+  rated_current_amps: 1.0
+  recommended_run_current: 0.5
+  holding_torque_ncm: 18.0
+  inductance_mh: 7.0
+  resistance_ohms: 7.2
+  step_angle: 1.8
+  weight: 21
+  tooth_count: 0
+  notes: |-
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH20-1004ASHVRN-RevA.pdf?v=1595617057
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH20-1004ASHVRN-RevA.pdf?v=1595617057
+- id: ldo_42sth38_1684mac
+  name: LDO-42STH38-1684MAC
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 40.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 32.0
+  inductance_mh: 3.2
+  resistance_ohms: 1.65
+  step_angle: 0.9
+  weight: 54
+  tooth_count: 0
+  notes: |-
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH38-1684MAC_TIM_RevA.pdf?175
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH38-1684MAC_TIM_RevA.pdf?175
+- id: ldo_42sth40_1004mahvrn
+  name: LDO-42STH40-1004MAH(VRN)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 40.0
+  rated_current_amps: 1.0
+  recommended_run_current: 0.5
+  holding_torque_ncm: 39.0
+  inductance_mh: 11.5
+  resistance_ohms: 4.1
+  step_angle: 0.9
+  weight: 62
+  tooth_count: 0
+  notes: |-
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH40-1004MAHVRN-RevA.pdf?v=1595617094
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH40-1004MAHVRN-RevA.pdf?v=1595617094
+- id: ldo_42sth40_2004mahvrn
+  name: LDO-42STH40-2004MAH(VRN)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 40.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 35.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.1
+  step_angle: 0.9
+  weight: 71
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH40-2004MAH_VRN_RevA.pdf?v=1603743058
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH40-2004MAH_VRN_RevA.pdf?v=1603743058
+- id: ldo_42sth47_1684ac
+  name: LDO-42STH47-1684AC
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 49.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.65
+  step_angle: 1.8
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH47-1684AC_TIM_RevA.pdf?173
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH47-1684AC_TIM_RevA.pdf?173
+- id: ldo_42sth47_2504ac
+  name: LDO-42STH47-2504AC
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.5
+  recommended_run_current: 1.25
+  holding_torque_ncm: 53.9
+  inductance_mh: 1.8
+  resistance_ohms: 1.25
+  step_angle: 1.8
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth48_1684mah
+  name: LDO-42STH48-1684MAH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 1.68
+  recommended_run_current: 0.84
+  holding_torque_ncm: 39.0
+  inductance_mh: 2.8
+  resistance_ohms: 1.65
+  step_angle: 0.9
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH48-1684MAH_RevA.pdf?v=1586025853
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH48-1684MAH_RevA.pdf?v=1586025853
+- id: ldo_42sth48_2004acvrn
+  name: LDO-42STH48-2004AC(VRN)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 59.0
+  inductance_mh: 3.0
+  resistance_ohms: 1.6
+  step_angle: 1.8
+  weight: 85
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004ACVRN-RevA.pdf?v=1595616528
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004ACVRN-RevA.pdf?v=1595616528
+- id: ldo_42sth48_2004ah
+  name: LDO-42STH48-2004AH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 59.0
+  inductance_mh: 3.0
+  resistance_ohms: 1.4
+  step_angle: 1.8
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004AH-RevA.pdf?v=1589946895
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004AH-RevA.pdf?v=1589946895
+- id: ldo_42sth48_2004mahvrn
+  name: LDO-42STH48-2004MAH(VRN)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 40.0
+  inductance_mh: 2.0
+  resistance_ohms: 1.45
+  step_angle: 0.9
+  weight: 68
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth48_2504ac
+  name: LDO-42STH48-2504AC
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.5
+  recommended_run_current: 1.25
+  holding_torque_ncm: 55.0
+  inductance_mh: 1.5
+  resistance_ohms: 1.2
+  step_angle: 1.8
+  weight: 84
+  tooth_count: 0
+  notes: |-
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth48_2504ah
+  name: LDO-42STH48-2504AH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.5
+  recommended_run_current: 1.25
+  holding_torque_ncm: 55.0
+  inductance_mh: 1.5
+  resistance_ohms: 1.2
+  step_angle: 1.8
+  weight: 84
+  tooth_count: 0
+  notes: |-
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth60_2004ah
+  name: LDO-42STH60-2004AH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 60.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 83.0
+  inductance_mh: 3.3
+  resistance_ohms: 2.0
+  step_angle: 1.8
+  weight: 102
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004AH_51147be9-9853-4b4e-b6fd-36fb104d4b4d.pdf?v=1586025853
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004AH_51147be9-9853-4b4e-b6fd-36fb104d4b4d.pdf?v=1586025853
+- id: ldo_42sth60_2004mac_railcore
+  name: LDO-42STH60-2004MAC (Railcore)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 60.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 59.0
+  inductance_mh: 3.0
+  resistance_ohms: 1.4
+  step_angle: 0.9
+  weight: 120
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004MAC_RC_RevB.pdf?v=1585856919
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004MAC_RC_RevB.pdf?v=1585856919
+- id: ldo_42sth60_2004mah
+  name: LDO-42STH60-2004MAH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 60.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 58.8
+  inductance_mh: 3.0
+  resistance_ohms: 1.4
+  step_angle: 0.9
+  weight: 120
+  tooth_count: 0
+  notes: |-
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH60-2004MAH_RevA.pdf?v=1610998067
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH60-2004MAH_RevA.pdf?v=1610998067
+- id: ldo_57sth41_2804machev
+  name: LDO-57STH41-2804MAC(HEV)
+  manufacturer: LDO
+  frame_size: NEMA23
+  body_length_mm: 41.0
+  rated_current_amps: 2.8
+  recommended_run_current: 1.4
+  holding_torque_ncm: 60.0
+  inductance_mh: 1.4
+  resistance_ohms: 0.7
+  step_angle: 0.9
+  weight: 120
+  tooth_count: 0
+  notes: |-
+    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: https://caribou3d.com/en/hevort/844-09-stepper-motor-ldo-57sth41-2804machev.html
+  datasheet_url: https://caribou3d.com/en/hevort/844-09-stepper-motor-ldo-57sth41-2804machev.html
+- id: ldo_57sth56_2804macrc
+  name: LDO-57STH56-2804MAC(RC)
+  manufacturer: LDO
+  frame_size: NEMA23
+  body_length_mm: 56.0
+  rated_current_amps: 2.8
+  recommended_run_current: 1.4
+  holding_torque_ncm: 120.0
+  inductance_mh: 3.4
+  resistance_ohms: 1.1
+  step_angle: 0.9
+  weight: 305
+  tooth_count: 0
+  notes: |-
+    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-57STH56-2804MAC_RC_RevA.pdf?3654
+  datasheet_url: |-
+    https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-57STH56-2804MAC_RC_RevA.pdf?3654
+- id: ldo_42sth48_2504macf
+  name: LDO-42STH48-2504MAC(F)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.5
+  recommended_run_current: 1.25
+  holding_torque_ncm: 45.0
+  inductance_mh: 1.5
+  resistance_ohms: 1.2
+  step_angle: 0.9
+  weight: 85
+  tooth_count: 0
+  notes: |-
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_42sth60_3004ahs37
+  name: LDO-42STH60-3004AH(S37)
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 60.0
+  rated_current_amps: 3.0
+  recommended_run_current: 1.5
+  holding_torque_ncm: 80.0
+  inductance_mh: 1.6
+  resistance_ohms: 1.0
+  step_angle: 1.8
+  weight: 100
+  tooth_count: 0
+  notes: |-
+    Common use: V2 Kraken. Rated 3.0A RMS. Run current 1.5A (50% rated, conservative start). Ref: https://www.ldomotors.com
+  datasheet_url: https://www.ldomotors.com
+- id: ldo_42sth48_2804ah
+  name: LDO-42STH48-2804AH
+  manufacturer: LDO
+  frame_size: NEMA17
+  body_length_mm: 48.0
+  rated_current_amps: 2.8
+  recommended_run_current: 1.4
+  holding_torque_ncm: 42.0
+  inductance_mh: 0.6
+  resistance_ohms: 0.7
+  step_angle: 1.8
+  weight: 84
+  tooth_count: 0
+  notes: |-
+    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: community spreadsheet, unverified
+- id: ldo_35sth52_2004ah
+  name: LDO-35STH52-2004AH
+  manufacturer: LDO
+  frame_size: NEMA14
+  body_length_mm: 35.0
+  rated_current_amps: 2.0
+  recommended_run_current: 1.0
+  holding_torque_ncm: 40.0
+  inductance_mh: 2.1
+  resistance_ohms: 1.34
+  step_angle: 1.8
+  weight: 40
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified

@@ -1,0 +1,83 @@
+- id: fysetc_35hsh7402_24b_400a
+  name: FYSETC-35HSH7402-24B-400A
+  manufacturer: FYSETC
+  frame_size: NEMA14
+  body_length_mm: 51.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 42.0
+  inductance_mh: 5.5
+  resistance_ohms: 2.8
+  step_angle: 1.8
+  weight: 48
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 AB. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/35HSH7402-24B-400A.pdf
+  datasheet_url: |-
+    https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/35HSH7402-24B-400A.pdf
+- id: fysetc_42hsc1404b_200n8
+  name: FYSETC-42HSC1404B-200N8
+  manufacturer: FYSETC
+  frame_size: NEMA14
+  body_length_mm: 34.5
+  rated_current_amps: 0.4
+  recommended_run_current: 0.2
+  holding_torque_ncm: 32.0
+  inductance_mh: 38.0
+  resistance_ohms: 29.0
+  step_angle: 1.8
+  weight: 40
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 Z. Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/42HSC1404B-200N8.pdf
+  datasheet_url: |-
+    https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/42HSC1404B-200N8.pdf
+- id: fysetc_g36hsy4407_6d_550
+  name: FYSETC-G36HSY4407-6D-550
+  manufacturer: FYSETC
+  frame_size: NEMA14
+  body_length_mm: 20.5
+  rated_current_amps: 0.5
+  recommended_run_current: 0.25
+  holding_torque_ncm: 12.0
+  inductance_mh: 10.0
+  resistance_ohms: 13.0
+  step_angle: 1.8
+  weight: 15
+  tooth_count: 0
+  notes: |-
+    Common use: V0.1 Extruder. Rated 0.5A RMS. Run current 0.25A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/G36HSY4407-6D-550.pdf
+  datasheet_url: |-
+    https://github.com/FYSETC/FYSETC-Voron-0/blob/main/Docs/Stepper%20motor%20parameters/G36HSY4407-6D-550.pdf
+- id: fysetc_msm_30010_r0005
+  name: FYSETC-MSM-30010-R0005
+  manufacturer: FYSETC
+  frame_size: NEMA17
+  body_length_mm: 20.0
+  rated_current_amps: 1.0
+  recommended_run_current: 0.5
+  holding_torque_ncm: 14.0
+  inductance_mh: 3.6
+  resistance_ohms: 4.1
+  step_angle: 1.8
+  weight: 0
+  tooth_count: 0
+  notes: |-
+    Common use: V2.4 Extruder. Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Extruder.pdf
+  datasheet_url: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Extruder.pdf
+- id: fysetc_tb_3544
+  name: FYSETC-TB-3544
+  manufacturer: FYSETC
+  frame_size: NEMA17
+  body_length_mm: 39.0
+  rated_current_amps: 1.5
+  recommended_run_current: 0.75
+  holding_torque_ncm: 50.0
+  inductance_mh: 3.8
+  resistance_ohms: 1.8
+  step_angle: 1.8
+  weight: 55
+  tooth_count: 0
+  notes: |-
+    Common use: V2.4 ABZ. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Others.pdf
+  datasheet_url: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Others.pdf
