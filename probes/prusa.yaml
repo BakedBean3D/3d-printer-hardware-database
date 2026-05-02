@@ -1,0 +1,12 @@
+- id: superpinda
+  name: SuperPinda
+  type: Inductive
+  manufacturer: Prusa Research
+  accuracy: 0.01
+  repeatability: 0.005
+  z_offset_typical: -1.0
+  speed: 5
+  samples: 3
+  sample_retract_dist: 2.0
+  notes: |-
+    Inductive probe with temperature compensation (thermistor-corrected Z drift). Popular on RatRig VCore builds. Accuracy ~0.01mm. Temp compensation reduces Z drift from ~0.1mm/10°C to <0.02mm/10°C. Verified from Prusa datasheet and community testing on RatRig builds.

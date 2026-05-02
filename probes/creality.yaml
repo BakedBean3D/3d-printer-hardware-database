@@ -1,0 +1,12 @@
+- id: crtouch
+  name: CRTouch
+  type: Contact Deploy
+  manufacturer: Creality
+  accuracy: 0.02
+  repeatability: 0.01
+  z_offset_typical: -1.5
+  speed: 5
+  samples: 3
+  sample_retract_dist: 5.0
+  notes: |-
+    BLTouch-compatible metal-pin probe by Creality. Uses strain gauge instead of hall effect. Accuracy ~0.02mm. More durable pin than BLTouch plastic. Verified from Creality product specs and community testing.

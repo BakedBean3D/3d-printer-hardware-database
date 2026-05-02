@@ -60,10 +60,10 @@
   inductance_mh: 3.6
   resistance_ohms: 4.1
   step_angle: 1.8
-  weight: 0
+  weight: 120.0
   tooth_count: 0
   notes: |-
-    Common use: V2.4 Extruder. Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Extruder.pdf
+    Common use: V2.4 Extruder. Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Weight estimated from NEMA17 20mm pancake class. Ref: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Extruder.pdf
   datasheet_url: https://github.com/FYSETC/FYSETC-Voron-2/blob/main/Motors/Extruder.pdf
 - id: fysetc_tb_3544
   name: FYSETC-TB-3544

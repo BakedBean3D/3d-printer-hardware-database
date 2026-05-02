@@ -1,0 +1,18 @@
+- id: sprite_extruder
+  name: Sprite Extruder
+  manufacturer: Creality
+  type: Direct Drive
+  gear_ratio: "3.5:1"
+  steps_per_mm: 424.0
+  rotation_distance: 4.717
+  uses_gear_ratio_in_config: false
+  motor: Integrated 36mm pancake
+  motor_id: null
+  motor_current: 0.6
+  max_speed: 80
+  max_accel: 1500
+  weight: 340.0
+  filament_path_length: 32.0
+  recommended_pressure_advance: 0.04
+  notes: |-
+    Creality's direct-drive extruder for Ender-3 S1/S1 Pro. Dual-gear, all-metal design. 3.5:1 gear ratio with integrated stepper. Max flow limited by hotend (~12mm³/s stock). Verified from Creality specs and community measurements.
