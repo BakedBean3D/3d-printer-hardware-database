@@ -175,9 +175,7 @@ fi
 git add -A
 git commit -m "feat: Add $ENTRIES_ADDED hardware entries from $DATE watch report
 
-Source: Hardware_Watch_$DATE.md (human-reviewed, marked [PASS])
-
-Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+Source: Hardware_Watch_$DATE.md (human-reviewed, marked [PASS])"
 
 git push -u origin "$BRANCH"
 
