@@ -1,6 +1,7 @@
 - id: beacon
   name: Beacon
   type: Inductive/Eddy Current
+  scanning_capable: true
   accuracy: 0.0005
   repeatability: 0.0004
   z_offset_typical: 0.0

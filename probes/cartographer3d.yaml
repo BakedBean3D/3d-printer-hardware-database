@@ -1,6 +1,7 @@
 - id: cartographer
   name: Cartographer
   type: Inductive Scanning
+  scanning_capable: true
   accuracy: 0.003
   repeatability: 0.001
   z_offset_typical: 0.0

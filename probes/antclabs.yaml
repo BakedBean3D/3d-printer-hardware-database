@@ -1,6 +1,7 @@
 - id: bltouch
   name: BLTouch
   type: Contact Deploy
+  scanning_capable: false
   accuracy: 0.02
   repeatability: 0.005
   z_offset_typical: -2.0

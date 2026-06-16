@@ -1,6 +1,7 @@
 - id: tap
   name: Voron TAP
   type: Contact/Kinematic
+  scanning_capable: false
   accuracy: 0.005
   repeatability: 0.0008
   z_offset_typical: 0.0
