@@ -141,4 +141,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or correcting ha
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This is an **open database**, dual-licensed so it can be used freely — including in
+commercial and freemium tools — while staying open and attributed:
+
+| What | License |
+|---|---|
+| **Database** (structure, selection, arrangement) | [**ODbL-1.0**](LICENSE) |
+| **Contents** (the individual records / specs) | [**DbCL-1.0**](LICENSE-DbCL) |
+| **Code** (`gen.py`, `convert_data.py`, scripts) | [**MIT**](LICENSE-CODE) |
+
+You may build apps and generate parts (STL/STEP/3MF, layouts, BOMs) from this data,
+commercially, without open-sourcing your app. In return you must **attribute** the
+database and keep any **modified copy of the database itself** open under ODbL
+(share-alike applies to the database, not to your app or generated parts).
+
+See **[DATA_LICENSE.md](DATA_LICENSE.md)** for the full explanation, your exact
+obligations, and the attribution string to copy. By contributing you agree to license
+your contribution under these same terms.
+
+> Attribution: *Contains data from the 3D Printer Hardware Database © BakedBean3D,
+> licensed under ODbL-1.0 (database) and DbCL-1.0 (contents).*

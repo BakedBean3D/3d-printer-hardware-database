@@ -64,6 +64,14 @@ Run the schema validator before submitting:
 python scripts/validate.py
 ```
 
+## Licensing of contributions
+
+By submitting a contribution you agree to license it under this project's terms:
+**data** records under **ODbL-1.0** (database) + **DbCL-1.0** (contents), and any
+**code** under **MIT** — see [DATA_LICENSE.md](DATA_LICENSE.md). Only contribute
+specifications you have the right to share; prefer vendor datasheets and official
+mechanical drawings, and cite the source in the record's `notes`/`sources`.
+
 ## Code of Conduct
 
 Be respectful. We're all here to help each other build better printers.

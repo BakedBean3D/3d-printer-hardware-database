@@ -66,6 +66,8 @@ def write_md(boards):
     L.append(f"- **Total boards:** {len(boards)}")
     L.append(f"- **Confidence:** {conf.get('high',0)} high · {conf.get('medium',0)} medium · {conf.get('low',0)} low")
     L.append(f"- **Aggregate for code:** `controller_boards.json`")
+    L.append("- **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. "
+             "See [`DATA_LICENSE.md`](../DATA_LICENSE.md).")
     L.append("")
     L.append("## Conventions")
     L.append("")

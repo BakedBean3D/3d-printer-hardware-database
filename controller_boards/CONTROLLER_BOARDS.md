@@ -5,6 +5,7 @@
 - **Total boards:** 95
 - **Confidence:** 46 high · 30 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
+- **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
 ## Conventions
 
