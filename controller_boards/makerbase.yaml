@@ -1,0 +1,169 @@
+# Makerbase (MKS) controller and toolhead boards
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: mks_robin_nano_v3
+  name: MKS Robin Nano V3.x
+  manufacturer: Makerbase
+  category: mainboard
+  pcb_length_mm: 110.0
+  pcb_width_mm: 84.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.4
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 102.0
+  mount_pitch_y_mm: 76.5
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 3.75
+  - - 106.0
+    - 3.75
+  - - 4.0
+    - 80.25
+  - - 106.0
+    - 80.25
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/makerbase-mks/MKS-Robin-Nano-V3.X/blob/main/hardware/MKS%20Robin%20Nano%20V3.1_001/MKS%20Robin%20Nano%20V3.1_001%20SIZE.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + hole Ø annotated in SIZE.pdf. Thickness
+    not annotated (1.6 mm assumed). Mounting: V3.0 and V3.1 share this outline. Hole Ø annotated 3.40
+    mm (M3 clearance). Source: https://github.com/makerbase-mks/MKS-Robin-Nano-V3.X/blob/main/hardware/MKS%20Robin%20Nano%20V3.1_001/MKS%20Robin%20Nano%20V3.1_001%20SIZE.pdf'
+- id: mks_skipr
+  name: MKS SKIPR V1.0
+  manufacturer: Makerbase
+  category: mainboard
+  pcb_length_mm: 160.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 152.0
+  mount_pitch_y_mm: 92.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 156.0
+    - 4.0
+  - - 4.0
+    - 96.0
+  - - 156.0
+    - 96.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: SBC-style I/O cluster (USB / HDMI / Ethernet) along one long edge; verify connector-side
+    clearance for cabling.
+  sources:
+  - https://github.com/makerbase-mks/MKS-SKIPR/blob/main/hardware/MKS%20SKIPR%20V1.0_002/MKS%20SKIPR%20V1.0_002%20SIZE.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + hole Ø annotated in SIZE.pdf. Thickness
+    not annotated. Mounting: Klipper SBC+MCU combo board. Hole Ø annotated Ø3.2 (M3). Source: https://github.com/makerbase-mks/MKS-SKIPR/blob/main/hardware/MKS%20SKIPR%20V1.0_002/MKS%20SKIPR%20V1.0_002%20SIZE.pdf'
+- id: mks_monster8_v2
+  name: MKS Monster8 V2.0
+  manufacturer: Makerbase
+  category: mainboard
+  pcb_length_mm: 160.0
+  pcb_width_mm: 90.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 152.0
+  mount_pitch_y_mm: 82.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 156.0
+    - 4.0
+  - - 4.0
+    - 86.0
+  - - 156.0
+    - 86.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/makerbase-mks/MKS-Monster8/blob/main/hardware/MKS%20Monster8%20V2.0_003/MKS%20Monster8%20V2.0_003%20SIZE.pdf
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Outline + hole XY high confidence.
+    Hole Ø (3.2 mm) is INFERRED, not annotated -- confirm against a Gerber/STEP before relying on hole
+    diameter. Thickness not annotated. Mounting: Outline and hole positions are high confidence. Hole
+    DIAMETER is NOT numerically annotated in the SIZE.pdf (unlike Robin Nano/SKIPR); 3.2 mm / M3 inferred
+    from pad geometry and board class -- see verify_notes. Source: https://github.com/makerbase-mks/MKS-Monster8/blob/main/hardware/MKS%20Monster8%20V2.0_003/MKS%20Monster8%20V2.0_003%20SIZE.pdf'
+- id: mks_thr42
+  name: MKS THR42 V1.0
+  manufacturer: Makerbase
+  category: toolhead_can
+  pcb_length_mm: 42.0
+  pcb_width_mm: 42.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 31.0
+  mount_pitch_y_mm: 31.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 9.0
+    - 8.94
+  - - 40.0
+    - 8.94
+  - - 9.0
+    - 39.94
+  - - 40.0
+    - 39.94
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/makerbase-mks/MKS-THR36-THR42-UTC/blob/main/hardware/MKS%20THR42%20V1.0_001/PCB%20%20MKS%20THR42%20V1.0_001%20SIZE.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline, 31x31 pitch, hole Ø all annotated in
+    SIZE.pdf. holes_xy positions derived from annotated insets; confirm against the repo STEP if exact
+    XY matters. Thickness not annotated. Mounting: Square 31x31 mm = NEMA17 face bolt pattern; bolts directly
+    onto a NEMA17 stepper. Hole Ø annotated 3.20 mm (M3). holes_xy derived from annotated 9.0 mm left
+    inset + 8.94 mm bottom inset + 31 mm pitch -- a STEP file ships in the same repo folder for exact
+    coordinates. (Sibling MKS THR36 is a round R=25 mm board with a different pattern.) Source: https://github.com/makerbase-mks/MKS-THR36-THR42-UTC/blob/main/hardware/MKS%20THR42%20V1.0_001/PCB%20%20MKS%20THR42%20V1.0_001%20SIZE.pdf'
+- id: mks_canable_v2
+  name: MKS CANable V2.0
+  manufacturer: Makerbase
+  category: usb_can_bridge
+  pcb_length_mm: 45.0
+  pcb_width_mm: 16.2
+  pcb_thickness_mm: 1.6
+  mount_screw: M2
+  mount_hole_dia_mm: 2.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 34.7
+  mount_pitch_y_mm: 12.6
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 9.0
+    - 1.8
+  - - 43.7
+    - 1.8
+  - - 9.0
+    - 14.4
+  - - 43.7
+    - 14.4
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 4
+  component_height_top_mm: null
+  connector_notes: USB on one short edge, CAN terminal/connector on the other.
+  sources:
+  - https://github.com/makerbase-mks/CANable-MKS/blob/main/Hardware/MKS%20CANable%20V2.0/MKS%20CANable%20V2.0_001%20size.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Fully dimensioned drawing, all values annotated.
+    Thickness not annotated. Mounting: USB-CAN adapter. Fully dimensioned drawing. Holes are M2 (Ø2.20),
+    NOT M3. Left holes 9.0 mm in from left edge; right holes 1.3 mm in from right edge (43.7 mm from left);
+    X pitch = 34.7 mm. Y span 12.6 mm, ~1.8 mm inset top/ bottom. CANable V1.0 and Pro-V1.0 are separate
+    boards (not measured here). Source: https://github.com/makerbase-mks/CANable-MKS/blob/main/Hardware/MKS%20CANable%20V2.0/MKS%20CANable%20V2.0_001%20size.pdf'

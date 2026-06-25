@@ -1,0 +1,422 @@
+# Fysetc controller boards and toolhead CAN boards
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: fysetc_spider_v1_x
+  name: Spider V1.x
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 155.3
+  pcb_width_mm: 76.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F446 mainboard for Voron 2.4 / Trident; 8 driver sockets. Tallest components are
+    the driver heatsinks and electrolytic caps; top clearance not vendor-specified.
+  sources:
+  - https://wiki.fysetc.com/Spider/
+  - https://github.com/FYSETC/FYSETC-SPIDER (hardware/V1.x designator diagrams)
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki).
+    Hole pattern/pitch unverified — measure a board or the V1.x designator diagram before cutting standoffs.
+    Mounting: 4 mounting holes, one near each corner (visible on the official Spider V1.0C/V1.1 Designator
+    Diagram PDFs). FYSETC does not publish exact hole coordinates. Hole diameter assumed M3 clearance
+    (~3.2 mm) from community Spider mounts; not vendor-stated. V1.0/V1.1 differ electrically (5V@8A DC-DC)
+    but share the Spider PCB outline. Source: https://wiki.fysetc.com/Spider/'
+- id: fysetc_spider_v2_2
+  name: Spider V2.2
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 155.3
+  pcb_width_mm: 76.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F446 180MHz. 8 driver sockets. Identical footprint family to other Spider revs.
+  sources:
+  - https://wiki.fysetc.com/Spider/
+  - https://github.com/FYSETC/FYSETC-SPIDER (hardware/V2.2)
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki
+    "155.3mm x 76.5mm"). 4-hole rectangular pattern confirmed from vendor designator PDF; pitch not measurable
+    from that PDF — verify before use. Mounting: 4 corner mounting holes confirmed visually on the official
+    "Spider V2.2 Designator Diagram.pdf". Same PCB outline as V1.x/V2.3/V3.0. Exact hole coordinates not
+    published by FYSETC; pitch left null rather than guessed. Source: https://wiki.fysetc.com/Spider/'
+- id: fysetc_spider_v3_0
+  name: Spider V3 (V3.0)
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 155.3
+  pcb_width_mm: 76.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F446 V3.0. Same mounting footprint as V1.x/V2.x Spider per shared Voron wiring
+    docs.
+  sources:
+  - https://wiki.fysetc.com/Spider/
+  - https://github.com/FYSETC/FYSETC-SPIDER (hardware/V3.0)
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence. Pitch
+    unverified. "V3" without H7 suffix = STM32F446; do not confuse with Spider V3.0 H7 (separate repo
+    FYSETC-SPIDER-H7) which shares the outline. Mounting: Drop-in replacement for earlier Spider revs
+    sharing the 155.3 x 76.5 mm outline and the Voron 2.4 R2 / Trident wiring. STM32F446 (and an H7 variant,
+    see fysetc_spider_v3_h7). 4 corner holes; exact coordinates not vendor-published. Source: https://wiki.fysetc.com/Spider/'
+- id: fysetc_spider_v3_h7
+  name: Spider V3.0 H7
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 155.3
+  pcb_width_mm: 76.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32H723VGT6. Same Spider footprint as F446 versions.
+  sources:
+  - https://www.fysetc.com/products/fysetc-spider-v3-0-h7-32-bit-motherboard
+  - https://github.com/FYSETC/FYSETC-SPIDER-H7
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size inherited from Spider
+    line (high-confidence). Pitch unverified. Included because the task asked for "king/v3" and notable
+    current Spider variants. Mounting: STM32H723 550MHz variant of the Spider, same Spider PCB outline
+    and Voron mounting. Separate hardware repo (FYSETC-SPIDER-H7) but FYSETC markets it as form-factor
+    compatible with the standard Spider. Hole coordinates not published. Source: https://www.fysetc.com/products/fysetc-spider-v3-0-h7-32-bit-motherboard'
+- id: fysetc_spider_king_v1
+  name: Spider King V1.0
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 177.0
+  pcb_width_mm: 108.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Up to 10 stepper drivers, isolated CAN, ESP32/WiFi, multiple Pi links. Large board.
+  sources:
+  - https://wiki.fysetc.com/FYSETC-SPIDER-KING/
+  - https://github.com/FYSETC/FYSETC-SPIDER-KING
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki
+    "177mm*108mm"). Hole pattern entirely unverified — null. thickness_mm assumed 1.6 (typical), not vendor-stated.
+    Mounting: 10-axis industrial mainboard with swappable "King" MCU core (RP2040 / F446 / F407 / H7xx).
+    Wiki states "very small size of 177mm*108mm". Mounting hole count/pattern not published. Source: https://wiki.fysetc.com/FYSETC-SPIDER-KING/'
+- id: fysetc_spider_pro_v1_2
+  name: Spider Pro V1.2
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 179.0
+  pcb_width_mm: 109.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 92.0
+  mount_pitch_y_mm: 92.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 33.76
+    - 14.2
+  - - 33.76
+    - 106.2
+  - - 125.76
+    - 14.2
+  - - 125.76
+    - 106.2
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Spider Pro is the higher-spec Spider with onboard isolated CAN etc.
+  sources:
+  - https://github.com/FYSETC/Spider_Pro/blob/main/Hardware/SPIDER_PRO_V1.2_CAD.dxf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). length/width and the 92x92 mm 4-hole pattern
+    measured from vendor DXF (high). Hole-center origin is the DXF frame, not necessarily PCB corner —
+    re-zero to the OUTLINE bbox before use. Mounting: Measured directly from the vendor CAD file SPIDER_PRO_V1.2_CAD.dxf.
+    PCB OUTLINE layer bbox = 179.0 x 109.0 mm. Four mounting holes form a 92 x 92 mm rectangular pattern
+    at the listed centers (origin = DXF coordinate frame, NOT guaranteed to be the bottom-left PCB corner;
+    the outline starts near X=26.8/Y=5.7 in the same frame, so subtract that offset if you need corner-relative
+    coords). The hole circles read r=3.1 mm (copper ring/keepout); actual drill is M3 clearance (~3.2
+    mm). Two additional r=3.0 holes near the right edge at ~(201.7,18.3)/(201.7,102.1) appear to be secondary
+    fixings. Spider Pro is a LARGER board than the standard Spider (155.3x76.5) — do not interchange mounts.
+    Source: https://github.com/FYSETC/Spider_Pro/blob/main/Hardware/SPIDER_PRO_V1.2_CAD.dxf'
+- id: fysetc_s6_v1_2
+  name: S6 V1.2
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 117.0
+  pcb_width_mm: 87.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F446VET6, 6 driver sockets, XH connectors.
+  sources:
+  - https://wiki.fysetc.com/FYSETC_S6/
+  - https://github.com/FYSETC/FYSETC-S6
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki).
+    Hole pattern unverified (null). Shares footprint with FYSETC F6. Mounting: Wiki: "Compact size: 117mm
+    x 87mm, Same as F6" — shares the FYSETC F6 PCB outline, so F6 mounts/holders fit. Mounting hole count
+    and spacing not published by FYSETC; many Thingiverse F6 cases work. V1.2 and V2.1 share this outline.
+    Source: https://wiki.fysetc.com/FYSETC_S6/'
+- id: fysetc_cheetah_v2_0
+  name: Cheetah V2.0
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 101.5
+  pcb_width_mm: 72.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F401, 4x onboard 2209, EXP display headers, used on Voron 0.1.
+  sources:
+  - https://wiki.fysetc.com/Cheetah_Board_V20/
+  - https://github.com/FYSETC/FYSETC-Cheetah-v2
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence. Hole
+    pattern = Creality Ender 3 footprint (vendor-stated compatibility) but exact coordinates not given
+    by FYSETC — cross-check against an Ender 3 board template before cutting. Mounting: Wiki: "101.5mm
+    x 72mm, Compatible with the Creality ender 3 motherboard size". COPIES the Creality Ender 3 / Ender
+    5 mounting footprint (4 holes), so Ender 3 board mounts fit. FYSETC does not restate the Ender 3 hole
+    coordinates; use the documented Ender 3 board pattern. STM32F401, 4x onboard TMC2209. Source: https://wiki.fysetc.com/Cheetah_Board_V20/'
+- id: fysetc_cheetah_v3_0
+  name: Cheetah V3.0
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: 101.5
+  pcb_width_mm: 72.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: STM32F446 180MHz, BLTouch + CAN headers, 5V@SBC power, multi-voltage fans, EXP1/EXP2.
+  sources:
+  - https://wiki.fysetc.com/Cheatah_Board_V30/
+  - https://github.com/FYSETC/Cheetah_V3.0 (Hardware/CHEETAH V3.0 Position.pdf, Cheetah_V3.0.step)
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence. Hole
+    pattern = Ender 3/5 footprint (vendor-stated). A Cheetah_V3.0.step file exists in the repo for exact
+    hole extraction; raw point-cloud bbox was noisy here, so coordinates left null rather than reported
+    wrong. Mounting: Wiki: "101.5mm x 72mm, Compatible with the Creality ender 3/ender5 motherboard size".
+    Four-layer TG155 FR4. Same Ender 3/5 mounting footprint as V2.0; pinout differs (not config-compatible
+    with V2). 4 corner holes visible on the V3.0 Position PDF. Exact hole coordinates not published —
+    use the Ender 3 board pattern. Source: https://wiki.fysetc.com/Cheatah_Board_V30/'
+- id: fysetc_catalyst_v2_0
+  name: Catalyst V2.0
+  manufacturer: Fysetc
+  category: mainboard
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: CM68 (RK3568) SBC carrier + STM32 motion MCU, 4x driver, 15A bed MOS, multi-voltage
+    fans. Mounts in Voron 0 with a printed mount/shim (community mounts exist on Printables).
+  sources:
+  - https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)
+  - https://www.fysetc.com/products/fysetc-catalyst-motherboard-based-on-arm-a55-m4-support-spi-and-uart-for-tmc2209-voron-v0-high-quality-3d-printer-parts
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). PCB length/width and hole pitch
+    NOT found in any authoritative source — measure the board or open hardware/CATALYST Board V2.0 STEP.rar.
+    Only confirmed: M3 4-corner holes (from PinsOut.png), Voron 0 mounting context, ~6 mm board stack
+    + 1.6 mm PCB. DO NOT design a mount from this entry without measuring. Mounting: Voron 0 dedicated
+    board (CM68 Cortex-A55 SBC carrier + STM32F401/F446, 4x stepstick). Designed to mount in the Voron
+    0 electronics location; the product page notes the V0 mount is 15 mm from plate, board adds 6 mm +
+    1.6 mm so a shim is used. 4 corner mounting holes visible on CATALYST V2.0 PinsOut.png. FYSETC did
+    NOT publish PCB length/width or hole pitch anywhere found; a CAD STEP (CATALYST Board V2.0 STEP.rar)
+    and an interactive 3D PDF exist in the repo but no dimensioned drawing. Left null rather than guessed.
+    Source: https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)'
+- id: fysetc_sb_can_toolhead
+  name: SB CAN Toolhead (V1.1 / V1.3)
+  manufacturer: Fysetc
+  category: toolhead_can
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: STM32F072, onboard 2209, ADXL345, Micro-USB (firmware/DFU), HE0 (XH2.54 2P, 4A), CAN.
+    Mounts behind the Stealthburner front; 2.5 m 4-core CAN cable included.
+  sources:
+  - https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead V1.1 Position.pdf)
+  - https://wiki.fysetc.com/SB%20CAN%20ToolHead/
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Footprint = Voron Stealthburner
+    SB-board (2x M3 heat-set holes) per wiki install text — call out as a copied/standard Stealthburner
+    footprint. Exact PCB size and 2-hole spacing NOT reliably extracted; pull from SB CAN TOOLHEAD V1.1.DXF
+    / V1.3.step or measure before use. Mounting: STM32F072 Stealthburner CAN toolhead board (onboard TMC2209
+    + ADXL345), the FYSETC equivalent of the BTT EBB SB2209/SB2240 class. Wiki install step states "Your
+    Stealthburner should have two holes with heat inserts on" — i.e. it mounts to the standard Voron Stealthburner
+    toolhead with 2x M3 heat-set inserts (the Stealthburner SB-board footprint). FYSETC ships SB CAN TOOLHEAD
+    V1.1.DXF and V1.1/V1.3 STEP files, but no dimensioned drawing; the DXF/STEP geometry was too noisy
+    (cable model included) to extract a reliable PCB outline or exact 2-hole spacing here, so length/width
+    and pitch are null. Source: https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead
+    V1.1 Position.pdf)'
+- id: fysetc_ucan_v1_0
+  name: UCAN V1.0
+  manufacturer: Fysetc
+  category: usb_can_bridge
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: other
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: USB-C (PA11/PA12) one end, CAN (PA8/PA9) the other, status LEDs. No mounting hardware.
+  sources:
+  - https://wiki.fysetc.com/UCAN/
+  - https://github.com/FYSETC/UCAN (CAD/UCAN_ V1.0.step, Hardware/UCAN V1.0 Component Position.pdf)
+  - https://www.fysetc.com/products/fysetc-ucan-board
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). No mounting pattern (dongle)
+    — high-confidence there are no screw holes per the position drawing. PCB length/width NOT published;
+    open CAD/UCAN_ V1.0.step or measure. Typical units of this class are roughly 36 x 12 mm but THIS IS
+    NOT VENDOR-CONFIRMED — left null. Mounting: Small open-source USB-C-to-CAN bridge dongle (STM32F072CBT6,
+    candleLight firmware). It is a long, thin USB-stick-form board with USB-C on one end and a CAN connector/JST
+    on the other. The Component Position drawing shows NO dedicated screw mounting holes (the large circles
+    on the silk are corner copper/keepout zones, not mounting holes) — this is a free-floating dongle,
+    not a panel-mount board. PCB outline dimensions are not published in any spec line; a UCAN_ V1.0.step
+    CAD file exists in the repo but raw extraction was unreliable. Source: https://wiki.fysetc.com/UCAN/'
+- id: fysetc_mini12864_rgb_v2_1
+  name: Mini12864 Panel (RGB) V2.1
+  manufacturer: Fysetc
+  category: accessory
+  pcb_length_mm: 104.99
+  pcb_width_mm: 47.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 41.0
+  mount_pitch_y_mm: 93.0
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Sitronix ST7567 128x64 LCD with RGB indicator, SD card slot (side or vertical), SPI
+    to host, 2x EXP ribbon headers. 3D-printable case/mount STLs available.
+  sources:
+  - https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)
+  - https://wiki.fysetc.com/Mini12864_Panel/
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). length/width and 41 x 93 mm 4-hole pattern read
+    directly off the vendor dimensioned drawing (high). Standard Mini12864 footprint — interchangeable
+    with BTT/Voron Mini12864 mounts. Hole diameter (3.2) inferred, not annotated. Mounting: Measured directly
+    from the vendor dimensional drawing 12864mini(RGB)_V2.1_dwg.pdf. PCB = 104.99 mm (long) x 47 mm (wide).
+    Four mounting holes in a rectangular pattern: 41 mm horizontal pitch x 93 mm vertical pitch (callouts
+    read "41", "93", "104,99", "47" on the drawing). This is the standard Mini12864 display footprint
+    — COMPATIBLE with the BTT Mini12864 / Voron-spec Mini12864 mounts and cases. Hole dia assumed M3 clearance
+    (~3.2 mm); drawing did not annotate hole diameter. V2.0 shares the same outline (separate dwg in repo).
+    Source: https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)'
+- id: fysetc_erb
+  name: ERB (Enraged Rabbit Burrow Board)
+  manufacturer: Fysetc
+  category: toolhead_can
+  pcb_length_mm: 91.0
+  pcb_width_mm: 35.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: other
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: RP2040-based ERCF controller (the 'Burrow' board). V2 adds CANBUS, 20x30 heatsink,
+    4-pin Power+USB/CAN connector. Drives ERCF steppers/servo/sensors. Designed as drop-in replacement
+    footprint compatible with the ERCF EASY-BRD 'Rabbit Burrow' mount.
+  sources:
+  - https://github.com/FYSETC/FYSETC-ERB
+  - https://www.amazon.com/FYSETC-91x35mm-Motherboard-Compatible-Accessories/dp/B0BKKMYN4J
+  confidence: medium
+  notes: 'No .kicad_pcb published: repo ships only DWG (binary), 3D PDF, GERBER.rar and STEP. Outline
+    91x35mm from vendor listing (Amazon FYSETC V1.0 ''91x35mm''); matches EASY-BRD measured 90.8x35.56mm
+    since both use the shared ''Rabbit Burrow'' mount, so outline is firm. Mounting hole positions/diameter
+    NOT authoritatively measured -- assume same pattern as ERCF EASY-BRD (3x M3) but VERIFY by parsing
+    V2.0/CAD/''ERB V2.0.DWG'' or V2.0/CAD/''ERB V2.0.step'' before trusting hole coords.'

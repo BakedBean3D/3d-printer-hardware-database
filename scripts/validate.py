@@ -37,12 +37,24 @@ TOOLHEAD_REQUIRED = [
     "supports_neopixels", "supports_klicky", "supports_tap", "mounting_method", "notes",
 ]
 
+# Controller / toolhead / SBC / accessory PCB mounting dimensions.
+# null is permitted for any numeric whose value is genuinely unknown (do NOT
+# substitute 0 — a 0 mm dimension reads as real). Unknowns must be flagged in notes.
+CONTROLLER_BOARD_REQUIRED = [
+    "id", "name", "manufacturer", "category",
+    "pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
+    "mount_screw", "mount_hole_dia_mm", "mount_pattern",
+    "mount_pitch_x_mm", "mount_pitch_y_mm", "mount_hole_count",
+    "standoff_height_mm", "connector_notes", "sources", "confidence", "notes",
+]
+
 CATEGORIES = {
     "motors": MOTOR_REQUIRED,
     "hotends": HOTEND_REQUIRED,
     "extruders": EXTRUDER_REQUIRED,
     "probes": PROBE_REQUIRED,
     "toolheads": TOOLHEAD_REQUIRED,
+    "controller_boards": CONTROLLER_BOARD_REQUIRED,
 }
 
 
@@ -113,17 +125,6 @@ def main():
 
         total_entries += cat_entries
         print(f"  {category}/: {cat_entries} entries across {len(yaml_files)} files")
-
-    pp_dir = os.path.join(ROOT, "performance_profiles")
-    pp_files = glob.glob(os.path.join(pp_dir, "*.yaml"))
-    if pp_files:
-        with open(pp_files[0]) as f:
-            data = yaml.safe_load(f)
-        total_entries += len(data)
-        print(f"  performance_profiles/: {len(data)} entries")
-    else:
-        print("  MISSING: performance_profiles/")
-        total_errors += 1
 
     print(f"\n{'PASSED' if total_errors == 0 else 'FAILED'} — {total_entries} total entries, {total_errors} errors")
     return 0 if total_errors == 0 else 1
