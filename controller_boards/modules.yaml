@@ -1,0 +1,367 @@
+# Generic add-on modules (StepStick drivers, RTD amps, accelerometers, relays, SSR, buck/MOSFET)
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: stepstick_tmc2209
+  name: TMC2209 StepStick / SilentStepStick driver module
+  manufacturer: Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.)
+  category: driver_module
+  pcb_length_mm: 20.32
+  pcb_width_mm: 15.24
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none(header-mounted)
+  mount_pitch_x_mm: 15.24
+  mount_pitch_y_mm: 2.54
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 2x 1x8 0.1in male pin headers (plugs into stepper-driver socket).
+  sources:
+  - https://www.mouser.com/pdfDocs/TMC2209_SilentStepStick_Rev110.pdf
+  - https://reprap.org/wiki/TMC2209
+  - https://www.pololu.com/product/1182
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 15.24 x 20.32 mm is the industry-standard StepStick/Pololu
+    carrier size, corroborated by the TMC2209 SilentStepStick datasheet and the BTT MAX31865 manual (which
+    states it copies the stepper-driver footprint at exactly this size). Header-mounted only; no screw
+    holes. Top heatsink height varies. Mounting: Standard Pololu/StepStick footprint 0.6 in x 0.8 in.
+    Mounts via two 1x8 (16-pin total) 0.1 in (2.54 mm) male headers, NOT screws. The two header rows sit
+    0.6 in (15.24 mm) apart, each row spanning 7 x 2.54 = 17.78 mm. TMC2208 plug-in module is the SAME
+    footprint. Source: https://www.mouser.com/pdfDocs/TMC2209_SilentStepStick_Rev110.pdf'
+- id: stepstick_tmc2208
+  name: TMC2208 StepStick driver module
+  manufacturer: Generic/various
+  category: driver_module
+  pcb_length_mm: 20.32
+  pcb_width_mm: 15.24
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none(header-mounted)
+  mount_pitch_x_mm: 15.24
+  mount_pitch_y_mm: 2.54
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 2x 1x8 0.1in male pin headers.
+  sources:
+  - https://reprap.org/wiki/StepStick
+  - https://www.pololu.com/product/1182
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Same 0.6 x 0.8 in StepStick standard as TMC2209.
+    Mounting: Identical StepStick footprint to TMC2209; header-mounted, no screws. Source: https://reprap.org/wiki/StepStick'
+- id: stepstick_tmc5160
+  name: TMC5160 plug-in StepStick driver module
+  manufacturer: Generic/various (FYSETC, BTT plug-in)
+  category: driver_module
+  pcb_length_mm: 20.32
+  pcb_width_mm: 15.24
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none(header-mounted)
+  mount_pitch_x_mm: 15.24
+  mount_pitch_y_mm: 2.54
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 2x 1x8 0.1in male pin headers; taller components/caps on top.
+  sources:
+  - https://reprap.org/wiki/StepStick
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Plug-in TMC5160 modules follow
+    the StepStick footprint, but some vendor variants are slightly wider or taller due to larger caps.
+    Confidence medium on exact outline for a specific vendor part; header pitch is standard. Mounting:
+    The StepStick-form-factor TMC5160 (plug-in) shares the 15.24 x 20.32 mm footprint. NOTE: this is the
+    plug-in module ONLY; the high-power external TMC5160T Plus is a separate entry below. Source: https://reprap.org/wiki/StepStick'
+- id: adafruit_max31865
+  name: Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648)
+  manufacturer: Adafruit
+  category: thermocouple_amp
+  pcb_length_mm: 24.38
+  pcb_width_mm: 22.86
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.54
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 22.86
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 1.27
+    - 2.54
+  - - 24.13
+    - 2.54
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 3.0
+  connector_notes: Two 2-pin 3.5 mm screw terminals (RTD); 9-pin 0.1in breakout header (VIN/3V3/GND/CLK/SDO/SDI/CS/RDY).
+  sources:
+  - https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
+  - https://www.adafruit.com/product/3328
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print
+    p.30 (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore
+    = 2.54 mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal
+    end. PCB body 24.38 x 22.86 mm; OVERALL incl. tabs 27.94 x 25.4 mm. Decide whether your mount uses
+    the body or the tabbed outline. Holes Ø2.54 mm = M2.5, NOT M3. Source: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf'
+- id: slice_pt1000_amplifier
+  name: Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB)
+  manufacturer: Slice Engineering
+  category: thermocouple_amp
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: null
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: other
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: N/A - probe only.
+  sources:
+  - https://www.sliceengineering.com/products/rtd-pt1000
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). No Slice-branded amplifier PCB
+    exists. Entry retained as a cross-reference only. Mounting: Slice Engineering does NOT make an amplifier
+    PCB. They sell only the RTD probe and direct users to a MAX31865 amplifier (typically Adafruit''s).
+    For a "Slice PT1000 amplifier" entry, map to the Adafruit MAX31865 geometry above. Source: https://www.sliceengineering.com/products/rtd-pt1000'
+- id: gy291_adxl345
+  name: GY-291 ADXL345 accelerometer breakout
+  manufacturer: Generic/various
+  category: accelerometer
+  pcb_length_mm: 20.4
+  pcb_width_mm: 15.8
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.0
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 15.0
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: '8-pin (or 7-pin) 2.54 mm header: GND/VCC/CS/SDO/SDA/SCL/INT1/INT2. SPI or I2C.'
+  sources:
+  - https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 2-hole / Ø3 / 15 mm spacing corroborated
+    by an authoritative vendor and the community-standard layout. Exact outline varies slightly by clone;
+    thickness assumed 1.6 mm. NOT a 4-hole board. Mounting: The de-facto standard mount: 2 collinear Ø3
+    mm holes, 15 mm apart, on the edge opposite the pin header. The BTT USB boards copy this at 15.5 mm
+    so they are mount-compatible. NO 4-corner hole pattern exists on this board. Source: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291'
+- id: relay_module_1ch
+  name: 1-channel 5V relay module
+  manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
+  category: relay
+  pcb_length_mm: 50.0
+  pcb_width_mm: 26.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.1
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 19.0
+  connector_notes: 3-pin control header (VCC/GND/IN); screw terminal NO/COM/NC; jumper for opto-isolation.
+  sources:
+  - https://components101.com/switches/5v-single-channel-relay-module-pinout-features-applications-working-datasheet
+  - https://www.handsontec.com/dataspecs/relay/SRD-05VDC-SL-C.pdf
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). 1-channel boards are not standardized;
+    ~50 x 26 mm is typical but outline and hole pitch vary widely between vendors. Treat as low confidence
+    and measure the actual board. Mounting: Common 1-channel board ~50 x 26 mm with 2 corner holes for
+    M3. Exact outline and hole spacing vary by clone - measure the specific unit. Source: https://components101.com/switches/5v-single-channel-relay-module-pinout-features-applications-working-datasheet'
+- id: relay_module_2ch
+  name: 2-channel 5V relay module
+  manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
+  category: relay
+  pcb_length_mm: 50.5
+  pcb_width_mm: 38.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.1
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 19.0
+  connector_notes: 4-pin control header (VCC/GND/IN1/IN2) or 6-pin with JD-VCC; 2x screw terminals NO/COM/NC.
+  sources:
+  - https://components101.com/switches/5v-dual-channel-relay-module-pinout-features-applications-working-datasheet
+  - https://www.sainsmart.com/products/2-channel-5v-relay-module
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). 2-channel boards not standardized;
+    ~50.5 x 38.5 mm typical. SainSmart/clone variants differ. Low confidence on exact outline and hole
+    pitch - measure. Mounting: Common 2-channel board ~50.5 x 38.5 mm, 4 corner holes for M3. Outline
+    and hole spacing vary by clone - measure the specific unit. Source: https://components101.com/switches/5v-dual-channel-relay-module-pinout-features-applications-working-datasheet'
+- id: relay_module_4ch
+  name: 4-channel 5V relay module
+  manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
+  category: relay
+  pcb_length_mm: 71.0
+  pcb_width_mm: 45.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.1
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 66.7
+  mount_pitch_y_mm: 40.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 2.15
+    - 2.5
+  - - 68.85
+    - 2.5
+  - - 2.15
+    - 42.5
+  - - 68.85
+    - 42.5
+  mount_inset_from_edge_mm: 2.5
+  standoff_height_mm: null
+  component_height_top_mm: 19.0
+  connector_notes: 6-pin control header (VCC/GND/IN1-IN4) + JD-VCC jumper; 4x screw terminals NO/COM/NC.
+  sources:
+  - https://components101.com/switches/5v-four-channel-relay-module-pinout-features-applications-working-datasheet
+  - http://wiki.sunfounder.cc/index.php?title=4_Channel_5V_Relay_Module
+  - https://www.circuitbasics.com/wp-content/uploads/2015/11/SRD-05VDC-SL-C-Datasheet.pdf
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 71 x 45 mm outline and 66.7 x 40
+    mm hole spacing corroborated across multiple vendor listings (medium-high). Hole diameter 3.0-3.1
+    mm. Corner hole coords are derived (centered rectangle) - confirm inset on the unit. Mounting: Most
+    standardized of the blue relay boards: 71 x 45 mm, 4 corner holes Ø3.0-3.1 mm, hole rectangle 66.7
+    x 40 mm. Hole coords derived by centering that rectangle in the outline (verify on actual board).
+    Source: https://components101.com/switches/5v-four-channel-relay-module-pinout-features-applications-working-datasheet'
+- id: fotek_ssr_25da
+  name: Fotek SSR-25DA solid state relay (SSR-DA series body)
+  manufacturer: Fotek
+  category: ssr
+  pcb_length_mm: 57.4
+  pcb_width_mm: 44.8
+  pcb_thickness_mm: 28.0
+  mount_screw: M4
+  mount_hole_dia_mm: 4.8
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 47.6
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 4.9
+    - 22.4
+  - - 52.5
+    - 22.4
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: '4 screw terminals: input 3-32 VDC (terminals 3,4), output 24-480 VAC (terminals 1,2).'
+  sources:
+  - https://www.fotek.com.tw/en-gb/product-category/143
+  - https://www.alldatasheet.com/datasheet-pdf/pdf/1132522/FOTEK/SSR-25DA.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). SSR-DA series body ~57.4 x 44.8
+    x 28 mm and ~47.6 mm hole spacing for M4 are the well-known Fotek standard, but the exact figures
+    were NOT read off the datasheet drawing directly (datasheet sites returned 403/were not fetched).
+    Multiple distributor listings give ~63 x 45 x 23 mm overall incl. terminals; housing footprint vs
+    overall differs. CONFIRM hole spacing on the actual unit before a tight-tolerance bracket. SSR-40DA
+    = same housing. Mounting: Standard Fotek SSR-DA series housing ~57.4 x 44.8 x 28 mm. Two Ø4.8 mm mounting
+    holes (M4) ~47.6 mm apart on the long axis. SSR-40DA shares the SAME housing and hole pattern (only
+    current rating differs). Source: https://www.fotek.com.tw/en-gb/product-category/143'
+- id: lm2596_buck
+  name: LM2596 adjustable buck converter module
+  manufacturer: Generic/various
+  category: buck_converter
+  pcb_length_mm: 43.2
+  pcb_width_mm: 21.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 14.0
+  connector_notes: IN+/IN- and OUT+/OUT- solder pads; multiturn trimpot for output voltage.
+  sources:
+  - https://components101.com/modules/mini360-dc-dc-buck-converter-module
+  - https://www.theengineeringprojects.com/2020/09/lm2596-buck-converter-datasheet-pinout-features-applications.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 43.2 x 21 x 14 mm corroborated;
+    2 holes confirmed. Exact hole spacing and diameter not published - measure before designing a tight
+    mount. Mounting: ~43.2 x 21 x 14 mm. 2 mounting holes (diagonal corners) for small M3/M2.5 screws.
+    Hole spacing not authoritatively published - measure the unit. Source: https://components101.com/modules/mini360-dc-dc-buck-converter-module'
+- id: mini360_buck
+  name: Mini-360 DC-DC buck converter module
+  manufacturer: Generic/various
+  category: buck_converter
+  pcb_length_mm: 22.0
+  pcb_width_mm: 17.0
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 4.0
+  connector_notes: IN+/IN- and OUT+/OUT- solder pads; trimpot for output voltage.
+  sources:
+  - https://components101.com/modules/mini360-dc-dc-buck-converter-module
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). ~22 x 17 x 4 mm corroborated; no
+    mounting holes (pocket/glue mount). Mounting: Tiny ~22 x 17 x 4 mm module with NO mounting holes -
+    typically hot-glued or pocketed/zip-tied in place. Design a friction pocket, not a screw mount. Source:
+    https://components101.com/modules/mini360-dc-dc-buck-converter-module'
+- id: heatbed_mosfet_module
+  name: 3D printer heatbed MOSFET power module (25A)
+  manufacturer: Generic/various
+  category: mosfet
+  pcb_length_mm: 60.0
+  pcb_width_mm: 50.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 30.0
+  connector_notes: Input screw terminal (12/24V + trigger from board heater output), output screw terminal
+    to bed. Switches via power MOSFET (allows PID).
+  sources:
+  - https://reprap.org/wiki/Heated_Bed_MOSFET_Power_Expansion_Module
+  - https://www.th3dstudio.com/product/high-amp-12v-24v-mosfet-heated-bed-or-hotend/
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). ~60 x 50 mm outline and Ø3.2 mm
+    M3 corner holes corroborated across vendor listings (medium). Hole PITCH not authoritatively published
+    and varies between clones - low confidence on exact spacing; measure the actual board. Mounting: Common
+    heatbed MOSFET board ~60 x 50 mm (overall incl. heatsink ~30 mm tall), 4 corner holes Ø3.2 mm for
+    M3. Exact hole pitch varies by clone and is NOT consistently published - MEASURE before a tight mount.
+    Source: https://reprap.org/wiki/Heated_Bed_MOSFET_Power_Expansion_Module'

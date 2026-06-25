@@ -1,0 +1,420 @@
+# Community / open-source boards (github-username designs: Huvud, HartK, Enraged Rabbit, etc.)
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: huvud_original
+  name: Huvud (original)
+  manufacturer: Huvud
+  category: toolhead_can
+  pcb_length_mm: 48.0
+  pcb_width_mm: 45.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 37.0
+  mount_pitch_y_mm: 40.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 41.0
+    - 4.0
+  - - 4.0
+    - 44.0
+  - - 41.0
+    - 44.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Connector notch on the top edge.
+  sources:
+  - https://github.com/bondus/KlipperToolboard/blob/master/PCB/Huvud/Huvud.kicad_pcb
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + 37x40 pattern from KiCad. holes_xy
+    derived from pitch/inset. Mounting: Open-hardware Klipper toolhead board. 37x40 mm rectangular pattern
+    -- does NOT match the NEMA17 31 mm bolt circle; mounts via a printed bracket, not directly on a stepper
+    face. Parsed from KiCad source (small connector notch on top edge). holes_xy derived from outline
+    + pitch (4 mm inset). Source: https://github.com/bondus/KlipperToolboard/blob/master/PCB/Huvud/Huvud.kicad_pcb'
+- id: huvud_tiny
+  name: HuvudTiny
+  manufacturer: Huvud
+  category: toolhead_can
+  pcb_length_mm: 42.0
+  pcb_width_mm: 42.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 31.0
+  mount_pitch_y_mm: 31.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.5
+    - 5.5
+  - - 36.5
+    - 5.5
+  - - 5.5
+    - 36.5
+  - - 36.5
+    - 36.5
+  mount_inset_from_edge_mm: 5.5
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/bondus/KlipperToolboard/blob/master/PCB/HuvudTiny/Huvud.kicad_pcb
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + centred 31x31 NEMA17 pattern confirmed
+    from KiCad geometry. Mounting: 42x42 mm board; 31x31 mm square pattern = exactly the NEMA17 bolt circle,
+    perfectly centred (5.5 mm inset all sides). Bolts directly onto the back face of a NEMA17 stepper
+    with M3 screws. Plated holes (via). Parsed from KiCad source. Source: https://github.com/bondus/KlipperToolboard/blob/master/PCB/HuvudTiny/Huvud.kicad_pcb'
+- id: hartk_stealthburner_toolhead_pcb
+  name: HartK Stealthburner Toolhead PCB
+  manufacturer: HartK
+  category: toolhead_can
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB
+  - https://github.com/hartk1213/MISC/tree/main/PCBs/Stealthburner_Toolhead_PCB
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Flagged reference footprint.
+    Outline + hole XY UNVERIFIED -- extract from Gerbers/STEP in CAD if a library entry is wanted. Mounting
+    is body-clip, not a simple hole pattern. Mounting: The reference two-piece Voron Stealthburner toolhead
+    PCB that many toolboards (incl. LDO Nitehawk-SB) clone for their form factor. Mounts into the Stealthburner
+    printed body with M3x8 SHCS + M3x6 BHCS (per Voron hardware docs), NOT a board-edge rectangular pattern.
+    Only Gerbers/STEP are published (no raw KiCad .kicad_pcb), so exact outline/hole XY were not machine-extracted.
+    Included as a flag because it is a de-facto footprint standard worth its own library entry. Source:
+    https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB'
+- id: timmit99_klipper_expander
+  name: Klipper Expander (STM32)
+  manufacturer: timmit99
+  category: expander
+  pcb_length_mm: 100.0
+  pcb_width_mm: 24.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 92.0
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 96.0
+    - 4.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: STM32F042F6P6 MCU. 4x 3A MOSFET outputs (Phoenix/screw terminals), 2x thermistor inputs,
+    NeoPixel out w/ level shifter, I2C header w/ pullups, SWD header, fuse holder. Two M3 holes on the
+    long centerline, one near each end, 4mm in from edges.
+  sources:
+  - https://raw.githubusercontent.com/timmit99/Klipper-Expander/master/KiCad/STM32_Klipper_Expander.kicad_pcb
+  - https://github.com/timmit99/Klipper-Expander
+  - https://github.com/VoronDesign/Voron-Hardware/tree/master/Klipper_Expander
+  confidence: high
+  notes: 'Tier-1: measured from Edge.Cuts in KiCad/STM32_Klipper_Expander.kicad_pcb (gr_line corners X=100..200,
+    Y=76..100 -> 100x24mm). Two MountingHole_3.2mm_M3 footprints at (104,80) and (196,80); origin set
+    to board bottom-left (100,76) with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this
+    repo OUTDATED and points to the Voron official hardware repo for the latest version; verify if a revised
+    board exists there. Maintained KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the
+    original timmit99 repo is flagged outdated); geometry agrees (100x24, 92mm pitch).'
+- id: ercf_easy_brd
+  name: ERCF EASY-BRD
+  manufacturer: Tircown
+  category: ercf
+  pcb_length_mm: 90.8
+  pcb_width_mm: 35.56
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: L-shaped
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 3
+  mount_holes_xy:
+  - - 86.995
+    - 3.81
+  - - 49.53
+    - 3.81
+  - - 13.335
+    - 30.48
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 'Standalone ERCF breakout for Klipper: 2x TMC2209 stepper driver sockets, 1x servo
+    (5V regulator), 3x endstop/sensor inputs, Seeeduino XIAO MCU socket. Outline is a rounded-corner rectangle
+    ~90.8x35.56mm with small notch/step at corners. Three M3 holes: two along bottom edge (y~3.81), one
+    upper-left (y~30.48) -> L/triangular pattern.'
+  sources:
+  - https://raw.githubusercontent.com/Tircown/ERCF-easy-brd/main/Kicad/ercf-easy-brd.kicad_pcb
+  - https://github.com/Tircown/ERCF-easy-brd
+  confidence: high
+  notes: 'Tier-1: measured from Edge.Cuts in Kicad/ercf-easy-brd.kicad_pcb (KiCad 5.1, v20171130). X 76.835..167.64,
+    Y 107.95..143.51. Three MountingHole_3.2mm_M3 footprints: H1(163.83,139.7), H2(90.17,113.03), H3(126.365,139.7).
+    Origin set to physical bottom-left = (minX=76.835, maxY=143.51), KiCad Y inverted. Outline has small
+    asymmetric corner steps (76.835 vs 78.74 / 79.375; 167.64 vs 165.735 / 165.1) so usable rect is slightly
+    under nominal. Shares the same ''Rabbit Burrow'' mount footprint as the FYSETC ERB (also ~91x35mm),
+    corroborating the outline. Mellow resells this exact Tircown design as the EasyERCFbrd / FLY-ERCF.'
+- id: ercf_binky
+  name: Binky ERCF Encoder
+  manufacturer: mneuhaus
+  category: sensor
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: none
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt
+    filter + LED, 1mm/pulse via slotted wheel. Captive inside printed EncoderCart housing (Encoder_Left/Right
+    STLs); not screw-mounted as a standalone board -- it slots into the cart, so mount pattern is 'none'.
+  sources:
+  - https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
+  confidence: low
+  notes: No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole
+    dimensions NOT recovered. To measure, extract the gerber zip and read the *.GKO/outline layer, or
+    open the .f3z. Board is encoder-cart-captive so board-level mounting holes are likely irrelevant for
+    CAD mount design; the relevant interface is the EncoderCart STL geometry, not screw holes.
+- id: box_turtle_afc
+  name: Box Turtle (AFC) PCB
+  manufacturer: ArmoredTurtle
+  category: ercf
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: none
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN
+    toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated
+    community KiCad board with published Edge.Cuts found.
+  sources:
+  - https://github.com/ArmoredTurtle/BoxTurtle
+  confidence: low
+  notes: No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
+    individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific
+    board with KiCad geometry is identified.
+- id: voron_hall_xy_endstop
+  name: Hall Effect XY Endstop
+  manufacturer: HartK / VoronDesign
+  category: sensor
+  pcb_length_mm: 56.0
+  pcb_width_mm: 20.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 39.25
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.75
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Hall-effect XY endstop for Voron gantry. 2x M3 holes pitch 39.25 mm.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Hall_Effect_XY_Endstop/KiCad/HallEffectXY-Endstop.kicad_pcb
+  confidence: high
+  notes: 'Tier-1 (KiCad v5 ''module'' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at
+    raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])'
+- id: voron_microswitch_xy_endstop
+  name: Microswitch XY Endstop
+  manufacturer: HartK / VoronDesign
+  category: sensor
+  pcb_length_mm: 51.5
+  pcb_width_mm: 16.6
+  pcb_thickness_mm: 1.6
+  mount_screw: M4
+  mount_hole_dia_mm: 4.3
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 33.5
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 8.1
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 'Mechanical microswitch XY endstop. NOTE: M4 mount holes (4.3mm) — not M3.'
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Microswitch_Endstop/KiCad/MicroswitchXY-Endstop.kicad_pcb
+  confidence: high
+  notes: 'Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5).
+    (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])'
+- id: voron_v0_umbilical_toolhead_pcb
+  name: V0 Umbilical Toolhead PCB
+  manufacturer: HartK / VoronDesign
+  category: toolhead_can
+  pcb_length_mm: 49.04
+  pcb_width_mm: 23.13
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 43.84
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 2.6
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Toolhead-side breakout for V0 umbilical wiring (pairs with the Frame_PCB). Non-CAN
+    wiring breakout despite category.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/V0-Umbilical/Kicad/Toolhead_PCB/Toolhead_PCB.kicad_pcb
+  confidence: high
+  notes: 'Tier-1: Edge.Cuts bbox 49.04 x 23.13 mm (non-rectangular outline; bbox of arcs+lines). 2x MountingHole_3.2mm_M3
+    at raw (78.08,100),(121.92,100). Holes very close to short edges (inset 2.6mm). (raw hole coords from
+    source: [[2.6, 10.0], [46.44, 10.0]])'
+- id: voron_klipper_board_taco_raven
+  name: Voron Klipper Board (Taco Raven)
+  manufacturer: HartK / VoronDesign
+  category: mainboard
+  pcb_length_mm: 120.0
+  pcb_width_mm: 85.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: 4-hole
+  mount_pitch_x_mm: 110.0
+  mount_pitch_y_mm: 81.0
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Standalone STM32 Klipper controller board. 4x M3 holes; NOTE one hole (right-bottom)
+    is offset from a clean rectangle — verify against board before printing a 4-post mount.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.kicad_pcb
+  confidence: medium
+  notes: 'Tier-1 holes (4x MountingHole_3.2mm_M3_DIN965 at raw (115,125),(115,44),(225,44),(225,147.975)).
+    OUTLINE LOW-TRUST: Edge.Cuts contains silk text/logos on Edge.Cuts layer polluting bbox (raw bbox
+    120x113). pcb_width_mm=85 is ESTIMATED; 3 holes form a clean 110x81 mm pattern but 4th hole y differs
+    (raw 147.975 vs others 44/125), so mount_pitch_y and 4th hole need physical/STEP verification. (raw
+    hole coords from source: [[5.0, 28.0], [5.0, 109.0], [115.0, 109.0], [115.0, 5.03]])'
+- id: voron_daylight_on_a_stick
+  name: Daylight on a Stick (LED bar)
+  manufacturer: HartK / VoronDesign
+  category: accessory
+  pcb_length_mm: 270.0
+  pcb_width_mm: 11.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 197.82
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.5
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Long LED illumination bar (18 LEDs) for 250mm+ Vorons; mounts to extrusion via printed
+    1515/2020 brackets. Holes on board centerline.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_stick/Daylight.kicad_pcb
+  confidence: high
+  notes: 'Tier-1: Edge.Cuts bbox 270.0 x 11.0 mm; 2x MountingHole_3.2mm_M3_Pad_Via at raw (49,33),(246.82,33).
+    chain_length=18 LEDs per README. Disco variant same outline. (raw hole coords from source: [[36.0,
+    5.5], [233.82, 5.5]])'
+- id: voron_daylight_on_a_matchstick
+  name: Daylight on a Matchstick (LED bar, V0)
+  manufacturer: HartK / VoronDesign
+  category: accessory
+  pcb_length_mm: 158.0
+  pcb_width_mm: 11.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 98.9
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.5
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Shorter LED bar (10 LEDs) for V0.1 / printers-for-ants. Holes on centerline.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_matchstick/Daylight_Matchstick.kicad_pcb
+  confidence: high
+  notes: 'Tier-1: Edge.Cuts bbox 158.0 x 11.0 mm; 2x MountingHole_3.2mm_M3 at raw (79.05,69.5),(177.95,69.5).
+    chain_length=10 LEDs per README. (raw hole coords from source: [[29.55, 5.5], [128.45, 5.5]])'
+- id: voron_pt100stick
+  name: PT100 Stick (thermocouple amp)
+  manufacturer: HartK / VoronDesign
+  category: thermocouple_amp
+  pcb_length_mm: 15.24
+  pcb_width_mm: 20.32
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Tiny PT100 amplifier stick (MAX31865-class). NO mounting holes — supported by its pin
+    header / wiring, not screwed down.
+  sources:
+  - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/PT100Stick/KiCad/pt100stick.kicad_pcb
+  confidence: high
+  notes: 'Tier-1: Edge.Cuts bbox 15.24 x 20.32 mm (0.6in x 0.8in). Zero MountingHole footprints in KiCad.'
+- id: voron_stealthburner_neopixel_led
+  name: Stealthburner Neopixel LED (Mini Button PCB)
+  manufacturer: VoronDesign
+  category: accessory
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: none
+  mount_hole_dia_mm: null
+  mount_pattern: none
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 'The Stealthburner ''LED PCB'' is NOT one shared board: it is 3x individual round Neopixel
+    ''Mini Button'' LED PCBs (RGB/RGBW) chained by wire (5V/GND/Signal). They press-fit into the printed
+    [o]_stealthburner_LED_carrier.stl behind the LED diffuser — no screws, no mount holes.'
+  sources:
+  - https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner
+  - https://docs.vorondesign.com/community/howto/drachenkatze/neopixel_guide.html
+  confidence: low
+  notes: No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
+    firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity
+    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.

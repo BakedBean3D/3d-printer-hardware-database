@@ -1,0 +1,210 @@
+# Duet3D controller and toolhead boards
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: duet3d_pt100_daughterboard
+  name: Duet3D PT100 temperature daughterboard v1.1
+  manufacturer: Duet3D
+  category: thermocouple_amp
+  pcb_length_mm: 31.74
+  pcb_width_mm: 26.16
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: 2.54
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 38.5
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 13.05
+    - 0.0
+  - - 13.05
+    - 38.5
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 2x5 (10-pin) 2.54 mm header plugs into Duet expansion/SPI header; screw terminals for
+    PT100 wires.
+  sources:
+  - https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD
+  - https://docs.duet3d.com/Duet3D_hardware/Accessories/PT100_Temperature_Daughterboard
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline 26.16 x 31.74 and Ø2.54 holes from official
+    KiCad source (high). 38.5 mm pitch is medium (derived from connector footprint coords; rotation ambiguous).
+    Mounting is a plastic pillar, not a screw. Mounting: Secured with a SUPPLIED PLASTIC SNAP-IN PILLAR,
+    not an M-screw. Holes are Ø2.54 mm NPTH from the official KiCad board file. Design around the pillar.
+    Source: https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD'
+- id: duet3_6hc
+  name: Duet 3 Mainboard 6HC
+  manufacturer: Duet3D
+  category: mainboard
+  pcb_length_mm: 140.0
+  pcb_width_mm: 134.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 4.3
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 124.0
+  mount_pitch_y_mm: 130.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 5.0
+  - - 129.0
+    - 5.0
+  - - 5.0
+    - 135.0
+  - - 129.0
+    - 135.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 8
+  component_height_top_mm: null
+  connector_notes: USB + RJ45/Ethernet on one short edge; CAN_OUT on a long edge. PT100/ thermocouple
+    daughterboard header (2.54 mm) interior at approx [84,81].
+  sources:
+  - https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.0/Duet3_MB_6HC_v0.6%26later_Dimensions.svg
+  - https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.02/CAD/Duet3_MB_6HC.kicad_pcb
+  - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6HC_Hardware_Overview
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes confirmed twice (dimension SVG
+    and KiCad). Thickness 1.6 mm is standard but not explicitly annotated in the drawings. Mounting: Holes
+    are isolated (non-plated) with a ~2.2 mm keep-out ring. Drilled Ø4.3 mm (M4 clearance) but Duet''s
+    own guides specify M3 screws. Width is 134 mm, length 140 mm -- the commonly cited "144x96" figure
+    is WRONG. Source: https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.0/Duet3_MB_6HC_v0.6%26later_Dimensions.svg'
+- id: duet3_6xd
+  name: Duet 3 Mainboard 6XD
+  manufacturer: Duet3D
+  category: mainboard
+  pcb_length_mm: 140.0
+  pcb_width_mm: 115.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 4.3
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 104.5
+  mount_pitch_y_mm: 129.5
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.5
+    - 5.5
+  - - 110.0
+    - 5.0
+  - - 5.0
+    - 135.0
+  - - 110.0
+    - 135.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 8
+  component_height_top_mm: null
+  connector_notes: External-driver mainboard; differential driver outputs.
+  sources:
+  - https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb
+  - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6XD_Hardware_Overview
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + 3 holes high confidence from KiCad.
+    The [5.5,5.5] corner asymmetry is in the source file; verify sub-mm precision on that hole physically.
+    Mounting: Narrower than the 6HC (115 mm vs 134 mm) but same 140 mm length. The bottom-left hole sits
+    at [5.5,5.5] in the source file (~0.5 mm offset from the 5 mm grid of the other three) -- treat that
+    corner as medium confidence. Two interior Ø2.5 mm holes are a daughterboard mount, not chassis mounting.
+    Source: https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb'
+- id: duet3_mini5plus
+  name: Duet 3 Mini 5+
+  manufacturer: Duet3D
+  category: mainboard
+  pcb_length_mm: 123.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 4.3
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 92.0
+  mount_pitch_y_mm: 115.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 96.0
+    - 4.0
+  - - 4.0
+    - 119.0
+  - - 96.0
+    - 119.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 6
+  component_height_top_mm: null
+  connector_notes: Stepper-driver connectors mirrored to the opposite side vs Duet 2.
+  sources:
+  - https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb
+  - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mini_5+_Hardware_Overview
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes from KiCad. Thickness 1.6 mm
+    standard, not annotated. Mounting: Footprint is byte-for-byte identical to the Duet 2 WiFi/Ethernet
+    (same 100x123 outline, 92x115 pitch, 4 mm inset) -- one mount fits both. Drilled Ø4.3 mm (M4 clearance);
+    Duet documents fixing with 4x M3 6mm screws. The commonly cited "117x89" figure is WRONG. Source:
+    https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb'
+- id: duet3_toolboard_1lc
+  name: Duet 3 Toolboard 1LC
+  manufacturer: Duet3D
+  category: toolhead_can
+  pcb_length_mm: 54.0
+  pcb_width_mm: 47.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 34.0
+  mount_pitch_y_mm: 34.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 13.0
+    - 4.0
+  - - 47.0
+    - 4.0
+  - - 13.0
+    - 38.0
+  - - 47.0
+    - 38.0
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Heater/CAN/5V on top edge; VIN top-right; DRIVER bottom-right; IO on left.
+  sources:
+  - https://github.com/Duet3D/Duet3-Toolboard-1LC/blob/master/ToolBoard_1LC_v1.0/Duet3_TB_1LC_v1.0_Dimensions.svg
+  - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Toolboard_1LC
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). From official dimension SVG. Thickness 1.6 mm
+    standard, not annotated. Mounting: Square 34x34 mm hole pattern, but offset toward the lower-left
+    of the board (NOT centred): 13 mm from left edge / 7 mm from right; 4 mm from bottom / 9 mm from top.
+    Source: https://github.com/Duet3D/Duet3-Toolboard-1LC/blob/master/ToolBoard_1LC_v1.0/Duet3_TB_1LC_v1.0_Dimensions.svg'
+- id: duet2_wifi_ethernet
+  name: Duet 2 WiFi / Ethernet
+  manufacturer: Duet3D
+  category: mainboard
+  pcb_length_mm: 123.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 4.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 92.0
+  mount_pitch_y_mm: 115.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 96.0
+    - 4.0
+  - - 4.0
+    - 119.0
+  - - 96.0
+    - 119.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 6
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
+  - https://docs.duet3d.com/Duet3D_hardware/Duet_2_family/Duet_2_WiFi_Ethernet_Hardware_Overview
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). From KiCad. Thickness 1.6 mm standard, not annotated.
+    Mounting: WiFi and Ethernet variants share one PCB. Hole pattern is identical to the Duet 3 Mini 5+
+    (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly
+    mounted with M3. Source: https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb'

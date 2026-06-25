@@ -1,0 +1,956 @@
+# BigTreeTech controller boards, toolhead CAN boards, SBCs, and accessories
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: btt_skr_mini_e3_v3
+  name: SKR Mini E3 V3
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 103.75
+  pcb_width_mm: 70.25
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 6
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Stepper/endstop/fan headers along top edge (XM/YM/ZM/EM); POWER, heated- bed and hotend
+    screw terminals on bottom-left edge; USB-C, TFT/EXP and thermistor/probe headers clustered bottom
+    and right. Right edge has a tab carrying the I/O / display connector.
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
+  - https://global.bttwiki.com/SKR%20MINI%20E3.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 103.75 x 70.25 mm and 6-hole
+    count are HIGH confidence (official SIZE PDF). Per-hole coordinates and hole diameter are LOW — derive
+    holes_xy from BTT E3 SKR MINI V3.0.step before cutting. Thickness assumed. Mounting: Drops into the
+    Ender-3 / Ender-3 Pro/V2 board location and reuses the original Creality mounting bosses, so the hole
+    pattern is IRREGULAR (not a clean rectangle). Official SIZE drawing shows 6 plated mounting holes.
+    Per-hole [x,y] NOT reconstructed (drawing leader lines are partial); pull exact centers from the in-repo
+    STEP file. Two PCB revisions exist in the repo (V3.0 and V3.0.1); these dims are the canonical V3.0.
+    Source: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf'
+- id: btt_skr_3
+  name: SKR 3
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 109.67
+  pcb_width_mm: 84.3
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 101.85
+  mount_pitch_y_mm: 76.3
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Motor (X/Y/Z/Z1/E)/fan headers along top edge; USB, SD card, WiFi module and SERVO/Probe/TFT/EXP
+    headers bottom edge; power and bed/hotend terminals on left edge.
+  sources:
+  - https://github.com/bigtreetech/SKR-3/blob/master/Hardware%20(SKR%203)/BIGTREETECH%20SKR%203-SIZE.pdf
+  - https://github.com/bigtreetech/SKR-3
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Overall dims and rectangular pitch (101.85 x
+    76.30) HIGH confidence from official SIZE PDF. Hole diameter and thickness assumed. In-repo STEP file
+    (BIGTREETECH SKR 3.step) has exact hole centers. Mounting: 4 corner holes forming a rectangle. Center-to-center
+    pitch 101.85 mm (X) x 76.30 mm (Y), read from official SIZE drawing (overall board 109.67 x 84.30
+    mm). Screw size M3 and 3.2 mm clearance are family convention, not explicitly labeled. Source: https://github.com/bigtreetech/SKR-3/blob/master/Hardware%20(SKR%203)/BIGTREETECH%20SKR%203-SIZE.pdf'
+- id: btt_skr_3_ez
+  name: SKR 3 EZ
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 109.67
+  pcb_width_mm: 84.3
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 101.85
+  mount_pitch_y_mm: 76.3
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Motor/fan headers (XM/YM/ZM/Z1M/EOM/E1M) top edge; USB, SD-M, CAN-FD, TFT, PS-ON, EXP1/EXP2
+    and SERVOS/Probe bottom edge; power & bed/hotend terminals on left edge.
+  sources:
+  - https://github.com/bigtreetech/SKR-3/blob/master/Hardware%20(SKR%203%20EZ)/BIGTREETECH%20SKR%203%20EZ%20V1.0-SIZE.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Footprint identical to SKR 3, confirmed from
+    the SKR 3 EZ SIZE PDF. Hole diameter and thickness assumed. STEP file in-repo for exact coordinates.
+    Mounting: Same PCB footprint and mounting pattern as the SKR 3 (the EZ is the EZ-driver variant on
+    the identical board outline). Official SIZE drawing confirms 109.67 x 84.30 mm with the 4-corner-hole
+    rectangle, pitch 101.85 (X) x 76.30 (Y). Source: https://github.com/bigtreetech/SKR-3/blob/master/Hardware%20(SKR%203%20EZ)/BIGTREETECH%20SKR%203%20EZ%20V1.0-SIZE.pdf'
+- id: btt_skr_pico
+  name: SKR Pico
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 85.0
+  pcb_width_mm: 56.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.75
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 58.0
+  mount_pitch_y_mm: 49.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 61.5
+    - 3.5
+  - - 3.5
+    - 52.5
+  - - 61.5
+    - 52.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Stepper driver sockets (E/X/Y/Z) across the top; USB-C and VBED/I-O on the left edge;
+    motor, endstop (X/Y/Z-STOP), heater/fan and thermistor terminals/headers along the bottom and right
+    edges.
+  sources:
+  - https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf
+  - https://github.com/bigtreetech/SKR-Pico
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Overall dims, 58 x 49 pitch and 3.50 mm inset
+    HIGH confidence from official SIZE PDF (corroborated by RPi-compatible-mount note). M2.5 / 2.75 mm
+    hole dia inferred from RPi standard (not labeled). holes_xy computed, not directly dimensioned. Mounting:
+    Deliberately matches the Raspberry Pi Model B / Pi 4 mounting footprint: 58.00 x 49.00 mm hole rectangle,
+    M2.5 screws, 3.50 mm in from two edges. Read from official SIZE PDF (overall 85.00 x 56.00 mm). holes_xy
+    computed from the inset+pitch (origin = bottom-left PCB corner); board outline has castellated/notched
+    edges so corner is nominal. hole_dia 2.75 mm is the RPi-standard M2.5 clearance. Source: https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf'
+- id: btt_manta_e3ez
+  name: Manta E3EZ
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 120.0
+  pcb_width_mm: 90.81
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: Motor headers (X/Y/Z1/Z2/E0/E1) across the top; CM4/CB1 SODIMM socket, CPU/RAM and
+    HDMI at center/right; USB, power and bed/hotend terminals bottom-left edge.
+  sources:
+  - https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
+  - https://github.com/bigtreetech/Manta-E3EZ
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 120.00 x 90.81 mm HIGH
+    confidence (official SIZE PDF). Hole count (4) and irregular pattern MEDIUM; exact centers not cleanly
+    dimensioned - derive holes_xy from the in-repo STEP/3D model. "E3 EZ" -> "Manta E3EZ" mapping is an
+    assumption. Mounting: IDENTITY: the task''s "E3 EZ" resolves to the Manta E3EZ Klipper mainboard (BTT
+    has no standalone product simply named "E3 EZ"); flag if a different board was meant. Designed to
+    reuse Ender-3 mounting locations, so the hole pattern is IRREGULAR. Official SIZE PDF: overall 120.00
+    x 90.81 mm, 4 mounting holes. Per-hole [x,y] not reconstructed (partial dimension chains). Hosts a
+    CM4/CB1 module (CM4 uses M2x10 screws, separate from the board''s M3 chassis mounting). Source: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf'
+- id: btt_octopus_v1_1
+  name: Octopus V1.1
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 160.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 150.0
+  mount_pitch_y_mm: 90.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 5.0
+  - - 155.0
+    - 5.0
+  - - 5.0
+    - 95.0
+  - - 155.0
+    - 95.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Stepper connectors (MOTOR0-7) + bulk capacitors along one long edge. Power input (MOTOR_POWER)
+    at one corner. USB-C / network / heater outputs (HE0-3) and endstops along the opposite long edge
+    and short edges.
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-V1.0/blob/master/Hardware/BIGTREETECH%20Octopus%20-%20SIZE.pdf
+  - https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-V1.0/blob/master/Hardware/readme.txt
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 160 x 100 outline and 150 x 90 pitch read directly
+    from official PDF. thickness and hole_dia are conventions. V1.0 and V1.1 share identical mechanics
+    per BTT readme. Mounting: 4 corner holes, symmetric. Pitch (150 x 90) confirmed from official SIZE.pdf;
+    overall PCB 160 x 100. Inset = (160-150)/2 = 5 mm and (100-90)/2 = 5 mm on all sides; holes_xy computed
+    from symmetric inset. hole_dia 3.2 is the M3 clearance assumption (corner ''M12'' silkscreen label
+    is a ref-designator, not a diameter). V1.1 vs V1.0 differ only in silkscreen / power-IC package; mechanically
+    identical. Source: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-V1.0/blob/master/Hardware/BIGTREETECH%20Octopus%20-%20SIZE.pdf'
+- id: btt_octopus_pro_v1_x
+  name: Octopus Pro V1.x (V1.0/V1.1)
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 160.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 150.0
+  mount_pitch_y_mm: 90.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 5.0
+  - - 155.0
+    - 5.0
+  - - 5.0
+    - 95.0
+  - - 155.0
+    - 95.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Same layout as standard Octopus: MOTOR0-7 stepper headers + caps along one long edge,
+    power input at corner, heaters/endstops/USB/network on opposite edges.'
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 160 x 100 outline and 150 x 90 pitch read directly
+    from official Pro SIZE.pdf - matches standard Octopus exactly. Single SIZE.pdf covers both V1.0 and
+    V1.1 (no mechanical change). thickness/hole_dia conventions. Mounting: Footprint and mounting pattern
+    VERIFIED IDENTICAL to the non-Pro Octopus from the official Octopus Pro SIZE.pdf (160 x 100 overall,
+    150 x 90 pitch). Pro adds higher-current drivers; mechanical layout unchanged. hole_dia 3.2 = M3 clearance
+    convention. Source: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf'
+- id: btt_kraken_v1_x
+  name: Kraken (V1.0/V1.1)
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 200.0
+  pcb_width_mm: 113.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 193.0
+  mount_pitch_y_mm: 106.03
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 4.0
+  - - 198.0
+    - 4.0
+  - - 5.0
+    - 110.03
+  - - 198.0
+    - 110.03
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 8-axis high-current board. Stepper headers (MOTOR0-7) + large bulk caps along one long
+    edge. MOTOR-POWER, POWER, BED-POWER, BED-OUT high-current screw terminals on one short edge. USB-C,
+    RJ45, SD, Vbat and fan/endstop headers on the opposite long edge / right side. Heater outputs (HE0-3)
+    along bottom edge.
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-Kraken/blob/master/Hardware/BIGTREETECH%20Kraken%20V1.0-SIZE.png
+  - https://global.bttwiki.com/Kraken.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 200 x 113 and pitch 193.00
+    x 106.03 read from official SIZE.png (matches wiki). MEDIUM because per-corner insets are asymmetric
+    and not fully dimensioned (holes_xy reconstructed - verify before drilling); drawing height 113.41
+    vs wiki 113. V1.0/V1.1 share this drawing. Mounting: Larger than Octopus. Overall 200.00 x 113.41
+    mm (wiki rounds 200 x 113). Mounting pitch X = 193.00, Y = 106.03 mm, 4 corner holes. Insets are slightly
+    ASYMMETRIC (~5 mm left long edge, ~4 mm right). holes_xy are RECONSTRUCTED, not all individually dimensioned.
+    The 52.02/65.20/26.39/ 30.86 mm callouts on the drawing are connector positions, NOT mounting holes.
+    hole_dia 3.2 = M3 convention. Source: https://github.com/bigtreetech/BIGTREETECH-Kraken/blob/master/Hardware/BIGTREETECH%20Kraken%20V1.0-SIZE.png'
+- id: btt_manta_m4p
+  name: Manta M4P
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 160.0
+  pcb_width_mm: 95.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other-describe
+  mount_pitch_x_mm: 97.0
+  mount_pitch_y_mm: 84.2
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Bottom edge carries power input, USB-C, USB-A, and RJ45/Ethernet. Stepper driver sockets
+    (4x) and motor/endstop headers along the top/right. CB1/CM4 SBC mounts on top via board-to-board connector.
+  sources:
+  - https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
+  - https://global.bttwiki.com/M4P.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 160 x 95 HIGH (official
+    SIZE.png + wiki). Exact hole XY MEDIUM (stepped/irregular layout; pitch_x/pitch_y read from drawing
+    but holes_xy not enumerated). hole_dia and thickness assumed. Mounting: 4 holes, roughly rectangular
+    but the top-left hole is inset (NOT on the corner): it sits at X=48 mm, top-right hole 97 mm to its
+    right (X=145). Vertical pitch top->bottom = 84.2 mm. Wiki lists install sizes "146 x 84.2 mm; 97 x
+    84.2 mm" indicating two hole-column spacings (a stepped layout). CB1/CM4 core board mounts via board-to-board
+    connector + its own standoffs. Source: https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png'
+- id: btt_manta_m5p
+  name: Manta M5P
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 137.39
+  pcb_width_mm: 95.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: 86.5
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 4.5
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Bottom edge: power, USB-C, USB-A, RJ45/Ethernet. 5x stepper driver sockets and motor/endstop
+    headers across the right side. CB1/CM4 SBC mounts on top via board-to-board connector.'
+  sources:
+  - https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf
+  - https://global.bttwiki.com/M5P.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 137.39 x 95.00 HIGH (official
+    SIZE-top.pdf; wiki rounds to 137.5). 86.50 mm vertical span and 4.50/4.00 mm insets read from drawing.
+    Horizontal pitch is COMPUTED (not labeled) -> hole-center X MEDIUM. hole_dia and thickness assumed.
+    Mounting: Four corner mounting holes inset ~4.50 mm from left/bottom edges (top-right shows 4.50 X
+    / 4.00 Y). Vertical hole span 86.50 mm. Horizontal span ~= 137.39 - 4.5 - 4.5 ~= 128.4 mm (COMPUTED,
+    not directly labeled). A separate 4-hole cluster near the LAN/SBC region is the CB1/CM4 core-board
+    mount, NOT the main board mounts. Source: https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf'
+- id: btt_manta_m8p_v1_1
+  name: Manta M8P V1.1
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 169.93
+  pcb_width_mm: 102.74
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 6
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Top/left edges carry the 8 stepper driver sockets and motor power screw terminals.
+    Right edge: USB-C, USB-A, RJ45/Ethernet (and HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board
+    connector.'
+  sources:
+  - https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf
+  - https://global.bttwiki.com/M8P.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official
+    V1.0/V1.1 SIZE-top.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. hole_count MEDIUM (could
+    be 5), individual hole XY LOW (connector-referenced dimension chains). hole_dia and thickness assumed.
+    Mounting: Board is 169.93 x 102.74 mm (NOT ~148x130 - that hint was wrong). V1.0 and V1.1 share one
+    hardware dir and one SIZE drawing (identical mechanicals). Corner holes inset 5.00 mm; bottom dim
+    chain 5.00 / 124.94 / 157.94 / 169.93 mm and top chain to 155.00 mm locate mounting holes along the
+    long edges. hole_count=6 (corners + mid-edge) is a visual read and could be 5. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf'
+- id: btt_manta_m8p_v2
+  name: Manta M8P V2.0
+  manufacturer: BigTreeTech
+  category: mainboard
+  pcb_length_mm: 169.93
+  pcb_width_mm: 102.74
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 6
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Top edge: 8 stepper driver sockets, motor power screw terminals. Right edge: USB-C,
+    USB-A, RJ45/Ethernet (HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board connector.'
+  sources:
+  - https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
+  - https://global.bttwiki.com/M8P-V2_0.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official
+    V2.0 SIZE.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. Dense connector-referenced drawing
+    -> exact hole XY LOW, hole_count MEDIUM. Mechanically interchangeable footprint with V1.x. hole_dia
+    and thickness assumed. Mounting: Board outline 169.93 x 102.74 mm. SIZE drawing shows corner insets
+    5.00 and 4.43 mm. Mounting-hole layout is essentially the same as V1.0/V1.1 (corners + mid-edge);
+    same enclosures generally fit V1.x and V2.0. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf'
+- id: btt_cb1
+  name: CB1
+  manufacturer: BigTreeTech
+  category: sbc
+  pcb_length_mm: 55.0
+  pcb_width_mm: 40.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.7
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 48.0
+  mount_pitch_y_mm: 33.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 51.5
+    - 3.5
+  - - 3.5
+    - 36.5
+  - - 51.5
+    - 36.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Underside: two 100-pin micro BTB connectors mating to a CM4-style carrier (Manta,
+    Pi4B adapter). 40-pin GPIO header on top edge.'
+  sources:
+  - https://global.bttwiki.com/CB1.html
+  - https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Board size 40 x 55 and mounting
+    33 x 48 authoritative (BTT wiki). Hole diameter, M2.5, 3.5 mm inset, 1.6 mm thickness inferred from
+    CM4 compatibility, NOT explicitly published by BTT. holes_xy computed. Mounting: BTT wiki: product
+    size 40 x 55 mm, "mounting size" 33 x 48 mm. The 33 x 48 rectangle IS the mounting-hole pitch and
+    is the Raspberry Pi CM4 standard 4-hole pattern (CB1 is CM4-form-factor compatible). 3.5 mm inset
+    on all sides is self-consistent ((55-48)/2 and (40-33)/2). hole_dia 2.7 and M2.5 from the RPi CM4
+    datasheet. holes_xy computed (origin = bottom-left). FORM FACTOR: board-to-board / CM4-style module
+    (two 100-pin BTB connectors on underside), NOT a SODIMM edge card. Source: https://global.bttwiki.com/CB1.html'
+- id: btt_cb2
+  name: CB2
+  manufacturer: BigTreeTech
+  category: sbc
+  pcb_length_mm: 55.0
+  pcb_width_mm: 40.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.7
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 48.0
+  mount_pitch_y_mm: 33.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 51.5
+    - 3.5
+  - - 3.5
+    - 36.5
+  - - 51.5
+    - 36.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Underside: two 100-pin high-speed BTB connectors (CM4-compatible carrier). Same mating
+    as CB1.'
+  sources:
+  - https://global.bttwiki.com/CB2.html
+  - https://github.com/bigtreetech/docs/blob/master/docs/CB2.md
+  - https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 40 x 55 and 33 x 48 authoritative
+    (BTT wiki). Hole dia 2.7, M2.5, 3.5 mm inset, 1.6 mm thickness inferred from CM4 compatibility, not
+    explicitly published by BTT. Mounting: BTT wiki: product size 40 x 55 mm, "mounting size" 33 x 48
+    mm, explicitly "compatible with Raspberry Pi CM4 form factor". Same footprint as CB1. RK3566 SoC.
+    Board-to-board module, NOT SODIMM. hole_dia / M2.5 / inset from CM4 datasheet; holes_xy computed.
+    Source: https://global.bttwiki.com/CB2.html'
+- id: btt_u2c_v2
+  name: U2C V2 (V2.0/V2.1)
+  manufacturer: BigTreeTech
+  category: usb_can_bridge
+  pcb_length_mm: 85.45
+  pcb_width_mm: 25.35
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: 19.23
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 2.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Left short edge: USB Type-C (CAN_IN to host). Right short edge: 4-pin screw terminal
+    (Power + CAN_OUT). Mid-board: additional CAN_OUT JST headers (3 CAN outputs on the ''-3'' variant).
+    Connectors exit both short ends.'
+  sources:
+  - https://global.bttwiki.com/U2C.html
+  - https://global.bttwiki.com/img/U2C/U2C_Dimension.webp
+  - https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall L/W (85.45 x 25.35), 19.23
+    mm vertical hole pitch and 2.00 mm edge inset read directly from the official dimension drawing (HIGH
+    on those). Hole diameter, X-pitch, screw size, thickness NOT published. Overall MEDIUM because hole
+    geometry is incomplete. Mounting: Official BTT dimension drawing: overall 85.45 x 25.35 mm. Four mounting
+    holes, one near each corner. Drawing labels a 2.00 mm inset from the right edge to the hole centers
+    and a 19.23 mm vertical pitch. The horizontal (X) pitch and hole diameter are NOT labeled -> null.
+    M3 is the community-standard screw (not BTT-stated). Source: https://global.bttwiki.com/U2C.html'
+- id: btt_u2c_v3
+  name: U2C V3
+  manufacturer: BigTreeTech
+  category: usb_can_bridge
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: null
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: null
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: N/A - product not confirmed to exist.
+  sources:
+  - https://global.bttwiki.com/U2C.html
+  - https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
+  - https://maz0r.github.io/klipper_canbus/controller/u2c.html
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). DO NOT generate geometry for
+    this entry. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs (as of
+    2026-06). If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist
+    or is mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT''s official
+    lineage is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen
+    in listings refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision
+    is confirmed. Use the btt_u2c_v2 entry for all current U2C dimensional data. Source: https://global.bttwiki.com/U2C.html'
+- id: btt_ebb36_can_v1
+  name: EBB36 CAN V1.x
+  manufacturer: BigTreeTech
+  category: toolhead_can
+  pcb_length_mm: 51.4
+  pcb_width_mm: 37.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 43.85
+  mount_pitch_y_mm: 0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Bottom edge carries main connectors (HE0, FAN, etc.); USB and CAN/power on board. I2C/PT1000/RST/BOOT
+    labeled on PCB. Stepper connects via a separate edge.
+  sources:
+  - https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf
+  - https://global.bttwiki.com/EBB%2036%20CAN.html
+  confidence: medium
+  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 51.40 mm width and 43.85 mm hole
+    spacing confirmed (official SIZE PDF + wiki). Exact hole XY NOT extractable (only c-to-c published).
+    thickness 1.6 and hole_dia 3.2 assumed. Mounting: NEMA-style rounded/keyed outline. BTT publishes
+    only 2x M3 holes at 43.85 mm center-to-center spacing (per official SIZE PDF + wiki). Holes sit on
+    lower ears flanking the connector edge; absolute hole XY is NOT published (only c-to-c). Width 51.40
+    mm (wiki nominal 51.5 x 37). Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf'
+- id: btt_ebb42_can_v1
+  name: EBB42 CAN V1.x
+  manufacturer: BigTreeTech
+  category: toolhead_can
+  pcb_length_mm: 40.0
+  pcb_width_mm: 40.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 31.0
+  mount_pitch_y_mm: 31.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.5
+    - 4.5
+  - - 35.5
+    - 4.5
+  - - 4.5
+    - 35.5
+  - - 35.5
+    - 35.5
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Bottom edge: HE0, FAN1 outputs. Top edge: VBUS/USB and CAN. Endstop/ PT100/I2C/BLTouch
+    labeled around perimeter. Stepper via dedicated connector.'
+  sources:
+  - https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB42%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB42%20CAN%20V1.1-SIZE.pdf
+  - https://global.bttwiki.com/EBB%2042%20CAN.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 40 x 40, 31 x 31 four-hole pattern, 4x M3, 4.00
+    mm edge dim all annotated on official SIZE PDF + wiki. CONFLICT: 4.00 mm reads as edge-to-center vs
+    as-drawn -> holes_xy (4.5/35.5) computed on the centered-span interpretation. 31 mm c-to-c is firm.
+    thickness assumed. Mounting: Clean 40 x 40 board, 4x M3 in a 31 x 31 square grid (matches a NEMA17-ish
+    bolt grid). SIZE drawing annotates a 4.00 mm edge dimension. NOTE the ambiguity: holes_xy here assume
+    31 mm span centered on the 40 mm board (-> 4.5 mm inset to center); the drawing''s 4.00 mm could instead
+    be edge-to-center (-> holes at 4.0/35.0, span 32). Use pitch 31.0 as the primary load-bearing figure
+    and reconcile the 4.0 vs 4.5 inset before machining. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB42%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB42%20CAN%20V1.1-SIZE.pdf'
+- id: btt_ebb_sb2209_rp2040
+  name: EBB SB2209 CAN V1.0 (RP2040)
+  manufacturer: BigTreeTech
+  category: toolhead_can
+  pcb_length_mm: 68.54
+  pcb_width_mm: 42.45
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 12.78
+  mount_pitch_y_mm: 12.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Same family layout as SB2209 CAN: top edge VIN/GND/CAN-H/CAN-L + HE0; sides carry
+    SPI_OUT, Proximity, FAN, endstop, PT100/TH0; ADXL345 onboard (RP2040 variant). USB-C present.'
+  sources:
+  - https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
+  - https://global.bttwiki.com/EBB%202209%20CAN%20RP2040.html
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). NO official dimensional drawing
+    exists for the RP2040 variant. All PCB/mount figures are INFERRED from the StealthBurner-interchangeable
+    SB2209 CAN. DO NOT machine to these without physical verification. Mounting: BTT did NOT publish a
+    dimensional SIZE PDF for the RP2040 variant (repo folder has only a Pin PDF). It is purpose-built
+    for and physically interchangeable with the Voron StealthBurner / the SB2209 CAN sibling, so outline
+    and 2-hole mount are TAKEN to match that sibling (68.54 x 42.45, hole-to-hole dX=12.78 / dY~12.0).
+    Confirm physically before relying on hole XY. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf'
+- id: btt_ebb_sb2209_can
+  name: EBB SB2209 CAN V1.0
+  manufacturer: BigTreeTech
+  category: toolhead_can
+  pcb_length_mm: 68.54
+  pcb_width_mm: 42.45
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 12.78
+  mount_pitch_y_mm: 12.03
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 17.62
+    - 17.19
+  - - 30.4
+    - 29.22
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Top edge: VIN/GND/CAN-H/CAN-L + HE0 heater; near-top RST/BOOT/DC_IN/ USB_5V/USB-C.
+    Left/lower edges: SPI_OUT, NPN/Proximity, FAN headers, TH0 thermistor, 120R term jumper. Datum/accel
+    reference at bottom-right.'
+  sources:
+  - https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2240_2209%20CAN/SB2209/Hardware/BIGTREETECHEBB%20SB2209%20CAN%20V1.0_SIZE.pdf
+  - https://global.bttwiki.com/EBB%202240%202209%20CAN.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 68.54 x 42.45 mm and both hole centers (17.62,17.19
+    and 30.40,29.22 from drawing datum) read from official SIZE PDF. Hole-to-hole dX 12.78 / dY 12.03
+    matches SB2240. DATUM is the drawing''s +X/+Y origin (bottom-right), NOT a board corner - verify orientation.
+    thickness and hole_dia assumed. Mounting: Two M3 holes in a diagonal pattern matching the Voron StealthBurner
+    toolhead PCB mount. Coordinates are relative to the board''s DRAWING DATUM (+X/+Y origin marked bottom-right
+    of the SIZE drawing), NOT a board corner - sign/orientation must be reconciled with your CAD origin.
+    The hole-to-hole vector dX=12.78, dY=12.03 is the reliable invariant and matches SB2240. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2240_2209%20CAN/SB2209/Hardware/BIGTREETECHEBB%20SB2209%20CAN%20V1.0_SIZE.pdf'
+- id: btt_ebb_sb2240
+  name: EBB SB2240 CAN V1.0
+  manufacturer: BigTreeTech
+  category: toolhead_can
+  pcb_length_mm: 68.54
+  pcb_width_mm: 42.45
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 12.78
+  mount_pitch_y_mm: 12.02
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 12.02
+    - 17.22
+  - - 24.8
+    - 29.24
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: 'Identical family layout to SB2209 CAN (top: VIN/GND/CAN-H/CAN-L + HE0; sides: SPI_OUT,
+    Proximity, FAN, TH0, 120R).'
+  sources:
+  - https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2240_2209%20CAN/SB2240/Hardware/BIGTREETECH%20EBB%20SB2240%20CAN%20%20V1.0_SIZE.pdf
+  - https://global.bttwiki.com/EBB%202240%202209%20CAN.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 68.54 x 42.45 mm and hole centers (12.02,17.22
+    and 24.80,29.24 from drawing datum) read from official SIZE PDF. Hole-to-hole dX 12.78 / dY 12.02
+    matches SB2209 CAN exactly (confirms interchangeable mount). Absolute X offset differs due to datum
+    placement only. thickness/hole_dia assumed. Mounting: Same physical outline and StealthBurner 2-hole
+    mount as SB2209 CAN. Absolute hole X-values differ from SB2209 (12.02/24.80 vs 17.62/30.40) ONLY because
+    the drawing datum is placed at a different X reference; the hole-to-hole vector (dX=12.78, dY=12.02)
+    is IDENTICAL to SB2209 CAN, so the boards are interchangeable on the StealthBurner. Reconcile datum
+    before using absolute coords. Difference vs SB2209 is the integrated TMC2240 driver (vs TMC2209).
+    Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2240_2209%20CAN/SB2240/Hardware/BIGTREETECH%20EBB%20SB2240%20CAN%20%20V1.0_SIZE.pdf'
+- id: btt_knomi
+  name: KNOMI
+  manufacturer: BigTreeTech
+  category: accessory
+  pcb_length_mm: 37.86
+  pcb_width_mm: 34.53
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: USB-C (UART-to-USB, DC 5V in) and a power-in header (DC 5~24V, +/-); BOOT button. 1.28in
+    240x240 round LCD (non-touch).
+  sources:
+  - https://github.com/bigtreetech/KNOMI/blob/master/KNOMI1/Hardware/BIGTREETECH%20KNOMI%20v1.0-SIZE.pdf
+  - https://github.com/bigtreetech/KNOMI/blob/master/KNOMI1/KNOMI%201%20User%20Manual%2020241214.pdf
+  - https://global.bttwiki.com/KNOMI.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline 34.53 x 37.86 mm read directly from official
+    v1.0-SIZE.pdf. Minor width conflict: SIZE.pdf=34.53 vs manual=34.59 (~0.06 mm rounding). thickness
+    assumed. No standoff/hole data because design is snap-fit (confirmed in manual + assembly drawings).
+    Mounting: ROUND PCB (~34.53 mm dia body) with a small flat tab at the bottom (two 10.97 mm edge segments
+    flanking a connector notch). NO mounting holes on the PCB. The board SNAP-FITS into a printed "Mounting
+    Plate" that clips onto the StealthBurner (BTT provides STLs). Overall bounding box 34.53 (W) x 37.86
+    (H) mm per v1.0-SIZE drawing; manual also cites 34.59 mm width and ~39.5 mm assembled depth. Model
+    as a round board that drops into a snap-fit cradle, NOT a screw pattern. Source: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI1/Hardware/BIGTREETECH%20KNOMI%20v1.0-SIZE.pdf'
+- id: btt_knomi2
+  name: KNOMI 2
+  manufacturer: BigTreeTech
+  category: accessory
+  pcb_length_mm: 41.12
+  pcb_width_mm: 38.48
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: other-describe
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 0
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: USB-C (UART-to-USB, DC 5V in) and power-in header (DC 5V, +/-); BOOT button. 1.28in
+    round LCD, display area 32.4 x 32.4 mm, 240x240, 5-point capacitive touch.
+  sources:
+  - https://github.com/bigtreetech/KNOMI/blob/master/KNOMI2/Manual/KNOMI%202%20User%20Manual%2020240109.pdf
+  - https://github.com/bigtreetech/KNOMI/blob/master/KNOMI2/Hardware/BIGTREETECH%20knomi%20v2.0-TOP.pdf
+  - https://global.bttwiki.com/KNOMI2.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Four dims read directly from the official manual
+    overview drawing: 38.48 mm (max width incl tabs), 35.65 mm (round body dia), 41.12 mm (overall height
+    incl tabs), 38.42 mm (round-portion height). Hardware TOP.pdf has no dimension callouts. thickness
+    assumed. Snap-fit, no PCB holes (confirmed in manual + assembly pages). Mounting: ROUND PCB; round
+    body diameter ~35.65 mm (~38.42 mm tall round portion), with small bottom tabs extending the overall
+    bounding box to 38.48 (W) x 41.12 (H) mm per the official manual overview drawing. NO mounting holes
+    - SNAP-ON into a printed Mounting Plate (the v1.1 carrier increased the gap). BTT provides StealthBurner
+    Main Body + Mounting Plate STLs. Source: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI2/Manual/KNOMI%202%20User%20Manual%2020240109.pdf'
+- id: btt_tmc5160t_plus
+  name: BTT TMC5160T Plus V1.0 external high-power stepper driver
+  manufacturer: BigTreeTech
+  category: driver_module
+  pcb_length_mm: 50.0
+  pcb_width_mm: 50.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 42.0
+  mount_pitch_y_mm: 42.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 4.0
+    - 4.0
+  - - 46.0
+    - 4.0
+  - - 4.0
+    - 46.0
+  - - 46.0
+    - 46.0
+  mount_inset_from_edge_mm: 4.0
+  standoff_height_mm: null
+  component_height_top_mm: 28.0
+  connector_notes: 5-pole screw terminal (MOTOR 1B/2B/1A/2A + HVIN GND/8-60V); 16-pin drive connector
+    + FFC EZ-driver connector on bottom edge; 2-pin 24V fan header; SPI/UART/standalone jumpers. Two large
+    560uF caps. VIO must not exceed 24V despite 60V motor supply.
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/blob/master/TMC5160T%20Plus/BIGTREETECH%20TMC5160T%20Plus%20User%20Manual.pdf
+  - https://bttwiki.com/TMC5160TPlus.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 50x50 PCB and 4.0 mm corner inset are from the
+    official drawing (high). Derived 42 mm pitch and M3 are medium; hole diameter and 1.6 mm thickness
+    inferred (low). STEP file in repo can confirm exact hole coords. Mounting: Bare PCB 50 x 50 mm, four
+    corner holes inset 4.0 mm per the official dimensional drawing. Overall with integrated heatsink ~58
+    x 50 x 28 mm; with case ~64 x 56 x 32.55 mm. Ships with M3x8 hardware. Source: https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/blob/master/TMC5160T%20Plus/BIGTREETECH%20TMC5160T%20Plus%20User%20Manual.pdf'
+- id: btt_max31865
+  name: BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier
+  manufacturer: BigTreeTech
+  category: thermocouple_amp
+  pcb_length_mm: 20.32
+  pcb_width_mm: 15.24
+  pcb_thickness_mm: 1.6
+  mount_screw: null
+  mount_hole_dia_mm: null
+  mount_pattern: none(header-mounted)
+  mount_pitch_x_mm: 15.24
+  mount_pitch_y_mm: 2.54
+  mount_hole_count: 0
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 2x 1x8 0.1in headers; screw terminal for RTD wires; DIP switch for 2/3/4-wire & PT100/PT1000.
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-MAX31865
+  - https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-MAX31865/master/BIGTREETECH%20MAX31865%20V2.0/BIGTREETECH%20MAX31865%20V2.0%20Manual.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 15.24 x 20.32 from official manual p.5; header-mounted,
+    no screw holes. Mounting: NO mounting holes. Uses the standard StepStick/stepper-driver footprint
+    (manual states it "adopts the same package of motor drive module") and plugs into a spare SPI-capable
+    stepper-driver socket via 2x 1x8 headers. Do NOT design a screw bracket for this board. Source: https://github.com/bigtreetech/BIGTREETECH-MAX31865'
+- id: btt_adxl345_v2
+  name: BTT ADXL345 V2.0 (USB-C, onboard RP2040)
+  manufacturer: BigTreeTech
+  category: accelerometer
+  pcb_length_mm: 28.25
+  pcb_width_mm: 15.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 15.5
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: USB-C (USB 2.0), onboard RP2040, BOOT button, reserved solder pads. No accelerometer
+    pin header.
+  sources:
+  - https://github.com/bigtreetech/ADXL345
+  - https://global.bttwiki.com/ADXL345.html
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Board size (28.25 x 15.5 / 33.25 overall) and
+    15.5 mm hole pitch high (official manual p.5). Exact hole diameter low (not stated). Absolute hole
+    coords medium. Mounting: 2-hole M3 mount at 15.5 mm spacing (GY-291 compatible). Ships with M3 screws
+    + rubber rings. Exact hole diameter not given in manual; the separate "...V2.0-SIZE.pdf" in the repo
+    has full coords if needed. Source: https://github.com/bigtreetech/ADXL345'
+- id: btt_s2dw_v1
+  name: BTT S2DW V1.0 (LIS2DW, USB-C)
+  manufacturer: BigTreeTech
+  category: accelerometer
+  pcb_length_mm: 28.25
+  pcb_width_mm: 15.5
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: 15.5
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy: []
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: USB-C (USB 2.0), RP2040, BOOT button, reserved solder pads.
+  sources:
+  - https://github.com/bigtreetech/LIS2DW
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Shares dimension drawing with ADXL345 V2.0 (high
+    on size + 15.5 mm pitch). Hole diameter not stated (low). Generic/Annex "LIS2DW USB board" is effectively
+    this board - no distinct Annex-branded LIS2DW PCB exists. Mounting: Mechanically interchangeable with
+    the BTT ADXL345 V2.0 - identical PCB outline and 15.5 mm 2-hole M3 mount; only the sensor IC differs
+    (LIS2DW). Source: https://github.com/bigtreetech/LIS2DW'
+- id: btt_relay_v1_2
+  name: BTT Relay V1.2 module
+  manufacturer: BigTreeTech
+  category: relay
+  pcb_length_mm: 80.32
+  pcb_width_mm: 36.19
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 74.17
+  mount_pitch_y_mm: 29.21
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.075
+    - 3.49
+  - - 77.245
+    - 3.49
+  - - 3.075
+    - 32.7
+  - - 77.245
+    - 32.7
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 'LV side: 5V_IN/GND, two S/G signal pairs, 5V+RST, GND/TX/RX upload header (STC15W201S
+    MCU). HV side: AC in (L/N), switched AC out (LOT), +Vo/-Vo 5V/3W.'
+  sources:
+  - https://github.com/bigtreetech/BIGTREETECH-Relay-V1.2
+  - https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-Relay-V1.2/master/BIGTREETECH%20Relay%20V1.2/BIGTREETECH%20Relay%20V1.2/Relay%20V1.2-Operating%20Instruction.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). L x W and 74.17 x 29.21 mm hole pitch from official
+    manual (high). Screw size M3 inferred (medium); hole diameter + thickness inferred (low). Corner coords
+    derived. Mounting: 80.32 x 36.19 mm, 4 holes at 74.17 x 29.21 mm pitch (from official drawing). HIGH-VOLTAGE
+    board (85-265 VAC) - keep mount clear of AC conductors. Corner coords derived by centering the hole
+    rectangle in the outline. Source: https://github.com/bigtreetech/BIGTREETECH-Relay-V1.2'
+- id: btt_sfs_v1
+  name: BTT Smart Filament Sensor (SFS) V1.0
+  manufacturer: BigTreeTech
+  category: sensor
+  pcb_length_mm: 75.0
+  pcb_width_mm: 30.0
+  pcb_thickness_mm: null
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 56.75
+  mount_pitch_y_mm: 20.35
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 9.125
+    - 4.825
+  - - 65.875
+    - 4.825
+  - - 9.125
+    - 25.175
+  - - 65.875
+    - 25.175
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 29.55
+  connector_notes: Inline 1.75 mm filament path, PC4-M6 push-fit couplings top+bottom (bowden). Encoder/motion
+    sensor, 7 mm detection length. 3.3-5V, 3-wire JST output.
+  sources:
+  - https://github.com/bigtreetech/smart-filament-detection-module
+  - https://raw.githubusercontent.com/bigtreetech/smart-filament-detection-module/master/V1.0/manual/smart%20filament%20sensor%20module%20manual201125.pdf
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Overall size, M3, 20.35 mm fixed hole spacing,
+    56.75 mm and 13.99 mm filament offset all from the official dimensional drawing (high). Corner coords
+    derived. Mounting: Enclosed module 75 x 30 x 29.55 mm. 4 M3 holes at 56.75 x 20.35 mm pitch. Filament
+    inlet/throat axis at 13.99 mm from the left mounting-hole line. Often mounted via just 2 of the 4
+    holes. Corner coords derived (centered). Source: https://github.com/bigtreetech/smart-filament-detection-module'

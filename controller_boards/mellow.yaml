@@ -1,0 +1,283 @@
+# Mellow FLY controller and toolhead boards
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: mellow_fly_sht36
+  name: Fly-SHT36 (v1)
+  manufacturer: Mellow
+  category: toolhead_can
+  pcb_length_mm: 51.27
+  pcb_width_mm: 36.26
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 43.84
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/
+  - https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/FLY-SHT36/STEP%20File/36.step
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + 43.84 mm spacing confirmed by drawing
+    AND STEP. Thickness 1.6 mm nominal. Mounting: ONLY 2 mounting holes, collinear, spaced 43.84 mm (confirmed
+    by both the dimension drawing and STEP). Mounts via two "ear" tabs on a printed bracket. Does NOT
+    use the NEMA17 31 mm pattern (that assumption is false for the SHT36 -- only the SHT42 uses 31x31).
+    Exact hole XY relative to the PCB corner not extracted; use the 43.84 mm spacing. Source: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/'
+- id: mellow_fly_sht36_v2
+  name: Fly-SHT36 v2.0
+  manufacturer: Mellow
+  category: toolhead_can
+  pcb_length_mm: 51.27
+  pcb_width_mm: 45.67
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: linear
+  mount_pitch_x_mm: 43.84
+  mount_pitch_y_mm: 0.0
+  mount_hole_count: 2
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp
+  - https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/Fly-SHT36v2.0/Cad_SHT36v2.0.step
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + spacing from drawing and STEP. Thickness
+    1.6 mm nominal. Mounting: Same 2-hole 43.84 mm pattern as v1; board is taller (45.67 mm vs 36.26 mm)
+    because connectors extend the outline on the connector side. Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp'
+- id: mellow_fly_sht42
+  name: Fly-SHT42
+  manufacturer: Mellow
+  category: toolhead_can
+  pcb_length_mm: 42.0
+  pcb_width_mm: 42.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 31.0
+  mount_pitch_y_mm: 31.0
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: 5.5
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36-42/sht_42_size.png
+  - https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/FLY-SHT42/STEP%20File/42CAN.step
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). 31x31 confirmed by drawing AND STEP. Thickness
+    1.6 mm nominal. Mounting: Square (chamfered corners). 31x31 mm = NEMA17 face bolt pattern -- bolts
+    directly onto a NEMA17 stepper. Drawing labels 31.00 mm both directions; STEP confirms to 0.01 mm.
+    Pattern centred -> ~5.5 mm inset each side. Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36-42/sht_42_size.png'
+- id: mellow_fly_super8
+  name: Fly Super8
+  manufacturer: Mellow
+  category: mainboard
+  pcb_length_mm: 155.58
+  pcb_width_mm: 109.68
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 149.38
+  mount_pitch_y_mm: 103.45
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.1
+    - 3.0
+  - - 152.48
+    - 3.0
+  - - 3.1
+    - 106.45
+  - - 152.48
+    - 106.45
+  mount_inset_from_edge_mm: 3.0
+  standoff_height_mm: 6
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-super8/fly-super8_dimensions.webp
+  - https://github.com/Mellow-3D/Fly-Super8/blob/main/Hardware/super8.step
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline 155.58x109.68 and hole pitch 149.38x103.45
+    confirmed by drawing AND STEP (<0.1 mm). Thickness 1.6 mm nominal. Mounting: 8-driver mainboard. Hole
+    rectangle 149.38 x 103.45 mm. NOTE: a low-res docs thumbnail can misread the Y pitch as "100.45" --
+    the correct value is 103.45 mm (confirmed by STEP). holes_xy derived from outline/pitch centring.
+    Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-super8/fly-super8_dimensions.webp'
+- id: mellow_fly_utoc
+  name: Fly-UTOC (UTOC-1 / UTOC-3)
+  manufacturer: Mellow
+  category: usb_can_bridge
+  pcb_length_mm: 85.45
+  pcb_width_mm: 19.23
+  pcb_thickness_mm: 1.6
+  mount_screw: M2
+  mount_hole_dia_mm: null
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 79.33
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 4
+  component_height_top_mm: null
+  connector_notes: USB one end, CAN the other (DIN-clip-style mount common).
+  sources:
+  - https://mellow-3d.github.io/fly-utoc_general.html
+  - https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-utoc/fly-utoc_dimensions.png
+  - https://wiki.kb-3d.com/home/mellow/voron/utoc-3
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Outline + X pitch (79.33) are
+    firm; hole Ø, screw size, and Y pitch are UNVERIFIED -- measure a physical board before cutting these.
+    Mounting: USB-CAN bridge. X hole pitch 79.33 mm is dimensioned (high confidence). Y pitch is NOT dimensioned
+    on the official drawing (~13-14 mm estimated, LOW confidence). Hole Ø / screw size not stated; community
+    mounts use M2 self-tapping screws, implying ~Ø2.2 holes -- treat hole Ø and Y pitch as UNVERIFIED.
+    No STEP exists in the Mellow repos to confirm. Source: https://mellow-3d.github.io/fly-utoc_general.html'
+- id: mellow_fly_gemini
+  name: Fly Gemini V2/V3 (formerly Fly-CDY)
+  manufacturer: Mellow
+  category: mainboard
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 143.0
+  mount_pitch_y_mm: 78.0
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 6
+  component_height_top_mm: null
+  connector_notes: Dual-toolhead / SBC-style mainboard.
+  sources:
+  - https://github.com/Mellow-3D/Fly-Gemini-V2/blob/main/Hardware/gemini_v2.step
+  - https://mellow-3d.github.io/fly-gemini_v3_general.html
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). ALL dimensions UNVERIFIED (no
+    drawing; STEP holes ambiguous). Do not cut to these without measuring a physical board. Mounting:
+    NO official dimensioned drawing is published for any Gemini version. Values derived solely from parsing
+    the Gemini V2 STEP and are UNVERIFIED. Outline roughly 143-150 x 78-82 mm; hole rectangle ~143 x 78
+    mm but the STEP also contains extra Ø3.2 holes that do not form a clean rectangle, so a trustworthy
+    mounting rectangle could not be established. Source: https://github.com/Mellow-3D/Fly-Gemini-V2/blob/main/Hardware/gemini_v2.step'
+- id: mellow_fly_rrf_e3
+  name: FLY-RRF-E3
+  manufacturer: Mellow
+  category: mainboard
+  pcb_length_mm: 100.838
+  pcb_width_mm: 70.358
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: irregular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: STM32 RepRapFirmware-capable mainboard. 4x stepper driver sockets (X/Y/Z/E, TMC SilentStepStick),
+    ST-LINK header, BL-Touch, PT100, EXP1 LCD, USB. RRF-E3 is superseded by Fly-E3-V2.
+  sources:
+  - https://github.com/Mellow-3D/FLY-RRF-E3/blob/master/Hardware/Sizes.svg
+  confidence: medium
+  notes: 'Board outline 100.838 x 70.358 mm read from official Hardware/Sizes.svg dimensional drawing
+    = high confidence on size. Mounting holes form an IRREGULAR (non-rectangular) pattern. Coordinates
+    derived from drawing callouts (bottom-left origin): top-left hole 20.574mm from left / 3.556mm from
+    top -> (20.574, 66.802); top-right hole 18.542mm from right (=82.296 from left) / 9.652mm from top
+    -> (82.296, 60.706); a hole 34.290mm from left / 2.032mm from bottom -> (34.290, 2.032). A 4th (bottom-right)
+    hole is visible but not explicitly dimensioned. Left-side chain dims 31.750/29.210mm reference the
+    lower-left hole vertically. Overall medium confidence because holes are not on a clean grid and the
+    SVG is a drawing, not a KiCad file. Verify hole positions against a physical board before final mount
+    print. (raw hole coords from source: (20.574, 66.802), (82.296, 60.706), (34.290, 2.032), bottom-right
+    hole not dimensioned)'
+- id: mellow_fly_cdy
+  name: FLY-CDY (and Fly Gemini family)
+  manufacturer: Mellow
+  category: mainboard
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: STM32 mainboard, RRF/Klipper capable. FLY-CDY superseded by Fly-CDYv2/v3. The Fly Gemini
+    family (V1/V1.1/V2/V3) is the related compact STM32 mainboard line.
+  sources:
+  - https://github.com/Mellow-3D/FLY-CDY
+  - https://github.com/Mellow-3D/Fly-CDYv3
+  - https://github.com/Mellow-3D/Fly-Gemini-V3
+  - https://teamgloomy.github.io/fly_cdy_general.html
+  confidence: low
+  notes: 'NO authoritative dimensions found. The Mellow FLY-CDY, Fly-CDYv2/v3, and Fly-Gemini-V1/V1.1/V2/V3
+    repos contain only firmware, bootloader and schematic PDFs (e.g. FLY_CDY SCH.pdf) - NO KiCad .kicad_pcb,
+    NO STEP, and NO dimensional drawing. Official docs (mellow-3d.github.io) and TeamGloomy pages list
+    electrical specs only, no PCB size or mounting-hole data. Dimensions left null deliberately (do NOT
+    guess - wrong dims fail the print). To resolve: obtain a physical board to measure, or check GrabCAD
+    ''FLY-CDY V2 board'' user-uploaded STEP (unofficial, unverified).'
+- id: mellow_fly_rrf_36
+  name: Fly-RRF-36
+  manufacturer: Mellow
+  category: toolhead_can
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 36mm-class RepRapFirmware CAN toolboard, analogous to the FLY-SHT36 form factor.
+  sources:
+  - https://github.com/Mellow-3D/Fly-RRF-36
+  confidence: low
+  notes: NO authoritative dimensions. Repo contains only Schematic_Fly_RRF-36.pdf and README - no KiCad,
+    STEP, or dimensional drawing. Likely shares the ~36x36mm FLY-SHT36 footprint (already measured in
+    earlier research) but NOT verified for this board, so left null. Cross-reference the already-documented
+    FLY-SHT36 mount if the footprints are confirmed identical.
+- id: mellow_fly_d5
+  name: Fly-D5
+  manufacturer: Mellow
+  category: mainboard
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: null
+  mount_pattern: rectangular
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: STM32 mainboard.
+  sources:
+  - https://github.com/Mellow-3D/Fly-D5
+  confidence: low
+  notes: NO authoritative dimensions. Repo (Fly-D5) contains only Fly-D5-Pinout.svg, Fly-D5-Schematic.pdf
+    and README - no KiCad/STEP/dimensional drawing. Dimensions left null.

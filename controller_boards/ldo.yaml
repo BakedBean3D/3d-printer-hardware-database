@@ -1,0 +1,100 @@
+# LDO Motors controller and toolhead boards
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: ldo_leviathan
+  name: LDO Leviathan (V1.2/V1.3)
+  manufacturer: LDO Motors
+  category: mainboard
+  pcb_length_mm: 170.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 160.0
+  mount_pitch_y_mm: 90.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 5.0
+  - - 165.0
+    - 5.0
+  - - 5.0
+    - 95.0
+  - - 165.0
+    - 95.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: 6
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/MotorDynamicsLab/Leviathan/blob/main/KiCad/V1.3/Leviathan_V1.3.kicad_pcb
+  confidence: high
+  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline, holes, AND thickness (1.6 mm from board
+    stackup) all confirmed directly from KiCad source. Mounting: Voron-oriented all-in-one mainboard.
+    Rounded-rect, 5 mm corner radius; holes 5 mm in from all edges, concentric with the corner arcs. Holes
+    are plated top+bottom (grounding). V1.2 and V1.3 share this form factor. Parsed from KiCad source
+    -- all four numbers confirmed from geometry. Source: https://github.com/MotorDynamicsLab/Leviathan/blob/main/KiCad/V1.3/Leviathan_V1.3.kicad_pcb'
+- id: ldo_nitehawk_sb
+  name: LDO Nitehawk-SB
+  manufacturer: LDO Motors
+  category: toolhead_can
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: Mounts behind the Stealthburner front; USB adapter is a separate PCB.
+  sources:
+  - https://github.com/MotorDynamicsLab/Nitehawk-SB
+  - https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/Hardware/Nitehawk-SB_V1.5_3D%20Layout.pdf
+  - https://docs.ldomotors.com/en/Toolboard/nitehawk-sb
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Mounting is via the Stealthburner
+    body, not a board-edge hole pattern. PCB outline + exact hole XY UNVERIFIED -- extract from the repo
+    STEP / dimensioned Layout.pdf in CAD, or use the HartK Stealthburner_Toolhead_PCB reference footprint.
+    Thickness 1.6 mm is firm. Mounting: Stealthburner toolhead board; form factor "based on HartK''s two-piece
+    Stealthburner toolhead PCB" (the de-facto Voron SB toolhead PCB standard). It clips/screws into the
+    Stealthburner printed body (M3 into the SB fan housing), NOT a stepper bolt circle or a simple rectangular
+    pattern. PCB is 1.6 mm thick (confirmed from STEP z-layer). No KiCad source published; the shipped
+    STEP is a full toolhead assembly, so clean outline/hole XY could not be machine-extracted. Source:
+    https://github.com/MotorDynamicsLab/Nitehawk-SB'
+- id: ldo_nitehawk_36
+  name: LDO Nitehawk-36
+  manufacturer: LDO Motors
+  category: toolhead_can
+  pcb_length_mm: null
+  pcb_width_mm: null
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.2
+  mount_pattern: other
+  mount_pitch_x_mm: 43.84
+  mount_pitch_y_mm: null
+  mount_hole_count: null
+  mount_holes_xy: null
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 5
+  component_height_top_mm: null
+  connector_notes: ''
+  sources:
+  - https://github.com/MotorDynamicsLab/Nitehawk-36
+  - https://github.com/MotorDynamicsLab/Nitehawk-36/blob/master/CAD/NH36-outline.dxf
+  - https://github.com/MotorDynamicsLab/Nitehawk-36/blob/master/Hardware/Nitehawk-36%20V1.2/Nitehawk-36_V1.2_3D%20Layout.pdf
+  confidence: low
+  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). 43.84 mm X hole spacing and 1.6
+    mm thickness are firm; PCB outline, full hole count/pattern, and Y pitch UNVERIFIED. Extract from
+    the repo DXF/STEP in CAD before cutting. Often mounted via a printed adapter rather than directly.
+    Mounting: Toolhead board for the 36 mm NEMA14 standard; commonly mounted via a printed adapter (repo
+    ships Universal/Rigid/Flex, G2SA, WWG2, O2, Orbiter mounts). Two Ø3.2 mm (M3) mounting circles in
+    the source geometry are spaced 43.84 mm in X (same toolhead-PCB hole spacing as the Mellow SHT36 --
+    a useful cross-check that 43.84 mm is a real standard). PCB 1.6 mm thick (STEP z-layer). Full hole
+    set / outline could not be cleanly extracted because the shipped STEP is a full assembly. Source:
+    https://github.com/MotorDynamicsLab/Nitehawk-36'

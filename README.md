@@ -2,7 +2,7 @@
 
 Community-maintained database of 3D printer hardware specifications for Klipper-based printers.
 
-Covers stepper motors, hotends, extruders, toolheads, probes, and printer performance profiles — focused on the Voron, RatRig, Annex, and RepRap ecosystem.
+Covers stepper motors, hotends, extruders, toolheads, probes, and controller-board mounting dimensions — focused on the Voron, RatRig, Annex, and RepRap ecosystem.
 
 ## Directory Structure
 
@@ -25,9 +25,47 @@ extruders/               # Single file (community designs)
   extruders.yaml
 toolheads/               # Single file (community designs)
   toolheads.yaml
+controller_boards/       # PCB mounting dimensions, split by manufacturer
+  bigtreetech.yaml
+  fysetc.yaml
+  duet3d.yaml
+  makerbase.yaml
+  mellow.yaml
+  ldo.yaml
+  community.yaml         # github-username designs (Huvud, HartK, Enraged Rabbit, timmit99, ...)
+  modules.yaml           # generic add-on modules (StepStick drivers, RTD amps, accelerometers, relays)
+  controller_boards.json # generated aggregate (run gen.py)
+  CONTROLLER_BOARDS.md   # generated human-readable reference
+  gen.py                 # regenerates the .json + .md from the YAML
 ```
 
-Hardware with clear brand ownership (motors, hotends, probes) is split by manufacturer — one file per brand. Community/open-source designs (extruders, toolheads) stay in a single file since "manufacturer" is often just a GitHub username.
+Hardware with clear brand ownership (motors, hotends, probes, controller boards) is split by manufacturer — one file per brand. Community/open-source designs (extruders, toolheads, and community PCBs) stay in a single file since "manufacturer" is often just a GitHub username.
+
+### Controller board fields
+
+PCB mounting geometry for parametric CAD mount design. **`null` means genuinely unknown — never assume 0** (a 0 mm dimension reads as real). After editing any YAML, run `python controller_boards/gen.py` to refresh the JSON aggregate and markdown.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Board name |
+| `manufacturer` | string | Brand or GitHub username |
+| `category` | string | mainboard, toolhead_can, sbc, usb_can_bridge, driver_module, thermocouple_amp, accelerometer, relay, ssr, buck_converter, mosfet, sensor, expander, ercf, accessory |
+| `pcb_length_mm` | float | X — longer edge |
+| `pcb_width_mm` | float | Y — shorter edge |
+| `pcb_thickness_mm` | float | PCB thickness (defaults to 1.6 where unstated) |
+| `mount_screw` | string | Screw that fits the holes (M3, M2.5, ...; null if header-mounted) |
+| `mount_hole_dia_mm` | float | Hole diameter (often inferred from screw size) |
+| `mount_pattern` | string | rectangular, L-shaped, linear, 2-hole, 3-hole, none, other |
+| `mount_pitch_x_mm` / `mount_pitch_y_mm` | float | Center-to-center hole spacing |
+| `mount_hole_count` | int | Number of mounting holes |
+| `mount_holes_xy` | list | Optional `[[x,y], ...]` from PCB bottom-left corner (read `notes`) |
+| `standoff_height_mm` | float | Recommended clearance under the board |
+| `component_height_top_mm` | float | Tallest component / module body height above board |
+| `connector_notes` | string | Which edge carries power / steppers / USB / etc. |
+| `sources` | list | Datasheet / GitHub hardware repo / KiCad URLs |
+| `confidence` | string | high (vendor/community CAD), medium (outline firm, pitch inferred), low (measure first) |
+| `notes` | string | Source citation + anything to double-check |
 
 ## Schema
 
