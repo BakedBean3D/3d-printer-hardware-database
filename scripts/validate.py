@@ -48,6 +48,23 @@ CONTROLLER_BOARD_REQUIRED = [
     "standoff_height_mm", "connector_notes", "sources", "confidence", "notes",
 ]
 
+# Power supply mounting dimensions for parametric mount generation. Every unit
+# carries TWO mount patterns (bottom = vertical-entry flat/plate mount, side =
+# the vendor's second documented pattern -- see psu/README conventions in
+# psu/gen.py's PSU.md header for what "side" means per case family) plus
+# DIN-rail clip fields for MDR/EDR-style units. null is permitted for any
+# numeric whose value is genuinely unknown (do NOT substitute 0).
+PSU_REQUIRED = [
+    "id", "name", "manufacturer", "series", "category",
+    "length_mm", "width_mm", "height_mm", "weight_g", "wattage_w", "output_voltages_v",
+    "bottom_mount_screw", "bottom_mount_hole_dia_mm", "bottom_mount_hole_count", "bottom_mount_pattern",
+    "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "bottom_mount_holes_xy", "bottom_mount_max_penetration_mm",
+    "side_mount_screw", "side_mount_hole_dia_mm", "side_mount_hole_count", "side_mount_pattern",
+    "side_mount_pitch_x_mm", "side_mount_holes_xy", "side_mount_max_penetration_mm",
+    "din_rail_compatible", "din_rail_type",
+    "terminal_location", "connector_notes", "sources", "confidence", "notes",
+]
+
 CATEGORIES = {
     "motors": MOTOR_REQUIRED,
     "hotends": HOTEND_REQUIRED,
@@ -55,6 +72,7 @@ CATEGORIES = {
     "probes": PROBE_REQUIRED,
     "toolheads": TOOLHEAD_REQUIRED,
     "controller_boards": CONTROLLER_BOARD_REQUIRED,
+    "psu": PSU_REQUIRED,
 }
 
 

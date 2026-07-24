@@ -2,7 +2,7 @@
 
 Community-maintained database of 3D printer hardware specifications for Klipper-based printers.
 
-Covers stepper motors, hotends, extruders, toolheads, probes, and controller-board mounting dimensions — focused on the Voron, RatRig, Annex, and RepRap ecosystem.
+Covers stepper motors, hotends, extruders, toolheads, probes, controller-board mounting dimensions, and power-supply mounting dimensions — focused on the Voron, RatRig, Annex, and RepRap ecosystem.
 
 ## Directory Structure
 
@@ -37,6 +37,11 @@ controller_boards/       # PCB mounting dimensions, split by manufacturer
   controller_boards.json # generated aggregate (run gen.py)
   CONTROLLER_BOARDS.md   # generated human-readable reference
   gen.py                 # regenerates the .json + .md from the YAML
+psu/                     # Power supply mounting dimensions, split by manufacturer
+  meanwell.yaml
+  psu.json               # generated aggregate (run gen.py)
+  PSU.md                 # generated human-readable reference
+  gen.py                 # regenerates the .json + .md from the YAML
 ```
 
 Hardware with clear brand ownership (motors, hotends, probes, controller boards) is split by manufacturer — one file per brand. Community/open-source designs (extruders, toolheads, and community PCBs) stay in a single file since "manufacturer" is often just a GitHub username.
@@ -65,6 +70,38 @@ PCB mounting geometry for parametric CAD mount design. **`null` means genuinely 
 | `connector_notes` | string | Which edge carries power / steppers / USB / etc. |
 | `sources` | list | Datasheet / GitHub hardware repo / KiCad URLs |
 | `confidence` | string | high (vendor/community CAD), medium (outline firm, pitch inferred), low (measure first) |
+| `notes` | string | Source citation + anything to double-check |
+
+### PSU fields
+
+Power-supply mounting geometry for parametric mount generation (enclosure cutouts, bracket clips, DIN-rail carriers). **`null` means genuinely unknown — never assume 0.** After editing any YAML, run `python psu/gen.py` to refresh the JSON aggregate and markdown.
+
+Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mount_*` (the vertical-entry hole pattern used for flat/plate mounting; the one almost every printer mount uses) and `side_mount_*` (the vendor's second documented pattern — a true horizontal side-wall entry on the larger LRS-200/350/RSP-500 case family, or a second vertical top-flange pattern on the smaller LRS-50/100/150 case family). Read each record's `notes` to know which physical face `side_mount` refers to — it is not always a horizontal entry. DIN-rail units (MDR/EDR series) clip onto a rail instead of bolting down; they carry `din_rail_compatible`/`din_rail_type` and leave both mount-pattern groups `none`.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Unit name |
+| `manufacturer` | string | Brand |
+| `series` | string | Product series (e.g. LRS-50, RSP-500) |
+| `category` | string | enclosed, slim_enclosed, din_rail |
+| `length_mm` / `width_mm` / `height_mm` | float | Case dimensions. DIN-rail units use the vendor's W×H×D convention, remapped length=D, width=W, height=H (see `notes`) |
+| `weight_g` | int | Weight in grams |
+| `wattage_w` | int | Nominal series wattage (exact rated power varies slightly per output voltage — see `notes`) |
+| `output_voltages_v` | list | Available DC output voltage variants in this series |
+| `bottom_mount_screw` / `side_mount_screw` | string | Screw that fits the holes (M3, M4, ...; null if not applicable) |
+| `bottom_mount_hole_dia_mm` / `side_mount_hole_dia_mm` | float | Hole diameter (often inferred from screw size) |
+| `bottom_mount_hole_count` / `side_mount_hole_count` | int | Number of mounting holes in that pattern |
+| `bottom_mount_pattern` / `side_mount_pattern` | string | rectangular, 2-hole, 3-hole, other, none |
+| `bottom_mount_pitch_x_mm` / `bottom_mount_pitch_y_mm` / `side_mount_pitch_x_mm` | float | Center-to-center hole spacing |
+| `bottom_mount_holes_xy` / `side_mount_holes_xy` | list | Optional `[[x,y], ...]` from the case's bottom-left corner (read `notes`) — populated only where the vendor drawing gave clean, cross-validated dimensions |
+| `bottom_mount_max_penetration_mm` / `side_mount_max_penetration_mm` | float | Max screw length into the case before risking the internal PCB — a safety spec, not just a fit spec |
+| `din_rail_compatible` | bool | True for spring-clip DIN-rail units (MDR/EDR series) |
+| `din_rail_type` | string | Admissible rail profile (e.g. "TS35/7.5 or TS35/15") |
+| `terminal_location` | string | Where the AC/DC terminal block(s) sit relative to the mounting face(s) |
+| `connector_notes` | string | Terminal pinout, connector part numbers, fan/thermal notes |
+| `sources` | list | Manufacturer datasheet/mechanical-drawing URLs |
+| `confidence` | string | high (vector-PDF extracted, cross-validated), medium (case dims + screw/depth verified, exact hole XY unresolved), low (measure first) |
 | `notes` | string | Source citation + anything to double-check |
 
 ## Schema

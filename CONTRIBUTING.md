@@ -19,7 +19,9 @@ IDs must be lowercase with underscores, max 80 characters:
 ### Required Fields
 
 Every entry needs ALL fields defined in the schema. If a value is unknown, use:
-- `0` or `0.0` for numeric fields you can't find
+- `null` for fields you can't find — **never `0`/`0.0`**: a zero reads as a real
+  measured value to downstream CAD consumers, while `null` means genuinely unknown
+  (this matches the README and how `controller_boards/` and `psu/` are maintained)
 - `"unverified - needs research"` in `notes` to flag it
 
 ### Source Requirements
