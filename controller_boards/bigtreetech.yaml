@@ -546,7 +546,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: linear
   mount_pitch_x_mm: 43.85
-  mount_pitch_y_mm: 0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: null
@@ -558,12 +558,14 @@
   - https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf
   - https://global.bttwiki.com/EBB%2036%20CAN.html
   confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 51.40 mm width and 43.85 mm hole
-    spacing confirmed (official SIZE PDF + wiki). Exact hole XY NOT extractable (only c-to-c published).
-    thickness 1.6 and hole_dia 3.2 assumed. Mounting: NEMA-style rounded/keyed outline. BTT publishes
-    only 2x M3 holes at 43.85 mm center-to-center spacing (per official SIZE PDF + wiki). Holes sit on
-    lower ears flanking the connector edge; absolute hole XY is NOT published (only c-to-c). Width 51.40
-    mm (wiki nominal 51.5 x 37). Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0 -> null. This is a genuine
+    2-hole LINEAR pattern (collinear holes, no second row) so a y-pitch does not exist -- 0 read as a real
+    zero-mm dimension, null correctly marks it as not-applicable/unknown. Confidence medium — Tier-2/3
+    (outline firm, pitch inferred). 51.40 mm width and 43.85 mm hole spacing confirmed (official SIZE PDF
+    + wiki). Exact hole XY NOT extractable (only c-to-c published). thickness 1.6 and hole_dia 3.2 assumed.
+    Mounting: NEMA-style rounded/keyed outline. BTT publishes only 2x M3 holes at 43.85 mm center-to-center
+    spacing (per official SIZE PDF + wiki). Holes sit on lower ears flanking the connector edge; absolute
+    hole XY is NOT published (only c-to-c). Width 51.40 mm (wiki nominal 51.5 x 37). Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf'
 - id: btt_ebb42_can_v1
   name: EBB42 CAN V1.x
   manufacturer: BigTreeTech

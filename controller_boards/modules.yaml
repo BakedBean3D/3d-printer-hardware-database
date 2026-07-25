@@ -94,7 +94,7 @@
   mount_hole_dia_mm: 2.54
   mount_pattern: 2-hole
   mount_pitch_x_mm: 22.86
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy:
   - - 1.27
@@ -109,9 +109,11 @@
   - https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
   - https://www.adafruit.com/product/3328
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print
-    p.30 (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore
-    = 2.54 mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (2.54 mm, per holes_xy), a collinear 2-hole pattern, so a y-pitch does not exist.
+    Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print p.30
+    (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore = 2.54
+    mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal
     end. PCB body 24.38 x 22.86 mm; OVERALL incl. tabs 27.94 x 25.4 mm. Decide whether your mount uses
     the body or the tabbed outline. Holes Ø2.54 mm = M2.5, NOT M3. Source: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf'
 - id: slice_pt1000_amplifier
@@ -150,7 +152,7 @@
   mount_hole_dia_mm: 3.0
   mount_pattern: 2-hole
   mount_pitch_x_mm: 15.0
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: []
   mount_inset_from_edge_mm: null
@@ -160,11 +162,13 @@
   sources:
   - https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291
   confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). 2-hole / Ø3 / 15 mm spacing corroborated
-    by an authoritative vendor and the community-standard layout. Exact outline varies slightly by clone;
-    thickness assumed 1.6 mm. NOT a 4-hole board. Mounting: The de-facto standard mount: 2 collinear Ø3
-    mm holes, 15 mm apart, on the edge opposite the pin header. The BTT USB boards copy this at 15.5 mm
-    so they are mount-compatible. NO 4-corner hole pattern exists on this board. Source: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null (collinear
+    2-hole pattern -- see "2 collinear Ø3mm holes" below -- so a y-pitch does not exist). Confidence medium
+    — Tier-2/3 (outline firm, pitch inferred). 2-hole / Ø3 / 15 mm spacing corroborated by an authoritative
+    vendor and the community-standard layout. Exact outline varies slightly by clone; thickness assumed
+    1.6 mm. NOT a 4-hole board. Mounting: The de-facto standard mount: 2 collinear Ø3 mm holes, 15 mm apart,
+    on the edge opposite the pin header. The BTT USB boards copy this at 15.5 mm so they are mount-compatible.
+    NO 4-corner hole pattern exists on this board. Source: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291'
 - id: relay_module_1ch
   name: 1-channel 5V relay module
   manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
@@ -265,7 +269,7 @@
   mount_hole_dia_mm: 4.8
   mount_pattern: 2-hole
   mount_pitch_x_mm: 47.6
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy:
   - - 4.9
@@ -280,14 +284,16 @@
   - https://www.fotek.com.tw/en-gb/product-category/143
   - https://www.alldatasheet.com/datasheet-pdf/pdf/1132522/FOTEK/SSR-25DA.html
   confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). SSR-DA series body ~57.4 x 44.8
-    x 28 mm and ~47.6 mm hole spacing for M4 are the well-known Fotek standard, but the exact figures
-    were NOT read off the datasheet drawing directly (datasheet sites returned 403/were not fetched).
-    Multiple distributor listings give ~63 x 45 x 23 mm overall incl. terminals; housing footprint vs
-    overall differs. CONFIRM hole spacing on the actual unit before a tight-tolerance bracket. SSR-40DA
-    = same housing. Mounting: Standard Fotek SSR-DA series housing ~57.4 x 44.8 x 28 mm. Two Ø4.8 mm mounting
-    holes (M4) ~47.6 mm apart on the long axis. SSR-40DA shares the SAME housing and hole pattern (only
-    current rating differs). Source: https://www.fotek.com.tw/en-gb/product-category/143'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (22.4, per holes_xy) on the long axis, a collinear 2-hole pattern, so a y-pitch does
+    not exist. Confidence medium — Tier-2/3 (outline firm, pitch inferred). SSR-DA series body ~57.4 x
+    44.8 x 28 mm and ~47.6 mm hole spacing for M4 are the well-known Fotek standard, but the exact figures
+    were NOT read off the datasheet drawing directly (datasheet sites returned 403/were not fetched). Multiple
+    distributor listings give ~63 x 45 x 23 mm overall incl. terminals; housing footprint vs overall differs.
+    CONFIRM hole spacing on the actual unit before a tight-tolerance bracket. SSR-40DA = same housing.
+    Mounting: Standard Fotek SSR-DA series housing ~57.4 x 44.8 x 28 mm. Two Ø4.8 mm mounting holes (M4)
+    ~47.6 mm apart on the long axis. SSR-40DA shares the SAME housing and hole pattern (only current rating
+    differs). Source: https://www.fotek.com.tw/en-gb/product-category/143'
 - id: lm2596_buck
   name: LM2596 adjustable buck converter module
   manufacturer: Generic/various

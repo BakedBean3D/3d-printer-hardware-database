@@ -76,7 +76,92 @@ CATEGORIES = {
 }
 
 
-def validate_file(filepath, required_fields):
+def _num(entry, key):
+    """Value of a numeric field, or None if absent/null/non-numeric."""
+    v = entry.get(key)
+    return v if isinstance(v, (int, float)) else None
+
+
+def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
+    """Physical-consistency checks for one mount-hole group.
+
+    Catches the class of error where a hole grid cannot physically exist on
+    the part (e.g. a pitch equal to or larger than the face it sits on, or
+    explicit hole coordinates outside the case) — a real defect class: the
+    LRS-200/350 records initially shipped a 150x115 grid on a 115 mm-wide
+    case because a drawing envelope was misread as the mounting face.
+    """
+    errors = 0
+    L, W = _num(entry, dim_x_key), _num(entry, dim_y_key)
+    px = _num(entry, prefix + "pitch_x_mm")
+    py = _num(entry, prefix + "pitch_y_mm")
+    holes = entry.get(prefix + "holes_xy")
+    tag = f"{filepath}[{entry_id}].{prefix.rstrip('_')}"
+
+    # A pitch can never equal or exceed the face dimension on its axis:
+    # hole centers need at least a hole radius of material inboard.
+    for pitch, dim, axis in ((px, L, "x"), (py, W, "y")):
+        if pitch is not None and dim is not None and pitch >= dim - 1.0:
+            print(f"  IMPOSSIBLE PITCH: {tag} pitch_{axis}={pitch} on {dim} mm face")
+            errors += 1
+
+    if isinstance(holes, list) and holes:
+        xs = [h[0] for h in holes if isinstance(h, (list, tuple)) and len(h) == 2]
+        ys = [h[1] for h in holes if isinstance(h, (list, tuple)) and len(h) == 2]
+        if len(xs) != len(holes):
+            print(f"  MALFORMED holes_xy: {tag}")
+            return errors + 1
+        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers)
+        for lo_hi, dim, axis in ((xs, L, "x"), (ys, W, "y")):
+            if dim is None:
+                continue
+            for v in lo_hi:
+                if v < -0.5 or v > dim + 0.5:
+                    print(f"  HOLE OFF PART: {tag} {axis}={v} outside 0..{dim}")
+                    errors += 1
+        # explicit coordinates must agree with the declared pitch
+        for pitch, vals, axis in ((px, xs, "x"), (py, ys, "y")):
+            if pitch is not None and len(set(round(v, 1) for v in vals)) > 1:
+                spread = max(vals) - min(vals)
+                if abs(spread - pitch) > 0.2:
+                    print(f"  PITCH/HOLES MISMATCH: {tag} {axis} spread {spread:.2f} vs pitch_{axis} {pitch}")
+                    errors += 1
+    return errors
+
+
+def check_physics(entry_id, filepath, entry, category):
+    """Category-specific geometric sanity. Errors here mean the record cannot
+    describe a real part, regardless of what the source drawing said."""
+    errors = 0
+    if category == "controller_boards":
+        errors += _check_mount_group(entry_id, filepath, entry, "mount_",
+                                     "pcb_length_mm", "pcb_width_mm")
+        for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
+                    "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
+            v = _num(entry, key)
+            if v is not None and v <= 0:
+                print(f"  NON-POSITIVE DIM: {filepath}[{entry_id}].{key}={v} (use null for unknown, never 0)")
+                errors += 1
+    elif category == "psu":
+        errors += _check_mount_group(entry_id, filepath, entry, "bottom_mount_",
+                                     "length_mm", "width_mm")
+        # side pattern runs along the length on the side walls
+        spx = _num(entry, "side_mount_pitch_x_mm")
+        L = _num(entry, "length_mm")
+        if spx is not None and L is not None and spx >= L - 1.0:
+            print(f"  IMPOSSIBLE PITCH: {filepath}[{entry_id}].side_mount pitch_x={spx} on {L} mm side")
+            errors += 1
+        for key in ("length_mm", "width_mm", "height_mm",
+                    "bottom_mount_hole_dia_mm", "side_mount_hole_dia_mm",
+                    "bottom_mount_max_penetration_mm", "side_mount_max_penetration_mm"):
+            v = _num(entry, key)
+            if v is not None and v <= 0:
+                print(f"  NON-POSITIVE DIM: {filepath}[{entry_id}].{key}={v} (use null for unknown, never 0)")
+                errors += 1
+    return errors
+
+
+def validate_file(filepath, required_fields, category=None):
     with open(filepath) as f:
         data = yaml.safe_load(f)
 
@@ -104,6 +189,9 @@ def validate_file(filepath, required_fields):
             print(f"  BAD ID (spaces): {entry_id} in {filepath}")
             errors += 1
 
+        if category is not None:
+            errors += check_physics(entry_id, filepath, entry, category)
+
     return errors, len(data)
 
 
@@ -128,7 +216,7 @@ def main():
         cat_ids = set()
         cat_entries = 0
         for filepath in yaml_files:
-            errors, count = validate_file(filepath, fields)
+            errors, count = validate_file(filepath, fields, category)
             total_errors += errors
             cat_entries += count
 

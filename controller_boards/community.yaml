@@ -111,7 +111,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: linear
   mount_pitch_x_mm: 92.0
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy:
   - - 4.0
@@ -129,12 +129,15 @@
   - https://github.com/timmit99/Klipper-Expander
   - https://github.com/VoronDesign/Voron-Hardware/tree/master/Klipper_Expander
   confidence: high
-  notes: 'Tier-1: measured from Edge.Cuts in KiCad/STM32_Klipper_Expander.kicad_pcb (gr_line corners X=100..200,
-    Y=76..100 -> 100x24mm). Two MountingHole_3.2mm_M3 footprints at (104,80) and (196,80); origin set
-    to board bottom-left (100,76) with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this
-    repo OUTDATED and points to the Voron official hardware repo for the latest version; verify if a revised
-    board exists there. Maintained KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the
-    original timmit99 repo is flagged outdated); geometry agrees (100x24, 92mm pitch).'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    are on the same y (linear 2-hole pattern per mount_pattern), so a y-pitch does not exist -- 0 read
+    as a real zero-mm dimension, null correctly marks it not-applicable. Tier-1: measured from Edge.Cuts
+    in KiCad/STM32_Klipper_Expander.kicad_pcb (gr_line corners X=100..200, Y=76..100 -> 100x24mm). Two
+    MountingHole_3.2mm_M3 footprints at (104,80) and (196,80); origin set to board bottom-left (100,76)
+    with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this repo OUTDATED and points to the
+    Voron official hardware repo for the latest version; verify if a revised board exists there. Maintained
+    KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the original timmit99 repo is flagged
+    outdated); geometry agrees (100x24, 92mm pitch).'
 - id: ercf_easy_brd
   name: ERCF EASY-BRD
   manufacturer: Tircown
@@ -236,7 +239,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: 2-hole
   mount_pitch_x_mm: 39.25
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: 5.75
@@ -246,8 +249,11 @@
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Hall_Effect_XY_Endstop/KiCad/HallEffectXY-Endstop.kicad_pcb
   confidence: high
-  notes: 'Tier-1 (KiCad v5 ''module'' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at
-    raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (raw source coords [[5.75,12.25],[45.0,12.25]], collinear 2-hole pattern), so a y-pitch
+    does not exist -- null correctly marks it not-applicable rather than a real zero-mm dimension. Tier-1
+    (KiCad v5 ''module'' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at raw (127.75,98.75),(167,98.75).
+    (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])'
 - id: voron_microswitch_xy_endstop
   name: Microswitch XY Endstop
   manufacturer: HartK / VoronDesign
@@ -259,7 +265,7 @@
   mount_hole_dia_mm: 4.3
   mount_pattern: 2-hole
   mount_pitch_x_mm: 33.5
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: 8.1
@@ -269,8 +275,10 @@
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Microswitch_Endstop/KiCad/MicroswitchXY-Endstop.kicad_pcb
   confidence: high
-  notes: 'Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5).
-    (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (raw source coords [[8.5,8.1],[42.0,8.1]], collinear 2-hole pattern), so a y-pitch
+    does not exist. Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at
+    raw (134.5,61.5),(168,61.5). (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])'
 - id: voron_v0_umbilical_toolhead_pcb
   name: V0 Umbilical Toolhead PCB
   manufacturer: HartK / VoronDesign
@@ -282,7 +290,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: 2-hole
   mount_pitch_x_mm: 43.84
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: 2.6
@@ -293,9 +301,11 @@
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/V0-Umbilical/Kicad/Toolhead_PCB/Toolhead_PCB.kicad_pcb
   confidence: high
-  notes: 'Tier-1: Edge.Cuts bbox 49.04 x 23.13 mm (non-rectangular outline; bbox of arcs+lines). 2x MountingHole_3.2mm_M3
-    at raw (78.08,100),(121.92,100). Holes very close to short edges (inset 2.6mm). (raw hole coords from
-    source: [[2.6, 10.0], [46.44, 10.0]])'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (raw source coords [[2.6,10.0],[46.44,10.0]], collinear 2-hole pattern), so a y-pitch
+    does not exist. Tier-1: Edge.Cuts bbox 49.04 x 23.13 mm (non-rectangular outline; bbox of arcs+lines).
+    2x MountingHole_3.2mm_M3 at raw (78.08,100),(121.92,100). Holes very close to short edges (inset 2.6mm).
+    (raw hole coords from source: [[2.6, 10.0], [46.44, 10.0]])'
 - id: voron_klipper_board_taco_raven
   name: Voron Klipper Board (Taco Raven)
   manufacturer: HartK / VoronDesign
@@ -334,7 +344,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: 2-hole
   mount_pitch_x_mm: 197.82
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: 5.5
@@ -345,9 +355,11 @@
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_stick/Daylight.kicad_pcb
   confidence: high
-  notes: 'Tier-1: Edge.Cuts bbox 270.0 x 11.0 mm; 2x MountingHole_3.2mm_M3_Pad_Via at raw (49,33),(246.82,33).
-    chain_length=18 LEDs per README. Disco variant same outline. (raw hole coords from source: [[36.0,
-    5.5], [233.82, 5.5]])'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (raw source coords [[36.0,5.5],[233.82,5.5]], collinear 2-hole pattern on the board
+    centerline), so a y-pitch does not exist. Tier-1: Edge.Cuts bbox 270.0 x 11.0 mm; 2x MountingHole_3.2mm_M3_Pad_Via
+    at raw (49,33),(246.82,33). chain_length=18 LEDs per README. Disco variant same outline. (raw hole
+    coords from source: [[36.0, 5.5], [233.82, 5.5]])'
 - id: voron_daylight_on_a_matchstick
   name: Daylight on a Matchstick (LED bar, V0)
   manufacturer: HartK / VoronDesign
@@ -359,7 +371,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: 2-hole
   mount_pitch_x_mm: 98.9
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: 5.5
@@ -369,8 +381,11 @@
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_matchstick/Daylight_Matchstick.kicad_pcb
   confidence: high
-  notes: 'Tier-1: Edge.Cuts bbox 158.0 x 11.0 mm; 2x MountingHole_3.2mm_M3 at raw (79.05,69.5),(177.95,69.5).
-    chain_length=10 LEDs per README. (raw hole coords from source: [[29.55, 5.5], [128.45, 5.5]])'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes
+    share the same y (raw source coords [[29.55,5.5],[128.45,5.5]], collinear 2-hole pattern on the board
+    centerline), so a y-pitch does not exist. Tier-1: Edge.Cuts bbox 158.0 x 11.0 mm; 2x MountingHole_3.2mm_M3
+    at raw (79.05,69.5),(177.95,69.5). chain_length=10 LEDs per README. (raw hole coords from source: [[29.55,
+    5.5], [128.45, 5.5]])'
 - id: voron_pt100stick
   name: PT100 Stick (thermocouple amp)
   manufacturer: HartK / VoronDesign

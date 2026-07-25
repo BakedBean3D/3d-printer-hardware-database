@@ -20,7 +20,7 @@
 
 | Board | Mfr | Cat | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |
 |---|---|---|---|---|---|---|---|---|---|
-| Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×0.0 | 2 | high |
+| Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×— | 2 | high |
 | Box Turtle (AFC) PCB | ArmoredTurtle | ercf | — | 1.6 | M3 | none | — | — | low |
 | BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
 | BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
@@ -33,7 +33,7 @@
 | EBB SB2209 CAN V1.0 | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.03 | 2 | high |
 | EBB SB2209 CAN V1.0 (RP2040) | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.0 | 2 | low |
 | EBB SB2240 CAN V1.0 | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.02 | 2 | high |
-| EBB36 CAN V1.x | BigTreeTech | toolhead_can | 51.4×37.0 | 1.6 | M3 | linear | 43.85×0 | 2 | medium |
+| EBB36 CAN V1.x | BigTreeTech | toolhead_can | 51.4×37.0 | 1.6 | M3 | linear | 43.85×— | 2 | medium |
 | EBB42 CAN V1.x | BigTreeTech | toolhead_can | 40.0×40.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | KNOMI | BigTreeTech | accessory | 37.86×34.53 | 1.6 | — | other-describe | — | 0 | high |
 | KNOMI 2 | BigTreeTech | accessory | 41.12×38.48 | 1.6 | — | other-describe | — | 0 | high |
@@ -51,18 +51,18 @@
 | SKR Pico | BigTreeTech | mainboard | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
 | U2C V3 | BigTreeTech | usb_can_bridge | — | — | — | — | — | — | low |
-| Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 92.0×115.0 | 4 | high |
-| Duet 3 Mainboard 6HC | Duet3D | mainboard | 140.0×134.0 | 1.6 | M3 | rectangular | 124.0×130.0 | 4 | high |
-| Duet 3 Mainboard 6XD | Duet3D | mainboard | 140.0×115.0 | 1.6 | M3 | rectangular | 104.5×129.5 | 4 | high |
-| Duet 3 Mini 5+ | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 92.0×115.0 | 4 | high |
+| Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 115.0×92.0 | 4 | high |
+| Duet 3 Mainboard 6HC | Duet3D | mainboard | 140.0×134.0 | 1.6 | M3 | rectangular | 130.0×124.0 | 4 | high |
+| Duet 3 Mainboard 6XD | Duet3D | mainboard | 140.0×115.0 | 1.6 | M3 | rectangular | 130.0×105.0 | 4 | high |
+| Duet 3 Mini 5+ | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 115.0×92.0 | 4 | high |
 | Duet 3 Toolboard 1LC | Duet3D | toolhead_can | 54.0×47.0 | 1.6 | M3 | rectangular | 34.0×34.0 | 4 | high |
-| Duet3D PT100 temperature daughterboard v1.1 | Duet3D | thermocouple_amp | 31.74×26.16 | 1.6 | — | 2-hole | 38.5×0.0 | 2 | high |
-| Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×0.0 | 2 | medium |
+| Duet3D PT100 temperature daughterboard v1.1 | Duet3D | thermocouple_amp | 31.74×26.16 | 1.6 | — | 2-hole | 5.08×— | 2 | high |
+| Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×— | 2 | medium |
 | Catalyst V2.0 | Fysetc | mainboard | — | 1.6 | M3 | rectangular | — | 4 | low |
 | Cheetah V2.0 | Fysetc | mainboard | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
 | Cheetah V3.0 | Fysetc | mainboard | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
 | ERB (Enraged Rabbit Burrow Board) | Fysetc | toolhead_can | 91.0×35.0 | 1.6 | M3 | other | — | — | medium |
-| Mini12864 Panel (RGB) V2.1 | Fysetc | accessory | 104.99×47.0 | 1.6 | M3 | rectangular | 41.0×93.0 | 4 | high |
+| Mini12864 Panel (RGB) V2.1 | Fysetc | accessory | 104.99×47.0 | 1.6 | M3 | rectangular | 93.0×41.0 | 4 | high |
 | S6 V1.2 | Fysetc | mainboard | 117.0×87.0 | 1.6 | M3 | rectangular | — | — | medium |
 | SB CAN Toolhead (V1.1 / V1.3) | Fysetc | toolhead_can | — | 1.6 | M3 | rectangular | — | 2 | low |
 | Spider King V1.0 | Fysetc | mainboard | 177.0×108.0 | 1.6 | M3 | rectangular | — | — | medium |
@@ -73,7 +73,7 @@
 | Spider V3.0 H7 | Fysetc | mainboard | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
 | UCAN V1.0 | Fysetc | usb_can_bridge | — | 1.6 | — | other | — | 0 | low |
 | 3D printer heatbed MOSFET power module (25A) | Generic/various | mosfet | 60.0×50.0 | 1.6 | M3 | rectangular | — | 4 | medium |
-| GY-291 ADXL345 accelerometer breakout | Generic/various | accelerometer | 20.4×15.8 | 1.6 | M3 | 2-hole | 15.0×0.0 | 2 | medium |
+| GY-291 ADXL345 accelerometer breakout | Generic/various | accelerometer | 20.4×15.8 | 1.6 | M3 | 2-hole | 15.0×— | 2 | medium |
 | LM2596 adjustable buck converter module | Generic/various | buck_converter | 43.2×21.0 | 1.6 | M3 | 2-hole | — | 2 | medium |
 | Mini-360 DC-DC buck converter module | Generic/various | buck_converter | 22.0×17.0 | 1.6 | — | none | — | 0 | medium |
 | TMC2208 StepStick driver module | Generic/various | driver_module | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
@@ -83,12 +83,12 @@
 | 4-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 71.0×45.0 | 1.6 | M3 | rectangular | 66.7×40.0 | 4 | medium |
 | TMC2209 StepStick / SilentStepStick driver module | Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.) | driver_module | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
 | HartK Stealthburner Toolhead PCB | HartK | toolhead_can | — | 1.6 | M3 | other | — | — | low |
-| Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×0.0 | 2 | high |
-| Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×0.0 | 2 | high |
-| Hall Effect XY Endstop | HartK / VoronDesign | sensor | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×0.0 | 2 | high |
-| Microswitch XY Endstop | HartK / VoronDesign | sensor | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×0.0 | 2 | high |
+| Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×— | 2 | high |
+| Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×— | 2 | high |
+| Hall Effect XY Endstop | HartK / VoronDesign | sensor | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×— | 2 | high |
+| Microswitch XY Endstop | HartK / VoronDesign | sensor | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
 | PT100 Stick (thermocouple amp) | HartK / VoronDesign | thermocouple_amp | 15.24×20.32 | 1.6 | — | none | — | 0 | high |
-| V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×0.0 | 2 | high |
+| V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×— | 2 | high |
 | Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | 120.0×85.0 | 1.6 | M3 | 4-hole | 110.0×81.0 | 4 | medium |
 | Huvud (original) | Huvud | toolhead_can | 48.0×45.0 | 1.6 | M3 | rectangular | 37.0×40.0 | 4 | high |
 | HuvudTiny | Huvud | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
@@ -106,15 +106,15 @@
 | Fly Super8 | Mellow | mainboard | 155.58×109.68 | 1.6 | M3 | rectangular | 149.38×103.45 | 4 | high |
 | Fly-D5 | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
 | Fly-RRF-36 | Mellow | toolhead_can | — | 1.6 | M3 | rectangular | — | — | low |
-| Fly-SHT36 (v1) | Mellow | toolhead_can | 51.27×36.26 | 1.6 | M3 | linear | 43.84×0.0 | 2 | high |
-| Fly-SHT36 v2.0 | Mellow | toolhead_can | 51.27×45.67 | 1.6 | M3 | linear | 43.84×0.0 | 2 | high |
+| Fly-SHT36 (v1) | Mellow | toolhead_can | 51.27×36.26 | 1.6 | M3 | linear | 43.84×— | 2 | high |
+| Fly-SHT36 v2.0 | Mellow | toolhead_can | 51.27×45.67 | 1.6 | M3 | linear | 43.84×— | 2 | high |
 | Fly-SHT42 | Mellow | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
 | Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | — | — | — | other | — | 0 | low |
 | ERCF EASY-BRD | Tircown | ercf | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
 | Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | — | 1.6 | none | none | — | 0 | low |
 | Binky ERCF Encoder | mneuhaus | sensor | — | 1.6 | M3 | none | — | — | low |
-| Klipper Expander (STM32) | timmit99 | expander | 100.0×24.0 | 1.6 | M3 | linear | 92.0×0.0 | 2 | high |
+| Klipper Expander (STM32) | timmit99 | expander | 100.0×24.0 | 1.6 | M3 | linear | 92.0×— | 2 | high |
 
 ## Adafruit
 
@@ -122,11 +122,11 @@
 
 - **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 24.38 × 22.86 mm, 1.6 mm thick
-- **Mounting:** 2× M2.5 (Ø2.54), 2-hole, pitch 22.86×0.0 mm
+- **Mounting:** 2× M2.5 (Ø2.54), 2-hole, pitch 22.86×— mm
   - holes (x,y mm): [[1.27, 2.54], [24.13, 2.54]]
 - **Clearance:** standoff — mm, top component 3.0 mm
 - **Connectors:** Two 2-pin 3.5 mm screw terminals (RTD); 9-pin 0.1in breakout header (VIN/3V3/GND/CLK/SDO/SDI/CS/RDY).
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print p.30 (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore = 2.54 mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal end. PCB body 24.38 x 22.86 mm; OVERALL incl. tabs 27.94 x 25.4 mm. Decide whether your mount uses the body or the tabbed outline. Holes Ø2.54 mm = M2.5, NOT M3. Source: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (2.54 mm, per holes_xy), a collinear 2-hole pattern, so a y-pitch does not exist. Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print p.30 (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore = 2.54 mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal end. PCB body 24.38 x 22.86 mm; OVERALL incl. tabs 27.94 x 25.4 mm. Decide whether your mount uses the body or the tabbed outline. Holes Ø2.54 mm = M2.5, NOT M3. Source: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
 - src: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
 - src: https://www.adafruit.com/product/3328
 
@@ -271,10 +271,10 @@
 
 - **Category:** toolhead_can · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 51.4 × 37.0 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.85×0 mm
+- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.85×— mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Bottom edge carries main connectors (HE0, FAN, etc.); USB and CAN/power on board. I2C/PT1000/RST/BOOT labeled on PCB. Stepper connects via a separate edge.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). 51.40 mm width and 43.85 mm hole spacing confirmed (official SIZE PDF + wiki). Exact hole XY NOT extractable (only c-to-c published). thickness 1.6 and hole_dia 3.2 assumed. Mounting: NEMA-style rounded/keyed outline. BTT publishes only 2x M3 holes at 43.85 mm center-to-center spacing (per official SIZE PDF + wiki). Holes sit on lower ears flanking the connector edge; absolute hole XY is NOT published (only c-to-c). Width 51.40 mm (wiki nominal 51.5 x 37). Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0 -> null. This is a genuine 2-hole LINEAR pattern (collinear holes, no second row) so a y-pitch does not exist -- 0 read as a real zero-mm dimension, null correctly marks it as not-applicable/unknown. Confidence medium — Tier-2/3 (outline firm, pitch inferred). 51.40 mm width and 43.85 mm hole spacing confirmed (official SIZE PDF + wiki). Exact hole XY NOT extractable (only c-to-c published). thickness 1.6 and hole_dia 3.2 assumed. Mounting: NEMA-style rounded/keyed outline. BTT publishes only 2x M3 holes at 43.85 mm center-to-center spacing (per official SIZE PDF + wiki). Holes sit on lower ears flanking the connector edge; absolute hole XY is NOT published (only c-to-c). Width 51.40 mm (wiki nominal 51.5 x 37). Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf
 - src: https://github.com/bigtreetech/EBB/blob/master/EBB%20CAN%20V1.1%20and%20V1.2%20(STM32G0B1)/EBB36%20CAN%20V1.1%20and%20V1.2/Hardware/BIGTREETECH%20EBB36%20CAN%20V1.1-SIZE.pdf
 - src: https://global.bttwiki.com/EBB%2036%20CAN.html
 
@@ -470,10 +470,10 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.2), rectangular, pitch 92.0×115.0 mm
-  - holes (x,y mm): [[4.0, 4.0], [96.0, 4.0], [4.0, 119.0], [96.0, 119.0]]
+- **Mounting:** 4× M3 (Ø4.2), rectangular, pitch 115.0×92.0 mm
+  - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
 - **Clearance:** standoff 6 mm, top component — mm
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). From KiCad. Thickness 1.6 mm standard, not annotated. Mounting: WiFi and Ethernet variants share one PCB. Hole pattern is identical to the Duet 3 Mini 5+ (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly mounted with M3. Source: https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
+- **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record's pcb_length_mm(123)/pcb_width_mm(100) convention -- old pitch_y=115 exceeded the 100 mm width outright, and old holes_xy put y up to 119, 19 mm outside the claimed width. Re-derived from the official KiCad source (Duet2.kicad_pcb): 4x "complib:Fixing_M4" (np_thru_hole, drill 4.20116 mm) at absolute (176.21,155.862),(84.211,40.8635),(84.211,155.862),(176.21,40.8635); Edge.Cuts bbox (80.21066,36.86302)-(180.21046,159.86252) = 100 x 123 mm, confirming pcb_length=123/pcb_width=100 were already correct. Relative to the board corner, using this DB's x=along-length/y=along-width convention: (4,4),(119,4),(4,96),(119,96) -- pitch_x=115 (along the 123 mm length, 4 mm inset each side), pitch_y=92 (along the 100 mm width, 4 mm inset each side); this is the byte-for-byte-identical pattern found on the Duet 3 Mini 5+. Confidence high — Tier-1 (vendor CAD/drawing). Thickness 1.6 mm standard, not annotated. Mounting: WiFi and Ethernet variants share one PCB. Hole pattern is identical to the Duet 3 Mini 5+ (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly mounted with M3. Source: https://raw.githubusercontent.com/Duet3D/Duet-2-Hardware/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
 - src: https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
 - src: https://docs.duet3d.com/Duet3D_hardware/Duet_2_family/Duet_2_WiFi_Ethernet_Hardware_Overview
 
@@ -481,11 +481,11 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 134.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 124.0×130.0 mm
-  - holes (x,y mm): [[5.0, 5.0], [129.0, 5.0], [5.0, 135.0], [129.0, 135.0]]
+- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 130.0×124.0 mm
+  - holes (x,y mm): [[5.0, 5.0], [135.0, 5.0], [5.0, 129.0], [135.0, 129.0]]
 - **Clearance:** standoff 8 mm, top component — mm
 - **Connectors:** USB + RJ45/Ethernet on one short edge; CAN_OUT on a long edge. PT100/ thermocouple daughterboard header (2.54 mm) interior at approx [84,81].
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes confirmed twice (dimension SVG and KiCad). Thickness 1.6 mm is standard but not explicitly annotated in the drawings. Mounting: Holes are isolated (non-plated) with a ~2.2 mm keep-out ring. Drilled Ø4.3 mm (M4 clearance) but Duet's own guides specify M3 screws. Width is 134 mm, length 140 mm -- the commonly cited "144x96" figure is WRONG. Source: https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.0/Duet3_MB_6HC_v0.6%26later_Dimensions.svg
+- **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y (and the matching holes_xy axes) were swapped relative to this record's own pcb_length_mm(140)/pcb_width_mm(134) convention -- the old holes_xy put y up to 135, 1 mm outside the claimed 134 mm width. Re-derived from the official KiCad source (Duet3_MB_6HC.kicad_pcb): 4x MountingHole_4.3mm_M4 footprints at absolute (149,115),(149,245),(25,245),(25,115); Edge.Cuts bbox (20,110)-(154,250) = 134 x 140 mm, confirming pcb_length=140/pcb_width=134 were already correct. Relative to the board corner (using this DB's x=along-length, y=along-width convention) the holes are (5,5),(135,5),(5,129),(135,129) -- pitch_x=130 (along the 140 mm length, 5 mm inset each side), pitch_y=124 (along the 134 mm width, 5 mm inset each side). Confidence high — Tier-1 (vendor CAD/drawing), outline + holes confirmed via KiCad. Thickness 1.6 mm is standard but not explicitly annotated in the drawings. Holes are isolated (non-plated) with a ~2.2 mm keep-out ring. Drilled Ø4.3 mm (M4 clearance) but Duet's own guides specify M3 screws. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mainboard-6HC/master/Duet3_Mainboard_6HC_v1.02/CAD/Duet3_MB_6HC.kicad_pcb
 - src: https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.0/Duet3_MB_6HC_v0.6%26later_Dimensions.svg
 - src: https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.02/CAD/Duet3_MB_6HC.kicad_pcb
 - src: https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6HC_Hardware_Overview
@@ -494,11 +494,11 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 115.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 104.5×129.5 mm
-  - holes (x,y mm): [[5.5, 5.5], [110.0, 5.0], [5.0, 135.0], [110.0, 135.0]]
+- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 130.0×105.0 mm
+  - holes (x,y mm): [[5.5, 5.5], [135.0, 5.0], [5.0, 110.0], [135.0, 110.0]]
 - **Clearance:** standoff 8 mm, top component — mm
 - **Connectors:** External-driver mainboard; differential driver outputs.
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + 3 holes high confidence from KiCad. The [5.5,5.5] corner asymmetry is in the source file; verify sub-mm precision on that hole physically. Mounting: Narrower than the 6HC (115 mm vs 134 mm) but same 140 mm length. The bottom-left hole sits at [5.5,5.5] in the source file (~0.5 mm offset from the 5 mm grid of the other three) -- treat that corner as medium confidence. Two interior Ø2.5 mm holes are a daughterboard mount, not chassis mounting. Source: https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb
+- **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record's pcb_length_mm(140)/pcb_width_mm(115) convention -- old pitch_y=129.5 exceeded the 115 mm width outright, and old holes_xy put y up to 135, 20 mm outside the claimed width. Re-derived from the official KiCad source (Duet3_MB_6XD.kicad_pcb): 4x MountingHole_4.3mm_M4 at absolute (130,115),(130,245),(25,245),(25.5,115.5); Edge.Cuts bbox (20,110)-(135,250) = 115 x 140 mm, confirming pcb_length=140/pcb_width=115 were already correct. Relative to the board corner, using this DB's x=along-length/y=along-width convention: (5.5,5.5),(135,5),(5,110),(135,110) -- pitch_x=130 (along the 140 mm length; same 130 mm rail spacing as the 6HC, sharing an enclosure family), pitch_y=105 (along the 115 mm width, from the 3 holes on a clean grid). The 4th hole (bottom-left) sits at [5.5,5.5], a real ~0.5 mm offset from the 5 mm grid of the other three, confirmed in the KiCad source -- treat that corner as medium confidence. Two interior Ø2.5 mm holes are a daughterboard mount, not chassis mounting. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mainboard-6XD/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb
 - src: https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb
 - src: https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6XD_Hardware_Overview
 
@@ -506,11 +506,11 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 92.0×115.0 mm
-  - holes (x,y mm): [[4.0, 4.0], [96.0, 4.0], [4.0, 119.0], [96.0, 119.0]]
+- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 115.0×92.0 mm
+  - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
 - **Clearance:** standoff 6 mm, top component — mm
 - **Connectors:** Stepper-driver connectors mirrored to the opposite side vs Duet 2.
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes from KiCad. Thickness 1.6 mm standard, not annotated. Mounting: Footprint is byte-for-byte identical to the Duet 2 WiFi/Ethernet (same 100x123 outline, 92x115 pitch, 4 mm inset) -- one mount fits both. Drilled Ø4.3 mm (M4 clearance); Duet documents fixing with 4x M3 6mm screws. The commonly cited "117x89" figure is WRONG. Source: https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb
+- **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record's pcb_length_mm(123)/pcb_width_mm(100) convention -- old pitch_y=115 exceeded the 100 mm width outright, and old holes_xy put y up to 119, 19 mm outside the claimed width. Re-derived from the official KiCad source (Duet3_5+_Wifi.kicad_pcb): 4x MountingHole_4.3mm_M4 at absolute (24,131),(116,246),(24,246),(116,131); Edge.Cuts bbox (20,127)-(120,250) = 100 x 123 mm, confirming pcb_length=123/pcb_width=100 were already correct. Relative to the board corner, using this DB's x=along-length/y=along-width convention: (4,4),(119,4),(4,96),(119,96) -- pitch_x=115 (along the 123 mm length, 4 mm inset each side), pitch_y=92 (along the 100 mm width, 4 mm inset each side). Confidence high — Tier-1 (vendor CAD/drawing). Thickness 1.6 mm standard, not annotated. Mounting: Footprint is byte-for-byte identical to the Duet 2 WiFi/Ethernet (same 100x123 outline, 115x92 pitch, 4 mm inset) -- one mount fits both. Drilled Ø4.3 mm (M4 clearance); Duet documents fixing with 4x M3 6mm screws. The commonly cited "117x89" figure is WRONG. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mini5plus/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb
 - src: https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb
 - src: https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mini_5+_Hardware_Overview
 
@@ -530,10 +530,10 @@
 
 - **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 31.74 × 26.16 mm, 1.6 mm thick
-- **Mounting:** 2× — (Ø2.54), 2-hole, pitch 38.5×0.0 mm
-  - holes (x,y mm): [[13.05, 0.0], [13.05, 38.5]]
+- **Mounting:** 2× — (Ø2.54), 2-hole, pitch 5.08×— mm
+  - holes (x,y mm): [[9.76, 13.05], [4.68, 13.05]]
 - **Connectors:** 2x5 (10-pin) 2.54 mm header plugs into Duet expansion/SPI header; screw terminals for PT100 wires.
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline 26.16 x 31.74 and Ø2.54 holes from official KiCad source (high). 38.5 mm pitch is medium (derived from connector footprint coords; rotation ambiguous). Mounting is a plastic pillar, not a screw. Mounting: Secured with a SUPPLIED PLASTIC SNAP-IN PILLAR, not an M-screw. Holes are Ø2.54 mm NPTH from the official KiCad board file. Design around the pillar. Source: https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD
+- **Notes:** CORRECTED 2026-07-24: previous record had mount_pitch_x_mm=38.5 with holes at y=0/38.5 -- physically impossible (38.5 mm exceeds the 31.74 mm board length AND the 26.16 mm width). Re-extracted directly from the official KiCad source (MAXTempRTD.kicad_pcb): footprint P3 (F.Cu) at (72.64456,56.41594) carries a non-plated pillar hole at local (0,-19.25066); footprint P4 (B.Cu, MAX_TEMP_DB_inv, rotated 180) at (72.64456,51.33594) carries one at local (0,19.25066). Board Edge.Cuts bbox is (59.59856,27.40444)-(85.76056,59.14644) = 26.162 x 31.742 mm, confirming pcb_length/width were already correct. Relative to the board corner the two pillar holes sit at (13.05, 9.76) and (13.05, 4.68) -- collinear, 5.08 mm apart (exactly 2x the 2.54 mm header pitch), NOT 38.5 mm apart. Confidence high — Tier-1 (vendor CAD), holes Ø2.54 mm NPTH confirmed. Mounting is a supplied plastic snap-in pillar through these two NPTH holes, not an M-screw. Source: https://raw.githubusercontent.com/Duet3D/TempDaughterboards/master/MAXTempRTD/MAXTempRTD.kicad_pcb
 - src: https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD
 - src: https://docs.duet3d.com/Duet3D_hardware/Accessories/PT100_Temperature_Daughterboard
 
@@ -543,10 +543,10 @@
 
 - **Category:** ssr · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 57.4 × 44.8 mm, 28.0 mm thick
-- **Mounting:** 2× M4 (Ø4.8), 2-hole, pitch 47.6×0.0 mm
+- **Mounting:** 2× M4 (Ø4.8), 2-hole, pitch 47.6×— mm
   - holes (x,y mm): [[4.9, 22.4], [52.5, 22.4]]
 - **Connectors:** 4 screw terminals: input 3-32 VDC (terminals 3,4), output 24-480 VAC (terminals 1,2).
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). SSR-DA series body ~57.4 x 44.8 x 28 mm and ~47.6 mm hole spacing for M4 are the well-known Fotek standard, but the exact figures were NOT read off the datasheet drawing directly (datasheet sites returned 403/were not fetched). Multiple distributor listings give ~63 x 45 x 23 mm overall incl. terminals; housing footprint vs overall differs. CONFIRM hole spacing on the actual unit before a tight-tolerance bracket. SSR-40DA = same housing. Mounting: Standard Fotek SSR-DA series housing ~57.4 x 44.8 x 28 mm. Two Ø4.8 mm mounting holes (M4) ~47.6 mm apart on the long axis. SSR-40DA shares the SAME housing and hole pattern (only current rating differs). Source: https://www.fotek.com.tw/en-gb/product-category/143
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (22.4, per holes_xy) on the long axis, a collinear 2-hole pattern, so a y-pitch does not exist. Confidence medium — Tier-2/3 (outline firm, pitch inferred). SSR-DA series body ~57.4 x 44.8 x 28 mm and ~47.6 mm hole spacing for M4 are the well-known Fotek standard, but the exact figures were NOT read off the datasheet drawing directly (datasheet sites returned 403/were not fetched). Multiple distributor listings give ~63 x 45 x 23 mm overall incl. terminals; housing footprint vs overall differs. CONFIRM hole spacing on the actual unit before a tight-tolerance bracket. SSR-40DA = same housing. Mounting: Standard Fotek SSR-DA series housing ~57.4 x 44.8 x 28 mm. Two Ø4.8 mm mounting holes (M4) ~47.6 mm apart on the long axis. SSR-40DA shares the SAME housing and hole pattern (only current rating differs). Source: https://www.fotek.com.tw/en-gb/product-category/143
 - src: https://www.fotek.com.tw/en-gb/product-category/143
 - src: https://www.alldatasheet.com/datasheet-pdf/pdf/1132522/FOTEK/SSR-25DA.html
 
@@ -598,9 +598,10 @@
 
 - **Category:** accessory · **Confidence:** high · **Source file:** `fysetc.yaml`
 - **PCB:** 104.99 × 47.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 41.0×93.0 mm
+- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 93.0×41.0 mm
+  - holes (x,y mm): [[6.0, 3.0], [99.0, 3.0], [6.0, 44.0], [99.0, 44.0]]
 - **Connectors:** Sitronix ST7567 128x64 LCD with RGB indicator, SD card slot (side or vertical), SPI to host, 2x EXP ribbon headers. 3D-printable case/mount STLs available.
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). length/width and 41 x 93 mm 4-hole pattern read directly off the vendor dimensioned drawing (high). Standard Mini12864 footprint — interchangeable with BTT/Voron Mini12864 mounts. Hole diameter (3.2) inferred, not annotated. Mounting: Measured directly from the vendor dimensional drawing 12864mini(RGB)_V2.1_dwg.pdf. PCB = 104.99 mm (long) x 47 mm (wide). Four mounting holes in a rectangular pattern: 41 mm horizontal pitch x 93 mm vertical pitch (callouts read "41", "93", "104,99", "47" on the drawing). This is the standard Mini12864 display footprint — COMPATIBLE with the BTT Mini12864 / Voron-spec Mini12864 mounts and cases. Hole dia assumed M3 clearance (~3.2 mm); drawing did not annotate hole diameter. V2.0 shares the same outline (separate dwg in repo). Source: https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)
+- **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y were swapped relative to this record's own pcb_length_mm(104.99)/pcb_width_mm(47) convention -- old pitch_y=93 exceeded the 47 mm width outright (impossible). Re-read the vendor dimension drawing (12864mini(RGB)_V2.1_dwg.pdf): the panel is drawn tall/narrow, with "93" dimensioning the VERTICAL (long-axis) hole spacing and "41" the HORIZONTAL (short-axis) spacing -- i.e. pitch_x=93 (along the 104.99 mm length), pitch_y=41 (along the 47 mm width). Both headline numbers (41, 93) were already correct in the prior record; only the x/y axis assignment was backwards. holes_xy added (medium confidence, assumed symmetric centering): x margins (104.99-93)/2=5.995≈6.0 mm, y margins (47-41)/2=3.0 mm exact -> corners (6,3),(99,3),(6,44),(99,44). Confidence high on length/width/pitch magnitudes (read directly off the vendor drawing); medium on the exact holes_xy corner precision (inset symmetry assumed, not separately dimensioned on the drawing). Standard Mini12864 footprint — interchangeable with BTT/Voron Mini12864 mounts. Hole diameter (3.2) inferred, not annotated. V2.0 shares the same outline (separate dwg in repo). Source: https://raw.githubusercontent.com/FYSETC/FYSETC-Mini-12864-Panel/master/hardware/V2.1/12864mini%EF%BC%88RGB%EF%BC%89_V2.1_dwg.pdf
 - src: https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)
 - src: https://wiki.fysetc.com/Mini12864_Panel/
 
@@ -719,9 +720,9 @@
 
 - **Category:** accelerometer · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 20.4 × 15.8 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.0), 2-hole, pitch 15.0×0.0 mm
+- **Mounting:** 2× M3 (Ø3.0), 2-hole, pitch 15.0×— mm
 - **Connectors:** 8-pin (or 7-pin) 2.54 mm header: GND/VCC/CS/SDO/SDA/SCL/INT1/INT2. SPI or I2C.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). 2-hole / Ø3 / 15 mm spacing corroborated by an authoritative vendor and the community-standard layout. Exact outline varies slightly by clone; thickness assumed 1.6 mm. NOT a 4-hole board. Mounting: The de-facto standard mount: 2 collinear Ø3 mm holes, 15 mm apart, on the edge opposite the pin header. The BTT USB boards copy this at 15.5 mm so they are mount-compatible. NO 4-corner hole pattern exists on this board. Source: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null (collinear 2-hole pattern -- see "2 collinear Ø3mm holes" below -- so a y-pitch does not exist). Confidence medium — Tier-2/3 (outline firm, pitch inferred). 2-hole / Ø3 / 15 mm spacing corroborated by an authoritative vendor and the community-standard layout. Exact outline varies slightly by clone; thickness assumed 1.6 mm. NOT a 4-hole board. Mounting: The de-facto standard mount: 2 collinear Ø3 mm holes, 15 mm apart, on the edge opposite the pin header. The BTT USB boards copy this at 15.5 mm so they are mount-compatible. NO 4-corner hole pattern exists on this board. Source: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291
 - src: https://www.bastelgarage.ch/acceleration-sensor-adxl345-gy-291
 
 ### LM2596 adjustable buck converter module  ·  `lm2596_buck`
@@ -834,36 +835,36 @@
 
 - **Category:** accessory · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 158.0 × 11.0 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 98.9×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 98.9×— mm
 - **Connectors:** Shorter LED bar (10 LEDs) for V0.1 / printers-for-ants. Holes on centerline.
-- **Notes:** Tier-1: Edge.Cuts bbox 158.0 x 11.0 mm; 2x MountingHole_3.2mm_M3 at raw (79.05,69.5),(177.95,69.5). chain_length=10 LEDs per README. (raw hole coords from source: [[29.55, 5.5], [128.45, 5.5]])
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[29.55,5.5],[128.45,5.5]], collinear 2-hole pattern on the board centerline), so a y-pitch does not exist. Tier-1: Edge.Cuts bbox 158.0 x 11.0 mm; 2x MountingHole_3.2mm_M3 at raw (79.05,69.5),(177.95,69.5). chain_length=10 LEDs per README. (raw hole coords from source: [[29.55, 5.5], [128.45, 5.5]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_matchstick/Daylight_Matchstick.kicad_pcb
 
 ### Daylight on a Stick (LED bar)  ·  `voron_daylight_on_a_stick`
 
 - **Category:** accessory · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 270.0 × 11.0 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 197.82×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 197.82×— mm
 - **Connectors:** Long LED illumination bar (18 LEDs) for 250mm+ Vorons; mounts to extrusion via printed 1515/2020 brackets. Holes on board centerline.
-- **Notes:** Tier-1: Edge.Cuts bbox 270.0 x 11.0 mm; 2x MountingHole_3.2mm_M3_Pad_Via at raw (49,33),(246.82,33). chain_length=18 LEDs per README. Disco variant same outline. (raw hole coords from source: [[36.0, 5.5], [233.82, 5.5]])
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[36.0,5.5],[233.82,5.5]], collinear 2-hole pattern on the board centerline), so a y-pitch does not exist. Tier-1: Edge.Cuts bbox 270.0 x 11.0 mm; 2x MountingHole_3.2mm_M3_Pad_Via at raw (49,33),(246.82,33). chain_length=18 LEDs per README. Disco variant same outline. (raw hole coords from source: [[36.0, 5.5], [233.82, 5.5]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Daylight/Daylight_on_a_stick/Daylight.kicad_pcb
 
 ### Hall Effect XY Endstop  ·  `voron_hall_xy_endstop`
 
 - **Category:** sensor · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 56.0 × 20.0 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 39.25×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 39.25×— mm
 - **Connectors:** Hall-effect XY endstop for Voron gantry. 2x M3 holes pitch 39.25 mm.
-- **Notes:** Tier-1 (KiCad v5 'module' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[5.75,12.25],[45.0,12.25]], collinear 2-hole pattern), so a y-pitch does not exist -- null correctly marks it not-applicable rather than a real zero-mm dimension. Tier-1 (KiCad v5 'module' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Hall_Effect_XY_Endstop/KiCad/HallEffectXY-Endstop.kicad_pcb
 
 ### Microswitch XY Endstop  ·  `voron_microswitch_xy_endstop`
 
 - **Category:** sensor · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 51.5 × 16.6 mm, 1.6 mm thick
-- **Mounting:** 2× M4 (Ø4.3), 2-hole, pitch 33.5×0.0 mm
+- **Mounting:** 2× M4 (Ø4.3), 2-hole, pitch 33.5×— mm
 - **Connectors:** Mechanical microswitch XY endstop. NOTE: M4 mount holes (4.3mm) — not M3.
-- **Notes:** Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5). (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[8.5,8.1],[42.0,8.1]], collinear 2-hole pattern), so a y-pitch does not exist. Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5). (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Microswitch_Endstop/KiCad/MicroswitchXY-Endstop.kicad_pcb
 
 ### PT100 Stick (thermocouple amp)  ·  `voron_pt100stick`
@@ -879,9 +880,9 @@
 
 - **Category:** toolhead_can · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 49.04 × 23.13 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 43.84×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 43.84×— mm
 - **Connectors:** Toolhead-side breakout for V0 umbilical wiring (pairs with the Frame_PCB). Non-CAN wiring breakout despite category.
-- **Notes:** Tier-1: Edge.Cuts bbox 49.04 x 23.13 mm (non-rectangular outline; bbox of arcs+lines). 2x MountingHole_3.2mm_M3 at raw (78.08,100),(121.92,100). Holes very close to short edges (inset 2.6mm). (raw hole coords from source: [[2.6, 10.0], [46.44, 10.0]])
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[2.6,10.0],[46.44,10.0]], collinear 2-hole pattern), so a y-pitch does not exist. Tier-1: Edge.Cuts bbox 49.04 x 23.13 mm (non-rectangular outline; bbox of arcs+lines). 2x MountingHole_3.2mm_M3 at raw (78.08,100),(121.92,100). Holes very close to short edges (inset 2.6mm). (raw hole coords from source: [[2.6, 10.0], [46.44, 10.0]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/V0-Umbilical/Kicad/Toolhead_PCB/Toolhead_PCB.kicad_pcb
 
 ### Voron Klipper Board (Taco Raven)  ·  `voron_klipper_board_taco_raven`
@@ -1072,9 +1073,9 @@
 
 - **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 51.27 × 36.26 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×— mm
 - **Clearance:** standoff 5 mm, top component — mm
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + 43.84 mm spacing confirmed by drawing AND STEP. Thickness 1.6 mm nominal. Mounting: ONLY 2 mounting holes, collinear, spaced 43.84 mm (confirmed by both the dimension drawing and STEP). Mounts via two "ear" tabs on a printed bracket. Does NOT use the NEMA17 31 mm pattern (that assumption is false for the SHT36 -- only the SHT42 uses 31x31). Exact hole XY relative to the PCB corner not extracted; use the 43.84 mm spacing. Source: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Confidence high — Tier-1 (vendor CAD/drawing). Outline + 43.84 mm spacing confirmed by drawing AND STEP. Thickness 1.6 mm nominal. Mounting: ONLY 2 mounting holes, collinear, spaced 43.84 mm (confirmed by both the dimension drawing and STEP) -- collinear means no y-pitch exists, so null (not 0) is correct. Mounts via two "ear" tabs on a printed bracket. Does NOT use the NEMA17 31 mm pattern (that assumption is false for the SHT36 -- only the SHT42 uses 31x31). Exact hole XY relative to the PCB corner not extracted; use the 43.84 mm spacing. Source: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/
 - src: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/
 - src: https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/FLY-SHT36/STEP%20File/36.step
 
@@ -1082,9 +1083,9 @@
 
 - **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 51.27 × 45.67 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×— mm
 - **Clearance:** standoff 5 mm, top component — mm
-- **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + spacing from drawing and STEP. Thickness 1.6 mm nominal. Mounting: Same 2-hole 43.84 mm pattern as v1; board is taller (45.67 mm vs 36.26 mm) because connectors extend the outline on the connector side. Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null (collinear 2-hole pattern, no y-pitch exists). Confidence high — Tier-1 (vendor CAD/drawing). Outline + spacing from drawing and STEP. Thickness 1.6 mm nominal. Mounting: Same 2-hole 43.84 mm pattern as v1; board is taller (45.67 mm vs 36.26 mm) because connectors extend the outline on the connector side. Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp
 - src: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp
 - src: https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/Fly-SHT36v2.0/Cad_SHT36v2.0.step
 
@@ -1163,10 +1164,10 @@
 
 - **Category:** expander · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 100.0 × 24.0 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), linear, pitch 92.0×0.0 mm
+- **Mounting:** 2× M3 (Ø3.2), linear, pitch 92.0×— mm
   - holes (x,y mm): [[4.0, 4.0], [96.0, 4.0]]
 - **Connectors:** STM32F042F6P6 MCU. 4x 3A MOSFET outputs (Phoenix/screw terminals), 2x thermistor inputs, NeoPixel out w/ level shifter, I2C header w/ pullups, SWD header, fuse holder. Two M3 holes on the long centerline, one near each end, 4mm in from edges.
-- **Notes:** Tier-1: measured from Edge.Cuts in KiCad/STM32_Klipper_Expander.kicad_pcb (gr_line corners X=100..200, Y=76..100 -> 100x24mm). Two MountingHole_3.2mm_M3 footprints at (104,80) and (196,80); origin set to board bottom-left (100,76) with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this repo OUTDATED and points to the Voron official hardware repo for the latest version; verify if a revised board exists there. Maintained KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the original timmit99 repo is flagged outdated); geometry agrees (100x24, 92mm pitch).
+- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes are on the same y (linear 2-hole pattern per mount_pattern), so a y-pitch does not exist -- 0 read as a real zero-mm dimension, null correctly marks it not-applicable. Tier-1: measured from Edge.Cuts in KiCad/STM32_Klipper_Expander.kicad_pcb (gr_line corners X=100..200, Y=76..100 -> 100x24mm). Two MountingHole_3.2mm_M3 footprints at (104,80) and (196,80); origin set to board bottom-left (100,76) with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this repo OUTDATED and points to the Voron official hardware repo for the latest version; verify if a revised board exists there. Maintained KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the original timmit99 repo is flagged outdated); geometry agrees (100x24, 92mm pitch).
 - src: https://raw.githubusercontent.com/timmit99/Klipper-Expander/master/KiCad/STM32_Klipper_Expander.kicad_pcb
 - src: https://github.com/timmit99/Klipper-Expander
 - src: https://github.com/VoronDesign/Voron-Hardware/tree/master/Klipper_Expander

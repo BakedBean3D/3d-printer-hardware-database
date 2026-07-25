@@ -13,14 +13,14 @@
   mount_screw: null
   mount_hole_dia_mm: 2.54
   mount_pattern: 2-hole
-  mount_pitch_x_mm: 38.5
-  mount_pitch_y_mm: 0.0
+  mount_pitch_x_mm: 5.08
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy:
-  - - 13.05
-    - 0.0
-  - - 13.05
-    - 38.5
+  - - 9.76
+    - 13.05
+  - - 4.68
+    - 13.05
   mount_inset_from_edge_mm: null
   standoff_height_mm: null
   component_height_top_mm: null
@@ -30,11 +30,16 @@
   - https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD
   - https://docs.duet3d.com/Duet3D_hardware/Accessories/PT100_Temperature_Daughterboard
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline 26.16 x 31.74 and Ø2.54 holes from official
-    KiCad source (high). 38.5 mm pitch is medium (derived from connector footprint coords; rotation ambiguous).
-    Mounting is a plastic pillar, not a screw. Mounting: Secured with a SUPPLIED PLASTIC SNAP-IN PILLAR,
-    not an M-screw. Holes are Ø2.54 mm NPTH from the official KiCad board file. Design around the pillar.
-    Source: https://github.com/Duet3D/TempDaughterboards/tree/master/MAXTempRTD'
+  notes: 'CORRECTED 2026-07-24: previous record had mount_pitch_x_mm=38.5 with holes at y=0/38.5 -- physically
+    impossible (38.5 mm exceeds the 31.74 mm board length AND the 26.16 mm width). Re-extracted directly
+    from the official KiCad source (MAXTempRTD.kicad_pcb): footprint P3 (F.Cu) at (72.64456,56.41594) carries
+    a non-plated pillar hole at local (0,-19.25066); footprint P4 (B.Cu, MAX_TEMP_DB_inv, rotated 180) at
+    (72.64456,51.33594) carries one at local (0,19.25066). Board Edge.Cuts bbox is (59.59856,27.40444)-(85.76056,59.14644)
+    = 26.162 x 31.742 mm, confirming pcb_length/width were already correct. Relative to the board corner
+    the two pillar holes sit at (13.05, 9.76) and (13.05, 4.68) -- collinear, 5.08 mm apart (exactly 2x
+    the 2.54 mm header pitch), NOT 38.5 mm apart. Confidence high — Tier-1 (vendor CAD), holes Ø2.54 mm
+    NPTH confirmed. Mounting is a supplied plastic snap-in pillar through these two NPTH holes, not an
+    M-screw. Source: https://raw.githubusercontent.com/Duet3D/TempDaughterboards/master/MAXTempRTD/MAXTempRTD.kicad_pcb'
 - id: duet3_6hc
   name: Duet 3 Mainboard 6HC
   manufacturer: Duet3D
@@ -45,18 +50,18 @@
   mount_screw: M3
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
-  mount_pitch_x_mm: 124.0
-  mount_pitch_y_mm: 130.0
+  mount_pitch_x_mm: 130.0
+  mount_pitch_y_mm: 124.0
   mount_hole_count: 4
   mount_holes_xy:
   - - 5.0
     - 5.0
-  - - 129.0
+  - - 135.0
     - 5.0
   - - 5.0
-    - 135.0
-  - - 129.0
-    - 135.0
+    - 129.0
+  - - 135.0
+    - 129.0
   mount_inset_from_edge_mm: 5.0
   standoff_height_mm: 8
   component_height_top_mm: null
@@ -67,11 +72,17 @@
   - https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.02/CAD/Duet3_MB_6HC.kicad_pcb
   - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6HC_Hardware_Overview
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes confirmed twice (dimension SVG
-    and KiCad). Thickness 1.6 mm is standard but not explicitly annotated in the drawings. Mounting: Holes
-    are isolated (non-plated) with a ~2.2 mm keep-out ring. Drilled Ø4.3 mm (M4 clearance) but Duet''s
-    own guides specify M3 screws. Width is 134 mm, length 140 mm -- the commonly cited "144x96" figure
-    is WRONG. Source: https://github.com/Duet3D/Duet3-Mainboard-6HC/blob/master/Duet3_Mainboard_6HC_v1.0/Duet3_MB_6HC_v0.6%26later_Dimensions.svg'
+  notes: 'CORRECTED 2026-07-24: pitch_x/pitch_y (and the matching holes_xy axes) were swapped relative
+    to this record''s own pcb_length_mm(140)/pcb_width_mm(134) convention -- the old holes_xy put y up
+    to 135, 1 mm outside the claimed 134 mm width. Re-derived from the official KiCad source (Duet3_MB_6HC.kicad_pcb):
+    4x MountingHole_4.3mm_M4 footprints at absolute (149,115),(149,245),(25,245),(25,115); Edge.Cuts bbox
+    (20,110)-(154,250) = 134 x 140 mm, confirming pcb_length=140/pcb_width=134 were already correct. Relative
+    to the board corner (using this DB''s x=along-length, y=along-width convention) the holes are (5,5),(135,5),(5,129),(135,129)
+    -- pitch_x=130 (along the 140 mm length, 5 mm inset each side), pitch_y=124 (along the 134 mm width,
+    5 mm inset each side). Confidence high — Tier-1 (vendor CAD/drawing), outline + holes confirmed via
+    KiCad. Thickness 1.6 mm is standard but not explicitly annotated in the drawings. Holes are isolated
+    (non-plated) with a ~2.2 mm keep-out ring. Drilled Ø4.3 mm (M4 clearance) but Duet''s own guides specify
+    M3 screws. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mainboard-6HC/master/Duet3_Mainboard_6HC_v1.02/CAD/Duet3_MB_6HC.kicad_pcb'
 - id: duet3_6xd
   name: Duet 3 Mainboard 6XD
   manufacturer: Duet3D
@@ -82,18 +93,18 @@
   mount_screw: M3
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
-  mount_pitch_x_mm: 104.5
-  mount_pitch_y_mm: 129.5
+  mount_pitch_x_mm: 130.0
+  mount_pitch_y_mm: 105.0
   mount_hole_count: 4
   mount_holes_xy:
   - - 5.5
     - 5.5
-  - - 110.0
+  - - 135.0
     - 5.0
   - - 5.0
-    - 135.0
-  - - 110.0
-    - 135.0
+    - 110.0
+  - - 135.0
+    - 110.0
   mount_inset_from_edge_mm: 5.0
   standoff_height_mm: 8
   component_height_top_mm: null
@@ -102,12 +113,17 @@
   - https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb
   - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mainboard_6XD_Hardware_Overview
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + 3 holes high confidence from KiCad.
-    The [5.5,5.5] corner asymmetry is in the source file; verify sub-mm precision on that hole physically.
-    Mounting: Narrower than the 6HC (115 mm vs 134 mm) but same 140 mm length. The bottom-left hole sits
-    at [5.5,5.5] in the source file (~0.5 mm offset from the 5 mm grid of the other three) -- treat that
-    corner as medium confidence. Two interior Ø2.5 mm holes are a daughterboard mount, not chassis mounting.
-    Source: https://github.com/Duet3D/Duet3-Mainboard-6XD/blob/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb'
+  notes: 'CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record''s
+    pcb_length_mm(140)/pcb_width_mm(115) convention -- old pitch_y=129.5 exceeded the 115 mm width outright,
+    and old holes_xy put y up to 135, 20 mm outside the claimed width. Re-derived from the official KiCad
+    source (Duet3_MB_6XD.kicad_pcb): 4x MountingHole_4.3mm_M4 at absolute (130,115),(130,245),(25,245),(25.5,115.5);
+    Edge.Cuts bbox (20,110)-(135,250) = 115 x 140 mm, confirming pcb_length=140/pcb_width=115 were already
+    correct. Relative to the board corner, using this DB''s x=along-length/y=along-width convention: (5.5,5.5),(135,5),(5,110),(135,110)
+    -- pitch_x=130 (along the 140 mm length; same 130 mm rail spacing as the 6HC, sharing an enclosure
+    family), pitch_y=105 (along the 115 mm width, from the 3 holes on a clean grid). The 4th hole (bottom-left)
+    sits at [5.5,5.5], a real ~0.5 mm offset from the 5 mm grid of the other three, confirmed in the KiCad
+    source -- treat that corner as medium confidence. Two interior Ø2.5 mm holes are a daughterboard mount,
+    not chassis mounting. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mainboard-6XD/master/v1.01/CAD/Duet3_MB_6XD.kicad_pcb'
 - id: duet3_mini5plus
   name: Duet 3 Mini 5+
   manufacturer: Duet3D
@@ -118,18 +134,18 @@
   mount_screw: M3
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
-  mount_pitch_x_mm: 92.0
-  mount_pitch_y_mm: 115.0
+  mount_pitch_x_mm: 115.0
+  mount_pitch_y_mm: 92.0
   mount_hole_count: 4
   mount_holes_xy:
   - - 4.0
     - 4.0
-  - - 96.0
+  - - 119.0
     - 4.0
   - - 4.0
-    - 119.0
-  - - 96.0
-    - 119.0
+    - 96.0
+  - - 119.0
+    - 96.0
   mount_inset_from_edge_mm: 4.0
   standoff_height_mm: 6
   component_height_top_mm: null
@@ -138,11 +154,17 @@
   - https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb
   - https://docs.duet3d.com/Duet3D_hardware/Duet_3_family/Duet_3_Mini_5+_Hardware_Overview
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + holes from KiCad. Thickness 1.6 mm
-    standard, not annotated. Mounting: Footprint is byte-for-byte identical to the Duet 2 WiFi/Ethernet
-    (same 100x123 outline, 92x115 pitch, 4 mm inset) -- one mount fits both. Drilled Ø4.3 mm (M4 clearance);
-    Duet documents fixing with 4x M3 6mm screws. The commonly cited "117x89" figure is WRONG. Source:
-    https://github.com/Duet3D/Duet3-Mini5plus/blob/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb'
+  notes: 'CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record''s
+    pcb_length_mm(123)/pcb_width_mm(100) convention -- old pitch_y=115 exceeded the 100 mm width outright,
+    and old holes_xy put y up to 119, 19 mm outside the claimed width. Re-derived from the official KiCad
+    source (Duet3_5+_Wifi.kicad_pcb): 4x MountingHole_4.3mm_M4 at absolute (24,131),(116,246),(24,246),(116,131);
+    Edge.Cuts bbox (20,127)-(120,250) = 100 x 123 mm, confirming pcb_length=123/pcb_width=100 were already
+    correct. Relative to the board corner, using this DB''s x=along-length/y=along-width convention: (4,4),(119,4),(4,96),(119,96)
+    -- pitch_x=115 (along the 123 mm length, 4 mm inset each side), pitch_y=92 (along the 100 mm width,
+    4 mm inset each side). Confidence high — Tier-1 (vendor CAD/drawing). Thickness 1.6 mm standard, not
+    annotated. Mounting: Footprint is byte-for-byte identical to the Duet 2 WiFi/Ethernet (same 100x123
+    outline, 115x92 pitch, 4 mm inset) -- one mount fits both. Drilled Ø4.3 mm (M4 clearance); Duet documents
+    fixing with 4x M3 6mm screws. The commonly cited "117x89" figure is WRONG. Source: https://raw.githubusercontent.com/Duet3D/Duet3-Mini5plus/main/v1.02_wifi/Duet3_5+_Wifi_v1.02_KiCAD/Duet3_5+_Wifi.kicad_pcb'
 - id: duet3_toolboard_1lc
   name: Duet 3 Toolboard 1LC
   manufacturer: Duet3D
@@ -187,18 +209,18 @@
   mount_screw: M3
   mount_hole_dia_mm: 4.2
   mount_pattern: rectangular
-  mount_pitch_x_mm: 92.0
-  mount_pitch_y_mm: 115.0
+  mount_pitch_x_mm: 115.0
+  mount_pitch_y_mm: 92.0
   mount_hole_count: 4
   mount_holes_xy:
   - - 4.0
     - 4.0
-  - - 96.0
+  - - 119.0
     - 4.0
   - - 4.0
-    - 119.0
-  - - 96.0
-    - 119.0
+    - 96.0
+  - - 119.0
+    - 96.0
   mount_inset_from_edge_mm: 4.0
   standoff_height_mm: 6
   component_height_top_mm: null
@@ -207,7 +229,15 @@
   - https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
   - https://docs.duet3d.com/Duet3D_hardware/Duet_2_family/Duet_2_WiFi_Ethernet_Hardware_Overview
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). From KiCad. Thickness 1.6 mm standard, not annotated.
+  notes: 'CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record''s
+    pcb_length_mm(123)/pcb_width_mm(100) convention -- old pitch_y=115 exceeded the 100 mm width outright,
+    and old holes_xy put y up to 119, 19 mm outside the claimed width. Re-derived from the official KiCad
+    source (Duet2.kicad_pcb): 4x "complib:Fixing_M4" (np_thru_hole, drill 4.20116 mm) at absolute (176.21,155.862),(84.211,40.8635),(84.211,155.862),(176.21,40.8635);
+    Edge.Cuts bbox (80.21066,36.86302)-(180.21046,159.86252) = 100 x 123 mm, confirming pcb_length=123/pcb_width=100
+    were already correct. Relative to the board corner, using this DB''s x=along-length/y=along-width convention:
+    (4,4),(119,4),(4,96),(119,96) -- pitch_x=115 (along the 123 mm length, 4 mm inset each side), pitch_y=92
+    (along the 100 mm width, 4 mm inset each side); this is the byte-for-byte-identical pattern found on
+    the Duet 3 Mini 5+. Confidence high — Tier-1 (vendor CAD/drawing). Thickness 1.6 mm standard, not annotated.
     Mounting: WiFi and Ethernet variants share one PCB. Hole pattern is identical to the Duet 3 Mini 5+
-    (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly
-    mounted with M3. Source: https://github.com/Duet3D/Duet-2-Hardware/blob/master/Duet2/Duet2v1.06/Duet2.kicad_pcb'
+    (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly mounted
+    with M3. Source: https://raw.githubusercontent.com/Duet3D/Duet-2-Hardware/master/Duet2/Duet2v1.06/Duet2.kicad_pcb'

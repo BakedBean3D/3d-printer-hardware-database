@@ -372,10 +372,18 @@
   mount_screw: M3
   mount_hole_dia_mm: 3.2
   mount_pattern: rectangular
-  mount_pitch_x_mm: 41.0
-  mount_pitch_y_mm: 93.0
+  mount_pitch_x_mm: 93.0
+  mount_pitch_y_mm: 41.0
   mount_hole_count: 4
-  mount_holes_xy: null
+  mount_holes_xy:
+  - - 6.0
+    - 3.0
+  - - 99.0
+    - 3.0
+  - - 6.0
+    - 44.0
+  - - 99.0
+    - 44.0
   mount_inset_from_edge_mm: null
   standoff_height_mm: null
   component_height_top_mm: null
@@ -385,15 +393,18 @@
   - https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)
   - https://wiki.fysetc.com/Mini12864_Panel/
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). length/width and 41 x 93 mm 4-hole pattern read
-    directly off the vendor dimensioned drawing (high). Standard Mini12864 footprint — interchangeable
-    with BTT/Voron Mini12864 mounts. Hole diameter (3.2) inferred, not annotated. Mounting: Measured directly
-    from the vendor dimensional drawing 12864mini(RGB)_V2.1_dwg.pdf. PCB = 104.99 mm (long) x 47 mm (wide).
-    Four mounting holes in a rectangular pattern: 41 mm horizontal pitch x 93 mm vertical pitch (callouts
-    read "41", "93", "104,99", "47" on the drawing). This is the standard Mini12864 display footprint
-    — COMPATIBLE with the BTT Mini12864 / Voron-spec Mini12864 mounts and cases. Hole dia assumed M3 clearance
-    (~3.2 mm); drawing did not annotate hole diameter. V2.0 shares the same outline (separate dwg in repo).
-    Source: https://github.com/FYSETC/FYSETC-Mini-12864-Panel (hardware/V2.1/12864mini(RGB)_V2.1_dwg.pdf)'
+  notes: 'CORRECTED 2026-07-24: pitch_x/pitch_y were swapped relative to this record''s own pcb_length_mm(104.99)/pcb_width_mm(47)
+    convention -- old pitch_y=93 exceeded the 47 mm width outright (impossible). Re-read the vendor dimension
+    drawing (12864mini(RGB)_V2.1_dwg.pdf): the panel is drawn tall/narrow, with "93" dimensioning the VERTICAL
+    (long-axis) hole spacing and "41" the HORIZONTAL (short-axis) spacing -- i.e. pitch_x=93 (along the
+    104.99 mm length), pitch_y=41 (along the 47 mm width). Both headline numbers (41, 93) were already
+    correct in the prior record; only the x/y axis assignment was backwards. holes_xy added (medium confidence,
+    assumed symmetric centering): x margins (104.99-93)/2=5.995≈6.0 mm, y margins (47-41)/2=3.0 mm exact
+    -> corners (6,3),(99,3),(6,44),(99,44). Confidence high on length/width/pitch magnitudes (read directly
+    off the vendor drawing); medium on the exact holes_xy corner precision (inset symmetry assumed, not
+    separately dimensioned on the drawing). Standard Mini12864 footprint — interchangeable with BTT/Voron
+    Mini12864 mounts. Hole diameter (3.2) inferred, not annotated. V2.0 shares the same outline (separate
+    dwg in repo). Source: https://raw.githubusercontent.com/FYSETC/FYSETC-Mini-12864-Panel/master/hardware/V2.1/12864mini%EF%BC%88RGB%EF%BC%89_V2.1_dwg.pdf'
 - id: fysetc_erb
   name: ERB (Enraged Rabbit Burrow Board)
   manufacturer: Fysetc

@@ -14,7 +14,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: linear
   mount_pitch_x_mm: 43.84
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: null
@@ -25,11 +25,13 @@
   - https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/
   - https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/FLY-SHT36/STEP%20File/36.step
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + 43.84 mm spacing confirmed by drawing
-    AND STEP. Thickness 1.6 mm nominal. Mounting: ONLY 2 mounting holes, collinear, spaced 43.84 mm (confirmed
-    by both the dimension drawing and STEP). Mounts via two "ear" tabs on a printed bracket. Does NOT
-    use the NEMA17 31 mm pattern (that assumption is false for the SHT36 -- only the SHT42 uses 31x31).
-    Exact hole XY relative to the PCB corner not extracted; use the 43.84 mm spacing. Source: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Confidence
+    high — Tier-1 (vendor CAD/drawing). Outline + 43.84 mm spacing confirmed by drawing AND STEP. Thickness
+    1.6 mm nominal. Mounting: ONLY 2 mounting holes, collinear, spaced 43.84 mm (confirmed by both the
+    dimension drawing and STEP) -- collinear means no y-pitch exists, so null (not 0) is correct. Mounts
+    via two "ear" tabs on a printed bracket. Does NOT use the NEMA17 31 mm pattern (that assumption is
+    false for the SHT36 -- only the SHT42 uses 31x31). Exact hole XY relative to the PCB corner not extracted;
+    use the 43.84 mm spacing. Source: https://mellow.klipper.cn/en/docs/ProductDoc/ToolBoard/fly-sht36/sht36/'
 - id: mellow_fly_sht36_v2
   name: Fly-SHT36 v2.0
   manufacturer: Mellow
@@ -41,7 +43,7 @@
   mount_hole_dia_mm: 3.2
   mount_pattern: linear
   mount_pitch_x_mm: 43.84
-  mount_pitch_y_mm: 0.0
+  mount_pitch_y_mm: null
   mount_hole_count: 2
   mount_holes_xy: null
   mount_inset_from_edge_mm: null
@@ -52,9 +54,11 @@
   - https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp
   - https://github.com/Mellow-3D/Klipper-CAN-Toolboards/blob/main/Fly-SHT36v2.0/Cad_SHT36v2.0.step
   confidence: high
-  notes: 'Confidence high — Tier-1 (vendor CAD/drawing). Outline + spacing from drawing and STEP. Thickness
-    1.6 mm nominal. Mounting: Same 2-hole 43.84 mm pattern as v1; board is taller (45.67 mm vs 36.26 mm)
-    because connectors extend the outline on the connector side. Source: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp'
+  notes: 'CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null (collinear
+    2-hole pattern, no y-pitch exists). Confidence high — Tier-1 (vendor CAD/drawing). Outline + spacing
+    from drawing and STEP. Thickness 1.6 mm nominal. Mounting: Same 2-hole 43.84 mm pattern as v1; board
+    is taller (45.67 mm vs 36.26 mm) because connectors extend the outline on the connector side. Source:
+    https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-sht36_v2/sht36v2_dimensions.webp'
 - id: mellow_fly_sht42
   name: Fly-SHT42
   manufacturer: Mellow
