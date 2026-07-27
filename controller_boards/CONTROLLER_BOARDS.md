@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 95
-- **Confidence:** 46 high · 30 medium · 19 low
+- **Total boards:** 96
+- **Confidence:** 47 high · 30 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -49,6 +49,7 @@
 | SKR 3 EZ | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
 | SKR Mini E3 V3 | BigTreeTech | mainboard | 103.75×70.25 | 1.6 | M3 | other-describe | — | 6 | medium |
 | SKR Pico | BigTreeTech | mainboard | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| SKRat V1.0 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.35×76.1 | 4 | high |
 | U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
 | U2C V3 | BigTreeTech | usb_can_bridge | — | — | — | — | — | — | low |
 | Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 115.0×92.0 | 4 | high |
@@ -440,6 +441,16 @@
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Overall dims, 58 x 49 pitch and 3.50 mm inset HIGH confidence from official SIZE PDF (corroborated by RPi-compatible-mount note). M2.5 / 2.75 mm hole dia inferred from RPi standard (not labeled). holes_xy computed, not directly dimensioned. Mounting: Deliberately matches the Raspberry Pi Model B / Pi 4 mounting footprint: 58.00 x 49.00 mm hole rectangle, M2.5 screws, 3.50 mm in from two edges. Read from official SIZE PDF (overall 85.00 x 56.00 mm). holes_xy computed from the inset+pitch (origin = bottom-left PCB corner); board outline has castellated/notched edges so corner is nominal. hole_dia 2.75 mm is the RPi-standard M2.5 clearance. Source: https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/SKR-Pico
+
+### SKRat V1.0  ·  `btt_skrat_v1_0`
+
+- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **PCB:** 109.67 × 84.3 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 101.35×76.1 mm
+- **Connectors:** Motor headers (XM/YM/ZMA/ZMB/E0M/E1M) along top edge above the driver sockets; power (DCIN/VBED/HB) and heater screw terminals on left edge; fan (FAN0-3), thermistor (TH0-3) and USB along bottom edge; EXP1/EXP2, CAN, endstop and RGB headers on right edge.
+- **Notes:** Confidence high — Tier-1 (vendor drawing, read 2026-07-27). Same 109.67 x 84.30 outline as the SKR 3 but the hole pitch is NOT identical: 101.35 (X) x 76.10 (Y) vs the SKR 3's 101.85 x 76.30 — 0.50/0.20 mm narrower. An SKR 3 clearance-hole mount fits by hole slop (field-confirmed on a physical print 2026-07-27), but tap/heat-set standoffs must use these SKRat numbers. Bottom hole centers 4.00 mm above the bottom edge (top offset 4.20 — the pattern sits 0.10 mm below the outline centreline; negligible for plate sizing). Hole diameter and screw size are not dimensioned on the drawing — M3 / 3.2 mm are SKR-family convention. Thickness assumed. In-repo STEP (Hardware/) has exact centers. Source: https://github.com/bigtreetech/SKRat/blob/master/Hardware/BTT_SKRat_V1.0_SIZE.pdf
+- src: https://github.com/bigtreetech/SKRat/blob/master/Hardware/BTT_SKRat_V1.0_SIZE.pdf
+- src: https://global.bttwiki.com/SKRat.html
 
 ### U2C V2 (V2.0/V2.1)  ·  `btt_u2c_v2`
 
