@@ -22,6 +22,7 @@
     "terminal_location": "5-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V), on the same face as the LED and the flange (side_mount) holes",
     "connector_notes": "5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.",
     "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 3.5,
     "bottom_mount_hole_count": 2,
     "bottom_mount_pattern": "2-hole",
@@ -68,6 +69,7 @@
     "terminal_location": "7-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V x2, DC OUTPUT +V x2), same face as the LED, SVR1 adjustment pot, and the side_mount holes",
     "connector_notes": "7-position screw terminal. Pins 1-3 AC/L, AC/N, FG; pins 4-5 DC OUTPUT -V; pins 6-7 DC OUTPUT +V.",
     "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 3.5,
     "bottom_mount_hole_count": 3,
     "bottom_mount_pattern": "3-hole",
@@ -112,6 +114,7 @@
     "terminal_location": "7-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V x2, DC OUTPUT +V x2), same face as the LED, SVR1 adjustment pot, and the side_mount holes",
     "connector_notes": "7-position screw terminal. Pins 1-3 AC/L, AC/N, FG; pins 4-5 DC OUTPUT -V; pins 6-7 DC OUTPUT +V.",
     "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 3.5,
     "bottom_mount_hole_count": 3,
     "bottom_mount_pattern": "3-hole",
@@ -159,6 +162,7 @@
     "terminal_location": "9-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V x3, DC OUTPUT +V x3), same face as the LED, +V ADJ pot, and the bottom_mount holes",
     "connector_notes": "9-position screw terminal. Pins 1-3 AC/L, AC/N, FG; pins 4-6 DC OUTPUT -V; pins 7-9 DC OUTPUT +V.",
     "bottom_mount_screw": "M4",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 4.5,
     "bottom_mount_hole_count": 4,
     "bottom_mount_pattern": "rectangular",
@@ -223,6 +227,7 @@
     "terminal_location": "9-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V x3, DC OUTPUT +V x3), same face as the LED, +V ADJ pot, cooling fan, and the bottom_mount holes",
     "connector_notes": "9-position screw terminal (same layout as LRS-200). Built-in DC fan with ON/OFF control on this face, blowing across the case (see \"Air flow direction\" on the drawing).",
     "bottom_mount_screw": "M4",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 4.5,
     "bottom_mount_hole_count": 4,
     "bottom_mount_pattern": "rectangular",
@@ -287,6 +292,7 @@
     "terminal_location": "screw terminal blocks (TB1 3-pin AC input, TB2 6-pin DC output) plus a 4-pin CN100 connector (remote ON/OFF + remote sense), on the face opposite the built-in cooling fan",
     "connector_notes": "TB1 (AC input): 1 AC/L, 2 AC/N, 3 FG. TB2 (DC output): pins 1-3 DC OUTPUT -V, pins 4-6 DC OUTPUT +V. CN100 (HRS DF11-04DP-2DS or equivalent): 1 -S, 2 +S, 3 RC-, 4 RC+ (remote sense / remote on-off). Built-in DC fan for forced-air cooling.",
     "bottom_mount_screw": "M4",
+    "bottom_mount_interface": "threaded_case",
     "bottom_mount_hole_dia_mm": 4.5,
     "bottom_mount_hole_count": 5,
     "bottom_mount_pattern": "other",
@@ -335,13 +341,31 @@
     "terminal_location": "screw terminal blocks -- TB1 (2-pin AC input) on one short end, TB2/TB3 (4-pin DC output, high-current) plus CN10 (2-pin DC-OK signal) on the opposite short end",
     "connector_notes": "TB1 (DEGSON DG28C-B-03P or equiv.): 1 AC/L, 2 AC/N, 3 FG; max mounting torque 5Kgf-cm. TB2/TB3 (Mean Well TB-HTP-200-40A or equiv.): pins 1-2 -V, pins 3-4 +V; max mounting torque 8Kgf-cm. CN10 (JST B2B-PH-K-S or equiv.): 1 DC COM, 2 DC OK +V. Fanless -- MUST be mounted to a thermally-conductive aluminum plate (or equivalent chassis) at least 450x450x3mm per Mean Well's installation guidance for the unit to meet its rated derating curve; this is a thermal requirement, not just a mechanical one.",
     "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "clearance_ears",
     "bottom_mount_hole_dia_mm": 3.3,
     "bottom_mount_hole_count": 4,
-    "bottom_mount_pattern": "other",
-    "bottom_mount_pitch_x_mm": 110.0,
-    "bottom_mount_pitch_y_mm": null,
-    "bottom_mount_holes_xy": null,
-    "bottom_mount_max_penetration_mm": 4.0,
+    "bottom_mount_pattern": "rectangular",
+    "bottom_mount_pitch_x_mm": 218.2,
+    "bottom_mount_pitch_y_mm": 46.4,
+    "bottom_mount_holes_xy": [
+      [
+        0.9,
+        7.8
+      ],
+      [
+        219.1,
+        7.8
+      ],
+      [
+        0.9,
+        54.2
+      ],
+      [
+        219.1,
+        54.2
+      ]
+    ],
+    "bottom_mount_max_penetration_mm": null,
     "side_mount_screw": null,
     "side_mount_hole_dia_mm": null,
     "side_mount_hole_count": null,
@@ -354,8 +378,8 @@
     "sources": [
       "https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF"
     ],
-    "confidence": "medium",
-    "notes": "Confidence medium -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; \"R\" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. This is Mean Well's slim/low-profile line (popular for Voron-style toolhead-adjacent or slim-bay mounts) -- bottom_mount is the ONLY documented mounting pattern (no side/bracket option in this datasheet): 4x \u23003.3mm clearance holes (explicitly labelled \"4-\u03c83.3\" -- clearance for M3, NOT a threaded blind hole in the PSU case itself, since these are user-supplied screws through the case into the aluminum mounting plate beneath). 110mm appears as a clean dimension in the drawing's base/side-profile view and is recorded as bottom_mount_pitch_x_mm, but could not be fully cross-validated against a symmetric inset the way the LRS-200/350 grid was, so mount_holes_xy is left null pending vector-PDF extraction -- one hole was visually positioned in the lower-right region of the top view (near the DC output terminals), suggesting the 4-hole layout may NOT be a simple symmetric rectangle; pattern recorded as \"other\" rather than \"rectangular\" to avoid overclaiming. bottom_mount_max_penetration_mm (4mm) is INFERRED from Mean Well's own installation-page fastener callout (\"M3*4\" mounting screws into the aluminum plate) rather than an explicit \"L=\" spec on the mechanical page -- functionally the same guidance (case is only 31mm tall, internal PCB sits close to the base) but flagged as a different citation type. No side_mount: not offered for this case size. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).",
+    "confidence": "high",
+    "notes": "Confidence high -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; \"R\" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. VECTOR-PDF EXTRACTION 2026-07-28 (least-squares circle fits on the drawing's own bezier geometry; supersedes the earlier raster reading): the \"4-\u03c83.3\" callout's leader line terminates at an END-PLATE EAR -- the mounting interface is 4 outward-opening 3.3mm slots on the corner ears of the two 3mm end plates, at the case bottom plane. The 4 small circles ON the case face at ~10.1mm end insets are case-assembly screws, NOT mounting holes -- do not mount to them. ACROSS WIDTH (Y): the drawing's own chain closes exactly (7.8 + 46.4 + 7.8 = 62) and the fitted ear centres measure 7.79/46.39/7.82 against it -- pitch_y 46.4 with 7.8 insets. ALONG LENGTH (X): slot centres vector-measure 0.9mm inside each end face (pitch_x 218.2, closing the 220 envelope exactly); this value is measured from the drawing geometry, not carried by a printed dimension -- and because the slots open OUTWARD through the end faces, any screw spacing from ~218.2 up to the 220 envelope engages the ears. FAMILY CROSS-CHECK: UHP-200 (Case 249B, 55mm-wide case) shows the identical construct, 6.5 + 42 + 6.5 = 55. CORRECTION of the previous record: pitch_x 110 was a misread -- the drawing's \"110\"/\"15.5\" dimension the tc (max case temperature) measurement point on the finned side elevation, not any mounting feature. bottom_mount_interface clearance_ears: no thread in the case; the screw clamps the ear and threads into the mounting plate below (Mean Well install guidance: \"M3*4\" into a thermally-conductive aluminum plate >= 450x450x3mm for the full derating curve -- a THERMAL requirement, not just mechanical), and the screw path lies outside the case wall, so bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).",
     "_source_file": "meanwell.yaml"
   },
   {
@@ -378,6 +402,7 @@
     "terminal_location": "screw terminal strip (+V, +V, -V, -V, DC OK) on the top face, AC input (N, L) on the bottom face, both accessible with the unit clipped onto the DIN rail",
     "connector_notes": "DC OK is a dry relay contact (30V/1A resistive max), not a signal level -- contact closed = PSU on/DC OK, open = PSU off/DC fail.",
     "bottom_mount_screw": null,
+    "bottom_mount_interface": null,
     "bottom_mount_hole_dia_mm": null,
     "bottom_mount_hole_count": null,
     "bottom_mount_pattern": "none",
@@ -420,6 +445,7 @@
     "terminal_location": "screw terminal blocks -- TB1 (3-pin AC/DC input) at the bottom of the front face, TB2 (4-pin DC output) at the top of the front face, both accessible with the unit clipped onto the DIN rail",
     "connector_notes": "TB1: 1 FG, 2 AC/N or DC-, 3 AC/L or DC+ (accepts DC input directly). TB2: pins 1-2 DC OUTPUT -V, pins 3-4 DC OUTPUT +V. No DC-OK signal on this economy line (unlike MDR-60).",
     "bottom_mount_screw": null,
+    "bottom_mount_interface": null,
     "bottom_mount_hole_dia_mm": null,
     "bottom_mount_hole_count": null,
     "bottom_mount_pattern": "none",

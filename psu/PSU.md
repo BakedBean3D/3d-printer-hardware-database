@@ -3,7 +3,7 @@
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python psu/gen.py`. The YAML files are the source of truth.
 
 - **Total units:** 9
-- **Confidence:** 4 high · 5 medium · 0 low
+- **Confidence:** 5 high · 4 medium · 0 low
 - **Aggregate for code:** `psu.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -29,7 +29,7 @@
 | Mean Well LRS-50 | Mean Well | enclosed | 99.0×82.0×30.0 | 210g | 50W | 3.3/5/12/15/24/36/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | medium |
 | Mean Well MDR-60 | Mean Well | din_rail | 100.0×40.0×90.0 | 287g | 60W | 5/12/24/48 | none | DIN TS35/7.5 or TS35/15 | high |
 | Mean Well RSP-500 | Mean Well | enclosed | 230.0×127.0×40.5 | 1300g | 500W | 3.3/4/5/12/15/24/27/48 | 5×M4 (other) | 4×M4 (rectangular) | medium |
-| Mean Well UHP-350 | Mean Well | slim_enclosed | 220.0×62.0×31.0 | 680g | 350W | 3.3/4.2/5/12/15/24/36/48/55 | 4×M3 (other) | none | medium |
+| Mean Well UHP-350 | Mean Well | slim_enclosed | 220.0×62.0×31.0 | 680g | 350W | 3.3/4.2/5/12/15/24/36/48/55 | 4×M3 (rectangular) | none | high |
 
 ## Mean Well
 
@@ -131,11 +131,12 @@
 
 ### Mean Well UHP-350  ·  `meanwell_uhp_350`
 
-- **Category:** slim_enclosed · **Confidence:** medium · **Source file:** `meanwell.yaml`
+- **Category:** slim_enclosed · **Confidence:** high · **Source file:** `meanwell.yaml`
 - **Case:** 220.0 × 62.0 × 31.0 mm, 680 g, 350W
 - **Output voltages:** 3.3/4.2/5/12/15/24/36/48/55 V
-- **Bottom mount:** 4× M3 (Ø3.3), other, pitch 110.0×— mm, max penetration 4.0 mm
+- **Bottom mount:** 4× M3 (Ø3.3), rectangular, pitch 218.2×46.4 mm, max penetration — mm
+  - holes (x,y mm): [[0.9, 7.8], [219.1, 7.8], [0.9, 54.2], [219.1, 54.2]]
 - **Terminal location:** screw terminal blocks -- TB1 (2-pin AC input) on one short end, TB2/TB3 (4-pin DC output, high-current) plus CN10 (2-pin DC-OK signal) on the opposite short end
 - **Connectors:** TB1 (DEGSON DG28C-B-03P or equiv.): 1 AC/L, 2 AC/N, 3 FG; max mounting torque 5Kgf-cm. TB2/TB3 (Mean Well TB-HTP-200-40A or equiv.): pins 1-2 -V, pins 3-4 +V; max mounting torque 8Kgf-cm. CN10 (JST B2B-PH-K-S or equiv.): 1 DC COM, 2 DC OK +V. Fanless -- MUST be mounted to a thermally-conductive aluminum plate (or equivalent chassis) at least 450x450x3mm per Mean Well's installation guidance for the unit to meet its rated derating curve; this is a thermal requirement, not just a mechanical one.
-- **Notes:** Confidence medium -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; "R" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. This is Mean Well's slim/low-profile line (popular for Voron-style toolhead-adjacent or slim-bay mounts) -- bottom_mount is the ONLY documented mounting pattern (no side/bracket option in this datasheet): 4x ⌀3.3mm clearance holes (explicitly labelled "4-ψ3.3" -- clearance for M3, NOT a threaded blind hole in the PSU case itself, since these are user-supplied screws through the case into the aluminum mounting plate beneath). 110mm appears as a clean dimension in the drawing's base/side-profile view and is recorded as bottom_mount_pitch_x_mm, but could not be fully cross-validated against a symmetric inset the way the LRS-200/350 grid was, so mount_holes_xy is left null pending vector-PDF extraction -- one hole was visually positioned in the lower-right region of the top view (near the DC output terminals), suggesting the 4-hole layout may NOT be a simple symmetric rectangle; pattern recorded as "other" rather than "rectangular" to avoid overclaiming. bottom_mount_max_penetration_mm (4mm) is INFERRED from Mean Well's own installation-page fastener callout ("M3*4" mounting screws into the aluminum plate) rather than an explicit "L=" spec on the mechanical page -- functionally the same guidance (case is only 31mm tall, internal PCB sits close to the base) but flagged as a different citation type. No side_mount: not offered for this case size. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).
+- **Notes:** Confidence high -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; "R" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. VECTOR-PDF EXTRACTION 2026-07-28 (least-squares circle fits on the drawing's own bezier geometry; supersedes the earlier raster reading): the "4-ψ3.3" callout's leader line terminates at an END-PLATE EAR -- the mounting interface is 4 outward-opening 3.3mm slots on the corner ears of the two 3mm end plates, at the case bottom plane. The 4 small circles ON the case face at ~10.1mm end insets are case-assembly screws, NOT mounting holes -- do not mount to them. ACROSS WIDTH (Y): the drawing's own chain closes exactly (7.8 + 46.4 + 7.8 = 62) and the fitted ear centres measure 7.79/46.39/7.82 against it -- pitch_y 46.4 with 7.8 insets. ALONG LENGTH (X): slot centres vector-measure 0.9mm inside each end face (pitch_x 218.2, closing the 220 envelope exactly); this value is measured from the drawing geometry, not carried by a printed dimension -- and because the slots open OUTWARD through the end faces, any screw spacing from ~218.2 up to the 220 envelope engages the ears. FAMILY CROSS-CHECK: UHP-200 (Case 249B, 55mm-wide case) shows the identical construct, 6.5 + 42 + 6.5 = 55. CORRECTION of the previous record: pitch_x 110 was a misread -- the drawing's "110"/"15.5" dimension the tc (max case temperature) measurement point on the finned side elevation, not any mounting feature. bottom_mount_interface clearance_ears: no thread in the case; the screw clamps the ear and threads into the mounting plate below (Mean Well install guidance: "M3*4" into a thermally-conductive aluminum plate >= 450x450x3mm for the full derating curve -- a THERMAL requirement, not just mechanical), and the screw path lies outside the case wall, so bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).
 - src: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF

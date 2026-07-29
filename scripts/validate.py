@@ -57,8 +57,9 @@ CONTROLLER_BOARD_REQUIRED = [
 PSU_REQUIRED = [
     "id", "name", "manufacturer", "series", "category",
     "length_mm", "width_mm", "height_mm", "weight_g", "wattage_w", "output_voltages_v",
-    "bottom_mount_screw", "bottom_mount_hole_dia_mm", "bottom_mount_hole_count", "bottom_mount_pattern",
-    "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "bottom_mount_holes_xy", "bottom_mount_max_penetration_mm",
+    "bottom_mount_screw", "bottom_mount_interface", "bottom_mount_hole_dia_mm", "bottom_mount_hole_count",
+    "bottom_mount_pattern", "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "bottom_mount_holes_xy",
+    "bottom_mount_max_penetration_mm",
     "side_mount_screw", "side_mount_hole_dia_mm", "side_mount_hole_count", "side_mount_pattern",
     "side_mount_pitch_x_mm", "side_mount_holes_xy", "side_mount_max_penetration_mm",
     "din_rail_compatible", "din_rail_type",
@@ -145,6 +146,23 @@ def check_physics(entry_id, filepath, entry, category):
     elif category == "psu":
         errors += _check_mount_group(entry_id, filepath, entry, "bottom_mount_",
                                      "length_mm", "width_mm")
+        # bottom_mount_interface: what the case-side holes physically are.
+        # A record with a bottom screw size MUST declare it — a mount
+        # generator that threads into "clearance_ears" (UHP class) produces
+        # a part that cannot fasten at all, so this may never be guessed.
+        iface = entry.get("bottom_mount_interface")
+        tag = f"{filepath}[{entry_id}].bottom_mount_interface"
+        if iface not in ("threaded_case", "clearance_ears", None):
+            print(f"  BAD INTERFACE VALUE: {tag}={iface!r}")
+            errors += 1
+        if entry.get("bottom_mount_screw") is not None and iface is None:
+            print(f"  MISSING INTERFACE: {tag} must be declared when "
+                  "bottom_mount_screw is set")
+            errors += 1
+        if iface == "threaded_case" and _num(entry, "bottom_mount_max_penetration_mm") is None:
+            print(f"  MISSING PENETRATION: {tag}=threaded_case requires "
+                  "bottom_mount_max_penetration_mm (thread-in safety depth)")
+            errors += 1
         # side pattern runs along the length on the side walls
         spx = _num(entry, "side_mount_pitch_x_mm")
         L = _num(entry, "length_mm")
