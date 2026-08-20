@@ -27,6 +27,13 @@ BRANCH="hardware-update-$DATE"
 
 cd "$REPO_ROOT"
 
+# Guard: refuse to run on a dirty working tree — git add -A below would
+# sweep up unrelated local changes into the automated commit.
+if [[ -n "$(git status --porcelain)" ]]; then
+    echo "Error: working tree is not clean. Please commit or stash your changes first."
+    exit 1
+fi
+
 # Ensure we're on a clean main
 git checkout main
 git pull origin main
@@ -66,6 +73,16 @@ determine_target() {
             mfr=$(echo "$yaml_content" | grep "manufacturer:" | head -1 | sed 's/.*manufacturer: *//' | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr -d "'\"")
             echo "probes/${mfr}.yaml"
             ;;
+        controller_boards)
+            local mfr
+            mfr=$(echo "$yaml_content" | grep "manufacturer:" | head -1 | sed 's/.*manufacturer: *//' | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr -d "'\"")
+            echo "controller_boards/${mfr}.yaml"
+            ;;
+        psu)
+            local mfr
+            mfr=$(echo "$yaml_content" | grep "manufacturer:" | head -1 | sed 's/.*manufacturer: *//' | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr -d "'\"")
+            echo "psu/${mfr}.yaml"
+            ;;
         extruders)
             echo "extruders/extruders.yaml"
             ;;
@@ -78,10 +95,29 @@ determine_target() {
     esac
 }
 
+cleanup_branch() {
+    # Discard any working-tree changes made while parsing, then return to
+    # main and delete the feature branch so no dirty branch is left behind.
+    git checkout -- . 2>/dev/null || true
+    git clean -fd motors/ hotends/ extruders/ probes/ toolheads/ controller_boards/ psu/ 2>/dev/null || true
+    git checkout main
+    git branch -d "$BRANCH" 2>/dev/null || true
+}
+
 while IFS= read -r line; do
     # Track which category section we're in
-    if [[ "$line" =~ ^##[[:space:]]+(Motors|Hotends|Extruders|Toolheads|Probes) ]]; then
-        CURRENT_CATEGORY=$(echo "${BASH_REMATCH[1]}" | tr '[:upper:]' '[:lower:]')
+    if [[ "$line" =~ ^##[[:space:]]+ ]]; then
+        line_lc=$(echo "$line" | tr '[:upper:]' '[:lower:]')
+        if [[ "$line_lc" =~ ^##[[:space:]]+(motors|hotends|extruders|toolheads|probes)([[:space:]]|$) ]]; then
+            CURRENT_CATEGORY="${BASH_REMATCH[1]}"
+        elif [[ "$line_lc" =~ ^##[[:space:]]+(controller[_[:space:]]boards)([[:space:]]|$) ]]; then
+            CURRENT_CATEGORY="controller_boards"
+        elif [[ "$line_lc" =~ ^##[[:space:]]+(psus?|power[[:space:]]supplies)([[:space:]]|$) ]]; then
+            CURRENT_CATEGORY="psu"
+        else
+            echo "  Warning: skipping unknown section: $line"
+            CURRENT_CATEGORY=""
+        fi
         IN_PASS_ENTRY=false
         IN_YAML_BLOCK=false
         continue
@@ -153,8 +189,7 @@ done < "$WATCH_FILE"
 
 if [[ "$ENTRIES_ADDED" -eq 0 ]]; then
     echo "No [PASS] entries found. Nothing to submit."
-    git checkout main
-    git branch -d "$BRANCH" 2>/dev/null || true
+    cleanup_branch
     exit 0
 fi
 
@@ -167,12 +202,17 @@ echo "Running validation..."
 if command -v python3 &>/dev/null; then
     python3 scripts/validate.py || {
         echo "ERROR: Validation failed. Please fix the YAML and retry."
+        cleanup_branch
         exit 1
     }
+else
+    echo "ERROR: python3 not found. Cannot validate hardware entries."
+    cleanup_branch
+    exit 1
 fi
 
 # Commit and create PR
-git add -A
+git add -A motors/ hotends/ extruders/ probes/ toolheads/ controller_boards/ psu/
 git commit -m "feat: Add $ENTRIES_ADDED hardware entries from $DATE watch report
 
 Source: Hardware_Watch_$DATE.md (human-reviewed, marked [PASS])"
