@@ -23,7 +23,7 @@
 | Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×— | 2 | high |
 | Box Turtle (AFC) PCB | ArmoredTurtle | ercf | — | 1.6 | M3 | none | — | — | low |
 | BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
-| BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
+| BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
 | BTT Relay V1.2 module | BigTreeTech | relay | 80.32×36.19 | 1.6 | M3 | rectangular | 74.17×29.21 | 4 | high |
 | BTT S2DW V1.0 (LIS2DW, USB-C) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
 | BTT Smart Filament Sensor (SFS) V1.0 | BigTreeTech | sensor | 75.0×30.0 | — | M3 | rectangular | 56.75×20.35 | 4 | high |
@@ -35,27 +35,27 @@
 | EBB SB2240 CAN V1.0 | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.02 | 2 | high |
 | EBB36 CAN V1.x | BigTreeTech | toolhead_can | 51.4×37.0 | 1.6 | M3 | linear | 43.85×— | 2 | medium |
 | EBB42 CAN V1.x | BigTreeTech | toolhead_can | 40.0×40.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
-| KNOMI | BigTreeTech | accessory | 37.86×34.53 | 1.6 | — | other-describe | — | 0 | high |
-| KNOMI 2 | BigTreeTech | accessory | 41.12×38.48 | 1.6 | — | other-describe | — | 0 | high |
+| KNOMI | BigTreeTech | accessory | 37.86×34.53 | 1.6 | — | other | — | 0 | high |
+| KNOMI 2 | BigTreeTech | accessory | 41.12×38.48 | 1.6 | — | other | — | 0 | high |
 | Kraken (V1.0/V1.1) | BigTreeTech | mainboard | 200.0×113.0 | 1.6 | M3 | rectangular | 193.0×106.03 | 4 | medium |
-| Manta E3EZ | BigTreeTech | mainboard | 120.0×90.81 | 1.6 | M3 | other-describe | — | 4 | medium |
-| Manta M4P | BigTreeTech | mainboard | 160.0×95.0 | 1.6 | M3 | other-describe | 97.0×84.2 | 4 | medium |
+| Manta E3EZ | BigTreeTech | mainboard | 120.0×90.81 | 1.6 | M3 | other | — | 4 | medium |
+| Manta M4P | BigTreeTech | mainboard | 160.0×95.0 | 1.6 | M3 | other | 97.0×84.2 | 4 | medium |
 | Manta M5P | BigTreeTech | mainboard | 137.39×95.0 | 1.6 | M3 | rectangular | —×86.5 | 4 | medium |
-| Manta M8P V1.1 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other-describe | — | 6 | medium |
-| Manta M8P V2.0 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other-describe | — | 6 | medium |
+| Manta M8P V1.1 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
+| Manta M8P V2.0 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
 | Octopus Pro V1.x (V1.0/V1.1) | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | Octopus V1.1 | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | SKR 3 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
 | SKR 3 EZ | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
-| SKR Mini E3 V3 | BigTreeTech | mainboard | 103.75×70.25 | 1.6 | M3 | other-describe | — | 6 | medium |
+| SKR Mini E3 V3 | BigTreeTech | mainboard | 103.75×70.25 | 1.6 | M3 | other | — | 6 | medium |
 | SKR Pico | BigTreeTech | mainboard | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | SKRat V1.0 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.35×76.1 | 4 | high |
 | U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
 | U2C V3 | BigTreeTech | usb_can_bridge | — | — | — | — | — | — | low |
-| Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 115.0×92.0 | 4 | high |
-| Duet 3 Mainboard 6HC | Duet3D | mainboard | 140.0×134.0 | 1.6 | M3 | rectangular | 130.0×124.0 | 4 | high |
-| Duet 3 Mainboard 6XD | Duet3D | mainboard | 140.0×115.0 | 1.6 | M3 | rectangular | 130.0×105.0 | 4 | high |
-| Duet 3 Mini 5+ | Duet3D | mainboard | 123.0×100.0 | 1.6 | M3 | rectangular | 115.0×92.0 | 4 | high |
+| Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
+| Duet 3 Mainboard 6HC | Duet3D | mainboard | 140.0×134.0 | 1.6 | M4 | rectangular | 130.0×124.0 | 4 | high |
+| Duet 3 Mainboard 6XD | Duet3D | mainboard | 140.0×115.0 | 1.6 | M4 | rectangular | 130.0×105.0 | 4 | high |
+| Duet 3 Mini 5+ | Duet3D | mainboard | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
 | Duet 3 Toolboard 1LC | Duet3D | toolhead_can | 54.0×47.0 | 1.6 | M3 | rectangular | 34.0×34.0 | 4 | high |
 | Duet3D PT100 temperature daughterboard v1.1 | Duet3D | thermocouple_amp | 31.74×26.16 | 1.6 | — | 2-hole | 5.08×— | 2 | high |
 | Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×— | 2 | medium |
@@ -77,12 +77,12 @@
 | GY-291 ADXL345 accelerometer breakout | Generic/various | accelerometer | 20.4×15.8 | 1.6 | M3 | 2-hole | 15.0×— | 2 | medium |
 | LM2596 adjustable buck converter module | Generic/various | buck_converter | 43.2×21.0 | 1.6 | M3 | 2-hole | — | 2 | medium |
 | Mini-360 DC-DC buck converter module | Generic/various | buck_converter | 22.0×17.0 | 1.6 | — | none | — | 0 | medium |
-| TMC2208 StepStick driver module | Generic/various | driver_module | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
-| TMC5160 plug-in StepStick driver module | Generic/various (FYSETC, BTT plug-in) | driver_module | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | medium |
+| TMC2208 StepStick driver module | Generic/various | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
+| TMC5160 plug-in StepStick driver module | Generic/various (FYSETC, BTT plug-in) | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | medium |
 | 1-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 50.0×26.0 | 1.6 | M3 | 2-hole | — | 2 | low |
 | 2-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 50.5×38.5 | 1.6 | M3 | rectangular | — | 4 | low |
 | 4-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 71.0×45.0 | 1.6 | M3 | rectangular | 66.7×40.0 | 4 | medium |
-| TMC2209 StepStick / SilentStepStick driver module | Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.) | driver_module | 20.32×15.24 | 1.6 | — | none(header-mounted) | 15.24×2.54 | 0 | high |
+| TMC2209 StepStick / SilentStepStick driver module | Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.) | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
 | HartK Stealthburner Toolhead PCB | HartK | toolhead_can | — | 1.6 | M3 | other | — | — | low |
 | Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×— | 2 | high |
 | Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×— | 2 | high |
@@ -102,7 +102,7 @@
 | MKS SKIPR V1.0 | Makerbase | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 152.0×92.0 | 4 | high |
 | MKS THR42 V1.0 | Makerbase | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | FLY-CDY (and Fly Gemini family) | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
-| FLY-RRF-E3 | Mellow | mainboard | 100.838×70.358 | 1.6 | M3 | irregular | — | 4 | medium |
+| FLY-RRF-E3 | Mellow | mainboard | 100.838×70.358 | 1.6 | M3 | other | — | 4 | medium |
 | Fly Gemini V2/V3 (formerly Fly-CDY) | Mellow | mainboard | — | 1.6 | M3 | rectangular | 143.0×78.0 | 4 | low |
 | Fly Super8 | Mellow | mainboard | 155.58×109.68 | 1.6 | M3 | rectangular | 149.38×103.45 | 4 | high |
 | Fly-D5 | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
@@ -158,7 +158,7 @@
 
 - **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), none(header-mounted), pitch 15.24×2.54 mm
+- **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in headers; screw terminal for RTD wires; DIP switch for 2/3/4-wire & PT100/PT1000.
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). 15.24 x 20.32 from official manual p.5; header-mounted, no screw holes. Mounting: NO mounting holes. Uses the standard StepStick/stepper-driver footprint (manual states it "adopts the same package of motor drive module") and plugs into a spare SPI-capable stepper-driver socket via 2x 1x8 headers. Do NOT design a screw bracket for this board. Source: https://github.com/bigtreetech/BIGTREETECH-MAX31865
 - src: https://github.com/bigtreetech/BIGTREETECH-MAX31865
@@ -295,7 +295,7 @@
 
 - **Category:** accessory · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 37.86 × 34.53 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), other-describe, pitch —×— mm
+- **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** USB-C (UART-to-USB, DC 5V in) and a power-in header (DC 5~24V, +/-); BOOT button. 1.28in 240x240 round LCD (non-touch).
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline 34.53 x 37.86 mm read directly from official v1.0-SIZE.pdf. Minor width conflict: SIZE.pdf=34.53 vs manual=34.59 (~0.06 mm rounding). thickness assumed. No standoff/hole data because design is snap-fit (confirmed in manual + assembly drawings). Mounting: ROUND PCB (~34.53 mm dia body) with a small flat tab at the bottom (two 10.97 mm edge segments flanking a connector notch). NO mounting holes on the PCB. The board SNAP-FITS into a printed "Mounting Plate" that clips onto the StealthBurner (BTT provides STLs). Overall bounding box 34.53 (W) x 37.86 (H) mm per v1.0-SIZE drawing; manual also cites 34.59 mm width and ~39.5 mm assembled depth. Model as a round board that drops into a snap-fit cradle, NOT a screw pattern. Source: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI1/Hardware/BIGTREETECH%20KNOMI%20v1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI1/Hardware/BIGTREETECH%20KNOMI%20v1.0-SIZE.pdf
@@ -306,7 +306,7 @@
 
 - **Category:** accessory · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 41.12 × 38.48 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), other-describe, pitch —×— mm
+- **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** USB-C (UART-to-USB, DC 5V in) and power-in header (DC 5V, +/-); BOOT button. 1.28in round LCD, display area 32.4 x 32.4 mm, 240x240, 5-point capacitive touch.
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Four dims read directly from the official manual overview drawing: 38.48 mm (max width incl tabs), 35.65 mm (round body dia), 41.12 mm (overall height incl tabs), 38.42 mm (round-portion height). Hardware TOP.pdf has no dimension callouts. thickness assumed. Snap-fit, no PCB holes (confirmed in manual + assembly pages). Mounting: ROUND PCB; round body diameter ~35.65 mm (~38.42 mm tall round portion), with small bottom tabs extending the overall bounding box to 38.48 (W) x 41.12 (H) mm per the official manual overview drawing. NO mounting holes - SNAP-ON into a printed Mounting Plate (the v1.1 carrier increased the gap). BTT provides StealthBurner Main Body + Mounting Plate STLs. Source: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI2/Manual/KNOMI%202%20User%20Manual%2020240109.pdf
 - src: https://github.com/bigtreetech/KNOMI/blob/master/KNOMI2/Manual/KNOMI%202%20User%20Manual%2020240109.pdf
@@ -329,7 +329,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 120.0 × 90.81 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), other-describe, pitch —×— mm
+- **Mounting:** 4× M3 (Ø3.2), other, pitch —×— mm
 - **Connectors:** Motor headers (X/Y/Z1/Z2/E0/E1) across the top; CM4/CB1 SODIMM socket, CPU/RAM and HDMI at center/right; USB, power and bed/hotend terminals bottom-left edge.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 120.00 x 90.81 mm HIGH confidence (official SIZE PDF). Hole count (4) and irregular pattern MEDIUM; exact centers not cleanly dimensioned - derive holes_xy from the in-repo STEP/3D model. "E3 EZ" -> "Manta E3EZ" mapping is an assumption. Mounting: IDENTITY: the task's "E3 EZ" resolves to the Manta E3EZ Klipper mainboard (BTT has no standalone product simply named "E3 EZ"); flag if a different board was meant. Designed to reuse Ender-3 mounting locations, so the hole pattern is IRREGULAR. Official SIZE PDF: overall 120.00 x 90.81 mm, 4 mounting holes. Per-hole [x,y] not reconstructed (partial dimension chains). Hosts a CM4/CB1 module (CM4 uses M2x10 screws, separate from the board's M3 chassis mounting). Source: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
@@ -339,7 +339,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 160.0 × 95.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), other-describe, pitch 97.0×84.2 mm
+- **Mounting:** 4× M3 (Ø3.2), other, pitch 97.0×84.2 mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Bottom edge carries power input, USB-C, USB-A, and RJ45/Ethernet. Stepper driver sockets (4x) and motor/endstop headers along the top/right. CB1/CM4 SBC mounts on top via board-to-board connector.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 160 x 95 HIGH (official SIZE.png + wiki). Exact hole XY MEDIUM (stepped/irregular layout; pitch_x/pitch_y read from drawing but holes_xy not enumerated). hole_dia and thickness assumed. Mounting: 4 holes, roughly rectangular but the top-left hole is inset (NOT on the corner): it sits at X=48 mm, top-right hole 97 mm to its right (X=145). Vertical pitch top->bottom = 84.2 mm. Wiki lists install sizes "146 x 84.2 mm; 97 x 84.2 mm" indicating two hole-column spacings (a stepped layout). CB1/CM4 core board mounts via board-to-board connector + its own standoffs. Source: https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
@@ -361,7 +361,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
-- **Mounting:** 6× M3 (Ø3.2), other-describe, pitch —×— mm
+- **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Top/left edges carry the 8 stepper driver sockets and motor power screw terminals. Right edge: USB-C, USB-A, RJ45/Ethernet (and HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board connector.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official V1.0/V1.1 SIZE-top.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. hole_count MEDIUM (could be 5), individual hole XY LOW (connector-referenced dimension chains). hole_dia and thickness assumed. Mounting: Board is 169.93 x 102.74 mm (NOT ~148x130 - that hint was wrong). V1.0 and V1.1 share one hardware dir and one SIZE drawing (identical mechanicals). Corner holes inset 5.00 mm; bottom dim chain 5.00 / 124.94 / 157.94 / 169.93 mm and top chain to 155.00 mm locate mounting holes along the long edges. hole_count=6 (corners + mid-edge) is a visual read and could be 5. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf
@@ -372,7 +372,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
-- **Mounting:** 6× M3 (Ø3.2), other-describe, pitch —×— mm
+- **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Top edge: 8 stepper driver sockets, motor power screw terminals. Right edge: USB-C, USB-A, RJ45/Ethernet (HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board connector.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official V2.0 SIZE.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. Dense connector-referenced drawing -> exact hole XY LOW, hole_count MEDIUM. Mechanically interchangeable footprint with V1.x. hole_dia and thickness assumed. Mounting: Board outline 169.93 x 102.74 mm. SIZE drawing shows corner insets 5.00 and 4.43 mm. Mounting-hole layout is essentially the same as V1.0/V1.1 (corners + mid-edge); same enclosures generally fit V1.x and V2.0. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
@@ -425,7 +425,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 103.75 × 70.25 mm, 1.6 mm thick
-- **Mounting:** 6× M3 (Ø3.2), other-describe, pitch —×— mm
+- **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Connectors:** Stepper/endstop/fan headers along top edge (XM/YM/ZM/EM); POWER, heated- bed and hotend screw terminals on bottom-left edge; USB-C, TFT/EXP and thermistor/probe headers clustered bottom and right. Right edge has a tab carrying the I/O / display connector.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 103.75 x 70.25 mm and 6-hole count are HIGH confidence (official SIZE PDF). Per-hole coordinates and hole diameter are LOW — derive holes_xy from BTT E3 SKR MINI V3.0.step before cutting. Thickness assumed. Mounting: Drops into the Ender-3 / Ender-3 Pro/V2 board location and reuses the original Creality mounting bosses, so the hole pattern is IRREGULAR (not a clean rectangle). Official SIZE drawing shows 6 plated mounting holes. Per-hole [x,y] NOT reconstructed (drawing leader lines are partial); pull exact centers from the in-repo STEP file. Two PCB revisions exist in the repo (V3.0 and V3.0.1); these dims are the canonical V3.0. Source: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
 - src: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
@@ -481,7 +481,7 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.2), rectangular, pitch 115.0×92.0 mm
+- **Mounting:** 4× M4 (Ø4.2), rectangular, pitch 115.0×92.0 mm
   - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
 - **Clearance:** standoff 6 mm, top component — mm
 - **Notes:** CORRECTED 2026-07-24: pitch_x/pitch_y (and holes_xy axes) were swapped relative to this record's pcb_length_mm(123)/pcb_width_mm(100) convention -- old pitch_y=115 exceeded the 100 mm width outright, and old holes_xy put y up to 119, 19 mm outside the claimed width. Re-derived from the official KiCad source (Duet2.kicad_pcb): 4x "complib:Fixing_M4" (np_thru_hole, drill 4.20116 mm) at absolute (176.21,155.862),(84.211,40.8635),(84.211,155.862),(176.21,40.8635); Edge.Cuts bbox (80.21066,36.86302)-(180.21046,159.86252) = 100 x 123 mm, confirming pcb_length=123/pcb_width=100 were already correct. Relative to the board corner, using this DB's x=along-length/y=along-width convention: (4,4),(119,4),(4,96),(119,96) -- pitch_x=115 (along the 123 mm length, 4 mm inset each side), pitch_y=92 (along the 100 mm width, 4 mm inset each side); this is the byte-for-byte-identical pattern found on the Duet 3 Mini 5+. Confidence high — Tier-1 (vendor CAD/drawing). Thickness 1.6 mm standard, not annotated. Mounting: WiFi and Ethernet variants share one PCB. Hole pattern is identical to the Duet 3 Mini 5+ (the Mini uses Ø4.3 mm; Duet 2 uses Ø4.2 mm -- negligible 0.1 mm, both clear M3 and M4). Commonly mounted with M3. Source: https://raw.githubusercontent.com/Duet3D/Duet-2-Hardware/master/Duet2/Duet2v1.06/Duet2.kicad_pcb
@@ -492,7 +492,7 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 134.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 130.0×124.0 mm
+- **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 130.0×124.0 mm
   - holes (x,y mm): [[5.0, 5.0], [135.0, 5.0], [5.0, 129.0], [135.0, 129.0]]
 - **Clearance:** standoff 8 mm, top component — mm
 - **Connectors:** USB + RJ45/Ethernet on one short edge; CAN_OUT on a long edge. PT100/ thermocouple daughterboard header (2.54 mm) interior at approx [84,81].
@@ -505,7 +505,7 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 115.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 130.0×105.0 mm
+- **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 130.0×105.0 mm
   - holes (x,y mm): [[5.5, 5.5], [135.0, 5.0], [5.0, 110.0], [135.0, 110.0]]
 - **Clearance:** standoff 8 mm, top component — mm
 - **Connectors:** External-driver mainboard; differential driver outputs.
@@ -517,7 +517,7 @@
 
 - **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø4.3), rectangular, pitch 115.0×92.0 mm
+- **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 115.0×92.0 mm
   - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
 - **Clearance:** standoff 6 mm, top component — mm
 - **Connectors:** Stepper-driver connectors mirrored to the opposite side vs Duet 2.
@@ -761,7 +761,7 @@
 
 - **Category:** driver_module · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), none(header-mounted), pitch 15.24×2.54 mm
+- **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers.
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Same 0.6 x 0.8 in StepStick standard as TMC2209. Mounting: Identical StepStick footprint to TMC2209; header-mounted, no screws. Source: https://reprap.org/wiki/StepStick
 - src: https://reprap.org/wiki/StepStick
@@ -773,7 +773,7 @@
 
 - **Category:** driver_module · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), none(header-mounted), pitch 15.24×2.54 mm
+- **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers; taller components/caps on top.
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). Plug-in TMC5160 modules follow the StepStick footprint, but some vendor variants are slightly wider or taller due to larger caps. Confidence medium on exact outline for a specific vendor part; header pitch is standard. Mounting: The StepStick-form-factor TMC5160 (plug-in) shares the 15.24 x 20.32 mm footprint. NOTE: this is the plug-in module ONLY; the high-power external TMC5160T Plus is a separate entry below. Source: https://reprap.org/wiki/StepStick
 - src: https://reprap.org/wiki/StepStick
@@ -821,7 +821,7 @@
 
 - **Category:** driver_module · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
-- **Mounting:** 0× — (Ø—), none(header-mounted), pitch 15.24×2.54 mm
+- **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers (plugs into stepper-driver socket).
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). 15.24 x 20.32 mm is the industry-standard StepStick/Pololu carrier size, corroborated by the TMC2209 SilentStepStick datasheet and the BTT MAX31865 manual (which states it copies the stepper-driver footprint at exactly this size). Header-mounted only; no screw holes. Top heatsink height varies. Mounting: Standard Pololu/StepStick footprint 0.6 in x 0.8 in. Mounts via two 1x8 (16-pin total) 0.1 in (2.54 mm) male headers, NOT screws. The two header rows sit 0.6 in (15.24 mm) apart, each row spanning 7 x 2.54 = 17.78 mm. TMC2208 plug-in module is the SAME footprint. Source: https://www.mouser.com/pdfDocs/TMC2209_SilentStepStick_Rev110.pdf
 - src: https://www.mouser.com/pdfDocs/TMC2209_SilentStepStick_Rev110.pdf
@@ -1035,7 +1035,7 @@
 
 - **Category:** mainboard · **Confidence:** medium · **Source file:** `mellow.yaml`
 - **PCB:** 100.838 × 70.358 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø—), irregular, pitch —×— mm
+- **Mounting:** 4× M3 (Ø—), other, pitch —×— mm
 - **Connectors:** STM32 RepRapFirmware-capable mainboard. 4x stepper driver sockets (X/Y/Z/E, TMC SilentStepStick), ST-LINK header, BL-Touch, PT100, EXP1 LCD, USB. RRF-E3 is superseded by Fly-E3-V2.
 - **Notes:** Board outline 100.838 x 70.358 mm read from official Hardware/Sizes.svg dimensional drawing = high confidence on size. Mounting holes form an IRREGULAR (non-rectangular) pattern. Coordinates derived from drawing callouts (bottom-left origin): top-left hole 20.574mm from left / 3.556mm from top -> (20.574, 66.802); top-right hole 18.542mm from right (=82.296 from left) / 9.652mm from top -> (82.296, 60.706); a hole 34.290mm from left / 2.032mm from bottom -> (34.290, 2.032). A 4th (bottom-right) hole is visible but not explicitly dimensioned. Left-side chain dims 31.750/29.210mm reference the lower-left hole vertically. Overall medium confidence because holes are not on a clean grid and the SVG is a drawing, not a KiCad file. Verify hole positions against a physical board before final mount print. (raw hole coords from source: (20.574, 66.802), (82.296, 60.706), (34.290, 2.032), bottom-right hole not dimensioned)
 - src: https://github.com/Mellow-3D/FLY-RRF-E3/blob/master/Hardware/Sizes.svg

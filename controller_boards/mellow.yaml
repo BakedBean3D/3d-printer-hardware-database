@@ -186,7 +186,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: null
-  mount_pattern: irregular
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 4

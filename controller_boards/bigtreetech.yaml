@@ -12,7 +12,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 6
@@ -170,7 +170,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 4
@@ -317,7 +317,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: 97.0
   mount_pitch_y_mm: 84.2
   mount_hole_count: 4
@@ -377,7 +377,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 6
@@ -408,7 +408,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 6
@@ -747,7 +747,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: null
   mount_hole_dia_mm: null
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 0
@@ -779,7 +779,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: null
   mount_hole_dia_mm: null
-  mount_pattern: other-describe
+  mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 0
@@ -848,7 +848,7 @@
   pcb_thickness_mm: 1.6
   mount_screw: null
   mount_hole_dia_mm: null
-  mount_pattern: none(header-mounted)
+  mount_pattern: none
   mount_pitch_x_mm: 15.24
   mount_pitch_y_mm: 2.54
   mount_hole_count: 0

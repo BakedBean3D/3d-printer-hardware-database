@@ -47,7 +47,7 @@
   pcb_length_mm: 140.0
   pcb_width_mm: 134.0
   pcb_thickness_mm: 1.6
-  mount_screw: M3
+  mount_screw: M4
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
   mount_pitch_x_mm: 130.0
@@ -90,7 +90,7 @@
   pcb_length_mm: 140.0
   pcb_width_mm: 115.0
   pcb_thickness_mm: 1.6
-  mount_screw: M3
+  mount_screw: M4
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
   mount_pitch_x_mm: 130.0
@@ -131,7 +131,7 @@
   pcb_length_mm: 123.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
-  mount_screw: M3
+  mount_screw: M4
   mount_hole_dia_mm: 4.3
   mount_pattern: rectangular
   mount_pitch_x_mm: 115.0
@@ -206,7 +206,7 @@
   pcb_length_mm: 123.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
-  mount_screw: M3
+  mount_screw: M4
   mount_hole_dia_mm: 4.2
   mount_pattern: rectangular
   mount_pitch_x_mm: 115.0
