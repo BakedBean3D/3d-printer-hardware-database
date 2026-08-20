@@ -5,7 +5,7 @@ Thanks for helping build the community hardware database! Here's how to contribu
 ## Adding New Hardware
 
 1. Fork this repo
-2. Add your entry to the appropriate YAML file in `data/`
+2. Add your entry to the appropriate YAML file in the category directory (`motors/`, `hotends/`, `extruders/`, `probes/`, `toolheads/`, `controller_boards/`, `psu/`) — brand-owned hardware goes in the manufacturer's file, community designs in the category's community/single file
 3. Include a source citation in the `notes` field
 4. Open a PR with the entry and your source
 

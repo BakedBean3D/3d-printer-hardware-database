@@ -61,7 +61,7 @@ PCB mounting geometry for parametric CAD mount design. **`null` means genuinely 
 | `pcb_thickness_mm` | float | PCB thickness (defaults to 1.6 where unstated) |
 | `mount_screw` | string | Screw that fits the holes (M3, M2.5, ...; null if header-mounted) |
 | `mount_hole_dia_mm` | float | Hole diameter (often inferred from screw size) |
-| `mount_pattern` | string | rectangular, L-shaped, linear, 2-hole, 3-hole, none, other |
+| `mount_pattern` | string | rectangular, L-shaped, linear, 2-hole, 3-hole, 4-hole, none, other |
 | `mount_pitch_x_mm` / `mount_pitch_y_mm` | float | Center-to-center hole spacing |
 | `mount_hole_count` | int | Number of mounting holes |
 | `mount_holes_xy` | list | Optional `[[x,y], ...]` from PCB bottom-left corner (read `notes`) |
@@ -106,7 +106,7 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 
 ## Schema
 
-Each hardware category has a defined set of fields. See `schema/` for JSON Schema definitions that can be used for validation.
+Each hardware category has a defined set of fields, enforced by `scripts/validate.py` — the per-category required-field lists live at the top of that script. Run `python3 scripts/validate.py` to validate the whole database.
 
 ### Motor fields
 
@@ -159,18 +159,24 @@ git submodule add https://github.com/BakedBean3D/3d-printer-hardware-database.gi
 git clone https://github.com/BakedBean3D/3d-printer-hardware-database.git
 ```
 
-Parse the YAML in any language:
+Parse the YAML in any language. Files are split per manufacturer (e.g. `motors/ldo.yaml`, `motors/moons.yaml`), so load one file or glob the category directory:
 
 ```python
+import glob
 import yaml
-with open("data/motors.yaml") as f:
-    motors = yaml.safe_load(f)
+
+motors = []
+for path in glob.glob("motors/*.yaml"):
+    with open(path) as f:
+        motors.extend(yaml.safe_load(f))
 ```
 
 ```dart
 import 'package:yaml/yaml.dart';
-final motors = loadYaml(File('data/motors.yaml').readAsStringSync());
+final motors = loadYaml(File('motors/ldo.yaml').readAsStringSync());
 ```
+
+For `controller_boards/` and `psu/`, the generated `controller_boards.json` / `psu.json` aggregates are the easiest single-file entry points.
 
 ## Contributing
 
@@ -185,7 +191,7 @@ commercial and freemium tools — while staying open and attributed:
 |---|---|
 | **Database** (structure, selection, arrangement) | [**ODbL-1.0**](LICENSE) |
 | **Contents** (the individual records / specs) | [**DbCL-1.0**](LICENSE-DbCL) |
-| **Code** (`gen.py`, `convert_data.py`, scripts) | [**MIT**](LICENSE-CODE) |
+| **Code** (`gen.py`, `scripts/`, and other tooling) | [**MIT**](LICENSE-CODE) |
 
 You may build apps and generate parts (STL/STEP/3MF, layouts, BOMs) from this data,
 commercially, without open-sourcing your app. In return you must **attribute** the
