@@ -4,6 +4,7 @@
 - id: superpinda
   name: SuperPinda
   type: Inductive
+  scanning_capable: false
   manufacturer: Prusa Research
   accuracy: 0.01
   repeatability: 0.005

@@ -4,6 +4,7 @@
 - id: klicky
   name: Klicky Probe
   type: Dock-mounted Contact
+  scanning_capable: false
   accuracy: 0.01
   repeatability: 0.01
   z_offset_typical: -0.5
@@ -16,6 +17,7 @@
 - id: euclid
   name: Euclid Probe
   type: Inductive (dock-mount)
+  scanning_capable: false
   accuracy: 0.005
   repeatability: 0.003
   z_offset_typical: -1.5

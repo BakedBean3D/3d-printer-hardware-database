@@ -4,6 +4,7 @@
 - id: crtouch
   name: CRTouch
   type: Contact Deploy
+  scanning_capable: false
   manufacturer: Creality
   accuracy: 0.02
   repeatability: 0.01
