@@ -20,7 +20,7 @@ HOTEND_REQUIRED = [
 ]
 
 EXTRUDER_REQUIRED = [
-    "id", "name", "manufacturer", "type", "gear_ratio", "steps_per_mm",
+    "id", "name", "manufacturer", "type", "gear_ratio",
     "rotation_distance", "uses_gear_ratio_in_config", "motor", "motor_current",
     "max_speed", "max_accel", "weight", "filament_path_length",
     "recommended_pressure_advance", "notes",
@@ -28,7 +28,7 @@ EXTRUDER_REQUIRED = [
 
 PROBE_REQUIRED = [
     "id", "name", "type", "accuracy", "repeatability", "z_offset_typical",
-    "speed", "samples", "sample_retract_dist", "notes",
+    "speed", "samples", "sample_retract_dist", "scanning_capable", "notes",
 ]
 
 TOOLHEAD_REQUIRED = [
@@ -45,6 +45,7 @@ CONTROLLER_BOARD_REQUIRED = [
     "pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
     "mount_screw", "mount_hole_dia_mm", "mount_pattern",
     "mount_pitch_x_mm", "mount_pitch_y_mm", "mount_hole_count",
+    "mount_inset_from_edge_mm", "component_height_top_mm",
     "standoff_height_mm", "connector_notes", "sources", "confidence", "notes",
 ]
 
@@ -65,6 +66,20 @@ PSU_REQUIRED = [
     "din_rail_compatible", "din_rail_type",
     "terminal_location", "connector_notes", "sources", "confidence", "notes",
 ]
+
+CONFIDENCE_VALUES = {"high", "medium", "low"}
+CONTROLLER_MOUNT_PATTERN_VALUES = {
+    "rectangular", "L-shaped", "linear", "2-hole", "3-hole", "4-hole", "none", "other",
+}
+PSU_MOUNT_PATTERN_VALUES = {"rectangular", "2-hole", "3-hole", "other", "none"}
+
+# Upper NEMA17 bound accommodates the heaviest real part in class: the LDO
+# Kraken 42STH60-3004AHS37 at 620 g / 60 mm body (10.3 g/mm, vendor spec).
+NEMA_WEIGHT_PER_MM_BAND = {
+    "NEMA14": (2.0, 7.0),
+    "NEMA17": (4.5, 10.5),
+    "NEMA23": (7.0, 20.0),
+}
 
 CATEGORIES = {
     "motors": MOTOR_REQUIRED,
@@ -130,6 +145,96 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
     return errors
 
 
+def _check_hole_count(entry_id, filepath, entry, prefix):
+    """A declared hole_count must agree with an explicit holes_xy list, when
+    both are actually specified. An empty holes_xy list means "not specified"
+    and is not a claim of zero holes, so it's skipped."""
+    holes = entry.get(prefix + "holes_xy")
+    hole_count = entry.get(prefix + "hole_count")
+    if isinstance(holes, list) and holes and isinstance(hole_count, int) and hole_count > 0:
+        if len(holes) != hole_count:
+            tag = f"{filepath}[{entry_id}].{prefix.rstrip('_')}"
+            print(f"  HOLE COUNT MISMATCH: {tag} holes_xy has {len(holes)} entries but hole_count={hole_count}")
+            return 1
+    return 0
+
+
+def _check_enum(entry_id, filepath, entry, key, allowed, null_ok=True):
+    v = entry.get(key)
+    if v is None:
+        if null_ok:
+            return 0
+        print(f"  BAD ENUM (must be set): {filepath}[{entry_id}].{key} is null")
+        return 1
+    if v not in allowed:
+        print(f"  BAD ENUM: {filepath}[{entry_id}].{key}={v!r} not in {sorted(allowed)}")
+        return 1
+    return 0
+
+
+def _check_motor_physics(entry_id, filepath, entry):
+    """Stepper motor sanity: positive physical/electrical fields, a valid
+    step angle, and a plausible weight-per-mm-of-body-length for the frame
+    size (catches weights that are off by an order of magnitude)."""
+    errors = 0
+    tag = f"{filepath}[{entry_id}]"
+
+    for key in ("body_length_mm", "rated_current_amps", "holding_torque_ncm",
+                "inductance_mh", "resistance_ohms", "step_angle", "weight"):
+        v = _num(entry, key)
+        if v is not None and v <= 0:
+            print(f"  NON-POSITIVE VALUE: {tag}.{key}={v}")
+            errors += 1
+
+    tooth_count = _num(entry, "tooth_count")
+    if tooth_count is not None and tooth_count < 0:
+        print(f"  NEGATIVE VALUE: {tag}.tooth_count={tooth_count}")
+        errors += 1
+
+    step_angle = _num(entry, "step_angle")
+    if step_angle is not None and step_angle not in (0.9, 1.8):
+        print(f"  BAD STEP ANGLE: {tag}.step_angle={step_angle} (must be 0.9 or 1.8)")
+        errors += 1
+
+    frame_size = entry.get("frame_size")
+    weight = _num(entry, "weight")
+    body_length = _num(entry, "body_length_mm")
+    band = NEMA_WEIGHT_PER_MM_BAND.get(frame_size)
+    if band is not None and weight is not None and body_length is not None and body_length > 0:
+        gpm = weight / body_length
+        lo, hi = band
+        if not (lo <= gpm <= hi):
+            print(f"  IMPLAUSIBLE WEIGHT: {tag} weight={weight}g body_length={body_length}mm "
+                  f"-> {gpm:.2f} g/mm outside {frame_size} band {lo}-{hi}")
+            errors += 1
+    return errors
+
+
+def _check_hotend_physics(entry_id, filepath, entry):
+    """Hotend sanity: temps in a plausible range, recommended temps never
+    exceed the rated max, and positive weight/flow."""
+    errors = 0
+    tag = f"{filepath}[{entry_id}]"
+
+    max_temp = _num(entry, "max_temp")
+    if max_temp is not None and not (200 <= max_temp <= 550):
+        print(f"  IMPLAUSIBLE MAX TEMP: {tag}.max_temp={max_temp} (expected 200-550)")
+        errors += 1
+
+    for key in ("recommended_temp_pla", "recommended_temp_abs", "recommended_temp_petg"):
+        v = _num(entry, key)
+        if v is not None and max_temp is not None and v > max_temp:
+            print(f"  TEMP EXCEEDS MAX: {tag}.{key}={v} > max_temp={max_temp}")
+            errors += 1
+
+    for key in ("weight", "max_volumetric_flow"):
+        v = _num(entry, key)
+        if v is not None and v <= 0:
+            print(f"  NON-POSITIVE VALUE: {tag}.{key}={v}")
+            errors += 1
+    return errors
+
+
 def check_physics(entry_id, filepath, entry, category):
     """Category-specific geometric sanity. Errors here mean the record cannot
     describe a real part, regardless of what the source drawing said."""
@@ -137,6 +242,9 @@ def check_physics(entry_id, filepath, entry, category):
     if category == "controller_boards":
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",
                                      "pcb_length_mm", "pcb_width_mm")
+        errors += _check_hole_count(entry_id, filepath, entry, "mount_")
+        errors += _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
+        errors += _check_enum(entry_id, filepath, entry, "mount_pattern", CONTROLLER_MOUNT_PATTERN_VALUES)
         for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
                     "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
             v = _num(entry, key)
@@ -146,6 +254,11 @@ def check_physics(entry_id, filepath, entry, category):
     elif category == "psu":
         errors += _check_mount_group(entry_id, filepath, entry, "bottom_mount_",
                                      "length_mm", "width_mm")
+        errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
+        errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
+        errors += _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
+        errors += _check_enum(entry_id, filepath, entry, "bottom_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
+        errors += _check_enum(entry_id, filepath, entry, "side_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
         # bottom_mount_interface: what the case-side holes physically are.
         # A record with a bottom screw size MUST declare it — a mount
         # generator that threads into "clearance_ears" (UHP class) produces
@@ -171,26 +284,45 @@ def check_physics(entry_id, filepath, entry, category):
             errors += 1
         for key in ("length_mm", "width_mm", "height_mm",
                     "bottom_mount_hole_dia_mm", "side_mount_hole_dia_mm",
-                    "bottom_mount_max_penetration_mm", "side_mount_max_penetration_mm"):
+                    "bottom_mount_max_penetration_mm", "side_mount_max_penetration_mm",
+                    "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "side_mount_pitch_x_mm"):
             v = _num(entry, key)
             if v is not None and v <= 0:
                 print(f"  NON-POSITIVE DIM: {filepath}[{entry_id}].{key}={v} (use null for unknown, never 0)")
                 errors += 1
+    elif category == "motors":
+        errors += _check_motor_physics(entry_id, filepath, entry)
+    elif category == "hotends":
+        errors += _check_hotend_physics(entry_id, filepath, entry)
     return errors
 
 
 def validate_file(filepath, required_fields, category=None):
+    """Parse filepath once and validate its entries.
+
+    Returns (errors, count, data) so callers (cross-file duplicate check,
+    referential integrity) can reuse the already-parsed entries instead of
+    re-opening and re-parsing the file.
+    """
     with open(filepath) as f:
         data = yaml.safe_load(f)
 
+    if data is None:
+        data = []
+
     if not isinstance(data, list):
         print(f"  ERROR: {filepath} root must be a list")
-        return 1, 0
+        return 1, 0, []
 
     errors = 0
     ids_seen = set()
 
     for i, entry in enumerate(data):
+        if not isinstance(entry, dict):
+            print(f"  BAD ENTRY: {filepath}[index {i}] is not a mapping")
+            errors += 1
+            continue
+
         entry_id = entry.get("id", f"<index {i}>")
 
         if entry_id in ids_seen:
@@ -203,20 +335,67 @@ def validate_file(filepath, required_fields, category=None):
                 print(f"  MISSING FIELD: {filepath}[{entry_id}].{field}")
                 errors += 1
 
-        if "id" in entry and " " in entry["id"]:
-            print(f"  BAD ID (spaces): {entry_id} in {filepath}")
-            errors += 1
+        if "id" in entry:
+            if not isinstance(entry["id"], str):
+                print(f"  BAD ID (not a string): {entry_id!r} in {filepath}")
+                errors += 1
+            elif " " in entry["id"]:
+                print(f"  BAD ID (spaces): {entry_id} in {filepath}")
+                errors += 1
 
         if category is not None:
             errors += check_physics(entry_id, filepath, entry, category)
 
-    return errors, len(data)
+    return errors, len(data), data
+
+
+def _check_referential_integrity(entries_by_category):
+    """Cross-category id references, run once all categories are loaded.
+
+    entries_by_category maps category -> list of (filepath, entry) tuples
+    for every entry that parsed as a mapping.
+    """
+    errors = 0
+
+    def ids_for(category):
+        return {
+            entry.get("id")
+            for _, entry in entries_by_category.get(category, [])
+            if entry.get("id") is not None
+        }
+
+    motor_ids = ids_for("motors")
+    extruder_ids = ids_for("extruders")
+    hotend_ids = ids_for("hotends")
+
+    for filepath, entry in entries_by_category.get("extruders", []):
+        entry_id = entry.get("id", "<unknown>")
+        motor_id = entry.get("motor_id")
+        if motor_id is not None and motor_id not in motor_ids:
+            print(f"  DANGLING REF: {filepath}[{entry_id}].motor_id={motor_id!r} not found in motors/")
+            errors += 1
+
+    for filepath, entry in entries_by_category.get("toolheads", []):
+        entry_id = entry.get("id", "<unknown>")
+        for x in entry.get("compatible_extruders") or []:
+            if x not in extruder_ids:
+                print(f"  DANGLING REF: {filepath}[{entry_id}].compatible_extruders contains {x!r} "
+                      "not found in extruders/")
+                errors += 1
+        for x in entry.get("compatible_hotends") or []:
+            if x not in hotend_ids:
+                print(f"  DANGLING REF: {filepath}[{entry_id}].compatible_hotends contains {x!r} "
+                      "not found in hotends/")
+                errors += 1
+
+    return errors
 
 
 def main():
     print("Validating hardware database...\n")
     total_errors = 0
     total_entries = 0
+    entries_by_category = {}
 
     for category, fields in CATEGORIES.items():
         cat_dir = os.path.join(ROOT, category)
@@ -231,24 +410,38 @@ def main():
             total_errors += 1
             continue
 
-        cat_ids = set()
+        cat_id_to_file = {}
         cat_entries = 0
+        cat_entry_list = []
         for filepath in yaml_files:
-            errors, count = validate_file(filepath, fields, category)
+            errors, count, data = validate_file(filepath, fields, category)
             total_errors += errors
             cat_entries += count
 
-            with open(filepath) as f:
-                data = yaml.safe_load(f)
+            seen_in_this_file = set()
             for entry in data:
+                if not isinstance(entry, dict):
+                    continue
+                cat_entry_list.append((filepath, entry))
                 eid = entry.get("id")
-                if eid in cat_ids:
-                    print(f"  CROSS-FILE DUPLICATE: {eid} in {category}/")
+                if eid is None:
+                    continue
+                if eid in seen_in_this_file:
+                    # Already reported as a within-file DUPLICATE ID.
+                    continue
+                seen_in_this_file.add(eid)
+                if eid in cat_id_to_file and cat_id_to_file[eid] != filepath:
+                    print(f"  CROSS-FILE DUPLICATE: {eid} in {category}/ "
+                          f"({cat_id_to_file[eid]} and {filepath})")
                     total_errors += 1
-                cat_ids.add(eid)
+                else:
+                    cat_id_to_file.setdefault(eid, filepath)
 
+        entries_by_category[category] = cat_entry_list
         total_entries += cat_entries
         print(f"  {category}/: {cat_entries} entries across {len(yaml_files)} files")
+
+    total_errors += _check_referential_integrity(entries_by_category)
 
     print(f"\n{'PASSED' if total_errors == 0 else 'FAILED'} — {total_entries} total entries, {total_errors} errors")
     return 0 if total_errors == 0 else 1
