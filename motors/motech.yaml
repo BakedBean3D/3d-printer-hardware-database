@@ -12,9 +12,9 @@
   inductance_mh: 2.8
   resistance_ohms: 1.65
   step_angle: 0.9
-  weight: 68
+  weight: 350
   tooth_count: 0
   notes: |-
-    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://e3d-online.dozuki.com/Document/osnGcCIVUaHhhmwr/High_Torque_Axes_Datasheet.pdf
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://e3d-online.dozuki.com/Document/osnGcCIVUaHhhmwr/High_Torque_Axes_Datasheet.pdf; weight 350 g per Motech's official spec table (motechmotor.com) for the MT-1704HSM168 48mm/1.68A/0.9deg family (0.35 kg) (previous 68 g value was an import error — it matches this motor class's ~68 g·cm² rotor inertia, mistaken for weight)
   datasheet_url: |-
     https://e3d-online.dozuki.com/Document/osnGcCIVUaHhhmwr/High_Torque_Axes_Datasheet.pdf

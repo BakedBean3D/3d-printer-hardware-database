@@ -12,10 +12,10 @@
   inductance_mh: 30.0
   resistance_ohms: 30.0
   step_angle: 1.8
-  weight: 12
+  weight: 140
   tooth_count: 0
   notes: |-
-    Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS10-0404S.pdf
+    Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS10-0404S.pdf; weight 140 g per StepperOnline product spec table (Weight: 140g) (previous 12 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS10-0404S.pdf
 - id: omc_14hs13_0804s
   name: OMC-14HS13-0804S
@@ -28,10 +28,10 @@
   inductance_mh: 10.0
   resistance_ohms: 6.8
   step_angle: 1.8
-  weight: 14
+  weight: 170
   tooth_count: 0
   notes: |-
-    Rated 0.8A RMS. Run current 0.4A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS13-0804S.pdf
+    Rated 0.8A RMS. Run current 0.4A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS13-0804S.pdf; weight 170 g per StepperOnline product spec table (Weight: 170g) (previous 14 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS13-0804S.pdf
 - id: omc_14hs17_0504s
   name: OMC-14HS17-0504S
@@ -44,10 +44,10 @@
   inductance_mh: 26.0
   resistance_ohms: 15.0
   step_angle: 1.8
-  weight: 18
+  weight: 200
   tooth_count: 0
   notes: |-
-    Rated 0.5A RMS. Run current 0.25A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS17-0504S.pdf
+    Rated 0.5A RMS. Run current 0.25A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS17-0504S.pdf; weight 200 g per StepperOnline product spec table (Weight: 200g) (previous 18 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS17-0504S.pdf
 - id: omc_14hs20_1504s
   name: OMC-14HS20-1504S
@@ -60,10 +60,10 @@
   inductance_mh: 3.8
   resistance_ohms: 2.8
   step_angle: 1.8
-  weight: 54
+  weight: 350
   tooth_count: 0
   notes: |-
-    Common use: V0.1 AB. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS20-1504S.pdf
+    Common use: V0.1 AB. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS20-1504S.pdf; weight 350 g per StepperOnline product spec table (Weight: 350g) (previous 54 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS20-1504S.pdf
 - id: omc_17hm19_1684s
   name: OMC-17HM19-1684S
@@ -76,10 +76,10 @@
   inductance_mh: 4.1
   resistance_ohms: 1.65
   step_angle: 0.9
-  weight: 68
+  weight: 350
   tooth_count: 0
   notes: |-
-    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-1684S.pdf
+    Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-1684S.pdf; weight 350 g per StepperOnline product spec table (Weight: 350g) (previous 68 g value was an import error, matching this motor's ~68 g·cm² rotor inertia, mistaken for weight)
   datasheet_url: https://www.omc-stepperonline.com/download/17HM19-1684S.pdf
 - id: omc_17hm19_2004s
   name: OMC-17HM19-2004S
@@ -92,10 +92,10 @@
   inductance_mh: 4.0
   resistance_ohms: 1.45
   step_angle: 0.9
-  weight: 82
+  weight: 370
   tooth_count: 0
   notes: |-
-    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-2004S.pdf
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-2004S.pdf; weight 370 g per StepperOnline product spec table (Weight: 370g net, 0.45kg gross incl. packaging) (previous 82 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HM19-2004S.pdf
 - id: omc_17hs08_1004s
   name: OMC-17HS08-1004S
@@ -108,10 +108,10 @@
   inductance_mh: 3.7
   resistance_ohms: 4.5
   step_angle: 1.8
-  weight: 22
+  weight: 140
   tooth_count: 0
   notes: |-
-    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: community spreadsheet, unverified
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Weight corrected to 140 g (previous 22 g value was implausible/an import error); sourced from StepperOnline product spec table for 17HS08-1004S (Weight: 140g).
 - id: omc_17hs13_0404s1
   name: OMC-17HS13-0404S1
   manufacturer: OMC
@@ -123,10 +123,10 @@
   inductance_mh: 37.0
   resistance_ohms: 30.0
   step_angle: 1.8
-  weight: 38
+  weight: 230
   tooth_count: 0
   notes: |-
-    Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf
+    Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf; weight 230 g per StepperOnline product spec table (Weight: 230g) (previous 38 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf
 - id: omc_17hs16_2004s1
   name: OMC-17HS16-2004S1
@@ -139,10 +139,10 @@
   inductance_mh: 2.6
   resistance_ohms: 1.1
   step_angle: 1.8
-  weight: 54
+  weight: 310
   tooth_count: 0
   notes: |-
-    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS16-2004S1.pdf
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS16-2004S1.pdf; weight 310 g per StepperOnline product spec table (Weight: 310g) (previous 54 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS16-2004S1.pdf
 - id: omc_17hs19_2004s1
   name: OMC-17HS19-2004S1
@@ -155,10 +155,10 @@
   inductance_mh: 3.0
   resistance_ohms: 1.4
   step_angle: 1.8
-  weight: 82
+  weight: 390
   tooth_count: 0
   notes: |-
-    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS19-2004S1.pdf
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS19-2004S1.pdf; weight 390 g per StepperOnline product spec table (Weight: 390g) (previous 82 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS19-2004S1.pdf
 - id: omc_17hs24_2104s
   name: OMC-17HS24-2104S
@@ -171,7 +171,7 @@
   inductance_mh: 3.0
   resistance_ohms: 1.6
   step_angle: 1.8
-  weight: 148
+  weight: 500
   tooth_count: 0
   notes: |-
-    Rated 2.1A RMS. Run current 1.05A (50% rated, conservative start). Ref: community spreadsheet, unverified
+    Rated 2.1A RMS. Run current 1.05A (50% rated, conservative start). Weight corrected to 500 g (previous 148 g value was implausible/an import error); sourced from StepperOnline product spec table for 17HS24-2104S (Weight: 500g).

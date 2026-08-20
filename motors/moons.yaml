@@ -27,10 +27,10 @@
   inductance_mh: 1.8
   resistance_ohms: 1.55
   step_angle: 0.9
-  weight: 12
+  weight: 150
   tooth_count: 0
   notes: |-
-    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha1p4150-000004611110015347
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha1p4150-000004611110015347; weight 150 g per MOONS' HB-MOTOR hybrid stepper catalog (MS14HA series, p.19), Motor Weight column for the 27.3mm-length group = 0.15 kg (previous 12 g value was an import error)
   datasheet_url: |-
     https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha1p4150-000004611110015347
 - id: moons_ms14ha3p4150
@@ -44,10 +44,10 @@
   inductance_mh: 2.2
   resistance_ohms: 1.61
   step_angle: 0.9
-  weight: 20
+  weight: 210
   tooth_count: 0
   notes: |-
-    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha3p4150-000004611110015351
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha3p4150-000004611110015351; weight 210 g per MOONS' HB-MOTOR hybrid stepper catalog (MS14HA series, p.19), Motor Weight column for the 36mm-length group = 0.21 kg (previous 20 g value was an import error)
   datasheet_url: |-
     https://www.moonsindustries.com/p/nema-14-high-precision-hybrid-stepper-motors/ms14ha3p4150-000004611110015351
 - id: moons_ms17ha2p4150
@@ -61,10 +61,10 @@
   inductance_mh: 5.4
   resistance_ohms: 1.98
   step_angle: 0.9
-  weight: 57
+  weight: 280
   tooth_count: 0
   notes: |-
-    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-high-precision-hybrid-stepper-motors/ms17ha2p4150-000004611110015918
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-high-precision-hybrid-stepper-motors/ms17ha2p4150-000004611110015918; weight 280 g per MOONS' HB-MOTOR hybrid stepper catalog (MS17HA series, p.33), Motor Weight column for the 39.8mm 1-stack group = 0.28 kg (previous 57 g value was an import error)
   datasheet_url: |-
     https://www.moonsindustries.com/p/nema-17-high-precision-hybrid-stepper-motors/ms17ha2p4150-000004611110015918
 - id: moons_ms17hdbp4100
@@ -78,10 +78,10 @@
   inductance_mh: 14.6
   resistance_ohms: 5.6
   step_angle: 1.8
-  weight: 123
+  weight: 600
   tooth_count: 0
   notes: |-
-    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hdbp4100-000004611110008906
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hdbp4100-000004611110008906; weight 600 g per MOONS' M/P Series step motor catalog, MS17HD 4-Lead Bi-Polar table (62.8mm/3-stack row), Motor Weight column = 0.6 kg. The previous 123 g value was the Rotor Inertia column (123 g·cm²) from the same table row, mistakenly imported as weight.
   datasheet_url: |-
     https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hdbp4100-000004611110008906
 - id: moons_ms14hs5p4150_11
@@ -95,7 +95,7 @@
   inductance_mh: 3.6
   resistance_ohms: 2.2
   step_angle: 1.8
-  weight: 35
+  weight: 240
   tooth_count: 0
   notes: |-
-    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: community spreadsheet, unverified
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Weight corrected to 240 g (previous 35 g value was implausible/an import error); sourced from retailer listings for this exact SKU (BIQU/Trianglelab MS14HS5P4150-11, 0.24 kg), consistent with its 0.4 Nm (40 Ncm) holding torque spec matching the datasheet.

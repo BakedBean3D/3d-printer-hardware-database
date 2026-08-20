@@ -541,7 +541,7 @@
   name: LDO-35STH52-2004AH
   manufacturer: LDO
   frame_size: NEMA14
-  body_length_mm: 35.0
+  body_length_mm: 52.0
   rated_current_amps: 2.0
   recommended_run_current: 1.0
   holding_torque_ncm: 40.0
@@ -551,4 +551,4 @@
   weight: 280
   tooth_count: 0
   notes: |-
-    Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 280 g — previous value (40) was implausible for this NEMA14 motor class; per onetwo3d.co.uk technical-specifications listing for LDO-35STH52-2004AH(S35) (Weight: approximately 0.28 kg, distinct from the 0.34 kg "Additional information" shipping-weight field)
+    Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 280 g — previous value (40) was implausible for this NEMA14 motor class; per onetwo3d.co.uk technical-specifications listing for LDO-35STH52-2004AH(S35) (Weight: approximately 0.28 kg, distinct from the 0.34 kg "Additional information" shipping-weight field). body_length_mm corrected 35.0->52.0: 35STH52 = 35 mm frame, 52 mm body (cf. sibling 35STH52-1504AH)
