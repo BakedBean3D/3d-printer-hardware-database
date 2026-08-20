@@ -6,7 +6,6 @@
   manufacturer: Voron Design
   type: Dual Gear BMG Style
   gear_ratio: '50:10'
-  steps_per_mm: 22.67
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHG (NEMA14 Pancake 20mm)
@@ -24,7 +23,6 @@
   manufacturer: Bondtech
   type: Dual Gear
   gear_ratio: '44:10'
-  steps_per_mm: 20.0
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
   motor: Integrated NEMA14 Round (36mm dia, 20mm height, 10T)
@@ -41,7 +39,6 @@
   manufacturer: Bondtech
   type: Dual Gear
   gear_ratio: '44:10'
-  steps_per_mm: 20.0
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
   motor: NEMA14 or NEMA17 compatible
@@ -58,7 +55,6 @@
   manufacturer: Bondtech
   type: Dual Gear
   gear_ratio: '44:10'
-  steps_per_mm: 561.4
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
   motor: Integrated NEMA14 Round (compatible with standard 36mm round motors)
@@ -75,7 +71,6 @@
   manufacturer: Orbiter
   type: Planetary Gear
   gear_ratio: 7.5:1
-  steps_per_mm: 34.0
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
   motor: LDO-36STH20-1004AHG (NEMA14 Pancake 20mm)
@@ -93,7 +88,6 @@
   manufacturer: Orbiter
   type: Planetary Gear
   gear_ratio: 7.5:1
-  steps_per_mm: 34.0
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
   motor: LDO-36STH17-1004AHG (NEMA14 17.5mm)
@@ -111,7 +105,6 @@
   manufacturer: Bondtech
   type: Dual Gear
   gear_ratio: '50:17'
-  steps_per_mm: 13.6
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: NEMA17 (user-supplied)
@@ -128,7 +121,6 @@
   manufacturer: Annex Engineering
   type: Dual Gear
   gear_ratio: '50:10'
-  steps_per_mm: 22.67
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHIG(6T) NEMA14 Pancake 20mm
@@ -146,7 +138,6 @@
   manufacturer: E3D
   type: Integrated Direct Drive
   gear_ratio: '3:1'
-  steps_per_mm: 13.6
   rotation_distance: 7.82
   uses_gear_ratio_in_config: false
   motor: NEMA17 Integrated
@@ -163,7 +154,6 @@
   manufacturer: VzBoT
   type: Dual Gear High Performance
   gear_ratio: '50:8'
-  steps_per_mm: 17.9
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: NEMA14 Round (8T or 10T)
@@ -180,7 +170,6 @@
   manufacturer: JaredC01
   type: Planetary Gear
   gear_ratio: '9:1'
-  steps_per_mm: 6.8
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHG(9T) custom 9-tooth stepper
@@ -198,7 +187,6 @@
   manufacturer: Annex Engineering
   type: Dual Gear Micro
   gear_ratio: 50:10 or 50:8
-  steps_per_mm: 22.0
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: Pinion Pancake
@@ -215,7 +203,6 @@
   manufacturer: Annex Engineering
   type: High Performance Dual Gear
   gear_ratio: '50:8'
-  steps_per_mm: 17.9
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: LDO-42STH20-1004ASH(IG7T) NEMA17 Super Slim 20mm
@@ -233,7 +220,6 @@
   manufacturer: Orbiter / LDO
   type: Integrated Electronics
   gear_ratio: 7.5:1
-  steps_per_mm: 34.0
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
   motor: Integrated Frameless Motor
@@ -250,7 +236,6 @@
   manufacturer: Orbiter / LDO
   type: Planetary Dual Gear
   gear_ratio: 7.5:1
-  steps_per_mm: 690.0
   rotation_distance: 4.69
   uses_gear_ratio_in_config: false
   motor: LDO-36STH20-1004AHG NEMA14 Pancake 20mm
@@ -268,7 +253,6 @@
   manufacturer: Trianglelab
   type: Triple Gear Dual Drive
   gear_ratio: 11.53:1
-  steps_per_mm: 615.0
   rotation_distance: 5.2
   uses_gear_ratio_in_config: false
   motor: NEMA14 Moons or LDO (user-sourced)
@@ -285,10 +269,9 @@
   manufacturer: Annex Engineering
   type: Worm Drive
   gear_ratio: '20:1'
-  steps_per_mm: 20.0
   rotation_distance: 16.0
   uses_gear_ratio_in_config: true
-  motor: LDO-36STH20-1004AH NEMA14 Pancake
+  motor: LDO-36STH20-1004AHG NEMA14 Pancake
   motor_id: ldo_36sth20_1004ahg
   motor_current: 0.35
   max_speed: 300
@@ -303,7 +286,6 @@
   manufacturer: CroXY3D / nemgrea
   type: Dual Gear BMG
   gear_ratio: '50:10'
-  steps_per_mm: 28.29
   rotation_distance: 22.68
   uses_gear_ratio_in_config: true
   motor: NEMA14 Pancake (LDO-36STH17/20)
@@ -321,7 +303,6 @@
   manufacturer: chirpy2605
   type: Planetary (Orbiter v2 internals)
   gear_ratio: 7.5:1
-  steps_per_mm: 43.16
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
   motor: NEMA14 Pancake (LDO-36STH20-1004AHG)
@@ -339,11 +320,10 @@
   manufacturer: JaredC01
   type: Planetary
   gear_ratio: '9:1'
-  steps_per_mm: 38.24
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHG(9T) NEMA14
-  motor_id: ldo_36sth20_1004ahg
+  motor_id: ldo_36sth20_1004ahg_9t
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
@@ -357,11 +337,10 @@
   manufacturer: Armchair Heavy Industries
   type: Planetary (Galileo 2 internals)
   gear_ratio: '9:1'
-  steps_per_mm: 38.24
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHG(9T) NEMA14
-  motor_id: ldo_36sth20_1004ahg
+  motor_id: ldo_36sth20_1004ahg_9t
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
@@ -375,7 +354,6 @@
   manufacturer: kevinakasam
   type: Dual-drive GT2 Belt (HGX-Lite gears)
   gear_ratio: 44:10, 37:17
-  steps_per_mm: 28.47
   rotation_distance: 56.2
   uses_gear_ratio_in_config: true
   motor: NEMA14 Pancake
@@ -393,7 +371,6 @@
   manufacturer: nhchiu
   type: Dual Gear (HGX-Lite)
   gear_ratio: 44:10, 37:17
-  steps_per_mm: 29.89
   rotation_distance: 53.494
   uses_gear_ratio_in_config: true
   motor: NEMA14 Pancake
@@ -411,11 +388,10 @@
   manufacturer: tetsu97 / bythorsthunder
   type: Planetary (Galileo 2 internals)
   gear_ratio: '9:1'
-  steps_per_mm: 38.24
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
   motor: LDO-36STH20-1004AHG(9T) NEMA14
-  motor_id: ldo_36sth20_1004ahg
+  motor_id: ldo_36sth20_1004ahg_9t
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
@@ -429,7 +405,6 @@
   manufacturer: KayosMaker
   type: Dual Gear BMG
   gear_ratio: '50:10'
-  steps_per_mm: 28.29
   rotation_distance: 22.68
   uses_gear_ratio_in_config: true
   motor: NEMA14 Pancake
@@ -447,7 +422,6 @@
   manufacturer: bythorsthunder
   type: Dual Gear BMG Style
   gear_ratio: '50:10'
-  steps_per_mm: 705.7
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
   motor: NEMA14 Pancake 10T (6T/8T supported)

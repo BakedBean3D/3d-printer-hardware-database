@@ -6,7 +6,6 @@
   manufacturer: Creality
   type: Direct Drive
   gear_ratio: "3.5:1"
-  steps_per_mm: 424.0
   rotation_distance: 4.717
   uses_gear_ratio_in_config: false
   motor: Integrated 36mm pancake
