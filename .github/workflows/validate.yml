@@ -28,3 +28,6 @@ jobs:
 
       - name: submit-hardware.sh syntax
         run: bash -n scripts/submit-hardware.sh
+
+      - name: Docs and category routing in sync with validate.py
+        run: python3 scripts/check_docs.py

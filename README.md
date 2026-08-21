@@ -65,6 +65,7 @@ PCB mounting geometry for parametric CAD mount design. **`null` means genuinely 
 | `mount_pitch_x_mm` / `mount_pitch_y_mm` | float | Center-to-center hole spacing |
 | `mount_hole_count` | int | Number of mounting holes |
 | `mount_holes_xy` | list | Optional `[[x,y], ...]` from PCB bottom-left corner (read `notes`) |
+| `mount_inset_from_edge_mm` | float | Hole-center distance in from the PCB edge |
 | `standoff_height_mm` | float | Recommended clearance under the board |
 | `component_height_top_mm` | float | Tallest component / module body height above board |
 | `connector_notes` | string | Which edge carries power / steppers / USB / etc. |
@@ -90,6 +91,7 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 | `wattage_w` | int | Nominal series wattage (exact rated power varies slightly per output voltage — see `notes`) |
 | `output_voltages_v` | list | Available DC output voltage variants in this series |
 | `bottom_mount_screw` / `side_mount_screw` | string | Screw that fits the holes (M3, M4, ...; null if not applicable) |
+| `bottom_mount_interface` | string | What the case-side holes physically are: threaded_case (screw threads into the case) or clearance_ears (through-holes in mounting ears) — must be declared whenever `bottom_mount_screw` is set |
 | `bottom_mount_hole_dia_mm` / `side_mount_hole_dia_mm` | float | Hole diameter (often inferred from screw size) |
 | `bottom_mount_hole_count` / `side_mount_hole_count` | int | Number of mounting holes in that pattern |
 | `bottom_mount_pattern` / `side_mount_pattern` | string | rectangular, 2-hole, 3-hole, other, none |
