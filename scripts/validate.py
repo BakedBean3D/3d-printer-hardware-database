@@ -7,6 +7,30 @@ import yaml
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
+
+class StrictLoader(yaml.SafeLoader):
+    """SafeLoader that rejects duplicate mapping keys.
+
+    Stock safe_load is silently last-wins: a `weight:` appearing twice in one
+    entry drops the first value with no diagnostic — exactly the failure mode
+    a hand-edited database can't afford. Raises ConstructorError with both
+    marks so the offending line is printed."""
+
+    def construct_mapping(self, node, deep=False):
+        seen = set()
+        for key_node, _ in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            try:
+                dupe = key in seen
+            except TypeError:  # unhashable key; base class will report it
+                continue
+            if dupe:
+                raise yaml.constructor.ConstructorError(
+                    "while constructing a mapping", node.start_mark,
+                    f"found duplicate key {key!r}", key_node.start_mark)
+            seen.add(key)
+        return super().construct_mapping(node, deep)
+
 MOTOR_REQUIRED = [
     "id", "name", "manufacturer", "frame_size", "body_length_mm",
     "rated_current_amps", "recommended_run_current", "holding_torque_ncm",
@@ -89,6 +113,107 @@ CATEGORIES = {
     "toolheads": TOOLHEAD_REQUIRED,
     "controller_boards": CONTROLLER_BOARD_REQUIRED,
     "psu": PSU_REQUIRED,
+}
+
+# Expected YAML type per field, checked only when the value is present and
+# non-null (null always means unknown and is governed by the required lists).
+# "number" accepts int or float; "integer" is for true counts where a
+# fraction is meaningless. Without this, `weight: "350"` (a string) silently
+# skips every numeric plausibility check because _num() returns None.
+_T_STR, _T_NUM, _T_INT, _T_BOOL, _T_LIST = "string", "number", "integer", "bool", "list"
+
+MOTOR_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "frame_size": _T_STR,
+    "notes": _T_STR, "datasheet_url": _T_STR,
+    "body_length_mm": _T_NUM, "rated_current_amps": _T_NUM,
+    "recommended_run_current": _T_NUM, "holding_torque_ncm": _T_NUM,
+    "inductance_mh": _T_NUM, "resistance_ohms": _T_NUM, "step_angle": _T_NUM,
+    "weight": _T_NUM, "tooth_count": _T_INT,
+}
+
+HOTEND_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR,
+    "nozzle_thread": _T_STR, "notes": _T_STR,
+    "meltzone_length": _T_NUM, "max_volumetric_flow": _T_NUM, "max_temp": _T_NUM,
+    "recommended_temp_pla": _T_NUM, "recommended_temp_abs": _T_NUM,
+    "recommended_temp_petg": _T_NUM, "weight": _T_NUM, "recommended_max_speed": _T_NUM,
+}
+
+EXTRUDER_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "type": _T_STR,
+    "gear_ratio": _T_STR, "motor": _T_STR, "motor_id": _T_STR, "notes": _T_STR,
+    "rotation_distance": _T_NUM, "motor_current": _T_NUM, "max_speed": _T_NUM,
+    "max_accel": _T_NUM, "weight": _T_NUM, "filament_path_length": _T_NUM,
+    "recommended_pressure_advance": _T_NUM,
+    "uses_gear_ratio_in_config": _T_BOOL,
+}
+
+PROBE_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "type": _T_STR,
+    "notes": _T_STR,
+    "accuracy": _T_NUM, "repeatability": _T_NUM, "z_offset_typical": _T_NUM,
+    "speed": _T_NUM, "sample_retract_dist": _T_NUM,
+    "samples": _T_INT, "scanning_capable": _T_BOOL,
+}
+
+TOOLHEAD_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "fan_config": _T_STR,
+    "mounting_method": _T_STR, "notes": _T_STR,
+    "compatible_extruders": _T_LIST, "compatible_hotends": _T_LIST,
+    "compatible_printer_types": _T_LIST,
+    "weight": _T_NUM, "part_cooling_cfm": _T_NUM,
+    "supports_neopixels": _T_BOOL, "supports_klicky": _T_BOOL, "supports_tap": _T_BOOL,
+}
+
+CONTROLLER_BOARD_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "category": _T_STR,
+    "mount_screw": _T_STR, "mount_pattern": _T_STR, "connector_notes": _T_STR,
+    "confidence": _T_STR, "notes": _T_STR,
+    "pcb_length_mm": _T_NUM, "pcb_width_mm": _T_NUM, "pcb_thickness_mm": _T_NUM,
+    "mount_hole_dia_mm": _T_NUM, "mount_pitch_x_mm": _T_NUM, "mount_pitch_y_mm": _T_NUM,
+    "mount_inset_from_edge_mm": _T_NUM, "component_height_top_mm": _T_NUM,
+    "standoff_height_mm": _T_NUM,
+    "mount_hole_count": _T_INT,
+    "mount_holes_xy": _T_LIST, "sources": _T_LIST,
+}
+
+PSU_FIELD_TYPES = {
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "series": _T_STR,
+    "category": _T_STR, "bottom_mount_screw": _T_STR, "bottom_mount_interface": _T_STR,
+    "bottom_mount_pattern": _T_STR, "side_mount_screw": _T_STR,
+    "side_mount_pattern": _T_STR, "din_rail_type": _T_STR,
+    "terminal_location": _T_STR, "connector_notes": _T_STR,
+    "confidence": _T_STR, "notes": _T_STR,
+    "length_mm": _T_NUM, "width_mm": _T_NUM, "height_mm": _T_NUM,
+    "weight_g": _T_NUM, "wattage_w": _T_NUM,
+    "bottom_mount_hole_dia_mm": _T_NUM, "bottom_mount_pitch_x_mm": _T_NUM,
+    "bottom_mount_pitch_y_mm": _T_NUM, "bottom_mount_max_penetration_mm": _T_NUM,
+    "side_mount_hole_dia_mm": _T_NUM, "side_mount_pitch_x_mm": _T_NUM,
+    "side_mount_max_penetration_mm": _T_NUM,
+    "bottom_mount_hole_count": _T_INT, "side_mount_hole_count": _T_INT,
+    "output_voltages_v": _T_LIST, "bottom_mount_holes_xy": _T_LIST,
+    "side_mount_holes_xy": _T_LIST,
+    "din_rail_compatible": _T_BOOL,
+}
+
+FIELD_TYPES = {
+    "motors": MOTOR_FIELD_TYPES,
+    "hotends": HOTEND_FIELD_TYPES,
+    "extruders": EXTRUDER_FIELD_TYPES,
+    "probes": PROBE_FIELD_TYPES,
+    "toolheads": TOOLHEAD_FIELD_TYPES,
+    "controller_boards": CONTROLLER_BOARD_FIELD_TYPES,
+    "psu": PSU_FIELD_TYPES,
+}
+
+# bool is an int subclass in Python — exclude it from the numeric types so
+# `weight: true` can never pass as a number.
+_TYPE_CHECKS = {
+    _T_STR: lambda v: isinstance(v, str),
+    _T_NUM: lambda v: isinstance(v, (int, float)) and not isinstance(v, bool),
+    _T_INT: lambda v: isinstance(v, int) and not isinstance(v, bool),
+    _T_BOOL: lambda v: isinstance(v, bool),
+    _T_LIST: lambda v: isinstance(v, list),
 }
 
 
@@ -304,8 +429,12 @@ def validate_file(filepath, required_fields, category=None):
     referential integrity) can reuse the already-parsed entries instead of
     re-opening and re-parsing the file.
     """
-    with open(filepath) as f:
-        data = yaml.safe_load(f)
+    try:
+        with open(filepath) as f:
+            data = yaml.load(f, Loader=StrictLoader)
+    except yaml.YAMLError as e:
+        print(f"  YAML ERROR: {filepath}: {e}")
+        return 1, 0, []
 
     if data is None:
         data = []
@@ -333,6 +462,13 @@ def validate_file(filepath, required_fields, category=None):
         for field in required_fields:
             if field not in entry:
                 print(f"  MISSING FIELD: {filepath}[{entry_id}].{field}")
+                errors += 1
+
+        type_map = FIELD_TYPES.get(category, {}) if category is not None else {}
+        for field, expected in type_map.items():
+            v = entry.get(field)
+            if v is not None and field in entry and not _TYPE_CHECKS[expected](v):
+                print(f"  BAD TYPE: {filepath}[{entry_id}].{field}={v!r} must be {expected} (or null)")
                 errors += 1
 
         if "id" in entry:
