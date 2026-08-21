@@ -177,8 +177,8 @@
   confidence: medium
   notes: |-
     Annex K-series motor. L = long cable variant. Rated 1.68A from part number. Run current 0.9-1.2A (application-dependent). Holding torque ~45 N·cm (estimated). Ref: Annex Engineering BOM; weight corrected to 280 g per official LDO 42STH40mm-body datasheets (0.28 Kg REF, confirmed across LDO-42STH38-1684MAC, -42STH40-1004MAHVRN, -42STH40-2004MAHVRN RevA sheets)
-- id: ldo_35sth48_1504ahvrn
-  name: LDO-35STH48-1504AH(VRN)
+- id: ldo_35sth52_1504ahvrn
+  name: LDO-35STH52-1504AH(VRN)
   manufacturer: LDO
   frame_size: NEMA14
   body_length_mm: 52.0
@@ -190,9 +190,9 @@
   step_angle: 1.8
   weight_g: 290
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Common use: V0.1 AB LDO. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 290 g — previous value (51) was the rotor inertia (51.8 g·cm²) mistakenly entered as weight; per LDO-35STH52-1504AHVRN_RevA official datasheet (Weight 0.29 Kg REF, Rotor Inertia 51.8 g·cm² REF), which matches this part number
+    Common use: V0.1 AB LDO. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Re-verified 2026-08-21: id/name corrected from "35sth48_1504ahvrn"/"LDO-35STH48-1504AH(VRN)" — no such part number exists at any current retailer; every listing (west3d, onetwo3d, fabreeko, Amazon) and the FrankenVoron/Tridex BOM identify this motor as LDO-35STH52-1504AH(VRN), which matches this entry's body_length_mm (52.0, already correct pre-rename). Electrical specs (1.5A, 37 N·cm, 3.8 mH, 2.8 Ω) cross-confirmed exact match against the andrewmcgr/klipper_tmc_autotune community motor_database.cfg (github.com/andrewmcgr/klipper_tmc_autotune). Weight 290 g per LDO-35STH52-1504AHVRN_RevA official datasheet, mirrored at https://www.onetwo3d.co.uk/wp-content/uploads/2022/08/LDO-35STH52-1504AHVRN_RevA-technical-datasheet.pdf (Weight 0.29 Kg REF, Rotor Inertia 51.8 g·cm² REF); direct PDF fetch was blocked by this session's network egress policy so not upgraded to high — a future session with access to that host should confirm and bump.
 - id: ldo_35sth48_1684ahvrn
   name: LDO-35STH48-1684AHVRN
   manufacturer: LDO
@@ -206,9 +206,9 @@
   step_angle: 1.8
   weight_g: 260
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Common use: V0.1 AB. Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected — previous value (49) implausible for a 48mm-body NEMA14 motor. No model-specific datasheet found; 260 g is interpolated from same-family LDO-35STH52-1504AHVRN_RevA (52mm body, 290g REF, official datasheet) and LDO-35STH52-2004AH(S35) (52mm body, 280g per onetwo3d.co.uk technical-spec listing), scaled down slightly for the shorter 48mm body — treat as an estimate, not a directly sourced value
+    Common use: V0.1 AB. Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Re-verified 2026-08-21: id/name confirmed correct — retailers (west3d, onetwo3d, HartSmart) and the FrankenVoron/Tridex BOM all list this exact "LDO-35STH48-1684AH(VRN)" designation, 48mm body. Electrical specs (1.68A, 40 N·cm, 2.8 mH, 1.65 Ω) cross-confirmed exact match against the andrewmcgr/klipper_tmc_autotune community motor_database.cfg (github.com/andrewmcgr/klipper_tmc_autotune). Weight remains unresolved: no model-specific datasheet found despite additional targeted search this session (checked west3d, onetwo3d, HartSmart, caribou3d, cdn.shopify.com product pages/PDFs); 260 g stays an interpolated estimate from the same-family LDO-35STH52-1504AHVRN_RevA (52mm, 290g REF) and LDO-35STH52-2004AH(S35) (52mm, 280g per onetwo3d.co.uk) datasheets scaled down for the shorter 48mm body — not a directly sourced value, flag for re-verification if a model-specific datasheet surfaces
 - id: ldo_36sth20_1004ahgxh
   name: LDO-36STH20-1004AHG(XH)
   manufacturer: LDO
@@ -222,9 +222,9 @@
   step_angle: 1.8
   weight_g: 85
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 85 g — previous value (16) was the rotor inertia (16 g·cm²) mistakenly entered as weight; per HT-LDO-36STH20-1004AHGXH-RevA.pdf official datasheet (Weight 85g REF, Rotor Inertia 16 g·cm² REF), which is this exact part number
+    Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Re-verified 2026-08-21: weight 85 g confirmed correct — previous value (16) was the rotor inertia (16 g·cm²) mistakenly entered as weight; per HT-LDO-36STH20-1004AHGXH-RevA.pdf official datasheet (Weight 85g REF, Rotor Inertia 16 g·cm² REF), mirrored at https://cdn.shopify.com/s/files/1/0887/0138/files/HT-LDO-36STH20-1004AHGXH-RevA_1.pdf?v=1642628306 and https://www.bondtech.se/downloads/TDS/HT-LDO-36STH20-1004AHG(XH)-RevA.pdf. Electrical specs (1.0A, 10 N·cm, 1.6 mH, 2.1 Ω) cross-confirmed exact match against the andrewmcgr/klipper_tmc_autotune community motor_database.cfg (github.com/andrewmcgr/klipper_tmc_autotune). Direct PDF fetch of the above hosts was blocked by this session's network egress policy so not upgraded to high — a future session with access should confirm and bump.
 - id: ldo_42sth20_1004ash
   name: LDO-42STH20-1004ASH
   manufacturer: LDO
@@ -328,9 +328,9 @@
   step_angle: 1.8
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -47STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -47STH47-1684AC, -2004AH, -2004AC(VRN). Re-verified 2026-08-21: id/name "42STH47-2504AC" is LDO's older designation for this motor — current retailers (onetwo3D, kb-3d, 3D Lab Tech, LDO Motion) sell the identical 48mm-body 2.5A part as "LDO-42STH48-2504AC" (LDO renamed the 42STH47 line to 42STH48 across the board, same pattern already evidenced in this file's ldo_42sth47_1684ac entry, which has its own confirmed "47"-era datasheet — kept the "47" id since that naming is independently attested, not an error). Holding torque 53.9 N·cm strongly corroborated: multiple retailers (onetwo3D, kb-3d, 3D Lab Tech) independently list "5.5 Kgf-cm" for the 2504AC RevA datasheet, which converts to 53.9 N·cm (5.5 x 9.80665) — an exact match. Datasheet located at https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH48-2504AC_S46_TIM_RevA.pdf (fetch blocked by this session's network egress policy). Flag: the andrewmcgr/klipper_tmc_autotune community motor_database.cfg lists resistance 1.2 Ω / inductance 1.5 mH for "LDO-42STH48-2504AC" vs this entry's 1.25 Ω / 1.8 mH — a ~20% discrepancy on those two fields that could not be resolved against a primary source this session (both figures are plausible; left unchanged pending a directly-verified datasheet read). Rated current (2.5A) and holding torque agree across all sources.
 - id: ldo_42sth48_1684mah
   name: LDO-42STH48-1684MAH
   manufacturer: LDO
@@ -398,9 +398,9 @@
   step_angle: 0.9
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN). Re-verified 2026-08-21: resistance (1.45 Ω), inductance (2.0 mH), current (2.0A), step angle (0.9°) and weight (350 g / 0.35 kg) all corroborated by trusted-retailer listings (west3d, Sparta3D, 3D Lab Tech, LDO Motion) and the andrewmcgr/klipper_tmc_autotune community motor_database.cfg (resistance 1.4 Ω, inductance 2.0 mH — both close). CONFLICT on holding_torque_ncm, left unchanged pending a primary source: this entry stores 40.0 N·cm; multiple retailers (west3d, Sparta3D, 3D Lab Tech, LDO Motion) independently list "3.5 Kgf-cm" = 34.3 N·cm; the klipper_tmc_autotune community db lists 0.44 Nm = 44.0 N·cm for the same part number. Three-way disagreement (34.3 / 40.0 / 44.0), no manufacturer PDF located or fetchable this session (cdn.shopify.com, 3dlabtech.ca, west3d.com all blocked by this session's network egress policy) — flagging for human review / next re-verify pass rather than guessing or averaging.
 - id: ldo_42sth48_2504ac
   name: LDO-42STH48-2504AC
   manufacturer: LDO
