@@ -46,7 +46,7 @@ HOTEND_REQUIRED = [
 ]
 
 EXTRUDER_REQUIRED = [
-    "id", "name", "manufacturer", "type", "gear_ratio",
+    "id", "name", "manufacturer", "drive", "type_detail", "gear_ratio",
     "rotation_distance", "uses_gear_ratio_in_config", "motor", "motor_current",
     "max_speed", "max_accel", "weight_g", "filament_path_length",
     "recommended_pressure_advance", "confidence", "notes",
@@ -99,6 +99,16 @@ CONTROLLER_MOUNT_PATTERN_VALUES = {
     "rectangular", "L-shaped", "linear", "2-hole", "3-hole", "4-hole", "none", "other",
 }
 PSU_MOUNT_PATTERN_VALUES = {"rectangular", "2-hole", "3-hole", "other", "none"}
+
+# v2 controlled vocabularies. drive is the transmission class (exact-match
+# filterable); free-text flavor lives in type_detail. Probe type folds the
+# sensing principle with the dock/deploy integration axis (mechanically
+# distinct for CAD); scanning stays in scanning_capable — not duplicated here.
+EXTRUDER_DRIVE_VALUES = {"dual_gear", "planetary", "worm", "belt"}
+PROBE_TYPE_VALUES = {
+    "contact", "contact_deploy", "contact_dock",
+    "inductive", "inductive_dock", "eddy_current",
+}
 
 # Upper NEMA17 bound accommodates the heaviest real part in class: the LDO
 # Kraken 42STH60-3004AHS37 at 620 g / 60 mm body (10.3 g/mm, vendor spec).
@@ -156,7 +166,8 @@ HOTEND_FIELD_TYPES = {
 }
 
 EXTRUDER_FIELD_TYPES = {
-    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "type": _T_STR,
+    "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "drive": _T_STR,
+    "type_detail": _T_STR,
     "gear_ratio": _T_STR, "motor": _T_STR, "motor_id": _T_STR, "notes": _T_STR,
     "confidence": _T_STR,
     "rotation_distance": _T_NUM, "motor_current": _T_NUM, "max_speed": _T_NUM,
@@ -459,6 +470,10 @@ def check_physics(entry_id, filepath, entry, category):
                 errors += 1
     elif category == "motors":
         errors += _check_motor_physics(entry_id, filepath, entry)
+    elif category == "extruders":
+        errors += _check_enum(entry_id, filepath, entry, "drive", EXTRUDER_DRIVE_VALUES, null_ok=False)
+    elif category == "probes":
+        errors += _check_enum(entry_id, filepath, entry, "type", PROBE_TYPE_VALUES, null_ok=False)
     elif category == "hotends":
         errors += _check_hotend_physics(entry_id, filepath, entry)
     return errors

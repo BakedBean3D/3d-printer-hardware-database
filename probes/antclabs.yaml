@@ -3,7 +3,7 @@
 # as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
 - id: bltouch
   name: BLTouch
-  type: Contact Deploy
+  type: contact_deploy
   scanning_capable: false
   accuracy: 0.02
   repeatability: 0.005

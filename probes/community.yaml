@@ -3,7 +3,7 @@
 # as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
 - id: klicky
   name: Klicky Probe
-  type: Dock-mounted Contact
+  type: contact_dock
   scanning_capable: false
   accuracy: 0.01
   repeatability: 0.01
@@ -17,7 +17,7 @@
   manufacturer: Community
 - id: euclid
   name: Euclid Probe
-  type: Inductive (dock-mount)
+  type: inductive_dock
   scanning_capable: false
   accuracy: 0.005
   repeatability: 0.003

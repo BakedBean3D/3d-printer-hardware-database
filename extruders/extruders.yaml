@@ -4,7 +4,8 @@
 - id: clockwork2
   name: Clockwork 2
   manufacturer: Voron Design
-  type: Dual Gear BMG Style
+  drive: dual_gear
+  type_detail: Dual Gear BMG Style
   gear_ratio: '50:10'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -22,7 +23,8 @@
 - id: lgx_lite
   name: LGX Lite
   manufacturer: Bondtech
-  type: Dual Gear
+  drive: dual_gear
+  type_detail: Dual Gear
   gear_ratio: '44:10'
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
@@ -39,7 +41,8 @@
 - id: lgx
   name: LGX
   manufacturer: Bondtech
-  type: Dual Gear
+  drive: dual_gear
+  type_detail: Dual Gear
   gear_ratio: '44:10'
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
@@ -56,7 +59,8 @@
 - id: lgx_ace
   name: LGX Ace
   manufacturer: Bondtech
-  type: Dual Gear
+  drive: dual_gear
+  type_detail: Dual Gear
   gear_ratio: '44:10'
   rotation_distance: 5.7
   uses_gear_ratio_in_config: false
@@ -73,7 +77,8 @@
 - id: orbiter_v2
   name: Orbiter v2
   manufacturer: Orbiter
-  type: Planetary Gear
+  drive: planetary
+  type_detail: Planetary Gear
   gear_ratio: 7.5:1
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
@@ -91,7 +96,8 @@
 - id: orbiter_v1_5
   name: Orbiter v1.5
   manufacturer: Orbiter
-  type: Planetary Gear
+  drive: planetary
+  type_detail: Planetary Gear
   gear_ratio: 7.5:1
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
@@ -109,7 +115,8 @@
 - id: bmg
   name: BMG
   manufacturer: Bondtech
-  type: Dual Gear
+  drive: dual_gear
+  type_detail: Dual Gear
   gear_ratio: '50:17'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -126,7 +133,8 @@
 - id: sherpa_mini
   name: Sherpa Mini
   manufacturer: Annex Engineering
-  type: Dual Gear
+  drive: dual_gear
+  type_detail: Dual Gear
   gear_ratio: '50:10'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -144,7 +152,8 @@
 - id: hemera
   name: Hemera
   manufacturer: E3D
-  type: Integrated Direct Drive
+  drive: dual_gear
+  type_detail: Integrated Direct Drive
   gear_ratio: '3:1'
   rotation_distance: 7.82
   uses_gear_ratio_in_config: false
@@ -161,7 +170,8 @@
 - id: vz_hextrudort
   name: VZ-Hextrudort
   manufacturer: VzBoT
-  type: Dual Gear High Performance
+  drive: dual_gear
+  type_detail: Dual Gear High Performance
   gear_ratio: '50:8'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -178,7 +188,8 @@
 - id: galileo_2
   name: Galileo 2
   manufacturer: JaredC01
-  type: Planetary Gear
+  drive: planetary
+  type_detail: Planetary Gear
   gear_ratio: '9:1'
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
@@ -196,7 +207,8 @@
 - id: sherpa_micro
   name: Sherpa Micro
   manufacturer: Annex Engineering
-  type: Dual Gear Micro
+  drive: dual_gear
+  type_detail: Dual Gear Micro
   gear_ratio: 50:10 or 50:8
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -213,7 +225,8 @@
 - id: sherpa_heavy
   name: Sherpa Heavy
   manufacturer: Annex Engineering
-  type: High Performance Dual Gear
+  drive: dual_gear
+  type_detail: High Performance Dual Gear
   gear_ratio: '50:8'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true
@@ -231,7 +244,8 @@
 - id: orbiter_v3
   name: Smart Orbiter v3.0
   manufacturer: Orbiter / LDO
-  type: Integrated Electronics
+  drive: planetary
+  type_detail: Integrated Electronics
   gear_ratio: 7.5:1
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
@@ -248,7 +262,8 @@
 - id: orbiter_v2_5
   name: Orbiter v2.5
   manufacturer: Orbiter / LDO
-  type: Planetary Dual Gear
+  drive: planetary
+  type_detail: Planetary Dual Gear
   gear_ratio: 7.5:1
   rotation_distance: 4.69
   uses_gear_ratio_in_config: false
@@ -266,7 +281,8 @@
 - id: tbg_lite
   name: TBG-Lite
   manufacturer: Trianglelab
-  type: Triple Gear Dual Drive
+  drive: dual_gear
+  type_detail: Triple Gear Dual Drive
   gear_ratio: 11.53:1
   rotation_distance: 5.2
   uses_gear_ratio_in_config: false
@@ -283,7 +299,8 @@
 - id: dfa
   name: Double Folded Ascender
   manufacturer: Annex Engineering
-  type: Worm Drive
+  drive: worm
+  type_detail: Worm Drive
   gear_ratio: '20:1'
   rotation_distance: 16.0
   uses_gear_ratio_in_config: true
@@ -301,7 +318,8 @@
 - id: sailfin
   name: Sailfin
   manufacturer: CroXY3D / nemgrea
-  type: Dual Gear BMG
+  drive: dual_gear
+  type_detail: Dual Gear BMG
   gear_ratio: '50:10'
   rotation_distance: 22.68
   uses_gear_ratio_in_config: true
@@ -319,7 +337,8 @@
 - id: roundabout
   name: RoundAbout
   manufacturer: chirpy2605
-  type: Planetary (Orbiter v2 internals)
+  drive: planetary
+  type_detail: Planetary (Orbiter v2 internals)
   gear_ratio: 7.5:1
   rotation_distance: 4.637
   uses_gear_ratio_in_config: false
@@ -337,7 +356,8 @@
 - id: galileo_2_sa
   name: Galileo 2 Standalone
   manufacturer: JaredC01
-  type: Planetary
+  drive: planetary
+  type_detail: Planetary
   gear_ratio: '9:1'
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
@@ -355,7 +375,8 @@
 - id: escapement
   name: Escapement
   manufacturer: Armchair Heavy Industries
-  type: Planetary (Galileo 2 internals)
+  drive: planetary
+  type_detail: Planetary (Galileo 2 internals)
   gear_ratio: '9:1'
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
@@ -373,7 +394,8 @@
 - id: papilio_lite
   name: Papilio Lite
   manufacturer: kevinakasam
-  type: Dual-drive GT2 Belt (HGX-Lite gears)
+  drive: belt
+  type_detail: Dual-drive GT2 Belt (HGX-Lite gears)
   gear_ratio: 44:10, 37:17
   rotation_distance: 56.2
   uses_gear_ratio_in_config: true
@@ -391,7 +413,8 @@
 - id: protoxtruder
   name: ProtoXtruder
   manufacturer: nhchiu
-  type: Dual Gear (HGX-Lite)
+  drive: dual_gear
+  type_detail: Dual Gear (HGX-Lite)
   gear_ratio: 44:10, 37:17
   rotation_distance: 53.494
   uses_gear_ratio_in_config: true
@@ -409,7 +432,8 @@
 - id: wristwatch_g2
   name: Wristwatch G2
   manufacturer: tetsu97 / bythorsthunder
-  type: Planetary (Galileo 2 internals)
+  drive: planetary
+  type_detail: Planetary (Galileo 2 internals)
   gear_ratio: '9:1'
   rotation_distance: 47.088
   uses_gear_ratio_in_config: true
@@ -427,7 +451,8 @@
 - id: sharkfin
   name: Sharkfin
   manufacturer: KayosMaker
-  type: Dual Gear BMG
+  drive: dual_gear
+  type_detail: Dual Gear BMG
   gear_ratio: '50:10'
   rotation_distance: 22.68
   uses_gear_ratio_in_config: true
@@ -445,7 +470,8 @@
 - id: wwbmg
   name: WristWatch BMG (WWBMG)
   manufacturer: bythorsthunder
-  type: Dual Gear BMG Style
+  drive: dual_gear
+  type_detail: Dual Gear BMG Style
   gear_ratio: '50:10'
   rotation_distance: 22.6789511
   uses_gear_ratio_in_config: true

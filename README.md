@@ -131,6 +131,82 @@ Each hardware category has a defined set of fields, enforced by `scripts/validat
 | `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
 | `notes` | string | Verification source and usage context |
 
+### Hotend fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Hotend name |
+| `manufacturer` | string | Brand |
+| `meltzone_length` | float | Melt zone length in mm (start of melt zone to nozzle tip) |
+| `max_volumetric_flow` | float | Max flow in mm³/s (0.4 mm nozzle PLA baseline unless noted) |
+| `max_temp` | int | Rated max temperature in °C |
+| `recommended_temp_pla` / `recommended_temp_abs` / `recommended_temp_petg` | int | Recommended print temps in °C |
+| `nozzle_thread` | string | Nozzle thread standard (M6, V6, Volcano, proprietary, ...) |
+| `weight_g` | float | Weight in grams |
+| `recommended_max_speed` | int | Recommended max print speed in mm/s |
+| `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
+| `notes` | string | Verification source and usage context |
+
+### Extruder fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Extruder name |
+| `manufacturer` | string | Brand or GitHub username |
+| `drive` | string | Transmission class: dual_gear, planetary, worm, belt |
+| `type_detail` | string | Free-text flavor (e.g. "Dual Gear BMG Style") |
+| `gear_ratio` | string | Reduction ratio (e.g. "50:10") |
+| `rotation_distance` | float | Klipper rotation_distance |
+| `uses_gear_ratio_in_config` | bool | Whether printer.cfg uses gear_ratio separately |
+| `motor` | string | Motor description |
+| `motor_id` | string | Optional cross-reference to a motors/ entry id |
+| `motor_current` | float | Recommended run current (RMS) |
+| `max_speed` | int | Max print speed in mm/s |
+| `max_accel` | int | Max acceleration in mm/s² |
+| `weight_g` | float | Weight in grams |
+| `filament_path_length` | float | Filament path length in mm |
+| `recommended_pressure_advance` | float | Typical Klipper pressure_advance |
+| `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
+| `notes` | string | Verification source and usage context |
+
+### Probe fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Probe name |
+| `manufacturer` | string | Brand or project |
+| `type` | string | contact, contact_deploy, contact_dock, inductive, inductive_dock, eddy_current |
+| `accuracy` | float | Accuracy in mm |
+| `repeatability` | float | Repeatability (std dev) in mm |
+| `z_offset_typical` | float | Typical Z offset in mm |
+| `speed` | int | Probing speed in mm/s |
+| `samples` | int | Recommended sample count |
+| `sample_retract_dist` | float | Retract distance between samples in mm |
+| `scanning_capable` | bool | True for surface-scanning (mesh without touching) probes |
+| `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
+| `notes` | string | Verification source and usage context |
+
+### Toolhead fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, underscores) |
+| `name` | string | Toolhead name |
+| `manufacturer` | string | Design project or GitHub username |
+| `compatible_extruders` | list | extruders/ entry ids (referential integrity enforced) |
+| `compatible_hotends` | list | hotends/ entry ids (referential integrity enforced) |
+| `compatible_printer_types` | list | Printer families the toolhead targets |
+| `weight_g` | float | Weight in grams |
+| `fan_config` | string | Part-cooling / hotend fan arrangement |
+| `part_cooling_cfm` | float | Part-cooling airflow in CFM |
+| `supports_neopixels` / `supports_klicky` / `supports_tap` | bool | Accessory support flags |
+| `mounting_method` | string | Carriage / rail mounting |
+| `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
+| `notes` | string | Verification source and usage context |
+
 ## Safety Notice
 
 This data is used to configure expensive 3D printers. Incorrect motor currents can damage drivers or motors. Incorrect flow rates can cause jams or failed prints.

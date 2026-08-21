@@ -3,7 +3,7 @@
 # as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
 - id: tap
   name: Voron TAP
-  type: Contact/Kinematic
+  type: contact
   scanning_capable: false
   accuracy: 0.005
   repeatability: 0.0008

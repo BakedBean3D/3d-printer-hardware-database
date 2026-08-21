@@ -4,7 +4,8 @@
 - id: sprite_extruder
   name: Sprite Extruder
   manufacturer: Creality
-  type: Direct Drive
+  drive: dual_gear
+  type_detail: Direct Drive
   gear_ratio: "3.5:1"
   rotation_distance: 4.717
   uses_gear_ratio_in_config: false

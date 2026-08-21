@@ -30,6 +30,10 @@ _spec.loader.exec_module(validate)
 # categories have README field tables today; extend when tables are added.
 README_TABLES = {
     "### Motor fields": ("motors", validate.MOTOR_REQUIRED),
+    "### Hotend fields": ("hotends", validate.HOTEND_REQUIRED),
+    "### Extruder fields": ("extruders", validate.EXTRUDER_REQUIRED),
+    "### Probe fields": ("probes", validate.PROBE_REQUIRED),
+    "### Toolhead fields": ("toolheads", validate.TOOLHEAD_REQUIRED),
     "### Controller board fields": ("controller_boards", validate.CONTROLLER_BOARD_REQUIRED),
     "### PSU fields": ("psu", validate.PSU_REQUIRED),
 }
@@ -38,6 +42,8 @@ README_TABLES = {
 # data) but deliberately not required on every entry.
 OPTIONAL_DOCUMENTED = {
     "motors": {"datasheet_url"},
+    "extruders": {"motor_id"},
+    "probes": {"manufacturer"},
     "controller_boards": {"mount_holes_xy"},
     "psu": set(),
 }

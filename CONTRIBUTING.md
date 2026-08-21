@@ -51,6 +51,16 @@ form the re-verification backlog and downstream consumers filter on it.
 - `tooth_count` is 0 if no integrated pinion gear
 - Include `datasheet_url` when available
 
+### Extruder / Probe Enums (v2)
+
+- Extruders: `drive` is a controlled vocabulary — `dual_gear`, `planetary`,
+  `worm`, `belt` (validator-enforced). Put descriptive flavor in `type_detail`.
+- Probes: `type` is a controlled vocabulary — `contact`, `contact_deploy`,
+  `contact_dock`, `inductive`, `inductive_dock`, `eddy_current`. Scanning
+  ability belongs in `scanning_capable`, not the type.
+- Weights are `weight_g` (grams) in every category as of v2 (the `v1` tag is
+  the last release with the old `weight` field name).
+
 ### Hotend-Specific Guidelines
 
 - `max_volumetric_flow` should be the 0.4mm nozzle PLA baseline unless noted

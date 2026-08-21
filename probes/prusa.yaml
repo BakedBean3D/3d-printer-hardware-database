@@ -3,7 +3,7 @@
 # as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
 - id: superpinda
   name: SuperPinda
-  type: Inductive
+  type: inductive
   scanning_capable: false
   manufacturer: Prusa Research
   accuracy: 0.01

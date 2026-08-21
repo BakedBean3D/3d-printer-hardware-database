@@ -3,7 +3,7 @@
 # as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
 - id: crtouch
   name: CRTouch
-  type: Contact Deploy
+  type: contact_deploy
   scanning_capable: false
   manufacturer: Creality
   accuracy: 0.02
