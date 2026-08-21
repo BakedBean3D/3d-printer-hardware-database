@@ -15,7 +15,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install pyyaml jsonschema
 
       - name: Validate database
         run: python3 scripts/validate.py
@@ -25,6 +25,14 @@ jobs:
           python3 controller_boards/gen.py
           python3 psu/gen.py
           git diff --exit-code
+
+      - name: Generated JSON Schemas are in sync
+        run: |
+          python3 scripts/gen_schema.py
+          git diff --exit-code
+
+      - name: Data validates against generated schemas
+        run: python3 scripts/gen_schema.py --validate
 
       - name: submit-hardware.sh syntax
         run: bash -n scripts/submit-hardware.sh

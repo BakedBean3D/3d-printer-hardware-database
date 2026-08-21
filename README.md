@@ -110,6 +110,8 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 
 Each hardware category has a defined set of fields, enforced by `scripts/validate.py` — the per-category required-field lists live at the top of that script. Run `python3 scripts/validate.py` to validate the whole database.
 
+Machine-readable JSON Schemas (draft 2020-12) for every category live in [`schema/`](schema/) — generated from `validate.py` by `scripts/gen_schema.py` (CI keeps them in sync; never hand-edited), so downstream consumers can validate without running this repo's tooling. They cover structure, types, and enums; the physics/plausibility gates only exist in `validate.py`.
+
 > **v2 field names:** as of v2.0.0 every weight field is `weight_g`, extruders use the `drive` enum + `type_detail`, and probe `type` is a controlled vocabulary. The `v1` git tag is the last release with the old field names (`weight`; free-text `type`).
 
 ### Motor fields

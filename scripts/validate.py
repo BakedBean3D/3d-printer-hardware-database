@@ -109,6 +109,33 @@ PROBE_TYPE_VALUES = {
     "contact", "contact_deploy", "contact_dock",
     "inductive", "inductive_dock", "eddy_current",
 }
+PSU_INTERFACE_VALUES = {"threaded_case", "clearance_ears"}
+
+# Declarative enum registry: category -> field -> (allowed values, null_ok).
+# The single source for both the runtime enum checks and the generated JSON
+# Schemas (scripts/gen_schema.py) — add enums here, not as ad-hoc checks.
+ENUM_FIELDS = {
+    "motors": {},
+    "hotends": {},
+    "extruders": {"drive": (EXTRUDER_DRIVE_VALUES, False)},
+    "probes": {"type": (PROBE_TYPE_VALUES, False)},
+    "toolheads": {},
+    "controller_boards": {
+        "mount_pattern": (CONTROLLER_MOUNT_PATTERN_VALUES, True),
+    },
+    "psu": {
+        "bottom_mount_pattern": (PSU_MOUNT_PATTERN_VALUES, True),
+        "side_mount_pattern": (PSU_MOUNT_PATTERN_VALUES, True),
+        # bottom_mount_interface: what the case-side holes physically are.
+        # A mount generator that threads into "clearance_ears" (UHP class)
+        # produces a part that cannot fasten at all — never guessed. The
+        # conditional rules (required when bottom_mount_screw is set;
+        # threaded_case requires a penetration depth) stay in check_physics.
+        "bottom_mount_interface": (PSU_INTERFACE_VALUES, True),
+    },
+}
+for _cat_enums in ENUM_FIELDS.values():
+    _cat_enums["confidence"] = (CONFIDENCE_VALUES, False)
 
 # Upper NEMA17 bound accommodates the heaviest real part in class: the LDO
 # Kraken 42STH60-3004AHS37 at 620 g / 60 mm body (10.3 g/mm, vendor spec).
@@ -417,13 +444,14 @@ def _check_hotend_physics(entry_id, filepath, entry):
 def check_physics(entry_id, filepath, entry, category):
     """Category-specific geometric sanity. Errors here mean the record cannot
     describe a real part, regardless of what the source drawing said."""
-    errors = _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
+    errors = 0
+    for field, (allowed, null_ok) in ENUM_FIELDS.get(category, {}).items():
+        errors += _check_enum(entry_id, filepath, entry, field, allowed, null_ok=null_ok)
     errors += _check_confidence_provenance(entry_id, filepath, entry)
     if category == "controller_boards":
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",
                                      "pcb_length_mm", "pcb_width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "mount_")
-        errors += _check_enum(entry_id, filepath, entry, "mount_pattern", CONTROLLER_MOUNT_PATTERN_VALUES)
         for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
                     "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
             v = _num(entry, key)
@@ -435,17 +463,11 @@ def check_physics(entry_id, filepath, entry, category):
                                      "length_mm", "width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
         errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
-        errors += _check_enum(entry_id, filepath, entry, "bottom_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
-        errors += _check_enum(entry_id, filepath, entry, "side_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
-        # bottom_mount_interface: what the case-side holes physically are.
-        # A record with a bottom screw size MUST declare it — a mount
-        # generator that threads into "clearance_ears" (UHP class) produces
-        # a part that cannot fasten at all, so this may never be guessed.
+        # bottom_mount_interface conditional rules (the value enum itself is
+        # covered by ENUM_FIELDS): a record with a bottom screw size MUST
+        # declare the interface, and a threaded case needs a safety depth.
         iface = entry.get("bottom_mount_interface")
         tag = f"{filepath}[{entry_id}].bottom_mount_interface"
-        if iface not in ("threaded_case", "clearance_ears", None):
-            print(f"  BAD INTERFACE VALUE: {tag}={iface!r}")
-            errors += 1
         if entry.get("bottom_mount_screw") is not None and iface is None:
             print(f"  MISSING INTERFACE: {tag} must be declared when "
                   "bottom_mount_screw is set")
@@ -470,10 +492,6 @@ def check_physics(entry_id, filepath, entry, category):
                 errors += 1
     elif category == "motors":
         errors += _check_motor_physics(entry_id, filepath, entry)
-    elif category == "extruders":
-        errors += _check_enum(entry_id, filepath, entry, "drive", EXTRUDER_DRIVE_VALUES, null_ok=False)
-    elif category == "probes":
-        errors += _check_enum(entry_id, filepath, entry, "type", PROBE_TYPE_VALUES, null_ok=False)
     elif category == "hotends":
         errors += _check_hotend_physics(entry_id, filepath, entry)
     return errors
