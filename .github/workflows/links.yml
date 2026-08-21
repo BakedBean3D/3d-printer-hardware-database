@@ -1,0 +1,42 @@
+name: link-check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    # Informational only — must never block merges.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Check links
+        run: python3 scripts/check_links.py --output dead-links.md
+
+      - name: Open or update the dead-links issue
+        if: ${{ hashFiles('dead-links.md') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Dead citation links (weekly check)"
+          existing=$(gh issue list --state open --search "in:title \"$title\"" \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file dead-links.md
+          else
+            gh issue create --title "$title" --body-file dead-links.md
+          fi
