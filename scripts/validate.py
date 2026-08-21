@@ -34,31 +34,34 @@ class StrictLoader(yaml.SafeLoader):
 MOTOR_REQUIRED = [
     "id", "name", "manufacturer", "frame_size", "body_length_mm",
     "rated_current_amps", "recommended_run_current", "holding_torque_ncm",
-    "inductance_mh", "resistance_ohms", "step_angle", "weight", "tooth_count", "notes",
+    "inductance_mh", "resistance_ohms", "step_angle", "weight", "tooth_count",
+    "confidence", "notes",
 ]
 
 HOTEND_REQUIRED = [
     "id", "name", "manufacturer", "meltzone_length", "max_volumetric_flow",
     "max_temp", "recommended_temp_pla", "recommended_temp_abs",
-    "recommended_temp_petg", "nozzle_thread", "weight", "recommended_max_speed", "notes",
+    "recommended_temp_petg", "nozzle_thread", "weight", "recommended_max_speed",
+    "confidence", "notes",
 ]
 
 EXTRUDER_REQUIRED = [
     "id", "name", "manufacturer", "type", "gear_ratio",
     "rotation_distance", "uses_gear_ratio_in_config", "motor", "motor_current",
     "max_speed", "max_accel", "weight", "filament_path_length",
-    "recommended_pressure_advance", "notes",
+    "recommended_pressure_advance", "confidence", "notes",
 ]
 
 PROBE_REQUIRED = [
     "id", "name", "type", "accuracy", "repeatability", "z_offset_typical",
-    "speed", "samples", "sample_retract_dist", "scanning_capable", "notes",
+    "speed", "samples", "sample_retract_dist", "scanning_capable", "confidence", "notes",
 ]
 
 TOOLHEAD_REQUIRED = [
     "id", "name", "manufacturer", "compatible_extruders", "compatible_hotends",
     "compatible_printer_types", "weight", "fan_config", "part_cooling_cfm",
-    "supports_neopixels", "supports_klicky", "supports_tap", "mounting_method", "notes",
+    "supports_neopixels", "supports_klicky", "supports_tap", "mounting_method",
+    "confidence", "notes",
 ]
 
 # Controller / toolhead / SBC / accessory PCB mounting dimensions.
@@ -124,7 +127,7 @@ _T_STR, _T_NUM, _T_INT, _T_BOOL, _T_LIST = "string", "number", "integer", "bool"
 
 MOTOR_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "frame_size": _T_STR,
-    "notes": _T_STR, "datasheet_url": _T_STR,
+    "notes": _T_STR, "datasheet_url": _T_STR, "confidence": _T_STR,
     "body_length_mm": _T_NUM, "rated_current_amps": _T_NUM,
     "recommended_run_current": _T_NUM, "holding_torque_ncm": _T_NUM,
     "inductance_mh": _T_NUM, "resistance_ohms": _T_NUM, "step_angle": _T_NUM,
@@ -133,7 +136,7 @@ MOTOR_FIELD_TYPES = {
 
 HOTEND_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR,
-    "nozzle_thread": _T_STR, "notes": _T_STR,
+    "nozzle_thread": _T_STR, "notes": _T_STR, "confidence": _T_STR,
     "meltzone_length": _T_NUM, "max_volumetric_flow": _T_NUM, "max_temp": _T_NUM,
     "recommended_temp_pla": _T_NUM, "recommended_temp_abs": _T_NUM,
     "recommended_temp_petg": _T_NUM, "weight": _T_NUM, "recommended_max_speed": _T_NUM,
@@ -142,6 +145,7 @@ HOTEND_FIELD_TYPES = {
 EXTRUDER_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "type": _T_STR,
     "gear_ratio": _T_STR, "motor": _T_STR, "motor_id": _T_STR, "notes": _T_STR,
+    "confidence": _T_STR,
     "rotation_distance": _T_NUM, "motor_current": _T_NUM, "max_speed": _T_NUM,
     "max_accel": _T_NUM, "weight": _T_NUM, "filament_path_length": _T_NUM,
     "recommended_pressure_advance": _T_NUM,
@@ -150,7 +154,7 @@ EXTRUDER_FIELD_TYPES = {
 
 PROBE_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "type": _T_STR,
-    "notes": _T_STR,
+    "notes": _T_STR, "confidence": _T_STR,
     "accuracy": _T_NUM, "repeatability": _T_NUM, "z_offset_typical": _T_NUM,
     "speed": _T_NUM, "sample_retract_dist": _T_NUM,
     "samples": _T_INT, "scanning_capable": _T_BOOL,
@@ -158,7 +162,7 @@ PROBE_FIELD_TYPES = {
 
 TOOLHEAD_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "fan_config": _T_STR,
-    "mounting_method": _T_STR, "notes": _T_STR,
+    "mounting_method": _T_STR, "notes": _T_STR, "confidence": _T_STR,
     "compatible_extruders": _T_LIST, "compatible_hotends": _T_LIST,
     "compatible_printer_types": _T_LIST,
     "weight": _T_NUM, "part_cooling_cfm": _T_NUM,
@@ -297,6 +301,23 @@ def _check_enum(entry_id, filepath, entry, key, allowed, null_ok=True):
     return 0
 
 
+def _check_confidence_provenance(entry_id, filepath, entry):
+    """confidence: high claims a primary source — require a URL somewhere the
+    schema can carry one (datasheet_url, sources, or notes). An entry whose
+    provenance is a vague citation can be at most medium."""
+    if entry.get("confidence") != "high":
+        return 0
+    for key in ("datasheet_url", "sources", "notes"):
+        v = entry.get(key)
+        if isinstance(v, str) and "http" in v:
+            return 0
+        if isinstance(v, list) and any(isinstance(x, str) and "http" in x for x in v):
+            return 0
+    print(f"  UNSOURCED HIGH CONFIDENCE: {filepath}[{entry_id}] confidence=high "
+          "requires an http(s) URL in datasheet_url/sources/notes")
+    return 1
+
+
 def _check_motor_physics(entry_id, filepath, entry):
     """Stepper motor sanity: positive physical/electrical fields, a valid
     step angle, and a plausible weight-per-mm-of-body-length for the frame
@@ -363,12 +384,12 @@ def _check_hotend_physics(entry_id, filepath, entry):
 def check_physics(entry_id, filepath, entry, category):
     """Category-specific geometric sanity. Errors here mean the record cannot
     describe a real part, regardless of what the source drawing said."""
-    errors = 0
+    errors = _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
+    errors += _check_confidence_provenance(entry_id, filepath, entry)
     if category == "controller_boards":
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",
                                      "pcb_length_mm", "pcb_width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "mount_")
-        errors += _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
         errors += _check_enum(entry_id, filepath, entry, "mount_pattern", CONTROLLER_MOUNT_PATTERN_VALUES)
         for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
                     "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
@@ -381,7 +402,6 @@ def check_physics(entry_id, filepath, entry, category):
                                      "length_mm", "width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
         errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
-        errors += _check_enum(entry_id, filepath, entry, "confidence", CONFIDENCE_VALUES, null_ok=False)
         errors += _check_enum(entry_id, filepath, entry, "bottom_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
         errors += _check_enum(entry_id, filepath, entry, "side_mount_pattern", PSU_MOUNT_PATTERN_VALUES)
         # bottom_mount_interface: what the case-side holes physically are.

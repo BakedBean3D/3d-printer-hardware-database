@@ -128,6 +128,7 @@ Each hardware category has a defined set of fields, enforced by `scripts/validat
 | `weight` | int | Weight in grams |
 | `tooth_count` | int | Integrated pinion teeth (0 = none) |
 | `datasheet_url` | string | Link to manufacturer datasheet |
+| `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |
 | `notes` | string | Verification source and usage context |
 
 ## Safety Notice
@@ -138,6 +139,17 @@ This data is used to configure expensive 3D printers. Incorrect motor currents c
 - Manufacturer datasheet (Tier 1)
 - Trusted retailer tested (Tier 2)
 - Community tested / estimated (Tier 3)
+
+### Confidence tiers
+
+Every entry in every category carries a required `confidence` field summarizing
+the provenance of its key values (the validator enforces the enum):
+
+| Value | Meaning |
+|-------|---------|
+| `high` | Key values cite a manufacturer datasheet, official drawing, or the design's official repo/docs; a source URL is required (`datasheet_url`, `sources`, or a link in `notes` — enforced) |
+| `medium` | Trusted-retailer specs, or official sources with some key values estimated/uncited |
+| `low` | Community spreadsheet, unverified, or estimated values — re-verify before trusting in CAD or config |
 
 ## Motor Current Convention
 

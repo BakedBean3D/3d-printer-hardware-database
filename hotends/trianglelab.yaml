@@ -13,6 +13,7 @@
   nozzle_thread: M6
   weight: 16.8
   recommended_max_speed: 160
+  confidence: low
   notes: |-
     Ceramic heater core, 145W. Max flow 32mm³/s from community testing (MakerMe Blog). Users report >30mm³/s sustained. Ref: makerme.blog/chc-or-rapido
 - id: dragon_ace
@@ -27,6 +28,7 @@
   nozzle_thread: M6
   weight: 42.0
   recommended_max_speed: 200
+  confidence: medium
   notes: |-
     Trianglelab/Phaetus collab. 82W ceramic pad heater, titanium heatbreak. ~40mm³/s stock (from retailer specs), up to ~74mm³/s with optional MZE accessory (40mm meltzone). V6 compatible. Ref: trianglelab.net/products/dragon-ace, west3d.com/products/dragon-ace-hot-end
 - id: chc_xl
@@ -41,5 +43,6 @@
   nozzle_thread: M6
   weight: 48.0
   recommended_max_speed: 250
+  confidence: low
   notes: |-
     Extended meltzone CHC variant. 128W ceramic MCH heater, PT1000 sensor. Air-cooled and liquid-cooled versions. Weight 48g verified. Meltzone ~40mm estimated. Flow ~49mm³/s estimated. Max temp ~300°C estimated. Ref: trianglelab.net, west3d.com, geekbuying.com

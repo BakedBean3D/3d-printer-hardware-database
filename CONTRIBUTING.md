@@ -36,6 +36,12 @@ The `notes` field must include a verification source. Tier hierarchy:
 
 Unverified entries are accepted but must be clearly marked.
 
+Every entry also carries a required `confidence` field mapping to those tiers:
+`high` (Tier 1 — must include a source URL in `datasheet_url`, `sources`, or
+`notes`; the validator enforces this), `medium` (Tier 2, or Tier 1 with some
+values estimated), `low` (Tier 3 / unverified). Set it honestly — `low` entries
+form the re-verification backlog and downstream consumers filter on it.
+
 ### Motor-Specific Guidelines
 
 - **Current is always RMS**, not peak (Peak = RMS x 1.414)

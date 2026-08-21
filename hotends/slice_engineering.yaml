@@ -13,8 +13,9 @@
   nozzle_thread: M6
   weight: 12.0
   recommended_max_speed: 120
+  confidence: high
   notes: |-
-    Compact and lightweight. Max flow 20mm³/s verified from Slice Engineering support. Excellent thermal isolation. Ref: sliceengineering.com
+    Compact and lightweight. Max flow 20mm³/s verified from Slice Engineering support. Excellent thermal isolation. Ref: https://sliceengineering.com
 - id: mosquito_magnum_plus
   name: Mosquito Magnum+
   manufacturer: Slice Engineering
@@ -27,8 +28,9 @@
   nozzle_thread: M6 (RepRap, 7mm thread, 12.5mm overall)
   weight: 55.0
   recommended_max_speed: 300
+  confidence: high
   notes: |-
-    Ultra high flow. Filament contacts hot block directly. Max flow 88mm³/s (PLA), 91mm³/s (ABS) from manufacturer. Air, Liquid, and Conduction cooling variants. Ref: sliceengineering.com/products/mosquito-magnum-plus
+    Ultra high flow. Filament contacts hot block directly. Max flow 88mm³/s (PLA), 91mm³/s (ABS) from manufacturer. Air, Liquid, and Conduction cooling variants. Ref: https://sliceengineering.com/products/mosquito-magnum-plus
 - id: mosquito_magnum
   name: Mosquito Magnum
   manufacturer: Slice Engineering
@@ -41,5 +43,6 @@
   nozzle_thread: M6 (RepRap, 7mm thread, 12.5mm overall)
   weight: 45.0
   recommended_max_speed: 200
+  confidence: high
   notes: |-
-    Extended melt zone Mosquito. Max flow ~40mm³/s from Slice Engineering support page. Predecessor to Magnum+. Ref: sliceengineering.com/products/mosquito-magnum-hotend, filastruder.com
+    Extended melt zone Mosquito. Max flow ~40mm³/s from Slice Engineering support page. Predecessor to Magnum+. Ref: https://sliceengineering.com/products/mosquito-magnum-hotend, filastruder.com

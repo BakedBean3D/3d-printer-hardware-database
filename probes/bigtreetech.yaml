@@ -11,6 +11,7 @@
   speed: 5
   samples: 3
   sample_retract_dist: 2.0
+  confidence: medium
   notes: |-
     Budget eddy current probe from BigTreeTech. USB and coil variants. Klipper/Kalico native support. No mechanical contact with bed. Ref: bigtreetech.com, github.com/bigtreetech/Eddy
   manufacturer: BigTreeTech

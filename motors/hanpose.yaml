@@ -14,5 +14,6 @@
   step_angle: 1.8
   weight: 450
   tooth_count: 0
+  confidence: medium
   notes: |-
     Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Weight corrected to ~450 g (previous 120 g value was implausible/an import error): no official Hanpose datasheet found, but 450 g is corroborated by multiple retailer listings for this SKU (e.g. Alibaba/HIT.PS) and matches the standard reference weight for a 41mm-body NEMA23 motor (~450 g per StepperOnline/LDO NEMA23 41mm class).

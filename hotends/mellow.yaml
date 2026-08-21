@@ -13,5 +13,6 @@
   nozzle_thread: M6
   weight: 15.5
   recommended_max_speed: 150
+  confidence: low
   notes: |-
     Budget Dragon HF clone by Mellow/Trianglelab. Max flow ~28mm³/s estimated (Dragon HF class). Bi-metal heatbreak, Dragon mounting. Ref: trianglelab.net

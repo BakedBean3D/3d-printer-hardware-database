@@ -13,5 +13,6 @@
   nozzle_thread: M6
   weight: 14.5
   recommended_max_speed: 200
+  confidence: medium
   notes: |-
     Water-cooled ceramic hotend. Max flow 40mm³/s from retailer specs. 30% increased melt zone, 40s to 200°C. Ref: 3djake.com/creality/spider

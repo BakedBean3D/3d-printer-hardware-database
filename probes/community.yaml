@@ -11,8 +11,9 @@
   speed: 5
   samples: 3
   sample_retract_dist: 2.0
+  confidence: high
   notes: |-
-    Magnetically docked microswitch probe. Accuracy <0.025mm, repeatability 0.010mm std dev verified. Z-offset ~estimated (varies by mount). Speed 2-10mm/s. Ref: github.com/jlas1/Klicky-Probe
+    Magnetically docked microswitch probe. Accuracy <0.025mm, repeatability 0.010mm std dev verified. Z-offset ~estimated (varies by mount). Speed 2-10mm/s. Ref: https://github.com/jlas1/Klicky-Probe
   manufacturer: Community
 - id: euclid
   name: Euclid Probe
@@ -24,6 +25,7 @@
   speed: 10
   samples: 5
   sample_retract_dist: 2.0
+  confidence: medium
   notes: |-
     Open-source dock-mounted inductive probe. Magnetically attaches/detaches via dock. No wires to toolhead — PCB-based contact. Popular on Voron builds before TAP/eddy probes. Ref: euclidprobe.github.io
   manufacturer: Community

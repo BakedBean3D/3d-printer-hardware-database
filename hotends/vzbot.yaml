@@ -13,5 +13,6 @@
   nozzle_thread: M6
   weight: 22.0
   recommended_max_speed: 300
+  confidence: high
   notes: |-
-    Extreme high flow (100-130mm³/s+) verified from VzBoT official docs. Purpose-built for speed benchies. Ref: docs.vzbot.org/goliath
+    Extreme high flow (100-130mm³/s+) verified from VzBoT official docs. Purpose-built for speed benchies. Ref: https://docs.vzbot.org/goliath

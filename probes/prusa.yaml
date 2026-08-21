@@ -12,5 +12,6 @@
   speed: 5
   samples: 3
   sample_retract_dist: 2.0
+  confidence: medium
   notes: |-
     Inductive probe with temperature compensation (thermistor-corrected Z drift). Popular on RatRig VCore builds. Accuracy ~0.01mm. Temp compensation reduces Z drift from ~0.1mm/10°C to <0.02mm/10°C. Verified from Prusa datasheet and community testing on RatRig builds.

@@ -14,6 +14,7 @@
   step_angle: 1.8
   weight: 140
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS10-0404S.pdf; weight 140 g per StepperOnline product spec table (Weight: 140g) (previous 12 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS10-0404S.pdf
@@ -30,6 +31,7 @@
   step_angle: 1.8
   weight: 170
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 0.8A RMS. Run current 0.4A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS13-0804S.pdf; weight 170 g per StepperOnline product spec table (Weight: 170g) (previous 14 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS13-0804S.pdf
@@ -46,6 +48,7 @@
   step_angle: 1.8
   weight: 200
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 0.5A RMS. Run current 0.25A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS17-0504S.pdf; weight 200 g per StepperOnline product spec table (Weight: 200g) (previous 18 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS17-0504S.pdf
@@ -62,6 +65,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Common use: V0.1 AB. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/14HS20-1504S.pdf; weight 350 g per StepperOnline product spec table (Weight: 350g) (previous 54 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/14HS20-1504S.pdf
@@ -78,6 +82,7 @@
   step_angle: 0.9
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-1684S.pdf; weight 350 g per StepperOnline product spec table (Weight: 350g) (previous 68 g value was an import error, matching this motor's ~68 g·cm² rotor inertia, mistaken for weight)
   datasheet_url: https://www.omc-stepperonline.com/download/17HM19-1684S.pdf
@@ -94,6 +99,7 @@
   step_angle: 0.9
   weight: 370
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HM19-2004S.pdf; weight 370 g per StepperOnline product spec table (Weight: 370g net, 0.45kg gross incl. packaging) (previous 82 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HM19-2004S.pdf
@@ -110,6 +116,7 @@
   step_angle: 1.8
   weight: 140
   tooth_count: 0
+  confidence: medium
   notes: |-
     Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Weight corrected to 140 g (previous 22 g value was implausible/an import error); sourced from StepperOnline product spec table for 17HS08-1004S (Weight: 140g).
 - id: omc_17hs13_0404s1
@@ -125,6 +132,7 @@
   step_angle: 1.8
   weight: 230
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 0.4A RMS. Run current 0.2A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf; weight 230 g per StepperOnline product spec table (Weight: 230g) (previous 38 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf
@@ -141,6 +149,7 @@
   step_angle: 1.8
   weight: 310
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS16-2004S1.pdf; weight 310 g per StepperOnline product spec table (Weight: 310g) (previous 54 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS16-2004S1.pdf
@@ -157,6 +166,7 @@
   step_angle: 1.8
   weight: 390
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://www.omc-stepperonline.com/download/17HS19-2004S1.pdf; weight 390 g per StepperOnline product spec table (Weight: 390g) (previous 82 g value was an import error)
   datasheet_url: https://www.omc-stepperonline.com/download/17HS19-2004S1.pdf
@@ -173,5 +183,6 @@
   step_angle: 1.8
   weight: 500
   tooth_count: 0
+  confidence: medium
   notes: |-
     Rated 2.1A RMS. Run current 1.05A (50% rated, conservative start). Weight corrected to 500 g (previous 148 g value was implausible/an import error); sourced from StepperOnline product spec table for 17HS24-2104S (Weight: 500g).

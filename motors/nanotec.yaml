@@ -14,6 +14,7 @@
   step_angle: 0.9
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://en.nanotec.com/fileadmin/files/Datenblaetter/Schrittmotoren/ST4209/L/ST4209L1704-A.pdf; weight 350 g per Nanotec's official ST4209L1704-A datasheet, WEIGHT (Kg) [lb] field = 0.35 [0.77] (previous 68 g value was an import error, matching the datasheet's unrelated Rotor Inertia figure)
   datasheet_url: |-

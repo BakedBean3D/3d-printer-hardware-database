@@ -14,6 +14,7 @@
   step_angle: 1.8
   weight: 85
   tooth_count: 0
+  confidence: medium
   notes: |-
     Standard Voron extruder motor. Rated 1.0A from part number. Run current 0.5A (Voron CW2 config) or 0.85A (Orbiter v2). Holding torque ~14 N·cm (estimated from NEMA14 20mm class). Ref: Voron Design GitHub configs, LDO part number decoding; weight 85g confirmed plausible per HT-LDO-36STH20-1004AHGXH-RevA.pdf official datasheet for the same 36STH20 20mm-body family (Weight 85g REF)
 - id: ldo_36sth17_1004ahg
@@ -29,6 +30,7 @@
   step_angle: 1.8
   weight: 70
   tooth_count: 0
+  confidence: medium
   notes: |-
     Shorter NEMA14 for compact extruders. Rated 1.0A from part number. Run current 0.35A RMS (max 0.5A) verified for Orbiter v1.5. Holding torque ~10 N·cm (estimated, shorter body). Ref: Spool3D retailer, HARDWARE_SPEC_SOURCES.md; weight 70 g per LDO-36STH17-1004AHG_RevA.pdf official datasheet (Weight 70g REF)
 - id: ldo_36sth20_1004ahig_6t
@@ -44,6 +46,7 @@
   step_angle: 1.8
   weight: 70
   tooth_count: 6
+  confidence: medium
   notes: |-
     Integrated 6-tooth pinion for Sherpa Mini. Same base motor as 36STH20-1004AHG. Run current 0.65A (recommended 0.6-0.7A). Weight 70g (motor only). Holding torque ~14 N·cm (estimated). Ref: 3DO.dk retailer, Annex GitHub
 - id: ldo_36sth20_1004ahg_9t
@@ -59,6 +62,7 @@
   step_angle: 1.8
   weight: 85
   tooth_count: 9
+  confidence: medium
   notes: |-
     Custom 9-tooth pinion for Galileo 2 extruder. Same base motor as 36STH20-1004AHG. Run current 0.6A. Holding torque ~14 N·cm (estimated). Ref: West3D product page, JaredC01/Galileo2 GitHub; weight 85g confirmed plausible per HT-LDO-36STH20-1004AHGXH-RevA.pdf official datasheet for the same 36STH20 20mm-body family (Weight 85g REF)
 - id: ldo_42sth20_1004ash_ig7t
@@ -74,6 +78,7 @@
   step_angle: 1.8
   weight: 127
   tooth_count: 7
+  confidence: medium
   notes: |-
     NEMA17 Super Slim with 7-tooth pinion for Sherpa Heavy. Run current 1.0A RMS (corrected from 1.2A). Weight 127g. Holding torque ~18 N·cm (estimated). Ref: KB-3D retailer (kb-3d.com), Annex GitHub; weight confirmed 127g per LDO-42STH20-1004ASHVRN-RevA.pdf official datasheet (Weight 127g REF)
 - id: ldo_42sth48_2004mah
@@ -89,6 +94,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: medium
   notes: |-
     Voron 2.4/Trident XY standard. Rated 2.0A from part number. Run current 1.4A (~70% rated). MAH = high-temp insulation for enclosures. Holding torque ~59 N·cm (estimated from NEMA17 48mm class). Ref: Voron BOM, LDO Voron kit; weight corrected to 350 g per official LDO 42STH48mm-body datasheets (0.35 Kg REF, confirmed across LDO-42STH48-1684MAH, -2004AH, -2004AC(VRN) RevA sheets)
 - id: ldo_42sth48_2004ac
@@ -104,6 +110,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: medium
   notes: |-
     Voron 2.4/Trident Z motors. Same specs as 2004MAH but AC connector variant. Run current 0.8-1.0A for Z axis (lower load). Holding torque ~59 N·cm (estimated). Ref: Voron BOM, LDO Voron kit; weight corrected to 350 g per official LDO 42STH48mm-body datasheets (0.35 Kg REF, confirmed across LDO-42STH48-1684MAH, -2004AH, -2004AC(VRN) RevA sheets)
 - id: ldo_35sth52_1504ah
@@ -119,6 +126,7 @@
   step_angle: 1.8
   weight: 290
   tooth_count: 0
+  confidence: medium
   notes: |-
     Voron 0.2 XY/Z motor. 35mm slim frame (non-standard). Rated 1.5A from part number. Run current 0.6-1.0A (application-dependent). Holding torque ~35 N·cm (estimated). Ref: Voron 0.2 BOM, LDO V0 kit; weight corrected to 290 g per LDO-35STH52-1504AHVRN_RevA official datasheet (Weight 0.29 Kg REF), cross-confirmed by kb-3d.com spec listing (290g)
 - id: ldo_42sth40_1684mac
@@ -134,6 +142,7 @@
   step_angle: 1.8
   weight: 280
   tooth_count: 0
+  confidence: medium
   notes: |-
     VCore / V-Minion XY motor. Rated 1.68A from part number. Run current 1.2A (~71% rated). MAC = high-temp + connector. Holding torque ~45 N·cm (estimated from NEMA17 40mm class). Ref: RatRig BOM; weight corrected to 280 g per official LDO 42STH40mm-body datasheets (0.28 Kg REF, confirmed across LDO-42STH38-1684MAC, -42STH40-1004MAHVRN, -42STH40-2004MAHVRN RevA sheets)
 - id: ldo_42sth40_1684ac
@@ -149,6 +158,7 @@
   step_angle: 1.8
   weight: 280
   tooth_count: 0
+  confidence: medium
   notes: |-
     VCore / V-Minion Z motor. Same specs as 1684MAC but standard connector. Run current 0.8A for Z axis. Holding torque ~45 N·cm (estimated). Ref: RatRig BOM; weight corrected to 280 g per official LDO 42STH40mm-body datasheets (0.28 Kg REF, confirmed across LDO-42STH38-1684MAC, -42STH40-1004MAHVRN, -42STH40-2004MAHVRN RevA sheets)
 - id: ldo_42sth40_1684l
@@ -164,6 +174,7 @@
   step_angle: 1.8
   weight: 280
   tooth_count: 0
+  confidence: medium
   notes: |-
     Annex K-series motor. L = long cable variant. Rated 1.68A from part number. Run current 0.9-1.2A (application-dependent). Holding torque ~45 N·cm (estimated). Ref: Annex Engineering BOM; weight corrected to 280 g per official LDO 42STH40mm-body datasheets (0.28 Kg REF, confirmed across LDO-42STH38-1684MAC, -42STH40-1004MAHVRN, -42STH40-2004MAHVRN RevA sheets)
 - id: ldo_35sth48_1504ahvrn
@@ -179,6 +190,7 @@
   step_angle: 1.8
   weight: 290
   tooth_count: 0
+  confidence: low
   notes: |-
     Common use: V0.1 AB LDO. Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 290 g — previous value (51) was the rotor inertia (51.8 g·cm²) mistakenly entered as weight; per LDO-35STH52-1504AHVRN_RevA official datasheet (Weight 0.29 Kg REF, Rotor Inertia 51.8 g·cm² REF), which matches this part number
 - id: ldo_35sth48_1684ahvrn
@@ -194,6 +206,7 @@
   step_angle: 1.8
   weight: 260
   tooth_count: 0
+  confidence: low
   notes: |-
     Common use: V0.1 AB. Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected — previous value (49) implausible for a 48mm-body NEMA14 motor. No model-specific datasheet found; 260 g is interpolated from same-family LDO-35STH52-1504AHVRN_RevA (52mm body, 290g REF, official datasheet) and LDO-35STH52-2004AH(S35) (52mm body, 280g per onetwo3d.co.uk technical-spec listing), scaled down slightly for the shorter 48mm body — treat as an estimate, not a directly sourced value
 - id: ldo_36sth20_1004ahgxh
@@ -209,6 +222,7 @@
   step_angle: 1.8
   weight: 85
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 85 g — previous value (16) was the rotor inertia (16 g·cm²) mistakenly entered as weight; per HT-LDO-36STH20-1004AHGXH-RevA.pdf official datasheet (Weight 85g REF, Rotor Inertia 16 g·cm² REF), which is this exact part number
 - id: ldo_42sth20_1004ash
@@ -224,6 +238,7 @@
   step_angle: 1.8
   weight: 127
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH20-1004ASHVRN-RevA.pdf?v=1595617057; weight corrected to 127 g — previous value (21) was the rotor inertia (21.4 g·cm²) mistakenly entered as weight; datasheet states Weight 127g REF
   datasheet_url: |-
@@ -241,6 +256,7 @@
   step_angle: 0.9
   weight: 280
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH38-1684MAC_TIM_RevA.pdf?175; weight corrected to 280 g — previous value (54) was the rotor inertia (54 g·cm²) mistakenly entered as weight; datasheet states Weight 0.28 Kg REF
   datasheet_url: |-
@@ -258,6 +274,7 @@
   step_angle: 0.9
   weight: 280
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.0A RMS. Run current 0.5A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH40-1004MAHVRN-RevA.pdf?v=1595617094; weight corrected to 280 g — previous value (62) was the rotor inertia (62 g·cm²) mistakenly entered as weight; datasheet states Weight 0.28 Kg REF
   datasheet_url: |-
@@ -275,6 +292,7 @@
   step_angle: 0.9
   weight: 280
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH40-2004MAH_VRN_RevA.pdf?v=1603743058; weight corrected to 280 g — previous value (71) was the rotor inertia (71 g·cm²) mistakenly entered as weight; datasheet states Weight 0.28 Kg REF
   datasheet_url: |-
@@ -292,6 +310,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH47-1684AC_TIM_RevA.pdf?173; weight corrected to 350 g — previous value (68) was the rotor inertia (68 g·cm²) mistakenly entered as weight; datasheet states Weight 0.35 Kg REF
   datasheet_url: |-
@@ -309,6 +328,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -47STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_42sth48_1684mah
@@ -324,6 +344,7 @@
   step_angle: 0.9
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 1.68A RMS. Run current 0.84A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH48-1684MAH_RevA.pdf?v=1586025853; weight corrected to 350 g — previous value (68) was the rotor inertia (68 g·cm²) mistakenly entered as weight; datasheet states Weight 0.35 Kg REF
   datasheet_url: |-
@@ -341,6 +362,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004ACVRN-RevA.pdf?v=1595616528; weight corrected to 350 g — previous value (85) was the rotor inertia (85 g·cm²) mistakenly entered as weight; datasheet states Weight 0.35 Kg REF
   datasheet_url: |-
@@ -358,6 +380,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-42STH48-2004AH-RevA.pdf?v=1589946895; weight corrected to 350 g — previous value (68) was the rotor inertia (68 g·cm²) mistakenly entered as weight; datasheet states Weight 0.35 Kg REF
   datasheet_url: |-
@@ -375,6 +398,7 @@
   step_angle: 0.9
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (68) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_42sth48_2504ac
@@ -390,6 +414,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_42sth48_2504ah
@@ -405,6 +430,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_42sth60_2004ah
@@ -420,6 +446,7 @@
   step_angle: 1.8
   weight: 500
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004AH_51147be9-9853-4b4e-b6fd-36fb104d4b4d.pdf?v=1586025853; weight corrected to 500 g — previous value (102) was the rotor inertia (102 g·cm²) mistakenly entered as weight; datasheet states Weight 0.5 Kg REF
   datasheet_url: |-
@@ -437,6 +464,7 @@
   step_angle: 0.9
   weight: 500
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0239/9287/files/LDO-42STH60-2004MAC_RC_RevB.pdf?v=1585856919; weight corrected to 500 g — previous value (120) was the rotor inertia (120 g·cm²) mistakenly entered as weight; datasheet states Weight 0.5 Kg REF
   datasheet_url: |-
@@ -454,6 +482,7 @@
   step_angle: 0.9
   weight: 500
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/HT_LDO-42STH60-2004MAH_RevA.pdf?v=1610998067; weight corrected to 500 g — previous value (120) was the rotor inertia (120 g·cm²) mistakenly entered as weight; datasheet states Weight 0.5 Kg REF
   datasheet_url: |-
@@ -471,6 +500,7 @@
   step_angle: 0.9
   weight: 450
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: https://caribou3d.com/en/hevort/844-09-stepper-motor-ldo-57sth41-2804machev.html; weight corrected to 450 g — previous value (120) was the rotor inertia (120 g·cm²) mistakenly entered as weight; per official LDO-57STH_Info_Sheet.pdf (41mm body row: Rotor Inertia 120 g·cm², Approx. Weight 0.45 Kg REF), corroborated by independent web listings (~450g)
   datasheet_url: https://caribou3d.com/en/hevort/844-09-stepper-motor-ldo-57sth41-2804machev.html
@@ -487,6 +517,7 @@
   step_angle: 0.9
   weight: 650
   tooth_count: 0
+  confidence: high
   notes: |-
     Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: https://cdn.shopify.com/s/files/1/0887/0138/files/LDO-57STH56-2804MAC_RC_RevA.pdf?3654; weight corrected to 650 g — previous value (305) was the rotor inertia (305 g·cm²) mistakenly entered as weight; datasheet states Weight 0.65 Kg REF
   datasheet_url: |-
@@ -504,6 +535,7 @@
   step_angle: 0.9
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (85) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_42sth60_3004ahs37
@@ -519,6 +551,7 @@
   step_angle: 1.8
   weight: 620
   tooth_count: 0
+  confidence: medium
   notes: |-
     Common use: V2 Kraken. Rated 3.0A RMS. Run current 1.5A (50% rated, conservative start). Ref: https://www.ldomotors.com; weight corrected to 620 g — previous value (100) was implausible for a 60mm-body NEMA17 (likely a rotor-inertia mixup, matching the ~102 g·cm² rotor inertia of same-class 60mm motors); per onetwo3d.co.uk product listing for Kraken LDO-42STH60-3004AH(S37) (Weight: 0.62 kg), cross-checked against the 60mm-body NEMA17 family baseline of 500g (0.5 Kg REF, LDO 42STH Info Sheet) — the higher-current Kraken winding plausibly runs somewhat heavier
   datasheet_url: https://www.ldomotors.com
@@ -535,6 +568,7 @@
   step_angle: 1.8
   weight: 350
   tooth_count: 0
+  confidence: low
   notes: |-
     Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
 - id: ldo_35sth52_2004ah
@@ -550,5 +584,6 @@
   step_angle: 1.8
   weight: 280
   tooth_count: 0
+  confidence: low
   notes: |-
     Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 280 g — previous value (40) was implausible for this NEMA14 motor class; per onetwo3d.co.uk technical-specifications listing for LDO-35STH52-2004AH(S35) (Weight: approximately 0.28 kg, distinct from the 0.34 kg "Additional information" shipping-weight field). body_length_mm corrected 35.0->52.0: 35STH52 = 35 mm frame, 52 mm body (cf. sibling 35STH52-1504AH)

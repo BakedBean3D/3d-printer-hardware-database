@@ -16,5 +16,6 @@
   weight: 340.0
   filament_path_length: 32.0
   recommended_pressure_advance: 0.04
+  confidence: medium
   notes: |-
     Creality's direct-drive extruder for Ender-3 S1/S1 Pro. Dual-gear, all-metal design. 3.5:1 gear ratio with integrated stepper. Max flow limited by hotend (~12mm³/s stock). Verified from Creality specs and community measurements.

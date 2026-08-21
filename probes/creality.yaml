@@ -12,5 +12,6 @@
   speed: 5
   samples: 3
   sample_retract_dist: 5.0
+  confidence: medium
   notes: |-
     BLTouch-compatible metal-pin probe by Creality. Uses strain gauge instead of hall effect. Accuracy ~0.02mm. More durable pin than BLTouch plastic. Verified from Creality product specs and community testing.

@@ -16,8 +16,9 @@
   weight: 145
   filament_path_length: 55
   recommended_pressure_advance: 0.05
+  confidence: high
   notes: |-
-    Standard Voron extruder. Rotation distance 22.6789511 verified from official Voron config. Motor current 0.5A for TMC2209. Ref: github.com/VoronDesign/Voron-Stealthburner
+    Standard Voron extruder. Rotation distance 22.6789511 verified from official Voron config. Motor current 0.5A for TMC2209. Ref: https://github.com/VoronDesign/Voron-Stealthburner
 - id: lgx_lite
   name: LGX Lite
   manufacturer: Bondtech
@@ -32,8 +33,9 @@
   weight: 150
   filament_path_length: 50
   recommended_pressure_advance: 0.04
+  confidence: high
   notes: |-
-    Lightweight high performance. Rotation distance 5.7 (or 55 with gear_ratio). E-steps 562@16µsteps. Current: 0.6-0.7A recommended (1.0A max). Weight 150g (V2). Ref: bondtech.se/lgx-lite
+    Lightweight high performance. Rotation distance 5.7 (or 55 with gear_ratio). E-steps 562@16µsteps. Current: 0.6-0.7A recommended (1.0A max). Weight 150g (V2). Ref: https://bondtech.se/lgx-lite
 - id: lgx
   name: LGX
   manufacturer: Bondtech
@@ -48,6 +50,7 @@
   weight: 180
   filament_path_length: 52
   recommended_pressure_advance: 0.035
+  confidence: low
   notes: |-
     More torque than Lite variant. Two-stage gear ratio 44:10, 37:17. Rotation distance 5.7 (or 55 with gear_ratio). Most specs estimated - limited official data. Ref: bondtech.se/lgx
 - id: lgx_ace
@@ -64,8 +67,9 @@
   weight: 135
   filament_path_length: 50
   recommended_pressure_advance: 0.04
+  confidence: high
   notes: |-
-    Redesigned LGX with improved gears and reduced weight (~135g vs LGX 180g). Drop-in replacement for LGX in most toolhead designs. Rotation distance 5.7 verified from Bondtech documentation (same gear ratio as LGX Lite). Motor current 0.6-0.8A recommended. Ref: bondtech.se/products/lgx-ace
+    Redesigned LGX with improved gears and reduced weight (~135g vs LGX 180g). Drop-in replacement for LGX in most toolhead designs. Rotation distance 5.7 verified from Bondtech documentation (same gear ratio as LGX Lite). Motor current 0.6-0.8A recommended. Ref: https://bondtech.se/products/lgx-ace
 - id: orbiter_v2
   name: Orbiter v2
   manufacturer: Orbiter
@@ -81,8 +85,9 @@
   weight: 140
   filament_path_length: 48
   recommended_pressure_advance: 0.03
+  confidence: high
   notes: |-
-    Very compact, excellent precision. Rotation distance 4.637 (690 steps/mm @16µsteps). Current: 0.85A RMS / 1.2A peak. PA 0.025-0.03 recommended. Ref: orbiterprojects.com/orbiter-v2-0
+    Very compact, excellent precision. Rotation distance 4.637 (690 steps/mm @16µsteps). Current: 0.85A RMS / 1.2A peak. PA 0.025-0.03 recommended. Ref: https://orbiterprojects.com/orbiter-v2-0
 - id: orbiter_v1_5
   name: Orbiter v1.5
   manufacturer: Orbiter
@@ -98,8 +103,9 @@
   weight: 140
   filament_path_length: 50
   recommended_pressure_advance: 0.035
+  confidence: high
   notes: |-
-    Previous generation, still widely used. Rotation distance 4.637. Current: 0.35A RMS rated, max 0.5A (not 0.85A). Weight 140g. Pushing force 7.7kg @7.5:1. Ref: thingiverse.com/thing:4725897
+    Previous generation, still widely used. Rotation distance 4.637. Current: 0.35A RMS rated, max 0.5A (not 0.85A). Weight 140g. Pushing force 7.7kg @7.5:1. Ref: https://thingiverse.com/thing:4725897
 - id: bmg
   name: BMG
   manufacturer: Bondtech
@@ -114,8 +120,9 @@
   weight: 75
   filament_path_length: 60
   recommended_pressure_advance: 0.05
+  confidence: high
   notes: |-
-    Classic design, widely cloned. Gear ratio 50:17 (3:1 internal). E-steps 415 steps/mm @16µsteps. Weight 75g (body only), 260g complete with motor. Current is motor-dependent. Ref: bondtech.se/bmg
+    Classic design, widely cloned. Gear ratio 50:17 (3:1 internal). E-steps 415 steps/mm @16µsteps. Weight 75g (body only), 260g complete with motor. Current is motor-dependent. Ref: https://bondtech.se/bmg
 - id: sherpa_mini
   name: Sherpa Mini
   manufacturer: Annex Engineering
@@ -131,8 +138,9 @@
   weight: 90
   filament_path_length: 45
   recommended_pressure_advance: 0.035
+  confidence: high
   notes: |-
-    Ultra lightweight for flying extruders. Motor: NEMA14 Pancake 20mm (not 8mm), 70g motor weight. Gear ratio 50:10 (or 50:8 for 8T variant). Rotation distance 22.67895 (Bondtech gears). Current 0.6-0.7A recommended (1.0A max). Ref: github.com/Annex-Engineering/Sherpa_Mini-Extruder
+    Ultra lightweight for flying extruders. Motor: NEMA14 Pancake 20mm (not 8mm), 70g motor weight. Gear ratio 50:10 (or 50:8 for 8T variant). Rotation distance 22.67895 (Bondtech gears). Current 0.6-0.7A recommended (1.0A max). Ref: https://github.com/Annex-Engineering/Sherpa_Mini-Extruder
 - id: hemera
   name: Hemera
   manufacturer: E3D
@@ -147,8 +155,9 @@
   weight: 400
   filament_path_length: 55
   recommended_pressure_advance: 0.045
+  confidence: high
   notes: |-
-    All-in-one hotend and extruder. Gear ratio 3:1 (more precisely 3.32:1, NOT 50:17). Rotation distance 7.82-7.824. E-steps ~397.5 steps/mm (user-tuned). Weight 400-492g (Classic Hemera). Ref: e3d-online.com/hemera
+    All-in-one hotend and extruder. Gear ratio 3:1 (more precisely 3.32:1, NOT 50:17). Rotation distance 7.82-7.824. E-steps ~397.5 steps/mm (user-tuned). Weight 400-492g (Classic Hemera). Ref: https://e3d-online.com/hemera
 - id: vz_hextrudort
   name: VZ-Hextrudort
   manufacturer: VzBoT
@@ -163,8 +172,9 @@
   weight: 120
   filament_path_length: 45
   recommended_pressure_advance: 0.025
+  confidence: high
   notes: |-
-    6.25:1 reduction (50:8), CNC machined by MirageC for VzBoT. Rotation distance 22.6 or 23.24. E-steps 895-905 (8T motor) or 685-695 (10T motor) @16µsteps. Current 0.6-1.0A (8T: 0.6-1A, 10T: 0.5-1A). Ref: github.com/VzBoT3D/Vz-HextrudORT
+    6.25:1 reduction (50:8), CNC machined by MirageC for VzBoT. Rotation distance 22.6 or 23.24. E-steps 895-905 (8T motor) or 685-695 (10T motor) @16µsteps. Current 0.6-1.0A (8T: 0.6-1A, 10T: 0.5-1A). Ref: https://github.com/VzBoT3D/Vz-HextrudORT
 - id: galileo_2
   name: Galileo 2
   manufacturer: JaredC01
@@ -180,8 +190,9 @@
   weight: 100
   filament_path_length: 42
   recommended_pressure_advance: 0.02
+  confidence: high
   notes: |-
-    Rotation distance 47.088 verified. 16mm drive gear, 20% higher contact area. Motor weight 85g, ~100g complete. Current 0.6A run_current. PA 0.02-0.08 (direct drive range). Ref: github.com/JaredC01/Galileo2
+    Rotation distance 47.088 verified. 16mm drive gear, 20% higher contact area. Motor weight 85g, ~100g complete. Current 0.6A run_current. PA 0.02-0.08 (direct drive range). Ref: https://github.com/JaredC01/Galileo2
 - id: sherpa_micro
   name: Sherpa Micro
   manufacturer: Annex Engineering
@@ -196,8 +207,9 @@
   weight: 60
   filament_path_length: 38
   recommended_pressure_advance: 0.02
+  confidence: high
   notes: |-
-    5:1 or 6.25:1 ratio options, dual geared hobbed design, ultra-compact. Ref: github.com/Annex-Engineering/Sherpa_Micro-Extruder
+    5:1 or 6.25:1 ratio options, dual geared hobbed design, ultra-compact. Ref: https://github.com/Annex-Engineering/Sherpa_Micro-Extruder
 - id: sherpa_heavy
   name: Sherpa Heavy
   manufacturer: Annex Engineering
@@ -213,8 +225,9 @@
   weight: 160
   filament_path_length: 42
   recommended_pressure_advance: 0.018
+  confidence: high
   notes: |-
-    100mm³/s capable, >160N push force, 6.25:1 reduction (50:8). Motor weight 127g. Current 1.0A RMS (not 1.2A). 50:10 variant also available. Ref: github.com/Annex-Engineering/Sherpa_Heavy-Extruder
+    100mm³/s capable, >160N push force, 6.25:1 reduction (50:8). Motor weight 127g. Current 1.0A RMS (not 1.2A). 50:10 variant also available. Ref: https://github.com/Annex-Engineering/Sherpa_Heavy-Extruder
 - id: orbiter_v3
   name: Smart Orbiter v3.0
   manufacturer: Orbiter / LDO
@@ -229,6 +242,7 @@
   weight: 135
   filament_path_length: 17.7
   recommended_pressure_advance: 0.015
+  confidence: medium
   notes: |-
     First extruder with integrated electronics. Rotation distance 4.637 (estimated, similar to v2.0). Weight 135g (genuine Bondtech gears), 175g assembled with heater. 72W ceramic heater. Path 17.7mm (drive gears to hotend). Klipper-optimized. Ref: orbiterprojects.com/so3
 - id: orbiter_v2_5
@@ -246,8 +260,9 @@
   weight: 135
   filament_path_length: 18.0
   recommended_pressure_advance: 0.015
+  confidence: high
   notes: |-
-    Upgraded v2.0 with flat-bottom-cut RNC coated gear (HRC60+), shorter 11mm drive gear, MF679ZZ bearing. Eccentricity 20-30µm (vs 50-140µm on v2.0). Same body, available as upgrade kit. Ref: orbiterprojects.com/orbiter-v2-5
+    Upgraded v2.0 with flat-bottom-cut RNC coated gear (HRC60+), shorter 11mm drive gear, MF679ZZ bearing. Eccentricity 20-30µm (vs 50-140µm on v2.0). Same body, available as upgrade kit. Ref: https://orbiterprojects.com/orbiter-v2-5
 - id: tbg_lite
   name: TBG-Lite
   manufacturer: Trianglelab
@@ -262,8 +277,9 @@
   weight: 142
   filament_path_length: 30.0
   recommended_pressure_advance: 0.02
+  confidence: high
   notes: |-
-    Budget LGX Lite alternative with larger three-gear design. 8.2kg pushing force (PETG). Nylon PA12 shell, CNC POM internals. LGX Lite mounting pattern (19mm holes). Max 80°C ambient. Ref: trianglelab.net/products/tbg-lite-extruder
+    Budget LGX Lite alternative with larger three-gear design. 8.2kg pushing force (PETG). Nylon PA12 shell, CNC POM internals. LGX Lite mounting pattern (19mm holes). Max 80°C ambient. Ref: https://trianglelab.net/products/tbg-lite-extruder
 - id: dfa
   name: Double Folded Ascender
   manufacturer: Annex Engineering
@@ -279,8 +295,9 @@
   weight: 120
   filament_path_length: 35.0
   recommended_pressure_advance: 0.01
+  confidence: high
   notes: |-
-    Worm-gear design eliminates gear meshing artifacts. Very low PA values (~0.01). 20:1 ratio (reduced from original 40:1 Folded Ascender). ~40mm³/s capable (community tested). Ref: github.com/Annex-Engineering/Folded_Ascender-Extruder, dfh.fm/products/double-folded-ascender-extruder-kit
+    Worm-gear design eliminates gear meshing artifacts. Very low PA values (~0.01). 20:1 ratio (reduced from original 40:1 Folded Ascender). ~40mm³/s capable (community tested). Ref: https://github.com/Annex-Engineering/Folded_Ascender-Extruder, dfh.fm/products/double-folded-ascender-extruder-kit
 - id: sailfin
   name: Sailfin
   manufacturer: CroXY3D / nemgrea
@@ -296,8 +313,9 @@
   weight: 107
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
+  confidence: high
   notes: |-
-    Compact BMG-based extruder, popular for V0 and Printers for Ants. Inspired by Sherpa Mini. Weight 107g (from README). Sherpa Mini mounting pattern. Ref: github.com/CroXY3D/Sailfin-Extruder
+    Compact BMG-based extruder, popular for V0 and Printers for Ants. Inspired by Sherpa Mini. Weight 107g (from README). Sherpa Mini mounting pattern. Ref: https://github.com/CroXY3D/Sailfin-Extruder
 - id: roundabout
   name: RoundAbout
   manufacturer: chirpy2605
@@ -313,6 +331,7 @@
   weight: 140
   filament_path_length: 25.0
   recommended_pressure_advance: 0.03
+  confidence: medium
   notes: |-
     Uses Orbiter v2.0 guts in redesigned housing. Compact planetary gearbox. Mini-AfterSherpa mounting pattern. Weight ~140g estimated. Ref: github.com/chirpy2605/voron/tree/main/general/RoundAbout
 - id: galileo_2_sa
@@ -330,6 +349,7 @@
   weight: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
+  confidence: medium
   notes: |-
     Standalone-mount version of Galileo 2. Same planetary gears and custom 9T motor. Orbiter 2.0 or Sherpa Mini mounting. Weight ~100g estimated. Ref: github.com/JaredC01/Galileo2/tree/main/galileo2_standalone
 - id: escapement
@@ -347,6 +367,7 @@
   weight: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
+  confidence: medium
   notes: |-
     Compact G2-based extruder, native-fit for Archetype/Xol/AHI toolheads. Uses full G2 kit. Weight ~100g estimated. Ref: github.com/Armchair-Heavy-Industries/Escapement
 - id: papilio_lite
@@ -364,8 +385,9 @@
   weight: 130
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
+  confidence: high
   notes: |-
-    Belt-driven design prevents metal gear marks on filament — great for flexibles. Uses HGX-Lite gear kit. Sherpa Mini or LGX Lite mounting. Weight 130g (from README). Ref: github.com/kevinakasam/Papilio-Belt-Extruder
+    Belt-driven design prevents metal gear marks on filament — great for flexibles. Uses HGX-Lite gear kit. Sherpa Mini or LGX Lite mounting. Weight 130g (from README). Ref: https://github.com/kevinakasam/Papilio-Belt-Extruder
 - id: protoxtruder
   name: ProtoXtruder
   manufacturer: nhchiu
@@ -381,6 +403,7 @@
   weight: 120
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
+  confidence: medium
   notes: |-
     Popular HGX-Lite community extruder. Sherpa Mini mounting pattern. Requires inverting dir_pin vs BMG setups. Weight ~120g estimated. Ref: github.com/nhchiu/VoronMods/tree/main/Extruders/ProtoXtruder
 - id: wristwatch_g2
@@ -398,6 +421,7 @@
   weight: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
+  confidence: medium
   notes: |-
     G2 gears in compact Wristwatch body. Orbiter 2.0 mounting pattern. Popular for V0/small printers. Weight ~100g estimated. Ref: github.com/tetsu97/WristWatch-G2-Extruder
 - id: sharkfin
@@ -415,6 +439,7 @@
   weight: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
+  confidence: medium
   notes: |-
     BMG-based compact extruder derived from Sailfin. RIDGA one-piece gear supported. Sherpa Mini mounting. Weight ~100g estimated. Ref: github.com/KayosMaker/Sharkfin_Extruder
 - id: wwbmg
@@ -432,5 +457,6 @@
   weight: 100
   filament_path_length: 45.0
   recommended_pressure_advance: 0.04
+  confidence: medium
   notes: |-
     Compact BMG extruder with Sherpa Mini / Orbiter 2 mounting. Uses BMG or RIDGA v2 gears. 10T default, 6T/8T pinion supported. Recommended extruder for A4T toolhead. Weight ~100g estimated. Ref: github.com/bythorsthunder/Voron_Mods/tree/main/Wristwatch_Extruder_BMG

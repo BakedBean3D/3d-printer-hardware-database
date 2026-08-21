@@ -13,5 +13,6 @@
   nozzle_thread: M6
   weight: 45.0
   recommended_max_speed: 200
+  confidence: medium
   notes: |-
     Open-source, inverted heatbreak, 3x 4mm 40W heater cartridges (120W total), Glidcop AL-60 block. Tested to 70mm³/s on ABS from retailer specs. Long meltzone: 48mm (53.5mm with nozzle). Dragon-compatible. Ref: fabreeko.com/products/tricorn-high-flow-open-source-hotend

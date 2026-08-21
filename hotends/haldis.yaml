@@ -13,5 +13,6 @@
   nozzle_thread: M6
   weight: 50.0
   recommended_max_speed: 150
+  confidence: low
   notes: |-
     V6 groovemount. One-piece integrated nozzle+heatbreak. Two variants: standard (320°C) and high-temp (500°C, plated copper). 115W heater. Flow ~32mm³/s estimated. Weight ~50g estimated. Ref: 3dgadgets.my, forum.duet3d.com
