@@ -93,7 +93,7 @@
   name: Moons-MS14HS5P4150-11
   manufacturer: Moons
   frame_size: NEMA14
-  body_length_mm: 35.0
+  body_length_mm: 55.0
   rated_current_amps: 1.5
   recommended_run_current: 0.75
   holding_torque_ncm: 40.0
@@ -104,4 +104,4 @@
   tooth_count: 0
   confidence: medium
   notes: |-
-    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Weight corrected to 240 g (previous 35 g value was implausible/an import error); sourced from retailer listings for this exact SKU (BIQU/Trianglelab MS14HS5P4150-11, 0.24 kg), consistent with its 0.4 Nm (40 Ncm) holding torque spec matching the datasheet.
+    Rated 1.5A RMS. Run current 0.75A (50% rated, conservative start). Weight corrected to 240 g (previous 35 g value was implausible/an import error); sourced from retailer listings for this exact SKU (BIQU/Trianglelab MS14HS5P4150-11, 0.24 kg), consistent with its 0.4 Nm (40 Ncm) holding torque spec matching the datasheet. Body length corrected 35 -> 55 mm per MOONS distributor spec table (https://www.ghv.de/products/electric-drive-technology/stepper-motors/hybrid-stepper-motors/moons_ms14hs5p4150.html: Length 55 mm, 0.4 Nm, 1.5 A, 240 g, rotor inertia 35 g-cm2) — the previous 35.0 matched the frame size / rotor-inertia figure, not the body; caught by the holding-torque plausibility band (40 N-cm is impossible from a 35 mm-long NEMA14).

@@ -108,6 +108,19 @@ NEMA_WEIGHT_PER_MM_BAND = {
     "NEMA23": (7.0, 20.0),
 }
 
+# Same defect class as the rotor-inertia-as-weight imports: a torque that is
+# impossible for the frame size is a unit or transcription error, not a spec.
+# Upper NEMA14 bound accommodates the strongest real long-body parts in class:
+# FYSETC 35HSH7402-24B-400A at 42 N·cm / 51 mm (vendor datasheet) and the
+# 52 mm 40 N·cm class (OMC 14HS20-1504S, LDO 35STH52). This gate caught the
+# MOONS MS14HS5P4150 record carrying a 35 mm body length (frame size /
+# rotor-inertia figure) against its real 55 mm body.
+NEMA_HOLDING_TORQUE_NCM_BAND = {
+    "NEMA14": (5.0, 45.0),
+    "NEMA17": (12.0, 90.0),
+    "NEMA23": (50.0, 350.0),
+}
+
 CATEGORIES = {
     "motors": MOTOR_REQUIRED,
     "hotends": HOTEND_REQUIRED,
@@ -352,6 +365,15 @@ def _check_motor_physics(entry_id, filepath, entry):
         if not (lo <= gpm <= hi):
             print(f"  IMPLAUSIBLE WEIGHT: {tag} weight={weight}g body_length={body_length}mm "
                   f"-> {gpm:.2f} g/mm outside {frame_size} band {lo}-{hi}")
+            errors += 1
+
+    torque = _num(entry, "holding_torque_ncm")
+    tband = NEMA_HOLDING_TORQUE_NCM_BAND.get(frame_size)
+    if tband is not None and torque is not None:
+        lo, hi = tband
+        if not (lo <= torque <= hi):
+            print(f"  IMPLAUSIBLE TORQUE: {tag} holding_torque_ncm={torque} "
+                  f"outside {frame_size} band {lo}-{hi}")
             errors += 1
     return errors
 
