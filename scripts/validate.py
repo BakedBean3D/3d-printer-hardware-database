@@ -34,21 +34,21 @@ class StrictLoader(yaml.SafeLoader):
 MOTOR_REQUIRED = [
     "id", "name", "manufacturer", "frame_size", "body_length_mm",
     "rated_current_amps", "recommended_run_current", "holding_torque_ncm",
-    "inductance_mh", "resistance_ohms", "step_angle", "weight", "tooth_count",
+    "inductance_mh", "resistance_ohms", "step_angle", "weight_g", "tooth_count",
     "confidence", "notes",
 ]
 
 HOTEND_REQUIRED = [
     "id", "name", "manufacturer", "meltzone_length", "max_volumetric_flow",
     "max_temp", "recommended_temp_pla", "recommended_temp_abs",
-    "recommended_temp_petg", "nozzle_thread", "weight", "recommended_max_speed",
+    "recommended_temp_petg", "nozzle_thread", "weight_g", "recommended_max_speed",
     "confidence", "notes",
 ]
 
 EXTRUDER_REQUIRED = [
     "id", "name", "manufacturer", "type", "gear_ratio",
     "rotation_distance", "uses_gear_ratio_in_config", "motor", "motor_current",
-    "max_speed", "max_accel", "weight", "filament_path_length",
+    "max_speed", "max_accel", "weight_g", "filament_path_length",
     "recommended_pressure_advance", "confidence", "notes",
 ]
 
@@ -59,7 +59,7 @@ PROBE_REQUIRED = [
 
 TOOLHEAD_REQUIRED = [
     "id", "name", "manufacturer", "compatible_extruders", "compatible_hotends",
-    "compatible_printer_types", "weight", "fan_config", "part_cooling_cfm",
+    "compatible_printer_types", "weight_g", "fan_config", "part_cooling_cfm",
     "supports_neopixels", "supports_klicky", "supports_tap", "mounting_method",
     "confidence", "notes",
 ]
@@ -144,7 +144,7 @@ MOTOR_FIELD_TYPES = {
     "body_length_mm": _T_NUM, "rated_current_amps": _T_NUM,
     "recommended_run_current": _T_NUM, "holding_torque_ncm": _T_NUM,
     "inductance_mh": _T_NUM, "resistance_ohms": _T_NUM, "step_angle": _T_NUM,
-    "weight": _T_NUM, "tooth_count": _T_INT,
+    "weight_g": _T_NUM, "tooth_count": _T_INT,
 }
 
 HOTEND_FIELD_TYPES = {
@@ -152,7 +152,7 @@ HOTEND_FIELD_TYPES = {
     "nozzle_thread": _T_STR, "notes": _T_STR, "confidence": _T_STR,
     "meltzone_length": _T_NUM, "max_volumetric_flow": _T_NUM, "max_temp": _T_NUM,
     "recommended_temp_pla": _T_NUM, "recommended_temp_abs": _T_NUM,
-    "recommended_temp_petg": _T_NUM, "weight": _T_NUM, "recommended_max_speed": _T_NUM,
+    "recommended_temp_petg": _T_NUM, "weight_g": _T_NUM, "recommended_max_speed": _T_NUM,
 }
 
 EXTRUDER_FIELD_TYPES = {
@@ -160,7 +160,7 @@ EXTRUDER_FIELD_TYPES = {
     "gear_ratio": _T_STR, "motor": _T_STR, "motor_id": _T_STR, "notes": _T_STR,
     "confidence": _T_STR,
     "rotation_distance": _T_NUM, "motor_current": _T_NUM, "max_speed": _T_NUM,
-    "max_accel": _T_NUM, "weight": _T_NUM, "filament_path_length": _T_NUM,
+    "max_accel": _T_NUM, "weight_g": _T_NUM, "filament_path_length": _T_NUM,
     "recommended_pressure_advance": _T_NUM,
     "uses_gear_ratio_in_config": _T_BOOL,
 }
@@ -178,7 +178,7 @@ TOOLHEAD_FIELD_TYPES = {
     "mounting_method": _T_STR, "notes": _T_STR, "confidence": _T_STR,
     "compatible_extruders": _T_LIST, "compatible_hotends": _T_LIST,
     "compatible_printer_types": _T_LIST,
-    "weight": _T_NUM, "part_cooling_cfm": _T_NUM,
+    "weight_g": _T_NUM, "part_cooling_cfm": _T_NUM,
     "supports_neopixels": _T_BOOL, "supports_klicky": _T_BOOL, "supports_tap": _T_BOOL,
 }
 
@@ -339,7 +339,7 @@ def _check_motor_physics(entry_id, filepath, entry):
     tag = f"{filepath}[{entry_id}]"
 
     for key in ("body_length_mm", "rated_current_amps", "holding_torque_ncm",
-                "inductance_mh", "resistance_ohms", "step_angle", "weight"):
+                "inductance_mh", "resistance_ohms", "step_angle", "weight_g"):
         v = _num(entry, key)
         if v is not None and v <= 0:
             print(f"  NON-POSITIVE VALUE: {tag}.{key}={v}")
@@ -356,7 +356,7 @@ def _check_motor_physics(entry_id, filepath, entry):
         errors += 1
 
     frame_size = entry.get("frame_size")
-    weight = _num(entry, "weight")
+    weight = _num(entry, "weight_g")
     body_length = _num(entry, "body_length_mm")
     band = NEMA_WEIGHT_PER_MM_BAND.get(frame_size)
     if band is not None and weight is not None and body_length is not None and body_length > 0:
@@ -395,7 +395,7 @@ def _check_hotend_physics(entry_id, filepath, entry):
             print(f"  TEMP EXCEEDS MAX: {tag}.{key}={v} > max_temp={max_temp}")
             errors += 1
 
-    for key in ("weight", "max_volumetric_flow"):
+    for key in ("weight_g", "max_volumetric_flow"):
         v = _num(entry, key)
         if v is not None and v <= 0:
             print(f"  NON-POSITIVE VALUE: {tag}.{key}={v}")

@@ -11,7 +11,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 16.5
+  weight_g: 16.5
   recommended_max_speed: 150
   confidence: high
   notes: |-
@@ -26,7 +26,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 17.0
+  weight_g: 17.0
   recommended_max_speed: 200
   confidence: high
   notes: |-
@@ -41,7 +41,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 15.0
+  weight_g: 15.0
   recommended_max_speed: 200
   confidence: medium
   notes: |-
@@ -56,7 +56,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: M6
-  weight: 16.0
+  weight_g: 16.0
   recommended_max_speed: 250
   confidence: medium
   notes: |-
@@ -71,7 +71,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: M6
-  weight: 16.0
+  weight_g: 16.0
   recommended_max_speed: 300
   confidence: medium
   notes: |-
@@ -86,7 +86,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 16.0
+  weight_g: 16.0
   recommended_max_speed: 100
   confidence: medium
   notes: |-
@@ -101,7 +101,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: M6
-  weight: 16.0
+  weight_g: 16.0
   recommended_max_speed: 200
   confidence: medium
   notes: |-
@@ -116,7 +116,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 45.0
+  weight_g: 45.0
   recommended_max_speed: 100
   confidence: medium
   notes: |-
@@ -131,7 +131,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: Proprietary HIC (integrated nozzle+heatbreak)
-  weight: 70.0
+  weight_g: 70.0
   recommended_max_speed: 180
   confidence: medium
   notes: |-

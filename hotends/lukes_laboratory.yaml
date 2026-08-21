@@ -11,7 +11,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6 (RepRap compatible)
-  weight: 69.0
+  weight_g: 69.0
   recommended_max_speed: 180
   confidence: medium
   notes: |-
@@ -26,7 +26,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6 (RepRap compatible)
-  weight: 74.0
+  weight_g: 74.0
   recommended_max_speed: 200
   confidence: medium
   notes: |-
@@ -41,7 +41,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6 (RepRap compatible)
-  weight: 50.0
+  weight_g: 50.0
   recommended_max_speed: 150
   confidence: medium
   notes: |-

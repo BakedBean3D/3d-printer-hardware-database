@@ -11,7 +11,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: M6
-  weight: 22.0
+  weight_g: 22.0
   recommended_max_speed: 300
   confidence: high
   notes: |-

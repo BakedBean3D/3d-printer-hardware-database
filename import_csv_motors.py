@@ -82,7 +82,7 @@ def parse_csv(filepath):
             holding_torque = float(row[7]) if row[7].strip() else 0.0
             inductance = float(row[8]) if row[8].strip() else 0.0
             resistance = float(row[9]) if row[9].strip() else 0.0
-            weight = int(float(row[10])) if row[10].strip() else 0
+            weight = int(float(row[10])) if row[10].strip() else None
             usage = row[11].strip() if len(row) > 11 else ""
             datasheet = row[12].strip() if len(row) > 12 else ""
 
@@ -116,7 +116,7 @@ def parse_csv(filepath):
                 "inductance_mh": inductance,
                 "resistance_ohms": resistance,
                 "step_angle": step_angle,
-                "weight": weight,
+                "weight_g": weight,
                 "tooth_count": 0,
                 "notes": notes,
             }

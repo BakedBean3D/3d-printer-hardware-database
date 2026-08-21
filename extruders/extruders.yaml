@@ -13,7 +13,7 @@
   motor_current: 0.5
   max_speed: 300
   max_accel: 5000
-  weight: 145
+  weight_g: 145
   filament_path_length: 55
   recommended_pressure_advance: 0.05
   confidence: high
@@ -30,7 +30,7 @@
   motor_current: 0.65
   max_speed: 300
   max_accel: 5000
-  weight: 150
+  weight_g: 150
   filament_path_length: 50
   recommended_pressure_advance: 0.04
   confidence: high
@@ -47,7 +47,7 @@
   motor_current: 1.2
   max_speed: 300
   max_accel: 5000
-  weight: 180
+  weight_g: 180
   filament_path_length: 52
   recommended_pressure_advance: 0.035
   confidence: low
@@ -64,7 +64,7 @@
   motor_current: 0.65
   max_speed: 300
   max_accel: 5000
-  weight: 135
+  weight_g: 135
   filament_path_length: 50
   recommended_pressure_advance: 0.04
   confidence: high
@@ -82,7 +82,7 @@
   motor_current: 0.85
   max_speed: 300
   max_accel: 10000
-  weight: 140
+  weight_g: 140
   filament_path_length: 48
   recommended_pressure_advance: 0.03
   confidence: high
@@ -100,7 +100,7 @@
   motor_current: 0.35
   max_speed: 250
   max_accel: 8000
-  weight: 140
+  weight_g: 140
   filament_path_length: 50
   recommended_pressure_advance: 0.035
   confidence: high
@@ -117,7 +117,7 @@
   motor_current: 0.8
   max_speed: 200
   max_accel: 3000
-  weight: 75
+  weight_g: 75
   filament_path_length: 60
   recommended_pressure_advance: 0.05
   confidence: high
@@ -135,7 +135,7 @@
   motor_current: 0.65
   max_speed: 250
   max_accel: 8000
-  weight: 90
+  weight_g: 90
   filament_path_length: 45
   recommended_pressure_advance: 0.035
   confidence: high
@@ -152,7 +152,7 @@
   motor_current: 1.3
   max_speed: 200
   max_accel: 3000
-  weight: 400
+  weight_g: 400
   filament_path_length: 55
   recommended_pressure_advance: 0.045
   confidence: high
@@ -169,7 +169,7 @@
   motor_current: 0.8
   max_speed: 350
   max_accel: 12000
-  weight: 120
+  weight_g: 120
   filament_path_length: 45
   recommended_pressure_advance: 0.025
   confidence: high
@@ -187,7 +187,7 @@
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
-  weight: 100
+  weight_g: 100
   filament_path_length: 42
   recommended_pressure_advance: 0.02
   confidence: high
@@ -204,7 +204,7 @@
   motor_current: 0.6
   max_speed: 250
   max_accel: 8000
-  weight: 60
+  weight_g: 60
   filament_path_length: 38
   recommended_pressure_advance: 0.02
   confidence: high
@@ -222,7 +222,7 @@
   motor_current: 1.0
   max_speed: 400
   max_accel: 15000
-  weight: 160
+  weight_g: 160
   filament_path_length: 42
   recommended_pressure_advance: 0.018
   confidence: high
@@ -239,7 +239,7 @@
   motor_current: 0.6
   max_speed: 350
   max_accel: 12000
-  weight: 135
+  weight_g: 135
   filament_path_length: 17.7
   recommended_pressure_advance: 0.015
   confidence: medium
@@ -257,7 +257,7 @@
   motor_current: 0.85
   max_speed: 350
   max_accel: 10000
-  weight: 135
+  weight_g: 135
   filament_path_length: 18.0
   recommended_pressure_advance: 0.015
   confidence: high
@@ -274,7 +274,7 @@
   motor_current: 0.5
   max_speed: 300
   max_accel: 8000
-  weight: 142
+  weight_g: 142
   filament_path_length: 30.0
   recommended_pressure_advance: 0.02
   confidence: high
@@ -292,7 +292,7 @@
   motor_current: 0.35
   max_speed: 300
   max_accel: 10000
-  weight: 120
+  weight_g: 120
   filament_path_length: 35.0
   recommended_pressure_advance: 0.01
   confidence: high
@@ -310,7 +310,7 @@
   motor_current: 0.5
   max_speed: 150
   max_accel: 5000
-  weight: 107
+  weight_g: 107
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
   confidence: high
@@ -328,7 +328,7 @@
   motor_current: 0.85
   max_speed: 250
   max_accel: 8000
-  weight: 140
+  weight_g: 140
   filament_path_length: 25.0
   recommended_pressure_advance: 0.03
   confidence: medium
@@ -346,7 +346,7 @@
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
-  weight: 100
+  weight_g: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
   confidence: medium
@@ -364,7 +364,7 @@
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
-  weight: 100
+  weight_g: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
   confidence: medium
@@ -382,7 +382,7 @@
   motor_current: 0.6
   max_speed: 150
   max_accel: 5000
-  weight: 130
+  weight_g: 130
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
   confidence: high
@@ -400,7 +400,7 @@
   motor_current: 0.6
   max_speed: 180
   max_accel: 6000
-  weight: 120
+  weight_g: 120
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
   confidence: medium
@@ -418,7 +418,7 @@
   motor_current: 0.6
   max_speed: 300
   max_accel: 10000
-  weight: 100
+  weight_g: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.02
   confidence: medium
@@ -436,7 +436,7 @@
   motor_current: 0.5
   max_speed: 150
   max_accel: 5000
-  weight: 100
+  weight_g: 100
   filament_path_length: 25.0
   recommended_pressure_advance: 0.04
   confidence: medium
@@ -454,7 +454,7 @@
   motor_current: 0.5
   max_speed: 250
   max_accel: 5000
-  weight: 100
+  weight_g: 100
   filament_path_length: 45.0
   recommended_pressure_advance: 0.04
   confidence: medium

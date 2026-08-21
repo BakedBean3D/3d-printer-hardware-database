@@ -13,7 +13,7 @@
   motor_current: 0.6
   max_speed: 80
   max_accel: 1500
-  weight: 340.0
+  weight_g: 340.0
   filament_path_length: 32.0
   recommended_pressure_advance: 0.04
   confidence: medium

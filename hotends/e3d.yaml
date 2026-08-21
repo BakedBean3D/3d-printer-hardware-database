@@ -11,7 +11,7 @@
   recommended_temp_abs: 240
   recommended_temp_petg: 235
   nozzle_thread: M6
-  weight: 14.0
+  weight_g: 14.0
   recommended_max_speed: 80
   confidence: high
   notes: |-
@@ -26,7 +26,7 @@
   recommended_temp_abs: 240
   recommended_temp_petg: 235
   nozzle_thread: Revo Nozzle System
-  weight: 18.0
+  weight_g: 18.0
   recommended_max_speed: 90
   confidence: high
   notes: |-
@@ -41,7 +41,7 @@
   recommended_temp_abs: 250
   recommended_temp_petg: 245
   nozzle_thread: Revo HF Nozzle System
-  weight: 18.0
+  weight_g: 18.0
   recommended_max_speed: 150
   confidence: high
   notes: |-
@@ -56,7 +56,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: Volcano (M6, extended nozzle geometry — NOT V6 compatible)
-  weight: 25.0
+  weight_g: 25.0
   recommended_max_speed: 120
   confidence: medium
   notes: |-
@@ -71,7 +71,7 @@
   recommended_temp_abs: 240
   recommended_temp_petg: 235
   nozzle_thread: Revo (proprietary, tool-free swap)
-  weight: 25.0
+  weight_g: 25.0
   recommended_max_speed: 90
   confidence: high
   notes: |-

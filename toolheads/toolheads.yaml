@@ -18,7 +18,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 433
+  weight_g: 433
   fan_config: 1x 5015 blower part cooling, 1x 4010 hotend
   part_cooling_cfm: 5.5
   supports_neopixels: true
@@ -42,7 +42,7 @@
   - dragonfly_bms
   compatible_printer_types:
   - Voron 0.2
-  weight: 190
+  weight_g: 190
   fan_config: Dual 3010 blower part cooling, 1x 2510 hotend
   part_cooling_cfm: 4.5
   supports_neopixels: true
@@ -76,7 +76,7 @@
   - Voron 0.2
   - Voron 2.4
   - Voron Trident
-  weight: 320
+  weight_g: 320
   fan_config: Dual 4010 blower part cooling, 1x 3010 hotend
   part_cooling_cfm: 7.2
   supports_neopixels: true
@@ -102,7 +102,7 @@
   - Voron 0.2
   - Voron 2.4
   - Voron Trident
-  weight: 280
+  weight_g: 280
   fan_config: Dual 4010 blower part cooling, 1x 3010 hotend
   part_cooling_cfm: 7.2
   supports_neopixels: true
@@ -121,7 +121,7 @@
   - chube_conduction
   compatible_printer_types:
   - VCore 3.1
-  weight: 580
+  weight_g: 580
   fan_config: CPAP cooling system with 3628 fans
   part_cooling_cfm: 20.9
   supports_neopixels: false
@@ -146,7 +146,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 500
+  weight_g: 500
   fan_config: Dual 3628 axial fans for part cooling
   part_cooling_cfm: 41.9
   supports_neopixels: true
@@ -172,7 +172,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 450
+  weight_g: 450
   fan_config: Dual 3628 axial fans
   part_cooling_cfm: 41.9
   supports_neopixels: false
@@ -205,7 +205,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 350
+  weight_g: 350
   fan_config: Dual 4010 blower (12k RPM), 1x 2510 hotend
   part_cooling_cfm: 7.2
   supports_neopixels: true
@@ -239,7 +239,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 340
+  weight_g: 340
   fan_config: Dual 4010 blower, 1x 2510 hotend
   part_cooling_cfm: 7.2
   supports_neopixels: true
@@ -273,7 +273,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 400
+  weight_g: 400
   fan_config: 'Modular: Mjolnir (2x 5015), Blackbird (4010), Zephyr (CPAP 7040)'
   part_cooling_cfm: 10.0
   supports_neopixels: true
@@ -301,7 +301,7 @@
   - chube_compact
   compatible_printer_types:
   - Voron 0.2
-  weight: 250
+  weight_g: 250
   fan_config: 2x 4010 blower + 1x 2510 hotend
   part_cooling_cfm: 5.0
   supports_neopixels: true
@@ -324,7 +324,7 @@
   - rapido_uhf
   compatible_printer_types:
   - Voron 0.2
-  weight: 220
+  weight_g: 220
   fan_config: 2x 4010 blower + 1x 2510 hotend
   part_cooling_cfm: 5.0
   supports_neopixels: true
@@ -353,7 +353,7 @@
   - dragonfly_bms
   compatible_printer_types:
   - Voron 0.2
-  weight: 200
+  weight_g: 200
   fan_config: 1x WS7040 CPAP + optional 5015 backup (Mailbox duct)
   part_cooling_cfm: 15.0
   supports_neopixels: false
@@ -377,7 +377,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 320
+  weight_g: 320
   fan_config: 2x Delta 4510 blower + 1x 3010 hotend
   part_cooling_cfm: 5.0
   supports_neopixels: false
@@ -399,7 +399,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 280
+  weight_g: 280
   fan_config: CPAP primary (WS7040) or dual 4010 blower alternate
   part_cooling_cfm: 12.0
   supports_neopixels: false
@@ -420,7 +420,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 350
+  weight_g: 350
   fan_config: 2x 3010 part cooling + 1x 2510 hotend
   part_cooling_cfm: 3.5
   supports_neopixels: true
@@ -446,7 +446,7 @@
   - dragonfly_bms
   compatible_printer_types:
   - Voron 0.2
-  weight: 180
+  weight_g: 180
   fan_config: 1x 5015 blower (fan guts)
   part_cooling_cfm: 5.5
   supports_neopixels: false
@@ -467,7 +467,7 @@
   - rapido_2_uhf
   compatible_printer_types:
   - VCore 3.1
-  weight: 425
+  weight_g: 425
   fan_config: 1x 4028 axial part cooling, 1x 4010 axial hotend
   part_cooling_cfm: 16.0
   supports_neopixels: false
@@ -486,7 +486,7 @@
   - rapido_2_uhf
   compatible_printer_types:
   - VCore 4
-  weight: 425
+  weight_g: 425
   fan_config: 1x 4028 Nidec axial part cooling, 1x 4010 axial hotend
   part_cooling_cfm: 20.0
   supports_neopixels: false
@@ -511,7 +511,7 @@
   compatible_printer_types:
   - VCore 3.1
   - VCore 4
-  weight: 380
+  weight_g: 380
   fan_config: 1x 4028 axial part cooling, 1x 4010 axial hotend
   part_cooling_cfm: 16.0
   supports_neopixels: false
@@ -537,7 +537,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 290
+  weight_g: 290
   fan_config: 2x 5015 radial blower part cooling, 1x 3010 hotend
   part_cooling_cfm: 10.0
   supports_neopixels: false
@@ -563,7 +563,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 175
+  weight_g: 175
   fan_config: CPAP ring duct (remote 7040 blower), 1x 2510 hotend
   part_cooling_cfm: 30.0
   supports_neopixels: false
@@ -589,7 +589,7 @@
   - chube_air
   compatible_printer_types:
   - Voron Switchwire
-  weight: 350
+  weight_g: 350
   fan_config: Configurable duct adapters (UHF and HF variants)
   part_cooling_cfm: 10.0
   supports_neopixels: false
@@ -613,7 +613,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 300
+  weight_g: 300
   fan_config: CPAP tube-fed (remote fan on frame)
   part_cooling_cfm: 20.0
   supports_neopixels: false
@@ -643,7 +643,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 310
+  weight_g: 310
   fan_config: 2x 5015 radial blower part cooling, 1x 3010 hotend
   part_cooling_cfm: 8.0
   supports_neopixels: true
@@ -663,7 +663,7 @@
   compatible_printer_types:
   - Voron 2.4
   - Voron Trident
-  weight: 240
+  weight_g: 240
   fan_config: 2x Delta 3628 axial part cooling, 1x 2510 hotend
   part_cooling_cfm: 19.0
   supports_neopixels: false

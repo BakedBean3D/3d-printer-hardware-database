@@ -12,7 +12,7 @@
   inductance_mh: 2.8
   resistance_ohms: 1.05
   step_angle: 0.9
-  weight: 310
+  weight_g: 310
   tooth_count: 0
   confidence: medium
   notes: |-
@@ -28,7 +28,7 @@
   inductance_mh: 1.8
   resistance_ohms: 1.55
   step_angle: 0.9
-  weight: 150
+  weight_g: 150
   tooth_count: 0
   confidence: high
   notes: |-
@@ -46,7 +46,7 @@
   inductance_mh: 2.2
   resistance_ohms: 1.61
   step_angle: 0.9
-  weight: 210
+  weight_g: 210
   tooth_count: 0
   confidence: high
   notes: |-
@@ -64,7 +64,7 @@
   inductance_mh: 5.4
   resistance_ohms: 1.98
   step_angle: 0.9
-  weight: 280
+  weight_g: 280
   tooth_count: 0
   confidence: high
   notes: |-
@@ -82,7 +82,7 @@
   inductance_mh: 14.6
   resistance_ohms: 5.6
   step_angle: 1.8
-  weight: 600
+  weight_g: 600
   tooth_count: 0
   confidence: high
   notes: |-
@@ -100,7 +100,7 @@
   inductance_mh: 3.6
   resistance_ohms: 2.2
   step_angle: 1.8
-  weight: 240
+  weight_g: 240
   tooth_count: 0
   confidence: medium
   notes: |-

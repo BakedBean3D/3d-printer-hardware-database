@@ -12,7 +12,7 @@
   inductance_mh: 1.4
   resistance_ohms: 0.7
   step_angle: 1.8
-  weight: 450
+  weight_g: 450
   tooth_count: 0
   confidence: medium
   notes: |-

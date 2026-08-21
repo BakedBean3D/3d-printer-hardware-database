@@ -125,7 +125,7 @@ Each hardware category has a defined set of fields, enforced by `scripts/validat
 | `inductance_mh` | float | Phase inductance in mH |
 | `resistance_ohms` | float | Phase resistance in Ohms |
 | `step_angle` | float | Degrees per full step (1.8 or 0.9) |
-| `weight` | int | Weight in grams |
+| `weight_g` | int | Weight in grams |
 | `tooth_count` | int | Integrated pinion teeth (0 = none) |
 | `datasheet_url` | string | Link to manufacturer datasheet |
 | `confidence` | string | high, medium, low — see [Confidence tiers](#confidence-tiers) |

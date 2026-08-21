@@ -11,7 +11,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 16.8
+  weight_g: 16.8
   recommended_max_speed: 160
   confidence: low
   notes: |-
@@ -26,7 +26,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 42.0
+  weight_g: 42.0
   recommended_max_speed: 200
   confidence: medium
   notes: |-
@@ -41,7 +41,7 @@
   recommended_temp_abs: 245
   recommended_temp_petg: 240
   nozzle_thread: M6
-  weight: 48.0
+  weight_g: 48.0
   recommended_max_speed: 250
   confidence: low
   notes: |-
