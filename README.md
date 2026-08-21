@@ -110,6 +110,8 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 
 Each hardware category has a defined set of fields, enforced by `scripts/validate.py` — the per-category required-field lists live at the top of that script. Run `python3 scripts/validate.py` to validate the whole database.
 
+> **v2 field names:** as of v2.0.0 every weight field is `weight_g`, extruders use the `drive` enum + `type_detail`, and probe `type` is a controlled vocabulary. The `v1` git tag is the last release with the old field names (`weight`; free-text `type`).
+
 ### Motor fields
 
 | Field | Type | Description |
