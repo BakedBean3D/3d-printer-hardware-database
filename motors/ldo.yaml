@@ -414,9 +414,9 @@
   step_angle: 1.8
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Re-verified 2026-08-24: retailer-hosted manufacturer PDFs (3dlabtech.ca, forum.duet3d.com) blocked by this session's network egress policy; no LDO-hosted PDF for this exact SKU found in the LDOMotors/ldo-stepper-datasheets or ApexInvent/Datasheets GitHub mirrors. Corroborated by andrewmcgr/klipper_tmc_autotune motor_database.cfg (community, datasheet-sourced): resistance 1.2 Ω, inductance 1.5 mH, holding torque 0.55 Nm (55 N-cm), rated current 2.5A, 200 steps/rev (1.8°) — matches this entry exactly. That same file documents ldo-42sth48-2504ah as an alias of this motor ("AH = high-temp variant of AC = standard"), and the sibling 2504AH SKU's official LDO datasheet (see ldo_42sth48_2504ah entry) independently confirms the identical electrical/mechanical spec set including weight 350g. Confidence raised low->medium (community + cross-SKU corroboration; no primary-source URL for this exact part fetchable this session). All values unchanged.
 - id: ldo_42sth48_2504ah
   name: LDO-42STH48-2504AH
   manufacturer: LDO
@@ -430,9 +430,10 @@
   step_angle: 1.8
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: high
   notes: |-
-    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Re-verified 2026-08-24 against official LDO Motors datasheet (Rev A, 7/12/21): https://raw.githubusercontent.com/ApexInvent/Datasheets/main/LDO-42STH48-2504AH_RevA.pdf — confirms rated current 2.5A/phase, resistance 1.2 Ω (±20%), inductance 1.5 mH (±20%), holding torque 5.5 Kgf-cm (55 N-cm), step angle 1.8°±5%, weight 0.35 Kg REF (350 g), body 48mm max. All fields already correct, no changes made.
+  datasheet_url: https://raw.githubusercontent.com/ApexInvent/Datasheets/main/LDO-42STH48-2504AH_RevA.pdf
 - id: ldo_42sth60_2004ah
   name: LDO-42STH60-2004AH
   manufacturer: LDO
@@ -535,9 +536,9 @@
   step_angle: 0.9
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (85) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.5A RMS. Run current 1.25A (50% rated, conservative start). Re-verified 2026-08-24: no fetchable manufacturer PDF for this SKU (biqu.equipment, uniqueprints.shop, printedsolid.com all blocked by this session's network egress policy; not found in the LDOMotors/ldo-stepper-datasheets or ApexInvent/Datasheets GitHub mirrors). Corroborated by andrewmcgr/klipper_tmc_autotune motor_database.cfg (community, datasheet-sourced): resistance 1.2 Ω, inductance 1.5 mH, holding torque 0.45 Nm (45 N-cm), rated current 2.5A, 400 steps/rev (0.9°) — matches this entry exactly. Confidence raised low->medium (community corroboration only; no primary-source URL fetchable this session). All values unchanged.
 - id: ldo_42sth60_3004ahs37
   name: LDO-42STH60-3004AH(S37)
   manufacturer: LDO
@@ -568,9 +569,10 @@
   step_angle: 1.8
   weight_g: 350
   tooth_count: 0
-  confidence: low
+  confidence: high
   notes: |-
-    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 350 g — previous value (84) was implausible for a 48mm-body NEMA17; same 48mm body class confirmed 350g (0.35 Kg REF) across official LDO datasheets for LDO-42STH48-1684MAH, -42STH47-1684AC, -2004AH, -2004AC(VRN)
+    Rated 2.8A RMS. Run current 1.4A (50% rated, conservative start). Re-verified 2026-08-24 against official LDO Motors datasheet (Rev A, 2/18/23): https://raw.githubusercontent.com/ApexInvent/Datasheets/main/HT-LDO-42STH48-2804AH-RevA.pdf — confirms rated current 2.8A/phase, resistance 0.7 Ω (±20%), inductance 0.6 mH (±20%), holding torque 4.2 Kgf-cm (420 mN-m = 42 N-cm), step angle 1.8°±5%, weight 0.35 Kg REF (350 g), body 48mm max. All fields already correct, no changes made.
+  datasheet_url: https://raw.githubusercontent.com/ApexInvent/Datasheets/main/HT-LDO-42STH48-2804AH-RevA.pdf
 - id: ldo_35sth52_2004ah
   name: LDO-35STH52-2004AH
   manufacturer: LDO
@@ -584,6 +586,6 @@
   step_angle: 1.8
   weight_g: 280
   tooth_count: 0
-  confidence: low
+  confidence: medium
   notes: |-
-    Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 280 g — previous value (40) was implausible for this NEMA14 motor class; per onetwo3d.co.uk technical-specifications listing for LDO-35STH52-2004AH(S35) (Weight: approximately 0.28 kg, distinct from the 0.34 kg "Additional information" shipping-weight field). body_length_mm corrected 35.0->52.0: 35STH52 = 35 mm frame, 52 mm body (cf. sibling 35STH52-1504AH)
+    Common use: V0.1 AB. Rated 2.0A RMS. Run current 1.0A (50% rated, conservative start). Ref: community spreadsheet, unverified; weight corrected to 280 g — previous value (40) was implausible for this NEMA14 motor class; per onetwo3d.co.uk technical-specifications listing for LDO-35STH52-2004AH(S35) (Weight: approximately 0.28 kg, distinct from the 0.34 kg "Additional information" shipping-weight field). body_length_mm corrected 35.0->52.0: 35STH52 = 35 mm frame, 52 mm body (cf. sibling 35STH52-1504AH). Re-verified 2026-08-24: andrewmcgr/klipper_tmc_autotune motor_database.cfg entry ldo-35sth52-2004ah(S35) corroborates resistance 1.34 Ω, inductance 2.1 mH, holding torque 0.4 Nm (40 N-cm), rated current 2.0A, 200 steps/rev (1.8°) — matches this entry exactly. No manufacturer PDF located/fetchable this session (west3d.com, onetwo3d.co.uk, kb-3d.com blocked by this session's network egress policy). Confidence raised low->medium (retailer + community corroboration; still no primary-source URL). Weight (280 g) and body_length_mm (52.0) unchanged — no new source found for these two fields beyond the prior onetwo3d.co.uk citation.
