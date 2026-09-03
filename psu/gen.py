@@ -121,6 +121,11 @@ def write_md(units):
                          f"max penetration {fmt(u.get('bottom_mount_max_penetration_mm'))} mm")
                 if u.get("bottom_mount_holes_xy"):
                     L.append(f"  - holes (x,y mm): {u['bottom_mount_holes_xy']}")
+                if u.get("bottom_mount_slot_travel_mm"):
+                    L.append(f"  - open ear SLOT: the xy above is the slot's CLOSED "
+                             f"(fully-enclosed) end; the screw centre may travel "
+                             f"{u['bottom_mount_slot_travel_mm']} mm outward from it "
+                             f"toward the ear's open mouth")
             if u.get("side_mount_hole_count"):
                 L.append(f"- **Side mount:** {u['side_mount_hole_count']}× {fmt(u.get('side_mount_screw'))} "
                          f"(Ø{fmt(u.get('side_mount_hole_dia_mm'))}), {fmt(u.get('side_mount_pattern'))}, "

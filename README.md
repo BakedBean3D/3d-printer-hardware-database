@@ -98,6 +98,7 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 | `bottom_mount_pitch_x_mm` / `bottom_mount_pitch_y_mm` / `side_mount_pitch_x_mm` | float | Center-to-center hole spacing |
 | `bottom_mount_holes_xy` / `side_mount_holes_xy` | list | Optional `[[x,y], ...]` from the case's bottom-left corner (read `notes`) — populated only where the vendor drawing gave clean, cross-validated dimensions |
 | `bottom_mount_max_penetration_mm` / `side_mount_max_penetration_mm` | float | Max screw length into the case before risking the internal PCB — a safety spec, not just a fit spec |
+| `bottom_mount_slot_travel_mm` | float | Screw-centre travel along an open ear SLOT, from the recorded `bottom_mount_holes_xy` position (the slot's CLOSED end) toward the ear's open mouth. Required for `bottom_mount_interface: clearance_ears`, null otherwise — it is how a consumer tells a slot from a round hole |
 | `din_rail_compatible` | bool | True for spring-clip DIN-rail units (MDR/EDR series) |
 | `din_rail_type` | string | Admissible rail profile (e.g. "TS35/7.5 or TS35/15") |
 | `terminal_location` | string | Where the AC/DC terminal block(s) sit relative to the mounting face(s) |

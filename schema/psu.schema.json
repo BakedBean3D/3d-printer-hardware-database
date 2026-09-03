@@ -27,6 +27,7 @@
       "bottom_mount_pitch_y_mm",
       "bottom_mount_holes_xy",
       "bottom_mount_max_penetration_mm",
+      "bottom_mount_slot_travel_mm",
       "side_mount_screw",
       "side_mount_hole_dia_mm",
       "side_mount_hole_count",

@@ -39,6 +39,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M3",
     "side_mount_hole_dia_mm": 2.6,
     "side_mount_hole_count": 2,
@@ -95,6 +96,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M3",
     "side_mount_hole_dia_mm": 2.6,
     "side_mount_hole_count": 3,
@@ -149,6 +151,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M3",
     "side_mount_hole_dia_mm": 2.6,
     "side_mount_hole_count": 3,
@@ -214,6 +217,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M4",
     "side_mount_hole_dia_mm": 4.5,
     "side_mount_hole_count": 4,
@@ -279,6 +283,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M4",
     "side_mount_hole_dia_mm": 4.5,
     "side_mount_hole_count": 4,
@@ -348,6 +353,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": 4.0,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": "M4",
     "side_mount_hole_dia_mm": 3.1,
     "side_mount_hole_count": 4,
@@ -414,6 +420,7 @@
       ]
     ],
     "bottom_mount_max_penetration_mm": null,
+    "bottom_mount_slot_travel_mm": 2.0,
     "side_mount_screw": null,
     "side_mount_hole_dia_mm": null,
     "side_mount_hole_count": null,
@@ -427,7 +434,7 @@
       "https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF"
     ],
     "confidence": "high",
-    "notes": "Confidence high -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; \"R\" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. VECTOR-PDF EXTRACTION 2026-07-28 (least-squares circle fits on the drawing's own bezier geometry; supersedes the earlier raster reading): the \"4-\u03c83.3\" callout's leader line terminates at an END-PLATE EAR -- the mounting interface is 4 outward-opening 3.3mm slots on the corner ears of the two 3mm end plates, at the case bottom plane. The 4 small circles ON the case face at ~10.1mm end insets are case-assembly screws, NOT mounting holes -- do not mount to them. ACROSS WIDTH (Y): the drawing's own chain closes exactly (7.8 + 46.4 + 7.8 = 62) and the fitted ear centres measure 7.79/46.39/7.82 against it -- pitch_y 46.4 with 7.8 insets. ALONG LENGTH (X): slot centres vector-measure 0.9mm inside each end face (pitch_x 218.2, closing the 220 envelope exactly); this value is measured from the drawing geometry, not carried by a printed dimension -- and because the slots open OUTWARD through the end faces, any screw spacing from ~218.2 up to the 220 envelope engages the ears. FAMILY CROSS-CHECK: UHP-200 (Case 249B, 55mm-wide case) shows the identical construct, 6.5 + 42 + 6.5 = 55. CORRECTION of the previous record: pitch_x 110 was a misread -- the drawing's \"110\"/\"15.5\" dimension the tc (max case temperature) measurement point on the finned side elevation, not any mounting feature. bottom_mount_interface clearance_ears: no thread in the case; the screw clamps the ear and threads into the mounting plate below (Mean Well install guidance: \"M3*4\" into a thermally-conductive aluminum plate >= 450x450x3mm for the full derating curve -- a THERMAL requirement, not just mechanical), and the screw path lies outside the case wall, so bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).",
+    "notes": "Confidence high -- Tier-1 source (Mean Well UHP-350-SPEC.PDF, Case No.232C, rev 2024-11-23, tolerance +-1mm; \"R\" suffix variant adds a DC-OK signal + redundant-operation function, same mechanicals). Case 220x62x31mm and weight 680g cross-confirmed from both the spec table and the drawing. VECTOR-PDF EXTRACTION 2026-07-28 (least-squares circle fits on the drawing's own bezier geometry; supersedes the earlier raster reading): the \"4-\u03c83.3\" callout's leader line terminates at an END-PLATE EAR -- the mounting interface is 4 outward-opening 3.3mm slots on the corner ears of the two 3mm end plates, at the case bottom plane. The 4 small circles ON the case face at ~10.1mm end insets are case-assembly screws, NOT mounting holes -- do not mount to them. ACROSS WIDTH (Y): the drawing's own chain closes exactly (7.8 + 46.4 + 7.8 = 62) and the fitted ear centres measure 7.79/46.39/7.82 against it -- pitch_y 46.4 with 7.8 insets. ALONG LENGTH (X): slot centres vector-measure 0.9mm inside each end face (pitch_x 218.2, closing the 220 envelope exactly); this value is measured from the drawing geometry, not carried by a printed dimension -- and because the slots open OUTWARD through the end faces, any screw spacing from ~218.2 up to the 220 envelope engages the ears. FAMILY CROSS-CHECK: UHP-200 (Case 249B, 55mm-wide case) shows the identical construct, 6.5 + 42 + 6.5 = 55. SLOT GEOMETRY 2026-09-02 (same vector method, re-run on UHP-350-SPEC.PDF page 5 after a field report that a printed plate left part of each ear feature unengaged): the ear feature is a SLOT, not a round hole, and the record's xy is its CLOSED end. Bottom-view frame is anisotropically scaled -- calibrate per axis: 358.13 pt / 220 mm = 1.6279 pt/mm in X, 109.58 pt / 62 mm = 1.7674 pt/mm in Y (the Y scale closes the printed chain 7.8 + 46.4 + 7.8 = 62 exactly and independently reproduces the 3.3 mm slot WIDTH from its two parallel edges, 5.83 pt apart -- two confirmations, so the anisotropy is real and not a fitting artifact). Per corner the path is: two straight edges 3.3 mm apart, a semicircular closed end whose least-squares centre is 0.995 mm INBOARD of the case end face, and an open mouth through the ear edge, which itself stands 1.0 mm OUTBOARD of that face -- so the screw centre can travel 2.0 mm outward from the recorded position, and c-c spacing ranges 218.2 (closed end) to 222.0 (mouth). The recorded 218.2 is therefore the MINIMUM and the fully-enclosed position, which is the one to build: moving outward trades captured material for nothing, and a bare M3 head already overhangs the ear edge by ~0.85 mm on diameter at the closed end (use a washer). CORRECTION of the previous record: pitch_x 110 was a misread -- the drawing's \"110\"/\"15.5\" dimension the tc (max case temperature) measurement point on the finned side elevation, not any mounting feature. bottom_mount_interface clearance_ears: no thread in the case; the screw clamps the ear and threads into the mounting plate below (Mean Well install guidance: \"M3*4\" into a thermally-conductive aluminum plate >= 450x450x3mm for the full derating curve -- a THERMAL requirement, not just mechanical), and the screw path lies outside the case wall, so bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth. Source: https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5; installation/aluminum-plate requirement on page 6).",
     "_source_file": "meanwell.yaml"
   },
   {
@@ -458,6 +465,7 @@
     "bottom_mount_pitch_y_mm": null,
     "bottom_mount_holes_xy": null,
     "bottom_mount_max_penetration_mm": null,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": null,
     "side_mount_hole_dia_mm": null,
     "side_mount_hole_count": null,
@@ -501,6 +509,7 @@
     "bottom_mount_pitch_y_mm": null,
     "bottom_mount_holes_xy": null,
     "bottom_mount_max_penetration_mm": null,
+    "bottom_mount_slot_travel_mm": null,
     "side_mount_screw": null,
     "side_mount_hole_dia_mm": null,
     "side_mount_hole_count": null,

@@ -87,7 +87,7 @@ PSU_REQUIRED = [
     "length_mm", "width_mm", "height_mm", "weight_g", "wattage_w", "output_voltages_v",
     "bottom_mount_screw", "bottom_mount_interface", "bottom_mount_hole_dia_mm", "bottom_mount_hole_count",
     "bottom_mount_pattern", "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "bottom_mount_holes_xy",
-    "bottom_mount_max_penetration_mm",
+    "bottom_mount_max_penetration_mm", "bottom_mount_slot_travel_mm",
     "side_mount_screw", "side_mount_hole_dia_mm", "side_mount_hole_count", "side_mount_pattern",
     "side_mount_pitch_x_mm", "side_mount_holes_xy", "side_mount_max_penetration_mm",
     "din_rail_compatible", "din_rail_type",
@@ -475,6 +475,22 @@ def check_physics(entry_id, filepath, entry, category):
         if iface == "threaded_case" and _num(entry, "bottom_mount_max_penetration_mm") is None:
             print(f"  MISSING PENETRATION: {tag}=threaded_case requires "
                   "bottom_mount_max_penetration_mm (thread-in safety depth)")
+            errors += 1
+        # clearance_ears is an OPEN feature, so how far the screw may travel along
+        # it is part of the interface, not a detail. Without it a consumer cannot
+        # tell whether its screw sits at the enclosed end or halfway out of the
+        # mouth — a UHP-350 plate was printed and held before anyone noticed the
+        # feature was a 2 mm slot rather than a round hole (2026-09-02).
+        travel = _num(entry, "bottom_mount_slot_travel_mm")
+        if iface == "clearance_ears" and travel is None:
+            print(f"  MISSING SLOT TRAVEL: {tag}=clearance_ears requires "
+                  "bottom_mount_slot_travel_mm (screw-centre travel from the "
+                  "recorded closed end toward the ear's open mouth; 0 if the "
+                  "feature is a round hole)")
+            errors += 1
+        if iface != "clearance_ears" and travel is not None:
+            print(f"  UNEXPECTED SLOT TRAVEL: {tag}={iface!r} carries "
+                  "bottom_mount_slot_travel_mm — only open ear slots have travel")
             errors += 1
         # side pattern runs along the length on the side walls
         spx = _num(entry, "side_mount_pitch_x_mm")
