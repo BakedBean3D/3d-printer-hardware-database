@@ -505,6 +505,70 @@
     mm, explicitly "compatible with Raspberry Pi CM4 form factor". Same footprint as CB1. RK3566 SoC.
     Board-to-board module, NOT SODIMM. hole_dia / M2.5 / inset from CM4 datasheet; holes_xy computed.
     Source: https://global.bttwiki.com/CB2.html'
+- id: btt_pi_v1_2
+  name: BTT Pi V1.2
+  manufacturer: BigTreeTech
+  category: sbc
+  pcb_length_mm: 85.01
+  pcb_width_mm: 56.01
+  pcb_thickness_mm: 1.64
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.5
+  mount_pattern: 4-hole
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 17.65
+    - 2.05
+  - - 23.46
+    - 51.45
+  - - 81.70
+    - 2.05
+  - - 81.70
+    - 51.45
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: 2.16
+  component_height_top_mm: 16.30
+  connector_notes: Full PCB assembly (BIGTREETECH_Pi_V1.2.step, 88.8 MB, in the 3D/ zip) measures 56.0
+    x 85.0 mm and 1.64 mm thick -- matches the marketed "85x56mm" outline. A component/connector overhangs
+    the board's far length-edge by ~2.95 mm (full assembly Y extends to 87.95 vs the bare board's 85.00),
+    and minor overhangs of ~1.0-1.4 mm exist on both width-axis edges (USB-C/ports). Underside components
+    protrude ~2.16 mm below the PCB's own bottom face -- minimum standoff clearance needed beneath the
+    board. Tallest component/connector above the board top face measures 16.3 mm.
+  sources:
+  - https://github.com/bigtreetech/BTT-Pi/blob/master/3D/BIGTREETECH_Pi_V1.2.zip
+  - https://biqu.equipment/products/bigtreetech-btt-pi-v1-2
+  - https://www.printables.com/model/565278-btt-pi-v12-mount
+  confidence: medium
+  notes: 'Confidence medium -- Tier-1 artifact (vendor STEP, BIGTREETECH_Pi_V1.2.step, the full board
+    assembly inside 3D/BIGTREETECH_Pi_V1.2.zip -- NOT the case-only STEPs in 3D/BTT_PI_V1.2_Model/step/,
+    which model the enclosure''s own assembly-screw bosses and do not expose the bare board''s mount
+    holes at all). Measured directly with build123d/OCCT, 2026-09-05, by isolating the largest axis-aligned
+    planar face pair (the bare PCB top/bottom copper layer, z=0/-1.64) to get the true board outline (56.00
+    x 85.01 mm, matching the marketed "85x56mm" claim) and then clustering all cylindrical faces in the
+    M2/M2.5/M3 clearance range (r 1.0-2.2mm) for 4-corner-symmetric candidates. FOUND: 4 holes, all identical
+    r=1.250 (d=2.500mm), single-face (plain through-holes, not threaded). Recorded here in the repo''s
+    length=longer-edge convention (record X = the STEP''s native Y/85mm axis; record Y = the STEP''s native
+    X/56mm axis -- i.e. axes are SWAPPED from the raw STEP frame, done deliberately and stated here to
+    avoid a silent transcription error). CRITICAL FINDING: the pattern is NOT a clean rectangle. Both
+    holes on the record-Y=2.05 mm edge and both on record-Y=51.45 mm edge share an identical width-axis
+    pitch (49.40 mm, verified to 3 decimal places on both edges), but the record-X (length-axis) positions
+    are NOT symmetric: one pair sits at record-X=81.70/81.70 (a clean matched pair), while the other pair
+    is STAGGERED at record-X=17.65 vs 23.46 (a 5.81 mm offset) -- i.e. a right-trapezoid, not a rectangle.
+    mount_pitch_x/y_mm are therefore left null (no single scalar pitch describes this shape); mount_holes_xy
+    carries the true geometry and must be used directly. mount_pattern is set to "4-hole" (exact count,
+    no rectangular/L-shaped/linear claim). This asymmetric finding CORROBORATES a community report (the
+    Printables "BTT Pi V1.2 Mount" listing and a VoronDesign-forum note) that standard Raspberry-Pi mounting
+    clips/STLs do NOT fit the BTT Pi V1.2, despite retailer copy (biqu.equipment et al.) advertising "the
+    same mounting holes as a standard Raspberry Pi" -- that retailer claim is CONTRADICTED by this measurement
+    and should not be trusted (same defect class as the LRS-50/UHP-350 retailer-blurb errors this database
+    exists to catch). mount_screw=M2.5 is an INFERENCE, not vendor-confirmed: the measured 2.5 mm bore
+    is ambiguous between a snug M2.5 (nominal 2.5mm OD, tighter than typical clearance) and a looser M2
+    clearance fit -- M2.5 is chosen for consistency with the RPi/CM4-adjacent ecosystem this board targets,
+    but verify before cutting a tight-tolerance mount. pcb_thickness_mm=1.64 and standoff_height_mm=2.16
+    and component_height_top_mm=16.30 are all direct STEP bounding-box measurements (not vendor-quoted).
+    Source: https://github.com/bigtreetech/BTT-Pi/blob/master/3D/BIGTREETECH_Pi_V1.2.zip'
 - id: btt_u2c_v2
   name: U2C V2 (V2.0/V2.1)
   manufacturer: BigTreeTech

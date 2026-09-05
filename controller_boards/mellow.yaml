@@ -288,3 +288,53 @@
   confidence: low
   notes: NO authoritative dimensions. Repo (Fly-D5) contains only Fly-D5-Pinout.svg, Fly-D5-Schematic.pdf
     and README - no KiCad/STEP/dimensional drawing. Dimensions left null.
+- id: mellow_fly_sb2040_v2
+  name: Fly-SB2040 V2
+  manufacturer: Mellow
+  category: toolhead_can
+  pcb_length_mm: 47.05
+  pcb_width_mm: 40.07
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.3
+  mount_pattern: 2-hole
+  mount_pitch_x_mm: null
+  mount_pitch_y_mm: null
+  mount_hole_count: 2
+  mount_holes_xy:
+  - - 10.09
+    - 16.37
+  - - 22.07
+    - 29.14
+  mount_inset_from_edge_mm: null
+  standoff_height_mm: null
+  component_height_top_mm: 6.01
+  connector_notes: USB-C connector overhangs the left board edge, CAN/power terminal block overhangs
+    the right edge. Mounts via 2x integrated M3 self-tapping THREADED bosses molded/machined into the
+    board carrier (helical thread geometry present in the STEP, boss stands ~3.5mm proud of the board
+    top face) -- the screw threads directly into the board's own boss, no nut or backing plate needed.
+  sources:
+  - https://github.com/Mellow-3D/Fly-SB2040/blob/main/V2/Hardware/SB2040-V2_Mainbody.step
+  - https://mellow-3d.github.io/fly_sb2040_v2_general.html
+  confidence: high
+  notes: 'Confidence high -- Tier-1 (vendor STEP). Measured directly from SB2040-V2_Mainbody.step with
+    build123d/OCCT, 2026-09-05. PCB/carrier footprint 47.05 x 40.07 mm is the largest axis-aligned planar
+    face pair (z=0 top / z=-0.62 bottom, a thin 0.62mm carrier layer in the STEP); pcb_thickness_mm is
+    recorded as the repo-convention 1.6mm nominal (NOT the STEP''s simplified 0.62mm carrier layer, which
+    is a CAD simplification, not the real multi-layer FR4 stackup). Two mounting holes are integrated
+    self-tapping M3 THREADED bosses: the STEP shows genuine helical thread facets (alternating minor/major
+    diameter every ~0.25mm of Z, consistent with a 0.5mm-pitch M3 thread) running from z=0.43 to z=3.91
+    -- i.e. a threaded pillar rising ~3.5mm proud of the board top, not a plain clearance hole. Hole centers
+    measured at local (10.09, 16.37) and (22.07, 29.14) mm from the board footprint''s bottom-left corner
+    (origin = footprint bbox min corner, both coordinates axis-aligned with the STEP global frame -- verified
+    via the board''s top/bottom planar faces, which are exactly axis-aligned with zero rotation). Pattern
+    is a DIAGONAL 2-hole (dx=11.98, dy=12.77, true center distance 17.51mm) -- NOT collinear or rectangular,
+    so mount_pitch_x/y_mm are left null (a single scalar pitch would misrepresent a non-axis-aligned pair);
+    mount_holes_xy carries the true geometry and is sufficient to build from. mount_hole_dia_mm=3.3 is the
+    STEP-measured major thread diameter (self-taps in; treat as nominal M3 clearance for a mating plate''s
+    through-hole). component_height_top_mm=6.01 is the STEP bounding-box max height above the board top
+    face (MCU/connector envelope), not a vendor-quoted figure -- flagged here as measured-not-datasheet.
+    standoff_height_mm left null: this board carries its OWN raised mounting bosses rather than requiring
+    standoffs beneath it from the mount, so the field does not map cleanly onto this design (see connector_notes).
+    Web vendor docs (mellow-3d.github.io/fly_sb2040_v2_general.html) confirm M3 screws but publish no
+    dimensioned drawing, so the STEP is the sole source of the pattern/pitch. Source: https://github.com/Mellow-3D/Fly-SB2040/blob/main/V2/Hardware/SB2040-V2_Mainbody.step'

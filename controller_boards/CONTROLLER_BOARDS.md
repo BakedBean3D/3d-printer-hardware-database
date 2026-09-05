@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 96
-- **Confidence:** 47 high · 30 medium · 19 low
+- **Total boards:** 100
+- **Confidence:** 50 high · 31 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -24,6 +24,7 @@
 | Box Turtle (AFC) PCB | ArmoredTurtle | ercf | — | 1.6 | M3 | none | — | — | low |
 | BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
 | BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
+| BTT Pi V1.2 | BigTreeTech | sbc | 85.01×56.01 | 1.64 | M2.5 | 4-hole | — | 4 | medium |
 | BTT Relay V1.2 module | BigTreeTech | relay | 80.32×36.19 | 1.6 | M3 | rectangular | 74.17×29.21 | 4 | high |
 | BTT S2DW V1.0 (LIS2DW, USB-C) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
 | BTT Smart Filament Sensor (SFS) V1.0 | BigTreeTech | sensor | 75.0×30.0 | — | M3 | rectangular | 56.75×20.35 | 4 | high |
@@ -107,10 +108,13 @@
 | Fly Super8 | Mellow | mainboard | 155.58×109.68 | 1.6 | M3 | rectangular | 149.38×103.45 | 4 | high |
 | Fly-D5 | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
 | Fly-RRF-36 | Mellow | toolhead_can | — | 1.6 | M3 | rectangular | — | — | low |
+| Fly-SB2040 V2 | Mellow | toolhead_can | 47.05×40.07 | 1.6 | M3 | 2-hole | — | 2 | high |
 | Fly-SHT36 (v1) | Mellow | toolhead_can | 51.27×36.26 | 1.6 | M3 | linear | 43.84×— | 2 | high |
 | Fly-SHT36 v2.0 | Mellow | toolhead_can | 51.27×45.67 | 1.6 | M3 | linear | 43.84×— | 2 | high |
 | Fly-SHT42 | Mellow | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
+| Raspberry Pi 4 Model B | Raspberry Pi | sbc | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| Raspberry Pi 5 | Raspberry Pi | sbc | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | — | — | — | other | — | 0 | low |
 | ERCF EASY-BRD | Tircown | ercf | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
 | Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | — | 1.6 | none | none | — | 0 | low |
@@ -163,6 +167,19 @@
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). 15.24 x 20.32 from official manual p.5; header-mounted, no screw holes. Mounting: NO mounting holes. Uses the standard StepStick/stepper-driver footprint (manual states it "adopts the same package of motor drive module") and plugs into a spare SPI-capable stepper-driver socket via 2x 1x8 headers. Do NOT design a screw bracket for this board. Source: https://github.com/bigtreetech/BIGTREETECH-MAX31865
 - src: https://github.com/bigtreetech/BIGTREETECH-MAX31865
 - src: https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-MAX31865/master/BIGTREETECH%20MAX31865%20V2.0/BIGTREETECH%20MAX31865%20V2.0%20Manual.pdf
+
+### BTT Pi V1.2  ·  `btt_pi_v1_2`
+
+- **Category:** sbc · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **PCB:** 85.01 × 56.01 mm, 1.64 mm thick
+- **Mounting:** 4× M2.5 (Ø2.5), 4-hole, pitch —×— mm
+  - holes (x,y mm): [[17.65, 2.05], [23.46, 51.45], [81.7, 2.05], [81.7, 51.45]]
+- **Clearance:** standoff 2.16 mm, top component 16.3 mm
+- **Connectors:** Full PCB assembly (BIGTREETECH_Pi_V1.2.step, 88.8 MB, in the 3D/ zip) measures 56.0 x 85.0 mm and 1.64 mm thick -- matches the marketed "85x56mm" outline. A component/connector overhangs the board's far length-edge by ~2.95 mm (full assembly Y extends to 87.95 vs the bare board's 85.00), and minor overhangs of ~1.0-1.4 mm exist on both width-axis edges (USB-C/ports). Underside components protrude ~2.16 mm below the PCB's own bottom face -- minimum standoff clearance needed beneath the board. Tallest component/connector above the board top face measures 16.3 mm.
+- **Notes:** Confidence medium -- Tier-1 artifact (vendor STEP, BIGTREETECH_Pi_V1.2.step, the full board assembly inside 3D/BIGTREETECH_Pi_V1.2.zip -- NOT the case-only STEPs in 3D/BTT_PI_V1.2_Model/step/, which model the enclosure's own assembly-screw bosses and do not expose the bare board's mount holes at all). Measured directly with build123d/OCCT, 2026-09-05, by isolating the largest axis-aligned planar face pair (the bare PCB top/bottom copper layer, z=0/-1.64) to get the true board outline (56.00 x 85.01 mm, matching the marketed "85x56mm" claim) and then clustering all cylindrical faces in the M2/M2.5/M3 clearance range (r 1.0-2.2mm) for 4-corner-symmetric candidates. FOUND: 4 holes, all identical r=1.250 (d=2.500mm), single-face (plain through-holes, not threaded). Recorded here in the repo's length=longer-edge convention (record X = the STEP's native Y/85mm axis; record Y = the STEP's native X/56mm axis -- i.e. axes are SWAPPED from the raw STEP frame, done deliberately and stated here to avoid a silent transcription error). CRITICAL FINDING: the pattern is NOT a clean rectangle. Both holes on the record-Y=2.05 mm edge and both on record-Y=51.45 mm edge share an identical width-axis pitch (49.40 mm, verified to 3 decimal places on both edges), but the record-X (length-axis) positions are NOT symmetric: one pair sits at record-X=81.70/81.70 (a clean matched pair), while the other pair is STAGGERED at record-X=17.65 vs 23.46 (a 5.81 mm offset) -- i.e. a right-trapezoid, not a rectangle. mount_pitch_x/y_mm are therefore left null (no single scalar pitch describes this shape); mount_holes_xy carries the true geometry and must be used directly. mount_pattern is set to "4-hole" (exact count, no rectangular/L-shaped/linear claim). This asymmetric finding CORROBORATES a community report (the Printables "BTT Pi V1.2 Mount" listing and a VoronDesign-forum note) that standard Raspberry-Pi mounting clips/STLs do NOT fit the BTT Pi V1.2, despite retailer copy (biqu.equipment et al.) advertising "the same mounting holes as a standard Raspberry Pi" -- that retailer claim is CONTRADICTED by this measurement and should not be trusted (same defect class as the LRS-50/UHP-350 retailer-blurb errors this database exists to catch). mount_screw=M2.5 is an INFERENCE, not vendor-confirmed: the measured 2.5 mm bore is ambiguous between a snug M2.5 (nominal 2.5mm OD, tighter than typical clearance) and a looser M2 clearance fit -- M2.5 is chosen for consistency with the RPi/CM4-adjacent ecosystem this board targets, but verify before cutting a tight-tolerance mount. pcb_thickness_mm=1.64 and standoff_height_mm=2.16 and component_height_top_mm=16.30 are all direct STEP bounding-box measurements (not vendor-quoted). Source: https://github.com/bigtreetech/BTT-Pi/blob/master/3D/BIGTREETECH_Pi_V1.2.zip
+- src: https://github.com/bigtreetech/BTT-Pi/blob/master/3D/BIGTREETECH_Pi_V1.2.zip
+- src: https://biqu.equipment/products/bigtreetech-btt-pi-v1-2
+- src: https://www.printables.com/model/565278-btt-pi-v12-mount
 
 ### BTT Relay V1.2 module  ·  `btt_relay_v1_2`
 
@@ -1080,6 +1097,18 @@
 - **Notes:** NO authoritative dimensions. Repo contains only Schematic_Fly_RRF-36.pdf and README - no KiCad, STEP, or dimensional drawing. Likely shares the ~36x36mm FLY-SHT36 footprint (already measured in earlier research) but NOT verified for this board, so left null. Cross-reference the already-documented FLY-SHT36 mount if the footprints are confirmed identical.
 - src: https://github.com/Mellow-3D/Fly-RRF-36
 
+### Fly-SB2040 V2  ·  `mellow_fly_sb2040_v2`
+
+- **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
+- **PCB:** 47.05 × 40.07 mm, 1.6 mm thick
+- **Mounting:** 2× M3 (Ø3.3), 2-hole, pitch —×— mm
+  - holes (x,y mm): [[10.09, 16.37], [22.07, 29.14]]
+- **Clearance:** standoff — mm, top component 6.01 mm
+- **Connectors:** USB-C connector overhangs the left board edge, CAN/power terminal block overhangs the right edge. Mounts via 2x integrated M3 self-tapping THREADED bosses molded/machined into the board carrier (helical thread geometry present in the STEP, boss stands ~3.5mm proud of the board top face) -- the screw threads directly into the board's own boss, no nut or backing plate needed.
+- **Notes:** Confidence high -- Tier-1 (vendor STEP). Measured directly from SB2040-V2_Mainbody.step with build123d/OCCT, 2026-09-05. PCB/carrier footprint 47.05 x 40.07 mm is the largest axis-aligned planar face pair (z=0 top / z=-0.62 bottom, a thin 0.62mm carrier layer in the STEP); pcb_thickness_mm is recorded as the repo-convention 1.6mm nominal (NOT the STEP's simplified 0.62mm carrier layer, which is a CAD simplification, not the real multi-layer FR4 stackup). Two mounting holes are integrated self-tapping M3 THREADED bosses: the STEP shows genuine helical thread facets (alternating minor/major diameter every ~0.25mm of Z, consistent with a 0.5mm-pitch M3 thread) running from z=0.43 to z=3.91 -- i.e. a threaded pillar rising ~3.5mm proud of the board top, not a plain clearance hole. Hole centers measured at local (10.09, 16.37) and (22.07, 29.14) mm from the board footprint's bottom-left corner (origin = footprint bbox min corner, both coordinates axis-aligned with the STEP global frame -- verified via the board's top/bottom planar faces, which are exactly axis-aligned with zero rotation). Pattern is a DIAGONAL 2-hole (dx=11.98, dy=12.77, true center distance 17.51mm) -- NOT collinear or rectangular, so mount_pitch_x/y_mm are left null (a single scalar pitch would misrepresent a non-axis-aligned pair); mount_holes_xy carries the true geometry and is sufficient to build from. mount_hole_dia_mm=3.3 is the STEP-measured major thread diameter (self-taps in; treat as nominal M3 clearance for a mating plate's through-hole). component_height_top_mm=6.01 is the STEP bounding-box max height above the board top face (MCU/connector envelope), not a vendor-quoted figure -- flagged here as measured-not-datasheet. standoff_height_mm left null: this board carries its OWN raised mounting bosses rather than requiring standoffs beneath it from the mount, so the field does not map cleanly onto this design (see connector_notes). Web vendor docs (mellow-3d.github.io/fly_sb2040_v2_general.html) confirm M3 screws but publish no dimensioned drawing, so the STEP is the sole source of the pattern/pitch. Source: https://github.com/Mellow-3D/Fly-SB2040/blob/main/V2/Hardware/SB2040-V2_Mainbody.step
+- src: https://github.com/Mellow-3D/Fly-SB2040/blob/main/V2/Hardware/SB2040-V2_Mainbody.step
+- src: https://mellow-3d.github.io/fly_sb2040_v2_general.html
+
 ### Fly-SHT36 (v1)  ·  `mellow_fly_sht36`
 
 - **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
@@ -1121,6 +1150,29 @@
 - src: https://mellow-3d.github.io/fly-utoc_general.html
 - src: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-utoc/fly-utoc_dimensions.png
 - src: https://wiki.kb-3d.com/home/mellow/voron/utoc-3
+
+## Raspberry Pi
+
+### Raspberry Pi 4 Model B  ·  `raspberrypi_4b`
+
+- **Category:** sbc · **Confidence:** high · **Source file:** `raspberrypi.yaml`
+- **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
+- **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 58.0×49.0 mm
+  - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
+- **Clearance:** standoff — mm, top component 16.0 mm
+- **Connectors:** 85 x 56 mm board, 3.0mm corner radius (all corners rounded, per drawing). 40-pin GPIO header along the top edge (Z=8.5mm). Right edge stacks 2x USB-A (Z=16.0mm, the tallest features on the board) above 1x RJ45 Ethernet (Z=13.5mm). Bottom edge carries USB-C power (Z=3.2mm) and 2x micro-HDMI (Z=3.0mm each) plus a 4-lane MIPI DSI/CSI FPC connector pair (Z=5.5-6.0mm) and a small Z=6.14mm component near the GPIO corner. Left side carries the WiFi/BT module and PMIC.
+- **Notes:** Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing RP-008343, a Cadence Allegro "Print to PDF" export with vector-drawn dimension text, no extractable text layer -- pdftotext returns empty; digits were read from a 600dpi raster render and independently cross-checked by measuring the drawing's own vector circle paths with PyMuPDF get_drawings(extended=True), 2026-09-05). PRINTED dimension text: board 85 x 56 mm, corner radius 3.0mm, mount pitch 58 x 49 mm (labelled directly, and also given as two 29mm half-spans confirming 58 = 2x29), inset 3.5 x 3.5 mm from the top-left corner to the nearest hole center -- this is the well-known standard Raspberry Pi 40-series footprint, confirmed authoritative here from the vendor's own current drawing (not from memory/community claims). mount_hole_dia_mm: NOT printed as a dimension callout anywhere on this drawing (only board/pitch/inset dims and per-component Z-height callouts are labelled) -- measured instead from the drawing's own vector geometry: the 4 mount-hole locations each render as two concentric circles (inner drilled hole + outer copper keepout ring). Calibrated the page's points-per-mm scale independently from the X-pitch (336.84pt / 58mm = 5.8076 pt/mm) and the Y-pitch (284.52pt / 49mm = 5.8071 pt/mm) -- the two agree to within 0.01%, confirming an isotropic, undistorted scale. Applying that scale to the inner circle diameter (15.48pt) gives 2.666mm, which rounds to the industry-standard 2.7mm quoted across the RPi ecosystem -- recorded as 2.7 with the raw calibrated measurement noted here for audit. mount_screw=M2.5 is not printed on this drawing either; it is the universally standard RPi mounting screw size, corroborated by the measured 2.7mm clearance diameter (a plausible M2.5 clearance fit), not itself printed on RP-008343. component_height_top_mm=16.0 is the printed Z=16.0 callout for the two USB-A ports (tallest labelled feature; no bottom-side height is printed on this drawing, so standoff_height_mm is left null). pcb_thickness_mm=1.6 is the repo-convention nominal default (not printed on this drawing -- it shows no Z axis / side-view thickness callout). Source: https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf
+- src: https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf
+
+### Raspberry Pi 5  ·  `raspberrypi_5`
+
+- **Category:** sbc · **Confidence:** high · **Source file:** `raspberrypi.yaml`
+- **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
+- **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 58.0×49.0 mm
+  - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
+- **Connectors:** 85 x 56 mm board -- SAME 58x49mm/3.5mm-inset mount pattern as the Raspberry Pi 4B (vendor-confirmed on this drawing, not merely assumed backward compatibility). 40-pin GPIO header along the top edge; a small 6mm-tall component sits beside each of the two top mount holes (one is explicitly dimensioned "6", not identified by the drawing). A separate, smaller ~3mm-diameter feature (labelled "ø3") sits near the top-right mount hole -- distinct from the 4 main ø2.7 mount holes, single (not a symmetric 4-hole set), purpose not stated on the drawing (possibly a test point or alignment via; do NOT treat as a 5th mounting point). Right edge stacks 2x USB3 Type-A ports above 1x RJ45 Ethernet jack (no height/Z dimension given for this stack on this drawing -- see notes). Bottom edge carries a power button (0.45mm offset) and a connector row (USB-C power, micro-SD-adjacent connectors) at x-positions 11.2/25.8/39.2mm from the left mount-hole column. The drawing explicitly states "not all board components are shown."
+- **Notes:** Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing, datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf, a native Adobe Illustrator PDF export with a real extractable text layer -- read directly via pdftotext and cross-checked visually on a 600dpi render, 2026-09-05). PRINTED dimension text: board 85 x 56 mm; mount pitch 58 x 49 mm (also given as 2x29mm half-span); inset 3.5 x 3.5mm from the top-left corner -- IDENTICAL to the Raspberry Pi 4B pattern (raspberrypi_4b in this file), vendor-confirmed here directly rather than assumed from "backward compatible" marketing language. mount_hole_dia_mm=2.7 is EXPLICITLY PRINTED on this drawing as "ø2.7" with a leader line to the bottom-left mount hole -- stronger provenance than the Pi 4B record (which had to back this out from calibrated vector-circle geometry since RP-008343 never prints a diameter). mount_screw=M2.5 is still an inference (universal RPi ecosystem convention + the printed 2.7mm clearance diameter), not itself printed as "M2.5" on the page. component_height_top_mm and standoff_height_mm are left null: unlike the Pi 4B drawing (which gives a per-component Z=height for every major connector, including Z=16.0 for the USB-A stack), this Pi 5 drawing gives connector X/Y POSITIONS and only two small unrelated 6mm component heights near the GPIO header -- it does NOT dimension the height of the USB3/Ethernet stack (the tallest real feature) at all, and the drawing's own printed note says "Not all of the board components are shown. Please reference a physical board for representation of componentry" -- recording null here rather than reusing the Pi 4B USB-A figure (16.0mm), which would misattribute an un-measured value to this board. The side-view (bottom of drawing) dimensions a "3" mm feature near the board's right edge that looks like a specific small connector-tab protrusion, not a general underside standoff clearance -- ambiguous, so also left uncaptured (see connector_notes for the raw side-view dims: 0.45, 4.1, 3.2, 3.4, 4.4, 4.1 are GPIO-header/connector-row pin heights and spacings, not a board-wide standoff spec). pcb_thickness_mm=1.6 is the repo-convention nominal default (not printed on this drawing either). Source: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
+- src: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
 
 ## Slice Engineering
 

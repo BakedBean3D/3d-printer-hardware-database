@@ -1,0 +1,120 @@
+# SPDX-License-Identifier: DbCL-1.0
+# Contents licensed under the Database Contents License (DbCL) v1.0; the database
+# as a whole under ODbL-1.0. © BakedBean3D. See DATA_LICENSE.md.
+# Raspberry Pi single-board computers (official mechanical drawings).
+# Mounting dimensions for parametric CAD. null = unknown (do not assume 0).
+- id: raspberrypi_4b
+  name: Raspberry Pi 4 Model B
+  manufacturer: Raspberry Pi
+  category: sbc
+  pcb_length_mm: 85.0
+  pcb_width_mm: 56.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.7
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 58.0
+  mount_pitch_y_mm: 49.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 61.5
+    - 3.5
+  - - 3.5
+    - 52.5
+  - - 61.5
+    - 52.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: null
+  component_height_top_mm: 16.0
+  connector_notes: 85 x 56 mm board, 3.0mm corner radius (all corners rounded, per drawing). 40-pin GPIO
+    header along the top edge (Z=8.5mm). Right edge stacks 2x USB-A (Z=16.0mm, the tallest features on
+    the board) above 1x RJ45 Ethernet (Z=13.5mm). Bottom edge carries USB-C power (Z=3.2mm) and 2x micro-HDMI
+    (Z=3.0mm each) plus a 4-lane MIPI DSI/CSI FPC connector pair (Z=5.5-6.0mm) and a small Z=6.14mm component
+    near the GPIO corner. Left side carries the WiFi/BT module and PMIC.
+  sources:
+  - https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf
+  confidence: high
+  notes: 'Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing RP-008343, a Cadence Allegro
+    "Print to PDF" export with vector-drawn dimension text, no extractable text layer -- pdftotext returns
+    empty; digits were read from a 600dpi raster render and independently cross-checked by measuring the
+    drawing''s own vector circle paths with PyMuPDF get_drawings(extended=True), 2026-09-05). PRINTED dimension
+    text: board 85 x 56 mm, corner radius 3.0mm, mount pitch 58 x 49 mm (labelled directly, and also given
+    as two 29mm half-spans confirming 58 = 2x29), inset 3.5 x 3.5 mm from the top-left corner to the nearest
+    hole center -- this is the well-known standard Raspberry Pi 40-series footprint, confirmed authoritative
+    here from the vendor''s own current drawing (not from memory/community claims). mount_hole_dia_mm:
+    NOT printed as a dimension callout anywhere on this drawing (only board/pitch/inset dims and per-component
+    Z-height callouts are labelled) -- measured instead from the drawing''s own vector geometry: the 4
+    mount-hole locations each render as two concentric circles (inner drilled hole + outer copper keepout
+    ring). Calibrated the page''s points-per-mm scale independently from the X-pitch (336.84pt / 58mm =
+    5.8076 pt/mm) and the Y-pitch (284.52pt / 49mm = 5.8071 pt/mm) -- the two agree to within 0.01%, confirming
+    an isotropic, undistorted scale. Applying that scale to the inner circle diameter (15.48pt) gives 2.666mm,
+    which rounds to the industry-standard 2.7mm quoted across the RPi ecosystem -- recorded as 2.7 with
+    the raw calibrated measurement noted here for audit. mount_screw=M2.5 is not printed on this drawing
+    either; it is the universally standard RPi mounting screw size, corroborated by the measured 2.7mm
+    clearance diameter (a plausible M2.5 clearance fit), not itself printed on RP-008343. component_height_top_mm=16.0
+    is the printed Z=16.0 callout for the two USB-A ports (tallest labelled feature; no bottom-side height
+    is printed on this drawing, so standoff_height_mm is left null). pcb_thickness_mm=1.6 is the repo-convention
+    nominal default (not printed on this drawing -- it shows no Z axis / side-view thickness callout).
+    Source: https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf'
+- id: raspberrypi_5
+  name: Raspberry Pi 5
+  manufacturer: Raspberry Pi
+  category: sbc
+  pcb_length_mm: 85.0
+  pcb_width_mm: 56.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.7
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 58.0
+  mount_pitch_y_mm: 49.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 61.5
+    - 3.5
+  - - 3.5
+    - 52.5
+  - - 61.5
+    - 52.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: null
+  component_height_top_mm: null
+  connector_notes: 85 x 56 mm board -- SAME 58x49mm/3.5mm-inset mount pattern as the Raspberry Pi 4B (vendor-confirmed
+    on this drawing, not merely assumed backward compatibility). 40-pin GPIO header along the top edge;
+    a small 6mm-tall component sits beside each of the two top mount holes (one is explicitly dimensioned
+    "6", not identified by the drawing). A separate, smaller ~3mm-diameter feature (labelled "ø3") sits
+    near the top-right mount hole -- distinct from the 4 main ø2.7 mount holes, single (not a symmetric
+    4-hole set), purpose not stated on the drawing (possibly a test point or alignment via; do NOT treat
+    as a 5th mounting point). Right edge stacks 2x USB3 Type-A ports above 1x RJ45 Ethernet jack (no height/Z
+    dimension given for this stack on this drawing -- see notes). Bottom edge carries a power button (0.45mm
+    offset) and a connector row (USB-C power, micro-SD-adjacent connectors) at x-positions 11.2/25.8/39.2mm
+    from the left mount-hole column. The drawing explicitly states "not all board components are shown."
+  sources:
+  - https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
+  confidence: high
+  notes: 'Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing, datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf,
+    a native Adobe Illustrator PDF export with a real extractable text layer -- read directly via pdftotext
+    and cross-checked visually on a 600dpi render, 2026-09-05). PRINTED dimension text: board 85 x 56
+    mm; mount pitch 58 x 49 mm (also given as 2x29mm half-span); inset 3.5 x 3.5mm from the top-left corner
+    -- IDENTICAL to the Raspberry Pi 4B pattern (raspberrypi_4b in this file), vendor-confirmed here directly
+    rather than assumed from "backward compatible" marketing language. mount_hole_dia_mm=2.7 is EXPLICITLY
+    PRINTED on this drawing as "ø2.7" with a leader line to the bottom-left mount hole -- stronger provenance
+    than the Pi 4B record (which had to back this out from calibrated vector-circle geometry since RP-008343
+    never prints a diameter). mount_screw=M2.5 is still an inference (universal RPi ecosystem convention
+    + the printed 2.7mm clearance diameter), not itself printed as "M2.5" on the page. component_height_top_mm
+    and standoff_height_mm are left null: unlike the Pi 4B drawing (which gives a per-component Z=height
+    for every major connector, including Z=16.0 for the USB-A stack), this Pi 5 drawing gives connector
+    X/Y POSITIONS and only two small unrelated 6mm component heights near the GPIO header -- it does NOT
+    dimension the height of the USB3/Ethernet stack (the tallest real feature) at all, and the drawing''s
+    own printed note says "Not all of the board components are shown. Please reference a physical board
+    for representation of componentry" -- recording null here rather than reusing the Pi 4B USB-A figure
+    (16.0mm), which would misattribute an un-measured value to this board. The side-view (bottom of drawing)
+    dimensions a "3" mm feature near the board''s right edge that looks like a specific small connector-tab
+    protrusion, not a general underside standoff clearance -- ambiguous, so also left uncaptured (see connector_notes
+    for the raw side-view dims: 0.45, 4.1, 3.2, 3.4, 4.4, 4.1 are GPIO-header/connector-row pin heights
+    and spacings, not a board-wide standoff spec). pcb_thickness_mm=1.6 is the repo-convention nominal
+    default (not printed on this drawing either). Source: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf'
