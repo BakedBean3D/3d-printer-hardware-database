@@ -44,7 +44,7 @@
   drive: dual_gear
   type_detail: Dual Gear
   gear_ratio: '44:10'
-  rotation_distance: 5.7
+  rotation_distance: 8.0
   uses_gear_ratio_in_config: false
   motor: NEMA14 or NEMA17 compatible
   motor_current: 1.2
@@ -53,9 +53,9 @@
   weight_g: 180
   filament_path_length: 52
   recommended_pressure_advance: 0.035
-  confidence: low
+  confidence: medium
   notes: |-
-    More torque than Lite variant. Two-stage gear ratio 44:10, 37:17. Rotation distance 5.7 (or 55 with gear_ratio). Most specs estimated - limited official data. Ref: bondtech.se/lgx
+    More torque than Lite variant. Two-stage gear ratio 44:10, 37:17. Re-verified 2026-09-07: rotation_distance corrected 5.7 -> 8.0. Bondtech's own official Klipper setup post states rotation_distance = full_steps_per_rotation * microsteps / e-steps = 200*16/400 = 8 (e-steps for LGX is 400), identical text posted on both their X/Twitter and Facebook accounts: https://x.com/bondtechab/status/1392412091982786563 and https://www.facebook.com/bondtech3D/photos/a.436544336533234/1672753506245638/?type=3 . The old 5.7 value was the LGX Lite figure (562 e-steps), mistakenly copied onto this entry. weight_g (180), motor_current (1.2A), filament_path_length (52mm) and recommended_pressure_advance (0.035) remain unverified estimates - could not reach bondtech.se/lgx or trianglelab-style retailer pages this session (network egress blocked); flagged for future re-verification.
 - id: lgx_ace
   name: LGX Ace
   manufacturer: Bondtech

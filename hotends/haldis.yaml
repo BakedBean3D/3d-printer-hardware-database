@@ -16,3 +16,4 @@
   confidence: low
   notes: |-
     V6 groovemount. One-piece integrated nozzle+heatbreak. Two variants: standard (320°C) and high-temp (500°C, plated copper). 115W heater. Flow ~32mm³/s estimated. Weight ~50g estimated. Ref: 3dgadgets.my, forum.duet3d.com
+    Re-verified 2026-09-07: checked 3dgadgets.my listing, AliExpress/Amazon retail listings, and the Duet3D "anyone seen the new haldis k1 hf hotend?" forum thread again. Retailer snippets are inconsistent with each other (weight quoted as both ~140g and 156g for what claims to be the same SKU, one of which is likely package/shipping weight rather than net hotend weight) and could not be resolved without loading the page directly (3dgadgets.my is network-egress-blocked in this session). Kept existing 50g/32mm³/s estimates rather than substitute an unreliable number; confidence stays low pending a source that can be read directly.

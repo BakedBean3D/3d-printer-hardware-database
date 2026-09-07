@@ -16,3 +16,4 @@
   confidence: low
   notes: |-
     Budget Dragon HF clone by Mellow/Trianglelab. Max flow ~28mm³/s estimated (Dragon HF class). Bi-metal heatbreak, Dragon mounting. Ref: trianglelab.net
+    Re-verified 2026-09-07: trianglelab.net is network-egress-blocked in this session so the cited page could not be loaded directly. Web search turns up many differently-specced products all sold under a "Red Lizard" name (Haldis, generic AliExpress sellers, and Trianglelab/Mellow variants), including one community list citing ~22mm³/s for a "Red Lizard K1" - too easy to conflate with this specific Mellow-branded entry to use as a correction. Left the 28mm³/s and 15.5g estimates unchanged; confidence stays low until the manufacturer page is reachable.
