@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python psu/gen.py`. The YAML files are the source of truth.
 
-- **Total units:** 10
-- **Confidence:** 10 high · 0 medium · 0 low
+- **Total units:** 11
+- **Confidence:** 11 high · 0 medium · 0 low
 - **Aggregate for code:** `psu.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -21,6 +21,7 @@
 
 | Unit | Mfr | Category | L×W×H (mm) | Weight | Watt | Voltages | Bottom mount | Side mount | Conf |
 |---|---|---|---|---|---|---|---|---|---|
+| LDO LCP300-24D5 | LDO Motors | enclosed | 120.0×95.0×35.0 | —g | 300W | 5/24 | 4×M3 (rectangular) | 4×M3 (rectangular) | high |
 | Mean Well EDR-120 | Mean Well | din_rail | 113.5×40.0×125.2 | 600g | 120W | 12/24/48 | none | DIN TS35/7.5 or TS35/15 | high |
 | Mean Well LRS-100 | Mean Well | enclosed | 129.0×97.0×30.0 | 330g | 100W | 3.3/5/12/15/24/36/48 | 2×M3 (2-hole) | 3×M3 (other) | high |
 | Mean Well LRS-150 | Mean Well | enclosed | 159.0×97.0×30.0 | 420g | 150W | 12/15/24/36/48 | 2×M3 (2-hole) | 3×M3 (other) | high |
@@ -31,6 +32,25 @@
 | Mean Well MDR-60 | Mean Well | din_rail | 100.0×40.0×90.0 | 287g | 60W | 5/12/24/48 | none | DIN TS35/7.5 or TS35/15 | high |
 | Mean Well RSP-500 | Mean Well | enclosed | 230.0×127.0×40.5 | 1300g | 500W | 3.3/4/5/12/15/24/27/48 | 5×M4 (other) | 4×M4 (rectangular) | high |
 | Mean Well UHP-350 | Mean Well | slim_enclosed | 220.0×62.0×31.0 | 680g | 350W | 3.3/4.2/5/12/15/24/36/48/55 | 4×M3 (rectangular) | none | high |
+
+## LDO Motors
+
+### LDO LCP300-24D5  ·  `ldo_lcp300_24d5`
+
+- **Category:** enclosed · **Confidence:** high · **Source file:** `ldo.yaml`
+- **Case:** 120.0 × 95.0 × 35.0 mm, — g, 300W
+- **Output voltages:** 5/24 V
+- **Bottom mount:** 4× M3 (Ø3.5), rectangular, pitch 115.1×82.0 mm, max penetration — mm
+  - holes (x,y mm): [[2.45, 6.5], [117.55, 6.5], [2.45, 88.5], [117.55, 88.5]]
+  - open ear SLOT: the xy above is the slot's CLOSED (fully-enclosed) end; the screw centre may travel 2.45 mm outward from it toward the ear's open mouth
+- **Side mount:** 4× M3 (Ø2.53), rectangular, pitch_x 100.0 mm, max penetration — mm
+  - holes (x,y mm): [[10.0, 5.2], [110.0, 5.2], [10.0, 20.0], [110.0, 20.0]]
+- **Terminal location:** screw terminal blocks on OPPOSITE 95x35 short ends -- AC input (6-position barrier, 7.7 mm pitch, dual AC input for parallel connection) on one end, DC output (8-position, 5.08 mm pitch) on the other. A bay layout must leave wire access at BOTH ends; this unit cannot be pushed against a wall the way a single-ended case can.
+- **Connectors:** AC input uses M3 barrier terminals (LDO recommends SV2-3 or equivalent fork spade terminals). DC output uses standard 5.08 mm screw terminals (LDO recommends ferrules up to size VE1508). Output allocation is 24 V x3 pairs + 5 V x1 pair across the 8 positions. Fully enclosed, no user-serviceable vent face called out in the drawing.
+- **Notes:** Confidence high -- measured 2026-09-08 from the VENDOR 3D STEP (LDOPowerSupply repo, LCP300-24D5/CAD) by OCCT cylindrical-face extraction, taking each cylinder's axis_of_rotation.position (a point ON the axis) and never its face centroid -- a half-cylinder face's centroid lies on the SURFACE, offset from the axis, which splits one round hole into two arcs and reads as a slot. Every mount number below is independently confirmed by the LCP300-24D5's OWN datasheet drawing (page 4, "Drawings and Dimensions"), so the record does not rest on the STEP alone. STEP orientation: X = 120 length, Y = 35 height, Z = 95 width; bbox measures exactly 120.000 x 35.000 x 95.000 with no connector overhang, so the case IS the bbox and the datum needed no reconstruction. Record origin: x=0 at the AC-INPUT end (located in the STEP by the 6-position 7.7 mm barrier terminals), y=0 at either long side -- both mount patterns are symmetric about the case centreline, so the y choice is free and is stated only to make the coordinates reproducible. Viewed onto the mounting face. BOTTOM (the plate-mount pattern, drawing's "115" x "82" view): four OPEN-MOUTHED SLOTS 3.5 mm wide in the 1.5 mm outer skin of one 120x95 face. The recorded xy is each slot's CLOSED round end (arc centres at STEP X=+-57.55, Z=+-41.0 -> 115.1 x 82.0 pitch; the drawing rounds 115.1 to 115). Each slot runs OUTWARD from there and breaks through the 120 mm end face -- the STEP end plane at X=+-60 is interrupted between Z=39.25 and Z=42.75, which is the mouth -- giving 2.45 mm of screw-centre travel. Interface is clearance_ears, NOT threaded: the user's screw passes through the case and must find its thread in the mount, so bottom_mount_max_penetration_mm is null by definition (nothing to thread into) rather than unknown. The opposite 120x95 face carries no mount feature at all -- checked, only a corner fillet. SIDE (drawing's "4x M3" / "4-M3" views): four TAPPED M3 in EACH long 120x35 side wall -- 8 on the unit, and side_mount_hole_count records the four on one wall, matching the drawing's own per-view callout. Pilots measure 2.529 mm (thread-forming M3). Positions x = 10.0 and 110.0 (100.0 mm pitch, the drawing's "100"); side_mount_holes_xy's second coordinate is HEIGHT above the large face that carries NO slots, 5.2 and 20.0 (the drawing's "5.2" and "20"). Measured from the slot face instead those heights are 29.8 and 15.0 -- state which face a mount is referencing before cutting. side_mount_max_penetration_mm is null and must stay null: LDO publishes no depth, and the STEP shows the thread passing through a bare 1.5 mm sheet with live case interior directly behind it, so there is no vendor-sanctioned safe screw length to record. Do not infer one. weight_g null -- absent from the datasheet and from every distributor page checked. din_rail_compatible false: the unit has no clip. LDO does publish a printable "Low Profile DIN Rail Mount" accessory in the same repo, which is an add-on part and not a property of the case. Provenance caveat, recorded rather than hidden: the LCP300-24D5 and LCP300-48 CAD files in that repo are BYTE-IDENTICAL (sha1 076c4543...), so the STEP is the shared LCP300 family case rather than a per-variant model. That does not weaken this record, because every dimension above is cross-checked against the 24D5's own datasheet drawing; it does mean the STEP alone cannot tell the two variants apart, and the terminal counts do not discriminate either (the -48 also uses 8 output positions). NOT YET PHYSICALLY VALIDATED -- no printed mount has been fitted to this unit.
+- src: https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/CAD/LCP300-24D5%20CAD.step
+- src: https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/Media/LCP300-24D5%20Datasheet.pdf
+- src: https://docs.ldomotors.com/en/PSU/LCP300-24D5
 
 ## Mean Well
 
