@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 100
-- **Confidence:** 50 high · 31 medium · 19 low
+- **Total boards:** 101
+- **Confidence:** 51 high · 31 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -44,6 +44,7 @@
 | Manta M5P | BigTreeTech | mainboard | 137.39×95.0 | 1.6 | M3 | rectangular | —×86.5 | 4 | medium |
 | Manta M8P V1.1 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
 | Manta M8P V2.0 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
+| Octopus Max EZ V1.0 | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | Octopus Pro V1.x (V1.0/V1.1) | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | Octopus V1.1 | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | SKR 3 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
@@ -395,6 +396,18 @@
 - **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official V2.0 SIZE.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. Dense connector-referenced drawing -> exact hole XY LOW, hole_count MEDIUM. Mechanically interchangeable footprint with V1.x. hole_dia and thickness assumed. Mounting: Board outline 169.93 x 102.74 mm. SIZE drawing shows corner insets 5.00 and 4.43 mm. Mounting-hole layout is essentially the same as V1.0/V1.1 (corners + mid-edge); same enclosures generally fit V1.x and V2.0. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://global.bttwiki.com/M8P-V2_0.html
+
+### Octopus Max EZ V1.0  ·  `btt_octopus_max_ez`
+
+- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **PCB:** 160.0 × 100.0 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.3), rectangular, pitch 150.0×90.0 mm
+  - holes (x,y mm): [[5.0, 5.0], [155.0, 5.0], [5.0, 95.0], [155.0, 95.0]]
+- **Clearance:** standoff — mm, top component 20.0 mm
+- **Connectors:** Eight stepper driver sockets (5.08mm-pitch screw terminals at x=7.62 on 9.5mm centres along one long edge, with their 2.0mm-dia through-holes at x=13.82 on the same 9.5mm pitch). A second connector bank sits along the y=5.2 edge on 5.0mm centres. Components stand 20.0mm above the board top and 2.96mm below the board bottom, so a mount must clear the underside as well as the fasteners.
+- **Notes:** Confidence high -- NEW RECORD 2026-09-08, measured from the VENDOR 3D STEP (BIGTREETECH Octopus MAX EZ V1.0.step, 125MB, from step.rar in the vendor repo) via OCCT extraction. This is a Tier-1 solid reading, not a drawing inference: the PCB outline is the largest planar face on the board plane and measures 160.000 x 100.000 EXACTLY, and the four mounting holes are the only Ø3.30 cylinders whose axial extent spans the board, at (5.0, 5.0), (155.0, 5.0), (5.0, 95.0) and (155.0, 95.0) -- a true rectangle, 150.0 x 90.0 pitch, 5.0 inset on all four sides. Hole axes were taken from each cylindrical face's AXIS, never its centroid. Origin: x=0/y=0 at the PCB corner, z=0 at the board TOP face (the STEP's own datum; the board runs to z=-1.12). mount_hole_dia_mm 3.30 is MEASURED, and is the one number here that differs from the sibling Octopus records, where 3.2 is recorded as an explicit M3-clearance assumption -- if those are ever re-verified against their own solids, expect 3.30. mount_hole_dia is a CLEARANCE hole through the PCB, not a threaded pilot: the fastener passes through and lands in whatever the board is mounted to. pcb_thickness_mm follows the repo-convention nominal 1.6; the STEP models a 1.12mm carrier layer (top z=0.00, bottom z=-1.12), which is a model simplification and not a board spec -- the same convention already applied to the 0.62mm carrier in another record here. standoff_height_mm null (unknown, never 0): no standoff spec is published for this board. Mechanically this shares the Octopus V1.1 / Octopus Pro footprint exactly (160 x 100, 150 x 90, 5mm inset), which is consistent with BTT holding the form factor across the line, and means a mount that fits one fits all three. STEP bounding box is 161.10 x 100.17 x 24.09, larger than the PCB because a connector overhangs the +x edge by 1.10 and the +y edge by 0.17 -- the OUTLINE is the recorded dimension, not the bounding box. NOT YET PHYSICALLY VALIDATED: no print has threaded onto a real Octopus Max EZ.
+- src: https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/3D/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0.step.rar
+- src: https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/Hardware/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0-SIZE.pdf
 
 ### Octopus Pro V1.x (V1.0/V1.1)  ·  `btt_octopus_pro_v1_x`
 
