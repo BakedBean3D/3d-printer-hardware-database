@@ -35,15 +35,16 @@ def write_json(boards):
 
 
 def md_table(boards):
-    rows = ["| Board | Mfr | Cat | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |",
-            "|---|---|---|---|---|---|---|---|---|---|"]
+    rows = ["| Board | Mfr | Cat | Mounts on | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |",
+            "|---|---|---|---|---|---|---|---|---|---|---|"]
     for b in boards:
         L, W = b.get("pcb_length_mm"), b.get("pcb_width_mm")
         lw = f"{fmt(L)}×{fmt(W)}" if (L or W) else "—"
         px, py = b.get("mount_pitch_x_mm"), b.get("mount_pitch_y_mm")
         pitch = f"{fmt(px)}×{fmt(py)}" if (px or py) else "—"
-        rows.append("| {name} | {mfr} | {cat} | {lw} | {thk} | {screw} | {pat} | {pitch} | {hc} | {conf} |".format(
-            name=b.get("name"), mfr=b.get("manufacturer"), cat=b.get("category"), lw=lw,
+        rows.append("| {name} | {mfr} | {cat} | {loc} | {lw} | {thk} | {screw} | {pat} | {pitch} | {hc} | {conf} |".format(
+            name=b.get("name"), mfr=b.get("manufacturer"), cat=b.get("category"),
+            loc=b.get("mount_location"), lw=lw,
             thk=fmt(b.get("pcb_thickness_mm")), screw=fmt(b.get("mount_screw")),
             pat=fmt(b.get("mount_pattern")), pitch=pitch, hc=fmt(b.get("mount_hole_count")),
             conf=b.get("confidence")))
@@ -91,7 +92,7 @@ def write_md(boards):
         for b in sorted(by_mfr[mfr], key=lambda b: b.get("name","")):
             L.append(f"### {b.get('name')}  ·  `{b.get('id')}`")
             L.append("")
-            L.append(f"- **Category:** {b.get('category')} · **Confidence:** {b.get('confidence')} · **Source file:** `{b.get('_source_file')}`")
+            L.append(f"- **Category:** {b.get('category')} · **Mounts on:** {b.get('mount_location')} · **Confidence:** {b.get('confidence')} · **Source file:** `{b.get('_source_file')}`")
             L.append(f"- **PCB:** {fmt(b.get('pcb_length_mm'))} × {fmt(b.get('pcb_width_mm'))} mm, {fmt(b.get('pcb_thickness_mm'))} mm thick")
             L.append(f"- **Mounting:** {fmt(b.get('mount_hole_count'))}× {fmt(b.get('mount_screw'))} "
                      f"(Ø{fmt(b.get('mount_hole_dia_mm'))}), {fmt(b.get('mount_pattern'))}, "

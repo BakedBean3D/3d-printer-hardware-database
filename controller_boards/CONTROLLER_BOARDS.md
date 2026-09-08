@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 100
-- **Confidence:** 50 high · 31 medium · 19 low
+- **Total boards:** 101
+- **Confidence:** 51 high · 31 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -18,114 +18,115 @@
 
 ## All boards
 
-| Board | Mfr | Cat | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |
-|---|---|---|---|---|---|---|---|---|---|
-| Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×— | 2 | high |
-| Box Turtle (AFC) PCB | ArmoredTurtle | ercf | — | 1.6 | M3 | none | — | — | low |
-| BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
-| BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
-| BTT Pi V1.2 | BigTreeTech | sbc | 85.01×56.01 | 1.64 | M2.5 | 4-hole | — | 4 | medium |
-| BTT Relay V1.2 module | BigTreeTech | relay | 80.32×36.19 | 1.6 | M3 | rectangular | 74.17×29.21 | 4 | high |
-| BTT S2DW V1.0 (LIS2DW, USB-C) | BigTreeTech | accelerometer | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
-| BTT Smart Filament Sensor (SFS) V1.0 | BigTreeTech | sensor | 75.0×30.0 | — | M3 | rectangular | 56.75×20.35 | 4 | high |
-| BTT TMC5160T Plus V1.0 external high-power stepper driver | BigTreeTech | driver_module | 50.0×50.0 | 1.6 | M3 | rectangular | 42.0×42.0 | 4 | high |
-| CB1 | BigTreeTech | sbc | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
-| CB2 | BigTreeTech | sbc | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
-| EBB SB2209 CAN V1.0 | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.03 | 2 | high |
-| EBB SB2209 CAN V1.0 (RP2040) | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.0 | 2 | low |
-| EBB SB2240 CAN V1.0 | BigTreeTech | toolhead_can | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.02 | 2 | high |
-| EBB36 CAN V1.x | BigTreeTech | toolhead_can | 51.4×37.0 | 1.6 | M3 | linear | 43.85×— | 2 | medium |
-| EBB42 CAN V1.x | BigTreeTech | toolhead_can | 40.0×40.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
-| KNOMI | BigTreeTech | accessory | 37.86×34.53 | 1.6 | — | other | — | 0 | high |
-| KNOMI 2 | BigTreeTech | accessory | 41.12×38.48 | 1.6 | — | other | — | 0 | high |
-| Kraken (V1.0/V1.1) | BigTreeTech | mainboard | 200.0×113.0 | 1.6 | M3 | rectangular | 193.0×106.03 | 4 | medium |
-| Manta E3EZ | BigTreeTech | mainboard | 120.0×90.81 | 1.6 | M3 | other | — | 4 | medium |
-| Manta M4P | BigTreeTech | mainboard | 160.0×95.0 | 1.6 | M3 | other | 97.0×84.2 | 4 | medium |
-| Manta M5P | BigTreeTech | mainboard | 137.39×95.0 | 1.6 | M3 | rectangular | —×86.5 | 4 | medium |
-| Manta M8P V1.1 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
-| Manta M8P V2.0 | BigTreeTech | mainboard | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
-| Octopus Pro V1.x (V1.0/V1.1) | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
-| Octopus V1.1 | BigTreeTech | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
-| SKR 3 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
-| SKR 3 EZ | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
-| SKR Mini E3 V3 | BigTreeTech | mainboard | 103.75×70.25 | 1.6 | M3 | other | — | 6 | medium |
-| SKR Pico | BigTreeTech | mainboard | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
-| SKRat V1.0 | BigTreeTech | mainboard | 109.67×84.3 | 1.6 | M3 | rectangular | 101.35×76.1 | 4 | high |
-| U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
-| U2C V3 | BigTreeTech | usb_can_bridge | — | — | — | — | — | — | low |
-| Duet 2 WiFi / Ethernet | Duet3D | mainboard | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
-| Duet 3 Mainboard 6HC | Duet3D | mainboard | 140.0×134.0 | 1.6 | M4 | rectangular | 130.0×124.0 | 4 | high |
-| Duet 3 Mainboard 6XD | Duet3D | mainboard | 140.0×115.0 | 1.6 | M4 | rectangular | 130.0×105.0 | 4 | high |
-| Duet 3 Mini 5+ | Duet3D | mainboard | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
-| Duet 3 Toolboard 1LC | Duet3D | toolhead_can | 54.0×47.0 | 1.6 | M3 | rectangular | 34.0×34.0 | 4 | high |
-| Duet3D PT100 temperature daughterboard v1.1 | Duet3D | thermocouple_amp | 31.74×26.16 | 1.6 | — | 2-hole | 5.08×— | 2 | high |
-| Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×— | 2 | medium |
-| Catalyst V2.0 | Fysetc | mainboard | — | 1.6 | M3 | rectangular | — | 4 | low |
-| Cheetah V2.0 | Fysetc | mainboard | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Cheetah V3.0 | Fysetc | mainboard | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
-| ERB (Enraged Rabbit Burrow Board) | Fysetc | toolhead_can | 91.0×35.0 | 1.6 | M3 | other | — | — | medium |
-| Mini12864 Panel (RGB) V2.1 | Fysetc | accessory | 104.99×47.0 | 1.6 | M3 | rectangular | 93.0×41.0 | 4 | high |
-| S6 V1.2 | Fysetc | mainboard | 117.0×87.0 | 1.6 | M3 | rectangular | — | — | medium |
-| SB CAN Toolhead (V1.1 / V1.3) | Fysetc | toolhead_can | — | 1.6 | M3 | rectangular | — | 2 | low |
-| Spider King V1.0 | Fysetc | mainboard | 177.0×108.0 | 1.6 | M3 | rectangular | — | — | medium |
-| Spider Pro V1.2 | Fysetc | mainboard | 179.0×109.0 | 1.6 | M3 | rectangular | 92.0×92.0 | 4 | high |
-| Spider V1.x | Fysetc | mainboard | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Spider V2.2 | Fysetc | mainboard | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Spider V3 (V3.0) | Fysetc | mainboard | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Spider V3.0 H7 | Fysetc | mainboard | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| UCAN V1.0 | Fysetc | usb_can_bridge | — | 1.6 | — | other | — | 0 | low |
-| 3D printer heatbed MOSFET power module (25A) | Generic/various | mosfet | 60.0×50.0 | 1.6 | M3 | rectangular | — | 4 | medium |
-| GY-291 ADXL345 accelerometer breakout | Generic/various | accelerometer | 20.4×15.8 | 1.6 | M3 | 2-hole | 15.0×— | 2 | medium |
-| LM2596 adjustable buck converter module | Generic/various | buck_converter | 43.2×21.0 | 1.6 | M3 | 2-hole | — | 2 | medium |
-| Mini-360 DC-DC buck converter module | Generic/various | buck_converter | 22.0×17.0 | 1.6 | — | none | — | 0 | medium |
-| TMC2208 StepStick driver module | Generic/various | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
-| TMC5160 plug-in StepStick driver module | Generic/various (FYSETC, BTT plug-in) | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | medium |
-| 1-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 50.0×26.0 | 1.6 | M3 | 2-hole | — | 2 | low |
-| 2-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 50.5×38.5 | 1.6 | M3 | rectangular | — | 4 | low |
-| 4-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | 71.0×45.0 | 1.6 | M3 | rectangular | 66.7×40.0 | 4 | medium |
-| TMC2209 StepStick / SilentStepStick driver module | Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.) | driver_module | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
-| HartK Stealthburner Toolhead PCB | HartK | toolhead_can | — | 1.6 | M3 | other | — | — | low |
-| Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×— | 2 | high |
-| Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×— | 2 | high |
-| Hall Effect XY Endstop | HartK / VoronDesign | sensor | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×— | 2 | high |
-| Microswitch XY Endstop | HartK / VoronDesign | sensor | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
-| PT100 Stick (thermocouple amp) | HartK / VoronDesign | thermocouple_amp | 15.24×20.32 | 1.6 | — | none | — | 0 | high |
-| V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×— | 2 | high |
-| Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | 120.0×85.0 | 1.6 | M3 | 4-hole | 110.0×81.0 | 4 | medium |
-| Huvud (original) | Huvud | toolhead_can | 48.0×45.0 | 1.6 | M3 | rectangular | 37.0×40.0 | 4 | high |
-| HuvudTiny | Huvud | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
-| LDO Leviathan (V1.2/V1.3) | LDO Motors | mainboard | 170.0×100.0 | 1.6 | M3 | rectangular | 160.0×90.0 | 4 | high |
-| LDO Nitehawk-36 | LDO Motors | toolhead_can | — | 1.6 | M3 | other | 43.84×— | — | low |
-| LDO Nitehawk-SB | LDO Motors | toolhead_can | — | 1.6 | M3 | other | — | — | low |
-| MKS CANable V2.0 | Makerbase | usb_can_bridge | 45.0×16.2 | 1.6 | M2 | rectangular | 34.7×12.6 | 4 | high |
-| MKS Monster8 V2.0 | Makerbase | mainboard | 160.0×90.0 | 1.6 | M3 | rectangular | 152.0×82.0 | 4 | medium |
-| MKS Robin Nano V3.x | Makerbase | mainboard | 110.0×84.0 | 1.6 | M3 | rectangular | 102.0×76.5 | 4 | high |
-| MKS SKIPR V1.0 | Makerbase | mainboard | 160.0×100.0 | 1.6 | M3 | rectangular | 152.0×92.0 | 4 | high |
-| MKS THR42 V1.0 | Makerbase | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
-| FLY-CDY (and Fly Gemini family) | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
-| FLY-RRF-E3 | Mellow | mainboard | 100.838×70.358 | 1.6 | M3 | other | — | 4 | medium |
-| Fly Gemini V2/V3 (formerly Fly-CDY) | Mellow | mainboard | — | 1.6 | M3 | rectangular | 143.0×78.0 | 4 | low |
-| Fly Super8 | Mellow | mainboard | 155.58×109.68 | 1.6 | M3 | rectangular | 149.38×103.45 | 4 | high |
-| Fly-D5 | Mellow | mainboard | — | 1.6 | M3 | rectangular | — | — | low |
-| Fly-RRF-36 | Mellow | toolhead_can | — | 1.6 | M3 | rectangular | — | — | low |
-| Fly-SB2040 V2 | Mellow | toolhead_can | 47.05×40.07 | 1.6 | M3 | 2-hole | — | 2 | high |
-| Fly-SHT36 (v1) | Mellow | toolhead_can | 51.27×36.26 | 1.6 | M3 | linear | 43.84×— | 2 | high |
-| Fly-SHT36 v2.0 | Mellow | toolhead_can | 51.27×45.67 | 1.6 | M3 | linear | 43.84×— | 2 | high |
-| Fly-SHT42 | Mellow | toolhead_can | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
-| Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
-| Raspberry Pi 4 Model B | Raspberry Pi | sbc | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
-| Raspberry Pi 5 | Raspberry Pi | sbc | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
-| Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | — | — | — | other | — | 0 | low |
-| ERCF EASY-BRD | Tircown | ercf | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
-| Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | — | 1.6 | none | none | — | 0 | low |
-| Binky ERCF Encoder | mneuhaus | sensor | — | 1.6 | M3 | none | — | — | low |
-| Klipper Expander (STM32) | timmit99 | expander | 100.0×24.0 | 1.6 | M3 | linear | 92.0×— | 2 | high |
+| Board | Mfr | Cat | Mounts on | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | bay | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×— | 2 | high |
+| Box Turtle (AFC) PCB | ArmoredTurtle | ercf | frame | — | 1.6 | M3 | none | — | — | low |
+| BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | toolhead | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
+| BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | bay | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
+| BTT Pi V1.2 | BigTreeTech | sbc | bay | 85.01×56.01 | 1.64 | M2.5 | 4-hole | — | 4 | medium |
+| BTT Relay V1.2 module | BigTreeTech | relay | bay | 80.32×36.19 | 1.6 | M3 | rectangular | 74.17×29.21 | 4 | high |
+| BTT S2DW V1.0 (LIS2DW, USB-C) | BigTreeTech | accelerometer | toolhead | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
+| BTT Smart Filament Sensor (SFS) V1.0 | BigTreeTech | sensor | frame | 75.0×30.0 | — | M3 | rectangular | 56.75×20.35 | 4 | high |
+| BTT TMC5160T Plus V1.0 external high-power stepper driver | BigTreeTech | driver_module | bay | 50.0×50.0 | 1.6 | M3 | rectangular | 42.0×42.0 | 4 | high |
+| CB1 | BigTreeTech | sbc | bay | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
+| CB2 | BigTreeTech | sbc | bay | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
+| EBB SB2209 CAN V1.0 | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.03 | 2 | high |
+| EBB SB2209 CAN V1.0 (RP2040) | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.0 | 2 | low |
+| EBB SB2240 CAN V1.0 | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.02 | 2 | high |
+| EBB36 CAN V1.x | BigTreeTech | toolhead_can | toolhead | 51.4×37.0 | 1.6 | M3 | linear | 43.85×— | 2 | medium |
+| EBB42 CAN V1.x | BigTreeTech | toolhead_can | toolhead | 40.0×40.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
+| KNOMI | BigTreeTech | accessory | toolhead | 37.86×34.53 | 1.6 | — | other | — | 0 | high |
+| KNOMI 2 | BigTreeTech | accessory | toolhead | 41.12×38.48 | 1.6 | — | other | — | 0 | high |
+| Kraken (V1.0/V1.1) | BigTreeTech | mainboard | bay | 200.0×113.0 | 1.6 | M3 | rectangular | 193.0×106.03 | 4 | medium |
+| Manta E3EZ | BigTreeTech | mainboard | bay | 120.0×90.81 | 1.6 | M3 | other | — | 4 | medium |
+| Manta M4P | BigTreeTech | mainboard | bay | 160.0×95.0 | 1.6 | M3 | other | 97.0×84.2 | 4 | medium |
+| Manta M5P | BigTreeTech | mainboard | bay | 137.39×95.0 | 1.6 | M3 | rectangular | —×86.5 | 4 | medium |
+| Manta M8P V1.1 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
+| Manta M8P V2.0 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
+| Octopus Max EZ V1.0 | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
+| Octopus Pro V1.x (V1.0/V1.1) | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
+| Octopus V1.1 | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
+| SKR 3 | BigTreeTech | mainboard | bay | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
+| SKR 3 EZ | BigTreeTech | mainboard | bay | 109.67×84.3 | 1.6 | M3 | rectangular | 101.85×76.3 | 4 | high |
+| SKR Mini E3 V3 | BigTreeTech | mainboard | bay | 103.75×70.25 | 1.6 | M3 | other | — | 6 | medium |
+| SKR Pico | BigTreeTech | mainboard | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| SKRat V1.0 | BigTreeTech | mainboard | bay | 109.67×84.3 | 1.6 | M3 | rectangular | 101.35×76.1 | 4 | high |
+| U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | bay | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
+| U2C V3 | BigTreeTech | usb_can_bridge | bay | — | — | — | — | — | — | low |
+| Duet 2 WiFi / Ethernet | Duet3D | mainboard | bay | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
+| Duet 3 Mainboard 6HC | Duet3D | mainboard | bay | 140.0×134.0 | 1.6 | M4 | rectangular | 130.0×124.0 | 4 | high |
+| Duet 3 Mainboard 6XD | Duet3D | mainboard | bay | 140.0×115.0 | 1.6 | M4 | rectangular | 130.0×105.0 | 4 | high |
+| Duet 3 Mini 5+ | Duet3D | mainboard | bay | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
+| Duet 3 Toolboard 1LC | Duet3D | toolhead_can | toolhead | 54.0×47.0 | 1.6 | M3 | rectangular | 34.0×34.0 | 4 | high |
+| Duet3D PT100 temperature daughterboard v1.1 | Duet3D | thermocouple_amp | bay | 31.74×26.16 | 1.6 | — | 2-hole | 5.08×— | 2 | high |
+| Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | bay | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×— | 2 | medium |
+| Catalyst V2.0 | Fysetc | mainboard | bay | — | 1.6 | M3 | rectangular | — | 4 | low |
+| Cheetah V2.0 | Fysetc | mainboard | bay | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Cheetah V3.0 | Fysetc | mainboard | bay | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
+| ERB (Enraged Rabbit Burrow Board) | Fysetc | toolhead_can | frame | 91.0×35.0 | 1.6 | M3 | other | — | — | medium |
+| Mini12864 Panel (RGB) V2.1 | Fysetc | accessory | frame | 104.99×47.0 | 1.6 | M3 | rectangular | 93.0×41.0 | 4 | high |
+| S6 V1.2 | Fysetc | mainboard | bay | 117.0×87.0 | 1.6 | M3 | rectangular | — | — | medium |
+| SB CAN Toolhead (V1.1 / V1.3) | Fysetc | toolhead_can | toolhead | — | 1.6 | M3 | rectangular | — | 2 | low |
+| Spider King V1.0 | Fysetc | mainboard | bay | 177.0×108.0 | 1.6 | M3 | rectangular | — | — | medium |
+| Spider Pro V1.2 | Fysetc | mainboard | bay | 179.0×109.0 | 1.6 | M3 | rectangular | 92.0×92.0 | 4 | high |
+| Spider V1.x | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Spider V2.2 | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Spider V3 (V3.0) | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Spider V3.0 H7 | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
+| UCAN V1.0 | Fysetc | usb_can_bridge | bay | — | 1.6 | — | other | — | 0 | low |
+| 3D printer heatbed MOSFET power module (25A) | Generic/various | mosfet | bay | 60.0×50.0 | 1.6 | M3 | rectangular | — | 4 | medium |
+| GY-291 ADXL345 accelerometer breakout | Generic/various | accelerometer | toolhead | 20.4×15.8 | 1.6 | M3 | 2-hole | 15.0×— | 2 | medium |
+| LM2596 adjustable buck converter module | Generic/various | buck_converter | bay | 43.2×21.0 | 1.6 | M3 | 2-hole | — | 2 | medium |
+| Mini-360 DC-DC buck converter module | Generic/various | buck_converter | bay | 22.0×17.0 | 1.6 | — | none | — | 0 | medium |
+| TMC2208 StepStick driver module | Generic/various | driver_module | bay | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
+| TMC5160 plug-in StepStick driver module | Generic/various (FYSETC, BTT plug-in) | driver_module | bay | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | medium |
+| 1-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | bay | 50.0×26.0 | 1.6 | M3 | 2-hole | — | 2 | low |
+| 2-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | bay | 50.5×38.5 | 1.6 | M3 | rectangular | — | 4 | low |
+| 4-channel 5V relay module | Generic/various (SONGLE SRD-05VDC-SL-C) | relay | bay | 71.0×45.0 | 1.6 | M3 | rectangular | 66.7×40.0 | 4 | medium |
+| TMC2209 StepStick / SilentStepStick driver module | Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.) | driver_module | bay | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
+| HartK Stealthburner Toolhead PCB | HartK | toolhead_can | toolhead | — | 1.6 | M3 | other | — | — | low |
+| Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | frame | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×— | 2 | high |
+| Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | frame | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×— | 2 | high |
+| Hall Effect XY Endstop | HartK / VoronDesign | sensor | frame | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×— | 2 | high |
+| Microswitch XY Endstop | HartK / VoronDesign | sensor | frame | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
+| PT100 Stick (thermocouple amp) | HartK / VoronDesign | thermocouple_amp | bay | 15.24×20.32 | 1.6 | — | none | — | 0 | high |
+| V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | toolhead | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×— | 2 | high |
+| Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | bay | 120.0×85.0 | 1.6 | M3 | 4-hole | 110.0×81.0 | 4 | medium |
+| Huvud (original) | Huvud | toolhead_can | toolhead | 48.0×45.0 | 1.6 | M3 | rectangular | 37.0×40.0 | 4 | high |
+| HuvudTiny | Huvud | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
+| LDO Leviathan (V1.2/V1.3) | LDO Motors | mainboard | bay | 170.0×100.0 | 1.6 | M3 | rectangular | 160.0×90.0 | 4 | high |
+| LDO Nitehawk-36 | LDO Motors | toolhead_can | toolhead | — | 1.6 | M3 | other | 43.84×— | — | low |
+| LDO Nitehawk-SB | LDO Motors | toolhead_can | toolhead | — | 1.6 | M3 | other | — | — | low |
+| MKS CANable V2.0 | Makerbase | usb_can_bridge | bay | 45.0×16.2 | 1.6 | M2 | rectangular | 34.7×12.6 | 4 | high |
+| MKS Monster8 V2.0 | Makerbase | mainboard | bay | 160.0×90.0 | 1.6 | M3 | rectangular | 152.0×82.0 | 4 | medium |
+| MKS Robin Nano V3.x | Makerbase | mainboard | bay | 110.0×84.0 | 1.6 | M3 | rectangular | 102.0×76.5 | 4 | high |
+| MKS SKIPR V1.0 | Makerbase | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 152.0×92.0 | 4 | high |
+| MKS THR42 V1.0 | Makerbase | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
+| FLY-CDY (and Fly Gemini family) | Mellow | mainboard | bay | — | 1.6 | M3 | rectangular | — | — | low |
+| FLY-RRF-E3 | Mellow | mainboard | bay | 100.838×70.358 | 1.6 | M3 | other | — | 4 | medium |
+| Fly Gemini V2/V3 (formerly Fly-CDY) | Mellow | mainboard | bay | — | 1.6 | M3 | rectangular | 143.0×78.0 | 4 | low |
+| Fly Super8 | Mellow | mainboard | bay | 155.58×109.68 | 1.6 | M3 | rectangular | 149.38×103.45 | 4 | high |
+| Fly-D5 | Mellow | mainboard | bay | — | 1.6 | M3 | rectangular | — | — | low |
+| Fly-RRF-36 | Mellow | toolhead_can | toolhead | — | 1.6 | M3 | rectangular | — | — | low |
+| Fly-SB2040 V2 | Mellow | toolhead_can | toolhead | 47.05×40.07 | 1.6 | M3 | 2-hole | — | 2 | high |
+| Fly-SHT36 (v1) | Mellow | toolhead_can | toolhead | 51.27×36.26 | 1.6 | M3 | linear | 43.84×— | 2 | high |
+| Fly-SHT36 v2.0 | Mellow | toolhead_can | toolhead | 51.27×45.67 | 1.6 | M3 | linear | 43.84×— | 2 | high |
+| Fly-SHT42 | Mellow | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
+| Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | bay | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
+| Raspberry Pi 4 Model B | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| Raspberry Pi 5 | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | bay | — | — | — | other | — | 0 | low |
+| ERCF EASY-BRD | Tircown | ercf | frame | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
+| Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | toolhead | — | 1.6 | none | none | — | 0 | low |
+| Binky ERCF Encoder | mneuhaus | sensor | frame | — | 1.6 | M3 | none | — | — | low |
+| Klipper Expander (STM32) | timmit99 | expander | bay | 100.0×24.0 | 1.6 | M3 | linear | 92.0×— | 2 | high |
 
 ## Adafruit
 
 ### Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648)  ·  `adafruit_max31865`
 
-- **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `modules.yaml`
+- **Category:** thermocouple_amp · **Mounts on:** bay · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 24.38 × 22.86 mm, 1.6 mm thick
 - **Mounting:** 2× M2.5 (Ø2.54), 2-hole, pitch 22.86×— mm
   - holes (x,y mm): [[1.27, 2.54], [24.13, 2.54]]
@@ -139,7 +140,7 @@
 
 ### Box Turtle (AFC) PCB  ·  `box_turtle_afc`
 
-- **Category:** ercf · **Confidence:** low · **Source file:** `community.yaml`
+- **Category:** ercf · **Mounts on:** frame · **Confidence:** low · **Source file:** `community.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), none, pitch —×— mm
 - **Connectors:** BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated community KiCad board with published Edge.Cuts found.
@@ -150,7 +151,7 @@
 
 ### BTT ADXL345 V2.0 (USB-C, onboard RP2040)  ·  `btt_adxl345_v2`
 
-- **Category:** accelerometer · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** accelerometer · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 28.25 × 15.5 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø—), 2-hole, pitch 15.5×— mm
 - **Connectors:** USB-C (USB 2.0), onboard RP2040, BOOT button, reserved solder pads. No accelerometer pin header.
@@ -160,7 +161,7 @@
 
 ### BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier  ·  `btt_max31865`
 
-- **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** thermocouple_amp · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in headers; screw terminal for RTD wires; DIP switch for 2/3/4-wire & PT100/PT1000.
@@ -170,7 +171,7 @@
 
 ### BTT Pi V1.2  ·  `btt_pi_v1_2`
 
-- **Category:** sbc · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 85.01 × 56.01 mm, 1.64 mm thick
 - **Mounting:** 4× M2.5 (Ø2.5), 4-hole, pitch —×— mm
   - holes (x,y mm): [[17.65, 2.05], [23.46, 51.45], [81.7, 2.05], [81.7, 51.45]]
@@ -183,7 +184,7 @@
 
 ### BTT Relay V1.2 module  ·  `btt_relay_v1_2`
 
-- **Category:** relay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** relay · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 80.32 × 36.19 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 74.17×29.21 mm
   - holes (x,y mm): [[3.075, 3.49], [77.245, 3.49], [3.075, 32.7], [77.245, 32.7]]
@@ -194,7 +195,7 @@
 
 ### BTT S2DW V1.0 (LIS2DW, USB-C)  ·  `btt_s2dw_v1`
 
-- **Category:** accelerometer · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** accelerometer · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 28.25 × 15.5 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø—), 2-hole, pitch 15.5×— mm
 - **Connectors:** USB-C (USB 2.0), RP2040, BOOT button, reserved solder pads.
@@ -203,7 +204,7 @@
 
 ### BTT Smart Filament Sensor (SFS) V1.0  ·  `btt_sfs_v1`
 
-- **Category:** sensor · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 75.0 × 30.0 mm, — mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 56.75×20.35 mm
   - holes (x,y mm): [[9.125, 4.825], [65.875, 4.825], [9.125, 25.175], [65.875, 25.175]]
@@ -215,7 +216,7 @@
 
 ### BTT TMC5160T Plus V1.0 external high-power stepper driver  ·  `btt_tmc5160t_plus`
 
-- **Category:** driver_module · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** driver_module · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 50.0 × 50.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 42.0×42.0 mm
   - holes (x,y mm): [[4.0, 4.0], [46.0, 4.0], [4.0, 46.0], [46.0, 46.0]]
@@ -227,7 +228,7 @@
 
 ### CB1  ·  `btt_cb1`
 
-- **Category:** sbc · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 55.0 × 40.0 mm, 1.6 mm thick
 - **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 48.0×33.0 mm
   - holes (x,y mm): [[3.5, 3.5], [51.5, 3.5], [3.5, 36.5], [51.5, 36.5]]
@@ -239,7 +240,7 @@
 
 ### CB2  ·  `btt_cb2`
 
-- **Category:** sbc · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 55.0 × 40.0 mm, 1.6 mm thick
 - **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 48.0×33.0 mm
   - holes (x,y mm): [[3.5, 3.5], [51.5, 3.5], [3.5, 36.5], [51.5, 36.5]]
@@ -252,7 +253,7 @@
 
 ### EBB SB2209 CAN V1.0  ·  `btt_ebb_sb2209_can`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 68.54 × 42.45 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 12.78×12.03 mm
   - holes (x,y mm): [[17.62, 17.19], [30.4, 29.22]]
@@ -264,7 +265,7 @@
 
 ### EBB SB2209 CAN V1.0 (RP2040)  ·  `btt_ebb_sb2209_rp2040`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `bigtreetech.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `bigtreetech.yaml`
 - **PCB:** 68.54 × 42.45 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 12.78×12.0 mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -275,7 +276,7 @@
 
 ### EBB SB2240 CAN V1.0  ·  `btt_ebb_sb2240`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 68.54 × 42.45 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 12.78×12.02 mm
   - holes (x,y mm): [[12.02, 17.22], [24.8, 29.24]]
@@ -287,7 +288,7 @@
 
 ### EBB36 CAN V1.x  ·  `btt_ebb36_can_v1`
 
-- **Category:** toolhead_can · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 51.4 × 37.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.85×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -298,7 +299,7 @@
 
 ### EBB42 CAN V1.x  ·  `btt_ebb42_can_v1`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 40.0 × 40.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 31.0×31.0 mm
   - holes (x,y mm): [[4.5, 4.5], [35.5, 4.5], [4.5, 35.5], [35.5, 35.5]]
@@ -310,7 +311,7 @@
 
 ### KNOMI  ·  `btt_knomi`
 
-- **Category:** accessory · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** accessory · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 37.86 × 34.53 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** USB-C (UART-to-USB, DC 5V in) and a power-in header (DC 5~24V, +/-); BOOT button. 1.28in 240x240 round LCD (non-touch).
@@ -321,7 +322,7 @@
 
 ### KNOMI 2  ·  `btt_knomi2`
 
-- **Category:** accessory · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** accessory · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 41.12 × 38.48 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** USB-C (UART-to-USB, DC 5V in) and power-in header (DC 5V, +/-); BOOT button. 1.28in round LCD, display area 32.4 x 32.4 mm, 240x240, 5-point capacitive touch.
@@ -332,7 +333,7 @@
 
 ### Kraken (V1.0/V1.1)  ·  `btt_kraken_v1_x`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 200.0 × 113.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 193.0×106.03 mm
   - holes (x,y mm): [[5.0, 4.0], [198.0, 4.0], [5.0, 110.03], [198.0, 110.03]]
@@ -344,7 +345,7 @@
 
 ### Manta E3EZ  ·  `btt_manta_e3ez`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 120.0 × 90.81 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), other, pitch —×— mm
 - **Connectors:** Motor headers (X/Y/Z1/Z2/E0/E1) across the top; CM4/CB1 SODIMM socket, CPU/RAM and HDMI at center/right; USB, power and bed/hotend terminals bottom-left edge.
@@ -354,7 +355,7 @@
 
 ### Manta M4P  ·  `btt_manta_m4p`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 160.0 × 95.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), other, pitch 97.0×84.2 mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -365,7 +366,7 @@
 
 ### Manta M5P  ·  `btt_manta_m5p`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 137.39 × 95.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×86.5 mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -376,7 +377,7 @@
 
 ### Manta M8P V1.1  ·  `btt_manta_m8p_v1_1`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
 - **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -387,7 +388,7 @@
 
 ### Manta M8P V2.0  ·  `btt_manta_m8p_v2`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
 - **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -396,9 +397,21 @@
 - src: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://global.bttwiki.com/M8P-V2_0.html
 
+### Octopus Max EZ V1.0  ·  `btt_octopus_max_ez`
+
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **PCB:** 160.0 × 100.0 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.3), rectangular, pitch 150.0×90.0 mm
+  - holes (x,y mm): [[5.0, 5.0], [155.0, 5.0], [5.0, 95.0], [155.0, 95.0]]
+- **Clearance:** standoff — mm, top component 20.0 mm
+- **Connectors:** Eight stepper driver sockets (5.08mm-pitch screw terminals at x=7.62 on 9.5mm centres along one long edge, with their 2.0mm-dia through-holes at x=13.82 on the same 9.5mm pitch). A second connector bank sits along the y=5.2 edge on 5.0mm centres. Components stand 20.0mm above the board top and 2.96mm below the board bottom, so a mount must clear the underside as well as the fasteners.
+- **Notes:** Confidence high -- NEW RECORD 2026-09-08, measured from the VENDOR 3D STEP (BIGTREETECH Octopus MAX EZ V1.0.step, 125MB, from step.rar in the vendor repo) via OCCT extraction. This is a Tier-1 solid reading, not a drawing inference: the PCB outline is the largest planar face on the board plane and measures 160.000 x 100.000 EXACTLY, and the four mounting holes are the only Ø3.30 cylinders whose axial extent spans the board, at (5.0, 5.0), (155.0, 5.0), (5.0, 95.0) and (155.0, 95.0) -- a true rectangle, 150.0 x 90.0 pitch, 5.0 inset on all four sides. Hole axes were taken from each cylindrical face's AXIS, never its centroid. Origin: x=0/y=0 at the PCB corner, z=0 at the board TOP face (the STEP's own datum; the board runs to z=-1.12). mount_hole_dia_mm 3.30 is MEASURED, and is the one number here that differs from the sibling Octopus records, where 3.2 is recorded as an explicit M3-clearance assumption -- if those are ever re-verified against their own solids, expect 3.30. mount_hole_dia is a CLEARANCE hole through the PCB, not a threaded pilot: the fastener passes through and lands in whatever the board is mounted to. pcb_thickness_mm follows the repo-convention nominal 1.6; the STEP models a 1.12mm carrier layer (top z=0.00, bottom z=-1.12), which is a model simplification and not a board spec -- the same convention already applied to the 0.62mm carrier in another record here. standoff_height_mm null (unknown, never 0): no standoff spec is published for this board. Mechanically this shares the Octopus V1.1 / Octopus Pro footprint exactly (160 x 100, 150 x 90, 5mm inset), which is consistent with BTT holding the form factor across the line, and means a mount that fits one fits all three. STEP bounding box is 161.10 x 100.17 x 24.09, larger than the PCB because a connector overhangs the +x edge by 1.10 and the +y edge by 0.17 -- the OUTLINE is the recorded dimension, not the bounding box. NOT YET PHYSICALLY VALIDATED: no print has threaded onto a real Octopus Max EZ.
+- src: https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/3D/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0.step.rar
+- src: https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/Hardware/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0-SIZE.pdf
+
 ### Octopus Pro V1.x (V1.0/V1.1)  ·  `btt_octopus_pro_v1_x`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 160.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 150.0×90.0 mm
   - holes (x,y mm): [[5.0, 5.0], [155.0, 5.0], [5.0, 95.0], [155.0, 95.0]]
@@ -409,7 +422,7 @@
 
 ### Octopus V1.1  ·  `btt_octopus_v1_1`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 160.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 150.0×90.0 mm
   - holes (x,y mm): [[5.0, 5.0], [155.0, 5.0], [5.0, 95.0], [155.0, 95.0]]
@@ -421,7 +434,7 @@
 
 ### SKR 3  ·  `btt_skr_3`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 109.67 × 84.3 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 101.85×76.3 mm
 - **Connectors:** Motor (X/Y/Z/Z1/E)/fan headers along top edge; USB, SD card, WiFi module and SERVO/Probe/TFT/EXP headers bottom edge; power and bed/hotend terminals on left edge.
@@ -431,7 +444,7 @@
 
 ### SKR 3 EZ  ·  `btt_skr_3_ez`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 109.67 × 84.3 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 101.85×76.3 mm
 - **Connectors:** Motor/fan headers (XM/YM/ZM/Z1M/EOM/E1M) top edge; USB, SD-M, CAN-FD, TFT, PS-ON, EXP1/EXP2 and SERVOS/Probe bottom edge; power & bed/hotend terminals on left edge.
@@ -440,7 +453,7 @@
 
 ### SKR Mini E3 V3  ·  `btt_skr_mini_e3_v3`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 103.75 × 70.25 mm, 1.6 mm thick
 - **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Connectors:** Stepper/endstop/fan headers along top edge (XM/YM/ZM/EM); POWER, heated- bed and hotend screw terminals on bottom-left edge; USB-C, TFT/EXP and thermistor/probe headers clustered bottom and right. Right edge has a tab carrying the I/O / display connector.
@@ -450,7 +463,7 @@
 
 ### SKR Pico  ·  `btt_skr_pico`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
 - **Mounting:** 4× M2.5 (Ø2.75), rectangular, pitch 58.0×49.0 mm
   - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
@@ -461,7 +474,7 @@
 
 ### SKRat V1.0  ·  `btt_skrat_v1_0`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 109.67 × 84.3 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 101.35×76.1 mm
 - **Connectors:** Motor headers (XM/YM/ZMA/ZMB/E0M/E1M) along top edge above the driver sockets; power (DCIN/VBED/HB) and heater screw terminals on left edge; fan (FAN0-3), thermistor (TH0-3) and USB along bottom edge; EXP1/EXP2, CAN, endstop and RGB headers on right edge.
@@ -471,7 +484,7 @@
 
 ### U2C V2 (V2.0/V2.1)  ·  `btt_u2c_v2`
 
-- **Category:** usb_can_bridge · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** 85.45 × 25.35 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø—), rectangular, pitch —×19.23 mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -483,7 +496,7 @@
 
 ### U2C V3  ·  `btt_u2c_v3`
 
-- **Category:** usb_can_bridge · **Confidence:** low · **Source file:** `bigtreetech.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** low · **Source file:** `bigtreetech.yaml`
 - **PCB:** — × — mm, — mm thick
 - **Mounting:** —× — (Ø—), —, pitch —×— mm
 - **Connectors:** N/A - product not confirmed to exist.
@@ -496,7 +509,7 @@
 
 ### Duet 2 WiFi / Ethernet  ·  `duet2_wifi_ethernet`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M4 (Ø4.2), rectangular, pitch 115.0×92.0 mm
   - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
@@ -507,7 +520,7 @@
 
 ### Duet 3 Mainboard 6HC  ·  `duet3_6hc`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 134.0 mm, 1.6 mm thick
 - **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 130.0×124.0 mm
   - holes (x,y mm): [[5.0, 5.0], [135.0, 5.0], [5.0, 129.0], [135.0, 129.0]]
@@ -520,7 +533,7 @@
 
 ### Duet 3 Mainboard 6XD  ·  `duet3_6xd`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 140.0 × 115.0 mm, 1.6 mm thick
 - **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 130.0×105.0 mm
   - holes (x,y mm): [[5.5, 5.5], [135.0, 5.0], [5.0, 110.0], [135.0, 110.0]]
@@ -532,7 +545,7 @@
 
 ### Duet 3 Mini 5+  ·  `duet3_mini5plus`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 123.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M4 (Ø4.3), rectangular, pitch 115.0×92.0 mm
   - holes (x,y mm): [[4.0, 4.0], [119.0, 4.0], [4.0, 96.0], [119.0, 96.0]]
@@ -544,7 +557,7 @@
 
 ### Duet 3 Toolboard 1LC  ·  `duet3_toolboard_1lc`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 54.0 × 47.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 34.0×34.0 mm
   - holes (x,y mm): [[13.0, 4.0], [47.0, 4.0], [13.0, 38.0], [47.0, 38.0]]
@@ -556,7 +569,7 @@
 
 ### Duet3D PT100 temperature daughterboard v1.1  ·  `duet3d_pt100_daughterboard`
 
-- **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `duet3d.yaml`
+- **Category:** thermocouple_amp · **Mounts on:** bay · **Confidence:** high · **Source file:** `duet3d.yaml`
 - **PCB:** 31.74 × 26.16 mm, 1.6 mm thick
 - **Mounting:** 2× — (Ø2.54), 2-hole, pitch 5.08×— mm
   - holes (x,y mm): [[9.76, 13.05], [4.68, 13.05]]
@@ -569,7 +582,7 @@
 
 ### Fotek SSR-25DA solid state relay (SSR-DA series body)  ·  `fotek_ssr_25da`
 
-- **Category:** ssr · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** ssr · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 57.4 × 44.8 mm, 28.0 mm thick
 - **Mounting:** 2× M4 (Ø4.8), 2-hole, pitch 47.6×— mm
   - holes (x,y mm): [[4.9, 22.4], [52.5, 22.4]]
@@ -582,7 +595,7 @@
 
 ### Catalyst V2.0  ·  `fysetc_catalyst_v2_0`
 
-- **Category:** mainboard · **Confidence:** low · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** low · **Source file:** `fysetc.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Connectors:** CM68 (RK3568) SBC carrier + STM32 motion MCU, 4x driver, 15A bed MOS, multi-voltage fans. Mounts in Voron 0 with a printed mount/shim (community mounts exist on Printables).
@@ -592,7 +605,7 @@
 
 ### Cheetah V2.0  ·  `fysetc_cheetah_v2_0`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 101.5 × 72.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -603,7 +616,7 @@
 
 ### Cheetah V3.0  ·  `fysetc_cheetah_v3_0`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 101.5 × 72.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -614,7 +627,7 @@
 
 ### ERB (Enraged Rabbit Burrow Board)  ·  `fysetc_erb`
 
-- **Category:** toolhead_can · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** toolhead_can · **Mounts on:** frame · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 91.0 × 35.0 mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), other, pitch —×— mm
 - **Connectors:** RP2040-based ERCF controller (the 'Burrow' board). V2 adds CANBUS, 20x30 heatsink, 4-pin Power+USB/CAN connector. Drives ERCF steppers/servo/sensors. Designed as drop-in replacement footprint compatible with the ERCF EASY-BRD 'Rabbit Burrow' mount.
@@ -624,7 +637,7 @@
 
 ### Mini12864 Panel (RGB) V2.1  ·  `fysetc_mini12864_rgb_v2_1`
 
-- **Category:** accessory · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **Category:** accessory · **Mounts on:** frame · **Confidence:** high · **Source file:** `fysetc.yaml`
 - **PCB:** 104.99 × 47.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 93.0×41.0 mm
   - holes (x,y mm): [[6.0, 3.0], [99.0, 3.0], [6.0, 44.0], [99.0, 44.0]]
@@ -635,7 +648,7 @@
 
 ### S6 V1.2  ·  `fysetc_s6_v1_2`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 117.0 × 87.0 mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -646,7 +659,7 @@
 
 ### SB CAN Toolhead (V1.1 / V1.3)  ·  `fysetc_sb_can_toolhead`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `fysetc.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `fysetc.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Connectors:** STM32F072, onboard 2209, ADXL345, Micro-USB (firmware/DFU), HE0 (XH2.54 2P, 4A), CAN. Mounts behind the Stealthburner front; 2.5 m 4-core CAN cable included.
@@ -656,7 +669,7 @@
 
 ### Spider King V1.0  ·  `fysetc_spider_king_v1`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 177.0 × 108.0 mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -667,7 +680,7 @@
 
 ### Spider Pro V1.2  ·  `fysetc_spider_pro_v1_2`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `fysetc.yaml`
 - **PCB:** 179.0 × 109.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 92.0×92.0 mm
   - holes (x,y mm): [[33.76, 14.2], [33.76, 106.2], [125.76, 14.2], [125.76, 106.2]]
@@ -678,7 +691,7 @@
 
 ### Spider V1.x  ·  `fysetc_spider_v1_x`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -689,7 +702,7 @@
 
 ### Spider V2.2  ·  `fysetc_spider_v2_2`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -700,7 +713,7 @@
 
 ### Spider V3 (V3.0)  ·  `fysetc_spider_v3_0`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -711,7 +724,7 @@
 
 ### Spider V3.0 H7  ·  `fysetc_spider_v3_h7`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `fysetc.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
 - **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -722,7 +735,7 @@
 
 ### UCAN V1.0  ·  `fysetc_ucan_v1_0`
 
-- **Category:** usb_can_bridge · **Confidence:** low · **Source file:** `fysetc.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** low · **Source file:** `fysetc.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** USB-C (PA11/PA12) one end, CAN (PA8/PA9) the other, status LEDs. No mounting hardware.
@@ -735,7 +748,7 @@
 
 ### 3D printer heatbed MOSFET power module (25A)  ·  `heatbed_mosfet_module`
 
-- **Category:** mosfet · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** mosfet · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 60.0 × 50.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
 - **Clearance:** standoff — mm, top component 30.0 mm
@@ -746,7 +759,7 @@
 
 ### GY-291 ADXL345 accelerometer breakout  ·  `gy291_adxl345`
 
-- **Category:** accelerometer · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** accelerometer · **Mounts on:** toolhead · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 20.4 × 15.8 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.0), 2-hole, pitch 15.0×— mm
 - **Connectors:** 8-pin (or 7-pin) 2.54 mm header: GND/VCC/CS/SDO/SDA/SCL/INT1/INT2. SPI or I2C.
@@ -755,7 +768,7 @@
 
 ### LM2596 adjustable buck converter module  ·  `lm2596_buck`
 
-- **Category:** buck_converter · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** buck_converter · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 43.2 × 21.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø—), 2-hole, pitch —×— mm
 - **Clearance:** standoff — mm, top component 14.0 mm
@@ -766,7 +779,7 @@
 
 ### Mini-360 DC-DC buck converter module  ·  `mini360_buck`
 
-- **Category:** buck_converter · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** buck_converter · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 22.0 × 17.0 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch —×— mm
 - **Clearance:** standoff — mm, top component 4.0 mm
@@ -776,7 +789,7 @@
 
 ### TMC2208 StepStick driver module  ·  `stepstick_tmc2208`
 
-- **Category:** driver_module · **Confidence:** high · **Source file:** `modules.yaml`
+- **Category:** driver_module · **Mounts on:** bay · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers.
@@ -788,7 +801,7 @@
 
 ### TMC5160 plug-in StepStick driver module  ·  `stepstick_tmc5160`
 
-- **Category:** driver_module · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** driver_module · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers; taller components/caps on top.
@@ -799,7 +812,7 @@
 
 ### 1-channel 5V relay module  ·  `relay_module_1ch`
 
-- **Category:** relay · **Confidence:** low · **Source file:** `modules.yaml`
+- **Category:** relay · **Mounts on:** bay · **Confidence:** low · **Source file:** `modules.yaml`
 - **PCB:** 50.0 × 26.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.1), 2-hole, pitch —×— mm
 - **Clearance:** standoff — mm, top component 19.0 mm
@@ -810,7 +823,7 @@
 
 ### 2-channel 5V relay module  ·  `relay_module_2ch`
 
-- **Category:** relay · **Confidence:** low · **Source file:** `modules.yaml`
+- **Category:** relay · **Mounts on:** bay · **Confidence:** low · **Source file:** `modules.yaml`
 - **PCB:** 50.5 × 38.5 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.1), rectangular, pitch —×— mm
 - **Clearance:** standoff — mm, top component 19.0 mm
@@ -821,7 +834,7 @@
 
 ### 4-channel 5V relay module  ·  `relay_module_4ch`
 
-- **Category:** relay · **Confidence:** medium · **Source file:** `modules.yaml`
+- **Category:** relay · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
 - **PCB:** 71.0 × 45.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.1), rectangular, pitch 66.7×40.0 mm
   - holes (x,y mm): [[2.15, 2.5], [68.85, 2.5], [2.15, 42.5], [68.85, 42.5]]
@@ -836,7 +849,7 @@
 
 ### TMC2209 StepStick / SilentStepStick driver module  ·  `stepstick_tmc2209`
 
-- **Category:** driver_module · **Confidence:** high · **Source file:** `modules.yaml`
+- **Category:** driver_module · **Mounts on:** bay · **Confidence:** high · **Source file:** `modules.yaml`
 - **PCB:** 20.32 × 15.24 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch 15.24×2.54 mm
 - **Connectors:** 2x 1x8 0.1in male pin headers (plugs into stepper-driver socket).
@@ -849,7 +862,7 @@
 
 ### HartK Stealthburner Toolhead PCB  ·  `hartk_stealthburner_toolhead_pcb`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `community.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `community.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -861,7 +874,7 @@
 
 ### Daylight on a Matchstick (LED bar, V0)  ·  `voron_daylight_on_a_matchstick`
 
-- **Category:** accessory · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** accessory · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 158.0 × 11.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 98.9×— mm
 - **Connectors:** Shorter LED bar (10 LEDs) for V0.1 / printers-for-ants. Holes on centerline.
@@ -870,7 +883,7 @@
 
 ### Daylight on a Stick (LED bar)  ·  `voron_daylight_on_a_stick`
 
-- **Category:** accessory · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** accessory · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 270.0 × 11.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 197.82×— mm
 - **Connectors:** Long LED illumination bar (18 LEDs) for 250mm+ Vorons; mounts to extrusion via printed 1515/2020 brackets. Holes on board centerline.
@@ -879,7 +892,7 @@
 
 ### Hall Effect XY Endstop  ·  `voron_hall_xy_endstop`
 
-- **Category:** sensor · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 56.0 × 20.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 39.25×— mm
 - **Connectors:** Hall-effect XY endstop for Voron gantry. 2x M3 holes pitch 39.25 mm.
@@ -888,7 +901,7 @@
 
 ### Microswitch XY Endstop  ·  `voron_microswitch_xy_endstop`
 
-- **Category:** sensor · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 51.5 × 16.6 mm, 1.6 mm thick
 - **Mounting:** 2× M4 (Ø4.3), 2-hole, pitch 33.5×— mm
 - **Connectors:** Mechanical microswitch XY endstop. NOTE: M4 mount holes (4.3mm) — not M3.
@@ -897,7 +910,7 @@
 
 ### PT100 Stick (thermocouple amp)  ·  `voron_pt100stick`
 
-- **Category:** thermocouple_amp · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** thermocouple_amp · **Mounts on:** bay · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 15.24 × 20.32 mm, 1.6 mm thick
 - **Mounting:** 0× — (Ø—), none, pitch —×— mm
 - **Connectors:** Tiny PT100 amplifier stick (MAX31865-class). NO mounting holes — supported by its pin header / wiring, not screwed down.
@@ -906,7 +919,7 @@
 
 ### V0 Umbilical Toolhead PCB  ·  `voron_v0_umbilical_toolhead_pcb`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 49.04 × 23.13 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 43.84×— mm
 - **Connectors:** Toolhead-side breakout for V0 umbilical wiring (pairs with the Frame_PCB). Non-CAN wiring breakout despite category.
@@ -915,7 +928,7 @@
 
 ### Voron Klipper Board (Taco Raven)  ·  `voron_klipper_board_taco_raven`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `community.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `community.yaml`
 - **PCB:** 120.0 × 85.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), 4-hole, pitch 110.0×81.0 mm
 - **Connectors:** Standalone STM32 Klipper controller board. 4x M3 holes; NOTE one hole (right-bottom) is offset from a clean rectangle — verify against board before printing a 4-post mount.
@@ -926,7 +939,7 @@
 
 ### Huvud (original)  ·  `huvud_original`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 48.0 × 45.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 37.0×40.0 mm
   - holes (x,y mm): [[4.0, 4.0], [41.0, 4.0], [4.0, 44.0], [41.0, 44.0]]
@@ -937,7 +950,7 @@
 
 ### HuvudTiny  ·  `huvud_tiny`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 42.0 × 42.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 31.0×31.0 mm
   - holes (x,y mm): [[5.5, 5.5], [36.5, 5.5], [5.5, 36.5], [36.5, 36.5]]
@@ -949,7 +962,7 @@
 
 ### LDO Leviathan (V1.2/V1.3)  ·  `ldo_leviathan`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `ldo.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `ldo.yaml`
 - **PCB:** 170.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 160.0×90.0 mm
   - holes (x,y mm): [[5.0, 5.0], [165.0, 5.0], [5.0, 95.0], [165.0, 95.0]]
@@ -959,7 +972,7 @@
 
 ### LDO Nitehawk-36  ·  `ldo_nitehawk_36`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `ldo.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `ldo.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), other, pitch 43.84×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -970,7 +983,7 @@
 
 ### LDO Nitehawk-SB  ·  `ldo_nitehawk_sb`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `ldo.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `ldo.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -984,7 +997,7 @@
 
 ### MKS CANable V2.0  ·  `mks_canable_v2`
 
-- **Category:** usb_can_bridge · **Confidence:** high · **Source file:** `makerbase.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** high · **Source file:** `makerbase.yaml`
 - **PCB:** 45.0 × 16.2 mm, 1.6 mm thick
 - **Mounting:** 4× M2 (Ø2.2), rectangular, pitch 34.7×12.6 mm
   - holes (x,y mm): [[9.0, 1.8], [43.7, 1.8], [9.0, 14.4], [43.7, 14.4]]
@@ -995,7 +1008,7 @@
 
 ### MKS Monster8 V2.0  ·  `mks_monster8_v2`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `makerbase.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `makerbase.yaml`
 - **PCB:** 160.0 × 90.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 152.0×82.0 mm
   - holes (x,y mm): [[4.0, 4.0], [156.0, 4.0], [4.0, 86.0], [156.0, 86.0]]
@@ -1005,7 +1018,7 @@
 
 ### MKS Robin Nano V3.x  ·  `mks_robin_nano_v3`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `makerbase.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `makerbase.yaml`
 - **PCB:** 110.0 × 84.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.4), rectangular, pitch 102.0×76.5 mm
   - holes (x,y mm): [[4.0, 3.75], [106.0, 3.75], [4.0, 80.25], [106.0, 80.25]]
@@ -1015,7 +1028,7 @@
 
 ### MKS SKIPR V1.0  ·  `mks_skipr`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `makerbase.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `makerbase.yaml`
 - **PCB:** 160.0 × 100.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 152.0×92.0 mm
   - holes (x,y mm): [[4.0, 4.0], [156.0, 4.0], [4.0, 96.0], [156.0, 96.0]]
@@ -1026,7 +1039,7 @@
 
 ### MKS THR42 V1.0  ·  `mks_thr42`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `makerbase.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `makerbase.yaml`
 - **PCB:** 42.0 × 42.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 31.0×31.0 mm
   - holes (x,y mm): [[9.0, 8.94], [40.0, 8.94], [9.0, 39.94], [40.0, 39.94]]
@@ -1038,7 +1051,7 @@
 
 ### FLY-CDY (and Fly Gemini family)  ·  `mellow_fly_cdy`
 
-- **Category:** mainboard · **Confidence:** low · **Source file:** `mellow.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** low · **Source file:** `mellow.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), rectangular, pitch —×— mm
 - **Connectors:** STM32 mainboard, RRF/Klipper capable. FLY-CDY superseded by Fly-CDYv2/v3. The Fly Gemini family (V1/V1.1/V2/V3) is the related compact STM32 mainboard line.
@@ -1050,7 +1063,7 @@
 
 ### FLY-RRF-E3  ·  `mellow_fly_rrf_e3`
 
-- **Category:** mainboard · **Confidence:** medium · **Source file:** `mellow.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `mellow.yaml`
 - **PCB:** 100.838 × 70.358 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø—), other, pitch —×— mm
 - **Connectors:** STM32 RepRapFirmware-capable mainboard. 4x stepper driver sockets (X/Y/Z/E, TMC SilentStepStick), ST-LINK header, BL-Touch, PT100, EXP1 LCD, USB. RRF-E3 is superseded by Fly-E3-V2.
@@ -1059,7 +1072,7 @@
 
 ### Fly Gemini V2/V3 (formerly Fly-CDY)  ·  `mellow_fly_gemini`
 
-- **Category:** mainboard · **Confidence:** low · **Source file:** `mellow.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** low · **Source file:** `mellow.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 143.0×78.0 mm
 - **Clearance:** standoff 6 mm, top component — mm
@@ -1070,7 +1083,7 @@
 
 ### Fly Super8  ·  `mellow_fly_super8`
 
-- **Category:** mainboard · **Confidence:** high · **Source file:** `mellow.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 155.58 × 109.68 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 149.38×103.45 mm
   - holes (x,y mm): [[3.1, 3.0], [152.48, 3.0], [3.1, 106.45], [152.48, 106.45]]
@@ -1081,7 +1094,7 @@
 
 ### Fly-D5  ·  `mellow_fly_d5`
 
-- **Category:** mainboard · **Confidence:** low · **Source file:** `mellow.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** low · **Source file:** `mellow.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), rectangular, pitch —×— mm
 - **Connectors:** STM32 mainboard.
@@ -1090,7 +1103,7 @@
 
 ### Fly-RRF-36  ·  `mellow_fly_rrf_36`
 
-- **Category:** toolhead_can · **Confidence:** low · **Source file:** `mellow.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `mellow.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), rectangular, pitch —×— mm
 - **Connectors:** 36mm-class RepRapFirmware CAN toolboard, analogous to the FLY-SHT36 form factor.
@@ -1099,7 +1112,7 @@
 
 ### Fly-SB2040 V2  ·  `mellow_fly_sb2040_v2`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 47.05 × 40.07 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.3), 2-hole, pitch —×— mm
   - holes (x,y mm): [[10.09, 16.37], [22.07, 29.14]]
@@ -1111,7 +1124,7 @@
 
 ### Fly-SHT36 (v1)  ·  `mellow_fly_sht36`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 51.27 × 36.26 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -1121,7 +1134,7 @@
 
 ### Fly-SHT36 v2.0  ·  `mellow_fly_sht36_v2`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 51.27 × 45.67 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 43.84×— mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -1131,7 +1144,7 @@
 
 ### Fly-SHT42  ·  `mellow_fly_sht42`
 
-- **Category:** toolhead_can · **Confidence:** high · **Source file:** `mellow.yaml`
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `mellow.yaml`
 - **PCB:** 42.0 × 42.0 mm, 1.6 mm thick
 - **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 31.0×31.0 mm
 - **Clearance:** standoff 5 mm, top component — mm
@@ -1141,7 +1154,7 @@
 
 ### Fly-UTOC (UTOC-1 / UTOC-3)  ·  `mellow_fly_utoc`
 
-- **Category:** usb_can_bridge · **Confidence:** low · **Source file:** `mellow.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** low · **Source file:** `mellow.yaml`
 - **PCB:** 85.45 × 19.23 mm, 1.6 mm thick
 - **Mounting:** 4× M2 (Ø—), rectangular, pitch 79.33×— mm
 - **Clearance:** standoff 4 mm, top component — mm
@@ -1155,7 +1168,7 @@
 
 ### Raspberry Pi 4 Model B  ·  `raspberrypi_4b`
 
-- **Category:** sbc · **Confidence:** high · **Source file:** `raspberrypi.yaml`
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** high · **Source file:** `raspberrypi.yaml`
 - **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
 - **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 58.0×49.0 mm
   - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
@@ -1166,7 +1179,7 @@
 
 ### Raspberry Pi 5  ·  `raspberrypi_5`
 
-- **Category:** sbc · **Confidence:** high · **Source file:** `raspberrypi.yaml`
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** high · **Source file:** `raspberrypi.yaml`
 - **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
 - **Mounting:** 4× M2.5 (Ø2.7), rectangular, pitch 58.0×49.0 mm
   - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
@@ -1178,7 +1191,7 @@
 
 ### Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB)  ·  `slice_pt1000_amplifier`
 
-- **Category:** thermocouple_amp · **Confidence:** low · **Source file:** `modules.yaml`
+- **Category:** thermocouple_amp · **Mounts on:** bay · **Confidence:** low · **Source file:** `modules.yaml`
 - **PCB:** — × — mm, — mm thick
 - **Mounting:** 0× — (Ø—), other, pitch —×— mm
 - **Connectors:** N/A - probe only.
@@ -1189,7 +1202,7 @@
 
 ### ERCF EASY-BRD  ·  `ercf_easy_brd`
 
-- **Category:** ercf · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** ercf · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 90.8 × 35.56 mm, 1.6 mm thick
 - **Mounting:** 3× M3 (Ø3.2), L-shaped, pitch —×— mm
   - holes (x,y mm): [[86.995, 3.81], [49.53, 3.81], [13.335, 30.48]]
@@ -1202,7 +1215,7 @@
 
 ### Stealthburner Neopixel LED (Mini Button PCB)  ·  `voron_stealthburner_neopixel_led`
 
-- **Category:** accessory · **Confidence:** low · **Source file:** `community.yaml`
+- **Category:** accessory · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `community.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** 0× none (Ø—), none, pitch —×— mm
 - **Connectors:** The Stealthburner 'LED PCB' is NOT one shared board: it is 3x individual round Neopixel 'Mini Button' LED PCBs (RGB/RGBW) chained by wire (5V/GND/Signal). They press-fit into the printed [o]_stealthburner_LED_carrier.stl behind the LED diffuser — no screws, no mount holes.
@@ -1214,7 +1227,7 @@
 
 ### Binky ERCF Encoder  ·  `ercf_binky`
 
-- **Category:** sensor · **Confidence:** low · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** frame · **Confidence:** low · **Source file:** `community.yaml`
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), none, pitch —×— mm
 - **Connectors:** Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt filter + LED, 1mm/pulse via slotted wheel. Captive inside printed EncoderCart housing (Encoder_Left/Right STLs); not screw-mounted as a standalone board -- it slots into the cart, so mount pattern is 'none'.
@@ -1225,7 +1238,7 @@
 
 ### Klipper Expander (STM32)  ·  `timmit99_klipper_expander`
 
-- **Category:** expander · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** expander · **Mounts on:** bay · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 100.0 × 24.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 92.0×— mm
   - holes (x,y mm): [[4.0, 4.0], [96.0, 4.0]]

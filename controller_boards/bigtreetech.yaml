@@ -7,6 +7,7 @@
   name: SKR Mini E3 V3
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 103.75
   pcb_width_mm: 70.25
   pcb_thickness_mm: 1.6
@@ -39,6 +40,7 @@
   name: SKR 3
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -67,6 +69,7 @@
   name: SKR 3 EZ
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -94,6 +97,7 @@
   name: SKRat V1.0
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -126,6 +130,7 @@
   name: SKR Pico
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 85.0
   pcb_width_mm: 56.0
   pcb_thickness_mm: 1.6
@@ -165,6 +170,7 @@
   name: Manta E3EZ
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 120.0
   pcb_width_mm: 90.81
   pcb_thickness_mm: 1.6
@@ -196,6 +202,7 @@
   name: Octopus V1.1
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -235,6 +242,7 @@
   name: Octopus Pro V1.x (V1.0/V1.1)
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -267,10 +275,68 @@
     VERIFIED IDENTICAL to the non-Pro Octopus from the official Octopus Pro SIZE.pdf (160 x 100 overall,
     150 x 90 pitch). Pro adds higher-current drivers; mechanical layout unchanged. hole_dia 3.2 = M3 clearance
     convention. Source: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf'
+- id: btt_octopus_max_ez
+  name: Octopus Max EZ V1.0
+  manufacturer: BigTreeTech
+  category: mainboard
+  mount_location: bay
+  pcb_length_mm: 160.0
+  pcb_width_mm: 100.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M3
+  mount_hole_dia_mm: 3.3
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 150.0
+  mount_pitch_y_mm: 90.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 5.0
+  - - 155.0
+    - 5.0
+  - - 5.0
+    - 95.0
+  - - 155.0
+    - 95.0
+  mount_inset_from_edge_mm: 5.0
+  standoff_height_mm: null
+  component_height_top_mm: 20.0
+  connector_notes: Eight stepper driver sockets (5.08mm-pitch screw terminals at x=7.62 on 9.5mm
+    centres along one long edge, with their 2.0mm-dia through-holes at x=13.82 on the same 9.5mm
+    pitch). A second connector bank sits along the y=5.2 edge on 5.0mm centres. Components stand
+    20.0mm above the board top and 2.96mm below the board bottom, so a mount must clear the
+    underside as well as the fasteners.
+  sources:
+  - https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/3D/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0.step.rar
+  - https://github.com/bigtreetech/Octopus-Max-EZ/blob/master/Hardware/BIGTREETECH%20Octopus%20MAX%20EZ%20V1.0-SIZE.pdf
+  confidence: high
+  notes: 'Confidence high -- NEW RECORD 2026-09-08, measured from the VENDOR 3D STEP (BIGTREETECH
+    Octopus MAX EZ V1.0.step, 125MB, from step.rar in the vendor repo) via OCCT extraction. This is
+    a Tier-1 solid reading, not a drawing inference: the PCB outline is the largest planar face on
+    the board plane and measures 160.000 x 100.000 EXACTLY, and the four mounting holes are the only
+    Ø3.30 cylinders whose axial extent spans the board, at (5.0, 5.0), (155.0, 5.0), (5.0, 95.0) and
+    (155.0, 95.0) -- a true rectangle, 150.0 x 90.0 pitch, 5.0 inset on all four sides. Hole axes
+    were taken from each cylindrical face''s AXIS, never its centroid. Origin: x=0/y=0 at the PCB
+    corner, z=0 at the board TOP face (the STEP''s own datum; the board runs to z=-1.12).
+    mount_hole_dia_mm 3.30 is MEASURED, and is the one number here that differs from the sibling
+    Octopus records, where 3.2 is recorded as an explicit M3-clearance assumption -- if those are
+    ever re-verified against their own solids, expect 3.30. mount_hole_dia is a CLEARANCE hole
+    through the PCB, not a threaded pilot: the fastener passes through and lands in whatever the
+    board is mounted to. pcb_thickness_mm follows the repo-convention nominal 1.6; the STEP models a
+    1.12mm carrier layer (top z=0.00, bottom z=-1.12), which is a model simplification and not a
+    board spec -- the same convention already applied to the 0.62mm carrier in another record here.
+    standoff_height_mm null (unknown, never 0): no standoff spec is published for this board.
+    Mechanically this shares the Octopus V1.1 / Octopus Pro footprint exactly (160 x 100, 150 x 90,
+    5mm inset), which is consistent with BTT holding the form factor across the line, and means a
+    mount that fits one fits all three. STEP bounding box is 161.10 x 100.17 x 24.09, larger than
+    the PCB because a connector overhangs the +x edge by 1.10 and the +y edge by 0.17 -- the OUTLINE
+    is the recorded dimension, not the bounding box. NOT YET PHYSICALLY VALIDATED: no print has
+    threaded onto a real Octopus Max EZ.'
 - id: btt_kraken_v1_x
   name: Kraken (V1.0/V1.1)
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 200.0
   pcb_width_mm: 113.0
   pcb_thickness_mm: 1.6
@@ -312,6 +378,7 @@
   name: Manta M4P
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 95.0
   pcb_thickness_mm: 1.6
@@ -342,6 +409,7 @@
   name: Manta M5P
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 137.39
   pcb_width_mm: 95.0
   pcb_thickness_mm: 1.6
@@ -372,6 +440,7 @@
   name: Manta M8P V1.1
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 169.93
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
@@ -403,6 +472,7 @@
   name: Manta M8P V2.0
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 169.93
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
@@ -432,6 +502,7 @@
   name: CB1
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 55.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -471,6 +542,7 @@
   name: CB2
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 55.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -509,6 +581,7 @@
   name: BTT Pi V1.2
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 85.01
   pcb_width_mm: 56.01
   pcb_thickness_mm: 1.64
@@ -573,6 +646,7 @@
   name: U2C V2 (V2.0/V2.1)
   manufacturer: BigTreeTech
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: 85.45
   pcb_width_mm: 25.35
   pcb_thickness_mm: 1.6
@@ -605,6 +679,7 @@
   name: U2C V3
   manufacturer: BigTreeTech
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: null
@@ -635,6 +710,7 @@
   name: EBB36 CAN V1.x
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 51.4
   pcb_width_mm: 37.0
   pcb_thickness_mm: 1.6
@@ -666,6 +742,7 @@
   name: EBB42 CAN V1.x
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 40.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -705,6 +782,7 @@
   name: EBB SB2209 CAN V1.0 (RP2040)
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -735,6 +813,7 @@
   name: EBB SB2209 CAN V1.0
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -770,6 +849,7 @@
   name: EBB SB2240 CAN V1.0
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -806,6 +886,7 @@
   name: KNOMI
   manufacturer: BigTreeTech
   category: accessory
+  mount_location: toolhead
   pcb_length_mm: 37.86
   pcb_width_mm: 34.53
   pcb_thickness_mm: 1.6
@@ -838,6 +919,7 @@
   name: KNOMI 2
   manufacturer: BigTreeTech
   category: accessory
+  mount_location: toolhead
   pcb_length_mm: 41.12
   pcb_width_mm: 38.48
   pcb_thickness_mm: 1.6
@@ -870,6 +952,7 @@
   name: BTT TMC5160T Plus V1.0 external high-power stepper driver
   manufacturer: BigTreeTech
   category: driver_module
+  mount_location: bay
   pcb_length_mm: 50.0
   pcb_width_mm: 50.0
   pcb_thickness_mm: 1.6
@@ -907,6 +990,7 @@
   name: BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier
   manufacturer: BigTreeTech
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: 20.32
   pcb_width_mm: 15.24
   pcb_thickness_mm: 1.6
@@ -933,6 +1017,7 @@
   name: BTT ADXL345 V2.0 (USB-C, onboard RP2040)
   manufacturer: BigTreeTech
   category: accelerometer
+  mount_location: toolhead
   pcb_length_mm: 28.25
   pcb_width_mm: 15.5
   pcb_thickness_mm: 1.6
@@ -961,6 +1046,7 @@
   name: BTT S2DW V1.0 (LIS2DW, USB-C)
   manufacturer: BigTreeTech
   category: accelerometer
+  mount_location: toolhead
   pcb_length_mm: 28.25
   pcb_width_mm: 15.5
   pcb_thickness_mm: 1.6
@@ -987,6 +1073,7 @@
   name: BTT Relay V1.2 module
   manufacturer: BigTreeTech
   category: relay
+  mount_location: bay
   pcb_length_mm: 80.32
   pcb_width_mm: 36.19
   pcb_thickness_mm: 1.6
@@ -1023,6 +1110,7 @@
   name: BTT Smart Filament Sensor (SFS) V1.0
   manufacturer: BigTreeTech
   category: sensor
+  mount_location: frame
   pcb_length_mm: 75.0
   pcb_width_mm: 30.0
   pcb_thickness_mm: null
