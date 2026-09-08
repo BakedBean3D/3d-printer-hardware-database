@@ -7,6 +7,7 @@
   name: MKS Robin Nano V3.x
   manufacturer: Makerbase
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 110.0
   pcb_width_mm: 84.0
   pcb_thickness_mm: 1.6
@@ -39,6 +40,7 @@
   name: MKS SKIPR V1.0
   manufacturer: Makerbase
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -71,6 +73,7 @@
   name: MKS Monster8 V2.0
   manufacturer: Makerbase
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 90.0
   pcb_thickness_mm: 1.6
@@ -105,6 +108,7 @@
   name: MKS THR42 V1.0
   manufacturer: Makerbase
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 42.0
   pcb_width_mm: 42.0
   pcb_thickness_mm: 1.6
@@ -140,6 +144,7 @@
   name: MKS CANable V2.0
   manufacturer: Makerbase
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: 45.0
   pcb_width_mm: 16.2
   pcb_thickness_mm: 1.6

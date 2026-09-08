@@ -7,6 +7,7 @@
   name: SKR Mini E3 V3
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 103.75
   pcb_width_mm: 70.25
   pcb_thickness_mm: 1.6
@@ -39,6 +40,7 @@
   name: SKR 3
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -67,6 +69,7 @@
   name: SKR 3 EZ
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -94,6 +97,7 @@
   name: SKRat V1.0
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 109.67
   pcb_width_mm: 84.3
   pcb_thickness_mm: 1.6
@@ -126,6 +130,7 @@
   name: SKR Pico
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 85.0
   pcb_width_mm: 56.0
   pcb_thickness_mm: 1.6
@@ -165,6 +170,7 @@
   name: Manta E3EZ
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 120.0
   pcb_width_mm: 90.81
   pcb_thickness_mm: 1.6
@@ -196,6 +202,7 @@
   name: Octopus V1.1
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -235,6 +242,7 @@
   name: Octopus Pro V1.x (V1.0/V1.1)
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -271,6 +279,7 @@
   name: Octopus Max EZ V1.0
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -327,6 +336,7 @@
   name: Kraken (V1.0/V1.1)
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 200.0
   pcb_width_mm: 113.0
   pcb_thickness_mm: 1.6
@@ -368,6 +378,7 @@
   name: Manta M4P
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 160.0
   pcb_width_mm: 95.0
   pcb_thickness_mm: 1.6
@@ -398,6 +409,7 @@
   name: Manta M5P
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 137.39
   pcb_width_mm: 95.0
   pcb_thickness_mm: 1.6
@@ -428,6 +440,7 @@
   name: Manta M8P V1.1
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 169.93
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
@@ -459,6 +472,7 @@
   name: Manta M8P V2.0
   manufacturer: BigTreeTech
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 169.93
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
@@ -488,6 +502,7 @@
   name: CB1
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 55.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -527,6 +542,7 @@
   name: CB2
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 55.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -565,6 +581,7 @@
   name: BTT Pi V1.2
   manufacturer: BigTreeTech
   category: sbc
+  mount_location: bay
   pcb_length_mm: 85.01
   pcb_width_mm: 56.01
   pcb_thickness_mm: 1.64
@@ -629,6 +646,7 @@
   name: U2C V2 (V2.0/V2.1)
   manufacturer: BigTreeTech
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: 85.45
   pcb_width_mm: 25.35
   pcb_thickness_mm: 1.6
@@ -661,6 +679,7 @@
   name: U2C V3
   manufacturer: BigTreeTech
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: null
@@ -691,6 +710,7 @@
   name: EBB36 CAN V1.x
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 51.4
   pcb_width_mm: 37.0
   pcb_thickness_mm: 1.6
@@ -722,6 +742,7 @@
   name: EBB42 CAN V1.x
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 40.0
   pcb_width_mm: 40.0
   pcb_thickness_mm: 1.6
@@ -761,6 +782,7 @@
   name: EBB SB2209 CAN V1.0 (RP2040)
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -791,6 +813,7 @@
   name: EBB SB2209 CAN V1.0
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -826,6 +849,7 @@
   name: EBB SB2240 CAN V1.0
   manufacturer: BigTreeTech
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 68.54
   pcb_width_mm: 42.45
   pcb_thickness_mm: 1.6
@@ -862,6 +886,7 @@
   name: KNOMI
   manufacturer: BigTreeTech
   category: accessory
+  mount_location: toolhead
   pcb_length_mm: 37.86
   pcb_width_mm: 34.53
   pcb_thickness_mm: 1.6
@@ -894,6 +919,7 @@
   name: KNOMI 2
   manufacturer: BigTreeTech
   category: accessory
+  mount_location: toolhead
   pcb_length_mm: 41.12
   pcb_width_mm: 38.48
   pcb_thickness_mm: 1.6
@@ -926,6 +952,7 @@
   name: BTT TMC5160T Plus V1.0 external high-power stepper driver
   manufacturer: BigTreeTech
   category: driver_module
+  mount_location: bay
   pcb_length_mm: 50.0
   pcb_width_mm: 50.0
   pcb_thickness_mm: 1.6
@@ -963,6 +990,7 @@
   name: BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier
   manufacturer: BigTreeTech
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: 20.32
   pcb_width_mm: 15.24
   pcb_thickness_mm: 1.6
@@ -989,6 +1017,7 @@
   name: BTT ADXL345 V2.0 (USB-C, onboard RP2040)
   manufacturer: BigTreeTech
   category: accelerometer
+  mount_location: toolhead
   pcb_length_mm: 28.25
   pcb_width_mm: 15.5
   pcb_thickness_mm: 1.6
@@ -1017,6 +1046,7 @@
   name: BTT S2DW V1.0 (LIS2DW, USB-C)
   manufacturer: BigTreeTech
   category: accelerometer
+  mount_location: toolhead
   pcb_length_mm: 28.25
   pcb_width_mm: 15.5
   pcb_thickness_mm: 1.6
@@ -1043,6 +1073,7 @@
   name: BTT Relay V1.2 module
   manufacturer: BigTreeTech
   category: relay
+  mount_location: bay
   pcb_length_mm: 80.32
   pcb_width_mm: 36.19
   pcb_thickness_mm: 1.6
@@ -1079,6 +1110,7 @@
   name: BTT Smart Filament Sensor (SFS) V1.0
   manufacturer: BigTreeTech
   category: sensor
+  mount_location: frame
   pcb_length_mm: 75.0
   pcb_width_mm: 30.0
   pcb_thickness_mm: null

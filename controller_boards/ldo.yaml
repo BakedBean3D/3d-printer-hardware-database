@@ -7,6 +7,7 @@
   name: LDO Leviathan (V1.2/V1.3)
   manufacturer: LDO Motors
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 170.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -41,6 +42,7 @@
   name: LDO Nitehawk-SB
   manufacturer: LDO Motors
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -73,6 +75,7 @@
   name: LDO Nitehawk-36
   manufacturer: LDO Motors
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6

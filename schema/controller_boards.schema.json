@@ -11,6 +11,7 @@
       "name",
       "manufacturer",
       "category",
+      "mount_location",
       "pcb_length_mm",
       "pcb_width_mm",
       "pcb_thickness_mm",

@@ -7,6 +7,7 @@
   name: TMC2209 StepStick / SilentStepStick driver module
   manufacturer: Generic/various (Watterott SilentStepStick, BTT, FYSETC, etc.)
   category: driver_module
+  mount_location: bay
   pcb_length_mm: 20.32
   pcb_width_mm: 15.24
   pcb_thickness_mm: 1.6
@@ -37,6 +38,7 @@
   name: TMC2208 StepStick driver module
   manufacturer: Generic/various
   category: driver_module
+  mount_location: bay
   pcb_length_mm: 20.32
   pcb_width_mm: 15.24
   pcb_thickness_mm: 1.6
@@ -61,6 +63,7 @@
   name: TMC5160 plug-in StepStick driver module
   manufacturer: Generic/various (FYSETC, BTT plug-in)
   category: driver_module
+  mount_location: bay
   pcb_length_mm: 20.32
   pcb_width_mm: 15.24
   pcb_thickness_mm: 1.6
@@ -87,6 +90,7 @@
   name: Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648)
   manufacturer: Adafruit
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: 24.38
   pcb_width_mm: 22.86
   pcb_thickness_mm: 1.6
@@ -120,6 +124,7 @@
   name: Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB)
   manufacturer: Slice Engineering
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: null
@@ -145,6 +150,7 @@
   name: GY-291 ADXL345 accelerometer breakout
   manufacturer: Generic/various
   category: accelerometer
+  mount_location: toolhead
   pcb_length_mm: 20.4
   pcb_width_mm: 15.8
   pcb_thickness_mm: 1.6
@@ -173,6 +179,7 @@
   name: 1-channel 5V relay module
   manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
   category: relay
+  mount_location: bay
   pcb_length_mm: 50.0
   pcb_width_mm: 26.0
   pcb_thickness_mm: 1.6
@@ -199,6 +206,7 @@
   name: 2-channel 5V relay module
   manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
   category: relay
+  mount_location: bay
   pcb_length_mm: 50.5
   pcb_width_mm: 38.5
   pcb_thickness_mm: 1.6
@@ -225,6 +233,7 @@
   name: 4-channel 5V relay module
   manufacturer: Generic/various (SONGLE SRD-05VDC-SL-C)
   category: relay
+  mount_location: bay
   pcb_length_mm: 71.0
   pcb_width_mm: 45.0
   pcb_thickness_mm: 1.6
@@ -262,6 +271,7 @@
   name: Fotek SSR-25DA solid state relay (SSR-DA series body)
   manufacturer: Fotek
   category: ssr
+  mount_location: bay
   pcb_length_mm: 57.4
   pcb_width_mm: 44.8
   pcb_thickness_mm: 28.0
@@ -298,6 +308,7 @@
   name: LM2596 adjustable buck converter module
   manufacturer: Generic/various
   category: buck_converter
+  mount_location: bay
   pcb_length_mm: 43.2
   pcb_width_mm: 21.0
   pcb_thickness_mm: 1.6
@@ -324,6 +335,7 @@
   name: Mini-360 DC-DC buck converter module
   manufacturer: Generic/various
   category: buck_converter
+  mount_location: bay
   pcb_length_mm: 22.0
   pcb_width_mm: 17.0
   pcb_thickness_mm: 1.6
@@ -349,6 +361,7 @@
   name: 3D printer heatbed MOSFET power module (25A)
   manufacturer: Generic/various
   category: mosfet
+  mount_location: bay
   pcb_length_mm: 60.0
   pcb_width_mm: 50.0
   pcb_thickness_mm: 1.6

@@ -68,7 +68,7 @@ TOOLHEAD_REQUIRED = [
 # null is permitted for any numeric whose value is genuinely unknown (do NOT
 # substitute 0 — a 0 mm dimension reads as real). Unknowns must be flagged in notes.
 CONTROLLER_BOARD_REQUIRED = [
-    "id", "name", "manufacturer", "category",
+    "id", "name", "manufacturer", "category", "mount_location",
     "pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
     "mount_screw", "mount_hole_dia_mm", "mount_pattern",
     "mount_pitch_x_mm", "mount_pitch_y_mm", "mount_hole_count",
@@ -98,6 +98,26 @@ CONFIDENCE_VALUES = {"high", "medium", "low"}
 CONTROLLER_MOUNT_PATTERN_VALUES = {
     "rectangular", "L-shaped", "linear", "2-hole", "3-hole", "4-hole", "none", "other",
 }
+
+# WHERE THE DEVICE LIVES ON A PRINTER. Not a Partsmith/consumer policy and not
+# a measurement -- a fact about the hardware, and the axis every mount
+# generator has to filter on first, because the three take physically
+# different parts:
+#   bay      -- the electronics compartment. Includes boards that socket onto
+#               a board that lives there (StepStick-footprint RTD amps, plug-in
+#               drivers, mainboard daughterboards): they have no mount pattern
+#               of their own, and where they end up is where their host is.
+#   toolhead -- rides the printhead / moving carriage. Mass, cable strain and
+#               chamber temperature all matter here and none of them matter in
+#               a bay, which is why this is the split that earns a field.
+#   frame    -- static and OUTSIDE the electronics bay: frame, gantry,
+#               extrusion, front panel, bed, or an accessory unit's own chassis
+#               (ERCF, Box Turtle).
+# Required and NON-NULL, unlike the dimension fields. A dimension can be
+# genuinely unmeasured; nobody adds a board record without knowing where the
+# board goes, and a null here would silently drop the record out of every
+# consumer's catalog -- the one failure mode worth designing out.
+MOUNT_LOCATION_VALUES = {"bay", "toolhead", "frame"}
 PSU_MOUNT_PATTERN_VALUES = {"rectangular", "2-hole", "3-hole", "other", "none"}
 
 # v2 controlled vocabularies. drive is the transmission class (exact-match
@@ -122,6 +142,7 @@ ENUM_FIELDS = {
     "toolheads": {},
     "controller_boards": {
         "mount_pattern": (CONTROLLER_MOUNT_PATTERN_VALUES, True),
+        "mount_location": (MOUNT_LOCATION_VALUES, False),
     },
     "psu": {
         "bottom_mount_pattern": (PSU_MOUNT_PATTERN_VALUES, True),

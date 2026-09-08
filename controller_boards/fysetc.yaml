@@ -7,6 +7,7 @@
   name: Spider V1.x
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 155.3
   pcb_width_mm: 76.5
   pcb_thickness_mm: 1.6
@@ -36,6 +37,7 @@
   name: Spider V2.2
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 155.3
   pcb_width_mm: 76.5
   pcb_thickness_mm: 1.6
@@ -63,6 +65,7 @@
   name: Spider V3 (V3.0)
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 155.3
   pcb_width_mm: 76.5
   pcb_thickness_mm: 1.6
@@ -91,6 +94,7 @@
   name: Spider V3.0 H7
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 155.3
   pcb_width_mm: 76.5
   pcb_thickness_mm: 1.6
@@ -118,6 +122,7 @@
   name: Spider King V1.0
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 177.0
   pcb_width_mm: 108.0
   pcb_thickness_mm: 1.6
@@ -144,6 +149,7 @@
   name: Spider Pro V1.2
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 179.0
   pcb_width_mm: 109.0
   pcb_thickness_mm: 1.6
@@ -183,6 +189,7 @@
   name: S6 V1.2
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 117.0
   pcb_width_mm: 87.0
   pcb_thickness_mm: 1.6
@@ -210,6 +217,7 @@
   name: Cheetah V2.0
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 101.5
   pcb_width_mm: 72.0
   pcb_thickness_mm: 1.6
@@ -238,6 +246,7 @@
   name: Cheetah V3.0
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 101.5
   pcb_width_mm: 72.0
   pcb_thickness_mm: 1.6
@@ -267,6 +276,7 @@
   name: Catalyst V2.0
   manufacturer: Fysetc
   category: mainboard
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -300,6 +310,7 @@
   name: SB CAN Toolhead (V1.1 / V1.3)
   manufacturer: Fysetc
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -334,6 +345,7 @@
   name: UCAN V1.0
   manufacturer: Fysetc
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -366,6 +378,7 @@
   name: Mini12864 Panel (RGB) V2.1
   manufacturer: Fysetc
   category: accessory
+  mount_location: frame
   pcb_length_mm: 104.99
   pcb_width_mm: 47.0
   pcb_thickness_mm: 1.6
@@ -409,6 +422,7 @@
   name: ERB (Enraged Rabbit Burrow Board)
   manufacturer: Fysetc
   category: toolhead_can
+  mount_location: frame
   pcb_length_mm: 91.0
   pcb_width_mm: 35.0
   pcb_thickness_mm: 1.6

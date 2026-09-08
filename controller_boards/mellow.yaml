@@ -7,6 +7,7 @@
   name: Fly-SHT36 (v1)
   manufacturer: Mellow
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 51.27
   pcb_width_mm: 36.26
   pcb_thickness_mm: 1.6
@@ -36,6 +37,7 @@
   name: Fly-SHT36 v2.0
   manufacturer: Mellow
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 51.27
   pcb_width_mm: 45.67
   pcb_thickness_mm: 1.6
@@ -63,6 +65,7 @@
   name: Fly-SHT42
   manufacturer: Mellow
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 42.0
   pcb_width_mm: 42.0
   pcb_thickness_mm: 1.6
@@ -89,6 +92,7 @@
   name: Fly Super8
   manufacturer: Mellow
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 155.58
   pcb_width_mm: 109.68
   pcb_thickness_mm: 1.6
@@ -124,6 +128,7 @@
   name: Fly-UTOC (UTOC-1 / UTOC-3)
   manufacturer: Mellow
   category: usb_can_bridge
+  mount_location: bay
   pcb_length_mm: 85.45
   pcb_width_mm: 19.23
   pcb_thickness_mm: 1.6
@@ -153,6 +158,7 @@
   name: Fly Gemini V2/V3 (formerly Fly-CDY)
   manufacturer: Mellow
   category: mainboard
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -181,6 +187,7 @@
   name: FLY-RRF-E3
   manufacturer: Mellow
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 100.838
   pcb_width_mm: 70.358
   pcb_thickness_mm: 1.6
@@ -213,6 +220,7 @@
   name: FLY-CDY (and Fly Gemini family)
   manufacturer: Mellow
   category: mainboard
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -244,6 +252,7 @@
   name: Fly-RRF-36
   manufacturer: Mellow
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -269,6 +278,7 @@
   name: Fly-D5
   manufacturer: Mellow
   category: mainboard
+  mount_location: bay
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -292,6 +302,7 @@
   name: Fly-SB2040 V2
   manufacturer: Mellow
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 47.05
   pcb_width_mm: 40.07
   pcb_thickness_mm: 1.6

@@ -7,6 +7,7 @@
   name: Duet3D PT100 temperature daughterboard v1.1
   manufacturer: Duet3D
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: 31.74
   pcb_width_mm: 26.16
   pcb_thickness_mm: 1.6
@@ -44,6 +45,7 @@
   name: Duet 3 Mainboard 6HC
   manufacturer: Duet3D
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 140.0
   pcb_width_mm: 134.0
   pcb_thickness_mm: 1.6
@@ -87,6 +89,7 @@
   name: Duet 3 Mainboard 6XD
   manufacturer: Duet3D
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 140.0
   pcb_width_mm: 115.0
   pcb_thickness_mm: 1.6
@@ -128,6 +131,7 @@
   name: Duet 3 Mini 5+
   manufacturer: Duet3D
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 123.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6
@@ -169,6 +173,7 @@
   name: Duet 3 Toolboard 1LC
   manufacturer: Duet3D
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 54.0
   pcb_width_mm: 47.0
   pcb_thickness_mm: 1.6
@@ -203,6 +208,7 @@
   name: Duet 2 WiFi / Ethernet
   manufacturer: Duet3D
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 123.0
   pcb_width_mm: 100.0
   pcb_thickness_mm: 1.6

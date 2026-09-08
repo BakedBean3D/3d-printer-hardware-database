@@ -7,6 +7,7 @@
   name: Huvud (original)
   manufacturer: Huvud
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 48.0
   pcb_width_mm: 45.0
   pcb_thickness_mm: 1.6
@@ -41,6 +42,7 @@
   name: HuvudTiny
   manufacturer: Huvud
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 42.0
   pcb_width_mm: 42.0
   pcb_thickness_mm: 1.6
@@ -74,6 +76,7 @@
   name: HartK Stealthburner Toolhead PCB
   manufacturer: HartK
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -104,6 +107,7 @@
   name: Klipper Expander (STM32)
   manufacturer: timmit99
   category: expander
+  mount_location: bay
   pcb_length_mm: 100.0
   pcb_width_mm: 24.0
   pcb_thickness_mm: 1.6
@@ -142,6 +146,7 @@
   name: ERCF EASY-BRD
   manufacturer: Tircown
   category: ercf
+  mount_location: frame
   pcb_length_mm: 90.8
   pcb_width_mm: 35.56
   pcb_thickness_mm: 1.6
@@ -179,6 +184,7 @@
   name: Binky ERCF Encoder
   manufacturer: mneuhaus
   category: sensor
+  mount_location: frame
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -206,6 +212,7 @@
   name: Box Turtle (AFC) PCB
   manufacturer: ArmoredTurtle
   category: ercf
+  mount_location: frame
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
@@ -232,6 +239,7 @@
   name: Hall Effect XY Endstop
   manufacturer: HartK / VoronDesign
   category: sensor
+  mount_location: frame
   pcb_length_mm: 56.0
   pcb_width_mm: 20.0
   pcb_thickness_mm: 1.6
@@ -258,6 +266,7 @@
   name: Microswitch XY Endstop
   manufacturer: HartK / VoronDesign
   category: sensor
+  mount_location: frame
   pcb_length_mm: 51.5
   pcb_width_mm: 16.6
   pcb_thickness_mm: 1.6
@@ -283,6 +292,7 @@
   name: V0 Umbilical Toolhead PCB
   manufacturer: HartK / VoronDesign
   category: toolhead_can
+  mount_location: toolhead
   pcb_length_mm: 49.04
   pcb_width_mm: 23.13
   pcb_thickness_mm: 1.6
@@ -310,6 +320,7 @@
   name: Voron Klipper Board (Taco Raven)
   manufacturer: HartK / VoronDesign
   category: mainboard
+  mount_location: bay
   pcb_length_mm: 120.0
   pcb_width_mm: 85.0
   pcb_thickness_mm: 1.6
@@ -337,6 +348,7 @@
   name: Daylight on a Stick (LED bar)
   manufacturer: HartK / VoronDesign
   category: accessory
+  mount_location: frame
   pcb_length_mm: 270.0
   pcb_width_mm: 11.0
   pcb_thickness_mm: 1.6
@@ -364,6 +376,7 @@
   name: Daylight on a Matchstick (LED bar, V0)
   manufacturer: HartK / VoronDesign
   category: accessory
+  mount_location: frame
   pcb_length_mm: 158.0
   pcb_width_mm: 11.0
   pcb_thickness_mm: 1.6
@@ -390,6 +403,7 @@
   name: PT100 Stick (thermocouple amp)
   manufacturer: HartK / VoronDesign
   category: thermocouple_amp
+  mount_location: bay
   pcb_length_mm: 15.24
   pcb_width_mm: 20.32
   pcb_thickness_mm: 1.6
@@ -413,6 +427,7 @@
   name: Stealthburner Neopixel LED (Mini Button PCB)
   manufacturer: VoronDesign
   category: accessory
+  mount_location: toolhead
   pcb_length_mm: null
   pcb_width_mm: null
   pcb_thickness_mm: 1.6
