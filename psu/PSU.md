@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python psu/gen.py`. The YAML files are the source of truth.
 
-- **Total units:** 9
-- **Confidence:** 9 high · 0 medium · 0 low
+- **Total units:** 10
+- **Confidence:** 10 high · 0 medium · 0 low
 - **Aggregate for code:** `psu.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -27,6 +27,7 @@
 | Mean Well LRS-200 | Mean Well | enclosed | 215.0×115.0×30.0 | 660g | 200W | 3.3/4.2/5/12/15/24/36/48 | 4×M4 (rectangular) | 4×M4 (rectangular) | high |
 | Mean Well LRS-350 | Mean Well | enclosed | 215.0×115.0×30.0 | 760g | 350W | 3.3/4.2/5/12/15/24/36/48 | 4×M4 (rectangular) | 4×M4 (rectangular) | high |
 | Mean Well LRS-50 | Mean Well | enclosed | 99.0×82.0×30.0 | 210g | 50W | 3.3/5/12/15/24/36/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | high |
+| Mean Well LRS-75 | Mean Well | enclosed | 99.0×97.0×30.0 | —g | 75W | 5/12/15/24/36/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | high |
 | Mean Well MDR-60 | Mean Well | din_rail | 100.0×40.0×90.0 | 287g | 60W | 5/12/24/48 | none | DIN TS35/7.5 or TS35/15 | high |
 | Mean Well RSP-500 | Mean Well | enclosed | 230.0×127.0×40.5 | 1300g | 500W | 3.3/4/5/12/15/24/27/48 | 5×M4 (other) | 4×M4 (rectangular) | high |
 | Mean Well UHP-350 | Mean Well | slim_enclosed | 220.0×62.0×31.0 | 680g | 350W | 3.3/4.2/5/12/15/24/36/48/55 | 4×M3 (rectangular) | none | high |
@@ -108,6 +109,20 @@
 - **Connectors:** 5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.
 - **Notes:** Confidence high -- CORRECTED 2026-07-29 against the vendor 3D STEP (LRS-50.stp); the previous record mis-assigned the drawing views AND swapped the L= depths. Measured 2026-07-29 from the VENDOR 3D STEP (linked under the spec-PDF path, https://www.meanwell.com/Upload/PDF/<series>/<series>-3D.zip) via OCCT cylindrical-face extraction: every mount hole appears as an M-thread-forming punched pilot (dia 2.64mm for M3 family / 3.1mm for M4 family) with a 4.3mm extrusion collar, so positions are exact solid-model coordinates, not drawing estimates. Origin convention: x=0 at the terminal-block end, y=0 at the front (terminal-screw) long face, viewed from above -- verified against the STEP by locating the terminal features at the x-min end / y-min face. REAL bottom pattern: 2x M3 at (20.5, 40.5) and (75.5, 40.5) -- 55mm pitch on the y=40.5 line (the top view's 20.5/55 chain + 40.5 dim, callout "2-M3 L=3.0") -- NOT the previously recorded 64mm from "10/74": those dims belong to the SIDE-WALL holes. bottom_mount_max_penetration_mm is 3.0 ("L=3.0"), not 5 -- the old record's 5mm was the side wall's depth: a screw sized to 5mm engagement into the bottom can reach 2mm past Mean Well's limit. side_mount = the front side-wall pair (callout "2-M3 L=5"): x = 10.0 and 84.0 (74mm pitch), ~15-16mm above the case bottom (height informative only, not a modeled field). The top-flange holes the old record called side_mount carry no vendor callout in the drawing and are excluded. psi3.5 labels in the drawing belong to other (cover/ground) holes, not the mount pattern -- mount pilots measure 2.64mm (thread-forming M3). Sources: LRS-50-SPEC.PDF + LRS-50-3D.zip.
 - src: https://www.meanwell.com/Upload/PDF/LRS-50/LRS-50-SPEC.PDF
+
+### Mean Well LRS-75  ·  `meanwell_lrs_75`
+
+- **Category:** enclosed · **Confidence:** high · **Source file:** `meanwell.yaml`
+- **Case:** 99.0 × 97.0 × 30.0 mm, — g, 75W
+- **Output voltages:** 5/12/15/24/36/48 V
+- **Bottom mount:** 2× M3 (Ø2.65), 2-hole, pitch 55.0×— mm, max penetration 3.0 mm
+  - holes (x,y mm): [[20.62, 45.5], [75.64, 45.5]]
+- **Side mount:** 2× M3 (Ø2.65), 2-hole, pitch_x 74.0 mm, max penetration 5.0 mm
+- **Terminal location:** 5-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V), on the same face as the LED and the flange (side_mount) holes
+- **Connectors:** 5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.
+- **Notes:** Confidence high -- NEW RECORD 2026-09-08, measured from the VENDOR 3D STEP (LRS-75-3D.stp, from LRS-75-3D.zip beside the spec PDF) via OCCT cylindrical-face extraction, with every value cross-checked against the printed dimension text in LRS-75-SPEC.PDF (Case No.240A, tolerance +/-1). Case measures 99.00 x 97.00 x 30.00 at the STEP bounding box, matching the drawing 99/97/30 exactly. Origin convention: x=0 at the terminal-block end, y=0 at the front (terminal-screw) long face, viewed from above -- verified against the STEP, not assumed: the five 6mm terminal pins sit at x=3.6 and x=9.6 on 9.5mm centres (drawing "9.5") at the x-min end, and the two side-wall pilots lie on the y-min face. Hole axes were taken from each cylindrical face's AXIS, never its centroid: a half-cylinder face centroid lies on the surface, which reads one round hole as two offset arcs and would have recorded these holes as 8.5mm slots. Both mount holes are round M3 thread-forming pilots (measured dia 2.65) with a concentric 4.27 collar. BOTTOM: 2x M3 at (20.62, 45.50) and (75.64, 45.50) -- 55.02 measured pitch on the y=45.50 line; the drawing chain 20.5 + 55 = 75.5 and the printed 45.5 agree to within 0.15mm (the STEP value is recorded, per the measured-artifact hierarchy). SIDE: 2x M3 on the y=0 long face at x=10.00 and x=84.00 (74.00 pitch, drawing "10"/"74"), 15.00 above the case bottom (drawing "15"; height is informative, not a modelled field). L= depths were assigned by LOCATING THE CALLOUTS IN THE DRAWING, not transferred from a sibling record: "2-M3 L=3.0" sits in the view that also carries 99/97/20.5/55/45.5 (the bottom view) and "2-M3 L=5" sits in the view carrying 30/15/10/74 (the side view), so bottom max penetration is 3.0 and side is 5.0. Swapping those two is a safety error -- it has happened in this file before (LRS-50, LRS-100). Cross-check: LRS-75 shares the LRS-50 case length and hole X positions (20.5/75.5 bottom, 10/84 side) and differs only in width (97 vs 82), which moves the bottom hole line from y=40.5 to y=45.5 -- consistent with one case family in two widths. weight_g is null (unknown): the spec PDF stores its packing table as positioned text that does not extract in reading order, and null means unknown here, never zero. output_voltages_v from the model-variant list on spec page 2 -- LRS-75 has NO 3.3V variant (LRS-75-5/12/15/24/36/48 only), unlike LRS-50 and LRS-100. NOT YET PHYSICALLY VALIDATED: no print has threaded onto a real LRS-75.
+- src: https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-SPEC.PDF
+- src: https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-3D.zip
 
 ### Mean Well MDR-60  ·  `meanwell_mdr_60`
 

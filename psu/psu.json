@@ -57,6 +57,63 @@
     "_source_file": "meanwell.yaml"
   },
   {
+    "id": "meanwell_lrs_75",
+    "name": "Mean Well LRS-75",
+    "manufacturer": "Mean Well",
+    "series": "LRS-75",
+    "category": "enclosed",
+    "length_mm": 99.0,
+    "width_mm": 97.0,
+    "height_mm": 30.0,
+    "weight_g": null,
+    "wattage_w": 75,
+    "output_voltages_v": [
+      5,
+      12,
+      15,
+      24,
+      36,
+      48
+    ],
+    "terminal_location": "5-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V), on the same face as the LED and the flange (side_mount) holes",
+    "connector_notes": "5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.",
+    "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "threaded_case",
+    "bottom_mount_hole_dia_mm": 2.65,
+    "bottom_mount_hole_count": 2,
+    "bottom_mount_pattern": "2-hole",
+    "bottom_mount_pitch_x_mm": 55.0,
+    "bottom_mount_pitch_y_mm": null,
+    "bottom_mount_holes_xy": [
+      [
+        20.62,
+        45.5
+      ],
+      [
+        75.64,
+        45.5
+      ]
+    ],
+    "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
+    "side_mount_screw": "M3",
+    "side_mount_hole_dia_mm": 2.65,
+    "side_mount_hole_count": 2,
+    "side_mount_pattern": "2-hole",
+    "side_mount_pitch_x_mm": 74.0,
+    "side_mount_holes_xy": null,
+    "side_mount_max_penetration_mm": 5.0,
+    "din_rail_compatible": false,
+    "din_rail_type": null,
+    "sources": [
+      "https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-SPEC.PDF",
+      "https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-3D.zip"
+    ],
+    "confidence": "high",
+    "notes": "Confidence high -- NEW RECORD 2026-09-08, measured from the VENDOR 3D STEP (LRS-75-3D.stp, from LRS-75-3D.zip beside the spec PDF) via OCCT cylindrical-face extraction, with every value cross-checked against the printed dimension text in LRS-75-SPEC.PDF (Case No.240A, tolerance +/-1). Case measures 99.00 x 97.00 x 30.00 at the STEP bounding box, matching the drawing 99/97/30 exactly. Origin convention: x=0 at the terminal-block end, y=0 at the front (terminal-screw) long face, viewed from above -- verified against the STEP, not assumed: the five 6mm terminal pins sit at x=3.6 and x=9.6 on 9.5mm centres (drawing \"9.5\") at the x-min end, and the two side-wall pilots lie on the y-min face. Hole axes were taken from each cylindrical face's AXIS, never its centroid: a half-cylinder face centroid lies on the surface, which reads one round hole as two offset arcs and would have recorded these holes as 8.5mm slots. Both mount holes are round M3 thread-forming pilots (measured dia 2.65) with a concentric 4.27 collar. BOTTOM: 2x M3 at (20.62, 45.50) and (75.64, 45.50) -- 55.02 measured pitch on the y=45.50 line; the drawing chain 20.5 + 55 = 75.5 and the printed 45.5 agree to within 0.15mm (the STEP value is recorded, per the measured-artifact hierarchy). SIDE: 2x M3 on the y=0 long face at x=10.00 and x=84.00 (74.00 pitch, drawing \"10\"/\"74\"), 15.00 above the case bottom (drawing \"15\"; height is informative, not a modelled field). L= depths were assigned by LOCATING THE CALLOUTS IN THE DRAWING, not transferred from a sibling record: \"2-M3 L=3.0\" sits in the view that also carries 99/97/20.5/55/45.5 (the bottom view) and \"2-M3 L=5\" sits in the view carrying 30/15/10/74 (the side view), so bottom max penetration is 3.0 and side is 5.0. Swapping those two is a safety error -- it has happened in this file before (LRS-50, LRS-100). Cross-check: LRS-75 shares the LRS-50 case length and hole X positions (20.5/75.5 bottom, 10/84 side) and differs only in width (97 vs 82), which moves the bottom hole line from y=40.5 to y=45.5 -- consistent with one case family in two widths. weight_g is null (unknown): the spec PDF stores its packing table as positioned text that does not extract in reading order, and null means unknown here, never zero. output_voltages_v from the model-variant list on spec page 2 -- LRS-75 has NO 3.3V variant (LRS-75-5/12/15/24/36/48 only), unlike LRS-50 and LRS-100. NOT YET PHYSICALLY VALIDATED: no print has threaded onto a real LRS-75.",
+    "_source_file": "meanwell.yaml"
+  },
+  {
     "id": "meanwell_lrs_100",
     "name": "Mean Well LRS-100",
     "manufacturer": "Mean Well",
