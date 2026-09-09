@@ -322,15 +322,23 @@
   category: mainboard
   mount_location: bay
   pcb_length_mm: 120.0
-  pcb_width_mm: 85.0
+  pcb_width_mm: 113.0
   pcb_thickness_mm: 1.6
   mount_screw: M3
   mount_hole_dia_mm: 3.2
-  mount_pattern: 4-hole
+  mount_pattern: other
   mount_pitch_x_mm: 110.0
-  mount_pitch_y_mm: 81.0
+  mount_pitch_y_mm: null
   mount_hole_count: 4
-  mount_holes_xy: null
+  mount_holes_xy:
+  - - 5.0
+    - 28.0
+  - - 5.0
+    - 109.0
+  - - 115.0
+    - 109.0
+  - - 115.0
+    - 5.025
   mount_inset_from_edge_mm: 5.0
   standoff_height_mm: null
   component_height_top_mm: null
@@ -338,12 +346,19 @@
     is offset from a clean rectangle — verify against board before printing a 4-post mount.
   sources:
   - https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.kicad_pcb
-  confidence: medium
-  notes: 'Tier-1 holes (4x MountingHole_3.2mm_M3_DIN965 at raw (115,125),(115,44),(225,44),(225,147.975)).
-    OUTLINE LOW-TRUST: Edge.Cuts contains silk text/logos on Edge.Cuts layer polluting bbox (raw bbox
-    120x113). pcb_width_mm=85 is ESTIMATED; 3 holes form a clean 110x81 mm pattern but 4th hole y differs
-    (raw 147.975 vs others 44/125), so mount_pitch_y and 4th hole need physical/STEP verification. (raw
-    hole coords from source: [[5.0, 28.0], [5.0, 109.0], [115.0, 109.0], [115.0, 5.03]])'
+  confidence: high
+  notes: 'Confidence high - Tier-1, measured 2026-09-09 from TWO independent artifacts in the same repo
+    that agree to 0.025 mm: the vendor STEP (Voron_Klipper_Board.step, holes from cylinder axes) and the
+    KiCad source (Voron_Klipper_Board.kicad_pcb, Edge.Cuts outline plus four MountingHole_3.2mm_M3_DIN965
+    footprints - the footprint name is where M3/Ø3.2 comes from). TWO CORRECTIONS. pcb_width_mm was 85.0;
+    Edge.Cuts measures 120.000 x 113.000, so the width was wrong by 28 mm. And the pattern is NOT the ''4-hole
+    110.0 x 81.0'' the record claimed: 110 is the x pitch of both columns, but 81 is the LEFT column only
+    - the right column spans 103.975 (y 5.025 to 109.0). docs/09 flagged this record as one whose data looked
+    complete enough to widen the buildability filter for; it is the opposite case, and widening the filter
+    would have generated a rectangular plate that misses two holes. mount_pitch_y_mm is therefore null and
+    mount_holes_xy is the only honest form. Origin = PCB outline min corner, x right / y up in the TOP view
+    (KiCad y inverted to match; +Z confirmed the component side in the STEP). Sources: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.step
+    ; https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.kicad_pcb'
 - id: voron_daylight_on_a_stick
   name: Daylight on a Stick (LED bar)
   manufacturer: HartK / VoronDesign
