@@ -3,7 +3,7 @@
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
 - **Total boards:** 101
-- **Confidence:** 51 high · 31 medium · 19 low
+- **Confidence:** 60 high · 22 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -39,11 +39,11 @@
 | KNOMI | BigTreeTech | accessory | toolhead | 37.86×34.53 | 1.6 | — | other | — | 0 | high |
 | KNOMI 2 | BigTreeTech | accessory | toolhead | 41.12×38.48 | 1.6 | — | other | — | 0 | high |
 | Kraken (V1.0/V1.1) | BigTreeTech | mainboard | bay | 200.0×113.0 | 1.6 | M3 | rectangular | 193.0×106.03 | 4 | medium |
-| Manta E3EZ | BigTreeTech | mainboard | bay | 120.0×90.81 | 1.6 | M3 | other | — | 4 | medium |
+| Manta E3EZ | BigTreeTech | mainboard | bay | 120.0×90.8 | 1.6 | M3 | other | — | 4 | high |
 | Manta M4P | BigTreeTech | mainboard | bay | 160.0×95.0 | 1.6 | M3 | other | 97.0×84.2 | 4 | medium |
-| Manta M5P | BigTreeTech | mainboard | bay | 137.39×95.0 | 1.6 | M3 | rectangular | —×86.5 | 4 | medium |
-| Manta M8P V1.1 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
-| Manta M8P V2.0 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 6 | medium |
+| Manta M5P | BigTreeTech | mainboard | bay | 137.39×95.0 | 1.6 | M3 | other | — | 4 | high |
+| Manta M8P V1.1 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 4 | high |
+| Manta M8P V2.0 | BigTreeTech | mainboard | bay | 169.93×102.74 | 1.6 | M3 | other | — | 4 | high |
 | Octopus Max EZ V1.0 | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | Octopus Pro V1.x (V1.0/V1.1) | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
 | Octopus V1.1 | BigTreeTech | mainboard | bay | 160.0×100.0 | 1.6 | M3 | rectangular | 150.0×90.0 | 4 | high |
@@ -63,16 +63,16 @@
 | Fotek SSR-25DA solid state relay (SSR-DA series body) | Fotek | ssr | bay | 57.4×44.8 | 28.0 | M4 | 2-hole | 47.6×— | 2 | medium |
 | Catalyst V2.0 | Fysetc | mainboard | bay | — | 1.6 | M3 | rectangular | — | 4 | low |
 | Cheetah V2.0 | Fysetc | mainboard | bay | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Cheetah V3.0 | Fysetc | mainboard | bay | 101.5×72.0 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Cheetah V3.0 | Fysetc | mainboard | bay | 101.4×73.41 | 1.6 | M3 | other | — | 5 | high |
 | ERB (Enraged Rabbit Burrow Board) | Fysetc | toolhead_can | frame | 91.0×35.0 | 1.6 | M3 | other | — | — | medium |
 | Mini12864 Panel (RGB) V2.1 | Fysetc | accessory | frame | 104.99×47.0 | 1.6 | M3 | rectangular | 93.0×41.0 | 4 | high |
 | S6 V1.2 | Fysetc | mainboard | bay | 117.0×87.0 | 1.6 | M3 | rectangular | — | — | medium |
 | SB CAN Toolhead (V1.1 / V1.3) | Fysetc | toolhead_can | toolhead | — | 1.6 | M3 | rectangular | — | 2 | low |
 | Spider King V1.0 | Fysetc | mainboard | bay | 177.0×108.0 | 1.6 | M3 | rectangular | — | — | medium |
 | Spider Pro V1.2 | Fysetc | mainboard | bay | 179.0×109.0 | 1.6 | M3 | rectangular | 92.0×92.0 | 4 | high |
-| Spider V1.x | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Spider V2.2 | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
-| Spider V3 (V3.0) | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
+| Spider V1.x | Fysetc | mainboard | bay | 155.35×76.47 | 1.6 | M3 | rectangular | 142.27×69.47 | 4 | high |
+| Spider V2.2 | Fysetc | mainboard | bay | 155.35×76.47 | 1.6 | M3 | rectangular | 142.27×69.47 | 4 | high |
+| Spider V3 (V3.0) | Fysetc | mainboard | bay | 155.35×76.47 | 1.6 | M3 | rectangular | 142.27×69.47 | 4 | high |
 | Spider V3.0 H7 | Fysetc | mainboard | bay | 155.3×76.5 | 1.6 | M3 | rectangular | — | 4 | medium |
 | UCAN V1.0 | Fysetc | usb_can_bridge | bay | — | 1.6 | — | other | — | 0 | low |
 | 3D printer heatbed MOSFET power module (25A) | Generic/various | mosfet | bay | 60.0×50.0 | 1.6 | M3 | rectangular | — | 4 | medium |
@@ -92,7 +92,7 @@
 | Microswitch XY Endstop | HartK / VoronDesign | sensor | frame | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
 | PT100 Stick (thermocouple amp) | HartK / VoronDesign | thermocouple_amp | bay | 15.24×20.32 | 1.6 | — | none | — | 0 | high |
 | V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | toolhead | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×— | 2 | high |
-| Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | bay | 120.0×85.0 | 1.6 | M3 | 4-hole | 110.0×81.0 | 4 | medium |
+| Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | bay | 120.0×113.0 | 1.6 | M3 | other | 110.0×— | 4 | high |
 | Huvud (original) | Huvud | toolhead_can | toolhead | 48.0×45.0 | 1.6 | M3 | rectangular | 37.0×40.0 | 4 | high |
 | HuvudTiny | Huvud | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | LDO Leviathan (V1.2/V1.3) | LDO Motors | mainboard | bay | 170.0×100.0 | 1.6 | M3 | rectangular | 160.0×90.0 | 4 | high |
@@ -345,11 +345,12 @@
 
 ### Manta E3EZ  ·  `btt_manta_e3ez`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
-- **PCB:** 120.0 × 90.81 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), other, pitch —×— mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **PCB:** 120.0 × 90.8 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.1), other, pitch —×— mm
+  - holes (x,y mm): [[21.79, 42.05], [39.65, 77.03], [53.59, 39.41], [101.8, 77.23]]
 - **Connectors:** Motor headers (X/Y/Z1/Z2/E0/E1) across the top; CM4/CB1 SODIMM socket, CPU/RAM and HDMI at center/right; USB, power and bed/hotend terminals bottom-left edge.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 120.00 x 90.81 mm HIGH confidence (official SIZE PDF). Hole count (4) and irregular pattern MEDIUM; exact centers not cleanly dimensioned - derive holes_xy from the in-repo STEP/3D model. "E3 EZ" -> "Manta E3EZ" mapping is an assumption. Mounting: IDENTITY: the task's "E3 EZ" resolves to the Manta E3EZ Klipper mainboard (BTT has no standalone product simply named "E3 EZ"); flag if a different board was meant. Designed to reuse Ender-3 mounting locations, so the hole pattern is IRREGULAR. Official SIZE PDF: overall 120.00 x 90.81 mm, 4 mounting holes. Per-hole [x,y] not reconstructed (partial dimension chains). Hosts a CM4/CB1 module (CM4 uses M2x10 screws, separate from the board's M3 chassis mounting). Source: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (BIGTREETECH Manta E3EZ V1.0.step) and confirmed against the vendor dimension drawing, whose printed callouts (x 21.79 / 39.65 / 53.59 / 101.80 against 120.00 overall; y 42.05 / 77.03 / 39.41 / 77.23 against 90.80) land on exactly the four hole centres the solid gives. Four Ø3.1 through-holes; hole count 4 was already right, the coordinates were missing. The solid also carries Ø3.4, Ø3.0 and Ø2.2 holes that are component footprints, not mounts - the drawing callouts are what separate them. Irregular layout, so pitch_x/pitch_y stay null. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-E3EZ/master/3D/BIGTREETECH%20Manta%20E3EZ%20V1.0.step ; https://raw.githubusercontent.com/bigtreetech/Manta-E3EZ/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-E3EZ
 
@@ -360,40 +361,43 @@
 - **Mounting:** 4× M3 (Ø3.2), other, pitch 97.0×84.2 mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Bottom edge carries power input, USB-C, USB-A, and RJ45/Ethernet. Stepper driver sockets (4x) and motor/endstop headers along the top/right. CB1/CM4 SBC mounts on top via board-to-board connector.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 160 x 95 HIGH (official SIZE.png + wiki). Exact hole XY MEDIUM (stepped/irregular layout; pitch_x/pitch_y read from drawing but holes_xy not enumerated). hole_dia and thickness assumed. Mounting: 4 holes, roughly rectangular but the top-left hole is inset (NOT on the corner): it sits at X=48 mm, top-right hole 97 mm to its right (X=145). Vertical pitch top->bottom = 84.2 mm. Wiki lists install sizes "146 x 84.2 mm; 97 x 84.2 mm" indicating two hole-column spacings (a stepped layout). CB1/CM4 core board mounts via board-to-board connector + its own standoffs. Source: https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
+- **Notes:** Confidence medium - Tier-2/3, re-read 2026-09-09; still NOT buildable and deliberately so. PCB size 160 x 95 HIGH (vendor SIZE.png + wiki). CORRECTION to the prior note, which said the top-left hole 'sits at X=48 mm, top-right hole 97 mm to its right (X=145)': the 48 mm callout on the vendor drawing dimensions the Raspberry Pi CM4 socket holes, not the board's own mounting holes. The CM4 pattern is 48 x 33 and the same rectangle was measured independently in the M5P and M8P solids. So X=48/X=145 is a misattribution and no absolute hole coordinate should be derived from it. What the drawing DOES anchor: 97 mm between the two top mounting holes and 84.2 mm vertically on the right pair, which is why those two pitches stay. The four mounting holes are irregular (the top-left one is well inboard), so the pitches alone cannot place them. The vendor STEP does not help - it models the board as a plain 160 x 95 outline with R2.0 rounded corners and NO drilled holes at all, and those corner fillets read as four 'Ø4.0 holes' tangent to the edges if a scan does not test concavity. Needs either calipers or a vector extraction of the BOTTOM/TOP layer PDFs; the SIZE artifact is raster only. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M4P/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png ; https://raw.githubusercontent.com/bigtreetech/Manta-M4P/master/3D/BIGTREETECH_Manta_M4P_V2.1_220608_3D.step
 - src: https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
 - src: https://global.bttwiki.com/M4P.html
 
 ### Manta M5P  ·  `btt_manta_m5p`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 137.39 × 95.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×86.5 mm
+- **Mounting:** 4× M3 (Ø3.5), other, pitch —×— mm
+  - holes (x,y mm): [[4.5, 4.5], [4.5, 69.0], [132.89, 4.5], [132.89, 91.0]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Bottom edge: power, USB-C, USB-A, RJ45/Ethernet. 5x stepper driver sockets and motor/endstop headers across the right side. CB1/CM4 SBC mounts on top via board-to-board connector.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 137.39 x 95.00 HIGH (official SIZE-top.pdf; wiki rounds to 137.5). 86.50 mm vertical span and 4.50/4.00 mm insets read from drawing. Horizontal pitch is COMPUTED (not labeled) -> hole-center X MEDIUM. hole_dia and thickness assumed. Mounting: Four corner mounting holes inset ~4.50 mm from left/bottom edges (top-right shows 4.50 X / 4.00 Y). Vertical hole span 86.50 mm. Horizontal span ~= 137.39 - 4.5 - 4.5 ~= 128.4 mm (COMPUTED, not directly labeled). A separate 4-hole cluster near the LAN/SBC region is the CB1/CM4 core-board mount, NOT the main board mounts. Source: https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (BIGTREETECH MANTA M5P-step.rar, RAR5, opened with bsdtar). CORRECTION: the prior record said 'rectangular' with mount_pitch_y_mm 86.5. The layout is NOT rectangular - the left column holes sit at y 4.5 and 69.0, the right column at y 4.5 and 91.0, so 86.5 described one column only and a rectangular plate would have missed a hole. Four Ø3.5 through-holes from the cylinder axes of the PCB solid; dia 3.5 measured (prior 3.2 was assumed). Do NOT confuse these with the Ø4.2 rectangle at 33 x 48 in the same solid: that is the Raspberry Pi CM4 socket pattern, which appears on the M8P and is dimensioned as the 48/33 pair on the M4P drawing. The vendor SIZE-bot drawing shows this asymmetry mirrored because it is a BOTTOM view; the coordinates here are the top view. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. Source: https://raw.githubusercontent.com/bigtreetech/Manta-M5P/master/3D/BIGTREETECH%20MANTA%20M5P-step.rar
 - src: https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf
 - src: https://global.bttwiki.com/M5P.html
 
 ### Manta M8P V1.1  ·  `btt_manta_m8p_v1_1`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
-- **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
+- **Mounting:** 4× M3 (Ø3.3), other, pitch —×— mm
+  - holes (x,y mm): [[5.0, 8.0], [5.0, 98.0], [155.0, 98.0], [165.5, 5.0]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Top/left edges carry the 8 stepper driver sockets and motor power screw terminals. Right edge: USB-C, USB-A, RJ45/Ethernet (and HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board connector.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official V1.0/V1.1 SIZE-top.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. hole_count MEDIUM (could be 5), individual hole XY LOW (connector-referenced dimension chains). hole_dia and thickness assumed. Mounting: Board is 169.93 x 102.74 mm (NOT ~148x130 - that hint was wrong). V1.0 and V1.1 share one hardware dir and one SIZE drawing (identical mechanicals). Corner holes inset 5.00 mm; bottom dim chain 5.00 / 124.94 / 157.94 / 169.93 mm and top chain to 155.00 mm locate mounting holes along the long edges. hole_count=6 (corners + mid-edge) is a visual read and could be 5. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from this revision's own vendor STEP (https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V1.0_V1.1/3D/BIGTREETECH%20MANTA%20M8P%20V1.1.step.zip) and independently confirmed against the vendor dimension drawing, which prints every callout: 169.93 overall, 5.00 from the left edge, 4.74 below the top, 14.93 from the right, 4.43 from the right and 5.00 above the bottom, 8.00 above the bottom. Those resolve to exactly the four hole centres the solid gives, to 0.00 mm. CORRECTION: mount_hole_count was 6; the board has FOUR mounting holes. The two extra Ø3.25 holes near the right edge (y 63.4 and 74.83, 11.43 apart) carry no callout on the drawing and are a connector footprint, not a mount. Hole dia 3.3 measured (prior 3.2 was assumed). The layout is irregular - three different edge insets - so pitch_x/pitch_y stay null and mount_holes_xy is the only honest form. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. V1.1 and V2.0 were measured from SEPARATE STEP files and agree exactly, which is the cross-check for both. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V1.0_V1.1/3D/BIGTREETECH%20MANTA%20M8P%20V1.1.step.zip ; https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf
 - src: https://global.bttwiki.com/M8P.html
 
 ### Manta M8P V2.0  ·  `btt_manta_m8p_v2`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `bigtreetech.yaml`
 - **PCB:** 169.93 × 102.74 mm, 1.6 mm thick
-- **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
+- **Mounting:** 4× M3 (Ø3.3), other, pitch —×— mm
+  - holes (x,y mm): [[5.0, 8.0], [5.0, 98.0], [155.0, 98.0], [165.5, 5.0]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Top edge: 8 stepper driver sockets, motor power screw terminals. Right edge: USB-C, USB-A, RJ45/Ethernet (HDMI with CM4). CB1/CM4 SBC mounts on top via board-to-board connector.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official V2.0 SIZE.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. Dense connector-referenced drawing -> exact hole XY LOW, hole_count MEDIUM. Mechanically interchangeable footprint with V1.x. hole_dia and thickness assumed. Mounting: Board outline 169.93 x 102.74 mm. SIZE drawing shows corner insets 5.00 and 4.43 mm. Mounting-hole layout is essentially the same as V1.0/V1.1 (corners + mid-edge); same enclosures generally fit V1.x and V2.0. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from this revision's own vendor STEP (https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/3D/BIGTREETECH%20MANTA%20M8P%20V2.0.zip) and independently confirmed against the vendor dimension drawing, which prints every callout: 169.93 overall, 5.00 from the left edge, 4.74 below the top, 14.93 from the right, 4.43 from the right and 5.00 above the bottom, 8.00 above the bottom. Those resolve to exactly the four hole centres the solid gives, to 0.00 mm. CORRECTION: mount_hole_count was 6; the board has FOUR mounting holes. The two extra Ø3.25 holes near the right edge (y 63.4 and 74.83, 11.43 apart) carry no callout on the drawing and are a connector footprint, not a mount. Hole dia 3.3 measured (prior 3.2 was assumed). The layout is irregular - three different edge insets - so pitch_x/pitch_y stay null and mount_holes_xy is the only honest form. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. V1.1 and V2.0 were measured from SEPARATE STEP files and agree exactly, which is the cross-check for both. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/3D/BIGTREETECH%20MANTA%20M8P%20V2.0.zip ; https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
 - src: https://global.bttwiki.com/M8P-V2_0.html
 
@@ -457,7 +461,7 @@
 - **PCB:** 103.75 × 70.25 mm, 1.6 mm thick
 - **Mounting:** 6× M3 (Ø3.2), other, pitch —×— mm
 - **Connectors:** Stepper/endstop/fan headers along top edge (XM/YM/ZM/EM); POWER, heated- bed and hotend screw terminals on bottom-left edge; USB-C, TFT/EXP and thermistor/probe headers clustered bottom and right. Right edge has a tab carrying the I/O / display connector.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 103.75 x 70.25 mm and 6-hole count are HIGH confidence (official SIZE PDF). Per-hole coordinates and hole diameter are LOW — derive holes_xy from BTT E3 SKR MINI V3.0.step before cutting. Thickness assumed. Mounting: Drops into the Ender-3 / Ender-3 Pro/V2 board location and reuses the original Creality mounting bosses, so the hole pattern is IRREGULAR (not a clean rectangle). Official SIZE drawing shows 6 plated mounting holes. Per-hole [x,y] NOT reconstructed (drawing leader lines are partial); pull exact centers from the in-repo STEP file. Two PCB revisions exist in the repo (V3.0 and V3.0.1); these dims are the canonical V3.0. Source: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
+- **Notes:** Confidence medium - NOT buildable, and 2026-09-09 turned up a CONFLICT between the two vendor artifacts that has to be resolved before this record is trusted. The vendor SIZE drawing (BTT E3 SKR MINI V3.0_SIZE_20220301.pdf) is properly dimensioned and shows FIVE ringed mounting holes, with edge callouts 23.39/3.22, 18.20/3.02, 5.53/32.05, 37.34/29.41 and 2.56/2.53 against a 103.75 x 70.25 outline. The vendor STEP models only TWO holes of mount size (Ø3.1, 40.0 mm apart on one y), and neither matches a drawing callout under any reflection of the board frame. The record's mount_hole_count of 6 matches neither artifact. Board outline 103.75 x 70.25 is confirmed by both. Hole count and coordinates are left as they were rather than half-corrected from an unreliable read: the drawing's dimension text is vector-outlined rather than extractable text, so the five callouts were read visually and have not been fitted. Resolve by circle-fitting the drawing's rings against the printed chain, or with calipers. Sources: https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-SKR-mini-E3/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf ; https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-SKR-mini-E3/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/3D/BTT%20E3%20SKR%20MINI%20V3.0.step
 - src: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
 - src: https://global.bttwiki.com/SKR%20MINI%20E3.html
 
@@ -616,12 +620,13 @@
 
 ### Cheetah V3.0  ·  `fysetc_cheetah_v3_0`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
-- **PCB:** 101.5 × 72.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **PCB:** 101.4 × 73.41 mm, 1.6 mm thick
+- **Mounting:** 5× M3 (Ø3.2), other, pitch —×— mm
+  - holes (x,y mm): [[3.51, 35.05], [21.44, 70.12], [35.28, 32.44], [83.44, 70.12], [98.96, 5.58]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** STM32F446 180MHz, BLTouch + CAN headers, 5V@SBC power, multi-voltage fans, EXP1/EXP2.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence. Hole pattern = Ender 3/5 footprint (vendor-stated). A Cheetah_V3.0.step file exists in the repo for exact hole extraction; raw point-cloud bbox was noisy here, so coordinates left null rather than reported wrong. Mounting: Wiki: "101.5mm x 72mm, Compatible with the Creality ender 3/ender5 motherboard size". Four-layer TG155 FR4. Same Ender 3/5 mounting footprint as V2.0; pinout differs (not config-compatible with V2). 4 corner holes visible on the V3.0 Position PDF. Exact hole coordinates not published — use the Ender 3 board pattern. Source: https://wiki.fysetc.com/Cheatah_Board_V30/
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (Cheetah_V3.0.step). THREE CORRECTIONS to the prior record, all of which would have produced a wrong plate had the pitches ever been filled in: the board has FIVE mount holes, not four; the layout is irregular, not 'rectangular'; and the outline is 101.396 x 73.406, not 101.5 x 72.0 (the width was off by 1.4 mm). Five Ø3.2 through-holes taken from the cylinder axes of the PCB solid. pitch_x/pitch_y stay null because no pair of pitches describes this layout - mount_holes_xy is the only honest form. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. Not transferred to fysetc_cheetah_v2_0, which has no vendor CAD of its own. Source: https://raw.githubusercontent.com/FYSETC/Cheetah_V3.0/main/Hardware/Cheetah_V3.0.step
 - src: https://wiki.fysetc.com/Cheatah_Board_V30/
 - src: https://github.com/FYSETC/Cheetah_V3.0 (Hardware/CHEETAH V3.0 Position.pdf, Cheetah_V3.0.step)
 
@@ -691,34 +696,37 @@
 
 ### Spider V1.x  ·  `fysetc_spider_v1_x`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
-- **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **PCB:** 155.35 × 76.47 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.0), rectangular, pitch 142.27×69.47 mm
+  - holes (x,y mm): [[9.57, 3.5], [9.57, 72.97], [151.84, 3.5], [151.84, 72.97]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** STM32F446 mainboard for Voron 2.4 / Trident; 8 driver sockets. Tallest components are the driver heatsinks and electrolytic caps; top clearance not vendor-specified.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki). Hole pattern/pitch unverified — measure a board or the V1.x designator diagram before cutting standoffs. Mounting: 4 mounting holes, one near each corner (visible on the official Spider V1.0C/V1.1 Designator Diagram PDFs). FYSETC does not publish exact hole coordinates. Hole diameter assumed M3 clearance (~3.2 mm) from community Spider mounts; not vendor-stated. V1.0/V1.1 differ electrically (5V@8A DC-DC) but share the Spider PCB outline. Source: https://wiki.fysetc.com/Spider/
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (Spider V1.0C STEP.rar, extracted with bsdtar). Four M3 through-holes on a true rectangle, 142.27 x 69.47, taken from the cylinder AXES of the PCB solid (never face centroids). Pitches were null before this pass and the record was unbuildable despite already saying 'rectangular'. Outline 155.345 x 76.471 measured off the same solid. Hole dia 3.0 is the modelled drill (the prior 3.2 was assumed). pcb_thickness_mm left untouched: BTT/Fysetc STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. Identical hole centres measured independently in the V2.2 and V3.0 STEPs, so the three revisions share one mount pattern. Source: https://raw.githubusercontent.com/FYSETC/FYSETC-SPIDER/main/hardware/V1.x/Spider%20V1.0C%20STEP.rar
 - src: https://wiki.fysetc.com/Spider/
 - src: https://github.com/FYSETC/FYSETC-SPIDER (hardware/V1.x designator diagrams)
 
 ### Spider V2.2  ·  `fysetc_spider_v2_2`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
-- **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **PCB:** 155.35 × 76.47 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.0), rectangular, pitch 142.27×69.47 mm
+  - holes (x,y mm): [[9.57, 3.5], [9.57, 72.97], [151.84, 3.5], [151.84, 72.97]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** STM32F446 180MHz. 8 driver sockets. Identical footprint family to other Spider revs.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence (wiki "155.3mm x 76.5mm"). 4-hole rectangular pattern confirmed from vendor designator PDF; pitch not measurable from that PDF — verify before use. Mounting: 4 corner mounting holes confirmed visually on the official "Spider V2.2 Designator Diagram.pdf". Same PCB outline as V1.x/V2.3/V3.0. Exact hole coordinates not published by FYSETC; pitch left null rather than guessed. Source: https://wiki.fysetc.com/Spider/
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from this revision's OWN vendor STEP (Spider V2.2_WithLOGO.step.zip), not transferred from V1.x. Four M3 through-holes, 142.27 x 69.47. The measurement agrees with the V1.0C and V3.0 solids to within 0.005 mm. Outline 155.345 x 76.471 measured off the same solid. Hole dia 3.0 is the modelled drill (the prior 3.2 was assumed). pcb_thickness_mm left untouched: BTT/Fysetc STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not a measurement. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. Source: https://raw.githubusercontent.com/FYSETC/FYSETC-SPIDER/main/hardware/V2.2/Spider%20V2.2_WithLOGO.step.zip
 - src: https://wiki.fysetc.com/Spider/
 - src: https://github.com/FYSETC/FYSETC-SPIDER (hardware/V2.2)
 
 ### Spider V3 (V3.0)  ·  `fysetc_spider_v3_0`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `fysetc.yaml`
-- **PCB:** 155.3 × 76.5 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch —×— mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `fysetc.yaml`
+- **PCB:** 155.35 × 76.47 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.0), rectangular, pitch 142.27×69.47 mm
+  - holes (x,y mm): [[9.57, 3.5], [9.57, 72.97], [151.84, 3.5], [151.84, 72.97]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** STM32F446 V3.0. Same mounting footprint as V1.x/V2.x Spider per shared Voron wiring docs.
-- **Notes:** Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size high-confidence. Pitch unverified. "V3" without H7 suffix = STM32F446; do not confuse with Spider V3.0 H7 (separate repo FYSETC-SPIDER-H7) which shares the outline. Mounting: Drop-in replacement for earlier Spider revs sharing the 155.3 x 76.5 mm outline and the Voron 2.4 R2 / Trident wiring. STM32F446 (and an H7 variant, see fysetc_spider_v3_h7). 4 corner holes; exact coordinates not vendor-published. Source: https://wiki.fysetc.com/Spider/
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from the V3.0 vendor STEP (Spider V3.0 3D STEP.rar). METHOD DIFFERS from V1.x/V2.2 and is recorded on purpose: the V3.0 file models the board as two 0.013 mm copper sheets rather than a solid slab, so the hole centres come from the Ø6.0 annular PADS around each mount hole, not from a drilled cylinder. Pad centres are concentric with the hole, and all four land within 0.005 mm of the centres measured in the V1.0C and V2.2 SOLIDS - that agreement is what carries the record. Hole dia 3.0 is carried from those solids, not measured here. Outline 155.344 x 76.469 from the same sheets. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by solid volume above vs below the board plane, so the pattern is not mirrored. Does NOT extend to fysetc_spider_v3_h7, which publishes no CAD and still needs calipers. Source: https://raw.githubusercontent.com/FYSETC/FYSETC-SPIDER/main/hardware/V3.0/Spider%20V3.0%203D%20STEP.rar
 - src: https://wiki.fysetc.com/Spider/
 - src: https://github.com/FYSETC/FYSETC-SPIDER (hardware/V3.0)
 
@@ -928,11 +936,12 @@
 
 ### Voron Klipper Board (Taco Raven)  ·  `voron_klipper_board_taco_raven`
 
-- **Category:** mainboard · **Mounts on:** bay · **Confidence:** medium · **Source file:** `community.yaml`
-- **PCB:** 120.0 × 85.0 mm, 1.6 mm thick
-- **Mounting:** 4× M3 (Ø3.2), 4-hole, pitch 110.0×81.0 mm
+- **Category:** mainboard · **Mounts on:** bay · **Confidence:** high · **Source file:** `community.yaml`
+- **PCB:** 120.0 × 113.0 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.2), other, pitch 110.0×— mm
+  - holes (x,y mm): [[5.0, 28.0], [5.0, 109.0], [115.0, 109.0], [115.0, 5.025]]
 - **Connectors:** Standalone STM32 Klipper controller board. 4x M3 holes; NOTE one hole (right-bottom) is offset from a clean rectangle — verify against board before printing a 4-post mount.
-- **Notes:** Tier-1 holes (4x MountingHole_3.2mm_M3_DIN965 at raw (115,125),(115,44),(225,44),(225,147.975)). OUTLINE LOW-TRUST: Edge.Cuts contains silk text/logos on Edge.Cuts layer polluting bbox (raw bbox 120x113). pcb_width_mm=85 is ESTIMATED; 3 holes form a clean 110x81 mm pattern but 4th hole y differs (raw 147.975 vs others 44/125), so mount_pitch_y and 4th hole need physical/STEP verification. (raw hole coords from source: [[5.0, 28.0], [5.0, 109.0], [115.0, 109.0], [115.0, 5.03]])
+- **Notes:** Confidence high - Tier-1, measured 2026-09-09 from TWO independent artifacts in the same repo that agree to 0.025 mm: the vendor STEP (Voron_Klipper_Board.step, holes from cylinder axes) and the KiCad source (Voron_Klipper_Board.kicad_pcb, Edge.Cuts outline plus four MountingHole_3.2mm_M3_DIN965 footprints - the footprint name is where M3/Ø3.2 comes from). TWO CORRECTIONS. pcb_width_mm was 85.0; Edge.Cuts measures 120.000 x 113.000, so the width was wrong by 28 mm. And the pattern is NOT the '4-hole 110.0 x 81.0' the record claimed: 110 is the x pitch of both columns, but 81 is the LEFT column only - the right column spans 103.975 (y 5.025 to 109.0). docs/09 flagged this record as one whose data looked complete enough to widen the buildability filter for; it is the opposite case, and widening the filter would have generated a rectangular plate that misses two holes. mount_pitch_y_mm is therefore null and mount_holes_xy is the only honest form. Origin = PCB outline min corner, x right / y up in the TOP view (KiCad y inverted to match; +Z confirmed the component side in the STEP). Sources: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.step ; https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.kicad_pcb
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Taco_Raven/KiCad/Voron_Klipper_Board.kicad_pcb
 
 ## Huvud

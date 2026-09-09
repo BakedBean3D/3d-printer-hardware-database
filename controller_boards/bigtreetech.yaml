@@ -28,14 +28,18 @@
   - https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
   - https://global.bttwiki.com/SKR%20MINI%20E3.html
   confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 103.75 x 70.25 mm and 6-hole
-    count are HIGH confidence (official SIZE PDF). Per-hole coordinates and hole diameter are LOW — derive
-    holes_xy from BTT E3 SKR MINI V3.0.step before cutting. Thickness assumed. Mounting: Drops into the
-    Ender-3 / Ender-3 Pro/V2 board location and reuses the original Creality mounting bosses, so the hole
-    pattern is IRREGULAR (not a clean rectangle). Official SIZE drawing shows 6 plated mounting holes.
-    Per-hole [x,y] NOT reconstructed (drawing leader lines are partial); pull exact centers from the in-repo
-    STEP file. Two PCB revisions exist in the repo (V3.0 and V3.0.1); these dims are the canonical V3.0.
-    Source: https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf'
+  notes: 'Confidence medium - NOT buildable, and 2026-09-09 turned up a CONFLICT between the two vendor
+    artifacts that has to be resolved before this record is trusted. The vendor SIZE drawing (BTT E3 SKR
+    MINI V3.0_SIZE_20220301.pdf) is properly dimensioned and shows FIVE ringed mounting holes, with edge
+    callouts 23.39/3.22, 18.20/3.02, 5.53/32.05, 37.34/29.41 and 2.56/2.53 against a 103.75 x 70.25 outline.
+    The vendor STEP models only TWO holes of mount size (Ø3.1, 40.0 mm apart on one y), and neither matches
+    a drawing callout under any reflection of the board frame. The record''s mount_hole_count of 6 matches
+    neither artifact. Board outline 103.75 x 70.25 is confirmed by both. Hole count and coordinates are
+    left as they were rather than half-corrected from an unreliable read: the drawing''s dimension text
+    is vector-outlined rather than extractable text, so the five callouts were read visually and have not
+    been fitted. Resolve by circle-fitting the drawing''s rings against the printed chain, or with calipers.
+    Sources: https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-SKR-mini-E3/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/Hardware/BTT%20E3%20SKR%20MINI%20V3.0_SIZE_20220301.pdf
+    ; https://raw.githubusercontent.com/bigtreetech/BIGTREETECH-SKR-mini-E3/master/hardware/BTT%20SKR%20MINI%20E3%20V3.0/3D/BTT%20E3%20SKR%20MINI%20V3.0.step'
 - id: btt_skr_3
   name: SKR 3
   manufacturer: BigTreeTech
@@ -172,15 +176,23 @@
   category: mainboard
   mount_location: bay
   pcb_length_mm: 120.0
-  pcb_width_mm: 90.81
+  pcb_width_mm: 90.8
   pcb_thickness_mm: 1.6
   mount_screw: M3
-  mount_hole_dia_mm: 3.2
+  mount_hole_dia_mm: 3.1
   mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
   mount_hole_count: 4
-  mount_holes_xy: null
+  mount_holes_xy:
+  - - 21.79
+    - 42.05
+  - - 39.65
+    - 77.03
+  - - 53.59
+    - 39.41
+  - - 101.8
+    - 77.23
   mount_inset_from_edge_mm: null
   standoff_height_mm: null
   component_height_top_mm: null
@@ -189,15 +201,18 @@
   sources:
   - https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf
   - https://github.com/bigtreetech/Manta-E3EZ
-  confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). Overall 120.00 x 90.81 mm HIGH
-    confidence (official SIZE PDF). Hole count (4) and irregular pattern MEDIUM; exact centers not cleanly
-    dimensioned - derive holes_xy from the in-repo STEP/3D model. "E3 EZ" -> "Manta E3EZ" mapping is an
-    assumption. Mounting: IDENTITY: the task''s "E3 EZ" resolves to the Manta E3EZ Klipper mainboard (BTT
-    has no standalone product simply named "E3 EZ"); flag if a different board was meant. Designed to
-    reuse Ender-3 mounting locations, so the hole pattern is IRREGULAR. Official SIZE PDF: overall 120.00
-    x 90.81 mm, 4 mounting holes. Per-hole [x,y] not reconstructed (partial dimension chains). Hosts a
-    CM4/CB1 module (CM4 uses M2x10 screws, separate from the board''s M3 chassis mounting). Source: https://github.com/bigtreetech/Manta-E3EZ/blob/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf'
+  confidence: high
+  notes: 'Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (BIGTREETECH Manta E3EZ V1.0.step)
+    and confirmed against the vendor dimension drawing, whose printed callouts (x 21.79 / 39.65 / 53.59
+    / 101.80 against 120.00 overall; y 42.05 / 77.03 / 39.41 / 77.23 against 90.80) land on exactly the
+    four hole centres the solid gives. Four Ø3.1 through-holes; hole count 4 was already right, the coordinates
+    were missing. The solid also carries Ø3.4, Ø3.0 and Ø2.2 holes that are component footprints, not mounts
+    - the drawing callouts are what separate them. Irregular layout, so pitch_x/pitch_y stay null. Origin
+    = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the component side by
+    solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm left untouched:
+    BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled thickness is not
+    a measurement. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-E3EZ/master/3D/BIGTREETECH%20Manta%20E3EZ%20V1.0.step
+    ; https://raw.githubusercontent.com/bigtreetech/Manta-E3EZ/master/Hardware/BIGTREETECH%20Manta%20E3EZ%20V1.0-SIZE.pdf'
 - id: btt_octopus_v1_1
   name: Octopus V1.1
   manufacturer: BigTreeTech
@@ -398,13 +413,19 @@
   - https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
   - https://global.bttwiki.com/M4P.html
   confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 160 x 95 HIGH (official
-    SIZE.png + wiki). Exact hole XY MEDIUM (stepped/irregular layout; pitch_x/pitch_y read from drawing
-    but holes_xy not enumerated). hole_dia and thickness assumed. Mounting: 4 holes, roughly rectangular
-    but the top-left hole is inset (NOT on the corner): it sits at X=48 mm, top-right hole 97 mm to its
-    right (X=145). Vertical pitch top->bottom = 84.2 mm. Wiki lists install sizes "146 x 84.2 mm; 97 x
-    84.2 mm" indicating two hole-column spacings (a stepped layout). CB1/CM4 core board mounts via board-to-board
-    connector + its own standoffs. Source: https://github.com/bigtreetech/Manta-M4P/blob/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png'
+  notes: 'Confidence medium - Tier-2/3, re-read 2026-09-09; still NOT buildable and deliberately so. PCB
+    size 160 x 95 HIGH (vendor SIZE.png + wiki). CORRECTION to the prior note, which said the top-left hole
+    ''sits at X=48 mm, top-right hole 97 mm to its right (X=145)'': the 48 mm callout on the vendor drawing
+    dimensions the Raspberry Pi CM4 socket holes, not the board''s own mounting holes. The CM4 pattern is
+    48 x 33 and the same rectangle was measured independently in the M5P and M8P solids. So X=48/X=145 is
+    a misattribution and no absolute hole coordinate should be derived from it. What the drawing DOES anchor:
+    97 mm between the two top mounting holes and 84.2 mm vertically on the right pair, which is why those
+    two pitches stay. The four mounting holes are irregular (the top-left one is well inboard), so the pitches
+    alone cannot place them. The vendor STEP does not help - it models the board as a plain 160 x 95 outline
+    with R2.0 rounded corners and NO drilled holes at all, and those corner fillets read as four ''Ø4.0
+    holes'' tangent to the edges if a scan does not test concavity. Needs either calipers or a vector extraction
+    of the BOTTOM/TOP layer PDFs; the SIZE artifact is raster only. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M4P/master/Hardware/BIGTREETECH_Manta_M4P_V2.1_220608%20SIZE.png
+    ; https://raw.githubusercontent.com/bigtreetech/Manta-M4P/master/3D/BIGTREETECH_Manta_M4P_V2.1_220608_3D.step'
 - id: btt_manta_m5p
   name: Manta M5P
   manufacturer: BigTreeTech
@@ -414,12 +435,20 @@
   pcb_width_mm: 95.0
   pcb_thickness_mm: 1.6
   mount_screw: M3
-  mount_hole_dia_mm: 3.2
-  mount_pattern: rectangular
+  mount_hole_dia_mm: 3.5
+  mount_pattern: other
   mount_pitch_x_mm: null
-  mount_pitch_y_mm: 86.5
+  mount_pitch_y_mm: null
   mount_hole_count: 4
-  mount_holes_xy: null
+  mount_holes_xy:
+  - - 4.5
+    - 4.5
+  - - 4.5
+    - 69.0
+  - - 132.89
+    - 4.5
+  - - 132.89
+    - 91.0
   mount_inset_from_edge_mm: 4.5
   standoff_height_mm: 5
   component_height_top_mm: null
@@ -428,14 +457,19 @@
   sources:
   - https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf
   - https://global.bttwiki.com/M5P.html
-  confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 137.39 x 95.00 HIGH (official
-    SIZE-top.pdf; wiki rounds to 137.5). 86.50 mm vertical span and 4.50/4.00 mm insets read from drawing.
-    Horizontal pitch is COMPUTED (not labeled) -> hole-center X MEDIUM. hole_dia and thickness assumed.
-    Mounting: Four corner mounting holes inset ~4.50 mm from left/bottom edges (top-right shows 4.50 X
-    / 4.00 Y). Vertical hole span 86.50 mm. Horizontal span ~= 137.39 - 4.5 - 4.5 ~= 128.4 mm (COMPUTED,
-    not directly labeled). A separate 4-hole cluster near the LAN/SBC region is the CB1/CM4 core-board
-    mount, NOT the main board mounts. Source: https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf'
+  confidence: high
+  notes: 'Confidence high - Tier-1, measured 2026-09-09 from the vendor STEP (BIGTREETECH MANTA M5P-step.rar,
+    RAR5, opened with bsdtar). CORRECTION: the prior record said ''rectangular'' with mount_pitch_y_mm 86.5.
+    The layout is NOT rectangular - the left column holes sit at y 4.5 and 69.0, the right column at y 4.5
+    and 91.0, so 86.5 described one column only and a rectangular plate would have missed a hole. Four Ø3.5
+    through-holes from the cylinder axes of the PCB solid; dia 3.5 measured (prior 3.2 was assumed). Do
+    NOT confuse these with the Ø4.2 rectangle at 33 x 48 in the same solid: that is the Raspberry Pi CM4
+    socket pattern, which appears on the M8P and is dimensioned as the 48/33 pair on the M4P drawing. The
+    vendor SIZE-bot drawing shows this asymmetry mirrored because it is a BOTTOM view; the coordinates here
+    are the top view. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to
+    be the component side by solid volume above vs below the board plane, so the pattern is not mirrored.
+    pcb_thickness_mm left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm
+    board, so modelled thickness is not a measurement. Source: https://raw.githubusercontent.com/bigtreetech/Manta-M5P/master/3D/BIGTREETECH%20MANTA%20M5P-step.rar'
 - id: btt_manta_m8p_v1_1
   name: Manta M8P V1.1
   manufacturer: BigTreeTech
@@ -445,12 +479,20 @@
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
   mount_screw: M3
-  mount_hole_dia_mm: 3.2
+  mount_hole_dia_mm: 3.3
   mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
-  mount_hole_count: 6
-  mount_holes_xy: null
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 8.0
+  - - 5.0
+    - 98.0
+  - - 155.0
+    - 98.0
+  - - 165.5
+    - 5.0
   mount_inset_from_edge_mm: 5.0
   standoff_height_mm: 5
   component_height_top_mm: null
@@ -460,14 +502,21 @@
   sources:
   - https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf
   - https://global.bttwiki.com/M8P.html
-  confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official
-    V1.0/V1.1 SIZE-top.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. hole_count MEDIUM (could
-    be 5), individual hole XY LOW (connector-referenced dimension chains). hole_dia and thickness assumed.
-    Mounting: Board is 169.93 x 102.74 mm (NOT ~148x130 - that hint was wrong). V1.0 and V1.1 share one
-    hardware dir and one SIZE drawing (identical mechanicals). Corner holes inset 5.00 mm; bottom dim
-    chain 5.00 / 124.94 / 157.94 / 169.93 mm and top chain to 155.00 mm locate mounting holes along the
-    long edges. hole_count=6 (corners + mid-edge) is a visual read and could be 5. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V1.0_V1.1/Hardware/BIGTREETECH%20MANTA%20M8P%20V1.0-SIZE-top.pdf'
+  confidence: high
+  notes: 'Confidence high - Tier-1, measured 2026-09-09 from this revision''s own vendor STEP (https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V1.0_V1.1/3D/BIGTREETECH%20MANTA%20M8P%20V1.1.step.zip)
+    and independently confirmed against the vendor dimension drawing, which prints every callout: 169.93
+    overall, 5.00 from the left edge, 4.74 below the top, 14.93 from the right, 4.43 from the right and
+    5.00 above the bottom, 8.00 above the bottom. Those resolve to exactly the four hole centres the solid
+    gives, to 0.00 mm. CORRECTION: mount_hole_count was 6; the board has FOUR mounting holes. The two extra
+    Ø3.25 holes near the right edge (y 63.4 and 74.83, 11.43 apart) carry no callout on the drawing and
+    are a connector footprint, not a mount. Hole dia 3.3 measured (prior 3.2 was assumed). The layout is
+    irregular - three different edge insets - so pitch_x/pitch_y stay null and mount_holes_xy is the only
+    honest form. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the
+    component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm
+    left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled
+    thickness is not a measurement. V1.1 and V2.0 were measured from SEPARATE STEP files and agree exactly,
+    which is the cross-check for both. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V1.0_V1.1/3D/BIGTREETECH%20MANTA%20M8P%20V1.1.step.zip
+    ; https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf'
 - id: btt_manta_m8p_v2
   name: Manta M8P V2.0
   manufacturer: BigTreeTech
@@ -477,12 +526,20 @@
   pcb_width_mm: 102.74
   pcb_thickness_mm: 1.6
   mount_screw: M3
-  mount_hole_dia_mm: 3.2
+  mount_hole_dia_mm: 3.3
   mount_pattern: other
   mount_pitch_x_mm: null
   mount_pitch_y_mm: null
-  mount_hole_count: 6
-  mount_holes_xy: null
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 5.0
+    - 8.0
+  - - 5.0
+    - 98.0
+  - - 155.0
+    - 98.0
+  - - 165.5
+    - 5.0
   mount_inset_from_edge_mm: 5.0
   standoff_height_mm: 5
   component_height_top_mm: null
@@ -491,13 +548,21 @@
   sources:
   - https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf
   - https://global.bttwiki.com/M8P-V2_0.html
-  confidence: medium
-  notes: 'Confidence medium — Tier-2/3 (outline firm, pitch inferred). PCB size 169.93 x 102.74 HIGH (official
-    V2.0 SIZE.pdf; wiki 170 x 102.7). 5.00 mm corner inset confirmed. Dense connector-referenced drawing
-    -> exact hole XY LOW, hole_count MEDIUM. Mechanically interchangeable footprint with V1.x. hole_dia
-    and thickness assumed. Mounting: Board outline 169.93 x 102.74 mm. SIZE drawing shows corner insets
-    5.00 and 4.43 mm. Mounting-hole layout is essentially the same as V1.0/V1.1 (corners + mid-edge);
-    same enclosures generally fit V1.x and V2.0. Source: https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf'
+  confidence: high
+  notes: 'Confidence high - Tier-1, measured 2026-09-09 from this revision''s own vendor STEP (https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/3D/BIGTREETECH%20MANTA%20M8P%20V2.0.zip)
+    and independently confirmed against the vendor dimension drawing, which prints every callout: 169.93
+    overall, 5.00 from the left edge, 4.74 below the top, 14.93 from the right, 4.43 from the right and
+    5.00 above the bottom, 8.00 above the bottom. Those resolve to exactly the four hole centres the solid
+    gives, to 0.00 mm. CORRECTION: mount_hole_count was 6; the board has FOUR mounting holes. The two extra
+    Ø3.25 holes near the right edge (y 63.4 and 74.83, 11.43 apart) carry no callout on the drawing and
+    are a connector footprint, not a mount. Hole dia 3.3 measured (prior 3.2 was assumed). The layout is
+    irregular - three different edge insets - so pitch_x/pitch_y stay null and mount_holes_xy is the only
+    honest form. Origin = PCB outline min corner, x right / y up in the TOP view; +Z was proved to be the
+    component side by solid volume above vs below the board plane, so the pattern is not mirrored. pcb_thickness_mm
+    left untouched: BTT STEPs model finish layers and report 0.80-1.76 mm for a 1.6 mm board, so modelled
+    thickness is not a measurement. V1.1 and V2.0 were measured from SEPARATE STEP files and agree exactly,
+    which is the cross-check for both. Sources: https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/3D/BIGTREETECH%20MANTA%20M8P%20V2.0.zip
+    ; https://raw.githubusercontent.com/bigtreetech/Manta-M8P/master/V2.0/Hardware/BIGTREETECH%20MANTA%20M8P%20V2.0-SIZE.pdf'
 - id: btt_cb1
   name: CB1
   manufacturer: BigTreeTech
