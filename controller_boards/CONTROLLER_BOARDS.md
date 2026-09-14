@@ -3,7 +3,7 @@
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
 - **Total boards:** 101
-- **Confidence:** 60 high · 22 medium · 19 low
+- **Confidence:** 60 high · 23 medium · 18 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -53,7 +53,7 @@
 | SKR Pico | BigTreeTech | mainboard | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | SKRat V1.0 | BigTreeTech | mainboard | bay | 109.67×84.3 | 1.6 | M3 | rectangular | 101.35×76.1 | 4 | high |
 | U2C V2 (V2.0/V2.1) | BigTreeTech | usb_can_bridge | bay | 85.45×25.35 | 1.6 | M3 | rectangular | —×19.23 | 4 | medium |
-| U2C V3 | BigTreeTech | usb_can_bridge | bay | — | — | — | — | — | — | low |
+| U2C V3 | BigTreeTech | usb_can_bridge | bay | — | — | — | — | — | — | medium |
 | Duet 2 WiFi / Ethernet | Duet3D | mainboard | bay | 123.0×100.0 | 1.6 | M4 | rectangular | 115.0×92.0 | 4 | high |
 | Duet 3 Mainboard 6HC | Duet3D | mainboard | bay | 140.0×134.0 | 1.6 | M4 | rectangular | 130.0×124.0 | 4 | high |
 | Duet 3 Mainboard 6XD | Duet3D | mainboard | bay | 140.0×115.0 | 1.6 | M4 | rectangular | 130.0×105.0 | 4 | high |
@@ -144,7 +144,7 @@
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), none, pitch —×— mm
 - **Connectors:** BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated community KiCad board with published Edge.Cuts found.
-- **Notes:** No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific board with KiCad geometry is identified.
+- **Notes:** No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific board with KiCad geometry is identified. Re-verified 2026-09-14: fetched https://github.com/ArmoredTurtle/BoxTurtle directly. Repo confirms BoxTurtle requires the separate "AFC-Klipper Add-On" and an "AFC-Lite controller board"; hardware-related folders are BT_Wiring, CAD (mechanical/enclosure parts) and STLs — no KiCad/schematic/PCB-layout directory for a bespoke BoxTurtle PCB. Conclusion unchanged: this entry stays a placeholder for "no single bespoke PCB exists"; AFC-Lite should get its own entry if/when its geometry is sourced. Confidence and values unchanged. Source: https://github.com/ArmoredTurtle/BoxTurtle
 - src: https://github.com/ArmoredTurtle/BoxTurtle
 
 ## BigTreeTech
@@ -270,7 +270,7 @@
 - **Mounting:** 2× M3 (Ø3.2), linear, pitch 12.78×12.0 mm
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Same family layout as SB2209 CAN: top edge VIN/GND/CAN-H/CAN-L + HE0; sides carry SPI_OUT, Proximity, FAN, endstop, PT100/TH0; ADXL345 onboard (RP2040 variant). USB-C present.
-- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). NO official dimensional drawing exists for the RP2040 variant. All PCB/mount figures are INFERRED from the StealthBurner-interchangeable SB2209 CAN. DO NOT machine to these without physical verification. Mounting: BTT did NOT publish a dimensional SIZE PDF for the RP2040 variant (repo folder has only a Pin PDF). It is purpose-built for and physically interchangeable with the Voron StealthBurner / the SB2209 CAN sibling, so outline and 2-hole mount are TAKEN to match that sibling (68.54 x 42.45, hole-to-hole dX=12.78 / dY~12.0). Confirm physically before relying on hole XY. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
+- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). NO official dimensional drawing exists for the RP2040 variant. All PCB/mount figures are INFERRED from the StealthBurner-interchangeable SB2209 CAN. DO NOT machine to these without physical verification. Mounting: BTT did NOT publish a dimensional SIZE PDF for the RP2040 variant (repo folder has only a Pin PDF). It is purpose-built for and physically interchangeable with the Voron StealthBurner / the SB2209 CAN sibling, so outline and 2-hole mount are TAKEN to match that sibling (68.54 x 42.45, hole-to-hole dX=12.78 / dY~12.0). Confirm physically before relying on hole XY. Re-verified 2026-09-14: fetched https://github.com/bigtreetech/EBB/tree/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware directly — still only a schematic PDF and Pin PDF/PNG, no SIZE/dimensional drawing has been added. Inferred-from-sibling figures and confidence unchanged. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
 - src: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
 - src: https://global.bttwiki.com/EBB%202209%20CAN%20RP2040.html
 
@@ -500,11 +500,11 @@
 
 ### U2C V3  ·  `btt_u2c_v3`
 
-- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** low · **Source file:** `bigtreetech.yaml`
+- **Category:** usb_can_bridge · **Mounts on:** bay · **Confidence:** medium · **Source file:** `bigtreetech.yaml`
 - **PCB:** — × — mm, — mm thick
 - **Mounting:** —× — (Ø—), —, pitch —×— mm
 - **Connectors:** N/A - product not confirmed to exist.
-- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). DO NOT generate geometry for this entry. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs (as of 2026-06). If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist or is mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT's official lineage is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen in listings refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision is confirmed. Use the btt_u2c_v2 entry for all current U2C dimensional data. Source: https://global.bttwiki.com/U2C.html
+- **Notes:** Confidence low -> medium (Tier-3 -> Tier-2: existence claim now confirmed against a directly-fetched primary source, not just search snippets). DO NOT generate geometry for this entry — no board, so nothing to measure. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs. If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist or is mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT's official lineage is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen in listings refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision is confirmed. Use the btt_u2c_v2 entry for all current U2C dimensional data. Re-verified 2026-09-14: fetched https://github.com/bigtreetech/docs/blob/master/docs/U2C.md directly (readable this session, unlike the bttwiki mirror) — confirms only V1.0, V1.1, V2.0, V2.1 are documented, STM32F072C8 for V1.x and STM32G0B1C8 for V2.x, no V3 anywhere in the doc. Matches the existing conclusion; bumping confidence since this is now a live-fetched primary source rather than a search-snippet corroboration of a blocked URL. Confidence stays medium rather than high: this entry asserts a negative (no such product), which a single doc page can support but not prove exhaustively. Source: https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
 - src: https://global.bttwiki.com/U2C.html
 - src: https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
 - src: https://maz0r.github.io/klipper_canbus/controller/u2c.html
@@ -874,7 +874,7 @@
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø3.2), other, pitch —×— mm
 - **Clearance:** standoff 5 mm, top component — mm
-- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). Flagged reference footprint. Outline + hole XY UNVERIFIED -- extract from Gerbers/STEP in CAD if a library entry is wanted. Mounting is body-clip, not a simple hole pattern. Mounting: The reference two-piece Voron Stealthburner toolhead PCB that many toolboards (incl. LDO Nitehawk-SB) clone for their form factor. Mounts into the Stealthburner printed body with M3x8 SHCS + M3x6 BHCS (per Voron hardware docs), NOT a board-edge rectangular pattern. Only Gerbers/STEP are published (no raw KiCad .kicad_pcb), so exact outline/hole XY were not machine-extracted. Included as a flag because it is a de-facto footprint standard worth its own library entry. Source: https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB
+- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). Flagged reference footprint. Outline + hole XY UNVERIFIED -- extract from Gerbers/STEP in CAD if a library entry is wanted. Mounting is body-clip, not a simple hole pattern. Mounting: The reference two-piece Voron Stealthburner toolhead PCB that many toolboards (incl. LDO Nitehawk-SB) clone for their form factor. Mounts into the Stealthburner printed body with M3x8 SHCS + M3x6 BHCS (per Voron hardware docs), NOT a board-edge rectangular pattern. Only Gerbers/STEP are published (no raw KiCad .kicad_pcb), so exact outline/hole XY were not machine-extracted. Included as a flag because it is a de-facto footprint standard worth its own library entry. Re-verified 2026-09-14: fetched both source repos directly. VoronDesign/Voron-Hardware/Stealthburner_Toolhead_PCB/CAD contains "Toolhead PCBs.step" and "FanAdapterNew.dxf" (STEP, no .kicad_pcb); hartk1213/MISC mirrors the same Production Files/CAD layout. This session has no STEP-parsing tool available, so the outline/hole XY still cannot be machine-extracted from that STEP file — left null rather than eyeballed. Confidence and values unchanged; a future session with CAD tooling (or a maintainer with FreeCAD/KiCad) could open "Toolhead PCBs.step" to fill this in. Source: https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB
 - src: https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB
 - src: https://github.com/hartk1213/MISC/tree/main/PCBs/Stealthburner_Toolhead_PCB
 
@@ -1240,7 +1240,7 @@
 - **PCB:** — × — mm, 1.6 mm thick
 - **Mounting:** —× M3 (Ø—), none, pitch —×— mm
 - **Connectors:** Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt filter + LED, 1mm/pulse via slotted wheel. Captive inside printed EncoderCart housing (Encoder_Left/Right STLs); not screw-mounted as a standalone board -- it slots into the cart, so mount pattern is 'none'.
-- **Notes:** No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole dimensions NOT recovered. To measure, extract the gerber zip and read the *.GKO/outline layer, or open the .f3z. Board is encoder-cart-captive so board-level mounting holes are likely irrelevant for CAD mount design; the relevant interface is the EncoderCart STL geometry, not screw holes.
+- **Notes:** No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole dimensions NOT recovered. To measure, extract the gerber zip and read the *.GKO/outline layer, or open the .f3z. Board is encoder-cart-captive so board-level mounting holes are likely irrelevant for CAD mount design; the relevant interface is the EncoderCart STL geometry, not screw holes. Re-verified 2026-09-14: fetched the repo directly. usermods/Binky/CAD contains "ERCF Binky v1.04.f3z", "EncoderCart - Binky v217.f3z/.step", and "EncoderCart - Binky.step"; usermods/Binky/Gerber contains "ERCF Binky - PCB v1.04.zip" plus BOM/CPL CSVs — still no raw .kicad_pcb. This session has no STEP/Fusion parsing tool, so outline/hole dimensions still cannot be extracted; left null rather than guessed. Confidence and values unchanged. Source: https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
 - src: https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
 
 ## timmit99

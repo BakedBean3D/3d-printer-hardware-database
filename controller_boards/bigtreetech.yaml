@@ -763,14 +763,21 @@
   - https://global.bttwiki.com/U2C.html
   - https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
   - https://maz0r.github.io/klipper_canbus/controller/u2c.html
-  confidence: low
-  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). DO NOT generate geometry for
-    this entry. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs (as of
-    2026-06). If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist
-    or is mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT''s official
-    lineage is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen
-    in listings refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision
-    is confirmed. Use the btt_u2c_v2 entry for all current U2C dimensional data. Source: https://global.bttwiki.com/U2C.html'
+  confidence: medium
+  notes: 'Confidence low -> medium (Tier-3 -> Tier-2: existence claim now confirmed against a directly-fetched
+    primary source, not just search snippets). DO NOT generate geometry for this entry — no board, so
+    nothing to measure. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs.
+    If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist or is
+    mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT''s official lineage
+    is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen in listings
+    refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision is confirmed.
+    Use the btt_u2c_v2 entry for all current U2C dimensional data.
+    Re-verified 2026-09-14: fetched https://github.com/bigtreetech/docs/blob/master/docs/U2C.md directly
+    (readable this session, unlike the bttwiki mirror) — confirms only V1.0, V1.1, V2.0, V2.1 are documented,
+    STM32F072C8 for V1.x and STM32G0B1C8 for V2.x, no V3 anywhere in the doc. Matches the existing conclusion;
+    bumping confidence since this is now a live-fetched primary source rather than a search-snippet corroboration
+    of a blocked URL. Confidence stays medium rather than high: this entry asserts a negative (no such
+    product), which a single doc page can support but not prove exhaustively. Source: https://github.com/bigtreetech/docs/blob/master/docs/U2C.md'
 - id: btt_ebb36_can_v1
   name: EBB36 CAN V1.x
   manufacturer: BigTreeTech
@@ -873,7 +880,10 @@
     dimensional SIZE PDF for the RP2040 variant (repo folder has only a Pin PDF). It is purpose-built
     for and physically interchangeable with the Voron StealthBurner / the SB2209 CAN sibling, so outline
     and 2-hole mount are TAKEN to match that sibling (68.54 x 42.45, hole-to-hole dX=12.78 / dY~12.0).
-    Confirm physically before relying on hole XY. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf'
+    Confirm physically before relying on hole XY.
+    Re-verified 2026-09-14: fetched https://github.com/bigtreetech/EBB/tree/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware
+    directly — still only a schematic PDF and Pin PDF/PNG, no SIZE/dimensional drawing has been added.
+    Inferred-from-sibling figures and confidence unchanged. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf'
 - id: btt_ebb_sb2209_can
   name: EBB SB2209 CAN V1.0
   manufacturer: BigTreeTech
