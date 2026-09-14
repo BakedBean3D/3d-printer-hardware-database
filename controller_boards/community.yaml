@@ -101,8 +101,13 @@
     PCB that many toolboards (incl. LDO Nitehawk-SB) clone for their form factor. Mounts into the Stealthburner
     printed body with M3x8 SHCS + M3x6 BHCS (per Voron hardware docs), NOT a board-edge rectangular pattern.
     Only Gerbers/STEP are published (no raw KiCad .kicad_pcb), so exact outline/hole XY were not machine-extracted.
-    Included as a flag because it is a de-facto footprint standard worth its own library entry. Source:
-    https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB'
+    Included as a flag because it is a de-facto footprint standard worth its own library entry.
+    Re-verified 2026-09-14: fetched both source repos directly. VoronDesign/Voron-Hardware/Stealthburner_Toolhead_PCB/CAD
+    contains "Toolhead PCBs.step" and "FanAdapterNew.dxf" (STEP, no .kicad_pcb); hartk1213/MISC mirrors
+    the same Production Files/CAD layout. This session has no STEP-parsing tool available, so the outline/hole
+    XY still cannot be machine-extracted from that STEP file — left null rather than eyeballed. Confidence
+    and values unchanged; a future session with CAD tooling (or a maintainer with FreeCAD/KiCad) could
+    open "Toolhead PCBs.step" to fill this in. Source: https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB'
 - id: timmit99_klipper_expander
   name: Klipper Expander (STM32)
   manufacturer: timmit99
@@ -204,10 +209,15 @@
   sources:
   - https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
   confidence: low
-  notes: No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole
+  notes: 'No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole
     dimensions NOT recovered. To measure, extract the gerber zip and read the *.GKO/outline layer, or
     open the .f3z. Board is encoder-cart-captive so board-level mounting holes are likely irrelevant for
     CAD mount design; the relevant interface is the EncoderCart STL geometry, not screw holes.
+    Re-verified 2026-09-14: fetched the repo directly. usermods/Binky/CAD contains "ERCF Binky v1.04.f3z",
+    "EncoderCart - Binky v217.f3z/.step", and "EncoderCart - Binky.step"; usermods/Binky/Gerber contains
+    "ERCF Binky - PCB v1.04.zip" plus BOM/CPL CSVs — still no raw .kicad_pcb. This session has no STEP/Fusion
+    parsing tool, so outline/hole dimensions still cannot be extracted; left null rather than guessed.
+    Confidence and values unchanged. Source: https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky'
 - id: box_turtle_afc
   name: Box Turtle (AFC) PCB
   manufacturer: ArmoredTurtle
@@ -232,9 +242,15 @@
   sources:
   - https://github.com/ArmoredTurtle/BoxTurtle
   confidence: low
-  notes: No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
+  notes: 'No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
     individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific
     board with KiCad geometry is identified.
+    Re-verified 2026-09-14: fetched https://github.com/ArmoredTurtle/BoxTurtle directly. Repo confirms
+    BoxTurtle requires the separate "AFC-Klipper Add-On" and an "AFC-Lite controller board"; hardware-related
+    folders are BT_Wiring, CAD (mechanical/enclosure parts) and STLs — no KiCad/schematic/PCB-layout directory
+    for a bespoke BoxTurtle PCB. Conclusion unchanged: this entry stays a placeholder for "no single bespoke
+    PCB exists"; AFC-Lite should get its own entry if/when its geometry is sourced. Confidence and values
+    unchanged. Source: https://github.com/ArmoredTurtle/BoxTurtle'
 - id: voron_hall_xy_endstop
   name: Hall Effect XY Endstop
   manufacturer: HartK / VoronDesign
