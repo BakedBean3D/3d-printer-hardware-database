@@ -1,6 +1,7 @@
 # Contributing
 
 Thanks for helping build the community hardware database! Here's how to contribute.
+Repository safety rules and generated-file commands live in [AGENTS.md](AGENTS.md).
 
 ## Adding New Hardware
 
@@ -76,10 +77,13 @@ If you find an error:
 
 ## Validation
 
-Run the schema validator before submitting:
+Regenerate affected outputs using the table in [AGENTS.md](AGENTS.md), then run
+these checks before submitting. A pass does not verify source accuracy or physical fit:
 
 ```bash
-python scripts/validate.py
+python3 scripts/validate.py
+python3 scripts/check_docs.py
+python3 scripts/gen_schema.py --validate
 ```
 
 ## Licensing of contributions

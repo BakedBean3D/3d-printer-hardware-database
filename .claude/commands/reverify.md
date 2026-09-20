@@ -12,18 +12,20 @@ $ARGUMENTS entries if given, otherwise 5.
    - manufacturer datasheet / spec table / official mechanical drawing, or
    - the design's official repo/docs for community hardware.
    Check EVERY spec field against it, not just the ones flagged in notes.
-3. Apply corrections following CLAUDE.md rules strictly:
+3. Apply corrections following AGENTS.md rules strictly:
    - a value you cannot source stays as-is (or becomes `null` if it was a
      guess), flagged in `notes` — never invent, never average conflicts
      (tier-1 wins; note the conflict).
    - record old value → new value → source (URL, revision/date) in `notes`.
    - upgrade `confidence` only to what the new citations support:
-     `high` needs a working URL to a primary source (validator enforces);
+     `high` needs a working URL to a primary source; verify it yourself
+     (the validator only checks for a URL-like citation);
      retailer-only corroboration is `medium`.
    - "confirmed unpublished" is a legitimate outcome for community designs
      (toolhead weights/CFMs): keep the tier, say so in `notes` with the
      places checked — that stops the entry being re-hunted every batch.
-4. Gates, all green before committing: `python3 scripts/validate.py`,
+4. Regenerate affected board/PSU aggregates per AGENTS.md, then run all
+   gates before committing: `python3 scripts/validate.py`,
    `python3 scripts/check_docs.py`, `python3 scripts/gen_schema.py --validate`.
 5. Branch `reverify-YYYY-MM-DD`, one commit
    (`fix(<category>): re-verify <n> low-confidence entries`, body lists each
