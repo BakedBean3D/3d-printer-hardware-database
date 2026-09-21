@@ -233,94 +233,114 @@ the provenance of its key values (the validator enforces the enum):
 | `medium` | Trusted-retailer specs, or official sources with some key values estimated/uncited |
 | `low` | Community spreadsheet, unverified, or estimated values — re-verify before trusting in CAD or config |
 
-## How This Data Is Built (AI-Assisted Curation)
+## How The Data Is Built (AI-Assisted Curation)
 
 This database is curated with heavy AI assistance — specifically [Claude
 Code](https://claude.com/claude-code) — and that is worth stating plainly,
-because provenance is the whole product here. A wrong number in this repo
-becomes a wrong `run_current` or a mount that doesn't bolt down.
+because the origin and reliability of the data matters. A wrong value in this repo
+could become a wrong `run_current` or a mount that doesn't actually fit.
 
-AI does the routine work of building a dataset like this: finding the
-manufacturer datasheet for a part number, reading real dimensions off a vector
-PDF or a vendor STEP instead of a retailer blurb, cross-checking a suspicious
-value against the rest of a case family, converting units into the field
-conventions, filling every required field on a new entry, regenerating the
-aggregates, and writing the citation trail. That is hours of mechanical
-research and transcription per batch, and it is exactly the work that used to
-cap how large a hand-maintained spec database could get.
 
-Offloading it changes what the maintainer actually spends time on: schema
-design, what counts as a source, which physics gates the data must survive,
-and the judgment calls an agent shouldn't make alone — where a vendor drawing
-contradicts itself, or where a number is too risky to publish at all. The role
-shifts from producing records to specifying, reviewing, and orchestrating how
-records get produced. AI doesn't loosen the standard in this repo; it is what
-makes a standard this strict affordable at community scale.
 
-The agent's operating rules are checked in, not improvised:
+AI does the routine work of building the dataset: 
+1. Finding the manufacturer datasheet for a part number
+2. Reading real dimensions off a vector PDF or a vendor STEP instead of a retailer blurb
+3. Cross-checking a suspicious value against the rest of a case family
+4. Converting units into the field conventions
+5. Filling every required field on a new entry
+6. Regenerating the aggregates
+7. Writing the citation trail
+  
+That is hours of mechanical research and transcription per batch, and it is exactly the work that used to
+limit how large a hand-maintained spec database could get.
+
+<br>
+
+Offloading it changes what the maintainer actually spends time on: 
+- Schema design
+- What counts as a source
+- Which physics gates the data must survive
+- The judgment calls an agent shouldn't make alone
+  - Where a vendor drawing contradicts itself, or where a number is too risky to publish at all, etc.
+
+<br>
+
+The role shifts from producing records to specifying, reviewing, and orchestrating how
+records get produced. AI helps reduce "grunt work" which allows me to focus on the standard of data quality needed at community scale.
+
+The agent's operating rules are checked in at:
 [AGENTS.md](AGENTS.md) is the canonical policy (imported by `CLAUDE.md`), and
 [`.claude/commands/reverify.md`](.claude/commands/reverify.md) is the
 repeatable re-verification workflow.
 
 ### The search-and-vet loop
 
-1. **Pick the work from data, not from vibes.** `python3
+1. **Pick the work from data.** 
+   - `python3
    scripts/reverify_worklist.py --limit N` emits every `confidence: low` entry,
-   prioritized by how likely a primary source exists (motors first — part
+   prioritized by how likely a primary source exists
+   - Motors first — part
    numbers almost always have datasheets; community toolheads last, where a
-   weight may genuinely never have been published).
-2. **Hunt the primary source.** Web search/fetch for the manufacturer
-   datasheet, official mechanical drawing, or — for community hardware — the
-   design's own repo and CAD. Retailer pages are a fallback, not a source of
-   record.
-3. **Check every field against it**, not just the one flagged in `notes`.
-   Dimensions come off the drawing; `mount_holes_xy` and pitches get read from
-   the actual geometry.
-4. **Resolve conflicts by tier, never by averaging.** Manufacturer datasheet >
-   trusted retailer > community tested. When two sources disagree, the tier-1
-   value wins and the conflict is recorded in `notes`.
-5. **Write the trail.** Each change records old value → new value → source URL
-   with revision/date in `notes`, and the commit message says the same. `high`
-   confidence requires a link to a primary source, checked by hand — the
+   weight may genuinely never have been published.
+2. **Search for the primary source** 
+   - Web search/fetch for the manufacturer datasheet, official mechanical drawing, or — for community hardware — the design's own repo and CAD. 
+   - Retailer pages are a fallback, not a source of record.
+3. **Check every field against it**
+   - Not just the one flagged in `notes`.
+   - Dimensions come from drawings
+   - `mount_holes_xy` and pitches get read from the actual geometry.
+4. **Resolve conflicts by tier, not by averaging**
+   - Manufacturer datasheet > trusted retailer > community tested. 
+   - When two sources disagree, the tier-1 value wins and the conflict is recorded in `notes`.
+1. **Record the trail**
+   - Each change records old value → new value → source URL with revision/date in `notes`, and the commit message says the same. 
+   - `high` confidence requires a link to a primary source, checked by hand. The
    validator only enforces that a citation is present, not that it resolves or
    says what the entry claims.
-6. **Set `confidence` to what the citations actually support** — including the
-   legitimate outcome "confirmed unpublished, here's where I looked", which
-   keeps an entry honest instead of re-hunting it every batch.
-7. **Regenerate, gate, and open a PR.** Data changes never get pushed straight
-   to `main`.
+2. **Set `confidence` to what the citations support**
+   - This includes the legitimate outcome "confirmed unpublished, here's where I looked", which allows for future automated searches to skip it instead of re-hunting it every run.
+1. **Regenerate, gate, and open a PR**
+   - Data changes never get pushed straight to `main`.
 
 ### Guardrails the agent operates under
 
 | Rule | Why |
 |---|---|
-| Unknown is `null`, never `0` or a plausible guess | A zero reads as a measured value to a CAD consumer |
-| Never average conflicting sources | Averaging manufactures a number no one published |
-| Never weaken a plausibility band to make an entry pass | A failing gate means recheck the drawing or escalate — not move the goalposts |
-| Never hand-edit generated files (`*.json`, `CONTROLLER_BOARDS.md`, `PSU.md`, `schema/*`) | They're regenerated from YAML; hand edits silently diverge |
-| Source-backed contradictions get escalated in the PR body | Some calls are a human's to make |
-| Data changes land via PR and human review | The last check is a person |
+| Unknown is `null`, never `0` or a plausible guess | A zero could be interpreted as a measured value to a CAD consumer |
+| Never average conflicting sources | Avoids manufacturing a number that looks real but isn't |
+| Never weaken a plausibility band to make an entry pass | A failing gate signals that a recheck of the drawing, or escalation, is needed |
+| Never hand-edit generated files (`*.json`, `CONTROLLER_BOARDS.md`, `PSU.md`, `schema/*`) | They're regenerated from YAML, this makes sure there is no silent divergence |
+| Source-backed contradictions are escalated in the PR | Signals manual intervention is required |
+| Data changes land via PR and human review | Last check is always a person |
 
 ### What actually catches mistakes
 
 Agent output is assumed fallible and is gated mechanically in CI
 ([`.github/workflows/validate.yml`](.github/workflows/validate.yml)):
 
-- `scripts/validate.py` — required fields, types, enums, ID uniqueness,
-  referential integrity (a toolhead can't cite an extruder id that doesn't
-  exist), and provenance (a `high`-confidence entry with no source URL fails),
-  plus **physics and plausibility gates**: NEMA weight-per-mm and holding-torque bands, hotend
-  temperature ranges (and recommended temps above the rated max), any dimension
-  entered as `0` rather than `null`, PSU mount-interface rules (a threaded case
-  must declare its thread-in safety depth; an open ear slot must declare its
-  screw travel), and geometry checks such as a mount pitch that can't fit on
-  the face it sits on or hole coordinates that disagree with the declared
-  pitch.
-- `scripts/gen_schema.py --validate` and `scripts/check_docs.py` — the
-  published JSON Schemas and this README's field tables must stay in sync with
-  the validator, so documentation drift fails the build rather than misleading
-  a consumer.
-- CI re-runs every generator and fails on any diff, so generated aggregates
+- `scripts/validate.py`
+  - General gates:
+    - Required fields
+    - Types
+    - Enums
+    - ID uniqueness
+    - Referential integrity (a toolhead can't cite an extruder id that doesn't
+    exist)
+    - Provenance (a `high`-confidence entry with no source URL fails)
+
+  - **physics and plausibility gates**
+    - NEMA weight-per-mm and holding-torque bands
+    - Hotend temperature ranges (and recommended temps above the rated max)
+    - Dimensions entered as `0` rather than `null`
+    - PSU mount-interface rules
+      - A threaded case must declare its thread-in safety depth
+      - An open ear slot must declare its screw travel
+      - Geometry checks such as a mount pitch that can't fit on the face it sits on or hole coordinates that disagree with the declared pitch.
+- `scripts/gen_schema.py --validate` and `scripts/check_docs.py`
+  - The published JSON Schemas and this README's field tables must stay in sync with
+  the validator
+  - Documentation drift causes the build to fail rather than misleading a consumer.
+- CI re-runs every generator and results in a failure on any diff, so generated aggregates
   can't drift from their YAML source.
 
 None of that verifies source accuracy or physical fit — a validator pass means
