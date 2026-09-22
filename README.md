@@ -103,6 +103,7 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 | `din_rail_compatible` | bool | True for spring-clip DIN-rail units (MDR/EDR series) |
 | `din_rail_type` | string | Admissible rail profile (e.g. "TS35/7.5 or TS35/15") |
 | `terminal_location` | string | Where the AC/DC terminal block(s) sit relative to the mounting face(s) |
+| `terminal_faces` | list | Optional, encouraged. Structured terminal-block position(s) for consumers that need to chart them without parsing `terminal_location` prose: `[{face, circuits, notes}]`. `face` ∈ `x_min_end`, `x_max_end`, `y_min_side`, `y_max_side`, `top`, `bottom` — expressed in that record's OWN body-origin frame (x along `length_mm`, y along `width_mm`, z along `height_mm`, origin at the same case corner its hole coordinates use; read the record's `notes` for which corner that is). `circuits` is a non-empty subset of `ac_in`, `dc_out`, `signal`. At most one entry per `face` (no duplicates). `notes` is a free-text string or `null`. The whole field is `null` for records nobody has verified against a primary drawing yet — never guessed from a sibling record's case family |
 | `connector_notes` | string | Terminal pinout, connector part numbers, fan/thermal notes |
 | `sources` | list | Manufacturer datasheet/mechanical-drawing URLs |
 | `confidence` | string | high (vector-PDF extracted, cross-validated), medium (case dims + screw/depth verified, exact hole XY unresolved), low (measure first) |
