@@ -91,7 +91,8 @@ PSU_REQUIRED = [
     "side_mount_screw", "side_mount_hole_dia_mm", "side_mount_hole_count", "side_mount_pattern",
     "side_mount_pitch_x_mm", "side_mount_holes_xy", "side_mount_max_penetration_mm",
     "din_rail_compatible", "din_rail_type",
-    "terminal_location", "terminal_faces", "connector_notes", "sources", "confidence", "notes",
+    "terminal_location", "terminal_faces", "mount_hole_frame",
+    "connector_notes", "sources", "confidence", "notes",
 ]
 
 CONFIDENCE_VALUES = {"high", "medium", "low"}
@@ -144,6 +145,28 @@ PSU_TERMINAL_FACE_VALUES = {
 }
 PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_out", "signal"}
 
+# mount_hole_frame: makes explicit what terminal_faces already assumes -- the
+# coordinate FRAME that bottom_mount_holes_xy / side_mount_holes_xy are given
+# in. Free-text notes on individual records claim things like "x=0 at the
+# terminal-block end, y=0 at the front long face" or "bottom-left case
+# origin", but nothing structural let a consumer tell a case-corner frame
+# (draw the real case rectangle around the holes) from a vendor-drawing datum
+# that happens not to be case-relative. Two values only, plus null:
+#   - case_corner    = x=0,y=0 at a case corner; x runs along length_mm, y
+#                       along width_mm; every case-body point lies in
+#                       [0, length_mm] x [0, width_mm] (ears/slots that
+#                       protrude past the nominal case edge may sit slightly
+#                       outside -- see check_physics' +-5mm tolerance).
+#   - vendor_drawing  = some other datum (a drawing-sheet origin, a
+#                       non-case feature, an asymmetric convenience choice
+#                       not tied to a case edge). Do NOT treat as
+#                       case-relative -- a consumer cannot infer the case
+#                       rectangle from these coordinates alone.
+#   - null            = unknown / not yet established from the record's own
+#                       provenance. Never guessed from a sibling record's
+#                       case family.
+PSU_MOUNT_HOLE_FRAME_VALUES = {"case_corner", "vendor_drawing"}
+
 # Declarative enum registry: category -> field -> (allowed values, null_ok).
 # The single source for both the runtime enum checks and the generated JSON
 # Schemas (scripts/gen_schema.py) — add enums here, not as ad-hoc checks.
@@ -166,6 +189,7 @@ ENUM_FIELDS = {
         # conditional rules (required when bottom_mount_screw is set;
         # threaded_case requires a penetration depth) stay in check_physics.
         "bottom_mount_interface": (PSU_INTERFACE_VALUES, True),
+        "mount_hole_frame": (PSU_MOUNT_HOLE_FRAME_VALUES, True),
     },
 }
 for _cat_enums in ENUM_FIELDS.values():
@@ -271,7 +295,7 @@ PSU_FIELD_TYPES = {
     "category": _T_STR, "bottom_mount_screw": _T_STR, "bottom_mount_interface": _T_STR,
     "bottom_mount_pattern": _T_STR, "side_mount_screw": _T_STR,
     "side_mount_pattern": _T_STR, "din_rail_type": _T_STR,
-    "terminal_location": _T_STR, "connector_notes": _T_STR,
+    "terminal_location": _T_STR, "mount_hole_frame": _T_STR, "connector_notes": _T_STR,
     "confidence": _T_STR, "notes": _T_STR,
     "length_mm": _T_NUM, "width_mm": _T_NUM, "height_mm": _T_NUM,
     "weight_g": _T_NUM, "wattage_w": _T_NUM,
@@ -441,6 +465,41 @@ def _check_terminal_faces(entry_id, filepath, entry):
     return errors
 
 
+def _check_mount_hole_frame(entry_id, filepath, entry):
+    """When mount_hole_frame=case_corner, every declared hole coordinate must
+    actually lie on (or immediately adjacent to) the case rectangle [0,
+    length_mm] x [0, width_mm]. This is the structural payoff of the field:
+    a consumer trusts it to draw the real case rectangle around the holes,
+    so a case_corner claim that puts a hole 20mm off the case is worse than
+    no claim at all. +-5mm tolerance accommodates ears/slots that
+    legitimately protrude past the nominal case edge (see UHP-350) without
+    being generous enough to hide a wrong-frame mistake."""
+    if entry.get("mount_hole_frame") != "case_corner":
+        return 0
+    errors = 0
+    L, W = _num(entry, "length_mm"), _num(entry, "width_mm")
+    tag = f"{filepath}[{entry_id}].mount_hole_frame"
+    for prefix in ("bottom_mount_holes_xy", "side_mount_holes_xy"):
+        holes = entry.get(prefix)
+        if not isinstance(holes, list):
+            continue
+        for h in holes:
+            if not (isinstance(h, (list, tuple)) and len(h) == 2):
+                continue  # already reported by _check_mount_group / type check
+            x, y = h
+            if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+                continue
+            if L is not None and not (-5 <= x <= L + 5):
+                print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} x={x} "
+                      f"outside -5..{L + 5}")
+                errors += 1
+            if W is not None and not (-5 <= y <= W + 5):
+                print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} y={y} "
+                      f"outside -5..{W + 5}")
+                errors += 1
+    return errors
+
+
 def _check_confidence_provenance(entry_id, filepath, entry):
     """confidence: high claims a primary source — require a URL somewhere the
     schema can carry one (datasheet_url, sources, or notes). An entry whose
@@ -553,6 +612,7 @@ def check_physics(entry_id, filepath, entry, category):
         errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
         errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
         errors += _check_terminal_faces(entry_id, filepath, entry)
+        errors += _check_mount_hole_frame(entry_id, filepath, entry)
         # bottom_mount_interface conditional rules (the value enum itself is
         # covered by ENUM_FIELDS): a record with a bottom screw size MUST
         # declare the interface, and a threaded case needs a safety depth.

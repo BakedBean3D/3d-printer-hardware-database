@@ -63,6 +63,7 @@
     circuits: [dc_out]
     notes: 8-position 5.08 mm DC output block, on the opposite 95x35 short end from
       the AC input.
+  mount_hole_frame: case_corner
   sources:
   - https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/CAD/LCP300-24D5%20CAD.step
   - https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/Media/LCP300-24D5%20Datasheet.pdf
@@ -112,4 +113,9 @@
     every dimension above is cross-checked against the 24D5''s own datasheet drawing; it
     does mean the STEP alone cannot tell the two variants apart, and the terminal counts do
     not discriminate either (the -48 also uses 8 output positions).
-    NOT YET PHYSICALLY VALIDATED -- no printed mount has been fitted to this unit.'
+    NOT YET PHYSICALLY VALIDATED -- no printed mount has been fitted to this unit.
+    mount_hole_frame: case_corner -- x=0 is the AC-input end (a real case edge) and y=0 is
+    a long-side edge; the case is symmetric about its centreline so either long edge would
+    serve equally as y=0 (stated above as "free"), but the coordinate actually recorded
+    (6.5/88.5, closing 6.5+82+6.5=95 exactly) is still measured from a case edge, not an
+    arbitrary drawing datum, so the case-corner claim holds.'

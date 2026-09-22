@@ -39,6 +39,7 @@
       "din_rail_type",
       "terminal_location",
       "terminal_faces",
+      "mount_hole_frame",
       "connector_notes",
       "sources",
       "confidence",
@@ -124,6 +125,13 @@
         "type": [
           "string",
           "null"
+        ]
+      },
+      "mount_hole_frame": {
+        "enum": [
+          "case_corner",
+          "vendor_drawing",
+          null
         ]
       },
       "connector_notes": {
