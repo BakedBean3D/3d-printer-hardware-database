@@ -53,6 +53,16 @@
   side_mount_max_penetration_mm: null
   din_rail_compatible: false
   din_rail_type: null
+  terminal_faces:
+  - face: x_min_end
+    circuits: [ac_in]
+    notes: 6-position 7.7 mm barrier AC input block. This is the same feature the
+      record's own coordinate origin is pinned to ("x=0 at the AC-INPUT end,
+      located in the STEP by the 6-position 7.7 mm barrier terminals") -- see notes.
+  - face: x_max_end
+    circuits: [dc_out]
+    notes: 8-position 5.08 mm DC output block, on the opposite 95x35 short end from
+      the AC input.
   sources:
   - https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/CAD/LCP300-24D5%20CAD.step
   - https://github.com/MotorDynamicsLab/LDOPowerSupply/blob/master/LCP300-24D5/Media/LCP300-24D5%20Datasheet.pdf

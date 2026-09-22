@@ -38,6 +38,7 @@
       "din_rail_compatible",
       "din_rail_type",
       "terminal_location",
+      "terminal_faces",
       "connector_notes",
       "sources",
       "confidence",
@@ -241,6 +242,12 @@
         ]
       },
       "side_mount_holes_xy": {
+        "type": [
+          "array",
+          "null"
+        ]
+      },
+      "terminal_faces": {
         "type": [
           "array",
           "null"

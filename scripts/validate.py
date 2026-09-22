@@ -91,7 +91,7 @@ PSU_REQUIRED = [
     "side_mount_screw", "side_mount_hole_dia_mm", "side_mount_hole_count", "side_mount_pattern",
     "side_mount_pitch_x_mm", "side_mount_holes_xy", "side_mount_max_penetration_mm",
     "din_rail_compatible", "din_rail_type",
-    "terminal_location", "connector_notes", "sources", "confidence", "notes",
+    "terminal_location", "terminal_faces", "connector_notes", "sources", "confidence", "notes",
 ]
 
 CONFIDENCE_VALUES = {"high", "medium", "low"}
@@ -130,6 +130,19 @@ PROBE_TYPE_VALUES = {
     "inductive", "inductive_dock", "eddy_current",
 }
 PSU_INTERFACE_VALUES = {"threaded_case", "clearance_ears"}
+
+# terminal_faces: structured screw-terminal-block position(s), so consumers can
+# chart them without parsing `terminal_location` prose. Expressed in the
+# record's OWN body-origin frame (x along length_mm, y along width_mm, z along
+# height_mm, origin at the same case corner the record's hole coordinates
+# use) -- not a global convention, because DIN-rail units (MDR/EDR) describe
+# their frame differently (see their notes) than the bolt-down enclosed units.
+# null-able: leave null until a primary-source drawing has been read for that
+# record (never guessed from series-family pattern-matching alone).
+PSU_TERMINAL_FACE_VALUES = {
+    "x_min_end", "x_max_end", "y_min_side", "y_max_side", "top", "bottom",
+}
+PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_out", "signal"}
 
 # Declarative enum registry: category -> field -> (allowed values, null_ok).
 # The single source for both the runtime enum checks and the generated JSON
@@ -268,7 +281,7 @@ PSU_FIELD_TYPES = {
     "side_mount_max_penetration_mm": _T_NUM,
     "bottom_mount_hole_count": _T_INT, "side_mount_hole_count": _T_INT,
     "output_voltages_v": _T_LIST, "bottom_mount_holes_xy": _T_LIST,
-    "side_mount_holes_xy": _T_LIST,
+    "side_mount_holes_xy": _T_LIST, "terminal_faces": _T_LIST,
     "din_rail_compatible": _T_BOOL,
 }
 
@@ -371,6 +384,61 @@ def _check_enum(entry_id, filepath, entry, key, allowed, null_ok=True):
         print(f"  BAD ENUM: {filepath}[{entry_id}].{key}={v!r} not in {sorted(allowed)}")
         return 1
     return 0
+
+
+def _check_terminal_faces(entry_id, filepath, entry):
+    """Structural checks for the optional psu `terminal_faces` list.
+
+    Each item is {face, circuits, notes}: face is a single-valued enum (one
+    entry per physical face -- a duplicate face means two conflicting claims
+    about the same wall), circuits is a non-empty list drawn from the
+    controlled vocabulary (an empty/missing circuits list is meaningless --
+    a face with no assigned circuit isn't a terminal face), and notes, when
+    present, must be a string. null (the whole field, not an empty list) is
+    how an unverified record stays unverified.
+    """
+    tf = entry.get("terminal_faces")
+    if tf is None:
+        return 0
+    tag = f"{filepath}[{entry_id}].terminal_faces"
+    if not isinstance(tf, list):
+        return 0  # already reported as BAD TYPE by the generic type check
+    if not tf:
+        print(f"  EMPTY TERMINAL_FACES: {tag} must be null (unverified) or a non-empty list")
+        return 1
+    errors = 0
+    seen_faces = set()
+    for i, item in enumerate(tf):
+        itag = f"{tag}[{i}]"
+        if not isinstance(item, dict):
+            print(f"  MALFORMED TERMINAL_FACE: {itag} is not a mapping")
+            errors += 1
+            continue
+        face = item.get("face")
+        if face not in PSU_TERMINAL_FACE_VALUES:
+            print(f"  BAD ENUM: {itag}.face={face!r} not in {sorted(PSU_TERMINAL_FACE_VALUES)}")
+            errors += 1
+        elif face in seen_faces:
+            print(f"  DUPLICATE TERMINAL FACE: {itag}.face={face!r} already appears "
+                  f"in {tag} -- merge into one entry")
+            errors += 1
+        else:
+            seen_faces.add(face)
+        circuits = item.get("circuits")
+        if not isinstance(circuits, list) or not circuits:
+            print(f"  MISSING CIRCUITS: {itag}.circuits must be a non-empty list")
+            errors += 1
+        else:
+            for c in circuits:
+                if c not in PSU_TERMINAL_CIRCUIT_VALUES:
+                    print(f"  BAD ENUM: {itag}.circuits contains {c!r} not in "
+                          f"{sorted(PSU_TERMINAL_CIRCUIT_VALUES)}")
+                    errors += 1
+        notes = item.get("notes")
+        if notes is not None and not isinstance(notes, str):
+            print(f"  BAD TYPE: {itag}.notes={notes!r} must be string (or null)")
+            errors += 1
+    return errors
 
 
 def _check_confidence_provenance(entry_id, filepath, entry):
@@ -484,6 +552,7 @@ def check_physics(entry_id, filepath, entry, category):
                                      "length_mm", "width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
         errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
+        errors += _check_terminal_faces(entry_id, filepath, entry)
         # bottom_mount_interface conditional rules (the value enum itself is
         # covered by ENUM_FIELDS): a record with a bottom screw size MUST
         # declare the interface, and a threaded case needs a safety depth.

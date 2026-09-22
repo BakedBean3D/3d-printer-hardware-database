@@ -137,6 +137,12 @@ def write_md(units):
                 L.append(f"- **DIN rail:** {fmt(u.get('din_rail_type'))}")
             if u.get("terminal_location"):
                 L.append(f"- **Terminal location:** {u['terminal_location']}")
+            if u.get("terminal_faces"):
+                faces = "; ".join(
+                    f"{tf.get('face')} ({'/'.join(tf.get('circuits') or [])})"
+                    for tf in u["terminal_faces"] if isinstance(tf, dict)
+                )
+                L.append(f"- **Terminal faces (structured):** {faces}")
             if u.get("connector_notes"):
                 L.append(f"- **Connectors:** {u['connector_notes']}")
             if u.get("notes"):
