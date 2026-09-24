@@ -143,6 +143,7 @@ def write_md(units):
                     for tf in u["terminal_faces"] if isinstance(tf, dict)
                 )
                 L.append(f"- **Terminal faces (structured):** {faces}")
+            L.append(f"- **Mount hole frame:** {fmt(u.get('mount_hole_frame'))}")
             if u.get("connector_notes"):
                 L.append(f"- **Connectors:** {u['connector_notes']}")
             if u.get("notes"):

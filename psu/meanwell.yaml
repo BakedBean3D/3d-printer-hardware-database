@@ -99,6 +99,7 @@
       block at the case''s x-min short end. Verified 2026-09-22 against LRS-50-SPEC.PDF page 4
       (rendered PNG) -- the terminal strip is drawn on the narrow end wall, stacked vertically
       1-5, not on either long side.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-50/LRS-50-SPEC.PDF
   confidence: high
@@ -148,6 +149,7 @@
     notes: 'All 5 pins (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V) sit on one 5-position
       block at the case''s x-min short end. Verified 2026-09-22 against LRS-75-SPEC.PDF page 4
       (rendered PNG) -- terminal strip drawn on the narrow end wall, stacked vertically 1-5.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-SPEC.PDF
   - https://www.meanwell.com/Upload/PDF/LRS-75/LRS-75-3D.zip
@@ -228,6 +230,7 @@
       7-position block at the case''s x-min short end. Verified 2026-09-22 against
       LRS-100-SPEC.PDF page 4 (rendered PNG) -- terminal strip drawn on the narrow end
       wall, stacked vertically 1-7.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-100/LRS-100-SPEC.PDF
   confidence: high
@@ -278,6 +281,7 @@
       7-position block at the case''s x-min short end. Verified 2026-09-22 against
       LRS-150-SPEC.PDF page 4 (rendered PNG, the source PDF the "defect" report itself
       identified) -- terminal strip drawn on the narrow end wall, stacked vertically 1-7.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-150/LRS-150-SPEC.PDF
   confidence: high
@@ -337,6 +341,7 @@
       LRS-200-SPEC.PDF page 4 (rendered PNG, the source PDF the "defect" report itself
       identified) -- terminal strip drawn on the narrow (115mm) end wall, stacked
       vertically 1-9, same construction as LRS-50/75/100/150/350.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-SPEC.PDF
   confidence: high
@@ -416,6 +421,7 @@
       LRS-200 (same case family). Verified 2026-09-22 against LRS-350-SPEC.PDF page 4
       (rendered PNG) -- terminal strip drawn on the narrow (115mm) end wall, opposite the
       built-in fan.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF
   confidence: high
@@ -477,6 +483,7 @@
       spec PDF, not page 4) -- the left end wall carries the vertically-stacked TB2
       (pins 6-1), SVR1/+V ADJ/LED/CN100 row, and TB1 (pins 3-1); the fan and vents
       are on the opposite (x-max) end.'
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/RSP-500/RSP-500-SPEC.PDF
   confidence: high
@@ -541,6 +548,7 @@
       per-axis feature measurement the way bottom_mount_holes_xy's 0.9/219.1 pair
       was fixed (that pair is symmetric and does not itself disambiguate ends) --
       flagged here rather than silently assumed.
+  mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF
   confidence: high
@@ -577,7 +585,12 @@
     no thread in the case; the screw clamps the ear and threads into the mounting plate below (Mean Well
     install guidance: "M3*4" into a thermally-conductive aluminum plate >= 450x450x3mm for the full derating
     curve -- a THERMAL requirement, not just mechanical), and the screw path lies outside the case wall, so
-    bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth. Source:
+    bottom_mount_max_penetration_mm is null (not applicable) rather than a safety depth.
+    mount_hole_frame: case_corner -- both axes close on the case envelope (7.8+46.4+7.8=62 in Y;
+    0.9+218.2+0.9=220.0 in X, i.e. slot centres sit 0.9mm INSIDE each end face rather than on it),
+    so the origin is a real case corner even though the ear-slot centres, being ears that protrude
+    past the nominal case footprint on other units, in this case sit slightly INSIDE rather than
+    outside the [0,length]x[0,width] envelope. Source:
     https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF (mechanical dims on page 5;
     installation/aluminum-plate requirement on page 6).'
 
@@ -625,6 +638,7 @@
     circuits: [ac_in]
     notes: AC input (N, L) on the bottom face. Verified 2026-09-22 against
       MDR-60-SPEC.PDF page 2 (rendered PNG, front view).
+  mount_hole_frame: null
   sources:
   - https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF
   confidence: high
@@ -636,7 +650,10 @@
     "Install DIN rail TS35/7.5 or TS35/15" callout), not a bolt pattern. Vendor dimension convention on this
     drawing is W*H*D (40*90*100mm) rather than L*W*H -- remapped here to this schema''s length/width/height
     as length_mm=D(100, how far the unit projects off the rail), width_mm=W(40, body width along the rail),
-    height_mm=H(90, vertical extent when rail-mounted). Source: https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF'
+    height_mm=H(90, vertical extent when rail-mounted). mount_hole_frame is null: there is no
+    bottom_mount_holes_xy/side_mount_holes_xy to place in any frame on a DIN-clip unit, and the
+    drawing establishes no case-corner or drawing datum for one. Source:
+    https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF'
 
 - id: meanwell_edr_120
   name: Mean Well EDR-120
@@ -684,6 +701,7 @@
       Also accepts DC input directly per connector_notes -- categorized ac_in as its
       primary function. Verified 2026-09-22 against EDR-120-SPEC.PDF page 4 (rendered
       PNG, "Front View").
+  mount_hole_frame: null
   sources:
   - https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF
   confidence: high
@@ -693,5 +711,7 @@
     MDR-60. The drawing''s side views show two small circular marks on the case body that are the internal
     DIN-rail spring-clip mechanism, not user-facing mounting screws -- not modeled as a mount pattern.
     Vendor dimension convention is W*H*D (40*125.2*113.5mm), remapped here as length_mm=D(113.5), width_mm=W(40),
-    height_mm=H(125.2), same convention as meanwell_mdr_60. Source:
+    height_mm=H(125.2), same convention as meanwell_mdr_60. mount_hole_frame is null for the same reason
+    as meanwell_mdr_60: no bottom_mount_holes_xy/side_mount_holes_xy exist on a DIN-clip unit to place in
+    a frame. Source:
     https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF'
