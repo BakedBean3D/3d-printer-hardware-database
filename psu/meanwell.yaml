@@ -308,7 +308,7 @@
   connector_notes: '9-position screw terminal. Pins 1-3 AC/L, AC/N, FG; pins 4-6 DC OUTPUT -V; pins 7-9 DC OUTPUT +V.'
   bottom_mount_screw: M4
   bottom_mount_interface: threaded_case
-  bottom_mount_hole_dia_mm: 4.5
+  bottom_mount_hole_dia_mm: 3.1
   bottom_mount_hole_count: 4
   bottom_mount_pattern: rectangular
   bottom_mount_pitch_x_mm: 150.0
@@ -325,7 +325,7 @@
   bottom_mount_max_penetration_mm: 3.0
   bottom_mount_slot_travel_mm: null
   side_mount_screw: M4
-  side_mount_hole_dia_mm: 4.5
+  side_mount_hole_dia_mm: 3.1
   side_mount_hole_count: 4
   side_mount_pattern: rectangular
   side_mount_pitch_x_mm: 150.0
@@ -344,6 +344,7 @@
   mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-SPEC.PDF
+  - https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-3D.zip
   confidence: high
   notes: 'Confidence high -- Tier-1 source (Mean Well LRS-200-SPEC.PDF, Case No.207, rev 2025-09-12,
     tolerance +-1mm); dimension chain visually verified against the rendered mechanical drawing
@@ -369,7 +370,31 @@
     LRS-200-SPEC.PDF page 4: the 9-pin terminal strip is drawn on the case''s narrow (115mm)
     end wall, i.e. the x-min end, not on either 215mm long face -- the mounting-hole grid''s
     32.5mm end insets are symmetric so this choice does not affect bottom_mount_holes_xy, but it
-    does fix terminal_faces to x_min_end.'
+    does fix terminal_faces to x_min_end.
+    VENDOR-SOLID VERIFICATION 2026-09-24 -- this record was previously drawing-only and was flagged by
+    scripts/check_vendor_solids.py as RE-EXTRACT (a solid existed while the notes claimed no CAD source).
+    Measured from LRS-200-3D.stp, sha256 532c4f61243596714a538dae979b88a2c16bb53b30e1862a730b48d7d33eda6f,
+    from https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-3D.zip, using OCCT cylinder AXES (never face
+    extents or centroids). Case datum proved from PLANE PAIRS rather than the bounding box, which is the
+    documented LRS-50 failure mode: X 48.078/263.078 = 215.0 and Y 172.292/287.292 = 115.0 both close on
+    the datasheet case, with the floor plane at Z=1.5. BOTTOM PATTERN CONFIRMED UNCHANGED: the four Z-axis
+    pilots sit at X 80.578/230.578 and Y 204.792/254.792, i.e. (32.5, 32.5), (182.5, 32.5), (32.5, 82.5),
+    (182.5, 82.5) in the case frame -- exactly the values already recorded, so the 150 x 50 grid and the
+    drawing-derived reading of it were right. DIAMETER CORRECTED 4.5 -> 3.1 on both groups: the case hole
+    is a thread-forming M4 pilot measuring r=1.550 (O3.1) with an r=2.360 (O4.72) extrusion collar -- the
+    signature every other solid-measured M4 record in this file carries (lrs_350, rsp_500 both 3.1). The
+    previous 4.5 was explicitly INFERRED clearance-hole practice, not the case hole, and is now measured
+    rather than assumed. SIDE HEIGHT NOW CROSS-VALIDATED: the four Y-axis pilots run through the two long
+    side walls at the same X 32.5/182.5 (150 pitch, matching Mean Well''s "4-M4(Both Sides)" label) with
+    their axes at Z=14.0, i.e. 12.5mm above the case floor -- confirming the single side-view figure this
+    record previously recorded as not cross-validated. side_mount_holes_xy NEVERTHELESS STAYS NULL, and
+    deliberately so: the field is a list of (x, height) pairs and validate.py requires its length to equal
+    side_mount_hole_count (4). These 4 holes are 2 positions repeated on TWO opposite walls, which a
+    2-tuple cannot distinguish -- writing four entries would duplicate [[32.5, 12.5], [182.5, 12.5]] and
+    invent a distinction the frame cannot carry. Recording the geometry here in prose is honest; forcing
+    it into a field that cannot express it would manufacture exactly the datum ambiguity this pass exists
+    to remove. bottom/side max_penetration (3.0/5.0) are unchanged: they come from the drawing''s own
+    "L=3mm"/"L=5mm" callouts, which are clearance-to-live-parts limits the solid does not restate.'
 
 - id: meanwell_lrs_350
   name: Mean Well LRS-350
@@ -810,6 +835,7 @@
   mount_hole_frame: null
   sources:
   - https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF
+  - https://www.meanwell.com/Upload/PDF/MDR-60/MDR-60-3D.zip
   confidence: high
   notes: 'Confidence high -- Tier-1 source (Mean Well MDR-60-SPEC.PDF, Case No.962A, rev 2025-07-25, tolerance
     +-1mm), extracted with pdftotext against the clean text-layer PDF (no raster estimation needed). This is
@@ -822,7 +848,16 @@
     height_mm=H(90, vertical extent when rail-mounted). mount_hole_frame is null: there is no
     bottom_mount_holes_xy/side_mount_holes_xy to place in any frame on a DIN-clip unit, and the
     drawing establishes no case-corner or drawing datum for one. Source:
-    https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF'
+    https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF
+    VENDOR-SOLID VERIFICATION 2026-09-24 -- flagged RE-EXTRACT by scripts/check_vendor_solids.py
+    (a solid existed while this record cited only the spec PDF). Measured from MDR-40&60.stp, sha256
+    5a5fdef569eedce07d6c9323a79ca64666f4dd2dbae637fda13b38be86790d14, from https://www.meanwell.com/Upload/PDF/MDR-60/MDR-60-3D.zip.
+    NO BOLT-DOWN MOUNTING PATTERN EXISTS, which CONFIRMS this record rather than changing it:
+    the solid carries no cylindrical face at any mount-scale radius on any axis -- the only
+    round features are terminal-screw and internal detail, so bottom_mount_screw null and
+    bottom_mount_pattern none are correct, not merely unfilled. This unit hangs on the rail.
+    Case envelope cross-checks: assembly envelope 40.0 (width) x 91.7 x 100.0, matching the recorded 100 x 40 x 90 case with the DIN clip accounting for the small vertical excess. No field value changed; this closes the provenance
+    gap only, and the record is no longer drawing-only.'
 
 - id: meanwell_edr_120
   name: Mean Well EDR-120
@@ -873,6 +908,7 @@
   mount_hole_frame: null
   sources:
   - https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF
+  - https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-3D.zip
   confidence: high
   notes: 'Confidence high -- Tier-1 source (Mean Well EDR-120-SPEC.PDF, Case No.992D, rev 2026-03-31, tolerance
     +-1mm), extracted with pdftotext against the clean text-layer PDF. Spring-clip DIN-rail unit (40mm body
@@ -883,4 +919,13 @@
     height_mm=H(125.2), same convention as meanwell_mdr_60. mount_hole_frame is null for the same reason
     as meanwell_mdr_60: no bottom_mount_holes_xy/side_mount_holes_xy exist on a DIN-clip unit to place in
     a frame. Source:
-    https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF'
+    https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF
+    VENDOR-SOLID VERIFICATION 2026-09-24 -- flagged RE-EXTRACT by scripts/check_vendor_solids.py
+    (a solid existed while this record cited only the spec PDF). Measured from EDR-120-3D.stp, sha256
+    48d681ad3ece392b17fa06b3df4db8f1686c780bc4c1c85ded25f9680b8a35fb, from https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-3D.zip.
+    NO BOLT-DOWN MOUNTING PATTERN EXISTS, which CONFIRMS this record rather than changing it:
+    the solid carries no cylindrical face at any mount-scale radius on any axis -- the only
+    round features are terminal-screw and internal detail, so bottom_mount_screw null and
+    bottom_mount_pattern none are correct, not merely unfilled. This unit hangs on the rail.
+    Case envelope cross-checks: assembly envelope 124.3 x 40.0 (width) x 129.2, matching the recorded 113.5 x 40 x 125.2 case with the DIN clip and terminal guards accounting for the excess. No field value changed; this closes the provenance
+    gap only, and the record is no longer drawing-only.'
