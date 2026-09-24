@@ -28,6 +28,15 @@ context, not assignments or proof that work shipped. Preserve unrelated changes.
    conflict, never average. Set required `confidence` honestly per CONTRIBUTING.
    A validator pass checks structure/plausibility, not source accuracy, URL
    reachability, or physical fit; verify those claims with their own evidence.
+   **Never write "no 3D model / no solid published" from a single 404.** Vendors
+   spell archive URLs inconsistently (Mean Well hides suffixed series under a
+   parenthesised folder AND repeats the suffix in the filename, while the spec
+   PDF beside it stays unsuffixed). Run `python3 scripts/check_vendor_solids.py
+   [<id>...]` first; if it finds a solid, measure from that, because the
+   artifact hierarchy is vendor 3D solid > printed dimension text > drawing-view
+   geometry. One unprobed spelling is how `meanwell_uhp_350` carried a
+   `bottom_mount_pitch_x_mm` wrong by 4.2 mm into shipped parts (218.2 vs a true
+   214.0, corrected 2026-09-24).
 3. Motor current is **RMS** (peak = RMS × 1.414); recommended run current is
    40–70% of rated RMS. Convert units to those required by the field/schema
    (`_mm`, `_g`, `_ncm`, `_mh`, `_w`, `_v`); do not rename legacy fields casually.
