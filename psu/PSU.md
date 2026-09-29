@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python psu/gen.py`. The YAML files are the source of truth.
 
-- **Total units:** 12
-- **Confidence:** 12 high · 0 medium · 0 low
+- **Total units:** 13
+- **Confidence:** 13 high · 0 medium · 0 low
 - **Aggregate for code:** `psu.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -30,6 +30,7 @@
 | Mean Well LRS-50 | Mean Well | enclosed | 99.0×82.0×30.0 | 210g | 50W | 3.3/5/12/15/24/36/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | high |
 | Mean Well LRS-75 | Mean Well | enclosed | 99.0×97.0×30.0 | —g | 75W | 5/12/15/24/36/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | high |
 | Mean Well MDR-60 | Mean Well | din_rail | 100.0×40.0×90.0 | 287g | 60W | 5/12/24/48 | none | DIN TS35/7.5 or TS35/15 | high |
+| Mean Well RS-25 | Mean Well | enclosed | 78.0×51.0×28.0 | 200g | 25W | 3.3/5/12/15/24/48 | 2×M3 (2-hole) | 2×M3 (2-hole) | high |
 | Mean Well RSP-500 | Mean Well | enclosed | 230.0×127.0×40.5 | 1300g | 500W | 3.3/4/5/12/15/24/27/48 | 5×M4 (other) | 4×M4 (rectangular) | high |
 | Mean Well UHP-200 | Mean Well | slim_enclosed | 194.0×55.0×26.0 | 468g | 200W | 4.2/5/12/15/24/36/48/55 | 4×M3 (rectangular) | none | high |
 | Mean Well UHP-350 | Mean Well | slim_enclosed | 220.0×62.0×31.0 | 680g | 350W | 3.3/4.2/5/12/15/24/36/48/55 | 4×M3 (rectangular) | none | high |
@@ -176,6 +177,22 @@
 - **Notes:** Confidence high -- Tier-1 source (Mean Well MDR-60-SPEC.PDF, Case No.962A, rev 2025-07-25, tolerance +-1mm), extracted with pdftotext against the clean text-layer PDF (no raster estimation needed). This is a spring-clip DIN-rail unit, not a screw-mounted one -- there is no bottom or side screw-hole pattern to record (both left null/none rather than guessed); the mount interface for a parametric generator is the DIN-rail clip geometry itself (rail width 35mm, admissible rail profile TS35/7.5 or TS35/15 per the drawing's "Install DIN rail TS35/7.5 or TS35/15" callout), not a bolt pattern. Vendor dimension convention on this drawing is W*H*D (40*90*100mm) rather than L*W*H -- remapped here to this schema's length/width/height as length_mm=D(100, how far the unit projects off the rail), width_mm=W(40, body width along the rail), height_mm=H(90, vertical extent when rail-mounted). mount_hole_frame is null: there is no bottom_mount_holes_xy/side_mount_holes_xy to place in any frame on a DIN-clip unit, and the drawing establishes no case-corner or drawing datum for one. Source: https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF VENDOR-SOLID VERIFICATION 2026-09-24 -- flagged RE-EXTRACT by scripts/check_vendor_solids.py (a solid existed while this record cited only the spec PDF). Measured from MDR-40&60.stp, sha256 5a5fdef569eedce07d6c9323a79ca64666f4dd2dbae637fda13b38be86790d14, from https://www.meanwell.com/Upload/PDF/MDR-60/MDR-60-3D.zip. NO BOLT-DOWN MOUNTING PATTERN EXISTS, which CONFIRMS this record rather than changing it: the solid carries no cylindrical face at any mount-scale radius on any axis -- the only round features are terminal-screw and internal detail, so bottom_mount_screw null and bottom_mount_pattern none are correct, not merely unfilled. This unit hangs on the rail. Case envelope cross-checks: assembly envelope 40.0 (width) x 91.7 x 100.0, matching the recorded 100 x 40 x 90 case with the DIN clip accounting for the small vertical excess. No field value changed; this closes the provenance gap only, and the record is no longer drawing-only.
 - src: https://www.meanwell.com/upload/pdf/MDR-60/MDR-60-SPEC.PDF
 - src: https://www.meanwell.com/Upload/PDF/MDR-60/MDR-60-3D.zip
+
+### Mean Well RS-25  ·  `meanwell_rs_25`
+
+- **Category:** enclosed · **Confidence:** high · **Source file:** `meanwell.yaml`
+- **Case:** 78.0 × 51.0 × 28.0 mm, 200 g, 25W
+- **Output voltages:** 3.3/5/12/15/24/48 V
+- **Bottom mount:** 2× M3 (Ø2.65), 2-hole, pitch 55.0×— mm, max penetration 3.0 mm
+  - holes (x,y mm): [[12.0, 25.4], [67.0, 25.4]]
+- **Side mount:** 2× M3 (Ø2.65), 2-hole, pitch_x 66.5 mm, max penetration — mm
+- **Terminal location:** 5-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V) at the x-min short end
+- **Terminal faces (structured):** x_min_end (ac_in/dc_out)
+- **Mount hole frame:** case_corner
+- **Connectors:** 5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.
+- **Notes:** Measured 2026-09-29 from the vendor 3D STEP (RS-25-3D.zip, RS-25.stp) with OCCT, cylinder AXES (not face centroids). Case datum from plane pairs, not the bbox: X end planes 1.01 and 79.01 (78.0 = datasheet L), Z base -28.5 and top -0.5 (28.0 = H), Y long faces 44.81 and 95.91 (51.1, datasheet W 51 with the cover lip). Record frame: x=0 at the terminal end (x-min, where the terminal block overhangs), y=0 at the front long face carrying the side-wall holes (STEP y=44.81), viewed from above. Bottom pattern: two thread-forming M3 pilots (radius 1.325, collar 1.925) whose faces sit at z -27.9..-26.6 in the base, at STEP (13.01, 70.21) and (68.01, 70.21) = record (12.0, 25.4) and (67.0, 25.4), 55.0 mm pitch. Side pattern: two M3 pilots in the y-min long wall at STEP x 9.76 and 76.26 (record x 8.75 and 75.25, 66.5 mm pitch), 14.0 mm above the base. Depths assigned by callout position in RS-25-SPEC.PDF page 2 (pdftotext -bbox): "2-M3 L=3" sits in the plan view beside its 51 and 78 dims, so bottom_mount_max_penetration_mm = 3.0; the side-view callout (beside the 28 height dim) reads "2-M3" with no L=, so side_mount_max_penetration_mm stays null rather than borrowing the LRS 5.0. Another M3-radius hole at STEP (7.01, z -5.91) in the y-min wall carries no mount callout and is excluded. Probed: /Upload/PDF/RS-25/RS-25-3D.zip (200, solid); RS-25(R) folder and (R)/-5 zip spellings all 404. Output list and weight from the spec (0.2 kg); the Voron 2.4/Trident BOM names the RS-25-5.
+- src: https://www.meanwell.com/Upload/PDF/RS-25/RS-25-SPEC.PDF
+- src: https://www.meanwell.com/Upload/PDF/RS-25/RS-25-3D.zip
 
 ### Mean Well RSP-500  ·  `meanwell_rsp_500`
 

@@ -521,6 +521,74 @@
     "_source_file": "meanwell.yaml"
   },
   {
+    "id": "meanwell_rs_25",
+    "name": "Mean Well RS-25",
+    "manufacturer": "Mean Well",
+    "series": "RS-25",
+    "category": "enclosed",
+    "length_mm": 78.0,
+    "width_mm": 51.0,
+    "height_mm": 28.0,
+    "weight_g": 200,
+    "wattage_w": 25,
+    "output_voltages_v": [
+      3.3,
+      5,
+      12,
+      15,
+      24,
+      48
+    ],
+    "terminal_location": "5-pin screw terminal block (AC/L, AC/N, FG, DC OUTPUT -V, DC OUTPUT +V) at the x-min short end",
+    "connector_notes": "5-position screw terminal. Pin 1 AC/L, 2 AC/N, 3 FG, 4 DC OUTPUT -V, 5 DC OUTPUT +V.",
+    "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "threaded_case",
+    "bottom_mount_hole_dia_mm": 2.65,
+    "bottom_mount_hole_count": 2,
+    "bottom_mount_pattern": "2-hole",
+    "bottom_mount_pitch_x_mm": 55.0,
+    "bottom_mount_pitch_y_mm": null,
+    "bottom_mount_holes_xy": [
+      [
+        12.0,
+        25.4
+      ],
+      [
+        67.0,
+        25.4
+      ]
+    ],
+    "bottom_mount_max_penetration_mm": 3.0,
+    "bottom_mount_slot_travel_mm": null,
+    "side_mount_screw": "M3",
+    "side_mount_hole_dia_mm": 2.65,
+    "side_mount_hole_count": 2,
+    "side_mount_pattern": "2-hole",
+    "side_mount_pitch_x_mm": 66.5,
+    "side_mount_holes_xy": null,
+    "side_mount_max_penetration_mm": null,
+    "din_rail_compatible": false,
+    "din_rail_type": null,
+    "terminal_faces": [
+      {
+        "face": "x_min_end",
+        "circuits": [
+          "ac_in",
+          "dc_out"
+        ],
+        "notes": "All 5 pins on one block at the x-min short end: the STEP's terminal block overhangs the case by 12 mm at x-min (bbox x -10.99 against the case end plane at 1.01)."
+      }
+    ],
+    "mount_hole_frame": "case_corner",
+    "sources": [
+      "https://www.meanwell.com/Upload/PDF/RS-25/RS-25-SPEC.PDF",
+      "https://www.meanwell.com/Upload/PDF/RS-25/RS-25-3D.zip"
+    ],
+    "confidence": "high",
+    "notes": "Measured 2026-09-29 from the vendor 3D STEP (RS-25-3D.zip, RS-25.stp) with OCCT, cylinder AXES (not face centroids). Case datum from plane pairs, not the bbox: X end planes 1.01 and 79.01 (78.0 = datasheet L), Z base -28.5 and top -0.5 (28.0 = H), Y long faces 44.81 and 95.91 (51.1, datasheet W 51 with the cover lip). Record frame: x=0 at the terminal end (x-min, where the terminal block overhangs), y=0 at the front long face carrying the side-wall holes (STEP y=44.81), viewed from above. Bottom pattern: two thread-forming M3 pilots (radius 1.325, collar 1.925) whose faces sit at z -27.9..-26.6 in the base, at STEP (13.01, 70.21) and (68.01, 70.21) = record (12.0, 25.4) and (67.0, 25.4), 55.0 mm pitch. Side pattern: two M3 pilots in the y-min long wall at STEP x 9.76 and 76.26 (record x 8.75 and 75.25, 66.5 mm pitch), 14.0 mm above the base. Depths assigned by callout position in RS-25-SPEC.PDF page 2 (pdftotext -bbox): \"2-M3 L=3\" sits in the plan view beside its 51 and 78 dims, so bottom_mount_max_penetration_mm = 3.0; the side-view callout (beside the 28 height dim) reads \"2-M3\" with no L=, so side_mount_max_penetration_mm stays null rather than borrowing the LRS 5.0. Another M3-radius hole at STEP (7.01, z -5.91) in the y-min wall carries no mount callout and is excluded. Probed: /Upload/PDF/RS-25/RS-25-3D.zip (200, solid); RS-25(R) folder and (R)/-5 zip spellings all 404. Output list and weight from the spec (0.2 kg); the Voron 2.4/Trident BOM names the RS-25-5.",
+    "_source_file": "meanwell.yaml"
+  },
+  {
     "id": "meanwell_rsp_500",
     "name": "Mean Well RSP-500",
     "manufacturer": "Mean Well",
