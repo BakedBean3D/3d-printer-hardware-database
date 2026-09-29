@@ -59,6 +59,50 @@
     is printed on this drawing, so standoff_height_mm is left null). pcb_thickness_mm=1.6 is the repo-convention
     nominal default (not printed on this drawing -- it shows no Z axis / side-view thickness callout).
     Source: https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf'
+- id: raspberrypi_3b_plus
+  name: Raspberry Pi 3 Model B+
+  manufacturer: Raspberry Pi
+  category: sbc
+  mount_location: bay
+  pcb_length_mm: 85.0
+  pcb_width_mm: 56.0
+  pcb_thickness_mm: 1.6
+  mount_screw: M2.5
+  mount_hole_dia_mm: 2.9
+  mount_pattern: rectangular
+  mount_pitch_x_mm: 58.0
+  mount_pitch_y_mm: 49.0
+  mount_hole_count: 4
+  mount_holes_xy:
+  - - 3.5
+    - 3.5
+  - - 61.5
+    - 3.5
+  - - 3.5
+    - 52.5
+  - - 61.5
+    - 52.5
+  mount_inset_from_edge_mm: 3.5
+  standoff_height_mm: null
+  component_height_top_mm: 16.0
+  connector_notes: 85 x 56 mm board, 3.0mm corner radius. 40-pin GPIO header along the top edge (Z=8.5mm).
+    Right edge stacks 2x USB-A (Z=16.0mm, the tallest features) above RJ45 Ethernet (Z=13.5mm). Bottom edge
+    carries micro-USB power, full-size HDMI (Z=6.5mm) and the 3.5mm AV jack (Z=6). DSI and CSI FPC
+    connectors (Z=5.5mm).
+  sources:
+  - https://pip-assets.raspberrypi.com/categories/532-raspberry-pi-3-model-b/documents/RP-008337-DS-2-raspberry-pi-3-b-plus-mechanical-drawing.pdf
+  confidence: high
+  notes: 'Official Raspberry Pi mechanical drawing RP-008337 (Pi 3 Model B+), read 2026-09-29. The PDF has
+    no text layer; dimension text was read from a 150 dpi render: board 85 x 56, corner radius 3.0, mount
+    pitch 58 x 49 (58 also given as 2 x 29), inset 3.5 x 3.5 from the corner to the nearest hole centre,
+    Z-heights 16.0 (USB-A), 13.5 (RJ45), 8.5 (GPIO), 6.5, 6, 5.5. Same footprint as raspberrypi_4b.
+    mount_hole_dia_mm is not printed; measured from the drawing''s vector circles (PyMuPDF
+    get_drawings, least-squares fit): the page is rotated, and the hole-centre spacings are 182.28 pt and
+    153.96 pt, i.e. 3.1428 and 3.1420 pt/mm against 58 and 49 mm (isotropic within 0.03%). Inner circle
+    9.17 pt = 2.92 mm, recorded as 2.9 (not rounded to a remembered community value); outer ring 19.98 pt
+    = 6.36 mm is the pad keepout. M2.5 is the standard Pi screw, consistent with the measured hole but not
+    printed. pcb_thickness_mm 1.6 is the repo nominal default, not printed. The Pi 3 Model B (RP-008335)
+    shares the 58 x 49 pattern; this record is the B+ the Voron 2.4/Trident BOMs name ("3B+ or better").'
 - id: raspberrypi_5
   name: Raspberry Pi 5
   manufacturer: Raspberry Pi

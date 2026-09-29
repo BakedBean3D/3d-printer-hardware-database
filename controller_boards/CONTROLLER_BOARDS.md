@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 101
-- **Confidence:** 60 high · 22 medium · 19 low
+- **Total boards:** 103
+- **Confidence:** 61 high · 23 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -114,6 +114,8 @@
 | Fly-SHT36 v2.0 | Mellow | toolhead_can | toolhead | 51.27×45.67 | 1.6 | M3 | linear | 43.84×— | 2 | high |
 | Fly-SHT42 | Mellow | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | bay | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
+| Omron G3NA-210B solid state relay (G3NA-205B to 225B body) | Omron | ssr | bay | 58.0×43.0 | 27.0 | M4 | 2-hole | 47.5×— | 2 | medium |
+| Raspberry Pi 3 Model B+ | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 4 Model B | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 5 | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | bay | — | — | — | other | — | 0 | low |
@@ -1174,7 +1176,30 @@
 - src: https://github.com/Mellow-3D/mellow-3d.github.io/blob/gh-pages/images/fly-utoc/fly-utoc_dimensions.png
 - src: https://wiki.kb-3d.com/home/mellow/voron/utoc-3
 
+## Omron
+
+### Omron G3NA-210B solid state relay (G3NA-205B to 225B body)  ·  `omron_g3na_210b`
+
+- **Category:** ssr · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
+- **PCB:** 58.0 × 43.0 mm, 27.0 mm thick
+- **Mounting:** 2× M4 (Ø4.5), 2-hole, pitch 47.5×— mm
+  - holes (x,y mm): [[5.25, 21.5], [52.75, 21.5]]
+- **Connectors:** 4 screw terminals (M4 x 8): output 1 and 2 (load, 24-240 VAC), input 3 (+) and 4 (-), 5-24 VDC. Terminal pairs sit at each short end beside the mounting holes.
+- **Notes:** Read 2026-09-29 from the official Omron G3NA series datasheet, page 9, "Dimensions: G3NA-205B-UTU, G3NA-210B-UTU, G3NA-220B-UTU, G3NA-225B-UTU" (printed text plus a rendered drawing). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart on the long axis; panel mounting-hole pattern "Two, 4.3-dia. or M4 holes" at 47.6 +/-0.2. The drawing places both holes on the long-axis centreline, symmetric about the body midline; one end is a round hole and the other an open slot of the same 4.5 width. Coordinates therefore assume the symmetric placement against the MAX envelope: x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5. Confidence medium because the envelope is a maximum, not a nominal, so the hole-to-edge distance can differ by a fraction of a millimetre; the pitch is printed and is the load-bearing number. Holes are clearance: the screw passes through the relay into the mount, which supplies the thread. The Micron BOM names this part first among its SSR options; the Voron 2.4/Trident BOM names the older G3A-210B, for which no primary dimension source was found (2026-09-29).
+- src: https://assets.omron.com/m/453bbd7a38a218b5/original/G3NA-Series-Solid-State-Relay-Datasheet.pdf
+
 ## Raspberry Pi
+
+### Raspberry Pi 3 Model B+  ·  `raspberrypi_3b_plus`
+
+- **Category:** sbc · **Mounts on:** bay · **Confidence:** high · **Source file:** `raspberrypi.yaml`
+- **PCB:** 85.0 × 56.0 mm, 1.6 mm thick
+- **Mounting:** 4× M2.5 (Ø2.9), rectangular, pitch 58.0×49.0 mm
+  - holes (x,y mm): [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]]
+- **Clearance:** standoff — mm, top component 16.0 mm
+- **Connectors:** 85 x 56 mm board, 3.0mm corner radius. 40-pin GPIO header along the top edge (Z=8.5mm). Right edge stacks 2x USB-A (Z=16.0mm, the tallest features) above RJ45 Ethernet (Z=13.5mm). Bottom edge carries micro-USB power, full-size HDMI (Z=6.5mm) and the 3.5mm AV jack (Z=6). DSI and CSI FPC connectors (Z=5.5mm).
+- **Notes:** Official Raspberry Pi mechanical drawing RP-008337 (Pi 3 Model B+), read 2026-09-29. The PDF has no text layer; dimension text was read from a 150 dpi render: board 85 x 56, corner radius 3.0, mount pitch 58 x 49 (58 also given as 2 x 29), inset 3.5 x 3.5 from the corner to the nearest hole centre, Z-heights 16.0 (USB-A), 13.5 (RJ45), 8.5 (GPIO), 6.5, 6, 5.5. Same footprint as raspberrypi_4b. mount_hole_dia_mm is not printed; measured from the drawing's vector circles (PyMuPDF get_drawings, least-squares fit): the page is rotated, and the hole-centre spacings are 182.28 pt and 153.96 pt, i.e. 3.1428 and 3.1420 pt/mm against 58 and 49 mm (isotropic within 0.03%). Inner circle 9.17 pt = 2.92 mm, recorded as 2.9 (not rounded to a remembered community value); outer ring 19.98 pt = 6.36 mm is the pad keepout. M2.5 is the standard Pi screw, consistent with the measured hole but not printed. pcb_thickness_mm 1.6 is the repo nominal default, not printed. The Pi 3 Model B (RP-008335) shares the 58 x 49 pattern; this record is the B+ the Voron 2.4/Trident BOMs name ("3B+ or better").
+- src: https://pip-assets.raspberrypi.com/categories/532-raspberry-pi-3-model-b/documents/RP-008337-DS-2-raspberry-pi-3-b-plus-mechanical-drawing.pdf
 
 ### Raspberry Pi 4 Model B  ·  `raspberrypi_4b`
 

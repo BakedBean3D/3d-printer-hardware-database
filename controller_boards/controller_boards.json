@@ -3404,6 +3404,42 @@
     "_source_file": "modules.yaml"
   },
   {
+    "id": "omron_g3na_210b",
+    "name": "Omron G3NA-210B solid state relay (G3NA-205B to 225B body)",
+    "manufacturer": "Omron",
+    "category": "ssr",
+    "mount_location": "bay",
+    "pcb_length_mm": 58.0,
+    "pcb_width_mm": 43.0,
+    "pcb_thickness_mm": 27.0,
+    "mount_screw": "M4",
+    "mount_hole_dia_mm": 4.5,
+    "mount_pattern": "2-hole",
+    "mount_pitch_x_mm": 47.5,
+    "mount_pitch_y_mm": null,
+    "mount_hole_count": 2,
+    "mount_holes_xy": [
+      [
+        5.25,
+        21.5
+      ],
+      [
+        52.75,
+        21.5
+      ]
+    ],
+    "mount_inset_from_edge_mm": null,
+    "standoff_height_mm": null,
+    "component_height_top_mm": null,
+    "connector_notes": "4 screw terminals (M4 x 8): output 1 and 2 (load, 24-240 VAC), input 3 (+) and 4 (-), 5-24 VDC. Terminal pairs sit at each short end beside the mounting holes.",
+    "sources": [
+      "https://assets.omron.com/m/453bbd7a38a218b5/original/G3NA-Series-Solid-State-Relay-Datasheet.pdf"
+    ],
+    "confidence": "medium",
+    "notes": "Read 2026-09-29 from the official Omron G3NA series datasheet, page 9, \"Dimensions: G3NA-205B-UTU, G3NA-210B-UTU, G3NA-220B-UTU, G3NA-225B-UTU\" (printed text plus a rendered drawing). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart on the long axis; panel mounting-hole pattern \"Two, 4.3-dia. or M4 holes\" at 47.6 +/-0.2. The drawing places both holes on the long-axis centreline, symmetric about the body midline; one end is a round hole and the other an open slot of the same 4.5 width. Coordinates therefore assume the symmetric placement against the MAX envelope: x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5. Confidence medium because the envelope is a maximum, not a nominal, so the hole-to-edge distance can differ by a fraction of a millimetre; the pitch is printed and is the load-bearing number. Holes are clearance: the screw passes through the relay into the mount, which supplies the thread. The Micron BOM names this part first among its SSR options; the Voron 2.4/Trident BOM names the older G3A-210B, for which no primary dimension source was found (2026-09-29).",
+    "_source_file": "modules.yaml"
+  },
+  {
     "id": "lm2596_buck",
     "name": "LM2596 adjustable buck converter module",
     "manufacturer": "Generic/various",
@@ -3528,6 +3564,50 @@
     ],
     "confidence": "high",
     "notes": "Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing RP-008343, a Cadence Allegro \"Print to PDF\" export with vector-drawn dimension text, no extractable text layer -- pdftotext returns empty; digits were read from a 600dpi raster render and independently cross-checked by measuring the drawing's own vector circle paths with PyMuPDF get_drawings(extended=True), 2026-09-05). PRINTED dimension text: board 85 x 56 mm, corner radius 3.0mm, mount pitch 58 x 49 mm (labelled directly, and also given as two 29mm half-spans confirming 58 = 2x29), inset 3.5 x 3.5 mm from the top-left corner to the nearest hole center -- this is the well-known standard Raspberry Pi 40-series footprint, confirmed authoritative here from the vendor's own current drawing (not from memory/community claims). mount_hole_dia_mm: NOT printed as a dimension callout anywhere on this drawing (only board/pitch/inset dims and per-component Z-height callouts are labelled) -- measured instead from the drawing's own vector geometry: the 4 mount-hole locations each render as two concentric circles (inner drilled hole + outer copper keepout ring). Calibrated the page's points-per-mm scale independently from the X-pitch (336.84pt / 58mm = 5.8076 pt/mm) and the Y-pitch (284.52pt / 49mm = 5.8071 pt/mm) -- the two agree to within 0.01%, confirming an isotropic, undistorted scale. Applying that scale to the inner circle diameter (15.48pt) gives 2.666mm, which rounds to the industry-standard 2.7mm quoted across the RPi ecosystem -- recorded as 2.7 with the raw calibrated measurement noted here for audit. mount_screw=M2.5 is not printed on this drawing either; it is the universally standard RPi mounting screw size, corroborated by the measured 2.7mm clearance diameter (a plausible M2.5 clearance fit), not itself printed on RP-008343. component_height_top_mm=16.0 is the printed Z=16.0 callout for the two USB-A ports (tallest labelled feature; no bottom-side height is printed on this drawing, so standoff_height_mm is left null). pcb_thickness_mm=1.6 is the repo-convention nominal default (not printed on this drawing -- it shows no Z axis / side-view thickness callout). Source: https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008343-DS-1-raspberry-pi-4-mechanical-drawing.pdf",
+    "_source_file": "raspberrypi.yaml"
+  },
+  {
+    "id": "raspberrypi_3b_plus",
+    "name": "Raspberry Pi 3 Model B+",
+    "manufacturer": "Raspberry Pi",
+    "category": "sbc",
+    "mount_location": "bay",
+    "pcb_length_mm": 85.0,
+    "pcb_width_mm": 56.0,
+    "pcb_thickness_mm": 1.6,
+    "mount_screw": "M2.5",
+    "mount_hole_dia_mm": 2.9,
+    "mount_pattern": "rectangular",
+    "mount_pitch_x_mm": 58.0,
+    "mount_pitch_y_mm": 49.0,
+    "mount_hole_count": 4,
+    "mount_holes_xy": [
+      [
+        3.5,
+        3.5
+      ],
+      [
+        61.5,
+        3.5
+      ],
+      [
+        3.5,
+        52.5
+      ],
+      [
+        61.5,
+        52.5
+      ]
+    ],
+    "mount_inset_from_edge_mm": 3.5,
+    "standoff_height_mm": null,
+    "component_height_top_mm": 16.0,
+    "connector_notes": "85 x 56 mm board, 3.0mm corner radius. 40-pin GPIO header along the top edge (Z=8.5mm). Right edge stacks 2x USB-A (Z=16.0mm, the tallest features) above RJ45 Ethernet (Z=13.5mm). Bottom edge carries micro-USB power, full-size HDMI (Z=6.5mm) and the 3.5mm AV jack (Z=6). DSI and CSI FPC connectors (Z=5.5mm).",
+    "sources": [
+      "https://pip-assets.raspberrypi.com/categories/532-raspberry-pi-3-model-b/documents/RP-008337-DS-2-raspberry-pi-3-b-plus-mechanical-drawing.pdf"
+    ],
+    "confidence": "high",
+    "notes": "Official Raspberry Pi mechanical drawing RP-008337 (Pi 3 Model B+), read 2026-09-29. The PDF has no text layer; dimension text was read from a 150 dpi render: board 85 x 56, corner radius 3.0, mount pitch 58 x 49 (58 also given as 2 x 29), inset 3.5 x 3.5 from the corner to the nearest hole centre, Z-heights 16.0 (USB-A), 13.5 (RJ45), 8.5 (GPIO), 6.5, 6, 5.5. Same footprint as raspberrypi_4b. mount_hole_dia_mm is not printed; measured from the drawing's vector circles (PyMuPDF get_drawings, least-squares fit): the page is rotated, and the hole-centre spacings are 182.28 pt and 153.96 pt, i.e. 3.1428 and 3.1420 pt/mm against 58 and 49 mm (isotropic within 0.03%). Inner circle 9.17 pt = 2.92 mm, recorded as 2.9 (not rounded to a remembered community value); outer ring 19.98 pt = 6.36 mm is the pad keepout. M2.5 is the standard Pi screw, consistent with the measured hole but not printed. pcb_thickness_mm 1.6 is the repo nominal default, not printed. The Pi 3 Model B (RP-008335) shares the 58 x 49 pattern; this record is the B+ the Voron 2.4/Trident BOMs name (\"3B+ or better\").",
     "_source_file": "raspberrypi.yaml"
   },
   {
