@@ -55,7 +55,7 @@ PCB mounting geometry for parametric CAD mount design. **`null` means genuinely 
 | `id` | string | Unique identifier (lowercase, underscores) |
 | `name` | string | Board name |
 | `manufacturer` | string | Brand or GitHub username |
-| `category` | string | mainboard, toolhead_can, sbc, usb_can_bridge, driver_module, thermocouple_amp, accelerometer, relay, ssr, buck_converter, mosfet, sensor, expander, ercf, accessory |
+| `category` | string | mainboard, toolhead_can, sbc, usb_can_bridge, driver_module, thermocouple_amp, accelerometer, relay, ssr, buck_converter, mosfet, sensor, expander, ercf, usb_hub, accessory |
 | `mount_location` | string | **Required, never null.** Where the device physically lives on a printer: `bay` (the electronics compartment, including boards that socket onto a board that lives there), `toolhead` (rides the printhead / moving carriage), `frame` (static and outside the bay — frame, gantry, extrusion, front panel, bed, or an accessory unit's own chassis). This is the axis a mount generator filters on first: the three take physically different parts, so a bay-plate generator must not offer a toolhead board. Distinct from `category`, which records what the board IS — a `toolhead_can` board is always `toolhead`, but the Fysetc ERB carries that category and mounts on an ERCF unit. |
 | `pcb_length_mm` | float | X — longer edge |
 | `pcb_width_mm` | float | Y — shorter edge |
