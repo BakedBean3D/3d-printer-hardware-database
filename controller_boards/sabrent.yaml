@@ -19,7 +19,7 @@
   connector_notes: Enclosed hub with no mounting holes; it has to be held by its case. Four USB-A ports
     in a 2 mm deep recess along one long face, four LED power switches on a raised strip along the top,
     one per port. The upstream USB cable is attached (10 in) and leaves one end through a strain relief;
-    power is a 5 V 2.5 A external adapter. Jack position on the case is unverified.
+    power is a 5 V 2.5 A external adapter whose jack is on the same short end as the cable (owner, 2026-10-01); its position along that end is not recorded.
   sources:
   - https://sabrent.com/products/hb-ump3
   confidence: medium
@@ -32,5 +32,5 @@
     port recess x 3.83-83.83, z 6.2-13.0, 2.0 deep; switch strip x 3.83-83.83, 11.2 wide, 4.2 in from
     the face opposite the ports, 2.0 tall (component_height_top_mm); cable strain relief 6.8 long, 7.4
     wide, z 6.0-12.68, its near edge 14.1 from the port face. So the outer 3.8 mm at each end are clear
-    of ports and switches on every face. No mounting holes exist (mount_pattern none). Power-jack face
-    unverified - needs research.'
+    of ports and switches on every face. No mounting holes exist (mount_pattern none). Power jack on the cable end
+    (owner, 2026-10-01); its offset along that end unverified - needs research.'
