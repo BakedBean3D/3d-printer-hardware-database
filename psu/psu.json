@@ -966,5 +966,78 @@
     "confidence": "high",
     "notes": "Confidence high -- Tier-1 source (Mean Well EDR-120-SPEC.PDF, Case No.992D, rev 2026-03-31, tolerance +-1mm), extracted with pdftotext against the clean text-layer PDF. Spring-clip DIN-rail unit (40mm body width, admissible rail TS35/7.5 or TS35/15) -- no bottom or side screw-hole pattern, same reasoning as MDR-60. The drawing's side views show two small circular marks on the case body that are the internal DIN-rail spring-clip mechanism, not user-facing mounting screws -- not modeled as a mount pattern. Vendor dimension convention is W*H*D (40*125.2*113.5mm), remapped here as length_mm=D(113.5), width_mm=W(40), height_mm=H(125.2), same convention as meanwell_mdr_60. mount_hole_frame is null for the same reason as meanwell_mdr_60: no bottom_mount_holes_xy/side_mount_holes_xy exist on a DIN-clip unit to place in a frame. Source: https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-SPEC.PDF VENDOR-SOLID VERIFICATION 2026-09-24 -- flagged RE-EXTRACT by scripts/check_vendor_solids.py (a solid existed while this record cited only the spec PDF). Measured from EDR-120-3D.stp, sha256 48d681ad3ece392b17fa06b3df4db8f1686c780bc4c1c85ded25f9680b8a35fb, from https://www.meanwell.com/Upload/PDF/EDR-120/EDR-120-3D.zip. NO BOLT-DOWN MOUNTING PATTERN EXISTS, which CONFIRMS this record rather than changing it: the solid carries no cylindrical face at any mount-scale radius on any axis -- the only round features are terminal-screw and internal detail, so bottom_mount_screw null and bottom_mount_pattern none are correct, not merely unfilled. This unit hangs on the rail. Case envelope cross-checks: assembly envelope 124.3 x 40.0 (width) x 129.2, matching the recorded 113.5 x 40 x 125.2 case with the DIN clip and terminal guards accounting for the excess. No field value changed; this closes the provenance gap only, and the record is no longer drawing-only.",
     "_source_file": "meanwell.yaml"
+  },
+  {
+    "id": "tobsun_ea50_5v",
+    "name": "TOBSUN EA50-5V",
+    "manufacturer": "TOBSUN",
+    "series": "EA50",
+    "category": "dc_dc_converter",
+    "length_mm": 52.8,
+    "width_mm": 50.0,
+    "height_mm": 20.15,
+    "weight_g": null,
+    "wattage_w": 50,
+    "output_voltages_v": [
+      5
+    ],
+    "bottom_mount_screw": "M3",
+    "bottom_mount_interface": "clearance_ears",
+    "bottom_mount_hole_dia_mm": null,
+    "bottom_mount_hole_count": 4,
+    "bottom_mount_pattern": "other",
+    "bottom_mount_pitch_x_mm": 26.3,
+    "bottom_mount_pitch_y_mm": null,
+    "bottom_mount_holes_xy": [
+      [
+        0.0,
+        7.5
+      ],
+      [
+        0.0,
+        49.5
+      ],
+      [
+        26.3,
+        0.0
+      ],
+      [
+        26.3,
+        57.0
+      ]
+    ],
+    "bottom_mount_max_penetration_mm": null,
+    "bottom_mount_slot_travel_mm": 0.0,
+    "side_mount_screw": null,
+    "side_mount_hole_dia_mm": null,
+    "side_mount_hole_count": null,
+    "side_mount_pattern": "none",
+    "side_mount_pitch_x_mm": null,
+    "side_mount_holes_xy": null,
+    "side_mount_max_penetration_mm": null,
+    "din_rail_compatible": false,
+    "din_rail_type": null,
+    "terminal_location": "4-position barrier terminal block, 34.3 mm wide, at one end of the case length, between the terminal-end slot pair (x = 0 row). Screws face up; wires enter along L from that end.",
+    "terminal_faces": [
+      {
+        "face": "x_min_end",
+        "circuits": [
+          "dc_in",
+          "dc_out"
+        ],
+        "notes": "One 4-position barrier block carries both input and output (owner calipers give its 34.3 mm width; block type, screw-up orientation and end wire entry are render-estimated from Printables 698606). Pin order IN+/IN-/OUT-/OUT+ is not recorded; read the label on the case."
+      }
+    ],
+    "mount_hole_frame": null,
+    "connector_notes": "4-position barrier terminal block (input 12/24 V DC nominal per listings, exact range unpublished; output 5 V). No datasheet found 2026-10-01.",
+    "sources": [
+      "Owner calipers on his unit, 2026-10-01 (body 52.8 L x 50 W x 20.15 H mm; ears 63.73 mm edge to edge across W; terminal block 34.3 mm wide; slots left and right of the terminals)",
+      "https://www.printables.com/model/420640-tobsun-5v-dc-converter-mount-for-din-rail-bracket (mmuellerphoto, CC BY; STEP \"Tobsun 5V DEC Converter DIN Rail Racket Mount.step\" sha256 7fbd50b2c63f4b1d4f10b11b04b9ef530393689ab9a42d3bd78b0b2f1460c1b0, measured 2026-10-01 by OCCT cylinder-axis extraction)",
+      "https://www.printables.com/model/698606-tobsun-ea25ea50-5v-din-rail-mount (Artxime, GPL-3; renders only, terminal block form)",
+      "https://spool3d.ca/tobsun-50w-dc-dc-converter/ (listing; 6.3 x 5.2 x 1.8 cm, 50 W, 90 %, 80 C max)"
+    ],
+    "confidence": "medium",
+    "notes": "Confidence medium. Body from owner calipers (2026-10-01). Hole pattern from the four M3 boss/clearance-hole axes of a community bracket STEP (Printables 420640, CC BY), which seats the converter on four 2 mm bosses: side-ear pair 57.0 mm apart across W, terminal-end pair 42.0 mm apart, the rows 26.3 mm apart along L. Cross-checks: the side-ear pair agrees with the owner's 63.73 mm ear span (slot centres about 3.4 mm in from each ear tip); the terminal-end pair sits about 3.9 mm outside each side of the owner's 34.3 mm terminal block, matching his \"slots ... left and right of terminals\". A second community bracket of unknown source (not cited) agrees on 42.0 and the row pitch (26.44) and gives 56.68 for the side pair, a 0.32 mm disagreement recorded here rather than averaged. bottom_mount_slot_travel_mm 0.0 credits no slot travel: the recorded centres are the reference bracket's screw axes; the slot length is unmeasured. Unknown: slot width/length (oval at the terminal end per renders), flange thickness, weight, input range, the case body offset along L from the holes, pin order. One listing (698606) covers the EA25 too; the EA25 pattern is not recorded. A printed hole-gauge coupon against the owner's unit is the first fit check.",
+    "_source_file": "tobsun.yaml"
   }
 ]

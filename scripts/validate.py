@@ -143,7 +143,11 @@ PSU_INTERFACE_VALUES = {"threaded_case", "clearance_ears"}
 PSU_TERMINAL_FACE_VALUES = {
     "x_min_end", "x_max_end", "y_min_side", "y_max_side", "top", "bottom",
 }
-PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_out", "signal"}
+PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_in", "dc_out", "signal"}
+
+# How far a frameless clearance-ear hole span may exceed the case on one axis
+# (both ears together). Bounds a misread pattern without needing a case frame.
+EAR_SPAN_ALLOWANCE_MM = 20.0
 
 # mount_hole_frame: makes explicit what terminal_faces already assumes -- the
 # coordinate FRAME that bottom_mount_holes_xy / side_mount_holes_xy are given
@@ -365,9 +369,21 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
         if len(xs) != len(holes):
             print(f"  MALFORMED holes_xy: {tag}")
             return errors + 1
-        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers)
+        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers).
+        # Exception: clearance ears with NO case frame. Their coordinates are
+        # pattern-relative (the body's offset is unmeasured) and ears may stand
+        # out past the case (TOBSUN EA50-5V, 2026-10-01), so only the span is
+        # bounded: it may exceed the case by at most EAR_SPAN_ALLOWANCE_MM.
+        pattern_frame = (entry.get("mount_hole_frame") is None
+                         and entry.get(prefix + "interface") == "clearance_ears")
         for lo_hi, dim, axis in ((xs, L, "x"), (ys, W, "y")):
             if dim is None:
+                continue
+            if pattern_frame:
+                span = max(lo_hi) - min(lo_hi)
+                if span > dim + EAR_SPAN_ALLOWANCE_MM:
+                    print(f"  HOLE SPAN OFF PART: {tag} {axis} span {span} exceeds {dim} + {EAR_SPAN_ALLOWANCE_MM}")
+                    errors += 1
                 continue
             for v in lo_hi:
                 if v < -0.5 or v > dim + 0.5:
