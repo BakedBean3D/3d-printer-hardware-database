@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 104
-- **Confidence:** 62 high · 23 medium · 19 low
+- **Total boards:** 105
+- **Confidence:** 62 high · 24 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -118,6 +118,7 @@
 | Raspberry Pi 3 Model B+ | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 4 Model B | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 5 | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
+| Sabrent HB-UMP3 4-port USB 3.0 hub with individual power switches | Sabrent | usb_hub | bay | 87.4×37.6 | 15.7 | — | none | — | — | medium |
 | Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | bay | — | — | — | other | — | 0 | low |
 | ERCF EASY-BRD | Tircown | ercf | frame | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
 | Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | toolhead | — | 1.6 | none | none | — | 0 | low |
@@ -1222,6 +1223,18 @@
 - **Connectors:** 85 x 56 mm board -- SAME 58x49mm/3.5mm-inset mount pattern as the Raspberry Pi 4B (vendor-confirmed on this drawing, not merely assumed backward compatibility). 40-pin GPIO header along the top edge; a small 6mm-tall component sits beside each of the two top mount holes (one is explicitly dimensioned "6", not identified by the drawing). A separate, smaller ~3mm-diameter feature (labelled "ø3") sits near the top-right mount hole -- distinct from the 4 main ø2.7 mount holes, single (not a symmetric 4-hole set), purpose not stated on the drawing (possibly a test point or alignment via; do NOT treat as a 5th mounting point). Right edge stacks 2x USB3 Type-A ports above 1x RJ45 Ethernet jack (no height/Z dimension given for this stack on this drawing -- see notes). Bottom edge carries a power button (0.45mm offset) and a connector row (USB-C power, micro-SD-adjacent connectors) at x-positions 11.2/25.8/39.2mm from the left mount-hole column. The drawing explicitly states "not all board components are shown."
 - **Notes:** Confidence high -- Tier-1 (official Raspberry Pi mechanical drawing, datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf, a native Adobe Illustrator PDF export with a real extractable text layer -- read directly via pdftotext and cross-checked visually on a 600dpi render, 2026-09-05). PRINTED dimension text: board 85 x 56 mm; mount pitch 58 x 49 mm (also given as 2x29mm half-span); inset 3.5 x 3.5mm from the top-left corner -- IDENTICAL to the Raspberry Pi 4B pattern (raspberrypi_4b in this file), vendor-confirmed here directly rather than assumed from "backward compatible" marketing language. mount_hole_dia_mm=2.7 is EXPLICITLY PRINTED on this drawing as "ø2.7" with a leader line to the bottom-left mount hole -- stronger provenance than the Pi 4B record (which had to back this out from calibrated vector-circle geometry since RP-008343 never prints a diameter). mount_screw=M2.5 is still an inference (universal RPi ecosystem convention + the printed 2.7mm clearance diameter), not itself printed as "M2.5" on the page. component_height_top_mm and standoff_height_mm are left null: unlike the Pi 4B drawing (which gives a per-component Z=height for every major connector, including Z=16.0 for the USB-A stack), this Pi 5 drawing gives connector X/Y POSITIONS and only two small unrelated 6mm component heights near the GPIO header -- it does NOT dimension the height of the USB3/Ethernet stack (the tallest real feature) at all, and the drawing's own printed note says "Not all of the board components are shown. Please reference a physical board for representation of componentry" -- recording null here rather than reusing the Pi 4B USB-A figure (16.0mm), which would misattribute an un-measured value to this board. The side-view (bottom of drawing) dimensions a "3" mm feature near the board's right edge that looks like a specific small connector-tab protrusion, not a general underside standoff clearance -- ambiguous, so also left uncaptured (see connector_notes for the raw side-view dims: 0.45, 4.1, 3.2, 3.4, 4.4, 4.1 are GPIO-header/connector-row pin heights and spacings, not a board-wide standoff spec). pcb_thickness_mm=1.6 is the repo-convention nominal default (not printed on this drawing either). Source: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
 - src: https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
+
+## Sabrent
+
+### Sabrent HB-UMP3 4-port USB 3.0 hub with individual power switches  ·  `sabrent_hb_ump3`
+
+- **Category:** usb_hub · **Mounts on:** bay · **Confidence:** medium · **Source file:** `sabrent.yaml`
+- **PCB:** 87.4 × 37.6 mm, 15.7 mm thick
+- **Mounting:** —× — (Ø—), none, pitch —×— mm
+- **Clearance:** standoff — mm, top component 2.0 mm
+- **Connectors:** Enclosed hub with no mounting holes; it has to be held by its case. Four USB-A ports in a 2 mm deep recess along one long face, four LED power switches on a raised strip along the top, one per port. The upstream USB cable is attached (10 in) and leaves one end through a strain relief; power is a 5 V 2.5 A external adapter whose jack is on the same short end as the cable (owner, 2026-10-01); its position along that end is not recorded.
+- **Notes:** Envelope read 2026-09-30 from the Sabrent product page: "3.44 x 1.48 x 0.62 inches", converted 87.4 x 37.6 x 15.7 mm (case without the switch strip). Cross-checked against a hand-modelled CAD of a real unit (Partsmith owner, 2026-09-30): 87.65 x 37.6 x 15.68 mm case, so width and height agree and length differs by 0.25 mm; the manufacturer figure is kept as the tier-1 value and the conflict is noted, not averaged. Feature positions come from that CAD only (unit frame: origin at the bottom corner of the port face at the cable end, x along the length): case corners rounded R3 in plan; port recess x 3.83-83.83, z 6.2-13.0, 2.0 deep; switch strip x 3.83-83.83, 11.2 wide, 4.2 in from the face opposite the ports, 2.0 tall (component_height_top_mm); cable strain relief 6.8 long, 7.4 wide, z 6.0-12.68, its near edge 14.1 from the port face. So the outer 3.8 mm at each end are clear of ports and switches on every face. No mounting holes exist (mount_pattern none). Power jack on the cable end (owner, 2026-10-01); its offset along that end unverified - needs research.
+- src: https://sabrent.com/products/hb-ump3
 
 ## Slice Engineering
 
