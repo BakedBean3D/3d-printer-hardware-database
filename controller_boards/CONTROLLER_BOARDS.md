@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 103
-- **Confidence:** 61 high · 23 medium · 19 low
+- **Total boards:** 104
+- **Confidence:** 62 high · 23 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -121,6 +121,7 @@
 | Slice Engineering PT1000/PT100 RTD amplifier (does not exist as a PCB) | Slice Engineering | thermocouple_amp | bay | — | — | — | other | — | 0 | low |
 | ERCF EASY-BRD | Tircown | ercf | frame | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
 | Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | toolhead | — | 1.6 | none | none | — | 0 | low |
+| ESP32 WLED Hub | bartlammers | accessory | bay | 70.0×60.0 | 1.6 | M3 | rectangular | 60.0×50.0 | 4 | high |
 | Binky ERCF Encoder | mneuhaus | sensor | frame | — | 1.6 | M3 | none | — | — | low |
 | Klipper Expander (STM32) | timmit99 | expander | bay | 100.0×24.0 | 1.6 | M3 | linear | 92.0×— | 2 | high |
 
@@ -1257,6 +1258,21 @@
 - **Notes:** No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.
 - src: https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner
 - src: https://docs.vorondesign.com/community/howto/drachenkatze/neopixel_guide.html
+
+## bartlammers
+
+### ESP32 WLED Hub  ·  `bartlammers_esp32_wled_hub`
+
+- **Category:** accessory · **Mounts on:** bay · **Confidence:** high · **Source file:** `community.yaml`
+- **PCB:** 70.0 × 60.0 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.2), rectangular, pitch 60.0×50.0 mm
+  - holes (x,y mm): [[5.0, 5.0], [65.0, 5.0], [5.0, 55.0], [65.0, 55.0]]
+- **Clearance:** standoff — mm, top component 16.0 mm
+- **Connectors:** 4-output WLED LED controller: an ESP32-DevKitC-32D plugs onto the hub, a 74LS125 level-shifts four data lines to 5 V, a 1000 uF bulk cap sits on the LED supply. Five 5.08 mm Phoenix MKDS horizontal screw terminals (record frame, see notes): OUT 1 (3-pos) at (14.8, 9.4) and OUT 2 (3-pos) at (35.1, 9.7) on the bottom edge (y=0); OUT 4 (3-pos) at (25.0, 50.6) and OUT 3 (3-pos) at (45.3, 50.6) on the top edge (y=60); supply input J1 (2-pos, rotated 90) at (61.5, 15.0) on the right edge (x=70). 1000 uF radial cap (D10 x H16) at (60.0, 44.7). The DevKitC lies along x, centred on y=30, with its antenna end at the left edge (x~0) and its micro-USB at x~55 pointing +x toward the J1/cap edge, about 15 mm inboard of x=70 - a USB cable plug needs that gap clear.
+- **Notes:** Confidence high - Tier-1, parsed 2026-09-30 from the designer's KiCad source (ESP32_Wled_hub.kicad_pcb, commit 5b1c398). Design by GitHub user bartlammers; the upstream repo carries no license file, so only these measured facts are recorded here - none of its files (KiCad, gerbers, Wled_bracket.stl DIN bracket added 2025-01-17) are redistributed. Outline: Edge.Cuts 70.000 x 60.000 mm with R5 corners; board thickness 1.6 from the PCB stackup. Holes: four MountingHole_3.2mm_M3_Pad_Via footprints (plated, drill 3.2) at the R5 corner-arc centres, 5.000 inset on every side -> 60 x 50 rectangle. Origin = PCB outline min corner, x right / y up in the TOP view (KiCad y inverted). component_height_top_mm 16.0 is the C1 1000 uF radial cap body (footprint C_Radial_D10.0mm_H16.0mm); the DevKitC height depends on how the builder seats it (female headers raise it - the designer's 3D placement sets the DevKitC 12 mm above the hub, putting its top near 15 mm, still under the cap) - unverified, measure the built board. DevKitC orientation verified by routed copper: its 5 V pin 19 lands on a track only under the footprint's 90 deg rotation as (x,y)->(y,-x), placing the USB end inboard and the antenna end at the left edge. standoff_height_mm null: all parts are through-hole, so solder tails need clearance, but no value is published - unverified, needs research.
+- src: https://github.com/bartlammers/esp32_wled_hub/blob/5b1c3989cca5cc1a9700dee318959ba78ff16be8/ESP32_Wled_hub.kicad_pcb
+- src: https://github.com/bartlammers/esp32_wled_hub/blob/5b1c3989cca5cc1a9700dee318959ba78ff16be8/jlcpcb/assembly/BOM-ESP32_Wled_hub.csv
+- src: https://github.com/bartlammers/esp32_wled_hub
 
 ## mneuhaus
 
