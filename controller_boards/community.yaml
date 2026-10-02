@@ -490,7 +490,7 @@
   - - 65.0
     - 55.0
   mount_inset_from_edge_mm: 5.0
-  standoff_height_mm: null
+  standoff_height_mm: 5.0
   component_height_top_mm: 16.0
   connector_notes: '4-output WLED LED controller: an ESP32-DevKitC-32D plugs onto the hub, a 74LS125 level-shifts
     four data lines to 5 V, a 1000 uF bulk cap sits on the LED supply. Five 5.08 mm Phoenix MKDS horizontal
@@ -517,5 +517,6 @@
     above the hub, putting its top near 15 mm, still under the cap) - unverified, measure the built board.
     DevKitC orientation verified by routed copper: its 5 V pin 19 lands on a track only under the footprint''s
     90 deg rotation as (x,y)->(y,-x), placing the USB end inboard and the antenna end at the left edge.
-    standoff_height_mm null: all parts are through-hole, so solder tails need clearance, but no value is
-    published - unverified, needs research.'
+    standoff_height_mm 5.0: physically validated 2026-10-01 by the Partsmith owner on printed plates
+    (DIN and panel, heat-set inserts and self-tapping) with 5 mm standoffs clearing the through-hole solder
+    tails; confirmed 2026-10-02, "5mm is the correct standoff height". The designer publishes no value.'
