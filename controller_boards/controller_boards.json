@@ -278,6 +278,7 @@
         95.0
       ]
     ],
+    "mount_hole_frame": "pcb_corner",
     "mount_inset_from_edge_mm": 5.0,
     "standoff_height_mm": 5,
     "component_height_top_mm": null,
@@ -286,7 +287,7 @@
       "https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf"
     ],
     "confidence": "high",
-    "notes": "Confidence high \u2014 Tier-1 (vendor CAD/drawing). 160 x 100 outline and 150 x 90 pitch read directly from official Pro SIZE.pdf - matches standard Octopus exactly. Single SIZE.pdf covers both V1.0 and V1.1 (no mechanical change). thickness/hole_dia conventions. Mounting: Footprint and mounting pattern VERIFIED IDENTICAL to the non-Pro Octopus from the official Octopus Pro SIZE.pdf (160 x 100 overall, 150 x 90 pitch). Pro adds higher-current drivers; mechanical layout unchanged. hole_dia 3.2 = M3 clearance convention. Source: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf",
+    "notes": "Confidence high \u2014 Tier-1 (vendor CAD/drawing). 160 x 100 outline and 150 x 90 pitch read directly from official Pro SIZE.pdf - matches standard Octopus exactly. Single SIZE.pdf covers both V1.0 and V1.1 (no mechanical change). thickness/hole_dia conventions. Mounting: Footprint and mounting pattern VERIFIED IDENTICAL to the non-Pro Octopus from the official Octopus Pro SIZE.pdf (160 x 100 overall, 150 x 90 pitch). Pro adds higher-current drivers; mechanical layout unchanged. hole_dia 3.2 = M3 clearance convention. Source: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20SIZE.pdf mount_hole_frame pcb_corner (2026-10-01): the SIZE.pdf dimensions the four holes 5 mm in from the 160 x 100 outline corners, so mount_holes_xy is in the PCB-corner frame and the exact board footprint can be drawn around them.",
     "_source_file": "bigtreetech.yaml"
   },
   {

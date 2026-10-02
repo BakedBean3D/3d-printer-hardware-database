@@ -174,6 +174,8 @@ PSU_MOUNT_HOLE_FRAME_VALUES = {"case_corner", "vendor_drawing"}
 # Declarative enum registry: category -> field -> (allowed values, null_ok).
 # The single source for both the runtime enum checks and the generated JSON
 # Schemas (scripts/gen_schema.py) — add enums here, not as ad-hoc checks.
+BOARD_MOUNT_HOLE_FRAME_VALUES = {"pcb_corner"}
+
 ENUM_FIELDS = {
     "motors": {},
     "hotends": {},
@@ -183,6 +185,12 @@ ENUM_FIELDS = {
     "controller_boards": {
         "mount_pattern": (CONTROLLER_MOUNT_PATTERN_VALUES, True),
         "mount_location": (MOUNT_LOCATION_VALUES, False),
+        # Optional (absent = null = unknown): the frame mount_holes_xy are
+        # given in. "pcb_corner" licenses a consumer to draw the PCB rectangle
+        # [0, pcb_length_mm] x [0, pcb_width_mm] around the holes, i.e. the
+        # exact board footprint (2026-10-01; the board counterpart of the psu
+        # case_corner frame). Never inferred from positive coordinates.
+        "mount_hole_frame": (BOARD_MOUNT_HOLE_FRAME_VALUES, True),
     },
     "psu": {
         "bottom_mount_pattern": (PSU_MOUNT_PATTERN_VALUES, True),
@@ -292,6 +300,7 @@ CONTROLLER_BOARD_FIELD_TYPES = {
     "standoff_height_mm": _T_NUM,
     "mount_hole_count": _T_INT,
     "mount_holes_xy": _T_LIST, "sources": _T_LIST,
+    "mount_hole_frame": _T_STR,
 }
 
 PSU_FIELD_TYPES = {
@@ -481,6 +490,30 @@ def _check_terminal_faces(entry_id, filepath, entry):
     return errors
 
 
+def _check_board_mount_hole_frame(entry_id, filepath, entry):
+    """A board claiming mount_hole_frame=pcb_corner must have every hole on
+    the PCB: strictly inside [0, pcb_length_mm] x [0, pcb_width_mm]. Holes are
+    drilled through the board, so unlike PSU ears there is no tolerance past
+    the edge; a hole on or off the edge means the frame claim is wrong."""
+    if entry.get("mount_hole_frame") != "pcb_corner":
+        return 0
+    errors = 0
+    L, W = _num(entry, "pcb_length_mm"), _num(entry, "pcb_width_mm")
+    holes = entry.get("mount_holes_xy")
+    tag = f"{filepath}[{entry_id}].mount_hole_frame"
+    if L is None or W is None or not isinstance(holes, list) or not holes:
+        print(f"  PCB_CORNER WITHOUT GEOMETRY: {tag} needs pcb_length_mm, pcb_width_mm and mount_holes_xy")
+        return 1
+    for h in holes:
+        if not (isinstance(h, (list, tuple)) and len(h) == 2):
+            continue
+        x, y = h
+        if not (0 < x < L and 0 < y < W):
+            print(f"  HOLE OUTSIDE PCB_CORNER FRAME: {tag} ({x}, {y}) not inside 0..{L} x 0..{W}")
+            errors += 1
+    return errors
+
+
 def _check_mount_hole_frame(entry_id, filepath, entry):
     """When mount_hole_frame=case_corner, every declared hole coordinate must
     actually lie on (or immediately adjacent to) the case rectangle [0,
@@ -616,6 +649,7 @@ def check_physics(entry_id, filepath, entry, category):
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",
                                      "pcb_length_mm", "pcb_width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "mount_")
+        errors += _check_board_mount_hole_frame(entry_id, filepath, entry)
         for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
                     "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
             v = _num(entry, key)

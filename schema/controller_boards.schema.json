@@ -163,6 +163,12 @@
           "array",
           "null"
         ]
+      },
+      "mount_hole_frame": {
+        "enum": [
+          "pcb_corner",
+          null
+        ]
       }
     }
   }
