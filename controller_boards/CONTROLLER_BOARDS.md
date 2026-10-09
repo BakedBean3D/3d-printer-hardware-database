@@ -2,8 +2,8 @@
 
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
-- **Total boards:** 105
-- **Confidence:** 62 high · 24 medium · 19 low
+- **Total boards:** 106
+- **Confidence:** 62 high · 25 medium · 19 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -115,6 +115,7 @@
 | Fly-SHT42 | Mellow | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
 | Fly-UTOC (UTOC-1 / UTOC-3) | Mellow | usb_can_bridge | bay | 85.45×19.23 | 1.6 | M2 | rectangular | 79.33×— | 4 | low |
 | Omron G3NA-210B solid state relay (G3NA-205B to 225B body) | Omron | ssr | bay | 58.0×43.0 | 27.0 | M4 | 2-hole | 47.5×— | 2 | medium |
+| Omron G3NB-220B-1 solid state relay (G3NB-205B to 225B body) | Omron | ssr | bay | 58.0×43.0 | 27.0 | M4 | 2-hole | 47.5×— | 2 | medium |
 | Raspberry Pi 3 Model B+ | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 4 Model B | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
 | Raspberry Pi 5 | Raspberry Pi | sbc | bay | 85.0×56.0 | 1.6 | M2.5 | rectangular | 58.0×49.0 | 4 | high |
@@ -1189,6 +1190,16 @@
 - **Connectors:** 4 screw terminals (M4 x 8): output 1 and 2 (load, 24-240 VAC), input 3 (+) and 4 (-), 5-24 VDC. Terminal pairs sit at each short end beside the mounting holes.
 - **Notes:** Read 2026-09-29 from the official Omron G3NA series datasheet, page 9, "Dimensions: G3NA-205B-UTU, G3NA-210B-UTU, G3NA-220B-UTU, G3NA-225B-UTU" (printed text plus a rendered drawing). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart on the long axis; panel mounting-hole pattern "Two, 4.3-dia. or M4 holes" at 47.6 +/-0.2. The drawing places both holes on the long-axis centreline, symmetric about the body midline; one end is a round hole and the other an open slot of the same 4.5 width. Coordinates therefore assume the symmetric placement against the MAX envelope: x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5. Confidence medium because the envelope is a maximum, not a nominal, so the hole-to-edge distance can differ by a fraction of a millimetre; the pitch is printed and is the load-bearing number. Holes are clearance: the screw passes through the relay into the mount, which supplies the thread. The Micron BOM names this part first among its SSR options; the Voron 2.4/Trident BOM names the older G3A-210B, for which no primary dimension source was found (2026-09-29).
 - src: https://assets.omron.com/m/453bbd7a38a218b5/original/G3NA-Series-Solid-State-Relay-Datasheet.pdf
+
+### Omron G3NB-220B-1 solid state relay (G3NB-205B to 225B body)  ·  `omron_g3nb_220b`
+
+- **Category:** ssr · **Mounts on:** bay · **Confidence:** medium · **Source file:** `modules.yaml`
+- **PCB:** 58.0 × 43.0 mm, 27.0 mm thick
+- **Mounting:** 2× M4 (Ø4.5), 2-hole, pitch 47.5×— mm
+  - holes (x,y mm): [[5.25, 21.5], [52.75, 21.5]]
+- **Connectors:** 4 screw terminals (M4 x 8): output 1 and 2 (load, 24-240 VAC), input 3 (+) and 4 (-), 5-24 VDC. Terminal pairs sit at each short end beside the mounting holes.
+- **Notes:** Read 2026-10-09 from Omron's G3NB-1 catalogue (CSM_G3NB-1_J164-E1_3_1, a mirror of the Omron PDF at the source URL; sha256 52a89009cc5b9851191afd3dc8f80fc552af81eb14fb37a0abc859c3dc43e8c9, page 6, "Dimensions: G3NB-205B-1, -210B-1, -220B-1, -225B-1"; the ia.omron.com original returned 403 to a scripted fetch). The part is the SSR in LDO's Micron kit BOM (docs.ldomotors.com/en/Micron/BOM: "Omron G3NB-220B-1 SSR"). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart; panel mounting-hole pattern "Two, 4.3-dia. or M4 holes" at 47.6 +/-0.2. Identical envelope and pitch to the G3NA-205B..225B body (omron_g3na_210b), so the coordinates follow that record's construction: both holes on the long-axis centreline, symmetric about the body midline, x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5 against the MAX envelope. Confidence medium for the same reason as the G3NA: the envelope is a maximum, so the hole-to-edge distance can differ by a fraction of a millimetre; the printed pitch is load-bearing. Terminals are M4 x 8. Omron's DIN-track one-touch mounting plate is an accessory, not a property of the case. Not measured from a vendor solid (none probed for the G3NB; the G3NA record likewise reads the datasheet drawing).
+- src: https://baoanjsc.com.vn/TaiLieu/Ro%20le%20ban%20dan%20Omron%20dong%20G3NB_tai%20lieu%2010042015110407.pdf
 
 ## Raspberry Pi
 

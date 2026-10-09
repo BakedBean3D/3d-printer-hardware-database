@@ -2517,6 +2517,40 @@
     "standoff_height_mm": 6,
     "component_height_top_mm": null,
     "connector_notes": "",
+    "stack_mounts": [
+      {
+        "kind": "sbc",
+        "screw": "M2.5",
+        "hole_dia_mm": 2.6,
+        "pitch_x_mm": 58.0,
+        "pitch_y_mm": 49.0,
+        "holes_xy": [
+          [
+            88.5,
+            13.5
+          ],
+          [
+            146.5,
+            13.5
+          ],
+          [
+            88.5,
+            62.5
+          ],
+          [
+            146.5,
+            62.5
+          ]
+        ],
+        "standoff_height_mm": null,
+        "sources": [
+          "https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/CAD/Leviathan_V1.3.step",
+          "https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/KiCad/V1.3/Library.pretty/RPi-4.kicad_mod",
+          "https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/Manual/Leviathan_V1.3_Manual.pdf"
+        ],
+        "notes": "Added 2026-10-09 for the Raspberry Pi 3/4/5 that mounts directly on top of the Leviathan (LDO Micron manual, \"Component layout overview\", p.194; Leviathan V1.3 manual p.5: \"Dedicated mounting holes for Raspberry Pi 3/4/5 or Zero 2W\"). Measured from the vendor STEP (Leviathan_V1.3.step, vendor commit 878c3c48) by OCCT cylindrical-face extraction, axis position never centroid: Z-axis cylinders of radius 1.3 mm (drill 2.6) at x = 88.5 / 146.5, y = 13.5 / 62.5, a 58 x 49 mm pattern that equals the Raspberry Pi 4B record's own pitch. Independently confirmed by the vendor KiCad RPi-4 footprint in Leviathan_V1.3.kicad_pcb (footprint origin at the Pi pattern centre, (167.5, 122) on a board spanning x 50..220, y 60..160, pads at +-29 / +-24.5, drill 2.6): x = 167.5 +- 29 - 50 = 88.5 / 146.5, and y = 160 - (122 +- 24.5) = 13.5 / 62.5 (KiCad y runs down, the STEP and this record y runs up). Frame: origin the PCB corner, +x along pcb_length_mm, +y along pcb_width_mm, STEP orientation (the Pi sits toward the y = 0 edge). Also in the STEP and footprint: two extra support pads at x = 88.5 / 146.5, y = 39.5 (not Pi holes; the Pi 4 has four). The footprint outline places the Pi board flush with the Leviathan's +x edge (x 85..170) and its USB/Ethernet connectors 3.0 mm past it (to x 173), so the stacked Pi covers panel area only through those 3 mm of connectors. standoff_height_mm is null: the vendor photo (Media/rpimounting.jpg) shows standoffs, no height is printed and the STEP carries none."
+      }
+    ],
     "sources": [
       "https://github.com/MotorDynamicsLab/Leviathan/blob/main/KiCad/V1.3/Leviathan_V1.3.kicad_pcb"
     ],
@@ -3484,6 +3518,42 @@
     ],
     "confidence": "medium",
     "notes": "Read 2026-09-29 from the official Omron G3NA series datasheet, page 9, \"Dimensions: G3NA-205B-UTU, G3NA-210B-UTU, G3NA-220B-UTU, G3NA-225B-UTU\" (printed text plus a rendered drawing). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart on the long axis; panel mounting-hole pattern \"Two, 4.3-dia. or M4 holes\" at 47.6 +/-0.2. The drawing places both holes on the long-axis centreline, symmetric about the body midline; one end is a round hole and the other an open slot of the same 4.5 width. Coordinates therefore assume the symmetric placement against the MAX envelope: x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5. Confidence medium because the envelope is a maximum, not a nominal, so the hole-to-edge distance can differ by a fraction of a millimetre; the pitch is printed and is the load-bearing number. Holes are clearance: the screw passes through the relay into the mount, which supplies the thread. The Micron BOM names this part first among its SSR options; the Voron 2.4/Trident BOM names the older G3A-210B, for which no primary dimension source was found (2026-09-29).",
+    "_source_file": "modules.yaml"
+  },
+  {
+    "id": "omron_g3nb_220b",
+    "name": "Omron G3NB-220B-1 solid state relay (G3NB-205B to 225B body)",
+    "manufacturer": "Omron",
+    "category": "ssr",
+    "mount_location": "bay",
+    "pcb_length_mm": 58.0,
+    "pcb_width_mm": 43.0,
+    "pcb_thickness_mm": 27.0,
+    "mount_screw": "M4",
+    "mount_hole_dia_mm": 4.5,
+    "mount_pattern": "2-hole",
+    "mount_pitch_x_mm": 47.5,
+    "mount_pitch_y_mm": null,
+    "mount_hole_count": 2,
+    "mount_holes_xy": [
+      [
+        5.25,
+        21.5
+      ],
+      [
+        52.75,
+        21.5
+      ]
+    ],
+    "mount_inset_from_edge_mm": null,
+    "standoff_height_mm": null,
+    "component_height_top_mm": null,
+    "connector_notes": "4 screw terminals (M4 x 8): output 1 and 2 (load, 24-240 VAC), input 3 (+) and 4 (-), 5-24 VDC. Terminal pairs sit at each short end beside the mounting holes.",
+    "sources": [
+      "https://baoanjsc.com.vn/TaiLieu/Ro%20le%20ban%20dan%20Omron%20dong%20G3NB_tai%20lieu%2010042015110407.pdf"
+    ],
+    "confidence": "medium",
+    "notes": "Read 2026-10-09 from Omron's G3NB-1 catalogue (CSM_G3NB-1_J164-E1_3_1, a mirror of the Omron PDF at the source URL; sha256 52a89009cc5b9851191afd3dc8f80fc552af81eb14fb37a0abc859c3dc43e8c9, page 6, \"Dimensions: G3NB-205B-1, -210B-1, -220B-1, -225B-1\"; the ia.omron.com original returned 403 to a scripted fetch). The part is the SSR in LDO's Micron kit BOM (docs.ldomotors.com/en/Micron/BOM: \"Omron G3NB-220B-1 SSR\"). Printed: body 58 max. (long) x 43 max. (wide) x 27 max. tall (25 max. to the case top); relay holes 4.5 dia., 47.5 apart; panel mounting-hole pattern \"Two, 4.3-dia. or M4 holes\" at 47.6 +/-0.2. Identical envelope and pitch to the G3NA-205B..225B body (omron_g3na_210b), so the coordinates follow that record's construction: both holes on the long-axis centreline, symmetric about the body midline, x = (58 - 47.5)/2 = 5.25 and 52.75, y = 43/2 = 21.5 against the MAX envelope. Confidence medium for the same reason as the G3NA: the envelope is a maximum, so the hole-to-edge distance can differ by a fraction of a millimetre; the printed pitch is load-bearing. Terminals are M4 x 8. Omron's DIN-track one-touch mounting plate is an accessory, not a property of the case. Not measured from a vendor solid (none probed for the G3NB; the G3NA record likewise reads the datasheet drawing).",
     "_source_file": "modules.yaml"
   },
   {
