@@ -671,9 +671,12 @@
     case edge through the mouth fillets. Per this file''s convention bottom_mount_holes_xy is the CLOSED
     end, and 188.0 is the position to build: moving outward trades captured material for nothing, and a
     bare M3 head already overhangs at the closed end (use a washer -- the Partsmith side-mount kit uses
-    6mm OD metal washers at 188mm). DO NOT MOUNT TO: three Ø3.3 holes at (12.5, 8.0), (12.5, 47.0) and
-    (181.5, 8.0) in the STEP are PCB standoff holes on the internal 1.6mm-thick board at Y=4.5..6.1 --
-    they are inside the case and carry no vendor callout. SIDE WALLS CARRY SIX VENDOR ASSEMBLY SCREWS -- corrected
+    6mm OD metal washers at 188mm). DO NOT MOUNT TO: three Ø3.3 holes at (12.5, 8.0), (181.5, 8.0) and
+    (181.5, 47.0) in this record''s frame (the STEP''s own coordinates are (12.5, 8.0), (12.5, 47.0) and
+    (181.5, 8.0); see NOTE FOR RE-EXTRACTION -- the pair is at the DC end, x=181.5) are PCB standoff holes on the internal 1.6mm-thick board at Y=4.5..6.1 --
+    they are inside the case and carry no vendor callout. SIDE WALLS CARRY SIX VENDOR ASSEMBLY SCREWS (every coordinate and wall
+    label in this paragraph and the FLAT CONTACT PATCH / FASTENER HEAD ROOM sentences below is in the STEP''s
+    source frame, not this record''s: record x = 194.0 - x, record y = -z, record z = y) -- corrected
     2026-09-24 after an independent re-measurement refuted an earlier, wrong statement in this record
     that "the STEP has no cylindrical face on an X or Z axis at any mount radius". It does. On the z=0
     long wall: two Ø3.5 through-holes at (x=124.0, y=13.5) and (x=142.0, y=13.5), 18.0mm apart, each with
@@ -732,7 +735,7 @@
   weight_g: 680
   wattage_w: 350
   output_voltages_v: [3.3, 4.2, 5, 12, 15, 24, 36, 48, 55]
-  terminal_location: screw terminal blocks -- TB1 (2-pin AC input) on one short end, TB2/TB3 (4-pin DC output,
+  terminal_location: screw terminal blocks -- TB1 (3-pin AC input L/N/FG) on one short end, TB2/TB3 (4-pin DC output,
     high-current) plus CN10 (2-pin DC-OK signal) on the opposite short end
   connector_notes: 'TB1 (DEGSON DG28C-B-03P or equiv.): 1 AC/L, 2 AC/N, 3 FG; max mounting torque 5Kgf-cm.
     TB2/TB3 (Mean Well TB-HTP-200-40A or equiv.): pins 1-2 -V, pins 3-4 +V; max mounting torque 8Kgf-cm.
@@ -761,7 +764,7 @@
   terminal_faces:
   - face: x_min_end
     circuits: [ac_in]
-    notes: TB1 (2-pin AC input, DEGSON DG28C-B-03P). Verified 2026-09-22 against
+    notes: TB1 (3-pin AC input L/N/FG, DEGSON DG28C-B-03P). Verified 2026-09-22 against
       UHP-350-SPEC.PDF page 5 (rendered PNG) -- TB1 is drawn directly in the top view
       at the case's physical left (low-X) edge.
   - face: x_max_end
@@ -774,7 +777,11 @@
       assignment rests on the drawing's projection layout, not an independent
       per-axis feature measurement the way bottom_mount_holes_xy's 0.9/219.1 pair
       was fixed (that pair is symmetric and does not itself disambiguate ends) --
-      flagged here rather than silently assumed.
+      flagged here rather than silently assumed. NOTE FOR RE-EXTRACTION -- this record
+      declares no mapping from the vendor solid (UHP-350(R)-3D.zip) to its own frame,
+      unlike meanwell_uhp_200. Whoever next measures from the solid should record it
+      (which source axis becomes record x, y, z and its sign) and check it against an
+      asymmetric feature, not the symmetric ears.
   mount_hole_frame: case_corner
   sources:
   - https://www.meanwell.com/Upload/PDF/UHP-350(R)/UHP-350-SPEC.PDF
