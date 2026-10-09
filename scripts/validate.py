@@ -301,6 +301,7 @@ CONTROLLER_BOARD_FIELD_TYPES = {
     "mount_hole_count": _T_INT,
     "mount_holes_xy": _T_LIST, "sources": _T_LIST,
     "mount_hole_frame": _T_STR,
+    "stack_mounts": _T_LIST,
 }
 
 PSU_FIELD_TYPES = {
@@ -490,6 +491,72 @@ def _check_terminal_faces(entry_id, filepath, entry):
     return errors
 
 
+STACK_MOUNT_KEYS = {"kind", "screw", "hole_dia_mm", "pitch_x_mm", "pitch_y_mm", "holes_xy",
+                    "standoff_height_mm", "sources", "notes"}
+
+
+def _check_stack_mounts(entry_id, filepath, entry):
+    """Structural checks for the optional board `stack_mounts` list: the places
+    ANOTHER board stacks onto this one on standoffs (a Raspberry Pi on the LDO
+    Leviathan). Each item names the guest's category (`kind`), the guest's
+    screw, the clearance-hole diameter on THIS board, the guest's own hole
+    pitches (so a consumer matches a guest's record by pitch and screw, never
+    by id) and `holes_xy`: the standoff holes in THIS board's pcb_corner frame
+    (x along pcb_length_mm, y along pcb_width_mm). Every hole must lie inside
+    the PCB, and the span of holes_xy must equal the stated pitches (a pattern
+    that disagrees with its own pitch is a transcription error)."""
+    sm = entry.get("stack_mounts")
+    if sm is None:
+        return 0
+    tag = f"{filepath}[{entry_id}].stack_mounts"
+    if not isinstance(sm, list) or not sm:
+        print(f"  EMPTY STACK_MOUNTS: {tag} must be null/absent or a non-empty list")
+        return 1
+    errors = 0
+    L, W = _num(entry, "pcb_length_mm"), _num(entry, "pcb_width_mm")
+    for i, item in enumerate(sm):
+        itag = f"{tag}[{i}]"
+        if not isinstance(item, dict) or set(item) != STACK_MOUNT_KEYS:
+            print(f"  MALFORMED STACK_MOUNT: {itag} must be a mapping with exactly {sorted(STACK_MOUNT_KEYS)}")
+            errors += 1
+            continue
+        if not isinstance(item["kind"], str) or not isinstance(item["screw"], str):
+            print(f"  BAD TYPE: {itag}.kind and .screw must be strings")
+            errors += 1
+        for key in ("hole_dia_mm", "pitch_x_mm", "pitch_y_mm"):
+            v = item[key]
+            if not isinstance(v, (int, float)) or isinstance(v, bool) or v <= 0:
+                print(f"  NON-POSITIVE DIM: {itag}.{key}={v!r}")
+                errors += 1
+        sh = item["standoff_height_mm"]
+        if sh is not None and (not isinstance(sh, (int, float)) or isinstance(sh, bool) or sh <= 0):
+            print(f"  NON-POSITIVE DIM: {itag}.standoff_height_mm={sh!r} (use null for unknown, never 0)")
+            errors += 1
+        holes = item["holes_xy"]
+        if not (isinstance(holes, list) and len(holes) == 4
+                and all(isinstance(h, list) and len(h) == 2 for h in holes)):
+            print(f"  BAD HOLES: {itag}.holes_xy must be four [x, y] pairs")
+            errors += 1
+            continue
+        xs, ys = sorted({h[0] for h in holes}), sorted({h[1] for h in holes})
+        if len(xs) != 2 or len(ys) != 2 or abs((xs[1] - xs[0]) - item["pitch_x_mm"]) > 0.01 \
+                or abs((ys[1] - ys[0]) - item["pitch_y_mm"]) > 0.01:
+            print(f"  STACK PITCH MISMATCH: {itag}.holes_xy spans {xs}, {ys}, not {item['pitch_x_mm']} x {item['pitch_y_mm']}")
+            errors += 1
+        if L is None or W is None:
+            print(f"  STACK_MOUNTS WITHOUT OUTLINE: {itag} needs pcb_length_mm and pcb_width_mm")
+            errors += 1
+        else:
+            for x, y in holes:
+                if not (0 < x < L and 0 < y < W):
+                    print(f"  STACK HOLE OUTSIDE PCB: {itag} ({x}, {y}) not inside 0..{L} x 0..{W}")
+                    errors += 1
+        if not isinstance(item["sources"], list) or not item["sources"]:
+            print(f"  MISSING SOURCES: {itag}.sources must be a non-empty list")
+            errors += 1
+    return errors
+
+
 def _check_board_mount_hole_frame(entry_id, filepath, entry):
     """A board claiming mount_hole_frame=pcb_corner must have every hole on
     the PCB: strictly inside [0, pcb_length_mm] x [0, pcb_width_mm]. Holes are
@@ -650,6 +717,7 @@ def check_physics(entry_id, filepath, entry, category):
                                      "pcb_length_mm", "pcb_width_mm")
         errors += _check_hole_count(entry_id, filepath, entry, "mount_")
         errors += _check_board_mount_hole_frame(entry_id, filepath, entry)
+        errors += _check_stack_mounts(entry_id, filepath, entry)
         for key in ("pcb_length_mm", "pcb_width_mm", "pcb_thickness_mm",
                     "mount_hole_dia_mm", "mount_pitch_x_mm", "mount_pitch_y_mm"):
             v = _num(entry, key)

@@ -169,6 +169,12 @@
           "pcb_corner",
           null
         ]
+      },
+      "stack_mounts": {
+        "type": [
+          "array",
+          "null"
+        ]
       }
     }
   }

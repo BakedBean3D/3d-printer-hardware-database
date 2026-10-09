@@ -70,6 +70,7 @@ PCB mounting geometry for parametric CAD mount design. **`null` means genuinely 
 | `standoff_height_mm` | float | Recommended clearance under the board |
 | `component_height_top_mm` | float | Tallest component / module body height above board |
 | `connector_notes` | string | Which edge carries power / steppers / USB / etc. |
+| `stack_mounts` | list | Optional. Places another board stacks onto this one on standoffs (e.g. a Raspberry Pi on the LDO Leviathan): `[{kind, screw, hole_dia_mm, pitch_x_mm, pitch_y_mm, holes_xy, standoff_height_mm, sources, notes}]`. `kind` is the guest's category (`sbc`), `screw` and the pitches are the guest's own pattern so a consumer matches a guest by pitch and screw, never by id; `hole_dia_mm` is the hole in THIS board; `holes_xy` are four holes in this board's `pcb_corner` frame, inside the PCB, spanning exactly the stated pitches; `standoff_height_mm` is `null` unless the vendor publishes it. Absent or `null` = no stack mount recorded |
 | `sources` | list | Datasheet / GitHub hardware repo / KiCad URLs |
 | `confidence` | string | high (vendor/community CAD), medium (outline firm, pitch inferred), low (measure first) |
 | `notes` | string | Source citation + anything to double-check |

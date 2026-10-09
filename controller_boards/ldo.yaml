@@ -30,6 +30,43 @@
   standoff_height_mm: 6
   component_height_top_mm: null
   connector_notes: ''
+  stack_mounts:
+  - kind: sbc
+    screw: M2.5
+    hole_dia_mm: 2.6
+    pitch_x_mm: 58.0
+    pitch_y_mm: 49.0
+    holes_xy:
+    - - 88.5
+      - 13.5
+    - - 146.5
+      - 13.5
+    - - 88.5
+      - 62.5
+    - - 146.5
+      - 62.5
+    standoff_height_mm: null
+    sources:
+    - https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/CAD/Leviathan_V1.3.step
+    - https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/KiCad/V1.3/Library.pretty/RPi-4.kicad_mod
+    - https://github.com/MotorDynamicsLab/Leviathan/blob/878c3c4893ea353552c957f574509f9890e1e37a/Manual/Leviathan_V1.3_Manual.pdf
+    notes: 'Added 2026-10-09 for the Raspberry Pi 3/4/5 that mounts directly on top of the Leviathan
+      (LDO Micron manual, "Component layout overview", p.194; Leviathan V1.3 manual p.5: "Dedicated
+      mounting holes for Raspberry Pi 3/4/5 or Zero 2W"). Measured from the vendor STEP
+      (Leviathan_V1.3.step, vendor commit 878c3c48) by OCCT cylindrical-face extraction, axis position
+      never centroid: Z-axis cylinders of radius 1.3 mm (drill 2.6) at x = 88.5 / 146.5, y = 13.5 / 62.5,
+      a 58 x 49 mm pattern that equals the Raspberry Pi 4B record''s own pitch. Independently confirmed
+      by the vendor KiCad RPi-4 footprint in Leviathan_V1.3.kicad_pcb (footprint origin at the Pi
+      pattern centre, (167.5, 122) on a board spanning x 50..220, y 60..160, pads at +-29 / +-24.5,
+      drill 2.6): x = 167.5 +- 29 - 50 = 88.5 / 146.5, and y = 160 - (122 +- 24.5) = 13.5 / 62.5 (KiCad
+      y runs down, the STEP and this record y runs up). Frame: origin the PCB corner, +x along
+      pcb_length_mm, +y along pcb_width_mm, STEP orientation (the Pi sits toward the y = 0 edge).
+      Also in the STEP and footprint: two extra support pads at x = 88.5 / 146.5, y = 39.5 (not Pi
+      holes; the Pi 4 has four). The footprint outline places the Pi board flush with the Leviathan''s
+      +x edge (x 85..170) and its USB/Ethernet connectors 3.0 mm past it (to x 173), so the stacked
+      Pi covers panel area only through those 3 mm of connectors. standoff_height_mm is null: the
+      vendor photo (Media/rpimounting.jpg) shows standoffs, no height is printed and the STEP carries
+      none.'
   sources:
   - https://github.com/MotorDynamicsLab/Leviathan/blob/main/KiCad/V1.3/Leviathan_V1.3.kicad_pcb
   confidence: high
