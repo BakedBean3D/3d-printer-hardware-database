@@ -153,6 +153,7 @@
     - 52.5
   - - 61.5
     - 52.5
+  mount_hole_frame: pcb_corner
   mount_inset_from_edge_mm: 3.5
   standoff_height_mm: null
   component_height_top_mm: null
@@ -169,7 +170,7 @@
     Deliberately matches the Raspberry Pi Model B / Pi 4 mounting footprint: 58.00 x 49.00 mm hole rectangle,
     M2.5 screws, 3.50 mm in from two edges. Read from official SIZE PDF (overall 85.00 x 56.00 mm). holes_xy
     computed from the inset+pitch (origin = bottom-left PCB corner); board outline has castellated/notched
-    edges so corner is nominal. hole_dia 2.75 mm is the RPi-standard M2.5 clearance. Source: https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf'
+    edges so corner is nominal. hole_dia 2.75 mm is the RPi-standard M2.5 clearance. Source: https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SIZE.pdf mount_hole_frame pcb_corner (2026-10-10): the SIZE.pdf dimensions the left-column holes 3.50 mm in from the left edge and 3.50 mm in from the top and bottom edges of the 85.00 x 56.00 mm outline (58.00 mm horizontal and 49.00 mm vertical pitch), so mount_holes_xy is in the PCB-corner frame and the board footprint can be drawn around them.'
 - id: btt_manta_e3ez
   name: Manta E3EZ
   manufacturer: BigTreeTech
