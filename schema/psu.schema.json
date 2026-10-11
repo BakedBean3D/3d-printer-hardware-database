@@ -12,6 +12,7 @@
       "manufacturer",
       "series",
       "category",
+      "mount_locations",
       "length_mm",
       "width_mm",
       "height_mm",
@@ -75,6 +76,17 @@
           "string",
           "null"
         ]
+      },
+      "mount_locations": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "enum": [
+            "bay",
+            "frame"
+          ]
+        }
       },
       "bottom_mount_screw": {
         "type": [

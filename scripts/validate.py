@@ -83,7 +83,7 @@ CONTROLLER_BOARD_REQUIRED = [
 # DIN-rail clip fields for MDR/EDR-style units. null is permitted for any
 # numeric whose value is genuinely unknown (do NOT substitute 0).
 PSU_REQUIRED = [
-    "id", "name", "manufacturer", "series", "category",
+    "id", "name", "manufacturer", "series", "category", "mount_locations",
     "length_mm", "width_mm", "height_mm", "weight_g", "wattage_w", "output_voltages_v",
     "bottom_mount_screw", "bottom_mount_interface", "bottom_mount_hole_dia_mm", "bottom_mount_hole_count",
     "bottom_mount_pattern", "bottom_mount_pitch_x_mm", "bottom_mount_pitch_y_mm", "bottom_mount_holes_xy",
@@ -120,6 +120,20 @@ CONTROLLER_MOUNT_PATTERN_VALUES = {
 # consumer's catalog -- the one failure mode worth designing out.
 MOUNT_LOCATION_VALUES = {"bay", "toolhead", "frame"}
 PSU_MOUNT_PATTERN_VALUES = {"rectangular", "2-hole", "3-hole", "other", "none"}
+
+# WHERE A SUPPLY MAY BE INSTALLED. The psu counterpart of a board's
+# mount_location, and a list because a board lives in one place while a
+# supply is fitted in several: the same LRS-150 sits on a plate in the
+# electronics bay or hangs on the frame from a bracket. Same vocabulary and
+# meaning as MOUNT_LOCATION_VALUES, restricted to the two places a supply is
+# ever installed (a supply never rides the toolhead):
+#   bay   -- the electronics compartment (a plate on a DIN rail or panel, or
+#            a rail clip for the DIN-rail units).
+#   frame -- static and outside the bay: bolted to the printer's frame or an
+#            upright by its own case holes.
+# Required, non-empty and duplicate-free: a consumer decides from this field
+# where it may offer the supply, so an empty list would silently drop it.
+PSU_MOUNT_LOCATION_VALUES = {"bay", "frame"}
 
 # v2 controlled vocabularies. drive is the transmission class (exact-match
 # filterable); free-text flavor lives in type_detail. Probe type folds the
@@ -204,6 +218,13 @@ ENUM_FIELDS = {
         "mount_hole_frame": (PSU_MOUNT_HOLE_FRAME_VALUES, True),
     },
 }
+# Enumerated LIST fields: category -> field -> allowed members. The list must be
+# non-empty and hold each member at most once. Like ENUM_FIELDS this is the
+# single source for the runtime check and the generated JSON Schema.
+LIST_ENUM_FIELDS = {
+    "psu": {"mount_locations": PSU_MOUNT_LOCATION_VALUES},
+}
+
 for _cat_enums in ENUM_FIELDS.values():
     _cat_enums["confidence"] = (CONFIDENCE_VALUES, False)
 
@@ -306,7 +327,8 @@ CONTROLLER_BOARD_FIELD_TYPES = {
 
 PSU_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "series": _T_STR,
-    "category": _T_STR, "bottom_mount_screw": _T_STR, "bottom_mount_interface": _T_STR,
+    "category": _T_STR, "mount_locations": _T_LIST,
+    "bottom_mount_screw": _T_STR, "bottom_mount_interface": _T_STR,
     "bottom_mount_pattern": _T_STR, "side_mount_screw": _T_STR,
     "side_mount_pattern": _T_STR, "din_rail_type": _T_STR,
     "terminal_location": _T_STR, "mount_hole_frame": _T_STR, "connector_notes": _T_STR,
@@ -434,6 +456,24 @@ def _check_enum(entry_id, filepath, entry, key, allowed, null_ok=True):
         print(f"  BAD ENUM: {filepath}[{entry_id}].{key}={v!r} not in {sorted(allowed)}")
         return 1
     return 0
+
+
+def _check_list_enum(entry_id, filepath, entry, key, allowed):
+    """A required enumerated list: present, a non-empty list, every member allowed, none repeated."""
+    v = entry.get(key)
+    tag = f"{filepath}[{entry_id}].{key}"
+    if not isinstance(v, list) or not v:
+        print(f"  BAD LIST ENUM (must be a non-empty list): {tag}={v!r}")
+        return 1
+    errors = 0
+    for member in v:
+        if member not in allowed:
+            print(f"  BAD LIST ENUM: {tag} member {member!r} not in {sorted(allowed)}")
+            errors += 1
+    if len(set(map(str, v))) != len(v):
+        print(f"  BAD LIST ENUM: {tag}={v!r} repeats a member")
+        errors += 1
+    return errors
 
 
 def _check_terminal_faces(entry_id, filepath, entry):
@@ -711,6 +751,8 @@ def check_physics(entry_id, filepath, entry, category):
     errors = 0
     for field, (allowed, null_ok) in ENUM_FIELDS.get(category, {}).items():
         errors += _check_enum(entry_id, filepath, entry, field, allowed, null_ok=null_ok)
+    for field, allowed in LIST_ENUM_FIELDS.get(category, {}).items():
+        errors += _check_list_enum(entry_id, filepath, entry, field, allowed)
     errors += _check_confidence_provenance(entry_id, filepath, entry)
     if category == "controller_boards":
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",

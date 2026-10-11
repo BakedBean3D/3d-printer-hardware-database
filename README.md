@@ -88,6 +88,7 @@ Every enclosed/slim_enclosed unit carries **two** mount patterns — `bottom_mou
 | `manufacturer` | string | Brand |
 | `series` | string | Product series (e.g. LRS-50, RSP-500) |
 | `category` | string | enclosed, slim_enclosed, din_rail |
+| `mount_locations` | list | **Required, never empty.** Where the supply may be installed on a printer: `bay` (the electronics compartment: a plate on a DIN rail or panel, or a rail clip for the DIN-rail units) and/or `frame` (static and outside the bay: bolted to the printer's frame or an upright by its own case holes). The psu counterpart of a board's `mount_location`, a list because a board lives in one place while a supply is fitted in several. Consumers decide from this field where they offer the supply; it is not derived from `category`. Cite the evidence for the value in `notes` |
 | `length_mm` / `width_mm` / `height_mm` | float | Case dimensions. DIN-rail units use the vendor's W×H×D convention, remapped length=D, width=W, height=H (see `notes`) |
 | `weight_g` | int | Weight in grams |
 | `wattage_w` | int | Nominal series wattage (exact rated power varies slightly per output voltage — see `notes`) |
