@@ -7,11 +7,15 @@
 # category dc_dc_converter: a low-voltage DC-in module, not a mains supply.
 # Consumers may treat it differently from mains units (e.g. tape mounting).
 #
-# Frame: bottom_mount_holes_xy are given in a PATTERN frame (x along the case
-# length L, y across the width W, origin at the terminal-end slot row's x and
-# the side-ear row's min y). mount_hole_frame is null because the case body's
-# offset from the holes along L is not measured; consumers centre the pattern
-# and must not place the body from it.
+# Frame (EA50-5V): mount_hole_frame is case_corner. x runs along the case length
+# L with x=0 at the TERMINAL end of the recorded body, which includes the barrier
+# terminal block (length_mm 52.8 = 7.0 mm terminal block + 2.5 mm of case
+# + the 26.3 mm hole-row pitch + 17 mm of case, owner-measured); y runs across the width W,
+# the 50 mm case centred between the ears, so the side-ear holes sit 3.5 mm
+# outside the case (allowed by the frame validator's 5 mm ear tolerance).
+# The schema has no separate case-vs-terminal-block box: the body is the 52.8 mm
+# envelope.
+
 - id: tobsun_ea50_5v
   name: TOBSUN EA50-5V
   manufacturer: TOBSUN
@@ -31,7 +35,7 @@
   bottom_mount_pattern: other
   bottom_mount_pitch_x_mm: 26.3
   bottom_mount_pitch_y_mm: null
-  bottom_mount_holes_xy: [[0.0, 7.5], [0.0, 49.5], [26.3, 0.0], [26.3, 57.0]]
+  bottom_mount_holes_xy: [[9.5, 4.0], [9.5, 46.0], [35.8, -3.5], [35.8, 53.5]]
   bottom_mount_max_penetration_mm: null
   bottom_mount_slot_travel_mm: 0.0
   side_mount_screw: null
@@ -51,7 +55,7 @@
     notes: One 4-position barrier block carries both input and output (owner calipers give its
       34.3 mm width; block type, screw-up orientation and end wire entry are render-estimated from
       Printables 698606). Pin order IN+/IN-/OUT-/OUT+ is not recorded; read the label on the case.
-  mount_hole_frame: null
+  mount_hole_frame: case_corner
   connector_notes: 4-position barrier terminal block (input 12/24 V DC nominal per listings, exact range
     unpublished; output 5 V). No datasheet found 2026-10-01.
   sources:
@@ -79,8 +83,13 @@
     listing (698606) covers the EA25 too; the EA25 pattern is not recorded. A printed hole-gauge
     coupon against the owner''s unit is the first fit check.
     mount_locations (added 2026-10-10): bay and frame. The case carries 4 x M3 bottom mount holes (open clearance ears, other pattern, recorded above), the chassis-mounting feature of this unit, so it fastens to a plate in the bay or to a bracket or upright on a printer frame. The frame value rests on those recorded mounting holes and on the owner''s Partsmith decisions of 2026-09-24 and 2026-09-30 (a supply may hang on the frame by Partsmith''s upright mount or the builder''s own bracket); it is not a vendor statement about extrusions.
-    Owner calipers, 2026-10-11: from the centre of a mounting hole to the end of the metal case along L, 17 mm at one
-    end and 2.5 mm at the other. Not recorded as a frame: his numbers do not say which end is which (terminal end or far
-    end), and 17 + 26.3 (row pitch) + 2.5 = 45.8 mm of metal case, 7.0 mm short of the recorded 52.8 mm body, so the
-    record''s length_mm reaches 7.0 mm past the metal somewhere (the terminal block is the likely 7 mm) and whether the
-    planner''s body should include it is open. mount_hole_frame stays null until the end and the 7.0 mm are settled.'
+    Owner calipers, 2026-10-11 (frame, mount_hole_frame case_corner): from the centre of a mounting hole to the end of the
+    metal case along L, 17 mm on the non-terminal end and 2.5 mm on the terminal end. The metal case is therefore
+    17 + 26.3 (row pitch) + 2.5 = 45.8 mm, and the remaining 7.0 mm of the recorded 52.8 mm body is the terminal block
+    beyond the terminal end of the case (17 + 26.3 + 2.5 + 7.0 = 52.8). The schema carries one body box, so the recorded
+    body is the 52.8 mm envelope, terminal block included. Hole coordinates are re-expressed in the case-corner frame
+    (x=0 at the terminal-block end): terminal-end pair x = 9.5 (2.5 + 7.0), far pair x = 35.8 (52.8 - 17), the same 26.3
+    pitch and the same 42.0 and 57.0 pair spans as before, only the origin moved. Along W the 50 mm case is taken as
+    centred between the ear pairs (side-ear holes at y = -3.5 and 53.5, 3.5 mm outside the case); that centring is an
+    inference from the symmetric hole pattern and the 63.73 mm ear span, not a measurement. Owner-measured by calipers on
+    one unit (medium confidence).'

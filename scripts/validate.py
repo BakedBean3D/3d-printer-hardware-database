@@ -163,6 +163,11 @@ PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_in", "dc_out", "signal"}
 # (both ears together). Bounds a misread pattern without needing a case frame.
 EAR_SPAN_ALLOWANCE_MM = 20.0
 
+# How far a hole of a case_corner record may stand outside the case rectangle on
+# one axis: ears/slots that protrude past the nominal edge (UHP-350, EA50-5V).
+# One owner for the frame check and for the holes-on-part check.
+CASE_FRAME_EAR_TOLERANCE_MM = 5.0
+
 # mount_hole_frame: makes explicit what terminal_faces already assumes -- the
 # coordinate FRAME that bottom_mount_holes_xy / side_mount_holes_xy are given
 # in. Free-text notes on individual records claim things like "x=0 at the
@@ -417,8 +422,13 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
                     print(f"  HOLE SPAN OFF PART: {tag} {axis} span {span} exceeds {dim} + {EAR_SPAN_ALLOWANCE_MM}")
                     errors += 1
                 continue
+            # Clearance ears of a case_corner record stand outside the case by
+            # the frame's own ear tolerance (_check_mount_hole_frame).
+            tol = (CASE_FRAME_EAR_TOLERANCE_MM
+                   if entry.get("mount_hole_frame") == "case_corner"
+                   and entry.get(prefix + "interface") == "clearance_ears" else 0.5)
             for v in lo_hi:
-                if v < -0.5 or v > dim + 0.5:
+                if v < -tol or v > dim + tol:
                     print(f"  HOLE OFF PART: {tag} {axis}={v} outside 0..{dim}")
                     errors += 1
         # explicit coordinates must agree with the declared pitch
@@ -645,13 +655,14 @@ def _check_mount_hole_frame(entry_id, filepath, entry):
             x, y = h
             if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
                 continue
-            if L is not None and not (-5 <= x <= L + 5):
+            tol = CASE_FRAME_EAR_TOLERANCE_MM
+            if L is not None and not (-tol <= x <= L + tol):
                 print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} x={x} "
-                      f"outside -5..{L + 5}")
+                      f"outside -{tol}..{L + tol}")
                 errors += 1
-            if W is not None and not (-5 <= y <= W + 5):
+            if W is not None and not (-tol <= y <= W + tol):
                 print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} y={y} "
-                      f"outside -5..{W + 5}")
+                      f"outside -{tol}..{W + tol}")
                 errors += 1
     return errors
 
