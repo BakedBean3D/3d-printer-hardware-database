@@ -38,6 +38,7 @@ def build_schema(category):
     required = validate.CATEGORIES[category]
     field_types = validate.FIELD_TYPES[category]
     enums = validate.ENUM_FIELDS.get(category, {})
+    list_enums = validate.LIST_ENUM_FIELDS.get(category, {})
 
     properties = {}
     for field, t in field_types.items():
@@ -47,6 +48,10 @@ def build_schema(category):
             if null_ok:
                 values = values + [None]
             properties[field] = {"enum": values}
+        elif field in list_enums:
+            # a required enumerated list: never null, never empty, no repeats
+            properties[field] = {"type": "array", "minItems": 1, "uniqueItems": True,
+                                 "items": {"enum": sorted(list_enums[field])}}
         else:
             # null always means unknown and is allowed for any non-enum field
             properties[field] = {"type": [JSON_TYPES[t], "null"]}

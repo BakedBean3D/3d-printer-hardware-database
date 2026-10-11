@@ -17,6 +17,7 @@
   manufacturer: TOBSUN
   series: EA50
   category: dc_dc_converter
+  mount_locations: [bay, frame]
   length_mm: 52.8
   width_mm: 50.0
   height_mm: 20.15
@@ -76,4 +77,5 @@
     recorded centres are the reference bracket''s screw axes; the slot length is unmeasured. Unknown: slot width/length (oval at the terminal end per renders), flange
     thickness, weight, input range, the case body offset along L from the holes, pin order. One
     listing (698606) covers the EA25 too; the EA25 pattern is not recorded. A printed hole-gauge
-    coupon against the owner''s unit is the first fit check.'
+    coupon against the owner''s unit is the first fit check.
+    mount_locations (added 2026-10-10): bay and frame. The case carries 4 x M3 bottom mount holes (open clearance ears, other pattern, recorded above), the chassis-mounting feature of this unit, so it fastens to a plate in the bay or to a bracket or upright on a printer frame. The frame value rests on those recorded mounting holes and on the owner''s Partsmith decisions of 2026-09-24 and 2026-09-30 (a supply may hang on the frame by Partsmith''s upright mount or the builder''s own bracket); it is not a vendor statement about extrusions.'
