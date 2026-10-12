@@ -159,10 +159,6 @@ PSU_TERMINAL_FACE_VALUES = {
 }
 PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_in", "dc_out", "signal"}
 
-# How far a frameless clearance-ear hole span may exceed the case on one axis
-# (both ears together). Bounds a misread pattern without needing a case frame.
-EAR_SPAN_ALLOWANCE_MM = 20.0
-
 # mount_hole_frame: makes explicit what terminal_faces already assumes -- the
 # coordinate FRAME that bottom_mount_holes_xy / side_mount_holes_xy are given
 # in. Free-text notes on individual records claim things like "x=0 at the
@@ -461,21 +457,15 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
             return errors + 1
         # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers)
         # or, when the record states one, inside its mount_footprint_mm (see
-        # _mount_region). Exception: clearance ears with NO case frame. Their
-        # coordinates are pattern-relative (the body's offset is unmeasured), so
-        # only the span is bounded: it may exceed the case by at most
-        # EAR_SPAN_ALLOWANCE_MM.
-        pattern_frame = (entry.get("mount_hole_frame") is None
-                         and entry.get(prefix + "interface") == "clearance_ears")
+        # _mount_region). Clearance ears stand outside the case, so their
+        # position is only checkable against a case frame and a stated
+        # footprint; a record with ears and no frame is incomplete.
+        if entry.get(prefix + "interface") == "clearance_ears" and entry.get("mount_hole_frame") is None:
+            print(f"  EARS WITHOUT FRAME: {tag} clearance ears need mount_hole_frame case_corner and mount_footprint_mm")
+            return errors + 1
         region = _mount_region(entry, L, W)
         for lo_hi, dim, axis in ((xs, L, "x"), (ys, W, "y")):
             if dim is None:
-                continue
-            if pattern_frame:
-                span = max(lo_hi) - min(lo_hi)
-                if span > dim + EAR_SPAN_ALLOWANCE_MM:
-                    print(f"  HOLE SPAN OFF PART: {tag} {axis} span {span} exceeds {dim} + {EAR_SPAN_ALLOWANCE_MM}")
-                    errors += 1
                 continue
             lo, hi = region[axis]
             for v in lo_hi:
