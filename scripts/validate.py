@@ -8,6 +8,16 @@ import yaml
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
 
+def _mount_region_margins():
+    """The margins for "a hole lies on the body", from mount_region.yaml (the one place they are written)."""
+    with open(os.path.join(ROOT, "mount_region.yaml")) as f:
+        data = yaml.safe_load(f)
+    return float(data["psu_edge_margin_mm"]), float(data["board_edge_margin_mm"])
+
+
+PSU_EDGE_MARGIN_MM, BOARD_EDGE_MARGIN_MM = _mount_region_margins()
+
+
 class StrictLoader(yaml.SafeLoader):
     """SafeLoader that rejects duplicate mapping keys.
 
@@ -383,14 +393,15 @@ def _mount_region(entry, L, W):
     """The one owner of where a mounting hole may stand: {"x": (lo, hi), "y": (lo, hi)}
     in the record's frame. A record that states mount_footprint_mm (body plus
     ears/flanges, a recorded fact) is bounded by that box; every other record
-    by its body rectangle widened by 0.5 mm for edge-breaking chamfers. There is
+    by its body rectangle widened by PSU_EDGE_MARGIN_MM (mount_region.yaml) for edge-breaking chamfers. There is
     deliberately no per-interface allowance: a hole outside the body is either
     inside a stated footprint or an error."""
     fp = entry.get("mount_footprint_mm")
     if isinstance(fp, dict) and all(isinstance(fp.get(k), (int, float)) and not isinstance(fp.get(k), bool)
                                     for k in PSU_MOUNT_FOOTPRINT_KEYS):
         return {"x": (fp["x_min"], fp["x_max"]), "y": (fp["y_min"], fp["y_max"])}
-    return {"x": (-0.5, None if L is None else L + 0.5), "y": (-0.5, None if W is None else W + 0.5)}
+    m = PSU_EDGE_MARGIN_MM
+    return {"x": (-m, None if L is None else L + m), "y": (-m, None if W is None else W + m)}
 
 
 def _check_mount_footprint(entry_id, filepath, entry):
@@ -455,7 +466,7 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
         if len(xs) != len(holes):
             print(f"  MALFORMED holes_xy: {tag}")
             return errors + 1
-        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers)
+        # holes must lie on the part (PSU_EDGE_MARGIN_MM for edge-breaking chamfers)
         # or, when the record states one, inside its mount_footprint_mm (see
         # _mount_region). Clearance ears stand outside the case, so their
         # position is only checkable against a case frame and a stated
@@ -639,7 +650,8 @@ def _check_stack_mounts(entry_id, filepath, entry):
             errors += 1
         else:
             for x, y in holes:
-                if not (0 < x < L and 0 < y < W):
+                m = BOARD_EDGE_MARGIN_MM
+        if not (-m < x < L + m and -m < y < W + m):
                     print(f"  STACK HOLE OUTSIDE PCB: {itag} ({x}, {y}) not inside 0..{L} x 0..{W}")
                     errors += 1
         if not isinstance(item["sources"], list) or not item["sources"]:
@@ -650,9 +662,10 @@ def _check_stack_mounts(entry_id, filepath, entry):
 
 def _check_board_mount_hole_frame(entry_id, filepath, entry):
     """A board claiming mount_hole_frame=pcb_corner must have every hole on
-    the PCB: strictly inside [0, pcb_length_mm] x [0, pcb_width_mm]. Holes are
-    drilled through the board, so unlike PSU ears there is no tolerance past
-    the edge; a hole on or off the edge means the frame claim is wrong."""
+    the PCB: strictly inside [0, pcb_length_mm] x [0, pcb_width_mm] widened by
+    BOARD_EDGE_MARGIN_MM (mount_region.yaml, 0). Holes are drilled through the
+    board, so unlike PSU case chamfers there is no tolerance past the edge; a
+    hole on or off the edge means the frame claim is wrong."""
     if entry.get("mount_hole_frame") != "pcb_corner":
         return 0
     errors = 0
@@ -666,7 +679,8 @@ def _check_board_mount_hole_frame(entry_id, filepath, entry):
         if not (isinstance(h, (list, tuple)) and len(h) == 2):
             continue
         x, y = h
-        if not (0 < x < L and 0 < y < W):
+        m = BOARD_EDGE_MARGIN_MM
+        if not (-m < x < L + m and -m < y < W + m):
             print(f"  HOLE OUTSIDE PCB_CORNER FRAME: {tag} ({x}, {y}) not inside 0..{L} x 0..{W}")
             errors += 1
     return errors
