@@ -31,6 +31,7 @@ JSON_TYPES = {
     "integer": "integer",
     "bool": "boolean",
     "list": "array",
+    "map": "object",
 }
 
 

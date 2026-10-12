@@ -145,6 +145,8 @@ def write_md(units):
                 L.append(f"- **Terminal faces (structured):** {faces}")
             L.append(f"- **Mount locations:** {', '.join(u.get('mount_locations') or []) or '—'}")
             L.append(f"- **Mount hole frame:** {fmt(u.get('mount_hole_frame'))}")
+            if u.get("mount_footprint_mm"):
+                L.append(f"- **Mount footprint (mm):** {u['mount_footprint_mm']}")
             if u.get("connector_notes"):
                 L.append(f"- **Connectors:** {u['connector_notes']}")
             if u.get("notes"):

@@ -12,7 +12,9 @@
 # terminal block (length_mm 52.8 = 7.0 mm terminal block + 2.5 mm of case
 # + the 26.3 mm hole-row pitch + 17 mm of case, owner-measured); y runs across the width W,
 # the 50 mm case centred between the ears, so the side-ear holes sit 3.5 mm
-# outside the case (allowed by the frame validator's 5 mm ear tolerance).
+# outside the case. The record states that with mount_footprint_mm (x over the
+# 52.8 mm body, y over the 63.73 mm ear tip-to-tip span centred on the 50 mm
+# case); the validator admits the off-case holes because they lie inside it.
 # The schema has no separate case-vs-terminal-block box: the body is the 52.8 mm
 # envelope.
 
@@ -56,6 +58,7 @@
       34.3 mm width; block type, screw-up orientation and end wire entry are render-estimated from
       Printables 698606). Pin order IN+/IN-/OUT-/OUT+ is not recorded; read the label on the case.
   mount_hole_frame: case_corner
+  mount_footprint_mm: {x_min: 0.0, x_max: 52.8, y_min: -6.865, y_max: 56.865}
   connector_notes: 4-position barrier terminal block (input 12/24 V DC nominal per listings, exact range
     unpublished; output 5 V). No datasheet found 2026-10-01.
   sources:
@@ -72,8 +75,8 @@
   notes: 'Confidence medium. Body from owner calipers (2026-10-01). Hole pattern from the four M3
     boss/clearance-hole axes of a community bracket STEP (Printables 420640, CC BY), which seats the
     converter on four 2 mm bosses: side-ear pair 57.0 mm apart across W, terminal-end pair 42.0 mm
-    apart, the rows 26.3 mm apart along L. Cross-checks: the side-ear pair agrees with the owner''s
-    63.73 mm ear span (slot centres about 3.4 mm in from each ear tip); the terminal-end pair sits
+    apart, the rows 26.3 mm apart along L. Cross-checks: the side-ear pair (57.0 mm hole-to-hole) agrees with the owner''s
+    63.73 mm ear tip-to-tip span (slot centres about 3.4 mm in from each ear tip); the terminal-end pair sits
     about 3.9 mm outside each side of the owner''s 34.3 mm terminal block, matching his "slots ... left
     and right of terminals". A second community bracket of unknown source (not cited) agrees on 42.0
     and the row pitch (26.44) and gives 56.68 for the side pair, a 0.32 mm disagreement recorded here
@@ -90,6 +93,11 @@
     body is the 52.8 mm envelope, terminal block included. Hole coordinates are re-expressed in the case-corner frame
     (x=0 at the terminal-block end): terminal-end pair x = 9.5 (2.5 + 7.0), far pair x = 35.8 (52.8 - 17), the same 26.3
     pitch and the same 42.0 and 57.0 pair spans as before, only the origin moved. Along W the 50 mm case is taken as
-    centred between the ear pairs (side-ear holes at y = -3.5 and 53.5, 3.5 mm outside the case); that centring is an
-    inference from the symmetric hole pattern and the 63.73 mm ear span, not a measurement. Owner-measured by calipers on
+    centred between the ear pairs (side-ear holes at y = -3.5 and 53.5, 3.5 mm outside the case). That centring is an
+    inference, not a measurement: the owner-measured ear tip-to-tip span across W is 63.73 mm and the recorded
+    side-ear hole-to-hole span is 57.0 mm, and the inference is that the 3.365 mm of ear beyond each hole (31.865 -
+    28.5) is the same on both sides and the 50 mm case sits at the middle. mount_footprint_mm records the resulting
+    box: x over the 52.8 mm body (the ears do not extend past the body along L, per the owner''s end-of-case
+    measurements), y = 25 +- 31.865 = -6.865 .. 56.865. The y extent inherits the centring inference; the 63.73 mm
+    itself is measured. Owner-measured by calipers on
     one unit (medium confidence).'
