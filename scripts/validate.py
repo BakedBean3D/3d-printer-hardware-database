@@ -18,6 +18,14 @@ def _mount_region_margins():
 PSU_EDGE_MARGIN_MM, BOARD_EDGE_MARGIN_MM = _mount_region_margins()
 
 
+def _hole_on_board(x, y, length, width):
+    """The one definition of "a drilled hole's centre lies on the board": strictly
+    inside [0, length] x [0, width] widened by BOARD_EDGE_MARGIN_MM (0 today, so a
+    centre exactly on an edge is rejected: a hole cannot be drilled on the edge)."""
+    m = BOARD_EDGE_MARGIN_MM
+    return -m < x < length + m and -m < y < width + m
+
+
 class StrictLoader(yaml.SafeLoader):
     """SafeLoader that rejects duplicate mapping keys.
 
@@ -650,8 +658,7 @@ def _check_stack_mounts(entry_id, filepath, entry):
             errors += 1
         else:
             for x, y in holes:
-                m = BOARD_EDGE_MARGIN_MM
-        if not (-m < x < L + m and -m < y < W + m):
+                if not _hole_on_board(x, y, L, W):
                     print(f"  STACK HOLE OUTSIDE PCB: {itag} ({x}, {y}) not inside 0..{L} x 0..{W}")
                     errors += 1
         if not isinstance(item["sources"], list) or not item["sources"]:
@@ -679,8 +686,7 @@ def _check_board_mount_hole_frame(entry_id, filepath, entry):
         if not (isinstance(h, (list, tuple)) and len(h) == 2):
             continue
         x, y = h
-        m = BOARD_EDGE_MARGIN_MM
-        if not (-m < x < L + m and -m < y < W + m):
+        if not _hole_on_board(x, y, L, W):
             print(f"  HOLE OUTSIDE PCB_CORNER FRAME: {tag} ({x}, {y}) not inside 0..{L} x 0..{W}")
             errors += 1
     return errors
