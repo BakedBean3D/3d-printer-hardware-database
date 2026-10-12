@@ -511,9 +511,11 @@
 - **Mounting:** —× — (Ø—), —, pitch —×— mm
 - **Connectors:** N/A - product not confirmed to exist.
 - **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). DO NOT generate geometry for this entry. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs (as of 2026-06). If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist or is mislabeled. Mounting: NO authoritative evidence that a "U2C V3" product exists. BTT's official lineage is V1.0/V1.1 (STM32F072C8) and V2.0/V2.1 (STM32G0B1C8). The "U2C 3" / "V2.1-3" naming seen in listings refers to "3 CAN OUTPUTS", NOT hardware version 3. Treat as nonexistent unless a new revision is confirmed. Use the btt_u2c_v2 entry for all current U2C dimensional data. Source: https://global.bttwiki.com/U2C.html
+Re-verified 2026-10-12: global.bttwiki.com is network-egress-blocked this session, but fetched https://github.com/bigtreetech/U2C directly (reachable) -- the repo's README/datasheets only document V1.0 and V1.1 hardware (BIGTREETECH U2C V1.0.pdf / V1.1.pdf), with no V3 (or V2) hardware folder, release, or mention anywhere in the repo. A web search for "BIGTREETECH U2C V3 CAN bridge board" likewise returned nothing beyond V1.0/V1.1/V2.0/V2.1 retailer listings and BTT's own wiki pages. This is a second, independent primary source (BTT's own GitHub repo, not just the wiki) corroborating that no U2C V3 exists. No change made; confidence stays low/Tier-3; non-existence conclusion stands.
 - src: https://global.bttwiki.com/U2C.html
 - src: https://github.com/bigtreetech/docs/blob/master/docs/U2C.md
 - src: https://maz0r.github.io/klipper_canbus/controller/u2c.html
+- src: https://github.com/bigtreetech/U2C
 
 ## Duet3D
 
