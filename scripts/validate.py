@@ -159,10 +159,6 @@ PSU_TERMINAL_FACE_VALUES = {
 }
 PSU_TERMINAL_CIRCUIT_VALUES = {"ac_in", "dc_in", "dc_out", "signal"}
 
-# How far a frameless clearance-ear hole span may exceed the case on one axis
-# (both ears together). Bounds a misread pattern without needing a case frame.
-EAR_SPAN_ALLOWANCE_MM = 20.0
-
 # mount_hole_frame: makes explicit what terminal_faces already assumes -- the
 # coordinate FRAME that bottom_mount_holes_xy / side_mount_holes_xy are given
 # in. Free-text notes on individual records claim things like "x=0 at the
@@ -172,9 +168,10 @@ EAR_SPAN_ALLOWANCE_MM = 20.0
 # that happens not to be case-relative. Two values only, plus null:
 #   - case_corner    = x=0,y=0 at a case corner; x runs along length_mm, y
 #                       along width_mm; every case-body point lies in
-#                       [0, length_mm] x [0, width_mm] (ears/slots that
-#                       protrude past the nominal case edge may sit slightly
-#                       outside -- see check_physics' +-5mm tolerance).
+#                       [0, length_mm] x [0, width_mm]. Mounting ears/flanges
+#                       that protrude past that rectangle are never admitted
+#                       by a tolerance: the record states them in
+#                       mount_footprint_mm (see _mount_region).
 #   - vendor_drawing  = some other datum (a drawing-sheet origin, a
 #                       non-case feature, an asymmetric convenience choice
 #                       not tied to a case edge). Do NOT treat as
@@ -184,6 +181,13 @@ EAR_SPAN_ALLOWANCE_MM = 20.0
 #                       provenance. Never guessed from a sibling record's
 #                       case family.
 PSU_MOUNT_HOLE_FRAME_VALUES = {"case_corner", "vendor_drawing"}
+
+# mount_footprint_mm: optional psu box {x_min, x_max, y_min, y_max} in the
+# record's own frame = the case rectangle plus the mounting ears/flanges that
+# stand outside it. It is a recorded fact, not an allowance: holes must lie on
+# the body or inside this box, and the box must contain the body and every hole.
+# Only meaningful in a case_corner frame (a box needs a frame to be in).
+PSU_MOUNT_FOOTPRINT_KEYS = ("x_min", "x_max", "y_min", "y_max")
 
 # Declarative enum registry: category -> field -> (allowed values, null_ok).
 # The single source for both the runtime enum checks and the generated JSON
@@ -264,7 +268,8 @@ CATEGORIES = {
 # "number" accepts int or float; "integer" is for true counts where a
 # fraction is meaningless. Without this, `weight: "350"` (a string) silently
 # skips every numeric plausibility check because _num() returns None.
-_T_STR, _T_NUM, _T_INT, _T_BOOL, _T_LIST = "string", "number", "integer", "bool", "list"
+_T_STR, _T_NUM, _T_INT, _T_BOOL, _T_LIST, _T_MAP = (
+    "string", "number", "integer", "bool", "list", "map")
 
 MOTOR_FIELD_TYPES = {
     "id": _T_STR, "name": _T_STR, "manufacturer": _T_STR, "frame_size": _T_STR,
@@ -342,6 +347,7 @@ PSU_FIELD_TYPES = {
     "bottom_mount_hole_count": _T_INT, "side_mount_hole_count": _T_INT,
     "output_voltages_v": _T_LIST, "bottom_mount_holes_xy": _T_LIST,
     "side_mount_holes_xy": _T_LIST, "terminal_faces": _T_LIST,
+    "mount_footprint_mm": _T_MAP,
     "din_rail_compatible": _T_BOOL,
 }
 
@@ -363,6 +369,7 @@ _TYPE_CHECKS = {
     _T_INT: lambda v: isinstance(v, int) and not isinstance(v, bool),
     _T_BOOL: lambda v: isinstance(v, bool),
     _T_LIST: lambda v: isinstance(v, list),
+    _T_MAP: lambda v: isinstance(v, dict),
 }
 
 
@@ -370,6 +377,53 @@ def _num(entry, key):
     """Value of a numeric field, or None if absent/null/non-numeric."""
     v = entry.get(key)
     return v if isinstance(v, (int, float)) else None
+
+
+def _mount_region(entry, L, W):
+    """The one owner of where a mounting hole may stand: {"x": (lo, hi), "y": (lo, hi)}
+    in the record's frame. A record that states mount_footprint_mm (body plus
+    ears/flanges, a recorded fact) is bounded by that box; every other record
+    by its body rectangle widened by 0.5 mm for edge-breaking chamfers. There is
+    deliberately no per-interface allowance: a hole outside the body is either
+    inside a stated footprint or an error."""
+    fp = entry.get("mount_footprint_mm")
+    if isinstance(fp, dict) and all(isinstance(fp.get(k), (int, float)) and not isinstance(fp.get(k), bool)
+                                    for k in PSU_MOUNT_FOOTPRINT_KEYS):
+        return {"x": (fp["x_min"], fp["x_max"]), "y": (fp["y_min"], fp["y_max"])}
+    return {"x": (-0.5, None if L is None else L + 0.5), "y": (-0.5, None if W is None else W + 0.5)}
+
+
+def _check_mount_footprint(entry_id, filepath, entry):
+    """Structure of the optional psu `mount_footprint_mm` box: exactly the four
+    numeric keys, min < max, only in a case_corner frame, containing the whole
+    case body. Whether the holes lie inside it is _mount_region's job (shared by
+    the group and frame checks), so a box that does not contain the holes fails
+    there as HOLE OFF PART."""
+    fp = entry.get("mount_footprint_mm")
+    if fp is None:
+        return 0
+    tag = f"{filepath}[{entry_id}].mount_footprint_mm"
+    if not isinstance(fp, dict):
+        return 0  # reported as BAD TYPE by the generic type check
+    if set(fp) != set(PSU_MOUNT_FOOTPRINT_KEYS):
+        print(f"  BAD FOOTPRINT: {tag} keys must be exactly {list(PSU_MOUNT_FOOTPRINT_KEYS)}")
+        return 1
+    if any(isinstance(fp[k], bool) or not isinstance(fp[k], (int, float)) for k in fp):
+        print(f"  BAD FOOTPRINT: {tag} values must be numbers")
+        return 1
+    errors = 0
+    if entry.get("mount_hole_frame") != "case_corner":
+        print(f"  FOOTPRINT WITHOUT FRAME: {tag} needs mount_hole_frame=case_corner")
+        errors += 1
+    if not (fp["x_min"] < fp["x_max"] and fp["y_min"] < fp["y_max"]):
+        print(f"  BAD FOOTPRINT: {tag} needs x_min < x_max and y_min < y_max")
+        errors += 1
+    L, W = _num(entry, "length_mm"), _num(entry, "width_mm")
+    if L is not None and W is not None and not (
+            fp["x_min"] <= 0 and fp["x_max"] >= L and fp["y_min"] <= 0 and fp["y_max"] >= W):
+        print(f"  FOOTPRINT INSIDE BODY: {tag} must contain the case 0..{L} x 0..{W}")
+        errors += 1
+    return errors
 
 
 def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
@@ -401,25 +455,22 @@ def _check_mount_group(entry_id, filepath, entry, prefix, dim_x_key, dim_y_key):
         if len(xs) != len(holes):
             print(f"  MALFORMED holes_xy: {tag}")
             return errors + 1
-        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers).
-        # Exception: clearance ears with NO case frame. Their coordinates are
-        # pattern-relative (the body's offset is unmeasured) and ears may stand
-        # out past the case (TOBSUN EA50-5V, 2026-10-01), so only the span is
-        # bounded: it may exceed the case by at most EAR_SPAN_ALLOWANCE_MM.
-        pattern_frame = (entry.get("mount_hole_frame") is None
-                         and entry.get(prefix + "interface") == "clearance_ears")
+        # holes must lie on the part (0.5 mm tolerance for edge-breaking chamfers)
+        # or, when the record states one, inside its mount_footprint_mm (see
+        # _mount_region). Clearance ears stand outside the case, so their
+        # position is only checkable against a case frame and a stated
+        # footprint; a record with ears and no frame is incomplete.
+        if entry.get(prefix + "interface") == "clearance_ears" and entry.get("mount_hole_frame") is None:
+            print(f"  EARS WITHOUT FRAME: {tag} clearance ears need mount_hole_frame case_corner and mount_footprint_mm")
+            return errors + 1
+        region = _mount_region(entry, L, W)
         for lo_hi, dim, axis in ((xs, L, "x"), (ys, W, "y")):
             if dim is None:
                 continue
-            if pattern_frame:
-                span = max(lo_hi) - min(lo_hi)
-                if span > dim + EAR_SPAN_ALLOWANCE_MM:
-                    print(f"  HOLE SPAN OFF PART: {tag} {axis} span {span} exceeds {dim} + {EAR_SPAN_ALLOWANCE_MM}")
-                    errors += 1
-                continue
+            lo, hi = region[axis]
             for v in lo_hi:
-                if v < -0.5 or v > dim + 0.5:
-                    print(f"  HOLE OFF PART: {tag} {axis}={v} outside 0..{dim}")
+                if v < lo or (hi is not None and v > hi):
+                    print(f"  HOLE OFF PART: {tag} {axis}={v} outside {lo}..{hi}")
                     errors += 1
         # explicit coordinates must agree with the declared pitch
         for pitch, vals, axis in ((px, xs, "x"), (py, ys, "y")):
@@ -623,35 +674,30 @@ def _check_board_mount_hole_frame(entry_id, filepath, entry):
 
 def _check_mount_hole_frame(entry_id, filepath, entry):
     """When mount_hole_frame=case_corner, every declared hole coordinate must
-    actually lie on (or immediately adjacent to) the case rectangle [0,
-    length_mm] x [0, width_mm]. This is the structural payoff of the field:
-    a consumer trusts it to draw the real case rectangle around the holes,
-    so a case_corner claim that puts a hole 20mm off the case is worse than
-    no claim at all. +-5mm tolerance accommodates ears/slots that
-    legitimately protrude past the nominal case edge (see UHP-350) without
-    being generous enough to hide a wrong-frame mistake."""
+    lie in the record's mount region (_mount_region: the case rectangle, or the
+    stated mount_footprint_mm). This is the structural payoff of the field: a
+    consumer trusts it to draw the real case rectangle around the holes, so a
+    case_corner claim that puts a hole off the case is worse than no claim at
+    all. The bottom group is range-checked by _check_mount_group through the same
+    region; this covers the side group, which has no other range check."""
     if entry.get("mount_hole_frame") != "case_corner":
         return 0
     errors = 0
-    L, W = _num(entry, "length_mm"), _num(entry, "width_mm")
+    region = _mount_region(entry, _num(entry, "length_mm"), _num(entry, "width_mm"))
     tag = f"{filepath}[{entry_id}].mount_hole_frame"
-    for prefix in ("bottom_mount_holes_xy", "side_mount_holes_xy"):
-        holes = entry.get(prefix)
-        if not isinstance(holes, list):
-            continue
-        for h in holes:
-            if not (isinstance(h, (list, tuple)) and len(h) == 2):
-                continue  # already reported by _check_mount_group / type check
-            x, y = h
-            if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    holes = entry.get("side_mount_holes_xy")
+    if not isinstance(holes, list):
+        return 0
+    for h in holes:
+        if not (isinstance(h, (list, tuple)) and len(h) == 2):
+            continue  # already reported by the generic type check
+        for axis, v in (("x", h[0]), ("y", h[1])):
+            if not isinstance(v, (int, float)):
                 continue
-            if L is not None and not (-5 <= x <= L + 5):
-                print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} x={x} "
-                      f"outside -5..{L + 5}")
-                errors += 1
-            if W is not None and not (-5 <= y <= W + 5):
-                print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}={prefix} y={y} "
-                      f"outside -5..{W + 5}")
+            lo, hi = region[axis]
+            if (hi is not None and v > hi) or v < lo:
+                print(f"  HOLE OUTSIDE CASE_CORNER FRAME: {tag}=side_mount_holes_xy {axis}={v} "
+                      f"outside {lo}..{hi}")
                 errors += 1
     return errors
 
@@ -772,6 +818,7 @@ def check_physics(entry_id, filepath, entry, category):
         errors += _check_hole_count(entry_id, filepath, entry, "bottom_mount_")
         errors += _check_hole_count(entry_id, filepath, entry, "side_mount_")
         errors += _check_terminal_faces(entry_id, filepath, entry)
+        errors += _check_mount_footprint(entry_id, filepath, entry)
         errors += _check_mount_hole_frame(entry_id, filepath, entry)
         # bottom_mount_interface conditional rules (the value enum itself is
         # covered by ENUM_FIELDS): a record with a bottom screw size MUST

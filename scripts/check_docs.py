@@ -45,7 +45,7 @@ OPTIONAL_DOCUMENTED = {
     "extruders": {"motor_id"},
     "probes": {"manufacturer"},
     "controller_boards": {"mount_holes_xy", "stack_mounts"},
-    "psu": set(),
+    "psu": {"mount_footprint_mm"},
 }
 
 

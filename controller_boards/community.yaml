@@ -122,12 +122,13 @@
     - 4.0
   - - 96.0
     - 4.0
+  mount_hole_frame: pcb_corner
   mount_inset_from_edge_mm: 4.0
   standoff_height_mm: null
   component_height_top_mm: null
   connector_notes: STM32F042F6P6 MCU. 4x 3A MOSFET outputs (Phoenix/screw terminals), 2x thermistor inputs,
-    NeoPixel out w/ level shifter, I2C header w/ pullups, SWD header, fuse holder. Two M3 holes on the
-    long centerline, one near each end, 4mm in from edges.
+    NeoPixel out w/ level shifter, I2C header w/ pullups, SWD header, fuse holder. Two M3 holes on one line parallel to the long
+    edges, one near each end, 4mm in from the ends and 4mm in from one long edge (20mm from the other).
   sources:
   - https://raw.githubusercontent.com/timmit99/Klipper-Expander/master/KiCad/STM32_Klipper_Expander.kicad_pcb
   - https://github.com/timmit99/Klipper-Expander
@@ -141,7 +142,15 @@
     with KiCad Y inverted -> holes at (4,4) and (96,4). README marks this repo OUTDATED and points to the
     Voron official hardware repo for the latest version; verify if a revised board exists there. Maintained
     KiCad now lives in VoronDesign/Voron-Hardware/Klipper_Expander (the original timmit99 repo is flagged
-    outdated); geometry agrees (100x24, 92mm pitch).'
+    outdated); geometry agrees (100x24, 92mm pitch).
+    mount_hole_frame pcb_corner (2026-10-11): the Edge.Cuts rectangle (Y 76..100) puts the hole line at Y=80, 4.0 mm
+    from the Y=76 edge and 20.0 mm from the Y=100 edge, and the holes 4.0 mm from the X=100 and X=200 ends, so
+    mount_holes_xy (x = KiCad X - 100, y = KiCad Y - 76) is in the PCB-corner frame with the board in 0..100 x 0..24:
+    it lies on the +y side of the hole line, the hole line being 4 mm from the y=0 edge. The hole line is off the board
+    centre line (the earlier "long centerline" wording was wrong). Owner calipers on his own board, 2026-10-11:
+    24 mm short side, hole centre about 19.1 mm from the farther long edge (so about 4.9 mm from the nearer),
+    which corroborates off-centre holes; the KiCad 4.0 / 20.0 stays the recorded value (tier-1 source, the caliper
+    reading is 0.9 mm off on a hand measure).'
 - id: ercf_easy_brd
   name: ERCF EASY-BRD
   manufacturer: Tircown

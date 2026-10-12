@@ -273,6 +273,12 @@
           "null"
         ]
       },
+      "mount_footprint_mm": {
+        "type": [
+          "object",
+          "null"
+        ]
+      },
       "din_rail_compatible": {
         "type": [
           "boolean",
