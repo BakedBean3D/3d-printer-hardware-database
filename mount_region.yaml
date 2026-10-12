@@ -1,0 +1,10 @@
+# Where a mounting hole may stand relative to its device's body. One fact per kind,
+# read by scripts/validate.py (_mount_region, _check_board_mount_hole_frame) and by
+# consumers' loaders (the partsmith loader reads this same file); nothing restates
+# the numbers.
+#
+# A hole may lie this far outside the body rectangle ([0, length] x [0, width] for a
+# supply, [0, pcb_length] x [0, pcb_width] for a board). A supply record that states
+# mount_footprint_mm is bounded by that box instead; there is no other allowance.
+psu_edge_margin_mm: 0.5    # edge-breaking chamfers on a case
+board_edge_margin_mm: 0.0  # holes are drilled through the PCB: strictly on the board
