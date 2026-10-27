@@ -49,6 +49,16 @@ def build_schema(category):
             if null_ok:
                 values = values + [None]
             properties[field] = {"enum": values}
+        elif field == "reverify":
+            properties[field] = {
+                "type": ["object", "null"],
+                "required": list(validate.REVERIFY_KEYS),
+                "additionalProperties": False,
+                "properties": {
+                    "checked": {"type": "string", "format": "date"},
+                    "outcome": {"enum": sorted(validate.REVERIFY_OUTCOME_VALUES)},
+                },
+            }
         elif field in list_enums:
             # a required enumerated list: never null, never empty, no repeats
             properties[field] = {"type": "array", "minItems": 1, "uniqueItems": True,

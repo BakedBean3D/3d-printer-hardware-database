@@ -238,6 +238,14 @@ the provenance of its key values (the validator enforces the enum):
 | `medium` | Trusted-retailer specs, or official sources with some key values estimated/uncited |
 | `low` | Community spreadsheet, unverified, or estimated values — re-verify before trusting in CAD or config |
 
+A `low` entry may also carry an optional `reverify` record,
+`{checked: 'YYYY-MM-DD', outcome: source_unreachable | unpublished}`: the last
+re-verification pass that left it low, and why. `source_unreachable` means a
+primary source exists but could not be loaded; `unpublished` means the sources
+were read and the values are not published. `scripts/reverify_worklist.py`
+skips the entry until it is due again (`REVERIFY_RECHECK_DAYS` in
+`scripts/validate.py`); the field is removed when the entry is upgraded.
+
 ## How The Data Is Built (AI-Assisted Curation)
 
 This database is curated with heavy AI assistance — specifically [Claude

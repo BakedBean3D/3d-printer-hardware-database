@@ -770,6 +770,9 @@
   - https://maz0r.github.io/klipper_canbus/controller/u2c.html
   - https://github.com/bigtreetech/U2C
   confidence: low
+  reverify:
+    checked: '2026-10-12'
+    outcome: unpublished
   notes: 'Confidence low — Tier-3 (unverified — measure before cutting). DO NOT generate geometry for
     this entry. No U2C V3 found in BTT wiki, BTT docs GitHub, or community klipper_canbus docs (as of
     2026-06). If a BOM truly needs a V3, confirm the SKU with BTT first - the part likely does not exist
