@@ -175,6 +175,29 @@
           "array",
           "null"
         ]
+      },
+      "reverify": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "required": [
+          "checked",
+          "outcome"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "checked": {
+            "type": "string",
+            "format": "date"
+          },
+          "outcome": {
+            "enum": [
+              "source_unreachable",
+              "unpublished"
+            ]
+          }
+        }
       }
     }
   }

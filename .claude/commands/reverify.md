@@ -7,7 +7,8 @@ $ARGUMENTS entries if given, otherwise 5.
 
 1. `python3 scripts/reverify_worklist.py --limit <N>` — take the entries in
    the order given (the script already prioritizes categories where
-   datasheets likely exist).
+   datasheets likely exist, and skips entries whose `reverify` record is not
+   yet due).
 2. For each entry, hunt the primary source (WebSearch/WebFetch):
    - manufacturer datasheet / spec table / official mechanical drawing, or
    - the design's official repo/docs for community hardware.
@@ -21,9 +22,18 @@ $ARGUMENTS entries if given, otherwise 5.
      `high` needs a working URL to a primary source; verify it yourself
      (the validator only checks for a URL-like citation);
      retailer-only corroboration is `medium`.
-   - "confirmed unpublished" is a legitimate outcome for community designs
-     (toolhead weights/CFMs): keep the tier, say so in `notes` with the
-     places checked — that stops the entry being re-hunted every batch.
+   - an entry that stays `low` gets a `reverify` record — the only thing
+     that stops it being re-hunted every batch:
+     `reverify: {checked: 'YYYY-MM-DD', outcome: source_unreachable | unpublished}`
+     (quoted date). `source_unreachable` = a primary source exists but could
+     not be loaded from this environment; `unpublished` = sources were read
+     and the values (or the product) are not published — a legitimate
+     outcome for community designs (toolhead weights/CFMs). Replace any
+     existing `reverify` record; do not append a dated "re-verified, no
+     change" paragraph to `notes` — notes carry the places checked and what
+     they showed, the date and outcome live in `reverify`. Recheck intervals
+     are `REVERIFY_RECHECK_DAYS` in scripts/validate.py.
+   - an entry upgraded off `low` drops its `reverify` record (validated).
 4. Regenerate affected board/PSU aggregates per AGENTS.md, then run all
    gates before committing: `python3 scripts/validate.py`,
    `python3 scripts/check_docs.py`, `python3 scripts/gen_schema.py --validate`.

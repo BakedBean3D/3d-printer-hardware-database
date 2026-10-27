@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate all YAML data files against expected schemas."""
+import datetime
 import sys
 import os
 import glob
@@ -114,6 +115,22 @@ PSU_REQUIRED = [
 ]
 
 CONFIDENCE_VALUES = {"high", "medium", "low"}
+
+# reverify: optional {checked: "YYYY-MM-DD", outcome: <key below>} on a
+# `confidence: low` record = the last re-verification pass that LEFT it low,
+# and why. It is the one place that fact is recorded: the worklist
+# (scripts/reverify_worklist.py) reads it to skip the record until it is due
+# again, instead of re-hunting the same blocked entries every batch. The
+# places checked stay in `notes`; the date and outcome live only here.
+#   source_unreachable -- a primary source exists (or is cited) but could not
+#                         be loaded from the verifying environment.
+#   unpublished        -- the sources were reachable and read; the values (or
+#                         the product itself) are not published anywhere.
+# Value = days until the record is due for re-verification again. Absent =
+# never re-verified = due now. Upgrading confidence off low removes the field.
+REVERIFY_RECHECK_DAYS = {"source_unreachable": 90, "unpublished": 365}
+REVERIFY_OUTCOME_VALUES = set(REVERIFY_RECHECK_DAYS)
+REVERIFY_KEYS = ("checked", "outcome")
 CONTROLLER_MOUNT_PATTERN_VALUES = {
     "rectangular", "L-shaped", "linear", "2-hole", "3-hole", "4-hole", "none", "other",
 }
@@ -378,6 +395,9 @@ FIELD_TYPES = {
     "controller_boards": CONTROLLER_BOARD_FIELD_TYPES,
     "psu": PSU_FIELD_TYPES,
 }
+
+for _cat_types in FIELD_TYPES.values():
+    _cat_types["reverify"] = _T_MAP
 
 # bool is an int subclass in Python — exclude it from the numeric types so
 # `weight: true` can never pass as a number.
@@ -739,6 +759,49 @@ def _check_confidence_provenance(entry_id, filepath, entry):
     return 1
 
 
+def reverify_checked(entry):
+    """The record's reverify.checked as a date, or None when absent or malformed
+    (malformed is reported by _check_reverify). Shared with the worklist."""
+    rv = entry.get("reverify")
+    if not isinstance(rv, dict) or not isinstance(rv.get("checked"), str):
+        return None
+    try:
+        return datetime.date.fromisoformat(rv["checked"])
+    except ValueError:
+        return None
+
+
+def _check_reverify(entry_id, filepath, entry):
+    """Structure of the optional `reverify` map: exactly checked + outcome, a
+    quoted ISO date not in the future, an outcome from REVERIFY_RECHECK_DAYS,
+    and only on a confidence: low record (it records why the record is still low)."""
+    rv = entry.get("reverify")
+    if rv is None:
+        return 0
+    tag = f"{filepath}[{entry_id}].reverify"
+    errors = 0
+    if not isinstance(rv, dict):
+        return 0  # reported as BAD TYPE
+    if set(rv) != set(REVERIFY_KEYS):
+        print(f"  BAD REVERIFY: {tag} keys {sorted(rv)} must be exactly {list(REVERIFY_KEYS)}")
+        errors += 1
+    checked = reverify_checked(entry)
+    if checked is None:
+        print(f"  BAD REVERIFY: {tag}.checked={rv.get('checked')!r} must be a quoted 'YYYY-MM-DD' date")
+        errors += 1
+    elif checked > datetime.date.today():
+        print(f"  BAD REVERIFY: {tag}.checked={checked} is in the future")
+        errors += 1
+    if rv.get("outcome") not in REVERIFY_OUTCOME_VALUES:
+        print(f"  BAD REVERIFY: {tag}.outcome={rv.get('outcome')!r} not in {sorted(REVERIFY_OUTCOME_VALUES)}")
+        errors += 1
+    if entry.get("confidence") != "low":
+        print(f"  STALE REVERIFY: {tag} is set but confidence={entry.get('confidence')!r}; "
+              "it records why a low record stays low -- remove it when upgrading")
+        errors += 1
+    return errors
+
+
 def _check_motor_physics(entry_id, filepath, entry):
     """Stepper motor sanity: positive physical/electrical fields, a valid
     step angle, and a plausible weight-per-mm-of-body-length for the frame
@@ -820,6 +883,7 @@ def check_physics(entry_id, filepath, entry, category):
     for field, allowed in LIST_ENUM_FIELDS.get(category, {}).items():
         errors += _check_list_enum(entry_id, filepath, entry, field, allowed)
     errors += _check_confidence_provenance(entry_id, filepath, entry)
+    errors += _check_reverify(entry_id, filepath, entry)
     if category == "controller_boards":
         errors += _check_mount_group(entry_id, filepath, entry, "mount_",
                                      "pcb_length_mm", "pcb_width_mm")
