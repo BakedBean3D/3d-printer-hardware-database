@@ -3,7 +3,7 @@
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
 - **Total boards:** 106
-- **Confidence:** 62 high · 25 medium · 19 low
+- **Confidence:** 63 high · 25 medium · 18 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -32,7 +32,7 @@
 | CB1 | BigTreeTech | sbc | bay | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
 | CB2 | BigTreeTech | sbc | bay | 55.0×40.0 | 1.6 | M2.5 | rectangular | 48.0×33.0 | 4 | medium |
 | EBB SB2209 CAN V1.0 | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.03 | 2 | high |
-| EBB SB2209 CAN V1.0 (RP2040) | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.0 | 2 | low |
+| EBB SB2209 CAN V1.0 (RP2040) | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | — | M3 | linear | 12.78×12.02 | 2 | high |
 | EBB SB2240 CAN V1.0 | BigTreeTech | toolhead_can | toolhead | 68.54×42.45 | 1.6 | M3 | linear | 12.78×12.02 | 2 | high |
 | EBB36 CAN V1.x | BigTreeTech | toolhead_can | toolhead | 51.4×37.0 | 1.6 | M3 | linear | 43.85×— | 2 | medium |
 | EBB42 CAN V1.x | BigTreeTech | toolhead_can | toolhead | 40.0×40.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
@@ -270,12 +270,14 @@
 
 ### EBB SB2209 CAN V1.0 (RP2040)  ·  `btt_ebb_sb2209_rp2040`
 
-- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** low · **Source file:** `bigtreetech.yaml`
-- **PCB:** 68.54 × 42.45 mm, 1.6 mm thick
-- **Mounting:** 2× M3 (Ø3.2), linear, pitch 12.78×12.0 mm
+- **Category:** toolhead_can · **Mounts on:** toolhead · **Confidence:** high · **Source file:** `bigtreetech.yaml`
+- **PCB:** 68.54 × 42.45 mm, — mm thick
+- **Mounting:** 2× M3 (Ø3.7), linear, pitch 12.78×12.02 mm
+  - holes (x,y mm): [[17.66, 17.22], [30.44, 29.24]]
 - **Clearance:** standoff 5 mm, top component — mm
 - **Connectors:** Same family layout as SB2209 CAN: top edge VIN/GND/CAN-H/CAN-L + HE0; sides carry SPI_OUT, Proximity, FAN, endstop, PT100/TH0; ADXL345 onboard (RP2040 variant). USB-C present.
-- **Notes:** Confidence low — Tier-3 (unverified — measure before cutting). NO official dimensional drawing exists for the RP2040 variant. All PCB/mount figures are INFERRED from the StealthBurner-interchangeable SB2209 CAN. DO NOT machine to these without physical verification. Mounting: BTT did NOT publish a dimensional SIZE PDF for the RP2040 variant (repo folder has only a Pin PDF). It is purpose-built for and physically interchangeable with the Voron StealthBurner / the SB2209 CAN sibling, so outline and 2-hole mount are TAKEN to match that sibling (68.54 x 42.45, hole-to-hole dX=12.78 / dY~12.0). Confirm physically before relying on hole XY. Source: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
+- **Notes:** Confidence high — Tier-1 (vendor CAD). Measured 2026-10-27 from BTT's own STEP, `3D/BIGTREETECH EBB SB2209 CAN V1.0(RP2040).step` (repo bigtreetech/EBB, last changed 2023-06-06, commit 0965893), with OCCT/build123d. PCB solid bounding box 68.543 x 42.453 mm, confirming the outline previously only inferred from the SB2209 CAN sibling. The outline is NOT a rectangle: it is a T shape with notched corners (the narrow end, the last ~17 mm of the length, is only 22.7 mm wide), so pcb_length_mm x pcb_width_mm is the envelope, not the footprint, and mount_hole_frame is deliberately unset (pcb_corner would claim the rectangle is the board). Mounting: the two M3 holes are the PCB's only Ø3.7 bores (cylinder axes, not face centroids). mount_holes_xy are in the SAME frame as the SB2209 CAN SIZE drawing's datum: origin at the envelope corner that drawing marks as its +X/+Y datum, x along the 42.45 width, y along the 68.54 length. Measured (17.658, 17.217) and (30.435, 29.241) against the sibling drawing's (17.62, 17.19) and (30.40, 29.22), agreeing within 0.04 mm, so the RP2040 variant shares the SB2209 CAN pattern; hole-to-hole dX 12.777 / dY 12.024. Corrections from the prior inferred record: mount_hole_dia_mm 3.2 (assumed) -> 3.7 (STEP bore); mount_pitch_y_mm 12.0 -> 12.02; mount_holes_xy null -> measured. pcb_thickness_mm 1.6 (assumed, never sourced) -> null: the STEP models the board as 0.624 mm, which contradicts the 1.6 mm typical of BTT boards, so neither figure is recorded; measure a real board. The repo's Hardware folder has no SIZE drawing for this variant (schematic and pinout only); the STEP is the dimensional source. standoff_height_mm (5) is not in the STEP and is unchanged.
+- src: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/3D/BIGTREETECH%20EBB%20SB2209%20CAN%20V1.0(RP2040).step
 - src: https://github.com/bigtreetech/EBB/blob/master/EBB%20SB2209%20CAN%20(RP2040)/Hardware/EBB%20SB2209%20CAN%20V1.0%EF%BC%88RP2040%EF%BC%89-Pin.pdf
 - src: https://global.bttwiki.com/EBB%202209%20CAN%20RP2040.html
 
