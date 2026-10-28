@@ -1296,30 +1296,41 @@
   },
   {
     "id": "hartk_stealthburner_toolhead_pcb",
-    "name": "HartK Stealthburner Toolhead PCB",
+    "name": "HartK Stealthburner Toolhead PCB (2-piece main, rev 4)",
     "manufacturer": "HartK",
-    "category": "toolhead_can",
+    "category": "accessory",
     "mount_location": "toolhead",
-    "pcb_length_mm": null,
-    "pcb_width_mm": null,
-    "pcb_thickness_mm": 1.6,
+    "pcb_length_mm": 47.3,
+    "pcb_width_mm": 39.38,
+    "pcb_thickness_mm": null,
     "mount_screw": "M3",
-    "mount_hole_dia_mm": 3.2,
-    "mount_pattern": "other",
-    "mount_pitch_x_mm": null,
-    "mount_pitch_y_mm": null,
-    "mount_hole_count": null,
-    "mount_holes_xy": null,
+    "mount_hole_dia_mm": 3.3,
+    "mount_pattern": "2-hole",
+    "mount_pitch_x_mm": 11.98,
+    "mount_pitch_y_mm": 12.77,
+    "mount_hole_count": 2,
+    "mount_holes_xy": [
+      [
+        10.22,
+        14.1
+      ],
+      [
+        22.2,
+        26.87
+      ]
+    ],
     "mount_inset_from_edge_mm": null,
     "standoff_height_mm": 5,
     "component_height_top_mm": null,
     "connector_notes": "",
     "sources": [
+      "https://github.com/VoronDesign/Voron-Hardware/blob/master/Stealthburner_Toolhead_PCB/Production%20Files/StealthburnerPCB/2%20Piece/Gerber_Stealthburner-2PC-Main-rev4.zip",
+      "https://github.com/VoronDesign/Voron-Hardware/blob/master/Stealthburner_Toolhead_PCB/CAD/Toolhead%20PCBs.step",
       "https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB",
       "https://github.com/hartk1213/MISC/tree/main/PCBs/Stealthburner_Toolhead_PCB"
     ],
-    "confidence": "low",
-    "notes": "Confidence low \u2014 Tier-3 (unverified \u2014 measure before cutting). Flagged reference footprint. Outline + hole XY UNVERIFIED -- extract from Gerbers/STEP in CAD if a library entry is wanted. Mounting is body-clip, not a simple hole pattern. Mounting: The reference two-piece Voron Stealthburner toolhead PCB that many toolboards (incl. LDO Nitehawk-SB) clone for their form factor. Mounts into the Stealthburner printed body with M3x8 SHCS + M3x6 BHCS (per Voron hardware docs), NOT a board-edge rectangular pattern. Only Gerbers/STEP are published (no raw KiCad .kicad_pcb), so exact outline/hole XY were not machine-extracted. Included as a flag because it is a de-facto footprint standard worth its own library entry. Source: https://github.com/VoronDesign/Voron-Hardware/tree/master/Stealthburner_Toolhead_PCB",
+    "confidence": "high",
+    "notes": "Confidence high \u2014 Tier-1 (designer fab files + CAD). Measured 2026-10-28 from the rev 4 2-piece MAIN board's fab outputs in VoronDesign/Voron-Hardware (Gerber_Stealthburner-2PC-Main-rev4.zip, EasyEDA v6.5.22, 2023-01-17): outline from Gerber_BoardOutlineLayer.GKO, holes from the Excellon drill files. Cross-checked against `CAD/Toolhead PCBs.step` (commit 7a67bcf, 2023-01-18): of its six unlabelled board solids, the one measuring 47.366 x 39.362 mm carries the same holes within 0.05 mm, in the same orientation. Frame: Gerber top view, origin at the outline's bounding-box minimum, x along the 47.3 length, y along the 39.38 width. The outline is NOT a rectangle (stepped, notched edges), so these are envelope dimensions and mount_hole_frame is deliberately unset. Mounting: the two plated \u00d83.301 holes (M3, the M3x8 SHCS + M3x6 BHCS of the Voron docs) are the board's only plated holes over 2 mm, a diagonal pair 11.98 x 12.77 mm apart: the Stealthburner toolhead-board pattern, the same pair BTT's SB2209 uses (12.78 x 12.02, rotated 90 degrees). Other holes over 2 mm are non-plated, purpose not stated by the source: \u00d83.0 at (18.64, 18.11), (29.69, 18.11), (43.84, 31.19) and \u00d82.5 at (43.85, 21.42), (43.86, 6.72). Corrections from the prior unmeasured record: name -> names the measured board; category toolhead_can -> accessory (passive wiring breakout: the rev 4 BOM is connectors plus one BAT85 diode, no MCU, no CAN); outline null -> 47.3 x 39.38; mount_hole_dia_mm 3.2 (assumed) -> 3.3; mount_pattern other -> 2-hole; hole count/pitches/XY null -> measured; pcb_thickness_mm 1.6 (assumed) -> null (the fab files do not fix a thickness; the STEP models 1.65). The 1-piece Standard board (Gerber_Stealthburner.zip, 42.675 x 40.193 envelope, \u00d83.301 pair at (5.22, 14.56) / (17.20, 27.33), same 11.98 x 12.77 pitch) is a different outline and is not this record. standoff_height_mm (5) is not in the sources and is unchanged.",
     "_source_file": "community.yaml"
   },
   {
@@ -1408,25 +1419,32 @@
     "manufacturer": "mneuhaus",
     "category": "sensor",
     "mount_location": "frame",
-    "pcb_length_mm": null,
-    "pcb_width_mm": null,
-    "pcb_thickness_mm": 1.6,
-    "mount_screw": "M3",
-    "mount_hole_dia_mm": null,
-    "mount_pattern": "none",
+    "pcb_length_mm": 34.0,
+    "pcb_width_mm": 10.0,
+    "pcb_thickness_mm": null,
+    "mount_screw": "M2",
+    "mount_hole_dia_mm": 2.25,
+    "mount_pattern": "other",
     "mount_pitch_x_mm": null,
     "mount_pitch_y_mm": null,
-    "mount_hole_count": null,
-    "mount_holes_xy": null,
+    "mount_hole_count": 1,
+    "mount_holes_xy": [
+      [
+        17.05,
+        4.95
+      ]
+    ],
+    "mount_hole_frame": "pcb_corner",
     "mount_inset_from_edge_mm": null,
     "standoff_height_mm": null,
     "component_height_top_mm": null,
-    "connector_notes": "Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt filter + LED, 1mm/pulse via slotted wheel. Captive inside printed EncoderCart housing (Encoder_Left/Right STLs); not screw-mounted as a standalone board -- it slots into the cart, so mount pattern is 'none'.",
+    "connector_notes": "Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt filter + LED, 1mm/pulse via slotted wheel. Sits on top of the printed EncoderCart (Encoder_Left/Right STLs), fastened by one M2x10 self-tapping screw into the plastic through its centre hole.",
     "sources": [
+      "https://github.com/mneuhaus/EnragedRabbitProject/blob/main/usermods/Binky/Gerber/ERCF%20Binky%20-%20PCB%20v1.04.zip",
       "https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky"
     ],
-    "confidence": "low",
-    "notes": "No .kicad_pcb in repo -- only Fusion 360 .f3z and Gerber zip (ERCF Binky - PCB v1.04.zip). Outline/hole dimensions NOT recovered. To measure, extract the gerber zip and read the *.GKO/outline layer, or open the .f3z. Board is encoder-cart-captive so board-level mounting holes are likely irrelevant for CAD mount design; the relevant interface is the EncoderCart STL geometry, not screw holes.",
+    "confidence": "high",
+    "notes": "Confidence high \u2014 Tier-1 (designer fab files). Measured 2026-10-28 from ERCF Binky - PCB v1.04.zip (EAGLE 9.7.0 CAM output, 2023-09-06): outline from profile.gbr, hole from drill_1_16.xln. The profile is a 34.0 x 10.0 mm rectangle; its exported corners sit within 0.05 mm of (-4, 0)-(30, 10) in board coordinates (inch-grid rounding: the job file reports the 34.0127 x 10.0508 bounding box of those points). Frame: pcb_corner, origin at the (-4, 0) corner, x along the 34.0 length, y along the 10.0 width, top view. Mounting: the readme (BOM section) fastens the PCB with one M2x10 self-tapping screw for plastic (replacing the old encoder's M3x8 SHCS), and the board's only drill over 1 mm is \u00d82.25 at (17.05, 4.95), within 0.05 mm of the board centre. Corrections from the prior unmeasured record: outline null -> 34.0 x 10.0; mount_screw M3 -> M2; mount_hole_dia_mm null -> 2.25; mount_pattern none -> other (a single screw); hole count/XY null -> 1 / measured; the earlier \"captive, not screw-mounted\" claim was wrong per the readme. pcb_thickness_mm 1.6 (assumed) -> null: the EAGLE job file declares 1.67 (its default stackup), and no ordered thickness is published. The EncoderCart STEP models the cart, not this PCB.",
     "_source_file": "community.yaml"
   },
   {
