@@ -137,7 +137,7 @@ CONTROLLER_MOUNT_PATTERN_VALUES = {
 
 # WHERE THE DEVICE LIVES ON A PRINTER. Not a Partsmith/consumer policy and not
 # a measurement -- a fact about the hardware, and the axis every mount
-# generator has to filter on first, because the three take physically
+# generator has to filter on first, because the four take physically
 # different parts:
 #   bay      -- the electronics compartment. Includes boards that socket onto
 #               a board that lives there (StepStick-footprint RTD amps, plug-in
@@ -146,14 +146,18 @@ CONTROLLER_MOUNT_PATTERN_VALUES = {
 #   toolhead -- rides the printhead / moving carriage. Mass, cable strain and
 #               chamber temperature all matter here and none of them matter in
 #               a bay, which is why this is the split that earns a field.
-#   frame    -- static and OUTSIDE the electronics bay: frame, gantry,
-#               extrusion, front panel, bed, or an accessory unit's own chassis
-#               (ERCF, Box Turtle).
+#   frame    -- static and OUTSIDE the electronics bay, fastened by its own
+#               holes to a surface: frame, gantry, extrusion, front panel, bed,
+#               or an accessory unit's own chassis (ERCF, Box Turtle).
+#   housed   -- seated inside a printed part designed around it, which holds
+#               it in place and square for its job: the ERCF Binky encoder in
+#               the ERCF's encoder block, reading filament as it passes. Its
+#               mount is its host's part, so a consumer makes none for it.
 # Required and NON-NULL, unlike the dimension fields. A dimension can be
 # genuinely unmeasured; nobody adds a board record without knowing where the
 # board goes, and a null here would silently drop the record out of every
 # consumer's catalog -- the one failure mode worth designing out.
-MOUNT_LOCATION_VALUES = {"bay", "toolhead", "frame"}
+MOUNT_LOCATION_VALUES = {"bay", "toolhead", "frame", "housed"}
 PSU_MOUNT_PATTERN_VALUES = {"rectangular", "2-hole", "3-hole", "other", "none"}
 
 # WHERE A SUPPLY MAY BE INSTALLED. The psu counterpart of a board's

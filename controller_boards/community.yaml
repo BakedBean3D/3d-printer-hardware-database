@@ -210,7 +210,7 @@
   name: Binky ERCF Encoder
   manufacturer: mneuhaus
   category: sensor
-  mount_location: frame
+  mount_location: housed
   pcb_length_mm: 34.0
   pcb_width_mm: 10.0
   pcb_thickness_mm: null
@@ -234,7 +234,7 @@
   - https://github.com/mneuhaus/EnragedRabbitProject/blob/main/usermods/Binky/Gerber/ERCF%20Binky%20-%20PCB%20v1.04.zip
   - https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
   confidence: high
-  notes: 'Confidence high — Tier-1 (designer fab files). Measured 2026-10-28 from ERCF Binky - PCB v1.04.zip
+  notes: 'Location housed: the encoder seats in the ERCF''s printed encoder block, which squares it to the filament path it reads; its one M2 self-tapping screw goes into that block. Confidence high — Tier-1 (designer fab files). Measured 2026-10-28 from ERCF Binky - PCB v1.04.zip
     (EAGLE 9.7.0 CAM output, 2023-09-06): outline from profile.gbr, hole from drill_1_16.xln. The profile
     is a 34.0 x 10.0 mm rectangle; its exported corners sit within 0.05 mm of (-4, 0)-(30, 10) in board
     coordinates (inch-grid rounding: the job file reports the 34.0127 x 10.0508 bounding box of those
