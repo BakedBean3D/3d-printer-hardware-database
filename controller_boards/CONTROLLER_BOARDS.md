@@ -124,7 +124,7 @@
 | ERCF EASY-BRD | Tircown | ercf | frame | 90.8×35.56 | 1.6 | M3 | L-shaped | — | 3 | high |
 | Stealthburner Neopixel LED (Mini Button PCB) | VoronDesign | accessory | toolhead | — | 1.6 | none | none | — | 0 | low |
 | ESP32 WLED Hub | bartlammers | accessory | bay | 70.0×60.0 | 1.6 | M3 | rectangular | 60.0×50.0 | 4 | high |
-| Binky ERCF Encoder | mneuhaus | sensor | frame | 34.0×10.0 | — | M2 | other | — | 1 | high |
+| Binky ERCF Encoder | mneuhaus | sensor | housed | 34.0×10.0 | — | M2 | other | — | 1 | high |
 | Klipper Expander (STM32) | timmit99 | expander | bay | 100.0×24.0 | 1.6 | M3 | linear | 92.0×— | 2 | high |
 
 ## Adafruit
@@ -1309,12 +1309,12 @@ Re-verified 2026-10-12: global.bttwiki.com is network-egress-blocked this sessio
 
 ### Binky ERCF Encoder  ·  `ercf_binky`
 
-- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** housed · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 34.0 × 10.0 mm, — mm thick
 - **Mounting:** 1× M2 (Ø2.25), other, pitch —×— mm
   - holes (x,y mm): [[17.05, 4.95]]
 - **Connectors:** Small filament-motion encoder PCB for ERCF. Omron EE-SX398 photo-interrupter + Schmitt filter + LED, 1mm/pulse via slotted wheel. Sits on top of the printed EncoderCart (Encoder_Left/Right STLs), fastened by one M2x10 self-tapping screw into the plastic through its centre hole.
-- **Notes:** Confidence high — Tier-1 (designer fab files). Measured 2026-10-28 from ERCF Binky - PCB v1.04.zip (EAGLE 9.7.0 CAM output, 2023-09-06): outline from profile.gbr, hole from drill_1_16.xln. The profile is a 34.0 x 10.0 mm rectangle; its exported corners sit within 0.05 mm of (-4, 0)-(30, 10) in board coordinates (inch-grid rounding: the job file reports the 34.0127 x 10.0508 bounding box of those points). Frame: pcb_corner, origin at the (-4, 0) corner, x along the 34.0 length, y along the 10.0 width, top view. Mounting: the readme (BOM section) fastens the PCB with one M2x10 self-tapping screw for plastic (replacing the old encoder's M3x8 SHCS), and the board's only drill over 1 mm is Ø2.25 at (17.05, 4.95), within 0.05 mm of the board centre. Corrections from the prior unmeasured record: outline null -> 34.0 x 10.0; mount_screw M3 -> M2; mount_hole_dia_mm null -> 2.25; mount_pattern none -> other (a single screw); hole count/XY null -> 1 / measured; the earlier "captive, not screw-mounted" claim was wrong per the readme. pcb_thickness_mm 1.6 (assumed) -> null: the EAGLE job file declares 1.67 (its default stackup), and no ordered thickness is published. The EncoderCart STEP models the cart, not this PCB.
+- **Notes:** Location housed: the encoder seats in the ERCF's printed encoder block, which squares it to the filament path it reads; its one M2 self-tapping screw goes into that block. Confidence high — Tier-1 (designer fab files). Measured 2026-10-28 from ERCF Binky - PCB v1.04.zip (EAGLE 9.7.0 CAM output, 2023-09-06): outline from profile.gbr, hole from drill_1_16.xln. The profile is a 34.0 x 10.0 mm rectangle; its exported corners sit within 0.05 mm of (-4, 0)-(30, 10) in board coordinates (inch-grid rounding: the job file reports the 34.0127 x 10.0508 bounding box of those points). Frame: pcb_corner, origin at the (-4, 0) corner, x along the 34.0 length, y along the 10.0 width, top view. Mounting: the readme (BOM section) fastens the PCB with one M2x10 self-tapping screw for plastic (replacing the old encoder's M3x8 SHCS), and the board's only drill over 1 mm is Ø2.25 at (17.05, 4.95), within 0.05 mm of the board centre. Corrections from the prior unmeasured record: outline null -> 34.0 x 10.0; mount_screw M3 -> M2; mount_hole_dia_mm null -> 2.25; mount_pattern none -> other (a single screw); hole count/XY null -> 1 / measured; the earlier "captive, not screw-mounted" claim was wrong per the readme. pcb_thickness_mm 1.6 (assumed) -> null: the EAGLE job file declares 1.67 (its default stackup), and no ordered thickness is published. The EncoderCart STEP models the cart, not this PCB.
 - src: https://github.com/mneuhaus/EnragedRabbitProject/blob/main/usermods/Binky/Gerber/ERCF%20Binky%20-%20PCB%20v1.04.zip
 - src: https://github.com/mneuhaus/EnragedRabbitProject/tree/main/usermods/Binky
 
