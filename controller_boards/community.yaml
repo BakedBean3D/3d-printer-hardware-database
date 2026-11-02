@@ -265,15 +265,20 @@
   mount_inset_from_edge_mm: null
   standoff_height_mm: null
   component_height_top_mm: null
-  connector_notes: BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN
-    toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated
-    community KiCad board with published Edge.Cuts found.
+  connector_notes: BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses an off-the-shelf
+    controller rather than a single bespoke 'BoxTurtle PCB'; its own BT_BOM.md names the recommended
+    controller as the third-party open-hardware 'AFC-Lite' board (Isik's Tech), not BTT MMB/EBB/SB2240.
+    No dedicated community KiCad board with published Edge.Cuts found for AFC-Lite itself.
   sources:
   - https://github.com/ArmoredTurtle/BoxTurtle
+  - https://gitee.com/songerman/AFC-Lite
   confidence: low
-  notes: No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
-    individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific
-    board with KiCad geometry is identified.
+  reverify:
+    checked: '2026-11-02'
+    outcome: source_unreachable
+  notes: |-
+    No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific board with KiCad geometry is identified.
+    Re-verified 2026-11-02: BoxTurtle's own BT_BOM.md (https://github.com/ArmoredTurtle/BoxTurtle) names the recommended controller as the third-party open-hardware "AFC-Lite" board (Isik's Tech, GPL-3.0; mirror https://gitee.com/songerman/AFC-Lite) rather than BTT MMB/EBB as previously assumed here — connector_notes and sources corrected accordingly. AFC-Lite's own canonical KiCad/CAD repo was not located via search. BoxTurtle's repo CAD/Cad.zip (a plausible primary source for dimensioned geometry) could not be fetched from this environment (GitHub raw/API access to this repo is blocked for this session). pcb_length_mm/width and hole pattern remain null — outcome is source_unreachable, not confirmed unpublished. Re-check CAD.zip and AFC-Lite's own repo directly before upgrading confidence.
 - id: voron_hall_xy_endstop
   name: Hall Effect XY Endstop
   manufacturer: HartK / VoronDesign
@@ -502,9 +507,12 @@
   - https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner
   - https://docs.vorondesign.com/community/howto/drachenkatze/neopixel_guide.html
   confidence: low
-  notes: No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
-    firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity
-    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.
+  reverify:
+    checked: '2026-11-02'
+    outcome: source_unreachable
+  notes: |-
+    No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.
+    Re-verified 2026-11-02: docs.vorondesign.com (cited neopixel_guide.html) and adafruit.com both unreachable from this environment (DNS blocked by network policy). GitHub repo README/Manual re-confirmed no KiCad/BOM dimension data. WebSearch found several drop-in-compatible commodity options (FYSETC kit, BTT ESB/MSB/SB RGB kit, Adafruit NeoPixel Mini Button PCB #1612) but no Voron-published source pinning one specific part or diameter. No field values changed; outcome is source_unreachable (a cited primary source could not be loaded this pass), not confirmed unpublished.
 - id: bartlammers_esp32_wled_hub
   name: ESP32 WLED Hub
   manufacturer: bartlammers

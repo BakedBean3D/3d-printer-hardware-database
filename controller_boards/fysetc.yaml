@@ -342,16 +342,12 @@
   - https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)
   - https://www.fysetc.com/products/fysetc-catalyst-motherboard-based-on-arm-a55-m4-support-spi-and-uart-for-tmc2209-voron-v0-high-quality-3d-printer-parts
   confidence: low
-  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). PCB length/width and hole pitch
-    NOT found in any authoritative source — measure the board or open hardware/CATALYST Board V2.0 STEP.rar.
-    Only confirmed: M3 4-corner holes (from PinsOut.png), Voron 0 mounting context, ~6 mm board stack
-    + 1.6 mm PCB. DO NOT design a mount from this entry without measuring. Mounting: Voron 0 dedicated
-    board (CM68 Cortex-A55 SBC carrier + STM32F401/F446, 4x stepstick). Designed to mount in the Voron
-    0 electronics location; the product page notes the V0 mount is 15 mm from plate, board adds 6 mm +
-    1.6 mm so a shim is used. 4 corner mounting holes visible on CATALYST V2.0 PinsOut.png. FYSETC did
-    NOT publish PCB length/width or hole pitch anywhere found; a CAD STEP (CATALYST Board V2.0 STEP.rar)
-    and an interactive 3D PDF exist in the repo but no dimensioned drawing. Left null rather than guessed.
-    Source: https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)'
+  reverify:
+    checked: '2026-11-02'
+    outcome: unpublished
+  notes: |-
+    Confidence low — Tier-3 (unverified — measure before cutting). PCB length/width and hole pitch NOT found in any authoritative source — measure the board or open hardware/CATALYST Board V2.0 STEP.rar. Only confirmed: M3 4-corner holes (from PinsOut.png), Voron 0 mounting context, ~6 mm board stack + 1.6 mm PCB. DO NOT design a mount from this entry without measuring. Mounting: Voron 0 dedicated board (CM68 Cortex-A55 SBC carrier + STM32F401/F446, 4x stepstick). Designed to mount in the Voron 0 electronics location; the product page notes the V0 mount is 15 mm from plate, board adds 6 mm + 1.6 mm so a shim is used. 4 corner mounting holes visible on CATALYST V2.0 PinsOut.png. FYSETC did NOT publish PCB length/width or hole pitch anywhere found; a CAD STEP (CATALYST Board V2.0 STEP.rar) and an interactive 3D PDF exist in the repo but no dimensioned drawing. Left null rather than guessed. Source: https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)
+    Re-verified 2026-11-02: confirmed hardware/ listing on GitHub (STEP.rar, PDF3D, PinsOut.png, SCH.pdf, two reference-designator-map PDFs) — none are dimensioned text/vector drawings extractable from this environment. Web search for third-party Catalyst V2.0 mounts/listings found none citing the mainboard's own outline (an unrelated "Catalyst.K" toolhead board at 47x44mm, and accessory mounts for a fan shroud/orbiter, were found — neither states the mainboard outline). fysetc.com product page unreachable (DNS blocked by network policy) this pass. Values remain unpublished in extractable form, not merely network-unreachable.
 - id: fysetc_sb_can_toolhead
   name: SB CAN Toolhead (V1.1 / V1.3)
   manufacturer: Fysetc
@@ -376,17 +372,12 @@
   - https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead V1.1 Position.pdf)
   - https://wiki.fysetc.com/SB%20CAN%20ToolHead/
   confidence: low
-  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Footprint = Voron Stealthburner
-    SB-board (2x M3 heat-set holes) per wiki install text — call out as a copied/standard Stealthburner
-    footprint. Exact PCB size and 2-hole spacing NOT reliably extracted; pull from SB CAN TOOLHEAD V1.1.DXF
-    / V1.3.step or measure before use. Mounting: STM32F072 Stealthburner CAN toolhead board (onboard TMC2209
-    + ADXL345), the FYSETC equivalent of the BTT EBB SB2209/SB2240 class. Wiki install step states "Your
-    Stealthburner should have two holes with heat inserts on" — i.e. it mounts to the standard Voron Stealthburner
-    toolhead with 2x M3 heat-set inserts (the Stealthburner SB-board footprint). FYSETC ships SB CAN TOOLHEAD
-    V1.1.DXF and V1.1/V1.3 STEP files, but no dimensioned drawing; the DXF/STEP geometry was too noisy
-    (cable model included) to extract a reliable PCB outline or exact 2-hole spacing here, so length/width
-    and pitch are null. Source: https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead
-    V1.1 Position.pdf)'
+  reverify:
+    checked: '2026-11-02'
+    outcome: unpublished
+  notes: |-
+    Confidence low — Tier-3 (unverified — measure before cutting). Footprint = Voron Stealthburner SB-board (2x M3 heat-set holes) per wiki install text — call out as a copied/standard Stealthburner footprint. Exact PCB size and 2-hole spacing NOT reliably extracted; pull from SB CAN TOOLHEAD V1.1.DXF / V1.3.step or measure before use. Mounting: STM32F072 Stealthburner CAN toolhead board (onboard TMC2209 + ADXL345), the FYSETC equivalent of the BTT EBB SB2209/SB2240 class. Wiki install step states "Your Stealthburner should have two holes with heat inserts on" — i.e. it mounts to the standard Voron Stealthburner toolhead with 2x M3 heat-set inserts (the Stealthburner SB-board footprint). FYSETC ships SB CAN TOOLHEAD V1.1.DXF and V1.1/V1.3 STEP files, but no dimensioned drawing; the DXF/STEP geometry was too noisy (cable model included) to extract a reliable PCB outline or exact 2-hole spacing here, so length/width and pitch are null. Source: https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead V1.1 Position.pdf)
+    Re-verified 2026-11-02: downloaded and programmatically parsed SB CAN TOOLHEAD V1.1.DXF directly. Confirmed no dedicated mechanical-outline layer exists — KeepOutLayer bbox 226x90mm and BottomOverlay bbox 228x95mm, both far too large for the board itself, consistent with extraneous cable/connector geometry polluting the file. No CIRCLE entities present, so the 2 mounting holes can't be isolated from pad/component geometry either. wiki.fysetc.com unreachable this session (DNS blocked by network policy) — unchecked, not disproven. No published hole-pitch value found anywhere for the Voron Stealthburner SB-board footprint itself to corroborate the "standard footprint" claim with an exact number. Values remain unpublished in extractable form. Source: https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF, parsed 2026-11-02)
 - id: fysetc_ucan_v1_0
   name: UCAN V1.0
   manufacturer: Fysetc
@@ -411,15 +402,12 @@
   - https://github.com/FYSETC/UCAN (CAD/UCAN_ V1.0.step, Hardware/UCAN V1.0 Component Position.pdf)
   - https://www.fysetc.com/products/fysetc-ucan-board
   confidence: low
-  notes: 'Confidence low — Tier-3 (unverified — measure before cutting). No mounting pattern (dongle)
-    — high-confidence there are no screw holes per the position drawing. PCB length/width NOT published;
-    open CAD/UCAN_ V1.0.step or measure. Typical units of this class are roughly 36 x 12 mm but THIS IS
-    NOT VENDOR-CONFIRMED — left null. Mounting: Small open-source USB-C-to-CAN bridge dongle (STM32F072CBT6,
-    candleLight firmware). It is a long, thin USB-stick-form board with USB-C on one end and a CAN connector/JST
-    on the other. The Component Position drawing shows NO dedicated screw mounting holes (the large circles
-    on the silk are corner copper/keepout zones, not mounting holes) — this is a free-floating dongle,
-    not a panel-mount board. PCB outline dimensions are not published in any spec line; a UCAN_ V1.0.step
-    CAD file exists in the repo but raw extraction was unreliable. Source: https://wiki.fysetc.com/UCAN/'
+  reverify:
+    checked: '2026-11-02'
+    outcome: source_unreachable
+  notes: |-
+    Confidence low — Tier-3 (unverified — measure before cutting). No mounting pattern (dongle) — high-confidence there are no screw holes per the position drawing. PCB length/width NOT published; open CAD/UCAN_ V1.0.step or measure. Typical units of this class are roughly 36 x 12 mm but THIS IS NOT VENDOR-CONFIRMED — left null. Mounting: Small open-source USB-C-to-CAN bridge dongle (STM32F072CBT6, candleLight firmware). It is a long, thin USB-stick-form board with USB-C on one end and a CAN connector/JST on the other. The Component Position drawing shows NO dedicated screw mounting holes (the large circles on the silk are corner copper/keepout zones, not mounting holes) — this is a free-floating dongle, not a panel-mount board. PCB outline dimensions are not published in any spec line; a UCAN_ V1.0.step CAD file exists in the repo but raw extraction was unreliable. Source: https://wiki.fysetc.com/UCAN/
+    Re-verified 2026-11-02: wiki.fysetc.com, fysetc.com, and docs.zephyrproject.org all unreachable from this environment (DNS blocked by network policy) — not confirmed dead, just unchecked this pass. GitHub Hardware/UCAN V1.0 Component Position.pdf loaded but is a non-vector Print-to-PDF stream; dimensions still not extractable. One unverified retailer search-snippet (probots.co.in, itself unreachable to confirm directly) claims 63.5x15.5mm with 4 semi-circular cutouts, 54.5mm spacing, M3 standoffs — this directly contradicts the existing "no mounting holes" reading and was NOT adopted (single unconfirmed secondhand snippet, conflicts with the primary drawing read). Flagged here for human review; no field values changed.
 - id: fysetc_mini12864_rgb_v2_1
   name: Mini12864 Panel (RGB) V2.1
   manufacturer: Fysetc
