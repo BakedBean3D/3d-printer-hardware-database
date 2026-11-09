@@ -351,7 +351,14 @@
     1.6 mm so a shim is used. 4 corner mounting holes visible on CATALYST V2.0 PinsOut.png. FYSETC did
     NOT publish PCB length/width or hole pitch anywhere found; a CAD STEP (CATALYST Board V2.0 STEP.rar)
     and an interactive 3D PDF exist in the repo but no dimensioned drawing. Left null rather than guessed.
-    Source: https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D)'
+    Source: https://github.com/FYSETC/Catalyst_Kit_V2.0 (hardware/ STEP + PinsOut.png + PDF3D). Re-checked
+    2026-11-09: downloaded hardware/CATALYST V2.0 PinsOut.png directly — it is an undimensioned 3D-shaded
+    render (pin labels only, no mm callouts, no scale reference), confirming no usable dimension text.
+    No CAD kernel available in this environment to open the STEP.rar for a bounding box, so the board remains
+    unmeasured rather than guessed.'
+  reverify:
+    checked: '2026-11-09'
+    outcome: unpublished
 - id: fysetc_sb_can_toolhead
   name: SB CAN Toolhead (V1.1 / V1.3)
   manufacturer: Fysetc
@@ -386,7 +393,16 @@
     V1.1.DXF and V1.1/V1.3 STEP files, but no dimensioned drawing; the DXF/STEP geometry was too noisy
     (cable model included) to extract a reliable PCB outline or exact 2-hole spacing here, so length/width
     and pitch are null. Source: https://github.com/FYSETC/FYSETC_SB_CAN_TOOLHEAD (DXF + STEP, SB CAN TollHead
-    V1.1 Position.pdf)'
+    V1.1 Position.pdf). Re-checked 2026-11-09: downloaded SB CAN TOOLHEAD V1.1.DXF and parsed it with ezdxf
+    — confirmed structurally (not just visually) that the file has no board-outline/Edge.Cuts layer at all;
+    its 9 layers (0, ViaHoleLayer, KeepOutLayer, BottomOverlay, TopOverlay, BottomSolder, TopSolder,
+    MultiLayer, PadHoleLayer) are all component footprints/keepouts — it is a component-placement export,
+    not a mechanical drawing. SB CAN TollHead V1.1 Position.pdf (read directly) likewise has no printed
+    dimension text, only silkscreen labels. PCB outline and hole pitch remain unpublished in any form
+    reachable here.'
+  reverify:
+    checked: '2026-11-09'
+    outcome: unpublished
 - id: fysetc_ucan_v1_0
   name: UCAN V1.0
   manufacturer: Fysetc
@@ -419,7 +435,14 @@
     on the other. The Component Position drawing shows NO dedicated screw mounting holes (the large circles
     on the silk are corner copper/keepout zones, not mounting holes) — this is a free-floating dongle,
     not a panel-mount board. PCB outline dimensions are not published in any spec line; a UCAN_ V1.0.step
-    CAD file exists in the repo but raw extraction was unreliable. Source: https://wiki.fysetc.com/UCAN/'
+    CAD file exists in the repo but raw extraction was unreliable. Source: https://wiki.fysetc.com/UCAN/.
+    Re-checked 2026-11-09: downloaded Hardware/UCAN V1.0 Component Position.pdf directly — confirms the
+    long thin USB-stick outline and the large semicircular notches at each end, but carries no printed
+    mm dimensions or scale reference. No CAD kernel available in this environment to open the .step for
+    a bounding box. Length/width and mount pattern remain unpublished in extractable form.'
+  reverify:
+    checked: '2026-11-09'
+    outcome: unpublished
 - id: fysetc_mini12864_rgb_v2_1
   name: Mini12864 Panel (RGB) V2.1
   manufacturer: Fysetc

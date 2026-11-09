@@ -271,9 +271,17 @@
   sources:
   - https://github.com/ArmoredTurtle/BoxTurtle
   confidence: low
-  notes: No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
+  notes: 'No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those
     individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific
-    board with KiCad geometry is identified.
+    board with KiCad geometry is identified. Re-checked 2026-11-09: github.com/ArmoredTurtle/BoxTurtle
+    still has only CAD/ and STLs/ folders (no hardware/electronics folder, no .kicad_pcb) and now documents
+    an "AFC-Lite" third-party controller board (by designer xbst/Isik''s Tech, GPL-3.0, gitee.com/songerman/AFC-Lite
+    mirror) plus a separate "AFC-Pro" board as the commercial boards BoxTurtle actually ships with — neither
+    has published dimensions/KiCad found in this pass. These are candidates for their own future entries,
+    not a reason to fill this one in.'
+  reverify:
+    checked: '2026-11-09'
+    outcome: unpublished
 - id: voron_hall_xy_endstop
   name: Hall Effect XY Endstop
   manufacturer: HartK / VoronDesign
@@ -502,9 +510,15 @@
   - https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner
   - https://docs.vorondesign.com/community/howto/drachenkatze/neopixel_guide.html
   confidence: low
-  notes: No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
+  notes: 'No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
     firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity
-    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.
+    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null. Re-checked 2026-11-09:
+    github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner still shows only
+    [a]_stealthburner_main_body.stl, [c]_stealthburner_LED_diffuser.stl, [o]_stealthburner_LED_carrier.stl,
+    [o]_stealthburner_LED_diffuser_mask.stl plus ADXL345_Mounts/ and Printheads/ subfolders — no PCB files.'
+  reverify:
+    checked: '2026-11-09'
+    outcome: unpublished
 - id: bartlammers_esp32_wled_hub
   name: ESP32 WLED Hub
   manufacturer: bartlammers
