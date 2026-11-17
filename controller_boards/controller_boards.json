@@ -1449,29 +1449,50 @@
   },
   {
     "id": "box_turtle_afc",
-    "name": "Box Turtle (AFC) PCB",
-    "manufacturer": "ArmoredTurtle",
+    "name": "AFC-Lite (Box Turtle controller)",
+    "manufacturer": "Isik's Tech",
     "category": "ercf",
     "mount_location": "frame",
-    "pcb_length_mm": null,
-    "pcb_width_mm": null,
+    "pcb_length_mm": 100.0,
+    "pcb_width_mm": 60.0,
     "pcb_thickness_mm": 1.6,
     "mount_screw": "M3",
-    "mount_hole_dia_mm": null,
-    "mount_pattern": "none",
-    "mount_pitch_x_mm": null,
-    "mount_pitch_y_mm": null,
-    "mount_hole_count": null,
-    "mount_holes_xy": null,
-    "mount_inset_from_edge_mm": null,
+    "mount_hole_dia_mm": 3.6,
+    "mount_pattern": "rectangular",
+    "mount_pitch_x_mm": 92.0,
+    "mount_pitch_y_mm": 52.0,
+    "mount_hole_count": 4,
+    "mount_holes_xy": [
+      [
+        4.0,
+        4.0
+      ],
+      [
+        96.0,
+        4.0
+      ],
+      [
+        4.0,
+        56.0
+      ],
+      [
+        96.0,
+        56.0
+      ]
+    ],
+    "mount_hole_frame": "pcb_corner",
+    "mount_inset_from_edge_mm": 4.0,
     "standoff_height_mm": null,
     "component_height_top_mm": null,
-    "connector_notes": "BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated community KiCad board with published Edge.Cuts found.",
+    "connector_notes": "The 4-lane Box Turtle controller (xbst / Isik's Tech), designed for ArmoredTurtle's Box Turtle AFC. STM32H723, USB and CAN, 4x StepStick (TMC2209) sockets in a row across the +Y half, 4x brushed DC motor drivers, 4x RGB LED, 12x endstop and one 5 V fan connector, onboard 5 V buck. The larger 8-lane AFC-Pro is a different board and is not this record.",
     "sources": [
-      "https://github.com/ArmoredTurtle/BoxTurtle"
+      "https://github.com/xbst/AFC-Lite/tree/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3",
+      "https://github.com/xbst/AFC-Lite/blob/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3/Gerbers/Gerber.zip",
+      "https://github.com/xbst/AFC-Lite/blob/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3/CAD/AFC-Lite.zip",
+      "https://github.com/ArmoredTurtle/BoxTurtle/blob/5adb11f33c3e555dbb81634ec1951a15d542eabf/STLs/Chassis/MCU/afc_mount.stl"
     ],
-    "confidence": "low",
-    "notes": "No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific board with KiCad geometry is identified.",
+    "confidence": "high",
+    "notes": "Confidence high, Tier-1 (designer fab files and designer STEP, which agree). Measured 2026-10-31 from xbst/AFC-Lite at c7bba8e (EasyEDA Pro v2.2.39.2 output, 2025-06-19). Outline from Gerber_BoardOutlineLayer.GKO: a 100.0 x 60.0 mm rectangle, corners chamfered 2.5 mm, origin at its lower-left corner. Holes from Drill_PTH_Through.DRL: the only drill over 1.2 mm is T09 \u00d83.6 plated, at (4, 4), (96, 4), (4, 56) and (96, 56) - a 92 x 52 grid inset 4.0 mm. The CAD/AFC-Lite.step board solid gives the same outline (99.97 x 59.97 at 0.0127 from the origin) and the same four \u00d83.6 hole axes to 0.01 mm, and is 1.586 mm thick (1/16 in); 1.6 is the nominal. Frame: pcb_corner, origin at the Gerber origin, x along the 100 mm length, y along the 60 mm width, top view (component side). Cross-check: the Box Turtle repo's own MCU mount (STLs/Chassis/MCU/afc_mount.stl at 5adb11f) carries four \u00d86 standoffs on the same 92 x 52 grid. Heights, from the STEP: tallest top-side part as modelled is 10.1 mm above the board (a connector at x 34-38, y 2-6); the four StepStick sockets are 8.7 mm, but the plug-in driver modules and any heatsinks are not modelled, so component_height_top_mm stays null. Underside: through-hole leads reach 1.81 mm below the board, except one 3-pin header at x 31.7-41.9, y 3.2-4.5 modelled with 5.41 mm tails. The designer's mount leaves 2.6 mm under the board (standoff tops at 5.0, plate top at 2.4), so those tails are trimmed in practice; no standoff height is published, so standoff_height_mm stays null. Corrections from the prior record: it said Box Turtle has no bespoke PCB; AFC-Lite is that PCB. Outline, hole size, pattern, count and positions null -> measured; manufacturer ArmoredTurtle -> Isik's Tech (the board's designer and seller); confidence low -> high. mount_location stays frame (owner ruling 2026-10-31: plate-mounted, with DIN, screw and 2020 side options).",
     "_source_file": "community.yaml"
   },
   {
