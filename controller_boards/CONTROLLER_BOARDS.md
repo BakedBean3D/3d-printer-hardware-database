@@ -3,7 +3,7 @@
 **Generated** from the per-manufacturer `*.yaml` in this directory — do not hand-edit; run `python controller_boards/gen.py`. The YAML files are the source of truth.
 
 - **Total boards:** 106
-- **Confidence:** 65 high · 25 medium · 16 low
+- **Confidence:** 66 high · 25 medium · 15 low
 - **Aggregate for code:** `controller_boards.json`
 - **License:** data under ODbL-1.0 (database) + DbCL-1.0 (contents), © BakedBean3D. See [`DATA_LICENSE.md`](../DATA_LICENSE.md).
 
@@ -21,7 +21,6 @@
 | Board | Mfr | Cat | Mounts on | PCB L×W (mm) | Thk | Screw | Pattern | Pitch X×Y | Holes | Conf |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Adafruit MAX31865 PT100/PT1000 RTD amplifier (PID 3328/3648) | Adafruit | thermocouple_amp | bay | 24.38×22.86 | 1.6 | M2.5 | 2-hole | 22.86×— | 2 | high |
-| Box Turtle (AFC) PCB | ArmoredTurtle | ercf | frame | — | 1.6 | M3 | none | — | — | low |
 | BTT ADXL345 V2.0 (USB-C, onboard RP2040) | BigTreeTech | accelerometer | toolhead | 28.25×15.5 | 1.6 | M3 | 2-hole | 15.5×— | 2 | high |
 | BTT MAX31865 V2.0 PT100/PT1000 RTD amplifier | BigTreeTech | thermocouple_amp | bay | 20.32×15.24 | 1.6 | — | none | 15.24×2.54 | 0 | high |
 | BTT Pi V1.2 | BigTreeTech | sbc | bay | 85.01×56.01 | 1.64 | M2.5 | 4-hole | — | 4 | medium |
@@ -95,6 +94,7 @@
 | Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | bay | 120.0×113.0 | 1.6 | M3 | other | 110.0×— | 4 | high |
 | Huvud (original) | Huvud | toolhead_can | toolhead | 48.0×45.0 | 1.6 | M3 | rectangular | 37.0×40.0 | 4 | high |
 | HuvudTiny | Huvud | toolhead_can | toolhead | 42.0×42.0 | 1.6 | M3 | rectangular | 31.0×31.0 | 4 | high |
+| AFC-Lite (Box Turtle controller) | Isik's Tech | ercf | frame | 100.0×60.0 | 1.6 | M3 | rectangular | 92.0×52.0 | 4 | high |
 | LDO Leviathan (V1.2/V1.3) | LDO Motors | mainboard | bay | 170.0×100.0 | 1.6 | M3 | rectangular | 160.0×90.0 | 4 | high |
 | LDO Nitehawk-36 | LDO Motors | toolhead_can | toolhead | — | 1.6 | M3 | other | 43.84×— | — | low |
 | LDO Nitehawk-SB | LDO Motors | toolhead_can | toolhead | — | 1.6 | M3 | other | — | — | low |
@@ -140,17 +140,6 @@
 - **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (2.54 mm, per holes_xy), a collinear 2-hole pattern, so a y-pitch does not exist. Confidence high — Tier-1 (vendor CAD/drawing). Outline and Ø2.54 holes from Adafruit fab print p.30 (high). Screw size medium: Adafruit/distributor text inconsistent (M2.5 vs M3); physical bore = 2.54 mm => M2.5. PT1000 sibling 3648 is the identical PCB. Mounting: Two mounting tabs at the screw-terminal end. PCB body 24.38 x 22.86 mm; OVERALL incl. tabs 27.94 x 25.4 mm. Decide whether your mount uses the body or the tabbed outline. Holes Ø2.54 mm = M2.5, NOT M3. Source: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
 - src: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-max31865-rtd-pt100-amplifier.pdf
 - src: https://www.adafruit.com/product/3328
-
-## ArmoredTurtle
-
-### Box Turtle (AFC) PCB  ·  `box_turtle_afc`
-
-- **Category:** ercf · **Mounts on:** frame · **Confidence:** low · **Source file:** `community.yaml`
-- **PCB:** — × — mm, 1.6 mm thick
-- **Mounting:** —× M3 (Ø—), none, pitch —×— mm
-- **Connectors:** BoxTurtle AFC (Automated Filament Changer) from ArmoredTurtle uses off-the-shelf MCUs/CAN toolboards (e.g. BTT MMB / EBB / SB2240) rather than a single bespoke 'BoxTurtle PCB'. No dedicated community KiCad board with published Edge.Cuts found.
-- **Notes:** No bespoke .kicad_pcb located. BoxTurtle relies on commercial control boards; document those individually (BTT MMB CAN, EBB, etc.) rather than a single BoxTurtle PCB. Flagged as low until a specific board with KiCad geometry is identified.
-- src: https://github.com/ArmoredTurtle/BoxTurtle
 
 ## BigTreeTech
 
@@ -979,6 +968,21 @@ Re-verified 2026-10-12: global.bttwiki.com is network-egress-blocked this sessio
 - **Clearance:** standoff 5 mm, top component — mm
 - **Notes:** Confidence high — Tier-1 (vendor CAD/drawing). Outline + centred 31x31 NEMA17 pattern confirmed from KiCad geometry. Mounting: 42x42 mm board; 31x31 mm square pattern = exactly the NEMA17 bolt circle, perfectly centred (5.5 mm inset all sides). Bolts directly onto the back face of a NEMA17 stepper with M3 screws. Plated holes (via). Parsed from KiCad source. Source: https://github.com/bondus/KlipperToolboard/blob/master/PCB/HuvudTiny/Huvud.kicad_pcb
 - src: https://github.com/bondus/KlipperToolboard/blob/master/PCB/HuvudTiny/Huvud.kicad_pcb
+
+## Isik's Tech
+
+### AFC-Lite (Box Turtle controller)  ·  `box_turtle_afc`
+
+- **Category:** ercf · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
+- **PCB:** 100.0 × 60.0 mm, 1.6 mm thick
+- **Mounting:** 4× M3 (Ø3.6), rectangular, pitch 92.0×52.0 mm
+  - holes (x,y mm): [[4.0, 4.0], [96.0, 4.0], [4.0, 56.0], [96.0, 56.0]]
+- **Connectors:** The 4-lane Box Turtle controller (xbst / Isik's Tech), designed for ArmoredTurtle's Box Turtle AFC. STM32H723, USB and CAN, 4x StepStick (TMC2209) sockets in a row across the +Y half, 4x brushed DC motor drivers, 4x RGB LED, 12x endstop and one 5 V fan connector, onboard 5 V buck. The larger 8-lane AFC-Pro is a different board and is not this record.
+- **Notes:** Confidence high, Tier-1 (designer fab files and designer STEP, which agree). Measured 2026-10-31 from xbst/AFC-Lite at c7bba8e (EasyEDA Pro v2.2.39.2 output, 2025-06-19). Outline from Gerber_BoardOutlineLayer.GKO: a 100.0 x 60.0 mm rectangle, corners chamfered 2.5 mm, origin at its lower-left corner. Holes from Drill_PTH_Through.DRL: the only drill over 1.2 mm is T09 Ø3.6 plated, at (4, 4), (96, 4), (4, 56) and (96, 56) - a 92 x 52 grid inset 4.0 mm. The CAD/AFC-Lite.step board solid gives the same outline (99.97 x 59.97 at 0.0127 from the origin) and the same four Ø3.6 hole axes to 0.01 mm, and is 1.586 mm thick (1/16 in); 1.6 is the nominal. Frame: pcb_corner, origin at the Gerber origin, x along the 100 mm length, y along the 60 mm width, top view (component side). Cross-check: the Box Turtle repo's own MCU mount (STLs/Chassis/MCU/afc_mount.stl at 5adb11f) carries four Ø6 standoffs on the same 92 x 52 grid. Heights, from the STEP: tallest top-side part as modelled is 10.1 mm above the board (a connector at x 34-38, y 2-6); the four StepStick sockets are 8.7 mm, but the plug-in driver modules and any heatsinks are not modelled, so component_height_top_mm stays null. Underside: through-hole leads reach 1.81 mm below the board, except one 3-pin header at x 31.7-41.9, y 3.2-4.5 modelled with 5.41 mm tails. The designer's mount leaves 2.6 mm under the board (standoff tops at 5.0, plate top at 2.4), so those tails are trimmed in practice; no standoff height is published, so standoff_height_mm stays null. Corrections from the prior record: it said Box Turtle has no bespoke PCB; AFC-Lite is that PCB. Outline, hole size, pattern, count and positions null -> measured; manufacturer ArmoredTurtle -> Isik's Tech (the board's designer and seller); confidence low -> high. mount_location stays frame (owner ruling 2026-10-31: plate-mounted, with DIN, screw and 2020 side options).
+- src: https://github.com/xbst/AFC-Lite/tree/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3
+- src: https://github.com/xbst/AFC-Lite/blob/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3/Gerbers/Gerber.zip
+- src: https://github.com/xbst/AFC-Lite/blob/c7bba8efd0d1b4fb313be4b2d3db731ec13781e3/CAD/AFC-Lite.zip
+- src: https://github.com/ArmoredTurtle/BoxTurtle/blob/5adb11f33c3e555dbb81634ec1951a15d542eabf/STLs/Chassis/MCU/afc_mount.stl
 
 ## LDO Motors
 
