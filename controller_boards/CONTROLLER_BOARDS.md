@@ -87,8 +87,8 @@
 | HartK Stealthburner Toolhead PCB (2-piece main, rev 4) | HartK | accessory | toolhead | 47.3×39.38 | — | M3 | 2-hole | 11.98×12.77 | 2 | high |
 | Daylight on a Matchstick (LED bar, V0) | HartK / VoronDesign | accessory | frame | 158.0×11.0 | 1.6 | M3 | 2-hole | 98.9×— | 2 | high |
 | Daylight on a Stick (LED bar) | HartK / VoronDesign | accessory | frame | 270.0×11.0 | 1.6 | M3 | 2-hole | 197.82×— | 2 | high |
-| Hall Effect XY Endstop | HartK / VoronDesign | sensor | frame | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×— | 2 | high |
-| Microswitch XY Endstop | HartK / VoronDesign | sensor | frame | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
+| Hall Effect XY Endstop | HartK / VoronDesign | sensor | housed | 56.0×20.0 | 1.6 | M3 | 2-hole | 39.25×— | 2 | high |
+| Microswitch XY Endstop | HartK / VoronDesign | sensor | housed | 51.5×16.6 | 1.6 | M4 | 2-hole | 33.5×— | 2 | high |
 | PT100 Stick (thermocouple amp) | HartK / VoronDesign | thermocouple_amp | bay | 15.24×20.32 | 1.6 | — | none | — | 0 | high |
 | V0 Umbilical Toolhead PCB | HartK / VoronDesign | toolhead_can | toolhead | 49.04×23.13 | 1.6 | M3 | 2-hole | 43.84×— | 2 | high |
 | Voron Klipper Board (Taco Raven) | HartK / VoronDesign | mainboard | bay | 120.0×113.0 | 1.6 | M3 | other | 110.0×— | 4 | high |
@@ -902,20 +902,20 @@ Re-verified 2026-10-12: global.bttwiki.com is network-egress-blocked this sessio
 
 ### Hall Effect XY Endstop  ·  `voron_hall_xy_endstop`
 
-- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** housed · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 56.0 × 20.0 mm, 1.6 mm thick
 - **Mounting:** 2× M3 (Ø3.2), 2-hole, pitch 39.25×— mm
 - **Connectors:** Hall-effect XY endstop for Voron gantry. 2x M3 holes pitch 39.25 mm.
-- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[5.75,12.25],[45.0,12.25]], collinear 2-hole pattern), so a y-pitch does not exist -- null correctly marks it not-applicable rather than a real zero-mm dimension. Tier-1 (KiCad v5 'module' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])
+- **Notes:** Location housed (owner ruling 2026-10-31): the endstop seats in a printed part of the printer designed for it, so no separate mount is made for it. CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[5.75,12.25],[45.0,12.25]], collinear 2-hole pattern), so a y-pitch does not exist -- null correctly marks it not-applicable rather than a real zero-mm dimension. Tier-1 (KiCad v5 'module' fmt): Edge.Cuts bbox 56.0 x 20.0 mm; 2x MountingHole_3.2mm_M3 at raw (127.75,98.75),(167,98.75). (raw hole coords from source: [[5.75, 12.25], [45.0, 12.25]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Hall_Effect_XY_Endstop/KiCad/HallEffectXY-Endstop.kicad_pcb
 
 ### Microswitch XY Endstop  ·  `voron_microswitch_xy_endstop`
 
-- **Category:** sensor · **Mounts on:** frame · **Confidence:** high · **Source file:** `community.yaml`
+- **Category:** sensor · **Mounts on:** housed · **Confidence:** high · **Source file:** `community.yaml`
 - **PCB:** 51.5 × 16.6 mm, 1.6 mm thick
 - **Mounting:** 2× M4 (Ø4.3), 2-hole, pitch 33.5×— mm
 - **Connectors:** Mechanical microswitch XY endstop. NOTE: M4 mount holes (4.3mm) — not M3.
-- **Notes:** CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[8.5,8.1],[42.0,8.1]], collinear 2-hole pattern), so a y-pitch does not exist. Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5). (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])
+- **Notes:** Location housed (owner ruling 2026-10-31): the endstop seats in a printed part of the printer designed for it, so no separate mount is made for it. CORRECTED 2026-07-24: mount_pitch_y_mm changed from legacy placeholder 0.0 -> null. Both holes share the same y (raw source coords [[8.5,8.1],[42.0,8.1]], collinear 2-hole pattern), so a y-pitch does not exist. Tier-1 (KiCad v5): Edge.Cuts bbox 51.5 x 16.6 mm; 2x MountingHole_4.3mm_M4_DIN965 at raw (134.5,61.5),(168,61.5). (raw hole coords from source: [[8.5, 8.1], [42.0, 8.1]])
 - src: https://raw.githubusercontent.com/VoronDesign/Voron-Hardware/master/Microswitch_Endstop/KiCad/MicroswitchXY-Endstop.kicad_pcb
 
 ### PT100 Stick (thermocouple amp)  ·  `voron_pt100stick`
