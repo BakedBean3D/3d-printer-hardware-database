@@ -532,9 +532,18 @@
   - https://github.com/VoronDesign/Voron-Stealthburner/tree/main/STLs/Stealthburner
   - https://docs.vorondesign.com/community/howto/drachenkatze/neopixel_guide.html
   confidence: low
-  notes: No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
+  reverify:
+    checked: '2026-11-23'
+    outcome: unpublished
+  notes: 'No KiCad in the official Voron-Stealthburner repo (only LED carrier/diffuser STLs + stealthburner_leds.cfg
     firmware). Mounting is the printed LED carrier, not a PCB hole pattern. Mini-button LED PCBs are commodity
-    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null.
+    ~10mm round parts (FYSETC/Trianglelab); exact dims vary by vendor — left null. Re-checked 2026-11-23 --
+    github.com/VoronDesign/Voron-Stealthburner (main) unchanged, still no KiCad/dimensioned LED-board drawing;
+    docs.vorondesign.com unreachable this session. Checked the closest named reference part, Adafruit #1612
+    "NeoPixel Mini Button PCB", as a sanity check, not as the actual FYSETC/Trianglelab part used here --
+    retailers disagree even on its shape/size (Adafruit''s own listing gives 8x10mm; Core Electronics gives
+    ~10mm round; Pi Hut/Pimoroni give 9.1x9.1x3.1-3.2mm square), so it does not resolve anything and no value
+    was changed. Board-specific dims for the actual commodity part remain unpublished.'
 - id: bartlammers_esp32_wled_hub
   name: ESP32 WLED Hub
   manufacturer: bartlammers
