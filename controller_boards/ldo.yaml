@@ -99,6 +99,9 @@
   - https://github.com/MotorDynamicsLab/Nitehawk-SB/blob/master/Hardware/Nitehawk-SB_V1.5_3D%20Layout.pdf
   - https://docs.ldomotors.com/en/Toolboard/nitehawk-sb
   confidence: low
+  reverify:
+    checked: '2026-11-23'
+    outcome: source_unreachable
   notes: 'Confidence low — Tier-3 (unverified — measure before cutting). Mounting is via the Stealthburner
     body, not a board-edge hole pattern. PCB outline + exact hole XY UNVERIFIED -- extract from the repo
     STEP / dimensioned Layout.pdf in CAD, or use the HartK Stealthburner_Toolhead_PCB reference footprint.
@@ -107,7 +110,12 @@
     Stealthburner printed body (M3 into the SB fan housing), NOT a stepper bolt circle or a simple rectangular
     pattern. PCB is 1.6 mm thick (confirmed from STEP z-layer). No KiCad source published; the shipped
     STEP is a full toolhead assembly, so clean outline/hole XY could not be machine-extracted. Source:
-    https://github.com/MotorDynamicsLab/Nitehawk-SB'
+    https://github.com/MotorDynamicsLab/Nitehawk-SB. Re-checked 2026-11-23 -- re-fetched the repo''s Hardware/
+    dir (STEP + schematics + JPGs, no DXF or dimensioned drawing) and "Nitehawk-SB_V1.5_3D Layout.pdf" directly;
+    the PDF is a binary U3D 3D-model stream with no extractable dimension callouts in this environment.
+    WebSearch for an explicit HartK-footprint-pitch match returned only retailer "shares the form factor"
+    blurbs, no numeric pitch. docs.ldomotors.com and the retailer pages (west3d.com, 3djake.com) were all
+    DNS-unreachable this session, so they could not be cross-checked this round.'
 - id: ldo_nitehawk_36
   name: LDO Nitehawk-36
   manufacturer: LDO Motors
